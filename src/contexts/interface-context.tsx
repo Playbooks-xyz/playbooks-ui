@@ -1,7 +1,7 @@
 import React, { createRef } from 'react';
 import { createPortal } from 'react-dom';
 
-import { Div } from 'html';
+import { Div } from 'interface/html';
 
 type iInterface = {
 	ref: any;

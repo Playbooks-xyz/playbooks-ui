@@ -3,24 +3,28 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  base: "./src",
+  base: "./",
   plugins: [react()],
   build: {
     sourcemap: true,
     lib: {
       entry: path.resolve(__dirname, "src/index.tsx"),
-      name: "mylib",
+      name: "playbooksInterface",
       formats: ["es", "cjs", "umd", "iife"],
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom"],
+      // input: {
+      //   "index": "src/index.tsx",
+      //   "accordions": "src/interface/accordions.tsx"
+      // },
       output: {
+        // exports: "named",
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
         },
-        preserveModules: true
       },
     },
   },
@@ -28,9 +32,11 @@ export default defineConfig({
     alias: {
       components: "/src/components",
       contexts: "/src/contexts",
+      interface: "/src/interface",
       tailwind: "/src/tailwind",
       types: "/src/types",
       utils: "/src/utils",
+
       accordions: "/src/accordions",
       alerts: "/src/alerts",
       avatars: "/src/avatars",
