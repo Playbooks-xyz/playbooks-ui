@@ -1,38 +1,34 @@
 import { iFont } from 'types/fonts.types';
 import { tailwindClassBuilder } from 'tailwind';
 
-export const Font = ({ size, children, ...props }) => {
-	switch (size) {
+export const Font = (props) => {
+	switch (props.size) {
 		case 'h1':
-			return <H1 {...props}>{children}</H1>;
+			return <H1 {...props} />
 
 		case 'h2':
-			return <H2 {...props}>{children}</H2>;
+			return <H2 {...props} />
 
 		case 'h3':
-			return <H3 {...props}>{children}</H3>;
+			return <H3 {...props} />
 
 		case 'h4':
-			return <H4 {...props}>{children}</H4>;
+			return <H4 {...props} />
 
 		case 'h5':
-			return <H5 {...props}>{children}</H5>;
+			return <H5 {...props} />
 
 		case 'h6':
-			return <H6 {...props}>{children}</H6>;
+			return <H6 {...props} />
 
 		case 'p':
-			return <P {...props}>{children}</P>;
+			return <P {...props} />
 
 		case 'sm':
-			return <Small {...props}>{children}</Small>;
+			return <Small {...props} />
 
 		case 'xs':
-			return (
-				<Small fontSize='text-xs' {...props}>
-					{children}
-				</Small>
-			);
+			return <Small fontSize='text-xs' {...props} />
 	}
 };
 
