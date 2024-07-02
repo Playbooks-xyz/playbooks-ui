@@ -1,0 +1,37 @@
+import { BtnType, HtmlType, LinkType } from 'types';
+
+export type iMenu = HtmlType & {
+	open: boolean;
+	setOpen: (v: boolean) => void;
+};
+
+export type iMenuToggle = HtmlType & {
+	type?: string;
+	icon?: string;
+};
+
+export type iMenuMenu = HtmlType & {
+	open: boolean;
+};
+
+export type iMenuHeader = HtmlType;
+
+export type iMenuTitle = HtmlType;
+
+export type iMenuSubtitle = HtmlType;
+
+export type iMenuList = HtmlType;
+
+export type iMenuItem = HtmlType;
+
+export type iMenuBtn = BtnType & {
+	icon?: string;
+	tabIndex?: number;
+	onClick: () => void;
+};
+
+export type iMenuLink = LinkType & {
+	href: string;
+	icon?: string;
+	tabIndex?: number;
+};
