@@ -1,7 +1,9 @@
 import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import dts from 'vite-plugin-dts'
+import tailwindcss from 'tailwindcss';
 
 export default defineConfig({
   base: "./",
@@ -9,26 +11,35 @@ export default defineConfig({
     // sourcemap: true,
     lib: {
       entry: [
-        path.resolve(__dirname, "src/index.ts"),
-        // path.resolve(__dirname, "src/interface/accordions.tsx"),
+        path.resolve(__dirname, "src/index.tsx"),
+        path.resolve(__dirname, "src/interface/accordions.tsx"),
       ],
       formats: ['es'],
       // fileName: (format, entryName) => `${entryName}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", 'react/jsx-runtime'],
+      external: ["react", "react-dom", 'react/jsx-runtime', 'tailwindcss'],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
           'react/jsx-runtime': 'react/jsx-runtime',
+          'tailwindcss': 'tailwindcss'
         },
-      }
+        inlineDynamicImports: true
+      },
+      plugins: [peerDepsExternal()]
     },
   },
-  plugins: [react(), dts()],
+  plugins: [react(), dts({ rollupTypes: true })],
+  css: {
+    postcss: {
+      plugins: [tailwindcss]
+    }
+  },
   resolve: {
     alias: {
+      src: path.resolve(__dirname, "/src"),
       components: path.resolve(__dirname, "/src/components"),
       contexts: path.resolve(__dirname, "/src/contexts"),
       interface: path.resolve(__dirname, "/src/interface"),

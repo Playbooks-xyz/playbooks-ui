@@ -1,4 +1,4 @@
-import { animated, useSpring } from 'react-spring';
+import { animated, useSpring } from '@react-spring/web';
 
 import { Div } from 'interface/html';
 import { iFrameworkedProgress, iProgress, iProgressBar } from 'interface/progress-bars.types';

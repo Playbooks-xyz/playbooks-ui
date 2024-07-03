@@ -1,3 +1,5 @@
+import 'src/index.css'
+
 export * from 'interface/accordions';
 export * from 'interface/alerts';
 export * from 'interface/avatars';

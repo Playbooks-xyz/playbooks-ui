@@ -19,7 +19,8 @@
     "./accordions": {
       "import": "./dist/accordions.js",
       "types": "./dist/accordions.d.ts"
-    }
+    },
+    "./dist/styles.css": "./dist/style.css"
   },
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -47,16 +48,18 @@
     "@fortawesome/pro-duotone-svg-icons": "^6.4.0",
     "@fortawesome/pro-regular-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@react-spring/web": "^9.7.3",
+    "dts-bundle-generator": "^9.5.1",
     "react-currency-input-field": "^3.8.0",
     "react-input-mask": "^2.0.4",
     "react-phone-number-input": "^3.4.3",
     "react-popper": "^2.3.0",
     "react-range": "^1.8.14",
-    "react-spring": "^9.7.3",
     "react-transition-group": "^4.4.5",
     "svg-loaders-react": "^2.2.1"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
     "@types/jest": "^29.5.1",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
@@ -69,11 +72,9 @@
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
     "jest": "^29.5.0",
-    "next": "^14.2.4",
     "postcss": "^8.4.39",
     "prettier": "^2.8.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "tailwindcss": "^3.4.4",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
