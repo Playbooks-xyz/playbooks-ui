@@ -2,7 +2,6 @@ import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import dts from 'vite-plugin-dts'
 import tailwindcss from 'tailwindcss';
 
 export default defineConfig({
@@ -15,7 +14,7 @@ export default defineConfig({
         path.resolve(__dirname, "src/interface/accordions.tsx"),
       ],
       formats: ['es'],
-      // fileName: (format, entryName) => `${entryName}.js`,
+      fileName: (format, entryName) => `${entryName}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom", 'react/jsx-runtime', 'tailwindcss'],
@@ -26,12 +25,11 @@ export default defineConfig({
           'react/jsx-runtime': 'react/jsx-runtime',
           'tailwindcss': 'tailwindcss'
         },
-        inlineDynamicImports: true
       },
       plugins: [peerDepsExternal()]
     },
   },
-  plugins: [react(), dts({ rollupTypes: true })],
+  plugins: [react()],
   css: {
     postcss: {
       plugins: [tailwindcss]
