@@ -1,15 +1,13 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "rootDir": ".",
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
     "jsx": "react-jsx",
     "types": ["vite/client", "node", "react", "jest"],
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "declaration": true,
-    "declarationDir": "dist/dts",
+    "declaration": false,
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": true,
@@ -26,6 +24,15 @@
     "forceConsistentCasingInFileNames": true,
     "paths": {
       "src/*": ["./src/*"],
+      "components/*": ["./src/components/*"],
+      "contexts/*": ["./src/contexts/*"],
+      "interface/*": ["./src/interface/*"],
+      "tailwind": ["./src/tailwind"],
+      "tailwind/*": ["./src/tailwind/*"],
+      "types": ["./src/types"],
+      "types/*": ["./src/types/*"],
+      "utils": ["./src/utils"],
+      "utils/*": ["./src/utils/*"],
       "tests/*": ["./tests/*"]
     }
   },

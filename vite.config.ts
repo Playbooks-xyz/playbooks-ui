@@ -1,43 +1,40 @@
 import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   base: "./",
-  plugins: [react()],
   build: {
-    sourcemap: true,
+    // sourcemap: true,
     lib: {
       entry: [
-        path.resolve(__dirname, "src/index.tsx"),
-        path.resolve(__dirname, "src/test-title.tsx"),
-        path.resolve(__dirname, "src/test-text.tsx"),
+        path.resolve(__dirname, "src/index.ts"),
+        // path.resolve(__dirname, "src/interface/accordions.tsx"),
       ],
-      // formats: ['es', 'cjs'],
-      fileName: (format, entryName) => `${entryName}.${format}.js`,
+      formats: ['es'],
+      // fileName: (format, entryName) => `${entryName}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", 'react/jsx-runtime'],
       output: {
-        exports: "named",
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
+          'react/jsx-runtime': 'react/jsx-runtime',
         },
-        inlineDynamicImports: false,
-      },
+      }
     },
   },
+  plugins: [react(), dts()],
   resolve: {
     alias: {
-      components: "/src/components",
-      contexts: "/src/contexts",
-      interface: "/src/interface",
-      tailwind: "/src/tailwind",
-      types: "/src/types",
-      utils: "/src/utils",
-      "test-title": "/src/test-title",
-      "test-text": "/src/test-text",
+      components: path.resolve(__dirname, "/src/components"),
+      contexts: path.resolve(__dirname, "/src/contexts"),
+      interface: path.resolve(__dirname, "/src/interface"),
+      tailwind: path.resolve(__dirname, "/src/tailwind"),
+      types: path.resolve(__dirname, "/src/types"),
+      utils: path.resolve(__dirname, "/src/utils")
     },
   },
 });

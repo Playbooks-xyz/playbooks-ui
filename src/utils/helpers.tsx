@@ -1,5 +1,3 @@
-export const env = process.env.NEXT_PUBLIC_NODE_ENV;
-
 export const timeout = ms => {
 	return new Promise(resolve => setTimeout(resolve, ms));
 };
