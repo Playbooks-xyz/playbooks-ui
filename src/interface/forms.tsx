@@ -9,7 +9,10 @@ import {
 	iFormFile,
 	iFormGroup,
 	iFormInput,
+	iFormInputCurrency,
+	iFormInputMask,
 	iFormLabel,
+	iFormRange,
 	iFormSelect,
 	iFormText,
 	iFormTextArea,
@@ -101,7 +104,7 @@ export const FormRange = ({
 	readOnly,
 	className,
 	...tailwind
-}: iFormCheckbox) => {
+}: iFormRange) => {
 	const base = rangeProps();
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -121,7 +124,7 @@ export const FormRange = ({
 	);
 };
 
-export const FormInput = forwardRef(
+export const FormInput = forwardRef<any, any>(
 	(
 		{
 			id,
@@ -175,7 +178,7 @@ export const FormMaskInput = ({
 	readOnly,
 	className,
 	...tailwind
-}: iFormInput) => {
+}: iFormInputMask) => {
 	const base = inputProps(variant);
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -205,7 +208,7 @@ export const FormCurrencyInput = ({
 	readOnly,
 	className,
 	...tailwind
-}: iFormInput) => {
+}: iFormInputCurrency) => {
 	const base = inputProps(variant);
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 

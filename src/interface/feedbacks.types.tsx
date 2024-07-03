@@ -4,7 +4,10 @@ export type iFeedback = HtmlType;
 
 export type iFeedbackHeader = HtmlType;
 
-export type iFeedbackIcon = HtmlType;
+export type iFeedbackIcon = HtmlType & {
+  type?: string;
+  icon: string;
+}
 
 export type iFeedbackBody = HtmlType;
 

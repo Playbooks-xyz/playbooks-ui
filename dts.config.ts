@@ -10,7 +10,7 @@ const config = {
     },
     {
       filePath: "./src/interface/accordions.tsx",
-      outFile: "./dist/accordions.d.ts",
+      outFile: "./dist/src/interface/accordions.d.ts",
       noCheck: false,
     },
   ],

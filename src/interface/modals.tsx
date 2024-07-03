@@ -6,6 +6,7 @@ import { AccentBtn } from 'interface/buttons';
 import { Font } from 'interface/fonts';
 import { Div } from 'interface/html';
 import {
+	iModalWrapper,
 	iModal,
 	iModalBackdrop,
 	iModalBody,
@@ -16,7 +17,7 @@ import {
 } from 'interface/modals.types';
 import { borderProps, computeSectionSize } from 'tailwind';
 
-export const ModalWrapper = ({ id, name = 'ModalWrapper', open, onClose, className, children, tailwind }) => {
+export const ModalWrapper = ({ id, name = 'ModalWrapper', open, onClose, className, children, tailwind }: iModalWrapper) => {
 	const base = {
 		position: 'fixed',
 		inset: 'inset-0',

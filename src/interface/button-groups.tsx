@@ -2,7 +2,7 @@ import { iButtonGroup } from 'interface/button-groups.types';
 import { Div } from 'interface/html';
 import { borderProps } from 'tailwind';
 
-export const BtnGroup = ({ id, name = 'BtnGroup', active, className, children, ...tailwind }: iButtonGroup) => {
+export const BtnGroup = ({ id, name = 'BtnGroup', className, children, ...tailwind }: iButtonGroup) => {
 	const base = {
 		display: 'inline-flex',
 		border: 'border',
@@ -14,8 +14,7 @@ export const BtnGroup = ({ id, name = 'BtnGroup', active, className, children, .
 		divideOpacity: 'divide-opacity-25',
 		flex: 'shrink-0',
 		space: 'space-x-0',
-		width: 'width-inherit',
-		...active,
+		width: 'width-inherit'
 	};
 	const props = { ...base, ...tailwind, className, name };
 

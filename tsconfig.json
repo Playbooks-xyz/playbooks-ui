@@ -12,7 +12,7 @@
     "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": true,
     "strict": false,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "sourceMap": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -25,6 +25,7 @@
     "paths": {
       "src/*": ["./src/*"],
       "components/*": ["./src/components/*"],
+      "contexts": ["./src/contexts"],
       "contexts/*": ["./src/contexts/*"],
       "interface/*": ["./src/interface/*"],
       "tailwind": ["./src/tailwind"],

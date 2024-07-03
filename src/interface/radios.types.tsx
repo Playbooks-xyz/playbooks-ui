@@ -1,14 +1,19 @@
 import { BtnType, HtmlType, InputType, LabelType } from 'types';
 
-export type iRadioWrapper = BtnType;
-
 export type iRadio = HtmlType & {
-	checked?: boolean;
-	onClick: (v: number) => void;
+	title: string;
+	text?: string;
+	active?: boolean;
+	value: any;
+	onClick: (v: any) => void;
 };
 
-export type iRadioInput = InputType & {
-	checked?: boolean;
+export type iRadioWrapper = BtnType;
+
+export type iRadioInput = HtmlType & {
+	name?: string;
+	active?: boolean;
+	value: boolean;
 };
 
 export type iRadioLabel = LabelType;

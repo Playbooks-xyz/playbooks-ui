@@ -18,6 +18,16 @@ export type iFormCheckbox = HtmlType & {
 	readOnly?: boolean;
 };
 
+export type iFormRange = HtmlType & {
+	id?: string;
+	value?: number;
+	min?: number;
+	max?: number;
+	step?: number;
+	onChange: (e: any) => void;
+	readOnly?: boolean;
+};
+
 export type iFormFile = HtmlType & {
 	id?: string;
 	type?: string;
@@ -40,6 +50,14 @@ export type iFormInput = HtmlType & {
 	onFocus: (e: any) => void;
 	readOnly?: boolean;
 };
+
+export type iFormInputCurrency = iFormInput & {
+	prefix: string
+}
+
+export type iFormInputMask = iFormInput & {
+	mask: string
+}
 
 export type iFormSelect = HtmlType & {
 	id?: string;

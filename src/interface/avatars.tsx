@@ -40,7 +40,6 @@ export const AvatarImg = ({
 	name = 'AvatarImg',
 	size = 'md',
 	src,
-	icon,
 	alt,
 	className,
 	...tailwind

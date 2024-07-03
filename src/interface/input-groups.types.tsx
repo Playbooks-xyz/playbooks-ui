@@ -5,7 +5,7 @@ export type iInputGroup = HtmlType & {
 };
 
 export type iInputAddon = HtmlType & {
-	icon?: string;
+	icon?: any;
 	html?: string;
 	taskRunning?: boolean;
 };

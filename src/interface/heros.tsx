@@ -6,17 +6,18 @@ import {
 	iHeroActions,
 	iHeroBg,
 	iHeroBody,
+	iHeroIcon,
+	iHeroImg,
 	iHeroPretitle,
 	iHeroSubtitle,
 	iHeroText,
-	iHeroThumbnail,
 	iHeroTitle,
 } from 'interface/heros.types';
 import { Div, Img } from 'interface/html';
 import { FadIcon } from 'interface/icons';
 import { borderProps, computeHeroSize, computeThumbnailSize, tailwindClassBuilder } from 'tailwind';
 
-export const Hero = forwardRef(({ id, name = 'Hero', size, className, children, ...tailwind }: iHero, ref) => {
+export const Hero = forwardRef<any>(({ id, name = 'Hero', size, className, children, ...tailwind }: iHero, ref) => {
 	const base = {
 		position: 'relative',
 		bgColor: 'bg-gray-50 dark:bg-gray-900',
@@ -46,29 +47,7 @@ export const HeroBg = ({ id, name = 'HeroBg', className, children, ...tailwind }
 	return <Div {...props}>{children}</Div>;
 };
 
-export const HeroIcon = ({ id, name = 'HeroIcon', size, icon, className, ...tailwind }: iHeroThumbnail) => {
-	const base = {
-		bgColor: 'bg-gray-100 dark:bg-gray-800',
-		border: '',
-		...borderProps,
-		borderRadius: 'rounded-lg',
-		color: 'gray-500',
-		display: 'flex-middle',
-		flex: 'shrink-0',
-		overflow: 'o-hidden',
-		size: computeThumbnailSize(size || 'lg'),
-		spacing: 'p-4',
-	};
-	const props = { ...base, ...tailwind, className, name };
-
-	return (
-		<Div {...props}>
-			<FadIcon icon={icon || 'code'} fontSize='text-3xl' />
-		</Div>
-	);
-};
-
-export const HeroImg = ({ id, name = 'HeroImg', size = 'lg', icon, src, className, ...tailwind }: iHeroThumbnail) => {
+export const HeroIcon = ({ id, name = 'HeroImg', size = 'lg', icon, className, ...tailwind }: iHeroIcon) => {
 	const base = {
 		aspect: 'aspect-[1/1]',
 		bgColor: 'bg-gray-100 dark:bg-gray-800',
@@ -83,7 +62,25 @@ export const HeroImg = ({ id, name = 'HeroImg', size = 'lg', icon, src, classNam
 	};
 	const props = { ...base, ...tailwind, className, name };
 
-	return <Div {...props}>{src ? <Img src={src} width='w-full' /> : <HeroIcon icon={icon} {...props} />}</Div>;
+	return <Div {...props}><HeroIcon icon={icon} {...props} /></Div>;
+};
+
+export const HeroImg = ({ id, name = 'HeroImg', size = 'lg', src, className, ...tailwind }: iHeroImg) => {
+	const base = {
+		aspect: 'aspect-[1/1]',
+		bgColor: 'bg-gray-100 dark:bg-gray-800',
+		border: '',
+		...borderProps,
+		borderRadius: 'rounded-xl',
+		color: 'gray-500',
+		display: 'flex-middle',
+		flex: 'shrink-0',
+		overflow: 'o-hidden',
+		size: computeThumbnailSize(size),
+	};
+	const props = { ...base, ...tailwind, className, name };
+
+	return <Div {...props}><Img src={src} width='w-full' /></Div>;
 };
 
 export const HeroBody = ({ id, name = 'HeroBody', className, children, ...tailwind }: iHeroBody) => {

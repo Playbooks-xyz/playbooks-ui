@@ -3,7 +3,7 @@ import { Range } from 'react-range';
 
 import { tailwindClassBuilder } from 'tailwind';
 
-export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange, tailwind = {} }) => {
+export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange }) => {
 	return (
 		<Range
 			step={step}
@@ -17,7 +17,7 @@ export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange, 
 	);
 };
 
-export const RangeSliders = ({ min = 0, max = 100, step = 1, values, onChange, onNext, tailwind = {} }) => {
+export const RangeSliders = ({ min = 0, max = 100, step = 1, values, onChange, onNext }) => {
 	return (
 		<Range
 			step={step}
@@ -35,7 +35,7 @@ export const RangeSliders = ({ min = 0, max = 100, step = 1, values, onChange, o
 	);
 };
 
-export const RangeSliderTrack = forwardRef(({ values, min, max, props, children, onNext }, ref) => {
+export const RangeSliderTrack = forwardRef<any, any>(({ values, min, max, props, children, onNext }, ref) => {
 	const base = {
 		bgColor: 'bg-gray-100 dark:bg-gray-800',
 		borderRadius: 'rounded-full',
@@ -65,7 +65,7 @@ export const RangeSliderTrack = forwardRef(({ values, min, max, props, children,
 	);
 });
 
-export const RangeSliderThumb = forwardRef(({ isDragged, ...props }, ref) => {
+export const RangeSliderThumb = forwardRef<any, any>(({ isDragged, ...props }, ref) => {
 	const base = {
 		size: 'w-6 h-6',
 		bgColor: isDragged ? 'bg-blue-500 dark:bg-orange-500' : 'bg-gray-300 dark:bg-gray-600',

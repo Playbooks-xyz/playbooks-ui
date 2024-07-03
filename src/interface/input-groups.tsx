@@ -7,7 +7,6 @@ import { borderProps } from 'tailwind';
 export const InputGroup = ({
 	id,
 	name = 'InputGroup',
-	variant,
 	active,
 	className,
 	children,

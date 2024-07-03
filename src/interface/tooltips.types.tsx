@@ -2,10 +2,10 @@ import { HtmlType } from 'types';
 import { TailwindPlacementOpts } from 'types/tailwind.types';
 
 export type iTooltip = HtmlType & {
-	show?: boolean;
+	open?: boolean;
 	html?: string;
 	onHover?: () => void;
-	placement?: TailwindPlacementOpts;
+	placement?: any;
 };
 
 export type iTooltipBody = HtmlType & {

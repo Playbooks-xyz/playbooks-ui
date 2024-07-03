@@ -1,5 +1,6 @@
 import {
 	iCard,
+	iCardActions,
 	iCardBody,
 	iCardFooter,
 	iCardHeader,
@@ -15,7 +16,7 @@ import { Div, Img } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { borderProps } from 'tailwind';
 
-export const Card = ({ id, name = 'Card', type, active, className, children, ...tailwind }: iCard) => {
+export const Card = ({ id, name = 'Card', className, children, ...tailwind }: iCard) => {
 	const base = {
 		animation: 'transition-all ease',
 		border: 'border',

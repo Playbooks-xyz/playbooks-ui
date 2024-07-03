@@ -1,4 +1,4 @@
-import { iBreadcrumbBtn, iBreadcrumbItem, iBreadcrumbLink, iBreadcrumbs } from 'interface/types/breadcrumbs.types';
+import { iBreadcrumbBtn, iBreadcrumbItem, iBreadcrumbLink, iBreadcrumbs } from 'interface/breadcrumbs.types';
 import { TextBtn } from 'interface/buttons';
 import { Li } from 'interface/html';
 import { FarIcon } from 'interface/icons';

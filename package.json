@@ -13,20 +13,20 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/src/index.js",
+      "types": "./dist/src/index.d.ts"
     },
     "./accordions": {
-      "import": "./dist/accordions.js",
-      "types": "./dist/accordions.d.ts"
+      "import": "./dist/src/interface/accordions.js",
+      "types": "./dist/src/interface/accordions.d.ts"
     },
     "./dist/styles.css": "./dist/style.css"
   },
-  "types": "./dist/index.d.ts",
+  "types": "./dist/src/index.d.ts",
   "scripts": {
     "start": "vite build --mode development --watch --minify false",
     "build": "vite build --mode production --minify false",
-    "build:ts": "vite build --minify false && dts-bundle-generator --config dts.config.ts",
+    "build:ts": "dts-bundle-generator --config dts.config.ts",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "format": "prettier src",

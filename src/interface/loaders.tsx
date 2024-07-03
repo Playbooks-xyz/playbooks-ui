@@ -18,7 +18,7 @@ export const ModalLoader = ({
 	return (
 		<Div {...props}>
 			<Span>
-				<Oval size='w-14 h-14' stroke='stroke-gray-600 dark:stroke-gray-300' className='mb-4' />
+				<Oval size='w-14 h-14' className='stroke-gray-600 dark:stroke-gray-300  mb-4' />
 				<Div spacing='space-y-1' className='text-center'>
 					{title && <H5 fontWeight='font-bold'>{title}</H5>}
 					{message && <Small className='tracking-wide gray-600'>{message}</Small>}
@@ -36,7 +36,7 @@ export const PageLoader = ({
 	message = 'Loading dashboard...',
 	className,
 	children,
-	tailwind,
+	...tailwind
 }: iPageLoader) => {
 	const base = {
 		bgColor: 'bg-white dark:bg-gray-900',
@@ -46,13 +46,13 @@ export const PageLoader = ({
 		spacing: 'h-full w-full',
 		zIndex: 'z-50',
 	};
-	const props = { ...base, ...tailwind?.div, className, name };
+	const props = { ...base, ...tailwind, className, name };
 
 	return (
 		<Div {...props}>
-			<Span display='flex-start' space='space-x-8' {...tailwind?.span}>
-				<Oval size='w-12 h-12' stroke='stroke-gray-600 dark:stroke-gray-300' {...tailwind?.spinner} />
-				<Div align='text-left' {...tailwind?.body}>
+			<Span display='flex-start' space='space-x-8'>
+				<Oval size='w-12 h-12' className='stroke-gray-600 dark:stroke-gray-300'/>
+				<Div align='text-left'>
 					{title && (
 						<Font size='h5' fontWeight='font-bold'>
 							{title}
@@ -80,7 +80,7 @@ export const SectionLoader = ({
 
 	return (
 		<Div {...props}>
-			<Oval size='w-12 h-12' stroke='stroke-gray-600 dark:stroke-gray-300' className='mb-4' />
+			<Oval size='w-12 h-12' className='stroke-gray-600 dark:stroke-gray-300 mb-4' />
 			<Div spacing='space-y-1' className='text-center'>
 				{title && <H5 fontWeight='font-bold'>{title}</H5>}
 				{message && <Small className='tracking-wide gray-600'>{message}</Small>}

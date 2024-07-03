@@ -42,11 +42,11 @@ export const Tooltip = ({
 	};
 
 	const onMouseEnter = () => {
-		return onHover ? onHover(true) : null;
+		return onHover ? onHover() : null;
 	};
 
 	const onMouseLeave = () => {
-		onHover ? onHover(false) : null;
+		onHover ? onHover() : null;
 	};
 
 	// Render

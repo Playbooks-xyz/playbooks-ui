@@ -5,7 +5,7 @@ export type iTabWrapper = HtmlType;
 export type iTabSelect = HtmlType & {
 	tabs?: string[];
 	activeTab?: string;
-	onSelect: (v: string) => void;
+	onSelect: (v: any) => void;
 };
 
 export type iTabs = HtmlType & {

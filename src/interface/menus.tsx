@@ -9,6 +9,7 @@ import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
 import {
 	iMenu,
+	iMenuBackdrop,
 	iMenuBtn,
 	iMenuItem,
 	iMenuLink,
@@ -20,7 +21,7 @@ import {
 } from 'interface/menus.types';
 import { borderProps, tailwindClassBuilder } from 'tailwind';
 
-export const Menu = ({ id, name = 'Menu', open, setOpen, className, children, ...tailwind }: iMenu) => {
+export const Menu = ({ id, name = 'Menu', open, onClose, className, children, ...tailwind }: iMenu) => {
 	const base = { zIndex: 'z-20' };
 	const props = { ...base, ...tailwind, className, name };
 	const { toggleScroll } = useInterface();
@@ -33,7 +34,7 @@ export const Menu = ({ id, name = 'Menu', open, setOpen, className, children, ..
 	}, [open]);
 
 	useEffect(() => {
-		setOpen(false);
+		onClose();
 	}, [router.asPath]);
 
 	useEffect(() => {
@@ -52,7 +53,7 @@ export const Menu = ({ id, name = 'Menu', open, setOpen, className, children, ..
 	};
 
 	const onKeyDown = e => {
-		if (e.keyCode === 27) setOpen(false);
+		if (e.keyCode === 27) onClose();
 	};
 
 	// Render
@@ -61,12 +62,12 @@ export const Menu = ({ id, name = 'Menu', open, setOpen, className, children, ..
 			<Div id={id} ref={ref} {...props}>
 				{children}
 			</Div>
-			<MenuBackdrop open={open} onClose={() => setOpen(false)} />
+			<MenuBackdrop open={open} onClose={onClose} />
 		</Fragment>
 	);
 };
 
-export const MenuBackdrop = ({ id, name = 'MenuBackdrop', open, onClose, className, children, ...tailwind }: iMenu) => {
+export const MenuBackdrop = ({ id, name = 'MenuBackdrop', open, onClose, className, children, ...tailwind }: iMenuBackdrop) => {
 	const base = {
 		bgColor: 'bg-black dark:bg-gray-800',
 		bgOpacity: 'bg-opacity-75',
@@ -115,27 +116,6 @@ export const MenuToggle = ({
 	);
 };
 
-export const MenuMenuWrapper = ({ id, name = 'MenuMenuWrapper', open, setHide, className, children, ...tailwind }) => {
-	const base = {
-		position: 'absolute',
-		width: 'w-full',
-		transition: 'transition-all',
-		zIndex: 'z-20',
-	};
-	const [animation, setAnimation] = useState('opacity-0 scale-90 -translate-y-4');
-	const props = { ...base, ...tailwind, animation, className };
-
-	return (
-		<Fade
-			show={open}
-			timeout={{ enter: 0, exit: 100 }}
-			onEntered={() => setAnimation('opacity-100 translate-y-0')}
-			onExiting={() => setAnimation('opacity-0 -translate-y-4')}>
-			<Div {...props}>{children}</Div>
-		</Fade>
-	);
-};
-
 export const MenuMenu = ({ id, name = 'MenuMenu', open, className, children, ...tailwind }: iMenuMenu) => {
 	const base = {
 		bgColor: 'bg-white dark:bg-gray-900',
@@ -158,6 +138,27 @@ export const MenuMenu = ({ id, name = 'MenuMenu', open, className, children, ...
 				{children}
 			</div>
 		</MenuMenuWrapper>
+	);
+};
+
+export const MenuMenuWrapper = ({ id, name = 'MenuMenuWrapper', open, className, children, ...tailwind }: iMenuMenu) => {
+	const base = {
+		position: 'absolute',
+		width: 'w-full',
+		transition: 'transition-all',
+		zIndex: 'z-20',
+	};
+	const [animation, setAnimation] = useState('opacity-0 scale-90 -translate-y-4');
+	const props = { ...base, ...tailwind, animation, className };
+
+	return (
+		<Fade
+			show={open}
+			timeout={{ enter: 0, exit: 100 }}
+			onEntered={() => setAnimation('opacity-100 translate-y-0')}
+			onExiting={() => setAnimation('opacity-0 -translate-y-4')}>
+			<Div {...props}>{children}</Div>
+		</Fade>
 	);
 };
 
@@ -209,7 +210,6 @@ export const MenuItem = ({ id, name = 'MenuItem', className, children, ...tailwi
 export const MenuBtn = ({
 	id,
 	name = 'MenuBtn',
-	type,
 	active,
 	onClick,
 	taskRunning,
@@ -227,7 +227,7 @@ export const MenuBtn = ({
 	);
 };
 
-export const MenuLink = ({ id, name = 'MenuLink', type, href = '', className, children, ...tailwind }: iMenuLink) => {
+export const MenuLink = ({ id, name = 'MenuLink', href = '', className, children, ...tailwind }: iMenuLink) => {
 	const base = { align: 'text-left', display: 'flex-start', width: 'w-full' };
 	const props = { ...base, ...tailwind, className, name };
 

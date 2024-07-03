@@ -23,7 +23,7 @@ export const TabSelect = ({
 	const base = { border: 'border-1', borderRadius: '', sm: 'sm:hidden' };
 	const props = { ...base, ...tailwind, className, name };
 
-	return <FormSelect value={activeTab} options={tabs} onChange={e => onSelect(e.target.value)} {...props} />;
+	return <FormSelect value={activeTab} options={tabs} onChange={onSelect} {...props} />;
 };
 
 export const Tabs = ({ id, name = 'Tabs', activeTab, tabs, onSelect, className, children, ...tailwind }: iTabs) => {

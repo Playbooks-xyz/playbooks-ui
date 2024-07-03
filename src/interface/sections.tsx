@@ -13,10 +13,10 @@ import {
 	iSectionSubtitle,
 	iSectionText,
 	iSectionTitle,
-} from 'interface/interface/sections.types';
+} from 'interface/sections.types';
 import { borderProps, computeSectionSize, tailwindClassBuilder } from 'tailwind';
 
-export const Section = forwardRef(({ id, name = 'Section', className, children, ...tailwind }: iSection, ref) => {
+export const Section = forwardRef<any>(({ id, name = 'Section', className, children, ...tailwind }: iSection, ref) => {
 	const base = {
 		bgColor: 'bg-white dark:bg-gray-900',
 		border: 'border',

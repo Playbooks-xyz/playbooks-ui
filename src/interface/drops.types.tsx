@@ -8,9 +8,14 @@ export type iDrop = HtmlType & {
 export type iDropToggle = HtmlType & {
 	type?: string;
 	icon?: string;
+	nextIcon?: string;
 };
 
 export type iDropMenu = HtmlType & {
+	open: boolean;
+};
+
+export type iDropMenuWrapper = HtmlType & {
 	open: boolean;
 };
 
@@ -25,12 +30,14 @@ export type iDropList = HtmlType;
 export type iDropItem = HtmlType;
 
 export type iDropBtn = BtnType & {
+	type?: string;
 	icon?: string;
 	tabIndex?: number;
 	onClick: () => void;
 };
 
 export type iDropLink = LinkType & {
+	type?: string;
 	href: string;
 	icon?: string;
 	tabIndex?: number;

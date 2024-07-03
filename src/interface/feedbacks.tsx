@@ -30,8 +30,6 @@ export const Feedback = ({ id, name = 'Feedback', className, children, ...tailwi
 export const FeedbackHeader = ({
 	id,
 	name = 'FeedbackHeader',
-	icon,
-	iconSize,
 	className,
 	children,
 	...tailwind
@@ -41,7 +39,6 @@ export const FeedbackHeader = ({
 
 	return (
 		<Div {...props}>
-			{icon && <FeedbackIcon icon={icon} fontSize={iconSize} />}
 			{children}
 		</Div>
 	);

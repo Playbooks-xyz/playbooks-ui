@@ -1,11 +1,22 @@
-import { HtmlType } from 'types';
+import { HtmlType, TailwindType } from 'types';
 
-export type iModal = HtmlType & {
-	open?: string;
+export type iModalWrapper = HtmlType & {
+	open?: boolean;
 	onClose?: () => void;
+	tailwind: any
 };
 
-export type iModalBackdrop = HtmlType;
+export type iModal = HtmlType & {
+	open?: boolean;
+	onClose?: () => void;
+	tailwind: any
+};
+
+export type iModalBackdrop = HtmlType & {
+	open: boolean;
+	onClose?: () => void;
+	tailwind: any
+};
 
 export type iModalHeader = HtmlType & {
 	onClose?: () => void;

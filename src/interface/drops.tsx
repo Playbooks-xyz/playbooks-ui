@@ -11,6 +11,7 @@ import {
 	iDropLink,
 	iDropList,
 	iDropMenu,
+	iDropMenuWrapper,
 	iDropSubtitle,
 	iDropTitle,
 	iDropToggle,
@@ -85,27 +86,6 @@ export const DropToggle = ({
 	}
 };
 
-export const DropMenuWrapper = ({ id, name = 'DropMenuWrapper', open, className, children, ...tailwind }) => {
-	const base = {
-		position: 'absolute',
-		width: 'w-full',
-		transition: 'transition-all',
-		zIndex: 'z-10',
-	};
-	const [animation, setAnimation] = useState('opacity-0 scale-90 translate-y-4');
-	const props = { ...base, ...tailwind, animation, className };
-
-	return (
-		<Fade
-			show={open}
-			timeout={{ enter: 0, exit: 100 }}
-			onEntered={() => setAnimation('opacity-100 scale-100 translate-y-0')}
-			onExiting={() => setAnimation('opacity-0 scale-90 translate-y-4')}>
-			<Div {...props}>{children}</Div>
-		</Fade>
-	);
-};
-
 export const DropMenu = ({ id, name = 'DropMenu', open, className, children, ...tailwind }: iDropMenu) => {
 	const base = {
 		bgColor: 'bg-white dark:bg-gray-900',
@@ -128,6 +108,27 @@ export const DropMenu = ({ id, name = 'DropMenu', open, className, children, ...
 				{children}
 			</div>
 		</DropMenuWrapper>
+	);
+};
+
+export const DropMenuWrapper = ({ id, name = 'DropMenuWrapper', open, className, children, ...tailwind }: iDropMenuWrapper) => {
+	const base = {
+		position: 'absolute',
+		width: 'w-full',
+		transition: 'transition-all',
+		zIndex: 'z-10',
+	};
+	const [animation, setAnimation] = useState('opacity-0 scale-90 translate-y-4');
+	const props = { ...base, ...tailwind, animation, className };
+
+	return (
+		<Fade
+			show={open}
+			timeout={{ enter: 0, exit: 100 }}
+			onEntered={() => setAnimation('opacity-100 scale-100 translate-y-0')}
+			onExiting={() => setAnimation('opacity-0 scale-90 translate-y-4')}>
+			<Div {...props}>{children}</Div>
+		</Fade>
 	);
 };
 
@@ -186,7 +187,7 @@ export const DropItem = ({ id, name = 'DropItem', className, children, ...tailwi
 export const DropBtn = ({
 	id,
 	name = 'DropBtn',
-	type,
+	type = 'accent',
 	active,
 	onClick,
 	taskRunning,
@@ -201,12 +202,12 @@ export const DropBtn = ({
 		case 'basic':
 			return <Btn {...props} />;
 
-		default:
+		case 'accent':
 			return <AccentBtn {...props} />;
 	}
 };
 
-export const DropLink = ({ id, name = 'DropLink', type, href = '', className, children, ...tailwind }: iDropLink) => {
+export const DropLink = ({ id, name = 'DropLink', type = 'accent', href = '', className, children, ...tailwind }: iDropLink) => {
 	const base = { align: 'text-left', display: 'flex-start', space: 'space-x-4', width: 'w-full' };
 	const props = { ...base, ...tailwind, className, name, href, children };
 
@@ -215,9 +216,6 @@ export const DropLink = ({ id, name = 'DropLink', type, href = '', className, ch
 			return <Link {...props} />;
 
 		case 'accent':
-			return <AccentLink {...props} />;
-
-		default:
 			return <AccentLink {...props} />;
 	}
 };

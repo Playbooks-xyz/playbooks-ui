@@ -9,12 +9,12 @@ export const TagsWrapper = ({ id, name = 'TagsWrapper', className, children, ...
 	return <Div {...props}>{children}</Div>;
 };
 
-export const Tag = ({ id, name = 'Tag', size = 'sm', active, className, children, ...tailwind }: iTag) => {
+export const Tag = ({ id, name = 'Tag', size = 'sm', className, children, ...tailwind }: iTag) => {
 	const base = {
 		bgColor: 'bg-gray-200 dark:bg-gray-700',
 		bgOpacity: 'bg-opacity-50 dark:bg-opacity-50',
 		borderColor: 'border-gray-500 dark:border-gray-400',
-		borderOpacity: active ? '' : 'border-opacity-50',
+		borderOpacity: 'border-opacity-50',
 		borderRadius: 'rounded-md',
 		color: 'gray-500 dark:gray-300',
 		display: 'flex-between-inline',

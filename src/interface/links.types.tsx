@@ -9,4 +9,5 @@ export type iLink = HtmlType & {
 	icon?: string;
 	nextIcon?: string;
 	target?: '_self' | '_blank';
+	taskRunning?: boolean;
 };
