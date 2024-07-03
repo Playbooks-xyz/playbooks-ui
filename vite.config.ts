@@ -12,6 +12,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, "src/index.tsx"),
       formats: ['es'],
+      name: 'playbooks-interface',
       fileName: (format, entryName) => `${entryName}.js`,
     },
     rollupOptions: {
@@ -28,7 +29,7 @@ export default defineConfig({
       plugins: [peerDepsExternal()]
     },
   },
-  plugins: [react(), dts({ strictOutput: false })],
+  plugins: [react()],
   css: {
     postcss: {
       plugins: [tailwindcss]
