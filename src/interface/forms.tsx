@@ -13,7 +13,7 @@ import {
 	iFormSelect,
 	iFormText,
 	iFormTextArea,
-} from 'types/forms.types';
+} from 'interface/forms.types';
 import { Div, Span } from 'interface/html';
 import { checkboxProps, inputProps, rangeProps, tailwindClassBuilder } from 'tailwind';
 

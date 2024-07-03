@@ -5,21 +5,30 @@
   "license": "ISC",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs.js"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
     },
-    "./accordions": {
-      "import": "./dist/accordions.js",
-      "require": "./dist/accordions.cjs.js"
+    "./text-title": {
+      "import": "./dist/test-title.es.js",
+      "require": "./dist/test-title.cjs.js",
+      "types": "./dist/interface/test-title.d.ts"
+    },
+    "./text-text": {
+      "import": "./dist/test-text.es.js",
+      "require": "./dist/test-text.cjs.js",
+      "types": "./dist/interface/test-text.d.ts"
     }
   },
   "scripts": {
-    "start": "vite build --mode development --watch --sourcemap --minify false",
+    "start": "vite build --mode development --watch --minify false",
     "build": "vite build --mode production --minify false",
-    "build:typescript": "tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "build:ts": "vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "format": "prettier src",
@@ -70,10 +79,5 @@
     "tslib": "^2.4.1",
     "typescript": "^4.9.4",
     "vite": "^4.0.0"
-  },
-  "peerDependencies": {
-    "next": ">=9.5.3",
-    "react": ">=16.13.1",
-    "react-dom": ">=16.13.1"
   }
 }

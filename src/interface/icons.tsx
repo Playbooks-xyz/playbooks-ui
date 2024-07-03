@@ -1,11 +1,11 @@
 import { FabWrapper, FadWrapper, FarWrapper } from 'components/fa-wrapper';
 import { Div, Img } from 'interface/html';
-import { iIcon } from 'types/icons.types';
+import { iIcon } from 'interface/icons.types';
 import { tailwindClassBuilder } from 'tailwind';
 import { isObject } from 'utils/helpers';
 
-export const Icon = ({ id, name = 'Icon', type, icon, src, className, ...tailwind }: iIcon) => {
-	const props = { type, icon, src, className, ...tailwind };
+export const Icon = ({ id, name = 'Icon', type, icon, className, ...tailwind }: iIcon) => {
+	const props = { type, icon, className, ...tailwind };
 
 	switch (type) {
 		case 'fab':
@@ -39,7 +39,7 @@ export const FabIcon = ({ id, name = 'FabIcon', icon, className, ...tailwind }: 
 	return <FabWrapper icon={icon} className={classes} />;
 };
 
-export const FadIcon = ({ id, name = 'FadIcon', icon, src, className, ...tailwind }: iIcon) => {
+export const FadIcon = ({ id, name = 'FadIcon', icon, className, ...tailwind }: iIcon) => {
 	const base = { borderRadius: 'rounded-sm', color: 'text-inherit', flex: 'shrink-0' };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -47,7 +47,7 @@ export const FadIcon = ({ id, name = 'FadIcon', icon, src, className, ...tailwin
 	return <FadWrapper icon={icon} className={classes} />;
 };
 
-export const FarIcon = ({ id, name = 'FarIcon', icon, src, className, ...tailwind }: iIcon) => {
+export const FarIcon = ({ id, name = 'FarIcon', icon, className, ...tailwind }: iIcon) => {
 	const base = { borderRadius: 'rounded-sm', color: 'text-inherit', flex: 'shrink-0' };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 

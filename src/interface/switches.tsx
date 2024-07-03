@@ -8,7 +8,7 @@ import {
 	iSwitchInner,
 	iSwitchLabel,
 	iSwitchToggle,
-} from 'types/switches.types';
+} from 'interface/switches.types';
 import { tailwindClassBuilder } from 'tailwind';
 
 export const SwitchGroup = ({ id, name = 'SwitchGroup', className, children, ...tailwind }: iSwitchGroup) => {

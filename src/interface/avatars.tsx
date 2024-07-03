@@ -6,7 +6,7 @@ import {
 	iAvatarImg,
 	iAvatarText,
 	iAvatarTitle,
-} from 'types/avatars.types';
+} from 'interface/avatars.types';
 import { Font } from 'interface/fonts';
 import { Div, Img, Span } from 'interface/html';
 import { computeAvatarSize } from 'tailwind';

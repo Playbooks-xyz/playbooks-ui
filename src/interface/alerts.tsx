@@ -1,4 +1,4 @@
-import { iAlert, iAlertActions, iAlertBody, iAlertIcon, iAlertText, iAlertTitle } from 'types/alerts.types';
+import { iAlert, iAlertActions, iAlertBody, iAlertIcon, iAlertText, iAlertTitle } from 'interface/alerts.types';
 import { H5, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { FadIcon } from 'interface/icons';
@@ -24,7 +24,6 @@ export const AlertIcon = ({
 	id,
 	name = 'AlertIcon',
 	icon = 'question-circle',
-	iconSize = '1x',
 	className,
 	...tailwind
 }: iAlertIcon) => {
@@ -33,7 +32,7 @@ export const AlertIcon = ({
 
 	return (
 		<Div {...props}>
-			<FadIcon icon={icon} size={iconSize} />
+			<FadIcon icon={icon} />
 		</Div>
 	);
 };

@@ -9,7 +9,7 @@ import {
 	iCardSubtitle,
 	iCardText,
 	iCardTitle,
-} from 'types/cards.types';
+} from 'interface/cards.types';
 import { Font, H6, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import { Icon } from 'interface/icons';

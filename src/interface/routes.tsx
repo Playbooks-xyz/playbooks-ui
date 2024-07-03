@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import { Head } from 'interface/head';
 import { Div } from 'interface/html';
-import { iRoute } from 'types/routes.types';
+import { iRoute } from 'interface/routes.types';
 import { capitalize } from 'utils/transforms';
 
 export const Route = ({ id, name = 'Route', title, description, photo, className, children, ...tailwind }: iRoute) => {

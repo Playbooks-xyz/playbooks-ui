@@ -7,7 +7,7 @@ import {
 	iAccordionText,
 	iAccordionTitle,
 	iAccordionToggle,
-} from 'types/accordions.types';
+} from 'interface/accordions.types';
 import { BtnWrapper } from 'interface/buttons';
 import { Font, P } from 'interface/fonts';
 import { Div, Span } from 'interface/html';

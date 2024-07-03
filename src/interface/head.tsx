@@ -1,6 +1,6 @@
 import NHead from 'next/head';
 
-import { iHead } from 'types/head.types';
+import { iHead } from 'interface/head.types';
 
 export const Head = ({
 	type = '',

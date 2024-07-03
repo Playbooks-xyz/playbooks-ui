@@ -1,7 +1,7 @@
 import { animated, useSpring } from 'react-spring';
 
 import { Div } from 'interface/html';
-import { iFrameworkedProgress, iProgress, iProgressBar } from 'types/progress-bars.types';
+import { iFrameworkedProgress, iProgress, iProgressBar } from 'interface/progress-bars.types';
 import { gradientBgColor, tailwindClassBuilder } from 'tailwind';
 
 export const ProgressBar = ({ id, name = 'ProgressBar', className, children, ...tailwind }: iProgressBar) => {

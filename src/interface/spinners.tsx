@@ -1,6 +1,6 @@
 import { Oval as SvgOval, Puff as SvgPuff } from 'svg-loaders-react';
 
-import { iSpinner } from 'types/spinners.types';
+import { iSpinner } from 'interface/spinners.types';
 import { tailwindClassBuilder } from 'tailwind';
 
 export const Oval = ({ id, name = 'Oval', className, ...tailwind }: iSpinner) => {

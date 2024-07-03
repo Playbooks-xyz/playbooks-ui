@@ -3,7 +3,7 @@ import { usePopper } from 'react-popper';
 
 import { Fade } from 'components/animation-wrapper';
 import { Div, Span } from 'interface/html';
-import { iTooltip, iTooltipArrow, iTooltipBody, iTooltipInner } from 'types/tooltips.types';
+import { iTooltip, iTooltipArrow, iTooltipBody, iTooltipInner } from 'interface/tooltips.types';
 import { computeTooltipAnimation } from 'tailwind';
 
 export const Tooltip = ({

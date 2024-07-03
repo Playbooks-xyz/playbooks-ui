@@ -3,7 +3,7 @@ import NLink from 'next/link';
 
 import { Span } from 'interface/html';
 import { Icon } from 'interface/icons';
-import { iLink } from 'types/links.types';
+import { iLink } from 'interface/links.types';
 import { Oval } from 'interface/spinners';
 import {
 	btnAccentProps,

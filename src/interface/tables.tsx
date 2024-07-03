@@ -10,7 +10,7 @@ import {
 	iTableHeader,
 	iTableHeaderRow,
 	iTableRow,
-} from 'types/tables.types';
+} from 'interface/tables.types';
 import { borderProps, tailwindClassBuilder } from 'tailwind';
 import { isObject } from 'utils/helpers';
 

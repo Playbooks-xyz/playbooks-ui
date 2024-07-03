@@ -13,7 +13,7 @@ import {
 	iSectionSubtitle,
 	iSectionText,
 	iSectionTitle,
-} from 'types/interface/sections.types';
+} from 'interface/interface/sections.types';
 import { borderProps, computeSectionSize, tailwindClassBuilder } from 'tailwind';
 
 export const Section = forwardRef(({ id, name = 'Section', className, children, ...tailwind }: iSection, ref) => {

@@ -4,7 +4,9 @@ export type iAlert = HtmlType & {
 	show?: boolean;
 };
 
-export type iAlertIcon = HtmlType;
+export type iAlertIcon = HtmlType & {
+	icon: string;
+};
 
 export type iAlertBody = HtmlType;
 

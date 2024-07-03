@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { useStore, useToast } from "contexts";
 import { env, timeout } from "utils";
-import { isEven, isOdd } from "vite-typescript-npm-package";
+import { TestTitle, TestText } from "playbooks-interface";
 
 const IndexRoute = () => {
   const [loading, setLoading] = useState(false);
@@ -36,9 +36,8 @@ const IndexRoute = () => {
       <div className="text-center">
         <h4>{loading ? "Loading..." : "Hello there!"}</h4>
         {!loading && <p>Welcome to React / Vite / TailwindCSS.</p>}
-        <p>
-          The number {number} is {isEven(number) ? "even" : "odd"}.
-        </p>
+        <TestTitle title='My Title' />
+        <TestText text='Coupled with my text.' />
       </div>
     </div>
   );

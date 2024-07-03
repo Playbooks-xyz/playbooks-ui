@@ -13,7 +13,7 @@ import {
 	iSlideHeader,
 	iSlideTitle,
 	iSlideWrapper,
-} from 'types/slides.types';
+} from 'interface/slides.types';
 import { borderProps, computeSlideAnimation } from 'tailwind';
 
 export const SlideWrapper = ({

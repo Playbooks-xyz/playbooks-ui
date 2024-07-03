@@ -23,6 +23,7 @@ export type iAccordionTitle = HtmlType & {
 
 export type iAccordionBody = HtmlType & {
 	open?: boolean;
+	animate?: boolean;
 };
 
 export type iAccordionText = HtmlType & {

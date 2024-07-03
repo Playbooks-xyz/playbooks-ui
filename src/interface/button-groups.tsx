@@ -1,4 +1,4 @@
-import { iButtonGroup } from 'types/button-groups.types';
+import { iButtonGroup } from 'interface/button-groups.types';
 import { Div } from 'interface/html';
 import { borderProps } from 'tailwind';
 

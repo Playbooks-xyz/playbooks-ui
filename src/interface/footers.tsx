@@ -10,7 +10,7 @@ import {
 	iFooterList,
 	iFooterText,
 	iFooterTitle,
-} from 'types/footers.types';
+} from 'interface/footers.types';
 import { Div, Li, Ul } from 'interface/html';
 import { TextLink } from 'interface/links';
 import { borderProps, tailwindClassBuilder } from 'tailwind';

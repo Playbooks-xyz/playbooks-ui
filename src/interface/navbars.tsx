@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 
 import { Img, Ul } from 'interface/html';
 import { LinkWrapper } from 'interface/links';
-import { iNavbar, iNavbarBrand, iNavbarList } from 'types/navbars.types';
+import { iNavbar, iNavbarBrand, iNavbarList } from 'interface/navbars.types';
 import { borderProps, tailwindClassBuilder } from 'tailwind';
 
 export const Navbar = forwardRef(({ id, name = 'Navbar', className, children, ...tailwind }: iNavbar, ref) => {

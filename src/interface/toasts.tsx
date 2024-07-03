@@ -13,7 +13,7 @@ import {
 	iToastText,
 	iToastTitle,
 	iToastWrapper,
-} from 'types/toasts.types';
+} from 'interface/toasts.types';
 import { timeout } from 'utils/helpers';
 
 export const ToastWrapper = ({ id, name = 'ToastWrapper', className, children, ...tailwind }: iToastWrapper) => {

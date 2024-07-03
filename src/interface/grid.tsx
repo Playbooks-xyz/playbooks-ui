@@ -1,4 +1,4 @@
-import { iCol, iContainer, iGrid } from 'types/grid.types';
+import { iCol, iContainer, iGrid } from 'interface/grid.types';
 import { Div } from 'interface/html';
 import { computeCol, computeContainer } from 'tailwind';
 

@@ -48,10 +48,6 @@ export const chunkArray = (array, chunkSize) => {
 	return chunks;
 };
 
-export const timeElapsed = (startDate, endDate = new Date()) => {
-	return Dayjs(endDate).diff(startDate, 'ms') + 'ms';
-};
-
 export const listBuilder = (count = 1) => {
 	return [...new Array(count)].map((v, i) => i);
 };

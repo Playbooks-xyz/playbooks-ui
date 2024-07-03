@@ -14,7 +14,7 @@ import {
 	iDropSubtitle,
 	iDropTitle,
 	iDropToggle,
-} from 'types/drops.types';
+} from 'interface/drops.types';
 import { H6, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { AccentLink, Link } from 'interface/links';

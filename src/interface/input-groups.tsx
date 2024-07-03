@@ -1,6 +1,6 @@
 import { Div, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
-import { iInputAddon, iInputGroup } from 'types/input-groups.types';
+import { iInputAddon, iInputGroup } from 'interface/input-groups.types';
 import { Oval } from 'interface/spinners';
 import { borderProps } from 'tailwind';
 

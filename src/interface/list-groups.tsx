@@ -1,5 +1,5 @@
 import { Li, Ul } from 'interface/html';
-import { iListGroup, iListItem } from 'types/list-groups.types';
+import { iListGroup, iListItem } from 'interface/list-groups.types';
 
 export const ListGroup = ({ id, name = 'ListGroup', className, children, ...tailwind }: iListGroup) => {
 	const base = {

@@ -1,4 +1,4 @@
-import { iBadge } from 'types/badges.types';
+import { iBadge } from 'interface/badges.types';
 import { Span } from 'interface/html';
 import { borderProps, computeBadgeSize } from 'tailwind';
 

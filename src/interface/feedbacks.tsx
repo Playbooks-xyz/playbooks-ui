@@ -6,7 +6,7 @@ import {
 	iFeedbackIcon,
 	iFeedbackText,
 	iFeedbackTitle,
-} from 'types/feedbacks.types';
+} from 'interface/feedbacks.types';
 import { Font, P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { Icon } from 'interface/icons';

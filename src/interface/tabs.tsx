@@ -1,7 +1,7 @@
 import { AccentBtn, Btn } from 'interface/buttons';
 import { FormSelect } from 'interface/forms';
 import { Div } from 'interface/html';
-import { iTab, iTabPane, iTabPanes, iTabs, iTabSelect, iTabWrapper } from 'types/tabs.types';
+import { iTab, iTabPane, iTabPanes, iTabs, iTabSelect, iTabWrapper } from 'interface/tabs.types';
 
 export const TabWrapper = ({ id, name = 'TabWrapper', className, children, ...tailwind }: iTabWrapper) => {
 	const base = { width: 'w-full' };

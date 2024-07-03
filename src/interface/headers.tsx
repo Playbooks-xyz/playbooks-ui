@@ -1,5 +1,5 @@
 import { Font } from 'interface/fonts';
-import { iHeader, iHeaderActions, iHeaderSubtitle, iHeaderText, iHeaderTitle } from 'types/headers.types';
+import { iHeader, iHeaderActions, iHeaderSubtitle, iHeaderText, iHeaderTitle } from 'interface/headers.types';
 import { Div } from 'interface/html';
 import { borderProps, tailwindClassBuilder } from 'tailwind';
 

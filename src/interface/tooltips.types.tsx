@@ -1,5 +1,5 @@
 import { HtmlType } from 'types';
-import { TailwindPlacementOpts } from 'types/tailwind-type';
+import { TailwindPlacementOpts } from 'types/tailwind.types';
 
 export type iTooltip = HtmlType & {
 	show?: boolean;

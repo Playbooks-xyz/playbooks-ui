@@ -1,5 +1,5 @@
 import { HtmlType } from 'types';
-import { TailwindColType, TailwindContainerType } from 'types/tailwind-type';
+import { TailwindColType, TailwindContainerType } from 'types/tailwind.types';
 
 export type iContainer = HtmlType & TailwindContainerType;
 

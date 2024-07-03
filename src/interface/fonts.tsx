@@ -1,4 +1,4 @@
-import { iFont } from 'types/fonts.types';
+import { iFont } from 'interface/fonts.types';
 import { tailwindClassBuilder } from 'tailwind';
 
 export const Font = (props) => {

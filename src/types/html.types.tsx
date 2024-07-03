@@ -1,19 +1,60 @@
-import { HtmlType, ImgType } from 'types';
+import { TailwindType } from 'types/tailwind.types';
 
-export type iAside = HtmlType;
+export type HtmlType = TailwindType & {
+	id?: string;
+	name?: string;
+	ref?: any;
+	html?: any;
+	tabIndex?: any;
+	onClick?: () => void;
+	onMouseEnter?: () => void;
+	onMouseLeave?: () => void;
+	className?: string;
+	style?: any;
+	children?: any;
+};
 
-export type iBody = HtmlType;
+export type BtnType = HtmlType & {
+	active?: boolean;
+	disabled?: boolean;
+	taskRunning?: boolean;
+};
 
-export type iMain = HtmlType;
+export type ImgType = HtmlType & {
+	fetchPriority?: 'high' | 'low' | 'auto';
+	src?: string;
+	alt?: string;
+};
 
-export type iDiv = HtmlType;
+export type InputType = HtmlType & {
+	checked?: string;
+	defaultChecked?: string;
+	value?: string;
+	defaultValue?: string;
+	onBlur?: () => void;
+	onChange?: () => void;
+	onFocus?: () => void;
+	placeholder?: string;
+	readOnly?: string;
+};
 
-export type iUl = HtmlType;
+export type LabelType = HtmlType & {
+	active?: boolean;
+	htmlFor?: string;
+};
 
-export type iLi = HtmlType;
+export type LinkType = HtmlType & {
+	active?: boolean;
+	href?: string;
+};
 
-export type iSpan = HtmlType;
+export type SelectType = HtmlType & {
+	active?: boolean;
+	value?: string;
+	onSelect: (v: string) => void;
+};
 
-export type iImg = ImgType;
-
-export type iHr = HtmlType;
+export type ToggleType = HtmlType & {
+	active?: boolean;
+	onToggle: () => void;
+};

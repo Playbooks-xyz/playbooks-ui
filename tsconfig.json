@@ -1,17 +1,19 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
-    "rootDir": "./src",
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "rootDir": ".",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
     "jsx": "react-jsx",
     "types": ["vite/client", "node", "react", "jest"],
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "declaration": true,
+    "declarationDir": "dist/dts",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": true,
-    "strict": true,
+    "strict": false,
     "skipLibCheck": false,
     "sourceMap": true,
     "resolveJsonModule": true,
@@ -27,7 +29,7 @@
       "tests/*": ["./tests/*"]
     }
   },
-  "include": ["src", "types"],
+  "include": ["src"],
   "exclude": ["node_modules"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  // "references": [{ "path": "./tsconfig.node.json" }]
 }

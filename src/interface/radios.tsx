@@ -1,6 +1,6 @@
 import { P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
-import { iRadio, iRadioInput, iRadioLabel, iRadioWrapper } from 'types/radios.types';
+import { iRadio, iRadioInput, iRadioLabel, iRadioWrapper } from 'interface/radios.types';
 import { checkboxProps, tailwindClassBuilder } from 'tailwind';
 
 export const RadioWrapper = ({

@@ -17,7 +17,7 @@ import {
 	iMenuSubtitle,
 	iMenuTitle,
 	iMenuToggle,
-} from 'types/menus.types';
+} from 'interface/menus.types';
 import { borderProps, tailwindClassBuilder } from 'tailwind';
 
 export const Menu = ({ id, name = 'Menu', open, setOpen, className, children, ...tailwind }: iMenu) => {

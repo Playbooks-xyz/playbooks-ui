@@ -10,8 +10,10 @@ export default defineConfig({
     lib: {
       entry: [
         path.resolve(__dirname, "src/index.tsx"),
-        path.resolve(__dirname, "src/interface/accordions.tsx"),
+        path.resolve(__dirname, "src/test-title.tsx"),
+        path.resolve(__dirname, "src/test-text.tsx"),
       ],
+      // formats: ['es', 'cjs'],
       fileName: (format, entryName) => `${entryName}.${format}.js`,
     },
     rollupOptions: {
@@ -34,6 +36,8 @@ export default defineConfig({
       tailwind: "/src/tailwind",
       types: "/src/types",
       utils: "/src/utils",
+      "test-title": "/src/test-title",
+      "test-text": "/src/test-text",
     },
   },
 });

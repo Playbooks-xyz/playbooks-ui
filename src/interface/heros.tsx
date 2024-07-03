@@ -11,7 +11,7 @@ import {
 	iHeroText,
 	iHeroThumbnail,
 	iHeroTitle,
-} from 'types/heros.types';
+} from 'interface/heros.types';
 import { Div, Img } from 'interface/html';
 import { FadIcon } from 'interface/icons';
 import { borderProps, computeHeroSize, computeThumbnailSize, tailwindClassBuilder } from 'tailwind';

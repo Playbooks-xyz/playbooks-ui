@@ -1,7 +1,6 @@
 import { forwardRef } from 'react';
-import Image from 'next/image';
 
-import { iAside, iBody, iDiv, iHr, iImg, iMain, iSpan } from 'types/html.types';
+import { iAside, iBody, iDiv, iFrame, iHr, iImg, iMain, iSpan } from 'interface/html.types';
 import { borderProps, tailwindClassBuilder } from 'tailwind';
 import { HtmlType } from 'types';
 
@@ -27,7 +26,7 @@ export const Body = ({ id, name = 'Body', className, children, style, ...tailwin
 	);
 };
 
-export const Main = forwardRef(({ id, name = 'Main', className, children, style, ...tailwind }: iMain, ref) => {
+export const Main = forwardRef<any, iMain>(({ id, name = 'Main', className, children, style, ...tailwind }: iMain, ref) => {
 	const base = { position: 'relative' };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -49,7 +48,7 @@ export const Aside = ({ id, name = 'Aside', className, children, style, ...tailw
 	);
 };
 
-export const Div = forwardRef(
+export const Div = forwardRef<any, iDiv>(
 	(
 		{
 			id,
@@ -87,7 +86,7 @@ export const Div = forwardRef(
 	},
 );
 
-export const Span = forwardRef(
+export const Span = forwardRef<any, iSpan>(
 	({ id, name = 'Span', onClick, onMouseEnter, onMouseLeave, className, children, style, ...tailwind }: iSpan, ref) => {
 		const base = { display: 'inline-block' };
 		const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
@@ -130,29 +129,18 @@ export const Li = ({ id, name = 'Li', className, children, ...tailwind }: HtmlTy
 	);
 };
 
-export const IFrame = ({ id, name = 'Img', src, alt, className, style, ...tailwind }: iImg) => {
-	const base = {};
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+// export const IFrame = ({ id, name = 'Img', src, alt, className, style, ...tailwind }: iFrame) => {
+// 	const base = {};
+// 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
-	return <iframe id={id} data-name={name} src={src} alt={alt} className={classes} style={style} />;
-};
+// 	return <iframe id={id} data-name={name} src={src} alt={alt} className={classes} style={style} />;
+// };
 
 export const Img = ({ id, name = 'Img', src, alt, className, style, ...tailwind }: iImg) => {
 	const base = { display: 'inline-block' };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return <img id={id} data-name={name} src={src} alt={alt} className={classes} style={style} />;
-};
-
-export const NextImg = ({ id, name = 'NextImg', src, alt, className, style, ...tailwind }: iImg) => {
-	const base = { display: 'inline-block' };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-
-	return (
-		<Div className={classes} style={style}>
-			<Image id={id} src={src} alt={alt} fill />
-		</Div>
-	);
 };
 
 export const Hr = ({ id, name = 'Hr', className, children, style, ...tailwind }: iHr) => {

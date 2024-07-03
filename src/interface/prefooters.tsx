@@ -8,7 +8,7 @@ import {
 	iPrefooterSubtitle,
 	iPrefooterText,
 	iPrefooterTitle,
-} from 'types/prefooters.types';
+} from 'interface/prefooters.types';
 import { Section } from 'interface/sections';
 
 export const Prefooter = ({ id, name = 'Prefooter', className, children, ...tailwind }: iPrefooter) => {

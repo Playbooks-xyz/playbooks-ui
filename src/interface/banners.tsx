@@ -1,4 +1,4 @@
-import { iBanner, iBannerActions, iBannerBody, iBannerIcon, iBannerText, iBannerTitle } from 'types/banners.types';
+import { iBanner, iBannerActions, iBannerBody, iBannerIcon, iBannerText, iBannerTitle } from 'interface/banners.types';
 import { H5, H6, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { FadIcon } from 'interface/icons';

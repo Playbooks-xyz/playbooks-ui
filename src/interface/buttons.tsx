@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 
-import { iBtn } from 'types/buttons.types';
+import { iBtn } from 'interface/buttons.types';
 import { Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
