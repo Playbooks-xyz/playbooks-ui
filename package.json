@@ -4,7 +4,7 @@
   "description": "A Vite / TypeScript npm package template",
   "license": "ISC",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "engines": {
     "node": ">=16"
   },
@@ -35,7 +35,9 @@
     "pregit": "git add .",
     "git": "git push --tags",
     "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "links": "npm link ../playbook-web/node_modules/react",
+    "unlinks": "npm link ../playbook-web/node_modules/react"
   },
   "peerDependencies": {
     "next": "14.2.4",

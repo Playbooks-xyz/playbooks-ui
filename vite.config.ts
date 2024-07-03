@@ -11,7 +11,6 @@ export default defineConfig({
     lib: {
       entry: [
         path.resolve(__dirname, "src/index.tsx"),
-        path.resolve(__dirname, "src/interface/accordions.tsx"),
       ],
       formats: ['es'],
       fileName: (format, entryName) => `${entryName}.js`,
