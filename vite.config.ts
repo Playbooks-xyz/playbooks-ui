@@ -10,7 +10,16 @@ export default defineConfig({
   build: {
     // sourcemap: true,
     lib: {
-      entry: path.resolve(__dirname, "src/index.tsx"),
+      entry: [
+        path.resolve(__dirname, "src/index.tsx"),
+        path.resolve(__dirname, "src/interface/accordions.tsx"),
+        path.resolve(__dirname, "src/interface/alerts.tsx"),
+        path.resolve(__dirname, "src/interface/avatars.tsx"),
+        path.resolve(__dirname, "src/interface/badges.tsx"),
+        path.resolve(__dirname, "src/interface/banners.tsx"),
+        path.resolve(__dirname, "src/interface/breadcrumbs.tsx"),
+        path.resolve(__dirname, "src/interface/buttons.tsx"),
+      ],
       formats: ['es'],
       name: 'playbooks-interface',
       fileName: (format, entryName) => `${entryName}.js`,
@@ -24,7 +33,7 @@ export default defineConfig({
           'react/jsx-runtime': 'react/jsx-runtime',
           'tailwindcss': 'tailwindcss'
         },
-        preserveModules: true
+        // preserveModules: true
       },
       plugins: [peerDepsExternal()]
     },

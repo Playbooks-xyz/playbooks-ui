@@ -5,18 +5,19 @@ const config = {
   entries: [
     {
       filePath: "./src/index.tsx",
-      outFile: "./dist/src/index.d.ts",
-      noCheck: false,
+      outFile: "./dist/index.d.ts"
     },
     {
       filePath: "./src/interface/accordions.tsx",
-      outFile: "./dist/src/interface/accordions.d.ts",
-      noCheck: false,
+      outFile: "./dist/accordions.d.ts"
     },
     {
       filePath: "./src/interface/alerts.tsx",
-      outFile: "./dist/src/interface/alerts.d.ts",
-      noCheck: false,
+      outFile: "./dist/alerts.d.ts"
+    },
+    {
+      filePath: "./src/interface/avatars.tsx",
+      outFile: "./dist/avatars.d.ts"
     },
   ],
 };

@@ -4,7 +4,7 @@
   "description": "A Vite / TypeScript npm package template",
   "license": "ISC",
   "type": "module",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "engines": {
     "node": ">=16"
   },
@@ -13,92 +13,92 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/src/index.js",
-      "types": "./dist/src/index.d.ts"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./accordions": {
-      "import": "./dist/src/interface/accordions.js",
-      "types": "./dist/src/interface/accordions.d.ts"
+      "import": "./dist/accordions.js",
+      "types": "./dist/accordions.d.ts"
     },
     "./alerts": {
-      "import": "./dist/src/interface/alerts.js",
-      "types": "./dist/src/interface/alerts.d.ts"
+      "import": "./dist/alerts.js",
+      "types": "./dist/alerts.d.ts"
     },
     "./avatars": {
-      "import": "./dist/src/interface/avatars.js",
-      "types": "./dist/src/interface/avatars.d.ts"
+      "import": "./dist/avatars.js",
+      "types": "./dist/avatars.d.ts"
     },
     "./badges": {
-      "import": "./dist/src/interface/badges.js",
-      "types": "./dist/src/interface/badges.d.ts"
+      "import": "./dist/badges.js",
+      "types": "./dist/badges.d.ts"
     },
     "./banners": {
-      "import": "./dist/src/interface/banners.js",
-      "types": "./dist/src/interface/banners.d.ts"
+      "import": "./dist/banners.js",
+      "types": "./dist/banners.d.ts"
     },
     "./breadrumbs": {
-      "import": "./dist/src/interface/breadrumbs.js",
-      "types": "./dist/src/interface/breadrumbs.d.ts"
+      "import": "./dist/breadrumbs.js",
+      "types": "./dist/breadrumbs.d.ts"
     },
     "./button-groups": {
-      "import": "./dist/src/interface/button-groups.js",
-      "types": "./dist/src/interface/button-groups.d.ts"
+      "import": "./dist/button-groups.js",
+      "types": "./dist/button-groups.d.ts"
     },
     "./buttons": {
-      "import": "./dist/src/interface/buttons.js",
-      "types": "./dist/src/interface/buttons.d.ts"
+      "import": "./dist/buttons.js",
+      "types": "./dist/buttons.d.ts"
     },
     "./cards": {
-      "import": "./dist/src/interface/cards.js",
-      "types": "./dist/src/interface/cards.d.ts"
+      "import": "./dist/cards.js",
+      "types": "./dist/cards.d.ts"
     },
     "./drops": {
-      "import": "./dist/src/interface/drops.js",
-      "types": "./dist/src/interface/drops.d.ts"
+      "import": "./dist/drops.js",
+      "types": "./dist/drops.d.ts"
     },
     "./feedbacks": {
-      "import": "./dist/src/interface/feedbacks.js",
-      "types": "./dist/src/interface/feedbacks.d.ts"
+      "import": "./dist/feedbacks.js",
+      "types": "./dist/feedbacks.d.ts"
     },
     "./fonts": {
-      "import": "./dist/src/interface/fonts.js",
-      "types": "./dist/src/interface/fonts.d.ts"
+      "import": "./dist/fonts.js",
+      "types": "./dist/fonts.d.ts"
     },
     "./footers": {
-      "import": "./dist/src/interface/footers.js",
-      "types": "./dist/src/interface/footers.d.ts"
+      "import": "./dist/footers.js",
+      "types": "./dist/footers.d.ts"
     },
     "./forms": {
-      "import": "./dist/src/interface/forms.js",
-      "types": "./dist/src/interface/forms.d.ts"
+      "import": "./dist/forms.js",
+      "types": "./dist/forms.d.ts"
     },
     "./grid": {
-      "import": "./dist/src/interface/grid.js",
-      "types": "./dist/src/interface/grid.d.ts"
+      "import": "./dist/grid.js",
+      "types": "./dist/grid.d.ts"
     },
     "./head": {
-      "import": "./dist/src/interface/head.js",
-      "types": "./dist/src/interface/head.d.ts"
+      "import": "./dist/head.js",
+      "types": "./dist/head.d.ts"
     },
     "./headers": {
-      "import": "./dist/src/interface/headers.js",
-      "types": "./dist/src/interface/headers.d.ts"
+      "import": "./dist/headers.js",
+      "types": "./dist/headers.d.ts"
     },
     "./heros": {
-      "import": "./dist/src/interface/heros.js",
-      "types": "./dist/src/interface/heros.d.ts"
+      "import": "./dist/heros.js",
+      "types": "./dist/heros.d.ts"
     },
     "./html": {
-      "import": "./dist/src/interface/html.js",
-      "types": "./dist/src/interface/html.d.ts"
+      "import": "./dist/html.js",
+      "types": "./dist/html.d.ts"
     },
     "./icons": {
-      "import": "./dist/src/interface/icons.js",
-      "types": "./dist/src/interface/icons.d.ts"
+      "import": "./dist/icons.js",
+      "types": "./dist/icons.d.ts"
     },
     "./dist/styles.css": "./dist/style.css"
   },
-  "types": "./dist/src/index.d.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "start": "vite build --mode development --watch --minify false",
     "build": "vite build --mode production --minify false",
