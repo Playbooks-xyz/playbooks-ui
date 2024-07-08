@@ -1,6 +1,6 @@
 {
   "name": "@playbooks/interface",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An interface library for Playbooks.",
   "license": "ISC",
   "type": "module",
@@ -9,7 +9,9 @@
   "engines": {
     "node": ">=16"
   },
-  "files": [ "dist" ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite build --mode development --watch --minify false",
     "start": "npm run build && yalc publish",
