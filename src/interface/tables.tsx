@@ -121,7 +121,15 @@ export const TableRow = ({ id, name = 'TableRow', className, children, ...tailwi
 	);
 };
 
-export const TableData = ({ id, name = 'TableData', title = false, value, className, children, ...tailwind }: iTableData) => {
+export const TableData = ({
+	id,
+	name = 'TableData',
+	title = false,
+	value,
+	className,
+	children,
+	...tailwind
+}: iTableData) => {
 	const base = {
 		align: 'text-left',
 		color: title ? 'gray-800 dark:gray-100' : 'gray-600 dark:gray-400',

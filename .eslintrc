@@ -4,7 +4,6 @@
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:eqeqeq-fix/recommended",
-		"plugin:@next/next/recommended",
 		"plugin:prettier/recommended"
 	],
 	"parser": "@typescript-eslint/parser",

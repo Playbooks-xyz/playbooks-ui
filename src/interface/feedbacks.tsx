@@ -27,21 +27,11 @@ export const Feedback = ({ id, name = 'Feedback', className, children, ...tailwi
 	return <Div {...props}>{children}</Div>;
 };
 
-export const FeedbackHeader = ({
-	id,
-	name = 'FeedbackHeader',
-	className,
-	children,
-	...tailwind
-}: iFeedbackHeader) => {
+export const FeedbackHeader = ({ id, name = 'FeedbackHeader', className, children, ...tailwind }: iFeedbackHeader) => {
 	const base = { spacing: 'p-4' };
 	const props = { ...base, ...tailwind, className, name };
 
-	return (
-		<Div {...props}>
-			{children}
-		</Div>
-	);
+	return <Div {...props}>{children}</Div>;
 };
 
 export const FeedbackIcon = ({

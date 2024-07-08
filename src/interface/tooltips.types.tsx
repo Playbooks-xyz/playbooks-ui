@@ -1,5 +1,4 @@
 import { HtmlType } from 'types';
-import { TailwindPlacementOpts } from 'types/tailwind.types';
 
 export type iTooltip = HtmlType & {
 	open?: boolean;

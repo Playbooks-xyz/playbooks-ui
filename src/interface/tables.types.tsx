@@ -21,6 +21,6 @@ export type iTableBody = HtmlType;
 export type iTableRow = HtmlType;
 
 export type iTableData = HtmlType & {
-	title: false,
+	title: false;
 	value?: string | number;
 };

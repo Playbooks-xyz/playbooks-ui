@@ -14,27 +14,28 @@ import {
 	iHeroTitle,
 } from 'interface/heros.types';
 import { Div, Img } from 'interface/html';
-import { FadIcon } from 'interface/icons';
 import { borderProps, computeHeroSize, computeThumbnailSize, tailwindClassBuilder } from 'tailwind';
 
-export const Hero = forwardRef<any, iHero>(({ id, name = 'Hero', size, className, children, ...tailwind }: iHero, ref) => {
-	const base = {
-		position: 'relative',
-		bgColor: 'bg-gray-50 dark:bg-gray-900',
-		...borderProps,
-		display: 'block',
-		size: computeHeroSize(size),
-		spacing: 'py-8',
-		width: 'w-full',
-	};
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+export const Hero = forwardRef<any, iHero>(
+	({ id, name = 'Hero', size, className, children, ...tailwind }: iHero, ref) => {
+		const base = {
+			position: 'relative',
+			bgColor: 'bg-gray-50 dark:bg-gray-900',
+			...borderProps,
+			display: 'block',
+			size: computeHeroSize(size),
+			spacing: 'py-8',
+			width: 'w-full',
+		};
+		const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
-	return (
-		<header ref={ref} data-name={name} className={classes}>
-			{children}
-		</header>
-	);
-});
+		return (
+			<header ref={ref} data-name={name} className={classes}>
+				{children}
+			</header>
+		);
+	},
+);
 
 export const HeroBg = ({ id, name = 'HeroBg', className, children, ...tailwind }: iHeroBg) => {
 	const base = {
@@ -62,7 +63,11 @@ export const HeroIcon = ({ id, name = 'HeroImg', size = 'lg', icon, className, .
 	};
 	const props = { ...base, ...tailwind, className, name };
 
-	return <Div {...props}><HeroIcon icon={icon} {...props} /></Div>;
+	return (
+		<Div {...props}>
+			<HeroIcon icon={icon} {...props} />
+		</Div>
+	);
 };
 
 export const HeroImg = ({ id, name = 'HeroImg', size = 'lg', src, className, ...tailwind }: iHeroImg) => {
@@ -80,7 +85,11 @@ export const HeroImg = ({ id, name = 'HeroImg', size = 'lg', src, className, ...
 	};
 	const props = { ...base, ...tailwind, className, name };
 
-	return <Div {...props}><Img src={src} width='w-full' /></Div>;
+	return (
+		<Div {...props}>
+			<Img src={src} width='w-full' />
+		</Div>
+	);
 };
 
 export const HeroBody = ({ id, name = 'HeroBody', className, children, ...tailwind }: iHeroBody) => {

@@ -12,7 +12,7 @@ export type iFade = {
 	mountOnEnter?: boolean;
 	unmountOnExit?: boolean;
 	children: any;
-}
+};
 
 const Fade = ({
 	show,

@@ -1,4 +1,5 @@
 import NHead from 'next/head';
+
 import { useInterface } from 'contexts';
 import { iHead } from 'interface/head.types';
 
@@ -10,8 +11,8 @@ export const Head = ({ photo, title, description, children }: iHead) => {
 		...interfaceContext.seo,
 		photo,
 		title,
-		description
-	}
+		description,
+	};
 
 	// Render
 	return (

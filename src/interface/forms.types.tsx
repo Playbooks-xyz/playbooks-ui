@@ -52,12 +52,12 @@ export type iFormInput = HtmlType & {
 };
 
 export type iFormInputCurrency = iFormInput & {
-	prefix: string
-}
+	prefix: string;
+};
 
 export type iFormInputMask = iFormInput & {
-	mask: string
-}
+	mask: string;
+};
 
 export type iFormSelect = HtmlType & {
 	id?: string;

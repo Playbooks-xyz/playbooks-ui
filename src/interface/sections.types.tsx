@@ -1,7 +1,7 @@
 import { HtmlType } from 'types';
 
 export type iSection = HtmlType & {
-  ref: any;
+	ref: any;
 };
 
 export type iSectionHeader = HtmlType;

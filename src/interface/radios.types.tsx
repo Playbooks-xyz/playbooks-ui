@@ -1,4 +1,4 @@
-import { BtnType, HtmlType, InputType, LabelType } from 'types';
+import { BtnType, HtmlType, LabelType } from 'types';
 
 export type iRadio = HtmlType & {
 	title: string;

@@ -67,7 +67,15 @@ export const Menu = ({ id, name = 'Menu', open, onClose, className, children, ..
 	);
 };
 
-export const MenuBackdrop = ({ id, name = 'MenuBackdrop', open, onClose, className, children, ...tailwind }: iMenuBackdrop) => {
+export const MenuBackdrop = ({
+	id,
+	name = 'MenuBackdrop',
+	open,
+	onClose,
+	className,
+	children,
+	...tailwind
+}: iMenuBackdrop) => {
 	const base = {
 		bgColor: 'bg-black dark:bg-gray-800',
 		bgOpacity: 'bg-opacity-75',
@@ -141,7 +149,14 @@ export const MenuMenu = ({ id, name = 'MenuMenu', open, className, children, ...
 	);
 };
 
-export const MenuMenuWrapper = ({ id, name = 'MenuMenuWrapper', open, className, children, ...tailwind }: iMenuMenu) => {
+export const MenuMenuWrapper = ({
+	id,
+	name = 'MenuMenuWrapper',
+	open,
+	className,
+	children,
+	...tailwind
+}: iMenuMenu) => {
 	const base = {
 		position: 'absolute',
 		width: 'w-full',

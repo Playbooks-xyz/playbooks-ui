@@ -20,13 +20,7 @@ export const Alert = ({ id, name = 'Alert', show = true, className, children, ..
 	return <Div {...props}>{children}</Div>;
 };
 
-export const AlertIcon = ({
-	id,
-	name = 'AlertIcon',
-	icon = 'question-circle',
-	className,
-	...tailwind
-}: iAlertIcon) => {
+export const AlertIcon = ({ id, name = 'AlertIcon', icon = 'question-circle', className, ...tailwind }: iAlertIcon) => {
 	const base = { color: 'green-500', fontSize: 'text-2xl' };
 	const props = { ...base, ...tailwind, className, name };
 

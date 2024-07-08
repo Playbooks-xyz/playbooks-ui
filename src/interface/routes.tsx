@@ -15,7 +15,7 @@ export const Route = ({ id, name = 'Route', photo, title, description, className
 
 	// Computed
 	const computedTitle = useMemo(() => {
-		const basePath = router.asPath.split('?')[0]
+		const basePath = router.asPath.split('?')[0];
 		const paths = basePath.split('/');
 		if (basePath.length <= 1) return interfaceContext.seo?.title;
 		const formattedPaths = paths.map(v =>

@@ -5,9 +5,9 @@ export type iFeedback = HtmlType;
 export type iFeedbackHeader = HtmlType;
 
 export type iFeedbackIcon = HtmlType & {
-  type?: string;
-  icon: string;
-}
+	type?: string;
+	icon: string;
+};
 
 export type iFeedbackBody = HtmlType;
 

@@ -111,7 +111,14 @@ export const DropMenu = ({ id, name = 'DropMenu', open, className, children, ...
 	);
 };
 
-export const DropMenuWrapper = ({ id, name = 'DropMenuWrapper', open, className, children, ...tailwind }: iDropMenuWrapper) => {
+export const DropMenuWrapper = ({
+	id,
+	name = 'DropMenuWrapper',
+	open,
+	className,
+	children,
+	...tailwind
+}: iDropMenuWrapper) => {
 	const base = {
 		position: 'absolute',
 		width: 'w-full',
@@ -207,7 +214,15 @@ export const DropBtn = ({
 	}
 };
 
-export const DropLink = ({ id, name = 'DropLink', type = 'accent', href = '', className, children, ...tailwind }: iDropLink) => {
+export const DropLink = ({
+	id,
+	name = 'DropLink',
+	type = 'accent',
+	href = '',
+	className,
+	children,
+	...tailwind
+}: iDropLink) => {
 	const base = { align: 'text-left', display: 'flex-start', space: 'space-x-4', width: 'w-full' };
 	const props = { ...base, ...tailwind, className, name, href, children };
 

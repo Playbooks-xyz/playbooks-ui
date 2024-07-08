@@ -12,7 +12,7 @@ export type iInterface = {
 
 export const InterfaceContext = React.createContext<iInterface>(null);
 
-export const InterfaceProvider = ({ meta, children }: {meta: any, children: any }) => {
+export const InterfaceProvider = ({ meta, children }: { meta: any; children: any }) => {
 	const [seo, setSeo] = useState(meta);
 	const ref = useRef(null);
 

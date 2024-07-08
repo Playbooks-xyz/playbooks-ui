@@ -1,4 +1,4 @@
-import 'src/index.css'
+import 'src/index.css';
 
 export * from 'contexts';
 export * from 'interface/accordions';

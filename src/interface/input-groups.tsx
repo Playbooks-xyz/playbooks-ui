@@ -4,14 +4,7 @@ import { iInputAddon, iInputGroup } from 'interface/input-groups.types';
 import { Oval } from 'interface/spinners';
 import { borderProps } from 'tailwind';
 
-export const InputGroup = ({
-	id,
-	name = 'InputGroup',
-	active,
-	className,
-	children,
-	...tailwind
-}: iInputGroup) => {
+export const InputGroup = ({ id, name = 'InputGroup', active, className, children, ...tailwind }: iInputGroup) => {
 	const base = {
 		bgColor: 'bg-gray-white dark:bg-gray-900',
 		border: 'border',

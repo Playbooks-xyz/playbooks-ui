@@ -13,7 +13,7 @@ export type iCardIcon = HtmlType & {
 export type iCardImg = HtmlType & {
 	alt: string;
 	src: string;
-}
+};
 
 export type iCardBody = HtmlType;
 

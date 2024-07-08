@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import { iAside, iBody, iDiv, iFrame, iHr, iImg, iMain, iSpan } from 'interface/html.types';
+import { iAside, iBody, iDiv, iHr, iImg, iMain, iSpan } from 'interface/html.types';
 import { borderProps, tailwindClassBuilder } from 'tailwind';
 import { HtmlType } from 'types';
 
@@ -26,16 +26,18 @@ export const Body = ({ id, name = 'Body', className, children, style, ...tailwin
 	);
 };
 
-export const Main = forwardRef<any, iMain>(({ id, name = 'Main', className, children, style, ...tailwind }: iMain, ref) => {
-	const base = { position: 'relative' };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+export const Main = forwardRef<any, iMain>(
+	({ id, name = 'Main', className, children, style, ...tailwind }: iMain, ref) => {
+		const base = { position: 'relative' };
+		const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
-	return (
-		<main id={id} ref={ref} data-name={name} className={classes} style={style}>
-			{children}
-		</main>
-	);
-});
+		return (
+			<main id={id} ref={ref} data-name={name} className={classes} style={style}>
+				{children}
+			</main>
+		);
+	},
+);
 
 export const Aside = ({ id, name = 'Aside', className, children, style, ...tailwind }: iAside) => {
 	const base = { ...borderProps };

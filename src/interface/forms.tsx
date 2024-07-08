@@ -1,4 +1,4 @@
-import { forwardRef, useRef } from 'react';
+import { forwardRef } from 'react';
 
 import { CurrencyInputWrapper } from 'components/currency-input-wrapper';
 import { MaskedInput } from 'components/masked-input-wrapper';

@@ -51,7 +51,7 @@ export const PageLoader = ({
 	return (
 		<Div {...props}>
 			<Span display='flex-start' space='space-x-8'>
-				<Oval size='w-12 h-12' className='stroke-gray-600 dark:stroke-gray-300'/>
+				<Oval size='w-12 h-12' className='stroke-gray-600 dark:stroke-gray-300' />
 				<Div align='text-left'>
 					{title && (
 						<Font size='h5' fontWeight='font-bold'>

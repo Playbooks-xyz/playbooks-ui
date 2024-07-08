@@ -4,7 +4,7 @@ export type iBreadcrumbs = HtmlType;
 
 export type iBreadcrumbItem = HtmlType & {
 	arrow: boolean;
-}
+};
 
 export type iBreadcrumbBtn = BtnType & {
 	active?: boolean;

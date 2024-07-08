@@ -52,29 +52,14 @@ export const Radio = ({
 		<RadioWrapper active={active} onClick={() => onClick(value)} {...props}>
 			<RadioInput value={active} />
 			<Div space='space-y-1'>
-				{title && (
-					<RadioTitle active={active}>
-						{title}
-					</RadioTitle>
-				)}
-				{text && (
-					<RadioText active={active}>
-						{text}
-					</RadioText>
-				)}
+				{title && <RadioTitle active={active}>{title}</RadioTitle>}
+				{text && <RadioText active={active}>{text}</RadioText>}
 			</Div>
 		</RadioWrapper>
 	);
 };
 
-export const RadioInput = ({
-	id,
-	name = 'RadioInput',
-	value,
-	className,
-	children,
-	...tailwind
-}: iRadioInput) => {
+export const RadioInput = ({ id, name = 'RadioInput', value, className, children, ...tailwind }: iRadioInput) => {
 	const base = { ...checkboxProps(value), borderRadius: 'rounded-full', size: 'w-4 h-4' };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, name, className });
 	return (

@@ -1,7 +1,7 @@
 import { BtnType, HtmlType, ImgType, LinkType } from 'types';
 
 export type iNavbar = HtmlType & {
-  ref: any;
+	ref: any;
 };
 
 export type iNavbarBrand = ImgType & LinkType;

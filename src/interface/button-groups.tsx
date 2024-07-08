@@ -14,7 +14,7 @@ export const BtnGroup = ({ id, name = 'BtnGroup', className, children, ...tailwi
 		divideOpacity: 'divide-opacity-25',
 		flex: 'shrink-0',
 		space: 'space-x-0',
-		width: 'width-inherit'
+		width: 'width-inherit',
 	};
 	const props = { ...base, ...tailwind, className, name };
 
