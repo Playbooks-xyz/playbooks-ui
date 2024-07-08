@@ -5,7 +5,7 @@ import { InterfaceProvider } from '@playbooks/interface/context';
 import type { AppProps } from "next/app";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const Favicon = '/favicon.ico';
+  const Favicon = '/playbooks-favicon.png';
 
   // Render
   return (

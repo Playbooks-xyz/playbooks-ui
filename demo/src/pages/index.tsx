@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Accordion, AccordionToggle, AccordionBody } from '@playbooks/interface';
+import { Accordion, AccordionToggle, AccordionBody } from '@playbooks/interface/accordions';
+import { H6 } from '@playbooks/interface/fonts';
 import { Container } from '@playbooks/interface/grid';
 import { Hero, HeroBody, HeroTitle, HeroSubtitle } from '@playbooks/interface/heros';
-import { Main, Div } from '@playbooks/interface/html';
+import { Main, Span } from '@playbooks/interface/html';
 import { Section, SectionHeader, SectionTitle, SectionBody } from '@playbooks/interface/sections';
 import { Navbar, NavbarBrand, NavbarList } from '@playbooks/interface/navbars';
 import { NavItem, NavLink } from '@playbooks/interface/navs';
@@ -18,7 +19,11 @@ const Index = () => {
   return (
     <Route>
       <Navbar>
-        <NavbarBrand src='' />
+        <Span display='flex-start' space='space-x-4'>
+          <NavbarBrand src='/playbooks-logo.svg' />
+          <Span>|</Span>
+          <H6 color='gray-500' fontWeight='font-normal'>Interface</H6>
+        </Span>
         <NavbarList>
           <NavItem>
             <NavLink href='/'>Home</NavLink>
