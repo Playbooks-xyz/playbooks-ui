@@ -1,10 +1,10 @@
 {
-  "name": "playbooks-interface",
-  "version": "1.0.0",
-  "description": "A Vite / TypeScript npm package template",
+  "name": "@playbooks/interface",
+  "version": "0.0.1",
+  "description": "An interface library for Playbooks.",
   "license": "ISC",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
   "engines": {
     "node": ">=16"
   },
@@ -36,9 +36,9 @@
       "import": "./dist/banners.js",
       "types": "./dist/banners.d.ts"
     },
-    "./breadrumbs": {
-      "import": "./dist/breadrumbs.js",
-      "types": "./dist/breadrumbs.d.ts"
+    "./breadcrumbs": {
+      "import": "./dist/breadcrumbs.js",
+      "types": "./dist/breadcrumbs.d.ts"
     },
     "./button-groups": {
       "import": "./dist/button-groups.js",
@@ -96,11 +96,104 @@
       "import": "./dist/icons.js",
       "types": "./dist/icons.d.ts"
     },
+    "./input-groups": {
+      "import": "./dist/input-groups.js",
+      "types": "./dist/input-groups.d.ts"
+    },
+    "./links": {
+      "import": "./dist/links.js",
+      "types": "./dist/links.d.ts"
+    },
+    "./list-groups": {
+      "import": "./dist/list-groups.js",
+      "types": "./dist/list-groups.d.ts"
+    },
+    "./loaders": {
+      "import": "./dist/loaders.js",
+      "types": "./dist/loaders.d.ts"
+    },
+    "./menus": {
+      "import": "./dist/menus.js",
+      "types": "./dist/menus.d.ts"
+    },
+    "./modals": {
+      "import": "./dist/modals.js",
+      "types": "./dist/modals.d.ts"
+    },
+    "./navbars": {
+      "import": "./dist/navbars.js",
+      "types": "./dist/navbars.d.ts"
+    },
+    "./navs": {
+      "import": "./dist/navs.js",
+      "types": "./dist/navs.d.ts"
+    },
+    "./paginations": {
+      "import": "./dist/paginations.js",
+      "types": "./dist/paginations.d.ts"
+    },
+    "./prefooters": {
+      "import": "./dist/prefooters.js",
+      "types": "./dist/prefooters.d.ts"
+    },
+    "./progress-bars": {
+      "import": "./dist/progress-bars.js",
+      "types": "./dist/progress-bars.d.ts"
+    },
+    "./radios": {
+      "import": "./dist/radios.js",
+      "types": "./dist/radios.d.ts"
+    },
+    "./ranges": {
+      "import": "./dist/ranges.js",
+      "types": "./dist/ranges.d.ts"
+    },
+    "./routes": {
+      "import": "./dist/routes.js",
+      "types": "./dist/routes.d.ts"
+    },
+    "./sections": {
+      "import": "./dist/sections.js",
+      "types": "./dist/sections.d.ts"
+    },
+    "./slides": {
+      "import": "./dist/slides.js",
+      "types": "./dist/slides.d.ts"
+    },
+    "./spinners": {
+      "import": "./dist/spinners.js",
+      "types": "./dist/spinners.d.ts"
+    },
+    "./switches": {
+      "import": "./dist/switches.js",
+      "types": "./dist/switches.d.ts"
+    },
+    "./tables": {
+      "import": "./dist/tables.js",
+      "types": "./dist/tables.d.ts"
+    },
+    "./tabs": {
+      "import": "./dist/tabs.js",
+      "types": "./dist/tabs.d.ts"
+    },
+    "./tags": {
+      "import": "./dist/tags.js",
+      "types": "./dist/tags.d.ts"
+    },
+    "./toasts": {
+      "import": "./dist/toasts.js",
+      "types": "./dist/toasts.d.ts"
+    },
+    "./tooltips": {
+      "import": "./dist/tooltips.js",
+      "types": "./dist/tooltips.d.ts"
+    },
     "./dist/styles.css": "./dist/style.css"
   },
   "types": "./dist/index.d.ts",
   "scripts": {
-    "start": "vite build --mode development --watch --minify false",
+    "dev": "vite build --mode development --watch --minify false",
+    "start": "npm run build && npm run build:ts && yalc publish",
     "build": "vite build --mode production --minify false",
     "build:ts": "dts-bundle-generator --config dts.config.ts",
     "lint": "eslint src",

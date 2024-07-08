@@ -1,6 +1,8 @@
 import { HtmlType } from 'types';
 
-export type iHero = HtmlType;
+export type iHero = HtmlType & {
+	ref: any;
+};
 
 export type iHeroBg = HtmlType;
 

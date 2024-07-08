@@ -35,7 +35,6 @@ export const AccordionToggle = ({
 	name = 'AccordionToggle',
 	open,
 	onClick,
-	title,
 	className,
 	children,
 	...tailwind
@@ -69,8 +68,8 @@ export const AccordionToggle = ({
 export const AccordionIcon = ({
 	id,
 	name = 'AccordionIcon',
-	open,
 	icon = 'chevron-down',
+	open,
 	onClick,
 	className,
 	children,

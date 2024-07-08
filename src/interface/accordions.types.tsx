@@ -5,8 +5,6 @@ export type iAccordion = HtmlType & {
 };
 
 export type iAccordionToggle = HtmlType & {
-	icon?: string;
-	title?: string;
 	open?: boolean;
 	onClick: (v: any) => void;
 };

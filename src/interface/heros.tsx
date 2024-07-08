@@ -17,7 +17,7 @@ import { Div, Img } from 'interface/html';
 import { FadIcon } from 'interface/icons';
 import { borderProps, computeHeroSize, computeThumbnailSize, tailwindClassBuilder } from 'tailwind';
 
-export const Hero = forwardRef<any>(({ id, name = 'Hero', size, className, children, ...tailwind }: iHero, ref) => {
+export const Hero = forwardRef<any, iHero>(({ id, name = 'Hero', size, className, children, ...tailwind }: iHero, ref) => {
 	const base = {
 		position: 'relative',
 		bgColor: 'bg-gray-50 dark:bg-gray-900',

@@ -5,7 +5,7 @@ import { LinkWrapper } from 'interface/links';
 import { iNavbar, iNavbarBrand, iNavbarList } from 'interface/navbars.types';
 import { borderProps, tailwindClassBuilder } from 'tailwind';
 
-export const Navbar = forwardRef<any>(({ id, name = 'Navbar', className, children, ...tailwind }: iNavbar, ref) => {
+export const Navbar = forwardRef<any, iNavbar>(({ id, name = 'Navbar', className, children, ...tailwind }: iNavbar, ref) => {
 	const base = {
 		display: 'flex-between',
 		bgColor: 'bg-white dark:bg-gray-900',

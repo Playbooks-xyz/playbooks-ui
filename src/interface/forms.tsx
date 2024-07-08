@@ -124,7 +124,7 @@ export const FormRange = ({
 	);
 };
 
-export const FormInput = forwardRef<any, any>(
+export const FormInput = forwardRef<any, iFormInput>(
 	(
 		{
 			id,
