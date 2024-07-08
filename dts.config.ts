@@ -8,6 +8,10 @@ const config = {
       outFile: "./dist/index.d.ts"
     },
     {
+      filePath: "./src/contexts/context.tsx",
+      outFile: "./dist/context.d.ts"
+    },
+    {
       filePath: "./src/interface/accordions.tsx",
       outFile: "./dist/accordions.d.ts"
     },

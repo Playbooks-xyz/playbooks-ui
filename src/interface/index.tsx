@@ -1,6 +1,3 @@
-import 'src/index.css'
-
-export * from 'contexts';
 export * from 'interface/accordions';
 export * from 'interface/alerts';
 export * from 'interface/avatars';
@@ -8,7 +5,6 @@ export * from 'interface/badges';
 export * from 'interface/banners';
 export * from 'interface/breadcrumbs';
 export * from 'interface/button-groups';
-export * from 'interface/buttons';
 export * from 'interface/cards';
 export * from 'interface/drops';
 export * from 'interface/feedbacks';
@@ -33,7 +29,6 @@ export * from 'interface/paginations';
 export * from 'interface/prefooters';
 export * from 'interface/progress-bars';
 export * from 'interface/radios';
-export * from 'interface/ranges';
 export * from 'interface/routes';
 export * from 'interface/sections';
 export * from 'interface/slides';

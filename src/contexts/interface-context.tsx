@@ -1,18 +1,25 @@
-import React, { createRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { Div } from 'interface/html';
 
-type iInterface = {
+export type iInterface = {
 	ref: any;
+	seo: any;
 	createPortal: any;
 	toggleScroll: any;
 };
 
-const InterfaceContext = React.createContext<iInterface>(null);
+export const InterfaceContext = React.createContext<iInterface>(null);
 
-const InterfaceProvider = ({ children }) => {
-	const ref = createRef();
+export const InterfaceProvider = ({ meta, children }: {meta: any, children: any }) => {
+	const [seo, setSeo] = useState(meta);
+	const ref = useRef(null);
+
+	// Hooks
+	useEffect(() => {
+		setSeo(meta);
+	}, [meta]);
 
 	// Methods
 	const toggleScroll = open => {
@@ -28,18 +35,16 @@ const InterfaceProvider = ({ children }) => {
 
 	// Render
 	return (
-		<InterfaceContext.Provider value={{ ref, createPortal, toggleScroll }}>
+		<InterfaceContext.Provider value={{ ref, seo, createPortal, toggleScroll }}>
 			{children}
-			<Div id='i_portal' ref={ref} />
+			<Div id='interface_portal' ref={ref} />
 		</InterfaceContext.Provider>
 	);
 };
 
-const useInterface = () => {
+export const useInterface = () => {
 	return React.useContext(InterfaceContext);
 };
-
-export { InterfaceProvider, useInterface };
 
 // Docs
 // https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/

@@ -23,6 +23,9 @@ const Index = () => {
           <NavItem>
             <NavLink href='/'>Home</NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink href='/accordions'>Accordions</NavLink>
+          </NavItem>
         </NavbarList>
       </Navbar>
       <Main className='flex-column min-h-screen w-full py-4'>

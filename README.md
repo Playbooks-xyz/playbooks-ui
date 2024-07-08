@@ -4,6 +4,7 @@
 ## Prerequisites
 - React
 - Next
+- Font Awesome
 - Tailwind
 
 ## Quickstart

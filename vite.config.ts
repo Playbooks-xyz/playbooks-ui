@@ -12,6 +12,7 @@ export default defineConfig({
     lib: {
       entry: [
         path.resolve(__dirname, "src/index.tsx"),
+        path.resolve(__dirname, "src/contexts/context.tsx"),
         path.resolve(__dirname, "src/interface/accordions.tsx"),
         path.resolve(__dirname, "src/interface/alerts.tsx"),
         path.resolve(__dirname, "src/interface/avatars.tsx"),
@@ -55,10 +56,14 @@ export default defineConfig({
         path.resolve(__dirname, "src/interface/tags.tsx"),
         path.resolve(__dirname, "src/interface/toasts.tsx"),
         path.resolve(__dirname, "src/interface/tooltips.tsx"),
+        path.resolve(__dirname, "src/utils/font-awesome/fa-icons.tsx"),
       ],
       formats: ['cjs'],
       name: 'playbooks-interface',
-      fileName: (format, entryName) => `${entryName}.cjs`,
+      fileName: (format, entryName) => {
+        // console.log('entryName: ', entryName)
+        return `${entryName}.cjs`
+      },
     },
     rollupOptions: {
       external: ["react", "react-dom", 'react/jsx-runtime', 'next', 'tailwindcss'],
