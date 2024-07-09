@@ -24,3 +24,8 @@
 - add `import '@playbooks/interface/dist/styles.css' to app entry point;
 - then `import { Accordion } from '@playbooks/interface/accordions';
 - or `import { Accordion } from '@playbooks/interface';
+
+## Setup Husky
+- npm run prepare
+- create .husky/pre-commit
+- add `npm run clean`
