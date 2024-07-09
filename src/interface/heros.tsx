@@ -14,6 +14,7 @@ import {
 	iHeroTitle,
 } from 'interface/heros.types';
 import { Div, Img } from 'interface/html';
+import { FadIcon } from 'interface/icons';
 import { borderProps, computeHeroSize, computeThumbnailSize, tailwindClassBuilder } from 'tailwind';
 
 export const Hero = forwardRef<any, iHero>(
@@ -48,7 +49,7 @@ export const HeroBg = ({ id, name = 'HeroBg', className, children, ...tailwind }
 	return <Div {...props}>{children}</Div>;
 };
 
-export const HeroIcon = ({ id, name = 'HeroImg', size = 'lg', icon, className, ...tailwind }: iHeroIcon) => {
+export const HeroIcon = ({ id, name = 'HeroImg', size = 'lg', icon = 'code', className, ...tailwind }: iHeroIcon) => {
 	const base = {
 		aspect: 'aspect-[1/1]',
 		bgColor: 'bg-gray-100 dark:bg-gray-800',
@@ -58,6 +59,7 @@ export const HeroIcon = ({ id, name = 'HeroImg', size = 'lg', icon, className, .
 		color: 'gray-500',
 		display: 'flex-middle',
 		flex: 'shrink-0',
+		fontSize: 'text-3xl',
 		overflow: 'o-hidden',
 		size: computeThumbnailSize(size),
 	};
@@ -65,7 +67,7 @@ export const HeroIcon = ({ id, name = 'HeroImg', size = 'lg', icon, className, .
 
 	return (
 		<Div {...props}>
-			<HeroIcon icon={icon} {...props} />
+			<FadIcon icon={icon} {...props} />
 		</Div>
 	);
 };

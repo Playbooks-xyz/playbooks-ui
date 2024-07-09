@@ -2,6 +2,7 @@ export type TailwindType = {
 	align?: string;
 	aspect?: string;
 	animation?: string;
+	bgClip?: string;
 	bgColor?: string;
 	bgImage?: string;
 	bgPosition?: string;
