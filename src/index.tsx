@@ -43,3 +43,4 @@ export * from 'interface/tabs';
 export * from 'interface/tags';
 export * from 'interface/toasts';
 export * from 'interface/tooltips';
+export * from 'tailwind';
