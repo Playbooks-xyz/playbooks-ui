@@ -38,18 +38,24 @@ export const Hero = forwardRef<any, iHero>(
 	},
 );
 
-export const HeroBg = ({ id, name = 'HeroBg', className, children, ...tailwind }: iHeroBg) => {
-	const base = {
-		inset: 'inset-0',
-		position: 'absolute',
-		bgColor: 'bg-gray-50 dark:bg-gray-800',
-	};
-	const props = { ...base, ...tailwind, className, name };
+export const HeroBg = forwardRef<any, iHeroBg>(
+	({ id, name = 'HeroBg', className, children, ...tailwind }: iHeroBg, ref) => {
+		const base = {
+			inset: 'inset-0',
+			position: 'absolute',
+			bgColor: 'bg-gray-50 dark:bg-gray-800',
+		};
+		const props = { ...base, ...tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
-};
+		return (
+			<Div ref={ref} {...props}>
+				{children}
+			</Div>
+		);
+	},
+);
 
-export const HeroIcon = ({ id, name = 'HeroImg', size = 'lg', icon = 'code', className, ...tailwind }: iHeroIcon) => {
+export const HeroIcon = ({ id, name = 'HeroIcon', size = 'lg', icon = 'code', className, ...tailwind }: iHeroIcon) => {
 	const base = {
 		aspect: 'aspect-[1/1]',
 		bgColor: 'bg-gray-100 dark:bg-gray-800',
@@ -60,14 +66,14 @@ export const HeroIcon = ({ id, name = 'HeroImg', size = 'lg', icon = 'code', cla
 		display: 'flex-middle',
 		flex: 'shrink-0',
 		fontSize: 'text-3xl',
-		overflow: 'o-hidden',
+		overflow: 'overflow-hidden',
 		size: computeThumbnailSize(size),
 	};
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
 		<Div {...props}>
-			<FadIcon icon={icon} {...props} />
+			<FadIcon icon={icon} fontSize='text-3xl' />
 		</Div>
 	);
 };
@@ -82,7 +88,7 @@ export const HeroImg = ({ id, name = 'HeroImg', size = 'lg', src, className, ...
 		color: 'gray-500',
 		display: 'flex-middle',
 		flex: 'shrink-0',
-		overflow: 'o-hidden',
+		overflow: 'overflow-hidden',
 		size: computeThumbnailSize(size),
 	};
 	const props = { ...base, ...tailwind, className, name };

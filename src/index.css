@@ -35,7 +35,7 @@
 	small {
 		@apply text-sm;
 	}
-	.o-hidden {
+	.overflow-hidden {
 		overflow: hidden;
 	}
 	.text-inherit {

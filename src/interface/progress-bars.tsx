@@ -9,7 +9,7 @@ export const ProgressBar = ({ id, name = 'ProgressBar', className, children, ...
 		bgColor: 'bg-gray-200 dark:bg-gray-700',
 		bgOpacity: 'bg-opacity',
 		borderRadius: 'rounded-full',
-		overflow: 'o-hidden',
+		overflow: 'overflow-hidden',
 		height: 'h-2',
 		width: 'w-full',
 	};
@@ -23,7 +23,7 @@ export const Progress = ({ id, name = 'Progress', value = 0, className, children
 		...gradientBgColor,
 		position: 'absolute',
 		bgOpacity: '',
-		overflow: 'o-hidden',
+		overflow: 'overflow-hidden',
 		height: 'h-2',
 	};
 	const style = useSpring({ width: value ? value + '%' : '0%' });

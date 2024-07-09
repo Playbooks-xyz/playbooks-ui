@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { createRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { Div } from 'interface/html';
@@ -14,7 +14,7 @@ export const InterfaceContext = React.createContext<iInterface>(null);
 
 export const InterfaceProvider = ({ meta, children }: { meta: any; children: any }) => {
 	const [seo, setSeo] = useState(meta);
-	const ref = useRef(null);
+	const ref = createRef();
 
 	// Hooks
 	useEffect(() => {

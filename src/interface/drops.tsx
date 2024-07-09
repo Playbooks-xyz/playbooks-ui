@@ -98,7 +98,7 @@ export const DropMenu = ({ id, name = 'DropMenu', open, className, children, ...
 		shadowColor: 'dark:shadow-gray-800/25',
 		textAlign: 'text-left',
 		width: 'min-w-full w-auto',
-		overflow: 'o-hidden overflow-y-scroll',
+		overflow: 'overflow-hidden overflow-y-scroll',
 	};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 

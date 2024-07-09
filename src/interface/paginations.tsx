@@ -11,7 +11,7 @@ export const Pagination = ({ id, name = 'Pagination', className, children, ...ta
 		border: 'border',
 		...borderProps,
 		borderRadius: 'rounded-md',
-		overflow: 'o-hidden',
+		overflow: 'overflow-hidden',
 	};
 	const props = { ...base, ...tailwind, className, name };
 

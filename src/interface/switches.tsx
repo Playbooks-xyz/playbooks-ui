@@ -26,7 +26,7 @@ export const Switch = ({ id, name = 'Switch', icon, checked, onClick, className,
 	const base = {
 		display: 'inline-flex items-center justify-center shrink-0',
 		position: 'relative',
-		overflow: 'o-hidden',
+		overflow: 'overflow-hidden',
 		size: 'w-12 h-10',
 		cursor: 'cursor-pointer',
 		ring: 'ring-sky',

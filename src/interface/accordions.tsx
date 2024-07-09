@@ -118,7 +118,7 @@ export const AccordionBody = ({
 	...tailwind
 }: iAccordionBody) => {
 	const wrapperBase = {
-		overflow: 'o-hidden',
+		overflow: 'overflow-hidden',
 		origin: 'origin-top',
 		ease: 'ease-out',
 		transition: 'transition-all',

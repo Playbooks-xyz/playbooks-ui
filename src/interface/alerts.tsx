@@ -11,7 +11,7 @@ export const Alert = ({ id, name = 'Alert', show = true, className, children, ..
 		borderColor: 'border-orange-500',
 		borderRadius: 'rounded-md',
 		display: 'flex-start-top',
-		overflow: 'o-hidden',
+		overflow: 'overflow-hidden',
 		space: 'space-x-8',
 		spacing: 'p-4',
 	};

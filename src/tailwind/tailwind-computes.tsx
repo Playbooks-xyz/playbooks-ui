@@ -187,12 +187,16 @@ export const computeThumbnailSize = size => {
 	switch (size) {
 		case 'xs':
 			return 'w-10';
+
 		case 'sm':
 			return 'w-16';
+
 		case 'md':
 			return 'w-20';
+
 		case 'lg':
 			return 'w-14 md:w-28';
+
 		case 'xl':
 			return 'w-16 md:w-32';
 
