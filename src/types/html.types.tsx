@@ -15,7 +15,11 @@ export type HtmlType = TailwindType & {
 };
 
 export type BtnType = HtmlType & {
+	type?: 'button' | 'submit' | 'reset';
 	active?: boolean;
+	prevIcon?: any;
+	icon?: any;
+	nextIcon?: any;
 	disabled?: boolean;
 	taskRunning?: boolean;
 };
@@ -45,7 +49,13 @@ export type LabelType = HtmlType & {
 
 export type LinkType = HtmlType & {
 	active?: boolean;
+	prevIcon?: any;
+	icon?: any;
+	nextIcon?: any;
 	href?: string;
+	disabled?: boolean;
+	target?: '_self' | '_blank';
+	taskRunning?: boolean;
 };
 
 export type SelectType = HtmlType & {

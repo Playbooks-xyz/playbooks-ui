@@ -89,16 +89,18 @@ export const MenuBackdrop = ({
 	};
 	const [fade, setFade] = useState('hidden');
 	const props = { ...base, ...tailwind, fade, className, name };
+	const ref = useRef(null);
 
 	return (
 		<Fade
+			ref={ref}
 			show={open}
 			timeout={200}
 			onEnter={() => setFade('opacity-0')}
 			onEntered={() => setFade('opacity-75')}
 			onExiting={() => setFade('opacity-0')}
 			onExited={() => setFade('hidden')}>
-			<Div onClick={onClose} {...props}>
+			<Div ref={ref} onClick={onClose} {...props}>
 				{children}
 			</Div>
 		</Fade>
@@ -165,14 +167,16 @@ export const MenuMenuWrapper = ({
 	};
 	const [animation, setAnimation] = useState('opacity-0 scale-90 -translate-y-4');
 	const props = { ...base, ...tailwind, animation, className };
+	const ref = useRef(null);
 
 	return (
 		<Fade
+			ref={ref}
 			show={open}
 			timeout={{ enter: 0, exit: 100 }}
 			onEntered={() => setAnimation('opacity-100 translate-y-0')}
 			onExiting={() => setAnimation('opacity-0 -translate-y-4')}>
-			<Div {...props}>{children}</Div>
+			<Div ref={ref} {...props}>{children}</Div>
 		</Fade>
 	);
 };
@@ -233,24 +237,16 @@ export const MenuBtn = ({
 	...tailwind
 }: iMenuBtn) => {
 	const base = { align: 'text-left', display: 'flex-start' };
-	const props = { ...base, ...tailwind, className, name };
+	const props = { ...base, ...tailwind, className, name, children };
 
-	return (
-		<AccentBtn active={active} taskRunning={taskRunning} onClick={onClick} {...props}>
-			{children}
-		</AccentBtn>
-	);
+	return <AccentBtn active={active} taskRunning={taskRunning} onClick={onClick} {...props} />
 };
 
 export const MenuLink = ({ id, name = 'MenuLink', href = '', className, children, ...tailwind }: iMenuLink) => {
 	const base = { align: 'text-left', display: 'flex-start', width: 'w-full' };
-	const props = { ...base, ...tailwind, className, name };
+	const props = { ...base, ...tailwind, className, name, children };
 
-	return (
-		<AccentLink href={href} {...props}>
-			{children}
-		</AccentLink>
-	);
+	return <AccentLink href={href} {...props} />
 };
 
 // Docs

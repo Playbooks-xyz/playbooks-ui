@@ -45,15 +45,20 @@ export type iFormInput = HtmlType & {
 	variant?: string;
 	defaultValue?: any;
 	placeholder?: string;
-	onBlur: (e: any) => void;
-	onChange: (e: any) => void;
-	onFocus: (e: any) => void;
+	onBlur?: (e: any) => void;
+	onChange?: (e: any) => void;
+	onFocus?: (e: any) => void;
 	readOnly?: boolean;
 };
 
 export type iFormInputCurrency = iFormInput & {
 	prefix: string;
 };
+
+export type iFormLocationInput = iFormInput & {
+	options?: any;
+	onSelect: (e: any) => void;
+}
 
 export type iFormInputMask = iFormInput & {
 	mask: string;

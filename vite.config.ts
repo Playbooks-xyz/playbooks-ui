@@ -12,6 +12,7 @@ export default defineConfig({
     lib: {
       entry: [
         path.resolve(__dirname, "src/index.tsx"),
+        path.resolve(__dirname, "src/components/components.tsx"),
         path.resolve(__dirname, "src/contexts/context.tsx"),
         path.resolve(__dirname, "src/interface/accordions.tsx"),
         path.resolve(__dirname, "src/interface/alerts.tsx"),
@@ -91,6 +92,7 @@ export default defineConfig({
       src: path.resolve(__dirname, "/src"),
       components: path.resolve(__dirname, "/src/components"),
       contexts: path.resolve(__dirname, "/src/contexts"),
+      hooks: path.resolve(__dirname, "/src/hooks"),
       interface: path.resolve(__dirname, "/src/interface"),
       tailwind: path.resolve(__dirname, "/src/tailwind"),
       types: path.resolve(__dirname, "/src/types"),

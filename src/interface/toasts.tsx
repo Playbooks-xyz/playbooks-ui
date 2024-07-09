@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { Fade } from 'components/animation-wrapper';
 import { AccentBtn } from 'interface/buttons';
@@ -43,6 +43,7 @@ export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, 
 	};
 	const [fade, setFade] = useState({ opacity: 'opacity-0', translate: 'translate-x-12' });
 	const props = { ...base, ...tailwind, ...fade, className };
+	const ref = useRef(null);
 
 	// Hooks
 	useEffect(() => {
@@ -52,6 +53,7 @@ export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, 
 	// Render
 	return (
 		<Fade
+			ref={ref}
 			show={show}
 			timeout={{ enter: 0, exit: 200 }}
 			onEntering={() => setFade({ opacity: 'opacity-0', translate: 'translate-x-12' })}
@@ -59,7 +61,7 @@ export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, 
 			onExit={() => setFade({ opacity: 'opacity-100', translate: 'translate-x-0' })}
 			onExiting={() => setFade({ opacity: 'opacity-0', translate: 'translate-x-12' })}
 			onExited={onRemove}>
-			<Div {...props}>{children}</Div>
+			<Div ref={ref} {...props}>{children}</Div>
 		</Fade>
 	);
 };

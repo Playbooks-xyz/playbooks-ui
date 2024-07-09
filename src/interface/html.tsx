@@ -67,7 +67,7 @@ export const Div = forwardRef<any, iDiv>(
 		}: iDiv,
 		ref,
 	) => {
-		const base = { position: 'relative' };
+		const base = { position: 'relative', ...borderProps };
 		const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 		return (

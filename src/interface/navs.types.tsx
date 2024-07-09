@@ -12,10 +12,6 @@ export type iNavList = HtmlType;
 
 export type iNavItem = HtmlType;
 
-export type iNavBtn = BtnType & {
-	type?: 'basic' | 'accent';
-};
+export type iNavBtn = BtnType;
 
-export type iNavLink = LinkType & {
-	type?: 'basic' | 'accent';
-};
+export type iNavLink = LinkType;

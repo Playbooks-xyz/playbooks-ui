@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { Fade } from 'components/animation-wrapper';
 import { useInterface } from 'contexts/interface-context';
@@ -53,9 +53,11 @@ export const SlideBackdrop = ({ id, name = 'SlideBackdrop', open, onClose, ...ta
 	};
 	const [fade, setFade] = useState('hidden');
 	const props = { ...base, ...tailwind, fade, name };
+	const ref = useRef(null);
 
 	return (
 		<Fade
+			ref={ref}
 			show={open}
 			timeout={{ enter: 0, exit: 200 }}
 			onEnter={() => setFade('opacity-0')}
@@ -63,7 +65,7 @@ export const SlideBackdrop = ({ id, name = 'SlideBackdrop', open, onClose, ...ta
 			onExit={() => setFade('opacity-75')}
 			onExiting={() => setFade('opacity-0')}
 			onExited={() => setFade('hidden')}>
-			<Div onClick={onClose} {...props} />
+			<Div ref={ref} onClick={onClose} {...props} />
 		</Fade>
 	);
 };
@@ -96,6 +98,7 @@ export const Slide = ({
 	const [animation, setAnimation] = useState(`opacity-0 ${computeSlideAnimation(placement)}`);
 	const props = { ...base, ...tailwind, animation, className };
 	const { ref, createPortal, toggleScroll } = useInterface();
+	const animationRef = useRef(null);
 
 	// Hooks
 	useEffect(() => {
@@ -106,6 +109,7 @@ export const Slide = ({
 	return ref?.current
 		? createPortal(
 				<Fade
+					ref={animationRef}
 					show={open}
 					timeout={{ enter: 0, exit: 200 }}
 					onEnter={() => setAnimation(`opacity-0 ${computeSlideAnimation(placement)}`)}
@@ -113,7 +117,7 @@ export const Slide = ({
 					onExit={() => setAnimation('opacity-100 translate-x-0')}
 					onExiting={() => setAnimation(`opacity-0 ${computeSlideAnimation(placement)}`)}>
 					<SlideWrapper open={open} onClose={onClose}>
-						<Div {...props}>{children}</Div>
+						<Div ref={animationRef} {...props}>{children}</Div>
 					</SlideWrapper>
 				</Fade>,
 				ref?.current,

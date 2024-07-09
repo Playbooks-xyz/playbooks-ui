@@ -1,8 +1,10 @@
-import { forwardRef } from 'react';
+import { forwardRef, useRef } from 'react';
 
 import { CurrencyInputWrapper } from 'components/currency-input-wrapper';
+import { GoogleAutocompleteWrapper } from 'components/google-autocomplete-wrapper';
 import { MaskedInput } from 'components/masked-input-wrapper';
 import { PhoneInputWrapper } from 'components/phone-input-wrapper';
+import { useElementKeyPress } from 'hooks';
 import {
 	iForm,
 	iFormCheckbox,
@@ -12,6 +14,7 @@ import {
 	iFormInputCurrency,
 	iFormInputMask,
 	iFormLabel,
+	iFormLocationInput,
 	iFormRange,
 	iFormSelect,
 	iFormText,
@@ -264,6 +267,48 @@ export const FormFileInput = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return <input placeholder={placeholder} value={value} onChange={onChange} className={classes} />;
+};
+
+export const FormLocationInput = ({
+	id,
+	name = 'FormLocationInput',
+	value,
+	variant,
+	options,
+	placeholder,
+	onChange,
+	onSelect,
+	onBlur,
+	readOnly,
+	className,
+	...tailwind
+}: iFormLocationInput) => {
+	const base = inputProps(variant);
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const ref = useRef(null);
+
+	// Hooks
+	useElementKeyPress(ref.current, onKeyPress, []);
+
+	// Methods
+	function onKeyPress(e) {
+		if (e.keyCode === 13) e.preventDefault();
+	}
+
+	return (
+		<GoogleAutocompleteWrapper options={options} onSelect={onSelect}>
+			<input
+				id={id}
+				ref={ref}
+				value={value}
+				placeholder={placeholder}
+				onBlur={onBlur}
+				onChange={onChange}
+				readOnly={readOnly}
+				className={classes}
+			/>
+		</GoogleAutocompleteWrapper>
+	);
 };
 
 export const FormPhoneInput = ({

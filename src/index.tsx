@@ -1,5 +1,6 @@
 import 'src/index.css';
 
+export * from 'components';
 export * from 'contexts';
 export * from 'interface/accordions';
 export * from 'interface/alerts';

@@ -8,7 +8,7 @@ export const Head = ({ photo, title, description, children }: iHead) => {
 
 	// Computed
 	const computedMeta = {
-		...interfaceContext.seo,
+		...interfaceContext?.seo,
 		photo,
 		title,
 		description,

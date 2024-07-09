@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 
 import { Fade } from 'components/animation-wrapper';
 import { useInterface } from 'contexts';
@@ -59,16 +59,18 @@ export const ModalBackdrop = ({ id, name = 'ModalBackdrop', open, onClose, tailw
 	};
 	const [fade, setFade] = useState({ display: 'hidden', opacity: '' });
 	const props = { ...base, ...fade, ...tailwind, name };
+	const ref = useRef(null);
 
 	return (
 		<Fade
+			ref={ref}
 			show={open}
 			timeout={0}
 			onEnter={() => setFade({ display: '', opacity: 'opacity-0' })}
 			onEntered={() => setFade({ display: '', opacity: 'opacity-75' })}
 			onExiting={() => setFade({ display: '', opacity: 'opacity-0' })}
 			onExited={() => setFade({ display: 'hidden', opacity: 'opacity-0' })}>
-			<Div onClick={onClose} {...props} />
+			<Div ref={ref} onClick={onClose} {...props} />
 		</Fade>
 	);
 };
@@ -90,6 +92,7 @@ export const Modal = ({ id, name = 'Modal', open = false, onClose, className, ch
 	const [fade, setFade] = useState('hidden');
 	const props = { ...base, ...tailwind, fade, className, name };
 	const { ref, createPortal, toggleScroll } = useInterface();
+	const animationRef = useRef(null);
 
 	// Hooks
 	useEffect(() => {
@@ -110,6 +113,7 @@ export const Modal = ({ id, name = 'Modal', open = false, onClose, className, ch
 	return ref?.current
 		? createPortal(
 				<Fade
+					ref={animationRef}
 					show={open}
 					timeout={200}
 					onEnter={() => setFade('opacity-0 scale-90')}
@@ -117,7 +121,7 @@ export const Modal = ({ id, name = 'Modal', open = false, onClose, className, ch
 					onExiting={() => setFade('opacity-0 scale-90')}
 					onExited={() => setFade('hidden')}>
 					<ModalWrapper open={open} onClose={onClose} tailwind={tailwind?.wrapper}>
-						<Div {...props}>{children}</Div>
+						<Div ref={animationRef} {...props}>{children}</Div>
 					</ModalWrapper>
 				</Fade>,
 				ref?.current,

@@ -18,7 +18,7 @@ import {
 } from 'interface/drops.types';
 import { H6, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
-import { AccentLink, Link } from 'interface/links';
+import { AccentLink } from 'interface/links';
 import { borderProps, tailwindClassBuilder } from 'tailwind';
 
 export const Drop = ({ id, name = 'Drop', open, setOpen, className, children, ...tailwind }: iDrop) => {
@@ -127,14 +127,16 @@ export const DropMenuWrapper = ({
 	};
 	const [animation, setAnimation] = useState('opacity-0 scale-90 translate-y-4');
 	const props = { ...base, ...tailwind, animation, className };
+	const ref = useRef(null);
 
 	return (
 		<Fade
+			ref={ref}
 			show={open}
 			timeout={{ enter: 0, exit: 100 }}
 			onEntered={() => setAnimation('opacity-100 scale-100 translate-y-0')}
 			onExiting={() => setAnimation('opacity-0 scale-90 translate-y-4')}>
-			<Div {...props}>{children}</Div>
+			<Div ref={ref} {...props}>{children}</Div>
 		</Fade>
 	);
 };
@@ -194,7 +196,6 @@ export const DropItem = ({ id, name = 'DropItem', className, children, ...tailwi
 export const DropBtn = ({
 	id,
 	name = 'DropBtn',
-	type = 'accent',
 	active,
 	onClick,
 	taskRunning,
@@ -205,19 +206,12 @@ export const DropBtn = ({
 	const base = { align: 'text-left', display: 'flex-start', space: 'space-x-4', width: 'w-full' };
 	const props = { ...base, ...tailwind, className, name, active, taskRunning, onClick, children };
 
-	switch (type) {
-		case 'basic':
-			return <Btn {...props} />;
-
-		case 'accent':
-			return <AccentBtn {...props} />;
-	}
+	return <AccentBtn {...props} />;
 };
 
 export const DropLink = ({
 	id,
 	name = 'DropLink',
-	type = 'accent',
 	href = '',
 	className,
 	children,
@@ -226,13 +220,7 @@ export const DropLink = ({
 	const base = { align: 'text-left', display: 'flex-start', space: 'space-x-4', width: 'w-full' };
 	const props = { ...base, ...tailwind, className, name, href, children };
 
-	switch (type) {
-		case 'basic':
-			return <Link {...props} />;
-
-		case 'accent':
-			return <AccentLink {...props} />;
-	}
+	return <AccentLink {...props} />;
 };
 
 // Docs

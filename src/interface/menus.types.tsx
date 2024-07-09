@@ -28,14 +28,6 @@ export type iMenuList = HtmlType;
 
 export type iMenuItem = HtmlType;
 
-export type iMenuBtn = BtnType & {
-	icon?: string;
-	tabIndex?: number;
-	onClick: () => void;
-};
+export type iMenuBtn = BtnType;
 
-export type iMenuLink = LinkType & {
-	href: string;
-	icon?: string;
-	tabIndex?: number;
-};
+export type iMenuLink = LinkType;

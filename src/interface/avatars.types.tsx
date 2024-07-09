@@ -1,8 +1,6 @@
 import { HtmlType } from 'types';
 
-export type iAvatar = HtmlType & {
-	type: string;
-};
+export type iAvatar = HtmlType;
 
 export type iAvatarBadge = HtmlType;
 

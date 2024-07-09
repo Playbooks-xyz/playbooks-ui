@@ -1,13 +1,3 @@
-import { HtmlType } from 'types';
+import { LinkType } from 'types';
 
-export type iLink = HtmlType & {
-	to?: string;
-	active?: boolean;
-	disabled?: boolean;
-	href?: string;
-	prevIcon?: string;
-	icon?: string;
-	nextIcon?: string;
-	target?: '_self' | '_blank';
-	taskRunning?: boolean;
-};
+export type iLink = LinkType
