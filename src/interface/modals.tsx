@@ -121,11 +121,13 @@ export const Modal = ({ id, name = 'Modal', open = false, onClose, className, ch
 					onExiting={() => setFade('opacity-0 scale-90')}
 					onExited={() => setFade('hidden')}>
 					<ModalWrapper open={open} onClose={onClose} tailwind={tailwind?.wrapper}>
-						<Div ref={animationRef} {...props}>{children}</Div>
+						<Div ref={animationRef} {...props}>
+							{children}
+						</Div>
 					</ModalWrapper>
 				</Fade>,
 				ref?.current,
-		  )
+			)
 		: null;
 };
 

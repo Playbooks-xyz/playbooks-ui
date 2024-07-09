@@ -136,7 +136,9 @@ export const DropMenuWrapper = ({
 			timeout={{ enter: 0, exit: 100 }}
 			onEntered={() => setAnimation('opacity-100 scale-100 translate-y-0')}
 			onExiting={() => setAnimation('opacity-0 scale-90 translate-y-4')}>
-			<Div ref={ref} {...props}>{children}</Div>
+			<Div ref={ref} {...props}>
+				{children}
+			</Div>
 		</Fade>
 	);
 };
@@ -209,14 +211,7 @@ export const DropBtn = ({
 	return <AccentBtn {...props} />;
 };
 
-export const DropLink = ({
-	id,
-	name = 'DropLink',
-	href = '',
-	className,
-	children,
-	...tailwind
-}: iDropLink) => {
+export const DropLink = ({ id, name = 'DropLink', href = '', className, children, ...tailwind }: iDropLink) => {
 	const base = { align: 'text-left', display: 'flex-start', space: 'space-x-4', width: 'w-full' };
 	const props = { ...base, ...tailwind, className, name, href, children };
 

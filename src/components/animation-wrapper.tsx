@@ -18,19 +18,22 @@ export type iFade = HtmlType & {
 };
 
 const Fade = forwardRef<any, iFade>(
-	({
-		show,
-		timeout,
-		onEnter,
-		onEntering,
-		onEntered,
-		onExit,
-		onExiting,
-		onExited,
-		mountOnEnter = true,
-		unmountOnExit = true,
-		children,
-	}: iFade, ref) => {
+	(
+		{
+			show,
+			timeout,
+			onEnter,
+			onEntering,
+			onEntered,
+			onExit,
+			onExiting,
+			onExited,
+			mountOnEnter = true,
+			unmountOnExit = true,
+			children,
+		}: iFade,
+		ref,
+	) => {
 		return (
 			<Transition
 				nodeRef={ref}
@@ -48,7 +51,7 @@ const Fade = forwardRef<any, iFade>(
 				{children}
 			</Transition>
 		);
-	}
+	},
 );
 
 export { Fade };

@@ -1,4 +1,4 @@
-import { Autocomplete, LoadScriptNext,LoadScriptProps } from '@react-google-maps/api';
+import { Autocomplete, LoadScriptNext, LoadScriptProps } from '@react-google-maps/api';
 import { useState } from 'react';
 
 // const GOOGLE_KEY = process.env.NEXT_PUBLIC_GOOGLE_KEY;

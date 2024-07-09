@@ -176,7 +176,9 @@ export const MenuMenuWrapper = ({
 			timeout={{ enter: 0, exit: 100 }}
 			onEntered={() => setAnimation('opacity-100 translate-y-0')}
 			onExiting={() => setAnimation('opacity-0 -translate-y-4')}>
-			<Div ref={ref} {...props}>{children}</Div>
+			<Div ref={ref} {...props}>
+				{children}
+			</Div>
 		</Fade>
 	);
 };
@@ -239,14 +241,14 @@ export const MenuBtn = ({
 	const base = { align: 'text-left', display: 'flex-start' };
 	const props = { ...base, ...tailwind, className, name, children };
 
-	return <AccentBtn active={active} taskRunning={taskRunning} onClick={onClick} {...props} />
+	return <AccentBtn active={active} taskRunning={taskRunning} onClick={onClick} {...props} />;
 };
 
 export const MenuLink = ({ id, name = 'MenuLink', href = '', className, children, ...tailwind }: iMenuLink) => {
 	const base = { align: 'text-left', display: 'flex-start', width: 'w-full' };
 	const props = { ...base, ...tailwind, className, name, children };
 
-	return <AccentLink href={href} {...props} />
+	return <AccentLink href={href} {...props} />;
 };
 
 // Docs

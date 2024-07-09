@@ -1,3 +1,3 @@
 import { LinkType } from 'types';
 
-export type iLink = LinkType
+export type iLink = LinkType;

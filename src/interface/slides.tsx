@@ -117,11 +117,13 @@ export const Slide = ({
 					onExit={() => setAnimation('opacity-100 translate-x-0')}
 					onExiting={() => setAnimation(`opacity-0 ${computeSlideAnimation(placement)}`)}>
 					<SlideWrapper open={open} onClose={onClose}>
-						<Div ref={animationRef} {...props}>{children}</Div>
+						<Div ref={animationRef} {...props}>
+							{children}
+						</Div>
 					</SlideWrapper>
 				</Fade>,
 				ref?.current,
-		  )
+			)
 		: null;
 };
 

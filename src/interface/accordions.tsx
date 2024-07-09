@@ -131,10 +131,10 @@ export const AccordionBody = ({
 	const style = animate
 		? {
 				maxHeight: open ? ref.current?.offsetHeight + 'px' : '0px',
-		  }
+			}
 		: {
 				maxHeight: open ? null : '0px',
-		  };
+			};
 
 	// Render
 	return (

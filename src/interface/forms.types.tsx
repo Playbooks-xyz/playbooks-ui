@@ -58,7 +58,7 @@ export type iFormInputCurrency = iFormInput & {
 export type iFormLocationInput = iFormInput & {
 	options?: any;
 	onSelect: (e: any) => void;
-}
+};
 
 export type iFormInputMask = iFormInput & {
 	mask: string;

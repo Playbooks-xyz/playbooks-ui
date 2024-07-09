@@ -16,7 +16,7 @@
     "dev": "vite build --mode development --watch --minify false",
     "start": "vite build --mode development --minify false && yalc publish",
     "start:ts": "vite build --mode development --minify false && npm run build:ts && yalc publish",
-    "build": "vite build --mode production --minify false",
+    "build": "vite build --mode development --minify false",
     "build:ts": "dts-bundle-generator --config dts.config.ts",
     "deploy": "npm run build && npm run build:ts",
     "lint": "eslint src",

@@ -61,7 +61,9 @@ export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, 
 			onExit={() => setFade({ opacity: 'opacity-100', translate: 'translate-x-0' })}
 			onExiting={() => setFade({ opacity: 'opacity-0', translate: 'translate-x-12' })}
 			onExited={onRemove}>
-			<Div ref={ref} {...props}>{children}</Div>
+			<Div ref={ref} {...props}>
+				{children}
+			</Div>
 		</Fade>
 	);
 };
