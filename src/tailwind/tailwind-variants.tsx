@@ -19,7 +19,7 @@ export const sectionVariant = (variant): any => {
 				},
 				sectionFooter: {
 					border: '',
-					display: 'flex-middle',
+					display: 'flex-between',
 					spacing: 'py-4',
 				},
 			};

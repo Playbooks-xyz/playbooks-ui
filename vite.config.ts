@@ -57,6 +57,7 @@ export default defineConfig({
 				path.resolve(__dirname, 'src/interface/tags.tsx'),
 				path.resolve(__dirname, 'src/interface/toasts.tsx'),
 				path.resolve(__dirname, 'src/interface/tooltips.tsx'),
+				path.resolve(__dirname, 'src/tailwind/tailwind.tsx'),
 				path.resolve(__dirname, 'src/utils/font-awesome/fa-icons.tsx'),
 			],
 			formats: ['cjs'],

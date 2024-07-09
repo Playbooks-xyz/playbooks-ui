@@ -93,6 +93,10 @@
       "import": "./dist/context.cjs",
       "types": "./dist/index.d.ts"
     },
+    "./tailwind": {
+      "import": "./dist/tailwind.cjs",
+      "types": "./dist/index.d.ts"
+    },
     "./accordions": {
       "import": "./dist/accordions.cjs",
       "types": "./dist/index.d.ts"
