@@ -41,7 +41,6 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-google-maps/api": "^2.19.3",
     "@react-spring/web": "^9.7.3",
-    "classnames": "^2.5.1",
     "dts-bundle-generator": "^9.5.1",
     "react-currency-input-field": "^3.8.0",
     "react-input-mask": "^2.0.4",
