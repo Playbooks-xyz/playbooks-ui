@@ -120,7 +120,6 @@ export const inputProps = (variant?) => ({
 	ringOffsetColor:
 		variant === 'group' ? 'f:ring-offset-transparent' : 'f:ring-offset-blue-500 dark:f:ring-offset-orange-500',
 	placeholderColor: 'placeholder:gray-500 dark:placeholder:gray-400',
-	spacing: 'px-4 py-3.5',
 	tracking: 'tracking-wide',
 	width: 'w-full',
 });

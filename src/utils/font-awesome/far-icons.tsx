@@ -71,6 +71,7 @@ export { faCirclePlus as farCirclePlus } from '@fortawesome/pro-regular-svg-icon
 export { faCircleQuestion as farCircleQuestion } from '@fortawesome/pro-regular-svg-icons';
 export { faCircleXmark as farCircleXmark } from '@fortawesome/pro-regular-svg-icons';
 export { faCity as farCity } from '@fortawesome/pro-regular-svg-icons';
+export { faClipboard as farClipboard } from '@fortawesome/pro-regular-svg-icons';
 export { faClipboardList as farClipboardList } from '@fortawesome/pro-regular-svg-icons';
 export { faClock as farClock } from '@fortawesome/pro-regular-svg-icons';
 export { faCloud as farCloud } from '@fortawesome/pro-regular-svg-icons';

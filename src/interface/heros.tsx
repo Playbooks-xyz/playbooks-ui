@@ -21,7 +21,7 @@ export const Hero = forwardRef<any, iHero>(
 	({ id, name = 'Hero', size, className, children, ...tailwind }: iHero, ref) => {
 		const base = {
 			position: 'relative',
-			bgColor: 'bg-gray-50 dark:bg-gray-900',
+			bgColor: 'bg-white dark:bg-gray-900',
 			...borderProps,
 			display: 'block',
 			size: computeHeroSize(size),

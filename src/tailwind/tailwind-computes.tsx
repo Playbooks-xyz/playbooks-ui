@@ -70,6 +70,28 @@ export const computeBtnSize = size => {
 	}
 };
 
+export const computeInputSize = size => {
+	switch (size) {
+		case 'xs':
+			return { fontSize: 'text-sm', spacing: 'p-2.5' };
+
+		case 'sm':
+			return { fontSize: 'text-sm', spacing: 'p-3' };
+
+		case 'md':
+			return { fontSize: 'text-sm', spacing: 'p-3.5' };
+
+		case 'lg':
+			return { fontSize: 'text-base', spacing: 'p-4' };
+
+		case 'xl':
+			return { fontSize: 'text-base', spacing: 'p-4.5' };
+
+		default:
+			return size;
+	}
+};
+
 export const computeHeroSize = size => {
 	switch (size) {
 		case 'xs':

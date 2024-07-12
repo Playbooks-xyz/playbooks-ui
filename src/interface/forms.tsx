@@ -21,7 +21,7 @@ import {
 	iFormTextArea,
 } from 'interface/forms.types';
 import { Div, Span } from 'interface/html';
-import { checkboxProps, inputProps, rangeProps, tailwindClassBuilder } from 'tailwind';
+import { checkboxProps, computeInputSize, inputProps, rangeProps, tailwindClassBuilder } from 'tailwind';
 
 export const Form = ({ id, name = 'Form', onSubmit, className, children, ...tailwind }: iForm) => {
 	const base = {};
@@ -133,6 +133,7 @@ export const FormInput = forwardRef<any, iFormInput>(
 			id,
 			name = 'FormInput',
 			type,
+			size = 'md',
 			value,
 			variant,
 			placeholder,
@@ -146,7 +147,7 @@ export const FormInput = forwardRef<any, iFormInput>(
 		}: iFormInput,
 		ref,
 	) => {
-		const base = inputProps(variant);
+		const base = { ...inputProps(variant), ...computeInputSize(size) };
 		const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 		return (
@@ -172,6 +173,7 @@ export const FormInput = forwardRef<any, iFormInput>(
 export const FormMaskInput = ({
 	id,
 	name = 'FormMaskInput',
+	size = 'md',
 	mask,
 	value,
 	variant,
@@ -182,7 +184,7 @@ export const FormMaskInput = ({
 	className,
 	...tailwind
 }: iFormInputMask) => {
-	const base = inputProps(variant);
+	const base = { ...inputProps(variant), ...computeInputSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -202,6 +204,7 @@ export const FormMaskInput = ({
 export const FormCurrencyInput = ({
 	id,
 	name = 'FormCurrencyInput',
+	size = 'md',
 	value,
 	variant,
 	prefix,
@@ -212,7 +215,7 @@ export const FormCurrencyInput = ({
 	className,
 	...tailwind
 }: iFormInputCurrency) => {
-	const base = inputProps(variant);
+	const base = { ...inputProps(variant), ...computeInputSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -231,6 +234,7 @@ export const FormCurrencyInput = ({
 export const FormDivInput = ({
 	id,
 	name = 'FormDivInput',
+	size = 'md',
 	value,
 	variant,
 	placeholder,
@@ -241,6 +245,7 @@ export const FormDivInput = ({
 }: iFormInput) => {
 	const base = {
 		...inputProps(variant),
+		...computeInputSize(size),
 		color: 'gray-600 dark:gray-400',
 		display: 'flex-center',
 		overflow: 'overflow-x-scroll',
@@ -272,6 +277,7 @@ export const FormFileInput = ({
 export const FormLocationInput = ({
 	id,
 	name = 'FormLocationInput',
+	size = 'md',
 	value,
 	variant,
 	options,
@@ -283,7 +289,7 @@ export const FormLocationInput = ({
 	className,
 	...tailwind
 }: iFormLocationInput) => {
-	const base = inputProps(variant);
+	const base = { ...inputProps(variant), ...computeInputSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 	const ref = useRef(null);
 
@@ -314,6 +320,7 @@ export const FormLocationInput = ({
 export const FormPhoneInput = ({
 	id,
 	name = 'FormPhoneInput',
+	size = 'md',
 	value,
 	variant,
 	placeholder,
@@ -323,7 +330,7 @@ export const FormPhoneInput = ({
 	className,
 	...tailwind
 }: iFormInput) => {
-	const base = inputProps(variant);
+	const base = { ...inputProps(variant), ...computeInputSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -342,6 +349,7 @@ export const FormPhoneInput = ({
 export const FormSelect = ({
 	id,
 	name = 'FormSelect',
+	size = 'md',
 	value,
 	variant,
 	options = [],
@@ -351,7 +359,7 @@ export const FormSelect = ({
 	className,
 	...tailwind
 }: iFormSelect) => {
-	const base = { ...inputProps(variant), cursor: 'cursor-pointer' };
+	const base = { ...inputProps(variant), ...computeInputSize(size), cursor: 'cursor-pointer' };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -383,6 +391,7 @@ export const FormText = ({ id, name = 'FormText', className, children, ...tailwi
 export const FormTextArea = ({
 	id,
 	name = 'FormTextArea',
+	size = 'md',
 	value,
 	variant,
 	rows,
@@ -392,7 +401,7 @@ export const FormTextArea = ({
 	className,
 	...tailwind
 }: iFormTextArea) => {
-	const base = inputProps(variant);
+	const base = { ...inputProps(variant), ...computeInputSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (

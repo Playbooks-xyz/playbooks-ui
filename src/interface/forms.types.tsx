@@ -41,6 +41,7 @@ export type iFormFile = HtmlType & {
 export type iFormInput = HtmlType & {
 	id?: string;
 	type?: string;
+	size?: string;
 	value?: any;
 	variant?: string;
 	defaultValue?: any;

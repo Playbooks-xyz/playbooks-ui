@@ -27,7 +27,7 @@ export const TabSelect = ({
 };
 
 export const Tabs = ({ id, name = 'Tabs', activeTab, tabs, onSelect, className, children, ...tailwind }: iTabs) => {
-	const base = { display: 'flex-start', space: 'space-x-0' };
+	const base = { display: 'flex-start' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
