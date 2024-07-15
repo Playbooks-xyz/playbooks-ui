@@ -3,7 +3,7 @@ import NLink from 'next/link';
 
 import { Span } from 'interface/html';
 import { Icon } from 'interface/icons';
-import { iLink } from 'interface/links.types';
+import { iLink, iLinkShared } from 'interface/links.types';
 import { Oval } from 'interface/spinners';
 import {
 	btnAccentProps,
@@ -16,175 +16,39 @@ import {
 	tailwindClassBuilder,
 } from 'tailwind';
 
-export const Link = ({
-	id,
-	name = 'Link',
-	active,
-	disabled,
-	href = '#',
-	prevIcon,
-	icon,
-	nextIcon,
-	target,
-	taskRunning,
-	size = 'sm',
-	className,
-	children,
-	...tailwind
-}: iLink) => {
+export const Link = ({ id, name = 'Link', size = 'sm', active, className, ...tailwind }: iLink) => {
 	const base = { ...btnProps(active), size: computeBtnSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = {
-		id,
-		name,
-		href,
-		target,
-		disabled,
-		prevIcon,
-		icon,
-		nextIcon,
-		taskRunning,
-		classes,
-		children,
-		...tailwind,
-	};
 
-	return <LinkSharedInternals {...props} />;
+	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const AccentLink = ({
-	id,
-	name = 'AccentLink',
-	active,
-	disabled,
-	href = '#',
-	prevIcon,
-	icon,
-	nextIcon,
-	target,
-	taskRunning,
-	size = 'sm',
-	className,
-	children,
-	...tailwind
-}: iLink) => {
+export const AccentLink = ({ id, name = 'AccentLink', size = 'sm', active, className, ...tailwind }: iLink) => {
 	const base = { ...btnAccentProps(active), size: computeBtnSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = {
-		id,
-		name,
-		href,
-		target,
-		disabled,
-		prevIcon,
-		icon,
-		nextIcon,
-		taskRunning,
-		classes,
-		children,
-		...tailwind,
-	};
 
-	return <LinkSharedInternals {...props} />;
+	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const BorderLink = ({
-	id,
-	name = 'BorderLink',
-	active,
-	disabled,
-	href = '#',
-	prevIcon,
-	icon,
-	nextIcon,
-	target,
-	taskRunning,
-	size = 'sm',
-	className,
-	children,
-	...tailwind
-}: iLink) => {
-	const base = { ...btnBorderProps(active), disabled, size: computeBtnSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = {
-		id,
-		name,
-		href,
-		target,
-		disabled,
-		prevIcon,
-		icon,
-		nextIcon,
-		taskRunning: taskRunning ? { color: 'gray-600 dark:gray-300' } : false,
-		classes,
-		children,
-		...tailwind,
-	};
+export const BorderLink = ({ id, name = 'BorderLink', size = 'sm', active, className, ...tailwind }: iLink) => {
+	const base = { ...btnBorderProps(active), size: computeBtnSize(size) };
 
-	return <LinkSharedInternals {...props} />;
+	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const TabLink = ({
-	id,
-	name = 'TabLink',
-	active,
-	disabled,
-	href = '#',
-	prevIcon,
-	icon,
-	nextIcon,
-	target,
-	taskRunning,
-	size = 'sm',
-	className,
-	children,
-	...tailwind
-}: iLink) => {
+export const TabLink = ({ id, name = 'TabLink', size = 'sm', active, className, ...tailwind }: iLink) => {
 	const base = { ...btnTabProps(active), size: computeBtnSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = {
-		id,
-		name,
-		href,
-		target,
-		disabled,
-		prevIcon,
-		icon,
-		nextIcon,
-		taskRunning,
-		classes,
-		children,
-		...tailwind,
-	};
 
-	return <LinkSharedInternals {...props} />;
+	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const TextLink = ({
-	id,
-	name = 'TextLink',
-	active,
-	disabled,
-	href = '#',
-	prevIcon,
-	icon,
-	nextIcon,
-	target,
-	taskRunning,
-	size = 'sm',
-	className,
-	children,
-	...tailwind
-}: iLink) => {
+export const TextLink = ({ id, name = 'TextLink', size = 'sm', active, className, ...tailwind }: iLink) => {
 	const base = { ...btnTextProps(active), size: computeBtnSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = { id, href, target, disabled, prevIcon, icon, nextIcon, taskRunning, classes, children, ...tailwind };
 
-	return <LinkSharedInternals {...props} />;
+	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const LinkSharedInternals = ({
+export const LinkShared = ({
 	id,
+	name,
 	href,
 	target,
 	disabled,
@@ -192,15 +56,22 @@ export const LinkSharedInternals = ({
 	icon,
 	nextIcon,
 	taskRunning,
-	classes,
+	className,
 	children,
 	...tailwind
-}) => {
+}: iLinkShared) => {
 	return (
-		<LinkWrapper id={id} href={href} target={target} disabled={disabled} className={classes}>
+		<LinkWrapper
+			id={id}
+			name={name}
+			href={href}
+			target={target}
+			disabled={disabled}
+			className={className}
+			{...tailwind}>
 			{taskRunning ? <Fragment /> : prevIcon && <Icon type='far' icon={prevIcon?.icon || prevIcon} {...prevIcon} />}
 			{taskRunning ? (
-				<Oval {...taskRunning} />
+				<Oval />
 			) : icon ? (
 				<Icon type='far' icon={icon?.icon || icon} {...icon} />
 			) : (

@@ -38,9 +38,9 @@ export const btnBorderProps = (active?) => ({
 	border: 'border',
 	borderColor: active ? 'border-orange-500 dark:border-orange-500' : 'border-gray-300 dark:border-gray-600',
 	borderOpacity: active ? 'border-opacity-100 dark:border-opacity-100' : 'border-opacity-50 dark:border-opacity-50',
-	color: 'gray-600 dark:gray-300',
+	color: active ? 'orange-500' : 'gray-600 dark:gray-300',
+	stroke: active ? 'stroke-orange-500' : 'stroke-gray-600 dark:stroke-gray-300',
 	hover: 'h:border-opacity-100 dark:h:border-opacity-100 h:opacity-100',
-	stroke: 'stroke-gray-600 dark:stroke-gray-300',
 });
 
 export const btnTabProps = (active?) => ({

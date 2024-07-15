@@ -39,7 +39,7 @@ export const NavbarBrand = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<LinkWrapper href={href} className={classes}>
+		<LinkWrapper name={name} href={href} className={classes}>
 			<Img src={src} alt={alt} width='w-full' />
 		</LinkWrapper>
 	);

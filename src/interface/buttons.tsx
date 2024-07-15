@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 
-import { iBtn } from 'interface/buttons.types';
+import { iBtn, iBtnShared } from 'interface/buttons.types';
 import { Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
@@ -15,188 +15,60 @@ import {
 	tailwindClassBuilder,
 } from 'tailwind';
 
-export const Btn = ({
-	id,
-	name = 'Btn',
-	type,
-	active,
-	disabled,
-	taskRunning,
-	onClick,
-	icon,
-	prevIcon,
-	nextIcon,
-	size = 'sm',
-	className,
-	children,
-	...tailwind
-}: iBtn) => {
+export const Btn = ({ id, name = 'Btn', size = 'sm', active, className, ...tailwind }: iBtn) => {
 	const base = { ...btnProps(active), size: computeBtnSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = {
-		id,
-		type,
-		name,
-		disabled,
-		prevIcon,
-		icon,
-		nextIcon,
-		taskRunning,
-		onClick,
-		classes,
-		children,
-		...tailwind,
-	};
 
-	return <BtnSharedInternals {...props} />;
+	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const AccentBtn = ({
-	id,
-	name = 'AccentBtn',
-	type,
-	active,
-	disabled,
-	taskRunning,
-	onClick,
-	icon,
-	prevIcon,
-	nextIcon,
-	size = 'sm',
-	className,
-	children,
-	...tailwind
-}: iBtn) => {
+export const AccentBtn = ({ id, name = 'AccentBtn', size = 'sm', active, className, ...tailwind }: iBtn) => {
 	const base = { ...btnAccentProps(active), size: computeBtnSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = {
-		id,
-		type,
-		name,
-		disabled,
-		prevIcon,
-		icon,
-		nextIcon,
-		taskRunning,
-		onClick,
-		classes,
-		children,
-		...tailwind,
-	};
 
-	return <BtnSharedInternals {...props} />;
+	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const BorderBtn = ({
-	id,
-	name = 'BorderBtn',
-	type,
-	active,
-	disabled,
-	taskRunning,
-	onClick,
-	icon,
-	prevIcon,
-	nextIcon,
-	size = 'sm',
-	className,
-	children,
-	...tailwind
-}: iBtn) => {
+export const BorderBtn = ({ id, name = 'BorderBtn', size = 'sm', active, className, ...tailwind }: iBtn) => {
 	const base = { ...btnBorderProps(active), size: computeBtnSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = {
-		id,
-		type,
-		name,
-		disabled,
-		prevIcon,
-		icon,
-		nextIcon,
-		taskRunning: taskRunning ? { color: 'gray-600 dark:gray-300' } : false,
-		onClick,
-		classes,
-		children,
-		...tailwind,
-	};
 
-	return <BtnSharedInternals {...props} />;
+	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const TabBtn = ({
-	id,
-	name = 'TabBtn',
-	type,
-	active,
-	disabled,
-	taskRunning,
-	onClick,
-	icon,
-	prevIcon,
-	nextIcon,
-	size = 'sm',
-	className,
-	children,
-	...tailwind
-}: iBtn) => {
+export const TabBtn = ({ id, name = 'TabBtn', size = 'sm', active, className, ...tailwind }: iBtn) => {
 	const base = { ...btnTabProps(active), size: computeBtnSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = {
-		id,
-		type,
-		name,
-		disabled,
-		prevIcon,
-		icon,
-		nextIcon,
-		taskRunning,
-		onClick,
-		classes,
-		children,
-		...tailwind,
-	};
 
-	return <BtnSharedInternals {...props} />;
+	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const TextBtn = ({
+export const TextBtn = ({ id, name = 'TextBtn', size = 'sm', active, className, ...tailwind }: iBtn) => {
+	const base = { ...btnTextProps(active), size: computeBtnSize(size) };
+
+	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
+};
+
+const BtnShared = ({
 	id,
-	name = 'TextBtn',
+	name,
 	type,
-	active,
 	disabled,
+	prevIcon,
+	icon,
+	nextIcon,
 	taskRunning,
 	onClick,
-	icon,
-	prevIcon,
-	nextIcon,
-	size = 'sm',
 	className,
 	children,
 	...tailwind
-}: iBtn) => {
-	const base = { ...btnTextProps(active), size: computeBtnSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = { id, type, disabled, prevIcon, icon, nextIcon, taskRunning, onClick, classes, children, ...tailwind };
-
-	return <BtnSharedInternals {...props} />;
-};
-
-export const BtnSharedInternals = ({
-	id,
-	type,
-	disabled,
-	prevIcon,
-	icon,
-	nextIcon,
-	taskRunning,
-	onClick,
-	classes,
-	children,
-	...tailwind
-}) => {
+}: iBtnShared) => {
 	return (
-		<BtnWrapper id={id} type={type} disabled={disabled} taskRunning={taskRunning} onClick={onClick} className={classes}>
+		<BtnWrapper
+			id={id}
+			name={name}
+			type={type}
+			disabled={disabled}
+			taskRunning={taskRunning}
+			onClick={onClick}
+			className={className}
+			{...tailwind}>
 			{taskRunning ? <Fragment /> : prevIcon && <Icon type='far' icon={prevIcon?.icon || prevIcon} {...prevIcon} />}
 			{taskRunning ? (
 				<Oval />
