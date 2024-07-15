@@ -106,7 +106,7 @@ export const Modal = ({ id, name = 'Modal', open = false, onClose, className, ch
 
 	// Methods
 	const onKeyDown = e => {
-		if (e.keyCode === 27) onClose();
+		if (e.keyCode === 27 && onClose) onClose();
 	};
 
 	// Render

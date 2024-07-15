@@ -33,7 +33,20 @@ export const Btn = ({
 }: iBtn) => {
 	const base = { ...btnProps(active), size: computeBtnSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = { id, type, disabled, prevIcon, icon, nextIcon, taskRunning, onClick, classes, children, ...tailwind };
+	const props = {
+		id,
+		type,
+		name,
+		disabled,
+		prevIcon,
+		icon,
+		nextIcon,
+		taskRunning,
+		onClick,
+		classes,
+		children,
+		...tailwind,
+	};
 
 	return <BtnSharedInternals {...props} />;
 };
@@ -56,7 +69,20 @@ export const AccentBtn = ({
 }: iBtn) => {
 	const base = { ...btnAccentProps(active), size: computeBtnSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = { id, type, disabled, prevIcon, icon, nextIcon, taskRunning, onClick, classes, children, ...tailwind };
+	const props = {
+		id,
+		type,
+		name,
+		disabled,
+		prevIcon,
+		icon,
+		nextIcon,
+		taskRunning,
+		onClick,
+		classes,
+		children,
+		...tailwind,
+	};
 
 	return <BtnSharedInternals {...props} />;
 };
@@ -82,6 +108,7 @@ export const BorderBtn = ({
 	const props = {
 		id,
 		type,
+		name,
 		disabled,
 		prevIcon,
 		icon,
@@ -114,7 +141,20 @@ export const TabBtn = ({
 }: iBtn) => {
 	const base = { ...btnTabProps(active), size: computeBtnSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = { id, type, disabled, prevIcon, icon, nextIcon, taskRunning, onClick, classes, children, ...tailwind };
+	const props = {
+		id,
+		type,
+		name,
+		disabled,
+		prevIcon,
+		icon,
+		nextIcon,
+		taskRunning,
+		onClick,
+		classes,
+		children,
+		...tailwind,
+	};
 
 	return <BtnSharedInternals {...props} />;
 };

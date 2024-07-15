@@ -34,7 +34,20 @@ export const Link = ({
 }: iLink) => {
 	const base = { ...btnProps(active), size: computeBtnSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = { id, href, target, disabled, prevIcon, icon, nextIcon, taskRunning, classes, children, ...tailwind };
+	const props = {
+		id,
+		name,
+		href,
+		target,
+		disabled,
+		prevIcon,
+		icon,
+		nextIcon,
+		taskRunning,
+		classes,
+		children,
+		...tailwind,
+	};
 
 	return <LinkSharedInternals {...props} />;
 };
@@ -57,7 +70,20 @@ export const AccentLink = ({
 }: iLink) => {
 	const base = { ...btnAccentProps(active), size: computeBtnSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = { id, href, target, disabled, prevIcon, icon, nextIcon, taskRunning, classes, children, ...tailwind };
+	const props = {
+		id,
+		name,
+		href,
+		target,
+		disabled,
+		prevIcon,
+		icon,
+		nextIcon,
+		taskRunning,
+		classes,
+		children,
+		...tailwind,
+	};
 
 	return <LinkSharedInternals {...props} />;
 };
@@ -82,6 +108,7 @@ export const BorderLink = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 	const props = {
 		id,
+		name,
 		href,
 		target,
 		disabled,
@@ -115,7 +142,20 @@ export const TabLink = ({
 }: iLink) => {
 	const base = { ...btnTabProps(active), size: computeBtnSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-	const props = { id, href, target, disabled, prevIcon, icon, nextIcon, taskRunning, classes, children, ...tailwind };
+	const props = {
+		id,
+		name,
+		href,
+		target,
+		disabled,
+		prevIcon,
+		icon,
+		nextIcon,
+		taskRunning,
+		classes,
+		children,
+		...tailwind,
+	};
 
 	return <LinkSharedInternals {...props} />;
 };

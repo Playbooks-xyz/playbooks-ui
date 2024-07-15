@@ -17,6 +17,8 @@ export type TailwindType = {
 	cursor?: string;
 	display?: string;
 	divide?: string;
+	divideColor?: string;
+	divideOpacity?: string;
 	duration?: string;
 	fade?: string;
 	fontFamily?: TailwindFontFamilyOpts;
@@ -27,6 +29,7 @@ export type TailwindType = {
 	gap?: string;
 	grid?: string;
 	gridFlow?: string;
+	group?: string;
 	height?: string;
 	inset?: string;
 	margin?: string;
@@ -48,6 +51,7 @@ export type TailwindType = {
 	size?: string;
 	space?: string;
 	spacing?: string;
+	textTransform?: string;
 	tracking?: string;
 	transition?: string;
 	transform?: string;

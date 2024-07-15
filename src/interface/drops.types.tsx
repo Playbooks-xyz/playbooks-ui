@@ -8,7 +8,6 @@ export type iDrop = HtmlType & {
 export type iDropToggle = HtmlType & {
 	type?: string;
 	icon?: string;
-	active: boolean;
 	nextIcon?: string;
 };
 

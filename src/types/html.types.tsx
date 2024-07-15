@@ -2,13 +2,14 @@ import { TailwindType } from 'types/tailwind.types';
 
 export type HtmlType = TailwindType & {
 	id?: string;
-	name?: string;
 	ref?: any;
+	name?: string;
 	html?: any;
 	tabIndex?: any;
 	onClick?: () => void;
 	onMouseEnter?: () => void;
 	onMouseLeave?: () => void;
+	tailwind?: TailwindType;
 	className?: string;
 	style?: any;
 	children?: any;

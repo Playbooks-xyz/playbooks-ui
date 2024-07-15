@@ -3,14 +3,14 @@ import NHead from 'next/head';
 import { useInterface } from 'contexts';
 import { iHead } from 'interface/head.types';
 
-export const Head = ({ photo, title, description, children }: iHead) => {
+export const Head = ({ title, photo, description, children }: iHead) => {
 	const interfaceContext = useInterface();
 
 	// Computed
 	const computedMeta = {
 		...interfaceContext?.seo,
-		photo,
 		title,
+		photo,
 		description,
 	};
 

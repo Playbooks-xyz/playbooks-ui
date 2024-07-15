@@ -36,7 +36,7 @@ export const btnBorderProps = (active?) => ({
 	bgColor: 'bg-transparent',
 	bgOpacity: 'bg-opacity-100',
 	border: 'border',
-	borderColor: active ? 'border-gray-300 dark:border-gray-600' : 'border-gray-300 dark:border-gray-600',
+	borderColor: active ? 'border-orange-500 dark:border-orange-500' : 'border-gray-300 dark:border-gray-600',
 	borderOpacity: active ? 'border-opacity-100 dark:border-opacity-100' : 'border-opacity-50 dark:border-opacity-50',
 	color: 'gray-600 dark:gray-300',
 	hover: 'h:border-opacity-100 dark:h:border-opacity-100 h:opacity-100',

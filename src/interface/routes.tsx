@@ -17,14 +17,13 @@ export const Route = ({ id, name = 'Route', photo, title, description, className
 	const computedTitle = useMemo(() => {
 		const basePath = router.asPath.split('?')[0];
 		const paths = basePath.split('/');
-		if (basePath.length <= 1) return interfaceContext.seo?.title;
 		const formattedPaths = paths.map(v =>
 			v
 				.split('-')
 				.map(v => capitalize(v))
 				.join(' '),
 		);
-		return 'Playbooks' + formattedPaths.join(' | ');
+		return interfaceContext.seo?.title + formattedPaths.join(' | ');
 	}, [router.pathname]);
 
 	// Render
