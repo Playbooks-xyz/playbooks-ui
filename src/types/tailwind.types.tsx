@@ -31,6 +31,7 @@ export type TailwindType = {
 	gridFlow?: string;
 	group?: string;
 	height?: string;
+	hover?: string;
 	inset?: string;
 	margin?: string;
 	maxHeight?: string;

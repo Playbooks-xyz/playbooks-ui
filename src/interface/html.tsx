@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import { iAside, iBody, iDiv, iHr, iImg, iMain, iSpan } from 'interface/html.types';
+import { iFrame, iImg } from 'interface/html.types';
 import { borderProps, tailwindClassBuilder } from 'tailwind';
 import { HtmlType } from 'types';
 
@@ -15,7 +15,7 @@ export const Html = ({ id, name = 'Html', className, children, style, ...tailwin
 	);
 };
 
-export const Body = ({ id, name = 'Body', className, children, style, ...tailwind }: iBody) => {
+export const Body = ({ id, name = 'Body', className, children, style, ...tailwind }: HtmlType) => {
 	const base = {};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -26,8 +26,8 @@ export const Body = ({ id, name = 'Body', className, children, style, ...tailwin
 	);
 };
 
-export const Main = forwardRef<any, iMain>(
-	({ id, name = 'Main', className, children, style, ...tailwind }: iMain, ref) => {
+export const Main = forwardRef<any, HtmlType>(
+	({ id, name = 'Main', className, children, style, ...tailwind }: HtmlType, ref) => {
 		const base = { position: 'relative' };
 		const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -39,7 +39,7 @@ export const Main = forwardRef<any, iMain>(
 	},
 );
 
-export const Aside = ({ id, name = 'Aside', className, children, style, ...tailwind }: iAside) => {
+export const Aside = ({ id, name = 'Aside', className, children, style, ...tailwind }: HtmlType) => {
 	const base = { ...borderProps };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -50,7 +50,7 @@ export const Aside = ({ id, name = 'Aside', className, children, style, ...tailw
 	);
 };
 
-export const Div = forwardRef<any, iDiv>(
+export const Div = forwardRef<any, HtmlType>(
 	(
 		{
 			id,
@@ -64,7 +64,7 @@ export const Div = forwardRef<any, iDiv>(
 			children,
 			style,
 			...tailwind
-		}: iDiv,
+		}: HtmlType,
 		ref,
 	) => {
 		const base = { position: 'relative', ...borderProps };
@@ -88,8 +88,11 @@ export const Div = forwardRef<any, iDiv>(
 	},
 );
 
-export const Span = forwardRef<any, iSpan>(
-	({ id, name = 'Span', onClick, onMouseEnter, onMouseLeave, className, children, style, ...tailwind }: iSpan, ref) => {
+export const Span = forwardRef<any, HtmlType>(
+	(
+		{ id, name = 'Span', onClick, onMouseEnter, onMouseLeave, className, children, style, ...tailwind }: HtmlType,
+		ref,
+	) => {
 		const base = { display: 'inline-block' };
 		const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -131,12 +134,12 @@ export const Li = ({ id, name = 'Li', className, children, ...tailwind }: HtmlTy
 	);
 };
 
-// export const IFrame = ({ id, name = 'Img', src, alt, className, style, ...tailwind }: iFrame) => {
-// 	const base = {};
-// 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+export const IFrame = ({ id, name = 'Img', src, className, style, ...tailwind }: iFrame) => {
+	const base = {};
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
-// 	return <iframe id={id} data-name={name} src={src} alt={alt} className={classes} style={style} />;
-// };
+	return <iframe id={id} data-name={name} src={src} className={classes} style={style} />;
+};
 
 export const Img = ({ id, name = 'Img', src, alt, className, style, ...tailwind }: iImg) => {
 	const base = { display: 'inline-block' };
@@ -145,7 +148,7 @@ export const Img = ({ id, name = 'Img', src, alt, className, style, ...tailwind 
 	return <img id={id} data-name={name} src={src} alt={alt} className={classes} style={style} />;
 };
 
-export const Hr = ({ id, name = 'Hr', className, children, style, ...tailwind }: iHr) => {
+export const Hr = ({ id, name = 'Hr', className, children, style, ...tailwind }: HtmlType) => {
 	const base = { border: 'border-t', borderRadius: 'rounded-md', ...borderProps };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -156,7 +159,51 @@ export const Hr = ({ id, name = 'Hr', className, children, style, ...tailwind }:
 	);
 };
 
-export const Pre = ({ id, name = 'Pre', className, children, style, ...tailwind }: iHr) => {
+export const Article = ({ id, name = 'Article', className, children, style, ...tailwind }: HtmlType) => {
+	const base = {};
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+
+	return (
+		<article id={id} data-name={name} className={classes} style={style}>
+			{children}
+		</article>
+	);
+};
+
+export const Figure = ({ id, name = 'Figure', className, children, style, ...tailwind }: HtmlType) => {
+	const base = {};
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+
+	return (
+		<figure id={id} data-name={name} className={classes} style={style}>
+			{children}
+		</figure>
+	);
+};
+
+export const Caption = ({ id, name = 'Caption', className, children, style, ...tailwind }: HtmlType) => {
+	const base = {};
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+
+	return (
+		<caption id={id} data-name={name} className={classes} style={style}>
+			{children}
+		</caption>
+	);
+};
+
+export const Blockquote = ({ id, name = 'Blockquote', className, children, style, ...tailwind }: HtmlType) => {
+	const base = {};
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+
+	return (
+		<blockquote id={id} data-name={name} className={classes} style={style}>
+			{children}
+		</blockquote>
+	);
+};
+
+export const Pre = ({ id, name = 'Pre', className, children, style, ...tailwind }: HtmlType) => {
 	const base = {};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -167,7 +214,7 @@ export const Pre = ({ id, name = 'Pre', className, children, style, ...tailwind 
 	);
 };
 
-export const Code = ({ id, name = 'Code', className, children, style, ...tailwind }: iHr) => {
+export const Code = ({ id, name = 'Code', className, children, style, ...tailwind }: HtmlType) => {
 	const base = {
 		bgColor: 'bg-gray-100 dark:bg-gray-800',
 		borderRadius: 'rounded-md',
