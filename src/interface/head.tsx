@@ -3,16 +3,11 @@ import NHead from 'next/head';
 import { useInterface } from 'contexts';
 import { iHead } from 'interface/head.types';
 
-export const Head = ({ title, photo, description, children }: iHead) => {
+export const Head = (props: iHead) => {
 	const interfaceContext = useInterface();
 
 	// Computed
-	const computedMeta = {
-		...interfaceContext?.seo,
-		title,
-		photo,
-		description,
-	};
+	const computedMeta = { ...interfaceContext?.seo, ...props };
 
 	// Render
 	return (
@@ -40,7 +35,7 @@ export const Head = ({ title, photo, description, children }: iHead) => {
 			<meta name='robots' content='noindex' />
 			<meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width' />
 			{/* <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';" /> */}
-			{children}
+			{props.children}
 		</NHead>
 	);
 };

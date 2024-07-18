@@ -7,7 +7,7 @@ import { Div } from 'interface/html';
 import { iRoute } from 'interface/routes.types';
 import { capitalize } from 'utils/transforms';
 
-export const Route = ({ id, name = 'Route', photo, title, description, className, children, ...tailwind }: iRoute) => {
+export const Route = ({ id, name = 'Route', title, seo, className, children, ...tailwind }: iRoute) => {
 	const base = { bgColor: 'bg-white dark:bg-gray-900' };
 	const props = { ...base, ...tailwind, className, name };
 	const interfaceContext = useInterface();
@@ -29,7 +29,7 @@ export const Route = ({ id, name = 'Route', photo, title, description, className
 	// Render
 	return (
 		<Div {...props}>
-			<Head photo={photo} title={title || computedTitle} description={description} />
+			<Head title={title || computedTitle} {...seo} />
 			{children}
 		</Div>
 	);
