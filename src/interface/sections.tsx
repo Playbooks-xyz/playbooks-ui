@@ -23,6 +23,7 @@ export const Section = forwardRef<any, iSection>(
 			border: 'border',
 			...borderProps,
 			borderRadius: 'rounded-md',
+			position: 'relative',
 			shadow: '',
 			spacing: 'mb-4',
 			width: 'w-full',
