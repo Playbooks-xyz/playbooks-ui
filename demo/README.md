@@ -16,6 +16,12 @@ This is a copy of the official starter for the popular NextJS framework.
 - npm run dev
 
 
+## Deploy
+- npm run deploy
+- npm version [major | minor | patch]
+- npm publish
+- npm run git
+
 ## Links
 - https://playbooks.xyz/cli
 - https://nextjs.org/docs
