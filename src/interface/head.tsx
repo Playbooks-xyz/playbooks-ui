@@ -14,9 +14,9 @@ export const Head = (props: iHead) => {
 		<NHead>
 			<title>{computedMeta.title}</title>
 			<link rel='icon' href={computedMeta.favicon} />
+			<link rel='canonical' href={computedMeta.baseUrl + computedMeta.path} />
 			<meta name='description' content={computedMeta.description} />
 			<meta name='author' content={computedMeta.author} />
-			<link rel='canonical' href={computedMeta.siteUrl} />
 
 			<meta name='og:image' content={computedMeta.photo} />
 			<meta name='og:description' content={computedMeta.description} />
@@ -24,7 +24,7 @@ export const Head = (props: iHead) => {
 			<meta name='og:type' content={computedMeta.type} />
 			<meta name='og:title' content={computedMeta.title} />
 			<meta name='og:image:secure_url' content={computedMeta.photo} />
-			<meta name='og:url' content={computedMeta.siteUrl} />
+			<meta name='og:url' content={computedMeta.baseUrl + computedMeta.path} />
 
 			<meta name='twitter:card' content='summary_large_image' />
 			<meta name='twitter:image' content={computedMeta.photo} />
@@ -32,10 +32,15 @@ export const Head = (props: iHead) => {
 			<meta name='twitter:description' content={computedMeta.description} />
 			<meta name='twitter:site' content={computedMeta.author} />
 
-			<meta name='robots' content='noindex' />
+			<meta name='robots' content={computedMeta.robots} />
 			<meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width' />
 			{/* <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';" /> */}
 			{props.children}
 		</NHead>
 	);
 };
+
+// Docs
+// https://www.advancedwebranking.com/blog/meta-tags-important-in-seo
+// https://ogp.me/#types
+// https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data
