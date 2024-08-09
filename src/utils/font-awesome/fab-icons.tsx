@@ -18,6 +18,7 @@ export { faStripeS as fabStripeS } from '@fortawesome/free-brands-svg-icons';
 export { faSwift as fabSwift } from '@fortawesome/free-brands-svg-icons';
 export { faTwitter as fabTwitter } from '@fortawesome/free-brands-svg-icons';
 export { faXTwitter as fabXTwitter } from '@fortawesome/free-brands-svg-icons';
+export { faYoutube as fabYoutube } from '@fortawesome/free-brands-svg-icons';
 
 // Docs
 // https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react

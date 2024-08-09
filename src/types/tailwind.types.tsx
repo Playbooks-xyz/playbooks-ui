@@ -52,6 +52,7 @@ export type TailwindType = {
 	size?: string;
 	space?: string;
 	spacing?: string;
+	textDecoration?: string;
 	textTransform?: string;
 	tracking?: string;
 	transition?: string;
