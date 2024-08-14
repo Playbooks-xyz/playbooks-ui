@@ -7,9 +7,7 @@ import tailwindcss from 'tailwindcss';
 import { defineConfig } from 'vite';
 
 function pushBuild() {
-	// console.log('build projects starting!');
 	exec('npx yalc push', (response, error) => {
-		// if (response) console.log(response);
 		if (error) console.error(error);
 		// console.log('build projects finished');
 	});
