@@ -20,7 +20,7 @@ export const Avatar = ({ id, name = 'Avatar', className, children, ...tailwind }
 
 export const AvatarBadge = ({ id, name = 'AvatarBadge', className, children, ...tailwind }: iAvatarBadge) => {
 	const base = {
-		bgColor: 'bg-blue-500 dark:bg-orange-500',
+		bgColor: 'bg-blue-500 dark:bg-cyan-500',
 		border: 'border-2',
 		borderColor: 'border-white dark:border-gray-900',
 		borderOpacity: 'border-opacity-100',

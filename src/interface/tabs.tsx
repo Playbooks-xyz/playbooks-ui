@@ -54,9 +54,9 @@ export const Tab = ({
 		bgColor: 'h:bg-gray-100 dark:h:bg-gray-700',
 		border: 'border-b-4',
 		borderColor: active
-			? 'border-blue-500 dark:border-orange-500'
+			? 'border-blue-500 dark:border-cyan-500'
 			: 'border-transparent h:border-gray-300 dark:h:border-gray-600',
-		color: active ? 'blue-500 dark:orange-500' : 'gray-700 dark:gray-200',
+		color: active ? 'blue-500 dark:cyan-500' : 'gray-700 dark:gray-200',
 		borderRadius: 'rounded-none',
 		grid: 'hidden sm:block',
 		zIndex: 'z-10',

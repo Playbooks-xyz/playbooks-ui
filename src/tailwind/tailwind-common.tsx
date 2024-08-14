@@ -35,13 +35,13 @@ export const accentGradientBgColor = {
 };
 
 export const gradientBgColor = {
-	bgColor: 'bg-gradient-to-br from-blue-500 to-indigo-500 dark:from-red-500 dark:to-orange-400',
+	bgColor: 'bg-gradient-to-br from-cyan-500 to-indigo-500',
 };
 
 export const gradientSpan = {
 	color: 'text-transparent',
 	bgClip: 'bg-clip-text',
-	bgColor: 'bg-gradient-to-r from-blue-500 to-indigo-500 dark:from-red-500 dark:to-orange-400',
+	bgColor: 'bg-gradient-to-r from-cyan-500 to-indigo-500',
 	leading: 'leading-relaxed',
 };
 

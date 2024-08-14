@@ -78,7 +78,7 @@ export const SwitchToggle = ({ id, name = 'SwitchToggle', icon, checked, classNa
 		placement: 'left-0',
 		position: 'absolute',
 		display: 'inline-block',
-		bgColor: checked ? 'bg-blue-500 dark:bg-orange-500' : 'bg-gray-300 dark:bg-gray-600',
+		bgColor: checked ? 'bg-blue-500 dark:bg-cyan-500' : 'bg-gray-300 dark:bg-gray-600',
 		border: '',
 		transition: 'transition',
 		transform: 'transform',

@@ -15,7 +15,7 @@ export const RadioWrapper = ({
 	const base = {
 		animation: 'transition',
 		border: 'border',
-		borderColor: active ? 'border-blue-500 dark:border-orange-500' : 'border-gray-400',
+		borderColor: active ? 'border-blue-500 dark:border-cyan-500' : 'border-gray-400',
 		borderOpacity: 'border-opacity-25',
 		borderRadius: 'rounded-md',
 		cursor: 'cursor-pointer',

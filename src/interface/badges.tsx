@@ -67,7 +67,7 @@ export const DraftBadge = ({ id, className, children, ...tailwind }: iBadge) => 
 };
 
 export const PendingBadge = ({ id, className, children, ...tailwind }: iBadge) => {
-	const base = { bgColor: 'bg-blue-500 dark:bg-blue-500', color: 'white' };
+	const base = { bgColor: 'bg-blue-500 dark:bg-cyan-500', color: 'white' };
 	const props = { ...base, ...tailwind, className };
 
 	return <Span {...props}>{children}</Span>;
@@ -81,7 +81,7 @@ export const WarningBadge = ({ id, className, children, ...tailwind }: iBadge) =
 };
 
 export const SuccessBadge = ({ id, className, children, ...tailwind }: iBadge) => {
-	const base = { bgColor: 'bg-green-500 dark:bg-green-500', color: 'white' };
+	const base = { bgColor: 'bg-green-400 dark:bg-green-400', color: 'white' };
 	const props = { ...base, ...tailwind, className };
 
 	return <Span {...props}>{children}</Span>;

@@ -71,7 +71,7 @@ export const CardBody = ({ id, name = 'CardBody', className, children, ...tailwi
 
 export const CardPretitle = ({ id, name = 'CardPretitle', className, children, ...tailwind }: iCardPretitle) => {
 	const base = {
-		color: 'blue-500 dark:orange-500',
+		color: 'blue-500 dark:cyan-500',
 		fontFamily: 'font-accent',
 		fontSize: 'text-sm',
 		fontWeight: 'font-book',

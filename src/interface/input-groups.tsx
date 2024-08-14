@@ -9,7 +9,7 @@ export const InputGroup = ({ id, name = 'InputGroup', active, className, childre
 		bgColor: 'bg-gray-white dark:bg-gray-900',
 		border: 'border',
 		borderColor:
-			'border-gray-400 dark:border-gray-500 focus-within:border-blue-500 dark:focus-within:border-orange-500',
+			'border-gray-400 dark:border-gray-500 focus-within:border-blue-500 dark:focus-within:border-cyan-500',
 		borderOpacity: 'border-opacity-50 dark:border-opacity-50',
 		borderRadius: 'rounded-md',
 		color: 'gray-600 dark:gray-200',

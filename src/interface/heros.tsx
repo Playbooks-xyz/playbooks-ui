@@ -112,7 +112,7 @@ export const HeroBody = ({ id, name = 'HeroBody', className, children, ...tailwi
 
 export const HeroPretitle = ({ id, name = 'HeroPretitle', className, children, ...tailwind }: iHeroPretitle) => {
 	const base = {
-		color: 'blue-500 dark:orange-500',
+		color: 'blue-500 dark:cyan-500',
 		fontFamily: 'font-accent',
 		fontSize: 'text-sm',
 		fontWeight: 'font-medium',

@@ -21,7 +21,7 @@ export const Banner = ({ id, name = 'Banner', className, children, ...tailwind }
 };
 
 export const BannerIcon = ({ id, name = 'BannerIcon', icon = 'house', className, ...tailwind }: iBannerIcon) => {
-	const base = { color: 'blue-500 dark:orange-500' };
+	const base = { color: 'blue-500 dark:cyan-500' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <FadIcon icon={icon} {...props} />;

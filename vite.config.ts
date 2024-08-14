@@ -1,9 +1,19 @@
 import react from '@vitejs/plugin-react';
 
+import { exec } from 'node:child_process';
 import path from 'path';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import tailwindcss from 'tailwindcss';
 import { defineConfig } from 'vite';
+
+function pushBuild() {
+	// console.log('build projects starting!');
+	exec('npx yalc push', (response, error) => {
+		// if (response) console.log(response);
+		if (error) console.error(error);
+		// console.log('build projects finished');
+	});
+}
 
 export default defineConfig({
 	base: './',
@@ -82,7 +92,13 @@ export default defineConfig({
 			plugins: [peerDepsExternal()],
 		},
 	},
-	plugins: [react()],
+	plugins: [
+		react(),
+		{
+			name: 'yalc-push',
+			closeBundle: pushBuild,
+		},
+	],
 	css: {
 		postcss: {
 			plugins: [tailwindcss],
@@ -102,3 +118,6 @@ export default defineConfig({
 		},
 	},
 });
+
+// Docs
+// https://github.com/vitejs/vite/discussions/9217

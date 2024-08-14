@@ -8,7 +8,7 @@ export const Alert = ({ id, name = 'Alert', show = true, className, children, ..
 		bgColor: 'bg-gray-100 dark:bg-gray-800',
 		bgOpacity: 'bg-opacity-25',
 		border: 'border-l-8',
-		borderColor: 'border-orange-500',
+		borderColor: 'border-cyan-500',
 		borderRadius: 'rounded-md',
 		display: 'flex-start-top',
 		overflow: 'overflow-hidden',
@@ -21,7 +21,7 @@ export const Alert = ({ id, name = 'Alert', show = true, className, children, ..
 };
 
 export const AlertIcon = ({ id, name = 'AlertIcon', icon = 'question-circle', className, ...tailwind }: iAlertIcon) => {
-	const base = { color: 'green-500', fontSize: 'text-2xl' };
+	const base = { color: 'green-400', fontSize: 'text-2xl' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return (

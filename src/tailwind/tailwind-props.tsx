@@ -12,7 +12,7 @@ export const breadcrumbBtnProps = (active?) => ({
 // Buttons
 export const btnProps = (active?) => ({
 	...btnSharedProps(active),
-	bgColor: 'bg-gradient-to-r from-blue-500 to-indigo-500 dark:from-red-500 dark:to-orange-400',
+	bgColor: 'bg-gradient-to-r from-cyan-500 to-indigo-500',
 	bgPosition: 'bg-pos-0 h:bg-pos-100',
 	bgSize: 'bg-size-200',
 	color: 'white',
@@ -36,10 +36,10 @@ export const btnBorderProps = (active?) => ({
 	bgColor: 'bg-transparent',
 	bgOpacity: 'bg-opacity-100',
 	border: 'border',
-	borderColor: active ? 'border-orange-500 dark:border-orange-500' : 'border-gray-300 dark:border-gray-600',
+	borderColor: active ? 'border-cyan-500 dark:border-cyan-500' : 'border-gray-300 dark:border-gray-600',
 	borderOpacity: active ? 'border-opacity-100 dark:border-opacity-100' : 'border-opacity-50 dark:border-opacity-50',
-	color: active ? 'orange-500' : 'gray-600 dark:gray-300',
-	stroke: active ? 'stroke-orange-500' : 'stroke-gray-600 dark:stroke-gray-300',
+	color: active ? 'cyan-500' : 'gray-600 dark:gray-300',
+	stroke: active ? 'stroke-cyan-500' : 'stroke-gray-600 dark:stroke-gray-300',
 	hover: 'h:border-opacity-100 dark:h:border-opacity-100 h:opacity-100',
 });
 
@@ -49,8 +49,8 @@ export const btnTabProps = (active?) => ({
 	bgOpacity: 'bg-opacity-100',
 	border: 'border-b-2',
 	borderColor: active
-		? 'border-t-transparent border-b-blue-500 dark:border-b-orange-500'
-		: 'border-t-transparent border-b-transparent h:border-b-gray-300 h:border-b-blue-500 dark:h:border-b-orange-500',
+		? 'border-t-transparent border-b-blue-500 dark:border-b-cyan-500'
+		: 'border-t-transparent border-b-transparent h:border-b-gray-300 h:border-b-blue-500 dark:h:border-b-cyan-500',
 	color: active ? 'gray-600 dark:gray-200' : 'gray-500 dark:gray-300',
 	stroke: 'stroke-gray-500 dark:stroke-gray-300',
 	borderRadius: '',
@@ -84,7 +84,7 @@ export const btnSharedProps = (active?) => ({
 export const checkboxProps = active => ({
 	animation: 'transition-all ease',
 	bgColor:
-		'bg-transparent checked:bg-blue-500 checked:h:bg-blue-500 checked:f:bg-blue-500 dark:checked:bg-orange-500 dark:checked:h:bg-orange-500 dark:checked:f:bg-orange-500',
+		'bg-gray-100 dark:bg-gray-800 checked:bg-blue-500 checked:h:bg-blue-500 checked:f:bg-blue-500 dark:checked:bg-cyan-500 dark:checked:h:bg-cyan-500 dark:checked:f:bg-cyan-500',
 	border: 'border-2',
 	borderColor: 'border-gray-400 dark:border-gray-600 f:border-blue-500 dark:border-gray-500',
 	borderOpacity: 'border-opacity-50 dark:border-opacity-50',
@@ -95,7 +95,7 @@ export const checkboxProps = active => ({
 		'ring-transparent checked:ring-transparent dark:checked:ring-transparent f:ring-transparent dark:f:ring-transparent',
 	ringOffset: 'ring-offset-4 checked:ring-offset-4 f:ring-offset-4',
 	ringOffsetColor:
-		'checked:ring-offset-blue-500/50 dark:checked:ring-offset-orange-500/50 f:ring-offset-blue-500/50 dark:f:ring-offset-orange-500/50',
+		'checked:ring-offset-blue-500/50 dark:checked:ring-offset-cyan-500/50 f:ring-offset-blue-500/50 dark:f:ring-offset-cyan-500/50',
 	size: 'h-6 w-6',
 });
 
@@ -108,7 +108,7 @@ export const inputProps = (variant?) => ({
 	color: 'gray-600 dark:gray-200',
 	bgColor: variant === 'group' ? 'bg-transparent' : 'bg-white dark:bg-gray-900',
 	border: variant === 'group' ? 'border-none' : 'border',
-	borderColor: 'border-gray-400 dark:border-gray-600 f:border-blue-500 dark:f:border-orange-500',
+	borderColor: 'border-gray-400 dark:border-gray-600 f:border-blue-500 dark:f:border-cyan-500',
 	borderOpacity: 'border-opacity-50 dark:border-opacity-50',
 	borderRadius: 'rounded-md',
 	fontFamily: 'font-secondary',
@@ -118,7 +118,7 @@ export const inputProps = (variant?) => ({
 	ringColor: variant === 'group' ? 'f:ring-transparent' : 'f:ring-transparent dark:f:ring-transparent', // override default
 	ringOffset: variant === 'group' ? 'f:ring-offset-none' : 'f:ring-offset-1 dark:f:ring-offset-1',
 	ringOffsetColor:
-		variant === 'group' ? 'f:ring-offset-transparent' : 'f:ring-offset-blue-500 dark:f:ring-offset-orange-500',
+		variant === 'group' ? 'f:ring-offset-transparent' : 'f:ring-offset-blue-500 dark:f:ring-offset-cyan-500',
 	placeholderColor: 'placeholder:gray-500 dark:placeholder:gray-400',
 	tracking: 'tracking-wide',
 	width: 'w-full',
@@ -127,7 +127,7 @@ export const inputProps = (variant?) => ({
 // Interactives
 export const interactiveProps = () => ({
 	outline: 'focus-visible:outline',
-	outlineColor: 'focus-visible:outline-blue-500 dark:focus-visible:outline-orange-500',
+	outlineColor: 'focus-visible:outline-blue-500 dark:focus-visible:outline-cyan-500',
 	outlineOffset: 'outline-offset-1',
 });
 
@@ -161,7 +161,7 @@ export const rangeProps = () => ({
 	sliderThumb: '[&::-webkit-slider-thumb]:appearance-none',
 	sliderThumbPosition: '[&::-webkit-slider-thumb]:-mt-2',
 	sliderThumbSize: '[&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:w-6',
-	sliderThumbBg: '[&::-webkit-slider-thumb]:bg-blue-500 [&::-webkit-slider-thumb]:dark:bg-orange-500',
+	sliderThumbBg: '[&::-webkit-slider-thumb]:bg-blue-500 [&::-webkit-slider-thumb]:dark:bg-cyan-500',
 	sliderThumbBorder: '[&::-webkit-slider-thumb]:border-2',
 	sliderThumbBorderColor: '[&::-webkit-slider-thumb]:border-gray-800',
 	sliderThumbBorderRadius: '[&::-webkit-slider-thumb]:rounded-full',
