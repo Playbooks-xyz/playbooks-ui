@@ -6,7 +6,7 @@ import { HtmlType } from 'types';
 export type iFade = HtmlType & {
 	ref: any;
 	show: boolean;
-	timeout: any;
+	timeout?: any;
 	onEnter?: any;
 	onEntering?: any;
 	onEntered?: any;
@@ -21,7 +21,7 @@ const Fade = forwardRef<any, iFade>(
 	(
 		{
 			show,
-			timeout,
+			timeout = 200,
 			onEnter,
 			onEntering,
 			onEntered,
