@@ -54,7 +54,7 @@ export const metaProps = {
 	color: 'gray-500 dark:gray-400',
 	display: 'flex-start',
 	fontSize: 'text-sm',
-	space: 'space-x-2',
+	space: 'space-x-4',
 	tracking: 'tracking-wide',
 };
 

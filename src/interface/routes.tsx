@@ -15,8 +15,7 @@ export const Route = ({ id, name = 'Route', seo, className, children, ...tailwin
 
 	// Computed
 	const computedTitle = useMemo(() => {
-		const basePath = router.asPath.split('?')[0];
-		const paths = basePath.split('/');
+		const paths = router.asPath.split('?')[0].split('/');
 		const formattedPaths = paths.map(v =>
 			v
 				.split('-')

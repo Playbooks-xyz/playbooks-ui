@@ -22,7 +22,7 @@ export const btnProps = (active?) => ({
 export const btnAccentProps = (active?) => ({
 	...btnSharedProps(active),
 	bgColor: 'bg-gray-200 dark:bg-gray-700',
-	bgOpacity: active ? 'bg-opacity-75 dark:bg-opacity-75' : 'bg-opacity-0 dark:bg-opacity-0',
+	bgOpacity: active ? 'bg-opacity-50 dark:bg-opacity-50' : 'bg-opacity-0 dark:bg-opacity-0',
 	border: '',
 	borderColor: 'border-gray-300 dark:border-gray-600',
 	borderOpacity: active ? 'border-opacity-100 dark:border-opacity-100' : 'border-opacity-50 dark:border-opacity-50',
