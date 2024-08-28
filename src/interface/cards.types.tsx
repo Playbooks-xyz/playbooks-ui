@@ -5,9 +5,9 @@ export type iCard = HtmlType;
 export type iCardHeader = HtmlType;
 
 export type iCardIcon = HtmlType & {
-	type: string;
+	type?: string;
 	icon: string;
-	wrapper: any;
+	wrapper?: any;
 };
 
 export type iCardImg = HtmlType & {
