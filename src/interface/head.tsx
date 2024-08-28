@@ -26,7 +26,7 @@ export const Head = (props: iHead) => {
 			<meta name='og:image:secure_url' content={computedMeta.photo} />
 			<meta name='og:url' content={computedMeta.baseUrl + computedMeta.path} />
 
-			<meta name='twitter:card' content='summary_large_image' />
+			<meta name='twitter:card' content={computedMeta.card} />
 			<meta name='twitter:image' content={computedMeta.photo} />
 			<meta name='twitter:title' content={computedMeta.title} />
 			<meta name='twitter:description' content={computedMeta.description} />
@@ -34,7 +34,6 @@ export const Head = (props: iHead) => {
 
 			<meta name='robots' content={computedMeta.robots} />
 			<meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width' />
-			{/* <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';" /> */}
 			{props.children}
 		</NHead>
 	);

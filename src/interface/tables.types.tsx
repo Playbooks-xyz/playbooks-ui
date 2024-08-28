@@ -1,10 +1,6 @@
 import { HtmlType } from 'types';
 
-export type iTable = HtmlType & {
-	type?: string;
-};
-
-export type iTableContainer = HtmlType;
+export type iTable = HtmlType;
 
 export type iTableHeader = HtmlType;
 

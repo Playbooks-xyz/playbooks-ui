@@ -4,7 +4,6 @@ import { FarIcon } from 'interface/icons';
 import {
 	iTable,
 	iTableBody,
-	iTableContainer,
 	iTableData,
 	iTableHead,
 	iTableHeader,
@@ -13,13 +12,6 @@ import {
 } from 'interface/tables.types';
 import { borderProps, tailwindClassBuilder } from 'tailwind';
 import { isObject } from 'utils/helpers';
-
-export const TableContainer = ({ id, name = 'TableContainer', className, children, ...tailwind }: iTableContainer) => {
-	const base = {};
-	const props = { ...base, ...tailwind, className, name };
-
-	return <Div {...props}>{children}</Div>;
-};
 
 export const Table = ({ id, name = 'Table', className, children, ...tailwind }: iTable) => {
 	const base = {

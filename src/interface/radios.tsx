@@ -49,8 +49,8 @@ export const Radio = ({
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
-		<RadioWrapper active={active} onClick={() => onClick(value)} {...props}>
-			<RadioInput value={active} />
+		<RadioWrapper active={value} onClick={onClick} {...props}>
+			<RadioInput value={value} />
 			<Div space='space-y-1'>
 				{title && <RadioTitle active={active}>{title}</RadioTitle>}
 				{text && <RadioText active={active}>{text}</RadioText>}
