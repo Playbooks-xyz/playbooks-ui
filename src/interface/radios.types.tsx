@@ -10,8 +10,6 @@ export type iRadio = HtmlType & {
 export type iRadioWrapper = BtnType;
 
 export type iRadioInput = HtmlType & {
-	name?: string;
-	active?: boolean;
 	value: boolean;
 };
 

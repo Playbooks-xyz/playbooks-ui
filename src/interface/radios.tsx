@@ -38,7 +38,6 @@ export const Radio = ({
 	name = 'Radio',
 	title,
 	text,
-	active,
 	value,
 	onClick,
 	className,
@@ -52,8 +51,8 @@ export const Radio = ({
 		<RadioWrapper active={value} onClick={onClick} {...props}>
 			<RadioInput value={value} />
 			<Div space='space-y-1'>
-				{title && <RadioTitle active={active}>{title}</RadioTitle>}
-				{text && <RadioText active={active}>{text}</RadioText>}
+				{title && <RadioTitle>{title}</RadioTitle>}
+				{text && <RadioText>{text}</RadioText>}
 			</Div>
 		</RadioWrapper>
 	);
@@ -76,14 +75,14 @@ export const RadioInput = ({ id, name = 'RadioInput', value, className, children
 	);
 };
 
-export const RadioTitle = ({ id, name = 'RadioLabel', active, className, children, ...tailwind }: iRadioLabel) => {
+export const RadioTitle = ({ id, name = 'RadioLabel', className, children, ...tailwind }: iRadioLabel) => {
 	const base = { color: 'gray-700 dark:gray-200', lineSpacing: 'leading-tight', fontSize: 'text-sm' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
-export const RadioText = ({ id, name = 'RadioLabel', active, className, children, ...tailwind }: iRadioLabel) => {
+export const RadioText = ({ id, name = 'RadioLabel', className, children, ...tailwind }: iRadioLabel) => {
 	const base = { fontSize: 'text-sm', fontWeight: 'font-light', tracking: 'tracking-wide' };
 	const props = { ...base, ...tailwind, className, name };
 
