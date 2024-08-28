@@ -61,16 +61,16 @@ export const NavItem = ({ id, name = 'NavItem', className, children, ...tailwind
 	return <Li {...props}>{children}</Li>;
 };
 
-export const NavBtn = ({ id, name = 'NavBtn', taskRunning, onClick, className, children, ...tailwind }: iNavBtn) => {
+export const NavBtn = ({ id, name = 'NavBtn', className, children, ...tailwind }: iNavBtn) => {
 	const base = { align: 'text-left', display: 'flex-start', space: 'space-x-4', width: 'w-full' };
-	const props = { ...base, ...tailwind, className, name, taskRunning, onClick, children };
+	const props = { ...base, ...tailwind, className, name, children };
 
 	return <AccentBtn {...props} />;
 };
 
-export const NavLink = ({ id, name = 'NavLink', href = '/', className, children, ...tailwind }: iNavLink) => {
+export const NavLink = ({ id, name = 'NavLink', className, children, ...tailwind }: iNavLink) => {
 	const base = { align: 'text-left', display: 'flex-start', space: 'space-x-4', width: 'w-full' };
-	const props = { ...base, ...tailwind, className, name, href, children };
+	const props = { ...base, ...tailwind, className, name, children };
 
 	return <AccentLink {...props} />;
 };

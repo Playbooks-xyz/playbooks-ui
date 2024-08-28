@@ -195,25 +195,16 @@ export const DropItem = ({ id, name = 'DropItem', className, children, ...tailwi
 	return <Li {...props}>{children}</Li>;
 };
 
-export const DropBtn = ({
-	id,
-	name = 'DropBtn',
-	active,
-	onClick,
-	taskRunning,
-	className,
-	children,
-	...tailwind
-}: iDropBtn) => {
+export const DropBtn = ({ id, name = 'DropBtn', className, children, ...tailwind }: iDropBtn) => {
 	const base = { align: 'text-left', display: 'flex-start', space: 'space-x-4', width: 'w-full' };
-	const props = { ...base, ...tailwind, className, name, active, taskRunning, onClick, children };
+	const props = { ...base, ...tailwind, className, name, children };
 
 	return <AccentBtn {...props} />;
 };
 
-export const DropLink = ({ id, name = 'DropLink', href = '', className, children, ...tailwind }: iDropLink) => {
+export const DropLink = ({ id, name = 'DropLink', className, children, ...tailwind }: iDropLink) => {
 	const base = { align: 'text-left', display: 'flex-start', space: 'space-x-4', width: 'w-full' };
-	const props = { ...base, ...tailwind, className, name, href, children };
+	const props = { ...base, ...tailwind, className, name, children };
 
 	return <AccentLink {...props} />;
 };

@@ -1,4 +1,6 @@
-import { BtnType, HtmlType, LinkType } from 'types';
+import { iBtn } from 'interface/buttons.types';
+import { iLink } from 'interface/links.types';
+import { HtmlType } from 'types';
 
 export type iNav = HtmlType;
 
@@ -12,6 +14,6 @@ export type iNavList = HtmlType;
 
 export type iNavItem = HtmlType;
 
-export type iNavBtn = BtnType;
+export type iNavBtn = iBtn;
 
-export type iNavLink = LinkType;
+export type iNavLink = iLink;

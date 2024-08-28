@@ -1,4 +1,6 @@
-import { BtnType, HtmlType, LinkType } from 'types';
+import { iBtn } from 'interface/buttons.types';
+import { iLink } from 'interface/links.types';
+import { HtmlType } from 'types';
 
 export type iDrop = HtmlType & {
 	open: boolean;
@@ -30,6 +32,6 @@ export type iDropList = HtmlType;
 
 export type iDropItem = HtmlType;
 
-export type iDropBtn = BtnType;
+export type iDropBtn = iBtn;
 
-export type iDropLink = LinkType;
+export type iDropLink = iLink;
