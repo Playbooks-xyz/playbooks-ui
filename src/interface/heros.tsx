@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import { Font, H6, P } from 'interface/fonts';
+import { Font, P } from 'interface/fonts';
 import {
 	iHero,
 	iHeroActions,
@@ -55,6 +55,28 @@ export const HeroBg = forwardRef<any, iHeroBg>(
 	},
 );
 
+export const HeroImg = ({ id, name = 'HeroImg', size = 'lg', src, alt, className, ...tailwind }: iHeroImg) => {
+	const base = {
+		aspect: 'aspect-[1/1]',
+		bgColor: 'bg-gray-100 dark:bg-gray-800',
+		border: '',
+		...borderProps,
+		borderRadius: 'rounded-xl',
+		color: 'gray-500',
+		display: 'flex-middle',
+		flex: 'shrink-0',
+		overflow: 'overflow-hidden',
+		size: computeThumbnailSize(size),
+	};
+	const props = { ...base, ...tailwind, className, name };
+
+	return (
+		<Div {...props}>
+			<Img src={src} alt={alt} width='w-full' />
+		</Div>
+	);
+};
+
 export const HeroIcon = ({ id, name = 'HeroIcon', size = 'lg', icon = 'code', className, ...tailwind }: iHeroIcon) => {
 	const base = {
 		aspect: 'aspect-[1/1]',
@@ -74,28 +96,6 @@ export const HeroIcon = ({ id, name = 'HeroIcon', size = 'lg', icon = 'code', cl
 	return (
 		<Div {...props}>
 			<FadIcon icon={icon} fontSize='text-3xl' />
-		</Div>
-	);
-};
-
-export const HeroImg = ({ id, name = 'HeroImg', size = 'lg', src, className, ...tailwind }: iHeroImg) => {
-	const base = {
-		aspect: 'aspect-[1/1]',
-		bgColor: 'bg-gray-100 dark:bg-gray-800',
-		border: '',
-		...borderProps,
-		borderRadius: 'rounded-xl',
-		color: 'gray-500',
-		display: 'flex-middle',
-		flex: 'shrink-0',
-		overflow: 'overflow-hidden',
-		size: computeThumbnailSize(size),
-	};
-	const props = { ...base, ...tailwind, className, name };
-
-	return (
-		<Div {...props}>
-			<Img src={src} width='w-full' />
 		</Div>
 	);
 };
@@ -121,7 +121,7 @@ export const HeroPretitle = ({ id, name = 'HeroPretitle', className, children, .
 	};
 	const props = { ...base, ...tailwind, className, name };
 
-	return <H6 {...props}>{children}</H6>;
+	return <P {...props}>{children}</P>;
 };
 
 export const HeroTitle = ({ id, name = 'HeroTitle', size, className, children, ...tailwind }: iHeroTitle) => {

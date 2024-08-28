@@ -11,7 +11,7 @@ import {
 	iCardText,
 	iCardTitle,
 } from 'interface/cards.types';
-import { Font, H6, P } from 'interface/fonts';
+import { Font, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { borderProps } from 'tailwind';
@@ -80,7 +80,7 @@ export const CardPretitle = ({ id, name = 'CardPretitle', className, children, .
 	};
 	const props = { ...base, ...tailwind, className, name };
 
-	return <H6 {...props}>{children}</H6>;
+	return <P {...props}>{children}</P>;
 };
 
 export const CardTitle = ({ id, name = 'CardTitle', size = 'h6', className, children, ...tailwind }: iCardTitle) => {

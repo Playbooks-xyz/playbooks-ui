@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import { Font, P, Small } from 'interface/fonts';
+import { Font, P } from 'interface/fonts';
 import { Div, Hr } from 'interface/html';
 import {
 	iSection,
@@ -69,7 +69,7 @@ export const SectionPretitle = ({
 	};
 	const props = { ...base, ...tailwind, className, name };
 
-	return <Small {...props}>{children}</Small>;
+	return <P {...props}>{children}</P>;
 };
 
 export const SectionTitle = ({

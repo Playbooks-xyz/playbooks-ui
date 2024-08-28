@@ -6,12 +6,13 @@ export type iHero = HtmlType & {
 
 export type iHeroBg = HtmlType;
 
-export type iHeroIcon = HtmlType & {
-	icon: string;
-};
-
 export type iHeroImg = HtmlType & {
 	src: string;
+	alt: string;
+};
+
+export type iHeroIcon = HtmlType & {
+	icon: string;
 };
 
 export type iHeroBody = HtmlType;
