@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 
-import { iBtn, iBtnShared } from 'interface/buttons.types';
+import { iBtn } from 'interface/buttons.types';
 import { Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
@@ -58,12 +58,12 @@ const BtnShared = ({
 	className,
 	children,
 	...tailwind
-}: iBtnShared) => {
+}: iBtn) => {
 	return (
 		<BtnWrapper
 			id={id}
-			name={name}
 			type={type}
+			name={name}
 			disabled={disabled}
 			taskRunning={taskRunning}
 			onClick={onClick}
@@ -86,8 +86,9 @@ const BtnShared = ({
 
 export const BtnWrapper = ({
 	id = '',
-	name = 'BtnWrapper',
 	type = 'button',
+	name = 'BtnWrapper',
+	alt,
 	onClick,
 	disabled = false,
 	taskRunning = false,
@@ -110,6 +111,7 @@ export const BtnWrapper = ({
 			disabled={disabled || taskRunning}
 			onClick={onClick}
 			className={classes}>
+			{alt && <span className='sr-only'>{alt}</span>}
 			{children}
 		</button>
 	);

@@ -1,8 +1,6 @@
 import { BtnType } from 'types';
 
-export type iBtn = BtnType;
-
-export type iBtnShared = iBtn & {
+export type iBtn = BtnType & {
 	alt?: string;
 	span?: any;
 };

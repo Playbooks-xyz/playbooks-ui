@@ -1,8 +1,6 @@
 import { LinkType } from 'types';
 
-export type iLink = LinkType;
-
-export type iLinkShared = iLink & {
+export type iLink = LinkType & {
 	alt?: string;
 	span?: any;
 };

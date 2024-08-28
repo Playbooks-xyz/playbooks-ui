@@ -3,7 +3,7 @@ import NLink from 'next/link';
 
 import { Span } from 'interface/html';
 import { Icon } from 'interface/icons';
-import { iLink, iLinkShared } from 'interface/links.types';
+import { iLink } from 'interface/links.types';
 import { Oval } from 'interface/spinners';
 import {
 	btnAccentProps,
@@ -16,7 +16,7 @@ import {
 	tailwindClassBuilder,
 } from 'tailwind';
 
-export const Link = ({ id, name = 'Link', size = 'sm', active, className, ...tailwind }: iLink) => {
+export const Link = ({ id, name = 'Link', size = 'sm', alt, active, className, ...tailwind }: iLink) => {
 	const base = { ...btnProps(active), size: computeBtnSize(size) };
 
 	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
@@ -59,7 +59,7 @@ export const LinkShared = ({
 	className,
 	children,
 	...tailwind
-}: iLinkShared) => {
+}: iLink) => {
 	return (
 		<LinkWrapper
 			id={id}
@@ -87,6 +87,7 @@ export const LinkShared = ({
 export const LinkWrapper = ({
 	id,
 	name = 'LinkWrapper',
+	alt,
 	href,
 	target,
 	disabled,
@@ -105,10 +106,12 @@ export const LinkWrapper = ({
 		<Fragment>
 			{target ? (
 				<a href={href} aria-label={name} data-name={name} target={target} className={classes}>
+					{alt && <span className='sr-only'>{alt}</span>}
 					{children}
 				</a>
 			) : (
 				<NLink aria-label={name} data-name={name} href={href} className={classes}>
+					{alt && <span className='sr-only'>{alt}</span>}
 					{children}
 				</NLink>
 			)}
