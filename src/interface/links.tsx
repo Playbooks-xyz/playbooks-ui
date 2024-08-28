@@ -105,7 +105,7 @@ export const LinkWrapper = ({
 	return (
 		<Fragment>
 			{target ? (
-				<a href={href} aria-label={alt} data-name={name} target={target} className={classes}>
+				<a href={href} aria-label={alt || name} data-name={name} target={target} className={classes}>
 					{children}
 				</a>
 			) : (
