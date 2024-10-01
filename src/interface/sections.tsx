@@ -126,8 +126,8 @@ export const SectionText = ({ id, name = 'SectionText', className, children, ...
 export const SectionActions = ({ id, name = 'SectionActions', className, children, ...tailwind }: iSectionActions) => {
 	const base = {
 		display: 'lg:flex-end',
+		flex: 'grow',
 		space: 'space-y-4 space-x-0 lg:space-y-0 lg:space-x-4',
-		width: 'w-full lg:w-1/2',
 	};
 	const props = { ...base, ...tailwind, className, name };
 

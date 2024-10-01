@@ -13,6 +13,7 @@ export { faArrowRightToBracket as fadArrowRightToBracket } from '@fortawesome/pr
 export { faArrowRightToLine as fadArrowRightToLine } from '@fortawesome/pro-duotone-svg-icons';
 export { faArrowTurnDownLeft as fadArrowTurnDownLeft } from '@fortawesome/pro-duotone-svg-icons';
 export { faArrowUp as fadArrowUp } from '@fortawesome/pro-duotone-svg-icons';
+export { faArrowUpArrowDown as fadArrowUpArrowDown } from '@fortawesome/pro-duotone-svg-icons';
 export { faArrowUpToLine as fadArrowUpToLine } from '@fortawesome/pro-duotone-svg-icons';
 export { faArrowUpLong as fadArrowUpLong } from '@fortawesome/pro-duotone-svg-icons';
 export { faArrowUpRight as fadArrowUpRight } from '@fortawesome/pro-duotone-svg-icons';
@@ -127,6 +128,7 @@ export { faGlasses as fadGlasses } from '@fortawesome/pro-duotone-svg-icons';
 export { faGlobe as fadGlobe } from '@fortawesome/pro-duotone-svg-icons';
 export { faGraduationCap as fadGraduationCap } from '@fortawesome/pro-duotone-svg-icons';
 export { faGrid2 as fadGrid2 } from '@fortawesome/pro-duotone-svg-icons';
+export { faGripDots as fadGripDots } from '@fortawesome/pro-duotone-svg-icons';
 export { faHandshake as fadHandshake } from '@fortawesome/pro-duotone-svg-icons';
 export { faHandWave as fadHandWave } from '@fortawesome/pro-duotone-svg-icons';
 export { faHandPointUp as fadHandPointUp } from '@fortawesome/pro-duotone-svg-icons';

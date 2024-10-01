@@ -146,7 +146,7 @@ export const SlideHeader = ({ id, name = 'SlideHeader', onClose, className, chil
 };
 
 export const SlideTitle = ({ id, name = 'SlideTitle', className, children, ...tailwind }: iSlideTitle) => {
-	const base = { tracking: 'tracking-wide' };
+	const base = { fontWeight: 'font-bold', tracking: 'tracking-wide' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <H4 {...props}>{children}</H4>;

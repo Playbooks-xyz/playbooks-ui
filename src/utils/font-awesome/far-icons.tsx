@@ -13,6 +13,7 @@ export { faArrowRightToBracket as farArrowRightToBracket } from '@fortawesome/pr
 export { faArrowRightToLine as farArrowRightToLine } from '@fortawesome/pro-regular-svg-icons';
 export { faArrowTurnDownLeft as farArrowTurnDownLeft } from '@fortawesome/pro-regular-svg-icons';
 export { faArrowUp as farArrowUp } from '@fortawesome/pro-regular-svg-icons';
+export { faArrowUpArrowDown as farArrowUpArrowDown } from '@fortawesome/pro-regular-svg-icons';
 export { faArrowUpToLine as farArrowUpToLine } from '@fortawesome/pro-regular-svg-icons';
 export { faArrowUpLong as farArrowUpLong } from '@fortawesome/pro-regular-svg-icons';
 export { faArrowUpRight as farArrowUpRight } from '@fortawesome/pro-regular-svg-icons';
@@ -121,13 +122,14 @@ export { faGaugeSimple as farGaugeSimple } from '@fortawesome/pro-regular-svg-ic
 export { faGaugeSimpleMin as farGaugeSimpleMin } from '@fortawesome/pro-regular-svg-icons';
 export { faGaugeSimpleMax as farGaugeSimpleMax } from '@fortawesome/pro-regular-svg-icons';
 export { faGraduationCap as farGraduationCap } from '@fortawesome/pro-regular-svg-icons';
-export { faGrid2 as farGrid2 } from '@fortawesome/pro-regular-svg-icons';
 export { faGear as farGear } from '@fortawesome/pro-regular-svg-icons';
 export { faGem as farGem } from '@fortawesome/pro-regular-svg-icons';
 export { faGhost as farGhost } from '@fortawesome/pro-regular-svg-icons';
 export { faGift as farGift } from '@fortawesome/pro-regular-svg-icons';
 export { faGlasses as farGlasses } from '@fortawesome/pro-regular-svg-icons';
 export { faGlobe as farGlobe } from '@fortawesome/pro-regular-svg-icons';
+export { faGrid2 as farGrid2 } from '@fortawesome/pro-regular-svg-icons';
+export { faGripDots as farGripDots } from '@fortawesome/pro-regular-svg-icons';
 export { faHatWizard as farHatWizard } from '@fortawesome/pro-regular-svg-icons';
 export { faHandPointUp as farHandPointUp } from '@fortawesome/pro-regular-svg-icons';
 export { faHandshake as farHandshake } from '@fortawesome/pro-regular-svg-icons';
