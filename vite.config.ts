@@ -19,7 +19,6 @@ export default defineConfig({
 		// sourcemap: true,
 		lib: {
 			entry: [
-				path.resolve(__dirname, 'src/index.tsx'),
 				path.resolve(__dirname, 'src/components/components.tsx'),
 				path.resolve(__dirname, 'src/contexts/context.tsx'),
 				path.resolve(__dirname, 'src/interface/accordions.tsx'),
