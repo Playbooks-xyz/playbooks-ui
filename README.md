@@ -25,6 +25,16 @@
 - then `import { Accordion } from '@playbooks/interface/accordions';
 - or `import { Accordion } from '@playbooks/interface';
 
+## Development
+- npm run start
+- or...
+- npm run start:ts
+
+## Deployment
+- npm version [major|minor|patch]
+- npm publish
+- npm run git
+
 ## Setup Husky
 - npm run prepare
 - create .husky/pre-commit
