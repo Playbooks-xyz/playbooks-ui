@@ -16,7 +16,8 @@
     "dev": "vite build --mode development --watch --minify false",
     "start": "vite build --mode development --minify false && yalc publish",
     "start:ts": "vite build --mode development --minify false && npm run build:ts && yalc publish",
-    "build": "vite build --mode production --minify false && dts-bundle-generator --config dts.config.ts",
+    "build": "vite build --mode production --minify true && npm run build:ts",
+    "build:ts": "dts-bundle-generator --config dts.config.ts",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "format": "prettier src",
@@ -33,10 +34,10 @@
     "react-dom": "^18"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
-    "@fortawesome/pro-duotone-svg-icons": "^6.4.0",
-    "@fortawesome/pro-regular-svg-icons": "^6.4.0",
+    "@fortawesome/pro-duotone-svg-icons": "^6.4.2",
+    "@fortawesome/pro-regular-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-google-maps/api": "^2.19.3",
     "@react-spring/web": "^9.7.3",
@@ -88,10 +89,6 @@
     },
     "./context": {
       "import": "./dist/context.cjs",
-      "types": "./dist/index.d.ts"
-    },
-    "./tailwind": {
-      "import": "./dist/tailwind.cjs",
       "types": "./dist/index.d.ts"
     },
     "./accordions": {
@@ -266,7 +263,10 @@
       "import": "./dist/tooltips.cjs",
       "types": "./dist/index.d.ts"
     },
-    "./dist/fa-icons": "./dist/fa-icons.cjs",
+    "./utils": {
+      "import": "./dist/utils.cjs",
+      "types": "./dist/index.d.ts"
+    },
     "./dist/styles.css": "./dist/style.css"
   }
 }

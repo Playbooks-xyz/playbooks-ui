@@ -14,7 +14,7 @@ import {
 	computeBtnSize,
 	interactiveProps,
 	tailwindClassBuilder,
-} from 'tailwind';
+} from 'utils';
 
 export const Link = ({ id, name = 'Link', size = 'sm', alt, active, className, ...tailwind }: iLink) => {
 	const base = { ...btnProps(active), size: computeBtnSize(size) };

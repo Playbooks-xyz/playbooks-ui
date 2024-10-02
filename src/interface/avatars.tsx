@@ -9,7 +9,7 @@ import {
 } from 'interface/avatars.types';
 import { Font } from 'interface/fonts';
 import { Div, Img, Span } from 'interface/html';
-import { computeAvatarSize } from 'tailwind';
+import { computeAvatarSize } from 'utils';
 
 export const Avatar = ({ id, name = 'Avatar', className, children, ...tailwind }: iAvatar) => {
 	const base = { display: 'flex-start', space: 'space-x-4', width: 'w-full' };

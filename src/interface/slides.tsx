@@ -14,7 +14,7 @@ import {
 	iSlideTitle,
 	iSlideWrapper,
 } from 'interface/slides.types';
-import { borderProps, computeSlideAnimation } from 'tailwind';
+import { borderProps, computeSlideAnimation } from 'utils';
 
 export const SlideWrapper = ({
 	id,

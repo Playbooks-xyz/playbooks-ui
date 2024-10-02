@@ -1,6 +1,6 @@
 import { Div, Img } from 'interface/html';
 import { iTag, iTagActions, iTagBody, iTagImg, iTagWrapper } from 'interface/tags.types';
-import { computeTagImgSize, computeTagSize } from 'tailwind';
+import { computeTagImgSize, computeTagSize } from 'utils';
 
 export const TagsWrapper = ({ id, name = 'TagsWrapper', className, children, ...tailwind }: iTagWrapper) => {
 	const base = { display: 'flex-start', spacing: '', flex: 'flex-wrap' };

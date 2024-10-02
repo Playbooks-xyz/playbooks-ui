@@ -19,7 +19,7 @@ import {
 	iMenuTitle,
 	iMenuToggle,
 } from 'interface/menus.types';
-import { borderProps, tailwindClassBuilder } from 'tailwind';
+import { borderProps, tailwindClassBuilder } from 'utils';
 
 export const Menu = ({ id, name = 'Menu', open, onClose, className, children, ...tailwind }: iMenu) => {
 	const base = { zIndex: 'z-20' };

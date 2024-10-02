@@ -9,7 +9,7 @@ import {
 	iSwitchLabel,
 	iSwitchToggle,
 } from 'interface/switches.types';
-import { tailwindClassBuilder } from 'tailwind';
+import { tailwindClassBuilder } from 'utils';
 
 export const SwitchGroup = ({ id, name = 'SwitchGroup', className, children, ...tailwind }: iSwitchGroup) => {
 	const base = { display: 'flex-between', space: 'space-x-4' };

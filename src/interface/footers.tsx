@@ -13,7 +13,7 @@ import {
 } from 'interface/footers.types';
 import { Div, Li, Ul } from 'interface/html';
 import { TextLink } from 'interface/links';
-import { borderProps, tailwindClassBuilder } from 'tailwind';
+import { borderProps, tailwindClassBuilder } from 'utils';
 
 export const Footer = ({ id, name = 'Footer', className, children, ...tailwind }: iFooter) => {
 	const base = {

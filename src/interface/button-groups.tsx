@@ -1,6 +1,6 @@
 import { iButtonGroup } from 'interface/button-groups.types';
 import { Div } from 'interface/html';
-import { borderProps } from 'tailwind';
+import { borderProps } from 'utils';
 
 export const BtnGroup = ({ id, name = 'BtnGroup', className, children, ...tailwind }: iButtonGroup) => {
 	const base = {

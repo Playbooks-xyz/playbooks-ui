@@ -2,7 +2,7 @@ import { iBanner, iBannerActions, iBannerBody, iBannerIcon, iBannerText, iBanner
 import { H5, H6, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { FadIcon } from 'interface/icons';
-import { borderProps } from 'tailwind';
+import { borderProps } from 'utils';
 
 export const Banner = ({ id, name = 'Banner', className, children, ...tailwind }: iBanner) => {
 	const base = {

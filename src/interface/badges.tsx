@@ -1,6 +1,6 @@
 import { iBadge } from 'interface/badges.types';
 import { Span } from 'interface/html';
-import { borderProps, computeBadgeSize } from 'tailwind';
+import { borderProps, computeBadgeSize } from 'utils';
 
 export const Badge = ({ id, name = 'Badge', type = '', size = 'sm', className, children, ...tailwind }: iBadge) => {
 	const base = {

@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { Range } from 'react-range';
 
-import { tailwindClassBuilder } from 'tailwind';
+import { tailwindClassBuilder } from 'utils';
 
 export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange }) => {
 	return (

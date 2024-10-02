@@ -15,7 +15,7 @@ import {
 	iModalTitle,
 	iModalWrapper,
 } from 'interface/modals.types';
-import { borderProps, computeSectionSize } from 'tailwind';
+import { borderProps, computeSectionSize } from 'utils';
 
 export const ModalWrapper = ({
 	id,

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "src",
     "rootDir": ".",
     "target": "esnext",
     "module": "esnext",
@@ -22,28 +22,8 @@
     "noUnusedParameters": false,
     "noImplicitReturns": false,
     "forceConsistentCasingInFileNames": true,
-    "paths": {
-      "src/*": ["./src/*"],
-      "assets": ["./src/assets"],
-      "assets/*": ["./src/assets/*"],
-      "components": ["./src/components"],
-      "components/*": ["./src/components/*"],
-      "contexts": ["./src/contexts"],
-      "contexts/*": ["./src/contexts/*"],
-      "hooks": ["./src/hooks"],
-      "hooks/*": ["./src/hooks/*"],
-      "interface": ["./src/interface"],
-      "interface/*": ["./src/interface/*"],
-      "tailwind": ["./src/tailwind"],
-      "tailwind/*": ["./src/tailwind/*"],
-      "types": ["./src/types"],
-      "types/*": ["./src/types/*"],
-      "utils": ["./src/utils"],
-      "utils/*": ["./src/utils/*"],
-      "tests/*": ["./tests/*"]
-    }
   },
   "include": ["src"],
-  "exclude": ["node_modules"],
+  "exclude": ["dist", "node_modules"],
   // "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -13,7 +13,7 @@ import {
 	computeBtnSize,
 	interactiveProps,
 	tailwindClassBuilder,
-} from 'tailwind';
+} from 'utils';
 
 export const Btn = ({ id, name = 'Btn', size = 'sm', active, className, ...tailwind }: iBtn) => {
 	const base = { ...btnProps(active), size: computeBtnSize(size) };

@@ -1,5 +1,5 @@
 import { iFont } from 'interface/fonts.types';
-import { tailwindClassBuilder } from 'tailwind';
+import { tailwindClassBuilder } from 'utils';
 
 export const Font = props => {
 	switch (props.size) {

@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 
 import { iFrame, iImg } from 'interface/html.types';
-import { borderProps, tailwindClassBuilder } from 'tailwind';
+import { borderProps, tailwindClassBuilder } from 'utils';
 import { HtmlType } from 'types';
 
 export const Html = ({ id, name = 'Html', className, children, style, ...tailwind }: HtmlType) => {

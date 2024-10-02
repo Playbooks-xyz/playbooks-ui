@@ -1,7 +1,7 @@
 import { Font } from 'interface/fonts';
 import { iHeader, iHeaderActions, iHeaderSubtitle, iHeaderText, iHeaderTitle } from 'interface/headers.types';
 import { Div } from 'interface/html';
-import { borderProps, tailwindClassBuilder } from 'tailwind';
+import { borderProps, tailwindClassBuilder } from 'utils';
 
 export const Header = ({ id, name = 'Header', className, children, ...tailwind }: iHeader) => {
 	const base = {

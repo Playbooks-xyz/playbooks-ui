@@ -4,7 +4,7 @@ import { Li } from 'interface/html';
 import { FarIcon } from 'interface/icons';
 import { TextLink } from 'interface/links';
 import { Nav, NavList } from 'interface/navs';
-import { borderProps, breadcrumbBtnProps } from 'tailwind';
+import { borderProps, breadcrumbBtnProps } from 'utils';
 
 export const Breadcrumbs = ({ id, name = 'Breadcrumbs', className, children, ...tailwind }: iBreadcrumbs) => {
 	const base = { bgColor: 'bg-transparent', ...borderProps, spacing: 'py-4' };

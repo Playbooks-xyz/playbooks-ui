@@ -10,7 +10,7 @@ import {
 	iTableHeaderRow,
 	iTableRow,
 } from 'interface/tables.types';
-import { borderProps, tailwindClassBuilder } from 'tailwind';
+import { borderProps, tailwindClassBuilder } from 'utils';
 import { isObject } from 'utils/helpers';
 
 export const Table = ({ id, name = 'Table', className, children, ...tailwind }: iTable) => {

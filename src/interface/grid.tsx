@@ -1,6 +1,6 @@
 import { iCol, iContainer, iGrid } from 'interface/grid.types';
 import { Div } from 'interface/html';
-import { computeCol, computeContainer } from 'tailwind';
+import { computeCol, computeContainer } from 'utils';
 
 export const Container = ({ id, name = 'Container', size, className, children, ...tailwind }: iContainer) => {
 	const base = {

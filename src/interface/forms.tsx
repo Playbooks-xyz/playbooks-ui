@@ -21,7 +21,7 @@ import {
 	iFormTextArea,
 } from 'interface/forms.types';
 import { Div, Span } from 'interface/html';
-import { checkboxProps, computeInputSize, inputProps, rangeProps, tailwindClassBuilder } from 'tailwind';
+import { checkboxProps, computeInputSize, inputProps, rangeProps, tailwindClassBuilder } from 'utils';
 
 export const Form = ({ id, name = 'Form', onSubmit, className, children, ...tailwind }: iForm) => {
 	const base = {};

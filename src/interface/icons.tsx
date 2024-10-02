@@ -1,7 +1,7 @@
 import { FabWrapper, FadWrapper, FarWrapper } from 'components/fa-wrapper';
 import { Div, Img } from 'interface/html';
 import { iIcon } from 'interface/icons.types';
-import { tailwindClassBuilder } from 'tailwind';
+import { tailwindClassBuilder } from 'utils';
 import { isObject } from 'utils/helpers';
 
 export const Icon = ({ id, name = 'Icon', type, icon, className, ...tailwind }: iIcon) => {

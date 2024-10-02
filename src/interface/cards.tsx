@@ -14,7 +14,7 @@ import {
 import { Font, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import { Icon } from 'interface/icons';
-import { borderProps } from 'tailwind';
+import { borderProps } from 'utils';
 
 export const Card = ({ id, name = 'Card', className, children, ...tailwind }: iCard) => {
 	const base = {

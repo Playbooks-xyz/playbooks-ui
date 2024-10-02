@@ -10,7 +10,7 @@ import {
 import { Font, P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { Icon } from 'interface/icons';
-import { borderProps, tailwindClassBuilder } from 'tailwind';
+import { borderProps, tailwindClassBuilder } from 'utils';
 
 export const Feedback = ({ id, name = 'Feedback', className, children, ...tailwind }: iFeedback) => {
 	const base = {

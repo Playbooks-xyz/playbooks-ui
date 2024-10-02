@@ -19,7 +19,7 @@ import {
 import { H6, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
-import { borderProps, tailwindClassBuilder } from 'tailwind';
+import { borderProps, tailwindClassBuilder } from 'utils';
 
 export const Drop = ({ id, name = 'Drop', open, setOpen, className, children, ...tailwind }: iDrop) => {
 	const base = {};

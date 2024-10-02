@@ -12,7 +12,7 @@ import { BtnWrapper } from 'interface/buttons';
 import { Font, P } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
 import { FarIcon } from 'interface/icons';
-import { borderProps } from 'tailwind';
+import { borderProps } from 'utils';
 
 export const Accordion = ({ id, name = 'Accordion', open, className, children, ...tailwind }: iAccordion) => {
 	const base = {

@@ -2,7 +2,7 @@ import { Div, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { iInputAddon, iInputGroup } from 'interface/input-groups.types';
 import { Oval } from 'interface/spinners';
-import { borderProps } from 'tailwind';
+import { borderProps } from 'utils';
 
 export const InputGroup = ({ id, name = 'InputGroup', active, className, children, ...tailwind }: iInputGroup) => {
 	const base = {

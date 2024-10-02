@@ -1,6 +1,6 @@
 import * as Loaders from 'assets/loaders';
 import { iSpinner } from 'interface/spinners.types';
-import { tailwindClassBuilder } from 'tailwind';
+import { tailwindClassBuilder } from 'utils';
 
 export const Oval = ({ id, name = 'Oval', className, ...tailwind }: iSpinner) => {
 	const base = { align: 'flex', stroke: 'stroke-inherit', size: 'w-4 h-4', spacing: 'mx-auto' };

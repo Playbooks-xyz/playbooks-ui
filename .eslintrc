@@ -15,7 +15,8 @@
 		"simple-import-sort"
 	],
 	"ignorePatterns": [
-		"build",
+		"dist",
+		"**/*.cjs",
 		"**/*.js"
 	],
 	"rules": {
