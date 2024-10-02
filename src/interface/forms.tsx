@@ -58,8 +58,10 @@ export const FormLabel = ({
 		color: 'gray-600 dark:gray-400',
 		cursor: 'cursor-pointer',
 		display: 'inline-block',
+		fontFamily: 'font-secondary',
 		fontWeight: 'font-medium',
 		fontSize: 'text-sm',
+		spacing: 'p-1',
 		tracking: 'tracking-wide',
 	};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
