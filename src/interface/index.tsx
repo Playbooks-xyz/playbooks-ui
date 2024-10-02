@@ -5,6 +5,7 @@ export * from 'interface/badges';
 export * from 'interface/banners';
 export * from 'interface/breadcrumbs';
 export * from 'interface/button-groups';
+export * from 'interface/buttons';
 export * from 'interface/cards';
 export * from 'interface/drops';
 export * from 'interface/feedbacks';

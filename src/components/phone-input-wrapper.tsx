@@ -1,6 +1,6 @@
 import PhoneInput from 'react-phone-number-input/input';
 
-const PhoneInputWrapper = ({ id, value, placeholder, country = '', onBlur, onChange, readOnly, className }) => (
+const PhoneInputWrapper = ({ id, value, placeholder, country = null, onBlur, onChange, readOnly, className }) => (
 	<PhoneInput
 		id={id}
 		value={value}
