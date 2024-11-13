@@ -31,6 +31,7 @@ export const Badge = ({ id, name = 'Badge', type = '', size = 'sm', className, c
 		case 'pending':
 		case 'running':
 		case 'seed':
+		case 'testing':
 			return <PendingBadge {...props}>{children}</PendingBadge>;
 
 		case 'active':
@@ -42,9 +43,8 @@ export const Badge = ({ id, name = 'Badge', type = '', size = 'sm', className, c
 		case 'closed':
 		case 'finished':
 		case 'inactive':
-		case 'stopped':
 		case 'paid':
-		case 'testing':
+		case 'won':
 			return <FinishedBadge {...props}>{children}</FinishedBadge>;
 
 		case 'canceled':
@@ -52,6 +52,7 @@ export const Badge = ({ id, name = 'Badge', type = '', size = 'sm', className, c
 		case 'disabled':
 		case 'errored':
 		case 'refunded':
+		case 'stopped':
 			return <ErrorBadge {...props}>{children}</ErrorBadge>;
 
 		default:

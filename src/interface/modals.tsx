@@ -4,7 +4,7 @@ import { Fade } from 'components/animation-wrapper';
 import { useInterface } from 'contexts';
 import { AccentBtn } from 'interface/buttons';
 import { Font } from 'interface/fonts';
-import { Div } from 'interface/html';
+import { Div, Span } from 'interface/html';
 import {
 	iModal,
 	iModalBackdrop,
@@ -143,7 +143,7 @@ export const ModalHeader = ({ id, name = 'ModalHeader', onClose, className, chil
 
 	return (
 		<Div {...props}>
-			{children}
+			<Span>{children}</Span>
 			{onClose && <AccentBtn size='h-10 w-10' icon='xmark' fontSize='text-xl' onClick={onClose} />}
 		</Div>
 	);
@@ -165,18 +165,17 @@ export const ModalTitle = ({ id, name = 'ModalTitle', size, className, children,
 export const ModalSubtitle = ({
 	id,
 	name = 'ModalSubtitle',
-	size = 'h6',
+	size = 'p',
 	className,
 	children,
 	...tailwind
 }: iModalSubtitle) => {
 	const base = {
+		size,
 		color: 'gray-600 dark:gray-400',
 		fontWeight: 'font-normal',
 		fontFamily: 'font-secondary',
-		size,
 		space: 'space-x-4',
-		tracking: 'tracking-wide',
 	};
 	const props = { ...base, ...tailwind, className, name };
 

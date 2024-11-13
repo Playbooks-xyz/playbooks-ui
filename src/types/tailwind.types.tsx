@@ -35,6 +35,7 @@ export type TailwindType = {
 	inset?: string;
 	leading?: string;
 	listStyle?: string;
+	location?: string;
 	margin?: string;
 	maxHeight?: string;
 	minHeight?: string;

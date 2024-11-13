@@ -22,6 +22,7 @@ export const Breadcrumbs = ({ id, name = 'Breadcrumbs', className, children, ...
 export const BreadcrumbItem = ({
 	id,
 	name = 'BreadcrumbItem',
+	icon = 'chevron-right',
 	arrow = true,
 	className,
 	children,
@@ -32,8 +33,8 @@ export const BreadcrumbItem = ({
 
 	return (
 		<Li {...props}>
-			{arrow && <FarIcon icon='chevron-right' color='gray-400' fontSize='text-xs' />}
 			{children}
+			{arrow && <FarIcon icon={icon} color='gray-400' fontSize='text-xs' />}
 		</Li>
 	);
 };

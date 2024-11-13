@@ -1,7 +1,7 @@
 import { iBanner, iBannerActions, iBannerBody, iBannerIcon, iBannerText, iBannerTitle } from 'interface/banners.types';
 import { H5, H6, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
-import { FadIcon } from 'interface/icons';
+import { Icon } from 'interface/icons';
 import { borderProps } from 'utils';
 
 export const Banner = ({ id, name = 'Banner', className, children, ...tailwind }: iBanner) => {
@@ -20,11 +20,18 @@ export const Banner = ({ id, name = 'Banner', className, children, ...tailwind }
 	return <Div {...props}>{children}</Div>;
 };
 
-export const BannerIcon = ({ id, name = 'BannerIcon', icon = 'house', className, ...tailwind }: iBannerIcon) => {
+export const BannerIcon = ({
+	id,
+	name = 'BannerIcon',
+	type = 'fad',
+	icon = 'house',
+	className,
+	...tailwind
+}: iBannerIcon) => {
 	const base = { color: 'blue-500 dark:cyan-500' };
 	const props = { ...base, ...tailwind, className, name };
 
-	return <FadIcon icon={icon} {...props} />;
+	return <Icon type={type} icon={icon} {...props} />;
 };
 
 export const BannerBody = ({ id, name = 'BannerBody', className, children, ...tailwind }: iBannerBody) => {

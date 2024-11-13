@@ -3,6 +3,7 @@ import { HtmlType } from 'types';
 export type iBanner = HtmlType;
 
 export type iBannerIcon = HtmlType & {
+	type?: string;
 	icon: string;
 };
 

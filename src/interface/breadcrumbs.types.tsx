@@ -3,6 +3,7 @@ import { BtnType, HtmlType, LinkType } from 'types';
 export type iBreadcrumbs = HtmlType;
 
 export type iBreadcrumbItem = HtmlType & {
+	icon?: string;
 	arrow?: boolean;
 };
 

@@ -56,7 +56,7 @@ export const CardIcon = ({
 };
 
 export const CardImg = ({ id, name = 'CardImg', src, alt, className, children, ...tailwind }: iCardImg) => {
-	const base = { bgColor: 'bg-gray-100 dark:bg-gray-800', display: 'flex-middle', width: 'w-full' };
+	const base = { bgColor: 'bg-gray-100 dark:bg-gray-800', width: 'w-full' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Img src={src} alt={alt} {...props} />;
