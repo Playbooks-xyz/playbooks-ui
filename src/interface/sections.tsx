@@ -127,7 +127,7 @@ export const SectionActions = ({ id, name = 'SectionActions', className, childre
 	const base = {
 		display: 'lg:flex-end',
 		space: 'space-y-4 space-x-0 lg:space-y-0 lg:space-x-4',
-		width: 'w-1/2',
+		width: 'w-full lg:w-1/2',
 	};
 	const props = { ...base, ...tailwind, className, name };
 
