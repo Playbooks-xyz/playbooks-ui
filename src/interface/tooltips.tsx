@@ -16,14 +16,15 @@ export const Tooltip = ({
 	onHover,
 	className,
 	children,
-	...tailwind
+	tailwind,
 }: iTooltip) => {
 	const base = {
 		cursor: 'cursor-pointer',
 		duration: 'duration-100',
 		transition: 'transition-all ease',
+		className,
+		...tailwind?.span,
 	};
-	const tooltipProps = { ...tailwind, className };
 	const [fade, setFade] = useState('hidden');
 	const [refElement, setRefElement] = useState(null);
 	const [popElement, setPopElement] = useState(null);
@@ -37,21 +38,28 @@ export const Tooltip = ({
 	});
 
 	// Methods
-	const onShow = () => {
+	const onShow = e => {
+		if (!onClick) e.preventDefault();
 		return onClick ? onClick() : null;
 	};
 
 	const onMouseEnter = () => {
-		return onHover ? onHover() : null;
+		return !open && onHover ? onHover() : null;
 	};
 
 	const onMouseLeave = () => {
-		onHover ? onHover() : null;
+		return open && onHover ? onHover() : null;
 	};
 
 	// Render
 	return (
-		<Span ref={setRefElement} onClick={onShow} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} {...base}>
+		<Span
+			ref={setRefElement}
+			name={name}
+			onClick={onShow as any}
+			onMouseEnter={onMouseEnter}
+			onMouseLeave={onMouseLeave}
+			{...base}>
 			{children}
 			<Fade
 				show={open}
@@ -65,9 +73,9 @@ export const Tooltip = ({
 						setArrowElement={setArrowElement}
 						fade={fade}
 						html={html}
-						tooltipProps={tooltipProps}
 						className={className}
 						styles={styles}
+						tailwind={tailwind?.tooltip}
 					/>
 				</Div>
 			</Fade>
@@ -80,24 +88,26 @@ export const TooltipBody = ({
 	name = 'TooltipBody',
 	setArrowElement,
 	html,
-	tooltipProps,
 	className,
-	children,
 	styles,
-	...tailwind
+	tailwind,
 }: iTooltipBody) => {
 	const base = { animation: 'transition ease', zIndex: 'z-10' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
 		<Div {...props}>
-			<TooltipArrow setArrowElement={setArrowElement} style={{ ...styles.popper, ...styles.arrow }} />
-			<TooltipInner {...tooltipProps}>{html}</TooltipInner>
+			<TooltipArrow
+				setArrowElement={setArrowElement}
+				style={{ ...styles.popper, ...styles.arrow }}
+				tailwind={tailwind?.arrow}
+			/>
+			<TooltipInner tailwind={tailwind?.inner}>{html}</TooltipInner>
 		</Div>
 	);
 };
 
-export const TooltipInner = ({ id, name = 'TooltipInner', className, children, ...tailwind }: iTooltipInner) => {
+export const TooltipInner = ({ id, name = 'TooltipInner', className, children, tailwind }: iTooltipInner) => {
 	const base = {
 		bgColor: 'bg-gray-800',
 		borderRadius: 'rounded-md',
@@ -117,7 +127,7 @@ export const TooltipArrow = ({
 	setArrowElement,
 	className,
 	style,
-	...tailwind
+	tailwind,
 }: iTooltipArrow) => {
 	const base = {
 		bgColor: 'bg-gray-800',
