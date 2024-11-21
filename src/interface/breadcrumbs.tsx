@@ -28,7 +28,7 @@ export const BreadcrumbItem = ({
 	children,
 	...tailwind
 }: iBreadcrumbItem) => {
-	const base = { display: 'flex-start', space: 'space-x-4' };
+	const base = { display: 'flex-start', space: 'space-x-2' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
