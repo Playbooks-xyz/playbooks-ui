@@ -5,21 +5,21 @@ export type iTooltip = HtmlType & {
 	html?: string;
 	onHover?: () => void;
 	placement?: any;
-	tailwind: any;
+	tailwind?: any;
 };
 
 export type iTooltipBody = HtmlType & {
 	setArrowElement: any;
 	html?: any;
 	styles: any;
-	tailwind: any;
+	tailwind?: any;
 };
 
 export type iTooltipInner = HtmlType & {
-	tailwind: any;
+	tailwind?: any;
 };
 
 export type iTooltipArrow = HtmlType & {
 	setArrowElement: any;
-	tailwind: any;
+	tailwind?: any;
 };

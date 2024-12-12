@@ -54,6 +54,7 @@ export const Tooltip = ({
 	// Render
 	return (
 		<Span
+			id={id}
 			ref={setRefElement}
 			name={name}
 			onClick={onShow as any}

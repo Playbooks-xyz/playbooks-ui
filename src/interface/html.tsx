@@ -1,8 +1,8 @@
 import { forwardRef } from 'react';
 
 import { iFrame, iImg } from 'interface/html.types';
-import { borderProps, tailwindClassBuilder } from 'utils';
 import { HtmlType } from 'types';
+import { borderProps, tailwindClassBuilder } from 'utils';
 
 export const Html = ({ id, name = 'Html', className, children, style, ...tailwind }: HtmlType) => {
 	const base = {};
@@ -93,7 +93,7 @@ export const Span = forwardRef<any, HtmlType>(
 		{ id, name = 'Span', onClick, onMouseEnter, onMouseLeave, className, children, style, ...tailwind }: HtmlType,
 		ref,
 	) => {
-		const base = { display: 'inline-block' };
+		const base = { display: 'inline' };
 		const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 		return (
