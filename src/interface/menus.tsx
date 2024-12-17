@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 
 import { Fade } from 'components/animation-wrapper';
 import { useInterface } from 'contexts';
+import { useKeyPress, useMouseUp } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { H6, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
@@ -33,28 +34,20 @@ export const Menu = ({ id, name = 'Menu', open, onClose, className, children, ..
 		toggleScroll(open);
 	}, [open]);
 
-	useEffect(() => {
-		onClose();
-	}, [router.asPath]);
+	useKeyPress(onKeyDown, [open]);
 
-	useEffect(() => {
-		open ? document.addEventListener('mouseup', onMouseUp) : document.removeEventListener('mouseup', onMouseUp);
-		return () => document.removeEventListener('mouseup', onMouseUp);
-	}, [open]);
-
-	useEffect(() => {
-		open ? window.addEventListener('keydown', onKeyDown) : window.removeEventListener('keydown', onKeyDown);
-		return () => window.removeEventListener('keydown', onKeyDown);
-	}, [open]);
+	useMouseUp(onMouseUp, [open]);
 
 	// Methods
-	const onMouseUp = e => {
-		if (ref?.current?.contains(e.target)) return;
-	};
-
-	const onKeyDown = e => {
+	function onKeyDown(e) {
+		if (e.target.dataset.name === 'FormInput') return;
 		if (e.keyCode === 27) onClose();
-	};
+	}
+
+	function onMouseUp(e) {
+		if (ref?.current?.contains(e.target)) return;
+		onClose();
+	}
 
 	// Render
 	return (

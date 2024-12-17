@@ -2,6 +2,7 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 
 import { Fade } from 'components/animation-wrapper';
 import { useInterface } from 'contexts';
+import { useKeyPress } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { Font } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
@@ -75,7 +76,7 @@ export const ModalBackdrop = ({ id, name = 'ModalBackdrop', open, onClose, tailw
 	);
 };
 
-export const Modal = ({ id, name = 'Modal', open = false, onClose, className, children, tailwind }: iModal) => {
+export const Modal = ({ id, name = 'Modal', open, onClose, className, children, tailwind }: iModal) => {
 	const base = {
 		align: 'text-left',
 		spacing: 'mx-auto my-8',
@@ -99,15 +100,13 @@ export const Modal = ({ id, name = 'Modal', open = false, onClose, className, ch
 		toggleScroll(open);
 	}, [open]);
 
-	useEffect(() => {
-		open ? window.addEventListener('keydown', onKeyDown) : window.removeEventListener('keydown', onKeyDown);
-		return () => window.removeEventListener('keydown', onKeyDown);
-	}, [open]);
+	useKeyPress(onKeyDown, []);
 
-	// Methods
-	const onKeyDown = e => {
+	// Function
+	function onKeyDown(e) {
+		if (e.target.dataset.name === 'FormInput') return;
 		if (e.keyCode === 27 && onClose) onClose();
-	};
+	}
 
 	// Render
 	return ref?.current

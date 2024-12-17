@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import { Fade } from 'components/animation-wrapper';
+import { useKeyPress, useMouseUp } from 'hooks';
 import { AccentBtn, BorderBtn, Btn } from 'interface/buttons';
 import {
 	iDrop,
@@ -21,7 +22,7 @@ import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
 import { borderProps, tailwindClassBuilder } from 'utils';
 
-export const Drop = ({ id, name = 'Drop', open, setOpen, className, children, ...tailwind }: iDrop) => {
+export const Drop = ({ id, name = 'Drop', open, onClose, className, children, ...tailwind }: iDrop) => {
 	const base = {};
 	const props = { ...base, ...tailwind, className, name };
 	const router = useRouter();
@@ -29,29 +30,23 @@ export const Drop = ({ id, name = 'Drop', open, setOpen, className, children, ..
 
 	// Hooks
 	useEffect(() => {
-		if (open) setOpen(false);
+		if (open) onClose();
 	}, [router.asPath]);
 
-	useEffect(() => {
-		open ? document.addEventListener('mouseup', onMouseUp) : document.removeEventListener('mouseup', onMouseUp);
-		return () => document.removeEventListener('mouseup', onMouseUp);
-	}, [open]);
+	useKeyPress(onKeyDown, [open]);
 
-	useEffect(() => {
-		open ? window.addEventListener('keydown', onKeyDown) : window.removeEventListener('keydown', onKeyDown);
-		return () => window.removeEventListener('keydown', onKeyDown);
-	}, [open]);
+	useMouseUp(onMouseUp, [open]);
 
-	// Methods
-	const onMouseUp = e => {
+	// Functions
+	function onKeyDown(e) {
+		if (e.target.dataset.name === 'FormInput') return;
+		if (e.keyCode === 27) onClose();
+	}
+
+	function onMouseUp(e) {
 		if (ref?.current?.contains(e.target)) return;
-		setOpen(false);
-	};
-
-	const onKeyDown = e => {
-		if (e.keyCode === 27) setOpen(false);
-		if (e.keyCode === 27) e.preventDefault();
-	};
+		onClose();
+	}
 
 	// Render
 	return (

@@ -4,7 +4,7 @@ import { HtmlType } from 'types';
 
 export type iDrop = HtmlType & {
 	open: boolean;
-	setOpen: (v: boolean) => void;
+	onClose: () => void;
 };
 
 export type iDropToggle = HtmlType & {

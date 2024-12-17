@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { Fade } from 'components/animation-wrapper';
 import { useInterface } from 'contexts/interface-context';
+import { useKeyPress } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { H4 } from 'interface/fonts';
 import { Div } from 'interface/html';
@@ -104,6 +105,14 @@ export const Slide = ({
 	useEffect(() => {
 		toggleScroll(open);
 	}, [open]);
+
+	useKeyPress(onKeyDown, []);
+
+	// Function
+	function onKeyDown(e) {
+		if (e.target.dataset.name === 'FormInput') return;
+		if (e.keyCode === 27 && onClose) onClose();
+	}
 
 	// Render
 	return ref?.current
