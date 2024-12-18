@@ -17,21 +17,18 @@ export const Head = (props: iHead) => {
 			<link rel='canonical' href={computedMeta.baseUrl + computedMeta.path} />
 			<meta name='description' content={computedMeta.description} />
 			<meta name='author' content={computedMeta.author} />
-
-			<meta name='og:image' content={computedMeta.photo} />
-			<meta name='og:description' content={computedMeta.description} />
-
 			<meta name='og:type' content={computedMeta.type} />
+			<meta name='og:site_name' content={computedMeta.siteName} />
+			<meta name='og:locale' content={computedMeta.locale} />
+			<meta name='og:image' content={computedMeta.photo} />
 			<meta name='og:title' content={computedMeta.title} />
-			<meta name='og:image:secure_url' content={computedMeta.photo} />
+			<meta name='og:description' content={computedMeta.description} />
 			<meta name='og:url' content={computedMeta.baseUrl + computedMeta.path} />
-
 			<meta name='twitter:card' content={computedMeta.card} />
+			<meta name='twitter:site' content={computedMeta.author} />
 			<meta name='twitter:image' content={computedMeta.photo} />
 			<meta name='twitter:title' content={computedMeta.title} />
 			<meta name='twitter:description' content={computedMeta.description} />
-			<meta name='twitter:site' content={computedMeta.author} />
-
 			<meta name='robots' content={computedMeta.robots} />
 			<meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width' />
 			{props.children}
