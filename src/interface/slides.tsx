@@ -110,6 +110,7 @@ export const Slide = ({
 
 	// Function
 	function onKeyDown(e) {
+		if (!open) return;
 		if (e.target.dataset.name === 'FormInput') return;
 		if (e.keyCode === 27 && onClose) onClose();
 	}

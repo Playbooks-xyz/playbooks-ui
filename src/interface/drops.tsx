@@ -39,11 +39,13 @@ export const Drop = ({ id, name = 'Drop', open, onClose, className, children, ..
 
 	// Functions
 	function onKeyDown(e) {
+		if (!open) return;
 		if (e.target.dataset.name === 'FormInput') return;
 		if (e.keyCode === 27) onClose();
 	}
 
 	function onMouseUp(e) {
+		if (!open) return;
 		if (ref?.current?.contains(e.target)) return;
 		onClose();
 	}
