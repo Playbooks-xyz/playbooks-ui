@@ -14,14 +14,14 @@ import {
 	iToastTitle,
 	iToastWrapper,
 } from 'interface/toasts.types';
-import { borderProps, timeout } from 'utils';
+import { timeout } from 'utils';
 
 export const ToastWrapper = ({ id, name = 'ToastWrapper', className, children, ...tailwind }: iToastWrapper) => {
 	const base = {
 		inset: 'bottom-0 right-0 left-0',
 		position: 'fixed',
 		spacing: 'mx-auto',
-		width: 'w-[320px] max-w-[90%]',
+		width: 'w-[400px] max-w-[90%]',
 		zIndex: 'z-40',
 	};
 	const props = { ...base, ...tailwind, className, name };
@@ -70,13 +70,7 @@ export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, 
 };
 
 export const ToastHeader = ({ id, name = 'ToastHeader', onRemove, className, children, ...tailwind }: iToastHeader) => {
-	const base = {
-		bgColor: 'bg-gray-100 dark:bg-gray-900',
-		border: 'border-b',
-		...borderProps,
-		display: 'flex-between',
-		spacing: 'p-2',
-	};
+	const base = { display: 'flex-between', spacing: 'p-2' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
