@@ -74,7 +74,9 @@ export const ToastHeader = ({ id, name = 'ToastHeader', onRemove, className, chi
 
 	return (
 		<Div {...props}>
-			<Span display='flex-start space-x-4'>{children}</Span>
+			<Span display='flex-start' space='space-x-2'>
+				{children}
+			</Span>
 			<AccentBtn icon='xmark' color='gray-600 dark:gray-100' size='xs' onClick={onRemove} />
 		</Div>
 	);

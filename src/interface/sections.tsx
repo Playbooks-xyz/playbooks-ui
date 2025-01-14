@@ -43,8 +43,8 @@ export const SectionHeader = ({ id, name = 'SectionHeader', className, children,
 		spacing: 'p-4',
 		border: 'border-b',
 		...borderProps,
-		display: 'lg:flex-between',
-		space: 'space-y-4 space-x-0 lg:space-y-0 lg:space-x-4',
+		display: 'flex-between',
+		space: 'space-x-4',
 		width: 'w-full',
 	};
 	const props = { ...base, ...tailwind, className, name };
