@@ -82,18 +82,18 @@ export const Slide = ({
 	...tailwind
 }: iSlide) => {
 	const base = {
-		position: 'fixed',
 		bgColor: 'bg-white dark:bg-gray-900',
-		transition: 'transition-all',
-		transform: 'transform',
 		ease: 'ease-out',
 		delay: open ? 'delay-200' : '',
 		display: 'flex-column',
 		duration: 'duration-200',
 		height: 'h-full',
-		width: 'w-[400px] max-w-80vw min-w-40vw',
-		placement: placement === 'left' ? 'left-0' : 'right-0',
+		inset: placement === 'left' ? 'left-0' : 'right-0',
+		position: 'fixed',
+		transition: 'transition-all',
+		transform: 'transform',
 		shadow: placement === 'left' ? 'shadow-r-lg' : 'shadow-l-lg',
+		width: 'w-[400px] max-w-80vw min-w-40vw',
 		zIndex: 'z-20',
 	};
 	const [animation, setAnimation] = useState(`opacity-0 ${computeSlideAnimation(placement)}`);

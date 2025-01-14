@@ -75,7 +75,7 @@ export const SwitchInner = ({ id, name = 'SwitchInner', checked, className, ...t
 export const SwitchToggle = ({ id, name = 'SwitchToggle', icon, checked, className, ...tailwind }: iSwitchToggle) => {
 	const base = {
 		animation: checked ? 'translate-x-6' : 'translate-x-0',
-		placement: 'left-0',
+		inset: 'left-0',
 		position: 'absolute',
 		display: 'inline-block',
 		bgColor: checked ? 'bg-blue-500 dark:bg-cyan-500' : 'bg-gray-300 dark:bg-gray-600',

@@ -18,8 +18,9 @@ import { timeout } from 'utils/helpers';
 
 export const ToastWrapper = ({ id, name = 'ToastWrapper', className, children, ...tailwind }: iToastWrapper) => {
 	const base = {
+		inset: 'bottom-0',
 		position: 'fixed',
-		placement: 'bottom-8 right-8',
+		spacing: 'mx-auto',
 		width: 'w-[400px] max-w-full',
 		zIndex: 'z-40',
 	};
@@ -41,7 +42,7 @@ export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, 
 		tranform: 'transform',
 		width: 'w-full',
 	};
-	const [fade, setFade] = useState({ opacity: 'opacity-0', translate: 'translate-x-12' });
+	const [fade, setFade] = useState({ opacity: 'opacity-0', translate: 'translate-y-12' });
 	const props = { ...base, ...tailwind, ...fade, className };
 	const ref = useRef(null);
 
@@ -56,10 +57,10 @@ export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, 
 			ref={ref}
 			show={show}
 			timeout={{ enter: 0, exit: 200 }}
-			onEntering={() => setFade({ opacity: 'opacity-0', translate: 'translate-x-12' })}
-			onEntered={() => setFade({ opacity: 'opacity-100', translate: 'translate-x-0' })}
-			onExit={() => setFade({ opacity: 'opacity-100', translate: 'translate-x-0' })}
-			onExiting={() => setFade({ opacity: 'opacity-0', translate: 'translate-x-12' })}
+			onEntering={() => setFade({ opacity: 'opacity-0', translate: 'translate-y-12' })}
+			onEntered={() => setFade({ opacity: 'opacity-100', translate: 'translate-y-0' })}
+			onExit={() => setFade({ opacity: 'opacity-100', translate: 'translate-y-0' })}
+			onExiting={() => setFade({ opacity: 'opacity-0', translate: 'translate-y-12' })}
 			onExited={onRemove}>
 			<Div ref={ref} {...props}>
 				{children}
@@ -69,7 +70,7 @@ export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, 
 };
 
 export const ToastHeader = ({ id, name = 'ToastHeader', onRemove, className, children, ...tailwind }: iToastHeader) => {
-	const base = { bgColor: '', display: 'flex-between', spacing: 'p-2' };
+	const base = { bgColor: 'bg-white', bgOpacity: 'bg-opacity-25', display: 'flex-between', spacing: 'p-2' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -106,7 +107,7 @@ export const ToastTitle = ({ id, name = 'ToastTitle', className, children, ...ta
 };
 
 export const ToastBody = ({ id, name = 'ToastBody', className, children, ...tailwind }: iToastBody) => {
-	const base = { spacing: 'p-4' };
+	const base = { spacing: 'px-4 py-2' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
