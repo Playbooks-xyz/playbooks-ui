@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { Fade } from 'components/animation-wrapper';
 import { AccentBtn } from 'interface/buttons';
@@ -14,7 +14,6 @@ import {
 	iToastTitle,
 	iToastWrapper,
 } from 'interface/toasts.types';
-import { timeout } from 'utils';
 
 export const ToastWrapper = ({ id, name = 'ToastWrapper', className, children, ...tailwind }: iToastWrapper) => {
 	const base = {
@@ -45,11 +44,6 @@ export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, 
 	const [fade, setFade] = useState({ opacity: 'opacity-0', translate: 'translate-y-12' });
 	const props = { ...base, ...tailwind, ...fade, className };
 	const ref = useRef(null);
-
-	// Hooks
-	useEffect(() => {
-		timeout(3000)?.then(() => setShow(false));
-	}, []);
 
 	// Render
 	return (
