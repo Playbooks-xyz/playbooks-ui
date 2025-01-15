@@ -101,7 +101,7 @@ export const ToastTitle = ({ id, name = 'ToastTitle', className, children, ...ta
 };
 
 export const ToastBody = ({ id, name = 'ToastBody', className, children, ...tailwind }: iToastBody) => {
-	const base = { spacing: 'px-4 py-2' };
+	const base = { spacing: 'px-4 pt-2 pb-4' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
