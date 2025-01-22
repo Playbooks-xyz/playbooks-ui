@@ -44,7 +44,6 @@ export const SlideWrapper = ({
 export const SlideBackdrop = ({ id, name = 'SlideBackdrop', open, onClose, ...tailwind }: iSlideBackdrop) => {
 	const base = {
 		bgColor: 'bg-black dark:bg-gray-700',
-		bgOpacity: 'bg-opacity-75',
 		duration: 'duration-200',
 		ease: 'ease-in',
 		height: 'h-full',
@@ -52,8 +51,8 @@ export const SlideBackdrop = ({ id, name = 'SlideBackdrop', open, onClose, ...ta
 		position: 'fixed',
 		transition: 'transition-all',
 	};
-	const [fade, setFade] = useState('hidden');
-	const props = { ...base, ...tailwind, fade, name };
+	const [fade, setFade] = useState({ display: 'hidden', bgOpacity: '' });
+	const props = { ...base, ...fade, ...tailwind, name };
 	const ref = useRef(null);
 
 	return (
@@ -61,11 +60,10 @@ export const SlideBackdrop = ({ id, name = 'SlideBackdrop', open, onClose, ...ta
 			ref={ref}
 			show={open}
 			timeout={{ enter: 0, exit: 200 }}
-			onEnter={() => setFade('opacity-0')}
-			onEntered={() => setFade('opacity-75')}
-			onExit={() => setFade('opacity-75')}
-			onExiting={() => setFade('opacity-0')}
-			onExited={() => setFade('hidden')}>
+			onEnter={() => setFade({ display: '', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}
+			onEntered={() => setFade({ display: '', bgOpacity: 'bg-opacity-[85%] dark:bg-opacity-[85%]' })}
+			onExiting={() => setFade({ display: '', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}
+			onExited={() => setFade({ display: 'hidden', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}>
 			<Div ref={ref} onClick={onClose} {...props} />
 		</Fade>
 	);
@@ -150,7 +148,7 @@ export const SlideHeader = ({ id, name = 'SlideHeader', onClose, className, chil
 	return (
 		<Div {...props}>
 			{children}
-			<AccentBtn size='h-10 w-10' icon='xmark' color='gray-500 dark:gray-200' onClick={onClose} />
+			<AccentBtn size='icon' icon='xmark' color='gray-500 dark:gray-200' onClick={onClose} />
 		</Div>
 	);
 };

@@ -72,8 +72,7 @@ export const MenuBackdrop = ({
 	...tailwind
 }: iMenuBackdrop) => {
 	const base = {
-		bgColor: 'bg-black dark:bg-gray-800',
-		bgOpacity: 'bg-opacity-75',
+		bgColor: 'bg-black dark:bg-gray-700',
 		duration: 'duration-200',
 		ease: 'ease-in',
 		height: 'h-full',
@@ -82,19 +81,19 @@ export const MenuBackdrop = ({
 		transition: 'transition-all',
 		zIndex: 'z-1',
 	};
-	const [fade, setFade] = useState('hidden');
-	const props = { ...base, ...tailwind, fade, className, name };
+	const [fade, setFade] = useState({ display: 'hidden', bgOpacity: '' });
+	const props = { ...base, ...tailwind, ...fade, className, name };
 	const ref = useRef(null);
 
 	return (
 		<Fade
 			ref={ref}
 			show={open}
-			timeout={200}
-			onEnter={() => setFade('opacity-0')}
-			onEntered={() => setFade('opacity-75')}
-			onExiting={() => setFade('opacity-0')}
-			onExited={() => setFade('hidden')}>
+			timeout={{ enter: 0, exit: 200 }}
+			onEnter={() => setFade({ display: '', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}
+			onEntered={() => setFade({ display: '', bgOpacity: 'bg-opacity-[85%] dark:bg-opacity-[85%]' })}
+			onExiting={() => setFade({ display: '', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}
+			onExited={() => setFade({ display: 'hidden', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}>
 			<Div ref={ref} onClick={onClose} {...props}>
 				{children}
 			</Div>
@@ -124,11 +123,12 @@ export const MenuToggle = ({
 export const MenuMenu = ({ id, name = 'MenuMenu', open, className, children, ...tailwind }: iMenuMenu) => {
 	const base = {
 		bgColor: 'bg-white dark:bg-gray-900',
-		inset: 'right-0 left-0',
-		position: 'absolute',
 		border: 'border-b',
 		...borderProps,
+		ease: 'ease-in',
 		height: 'max-h-[100vh]',
+		inset: 'right-0 left-0',
+		position: 'absolute',
 		shadow: 'shadow-lg',
 		shadowColor: 'dark:shadow-gray-800/25',
 		textAlign: 'text-left',
@@ -168,7 +168,7 @@ export const MenuMenuWrapper = ({
 		<Fade
 			ref={ref}
 			show={open}
-			timeout={{ enter: 0, exit: 100 }}
+			timeout={{ enter: 0, exit: 200 }}
 			onEntered={() => setAnimation('opacity-100 translate-y-0')}
 			onExiting={() => setAnimation('opacity-0 -translate-y-4')}>
 			<Div ref={ref} {...props}>

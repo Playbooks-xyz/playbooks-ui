@@ -50,7 +50,6 @@ export const ModalWrapper = ({
 export const ModalBackdrop = ({ id, name = 'ModalBackdrop', open, onClose, tailwind }: iModalBackdrop) => {
 	const base = {
 		bgColor: 'bg-black dark:bg-gray-700',
-		bgOpacity: 'bg-opacity-100',
 		duration: 'duration-200',
 		ease: 'ease-in',
 		height: 'h-full',
@@ -58,7 +57,7 @@ export const ModalBackdrop = ({ id, name = 'ModalBackdrop', open, onClose, tailw
 		position: 'fixed',
 		transition: 'transition-all',
 	};
-	const [fade, setFade] = useState({ display: 'hidden', opacity: '' });
+	const [fade, setFade] = useState({ display: 'hidden', bgOpacity: '' });
 	const props = { ...base, ...fade, ...tailwind, name };
 	const ref = useRef(null);
 
@@ -66,11 +65,11 @@ export const ModalBackdrop = ({ id, name = 'ModalBackdrop', open, onClose, tailw
 		<Fade
 			ref={ref}
 			show={open}
-			timeout={0}
-			onEnter={() => setFade({ display: '', opacity: 'opacity-0' })}
-			onEntered={() => setFade({ display: '', opacity: 'opacity-75' })}
-			onExiting={() => setFade({ display: '', opacity: 'opacity-0' })}
-			onExited={() => setFade({ display: 'hidden', opacity: 'opacity-0' })}>
+			timeout={{ enter: 0, exit: 200 }}
+			onEnter={() => setFade({ display: '', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}
+			onEntered={() => setFade({ display: '', bgOpacity: 'bg-opacity-[85%] dark:bg-opacity-[85%]' })}
+			onExiting={() => setFade({ display: '', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}
+			onExited={() => setFade({ display: 'hidden', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}>
 			<Div ref={ref} onClick={onClose} {...props} />
 		</Fade>
 	);
@@ -79,15 +78,15 @@ export const ModalBackdrop = ({ id, name = 'ModalBackdrop', open, onClose, tailw
 export const Modal = ({ id, name = 'Modal', open, onClose, className, children, tailwind }: iModal) => {
 	const base = {
 		align: 'text-left',
-		spacing: 'mx-auto my-8',
 		bgColor: 'bg-white dark:bg-gray-900',
 		border: 'border',
 		...borderProps,
 		borderRadius: 'rounded-lg',
-		width: 'w-sm max-w-full',
 		duration: 'duration-200',
 		ease: 'ease-in',
+		spacing: 'mx-auto my-8',
 		transition: 'transition-all',
+		width: 'w-sm max-w-full',
 		zIndex: 'z-30',
 	};
 	const [fade, setFade] = useState('hidden');
@@ -115,7 +114,7 @@ export const Modal = ({ id, name = 'Modal', open, onClose, className, children, 
 				<Fade
 					ref={animationRef}
 					show={open}
-					timeout={200}
+					timeout={{ enter: 0, exit: 200 }}
 					onEnter={() => setFade('opacity-0 scale-90')}
 					onEntered={() => setFade('opacity-100 scale-100')}
 					onExiting={() => setFade('opacity-0 scale-90')}
@@ -144,7 +143,7 @@ export const ModalHeader = ({ id, name = 'ModalHeader', onClose, className, chil
 	return (
 		<Div {...props}>
 			<Span>{children}</Span>
-			{onClose && <AccentBtn size='h-10 w-10' icon='xmark' fontSize='text-xl' onClick={onClose} />}
+			{onClose && <AccentBtn size='icon' icon='xmark' fontSize='text-xl' onClick={onClose} />}
 		</Div>
 	);
 };

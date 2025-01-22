@@ -1,16 +1,15 @@
 import react from '@vitejs/plugin-react';
 
-import { exec } from 'node:child_process';
 import path from 'path';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import tailwindcss from 'tailwindcss';
 import { defineConfig } from 'vite';
 
 function pushBuild() {
-	exec('npx yalc push', (response, error) => {
-		if (error) console.error(error);
-		// console.log('build projects finished');
-	});
+	// exec('npx yalc push', (response, error) => {
+	// 	if (error) console.error(error);
+	// 	// console.log('build projects finished');
+	// });
 }
 
 export default defineConfig({
