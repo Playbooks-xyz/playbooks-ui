@@ -28,11 +28,13 @@ export const btnAccentProps = (active?) => ({
 	color: 'gray-600 dark:gray-300',
 	stroke: 'stroke-gray-500 dark:stroke-gray-300',
 	hover: 'h:bg-opacity-50 dark:h:bg-opacity-50',
-	...btnSharedProps({
-		bgOpacity: 'bg-opacity-50 dark:bg-opacity-50',
-		borderOpacity: 'border-opacity-100 dark:border-opacity-100',
-		...active,
-	}),
+	...btnSharedProps(
+		active && {
+			bgOpacity: 'bg-opacity-50 dark:bg-opacity-50',
+			borderOpacity: 'border-opacity-100 dark:border-opacity-100',
+			...active,
+		},
+	),
 });
 
 export const btnBorderProps = (active?) => ({
@@ -44,11 +46,13 @@ export const btnBorderProps = (active?) => ({
 	color: active ? 'cyan-500' : 'gray-600 dark:gray-300',
 	stroke: active ? 'stroke-cyan-500' : 'stroke-gray-600 dark:stroke-gray-300',
 	hover: 'h:border-opacity-100 dark:h:border-opacity-100 h:opacity-100',
-	...btnSharedProps({
-		borderColor: 'border-cyan-500 dark:border-cyan-500',
-		borderOpacity: 'border-opacity-100 dark:border-opacity-100',
-		...active,
-	}),
+	...btnSharedProps(
+		active && {
+			borderColor: 'border-cyan-500 dark:border-cyan-500',
+			borderOpacity: 'border-opacity-100 dark:border-opacity-100',
+			...active,
+		},
+	),
 });
 
 export const btnTabProps = (active?) => ({
@@ -60,11 +64,13 @@ export const btnTabProps = (active?) => ({
 	color: 'gray-500 dark:gray-300',
 	stroke: 'stroke-gray-500 dark:stroke-gray-300',
 	borderRadius: '',
-	...btnSharedProps({
-		borderColor: 'border-t-transparent border-b-blue-500 dark:border-b-cyan-500',
-		color: 'gray-600 dark:gray-200',
-		...active,
-	}),
+	...btnSharedProps(
+		active && {
+			borderColor: 'border-t-transparent border-b-blue-500 dark:border-b-cyan-500',
+			color: 'gray-600 dark:gray-200',
+			...active,
+		},
+	),
 });
 
 export const btnTextProps = (active?) => ({
