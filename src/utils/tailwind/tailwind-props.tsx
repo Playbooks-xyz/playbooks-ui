@@ -11,56 +11,67 @@ export const breadcrumbBtnProps = (active?) => ({
 
 // Buttons
 export const btnProps = (active?) => ({
-	...btnSharedProps(active),
 	bgColor: 'bg-gradient-to-r from-cyan-500 to-indigo-500',
 	bgPosition: 'bg-pos-0 h:bg-pos-100',
 	bgSize: 'bg-size-200',
 	color: 'white',
 	stroke: 'stroke-white dark:stroke-white',
+	...btnSharedProps(active),
 });
 
 export const btnAccentProps = (active?) => ({
-	...btnSharedProps(active),
 	bgColor: 'bg-gray-200 dark:bg-gray-700',
-	bgOpacity: active ? 'bg-opacity-50 dark:bg-opacity-50' : 'bg-opacity-0 dark:bg-opacity-0',
+	bgOpacity: 'bg-opacity-0 dark:bg-opacity-0',
 	border: '',
 	borderColor: 'border-gray-300 dark:border-gray-600',
-	borderOpacity: active ? 'border-opacity-100 dark:border-opacity-100' : 'border-opacity-50 dark:border-opacity-50',
+	borderOpacity: 'border-opacity-50 dark:border-opacity-50',
 	color: 'gray-600 dark:gray-300',
 	stroke: 'stroke-gray-500 dark:stroke-gray-300',
 	hover: 'h:bg-opacity-50 dark:h:bg-opacity-50',
+	...btnSharedProps({
+		bgOpacity: 'bg-opacity-50 dark:bg-opacity-50',
+		borderOpacity: 'border-opacity-100 dark:border-opacity-100',
+		...active,
+	}),
 });
 
 export const btnBorderProps = (active?) => ({
-	...btnSharedProps(active),
 	bgColor: 'bg-transparent',
 	bgOpacity: 'bg-opacity-100',
 	border: 'border',
-	borderColor: active ? 'border-cyan-500 dark:border-cyan-500' : 'border-gray-300 dark:border-gray-600',
-	borderOpacity: active ? 'border-opacity-100 dark:border-opacity-100' : 'border-opacity-50 dark:border-opacity-50',
+	borderColor: 'border-gray-300 dark:border-gray-600',
+	borderOpacity: 'border-opacity-50 dark:border-opacity-50',
 	color: active ? 'cyan-500' : 'gray-600 dark:gray-300',
 	stroke: active ? 'stroke-cyan-500' : 'stroke-gray-600 dark:stroke-gray-300',
 	hover: 'h:border-opacity-100 dark:h:border-opacity-100 h:opacity-100',
+	...btnSharedProps({
+		borderColor: 'border-cyan-500 dark:border-cyan-500',
+		borderOpacity: 'border-opacity-100 dark:border-opacity-100',
+		...active,
+	}),
 });
 
 export const btnTabProps = (active?) => ({
-	...btnSharedProps(active),
 	bgColor: 'bg-gray-0',
 	bgOpacity: 'bg-opacity-100',
 	border: 'border-b-2',
-	borderColor: active
-		? 'border-t-transparent border-b-blue-500 dark:border-b-cyan-500'
-		: 'border-t-transparent border-b-transparent h:border-b-gray-300 h:border-b-blue-500 dark:h:border-b-cyan-500',
-	color: active ? 'gray-600 dark:gray-200' : 'gray-500 dark:gray-300',
+	borderColor:
+		'border-t-transparent border-b-transparent h:border-b-gray-300 h:border-b-blue-500 dark:h:border-b-cyan-500',
+	color: 'gray-500 dark:gray-300',
 	stroke: 'stroke-gray-500 dark:stroke-gray-300',
 	borderRadius: '',
+	...btnSharedProps({
+		borderColor: 'border-t-transparent border-b-blue-500 dark:border-b-cyan-500',
+		color: 'gray-600 dark:gray-200',
+		...active,
+	}),
 });
 
 export const btnTextProps = (active?) => ({
-	...btnSharedProps(active),
 	fontSize: 'text-inherit',
 	color: 'gray-500 dark:gray-400',
 	hover: 'h:underline h:gray-700 h:dark:gray-100',
+	...btnSharedProps(active),
 });
 
 export const btnSharedProps = (active?) => ({
