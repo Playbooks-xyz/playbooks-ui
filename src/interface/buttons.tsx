@@ -106,8 +106,8 @@ export const BtnWrapper = ({
 	return (
 		<button
 			type={type}
-			aria-label={alt || name}
-			title={alt || name}
+			aria-label={alt}
+			title={alt}
 			data-name={name}
 			disabled={disabled || taskRunning}
 			onClick={onClick}
