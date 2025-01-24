@@ -17,7 +17,7 @@ export type HtmlType = TailwindType & {
 
 export type BtnType = HtmlType & {
 	type?: 'button' | 'submit' | 'reset';
-	alt: string;
+	alt?: string;
 	active?: boolean;
 	prevIcon?: any;
 	prevImg?: any;

@@ -55,7 +55,15 @@ export const CardIcon = ({
 	return <Icon type={type} icon={icon} {...props} />;
 };
 
-export const CardImg = ({ id, name = 'CardImg', src, alt, className, children, ...tailwind }: iCardImg) => {
+export const CardImg = ({
+	id,
+	name = 'CardImg',
+	alt = 'thumbnail',
+	src,
+	className,
+	children,
+	...tailwind
+}: iCardImg) => {
 	const base = { bgColor: 'bg-gray-100 dark:bg-gray-800', width: 'w-full' };
 	const props = { ...base, ...tailwind, className, name };
 

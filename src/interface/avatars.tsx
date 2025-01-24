@@ -35,7 +35,15 @@ export const AvatarBadge = ({ id, name = 'AvatarBadge', className, children, ...
 	return <Span {...props}>{children}</Span>;
 };
 
-export const AvatarImg = ({ id, name = 'AvatarImg', size = 'md', src, alt, className, ...tailwind }: iAvatarImg) => {
+export const AvatarImg = ({
+	id,
+	name = 'AvatarImg',
+	alt = 'avatar',
+	size = 'md',
+	src,
+	className,
+	...tailwind
+}: iAvatarImg) => {
 	const base = {
 		aspect: 'aspect-[1/1]',
 		borderColor: 'border-gray-100 dark:border-gray-900',

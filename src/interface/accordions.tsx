@@ -33,7 +33,7 @@ export const Accordion = ({ id, name = 'Accordion', open, className, children, .
 export const AccordionToggle = ({
 	id,
 	name = 'AccordionToggle',
-	alt,
+	alt = 'toggle',
 	open,
 	onClick,
 	className,

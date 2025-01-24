@@ -104,7 +104,7 @@ export const MenuBackdrop = ({
 export const MenuToggle = ({
 	id,
 	name = 'MenuToggle',
-	alt,
+	alt = 'toggle',
 	icon = 'chevron-down',
 	onClick,
 	className,

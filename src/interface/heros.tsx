@@ -55,7 +55,15 @@ export const HeroBg = forwardRef<any, iHeroBg>(
 	},
 );
 
-export const HeroImg = ({ id, name = 'HeroImg', size = 'lg', src, alt, className, ...tailwind }: iHeroImg) => {
+export const HeroImg = ({
+	id,
+	name = 'HeroImg',
+	alt = 'thumbnail',
+	size = 'lg',
+	src,
+	className,
+	...tailwind
+}: iHeroImg) => {
 	const base = {
 		aspect: 'aspect-[1/1]',
 		bgColor: 'bg-gray-100 dark:bg-gray-800',

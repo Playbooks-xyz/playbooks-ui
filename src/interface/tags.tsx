@@ -28,7 +28,15 @@ export const Tag = ({ id, name = 'Tag', size = 'sm', className, children, ...tai
 	return <Div {...props}>{children}</Div>;
 };
 
-export const TagImg = ({ id, name = 'TagImg', size = 'sm', src, alt, className, ...tailwind }: iTagImg) => {
+export const TagImg = ({
+	id,
+	name = 'TagImg',
+	alt = 'thumbnail',
+	size = 'sm',
+	src,
+	className,
+	...tailwind
+}: iTagImg) => {
 	const base = { size: computeTagImgSize(size), borderRadius: 'rounded-full' };
 	const props = { ...base, ...tailwind, className, name };
 
