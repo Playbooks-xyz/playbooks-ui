@@ -34,7 +34,6 @@ export const AccordionToggle = ({
 	alt = 'toggle',
 	variant = 'border',
 	open,
-	onClick,
 	className,
 	children,
 	...tailwind
