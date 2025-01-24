@@ -3,15 +3,13 @@ import { useRef } from 'react';
 import {
 	iAccordion,
 	iAccordionBody,
-	iAccordionIcon,
 	iAccordionText,
 	iAccordionTitle,
 	iAccordionToggle,
 } from 'interface/accordions.types';
-import { BtnWrapper } from 'interface/buttons';
+import { Btn } from 'interface/buttons';
 import { Font, P } from 'interface/fonts';
-import { Div, Span } from 'interface/html';
-import { FarIcon } from 'interface/icons';
+import { Div } from 'interface/html';
 import { borderProps } from 'utils';
 
 export const Accordion = ({ id, name = 'Accordion', open, className, children, ...tailwind }: iAccordion) => {
@@ -34,6 +32,7 @@ export const AccordionToggle = ({
 	id,
 	name = 'AccordionToggle',
 	alt = 'toggle',
+	variant = 'border',
 	open,
 	onClick,
 	className,
@@ -51,44 +50,14 @@ export const AccordionToggle = ({
 		fontSize: 'text-sm',
 		fontWeight: 'font-medium',
 		hover: 'h:bg-gray-100 dark:h:bg-gray-800',
+		nextIcon: { icon: 'chevron-down', rotate: open ? 'rotate-180' : 'rotate-0', transition: 'transition-all ease' },
 		spacing: 'py-4',
+		span: { display: 'flex-start', flex: 'grow', width: 'w-full' },
 		width: 'w-full',
 	};
 	const props = { ...base, ...tailwind, className, name };
 
-	return (
-		<BtnWrapper id={id} alt={alt} onClick={() => onClick(id)} {...props}>
-			<Span className='flex-start' space='space-x-4' width='w-full'>
-				{children}
-			</Span>
-			<AccordionIcon open={open} />
-		</BtnWrapper>
-	);
-};
-
-export const AccordionIcon = ({
-	id,
-	name = 'AccordionIcon',
-	icon = 'chevron-down',
-	open,
-	onClick,
-	className,
-	children,
-	...tailwind
-}: iAccordionIcon) => {
-	const base = {
-		rotate: open ? 'rotate-180' : 'rotate-0',
-		borderRadius: 'rounded-md',
-		display: 'flex-middle',
-		transition: 'transition-all ease',
-	};
-	const props = { ...base, ...tailwind, className, name };
-
-	return (
-		<Span {...props}>
-			<FarIcon icon={icon} className='gray-700 dark:gray-300' />
-		</Span>
-	);
+	return <Btn variant={variant} {...props} />;
 };
 
 export const AccordionTitle = ({

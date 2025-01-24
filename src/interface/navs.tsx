@@ -1,7 +1,7 @@
-import { AccentBtn } from 'interface/buttons';
+import { Btn } from 'interface/buttons';
 import { Font } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
-import { AccentLink } from 'interface/links';
+import { Link } from 'interface/links';
 import { iNav, iNavBody, iNavBtn, iNavHeader, iNavItem, iNavLink, iNavList, iNavTitle } from 'interface/navs.types';
 import { borderProps, computeSectionSize, tailwindClassBuilder } from 'utils';
 
@@ -61,18 +61,18 @@ export const NavItem = ({ id, name = 'NavItem', className, children, ...tailwind
 	return <Li {...props}>{children}</Li>;
 };
 
-export const NavBtn = ({ id, name = 'NavBtn', className, children, ...tailwind }: iNavBtn) => {
+export const NavBtn = ({ id, name = 'NavBtn', variant = 'accent', className, children, ...tailwind }: iNavBtn) => {
 	const base = { align: 'text-left', display: 'flex-start', space: 'space-x-4', width: 'w-full' };
 	const props = { ...base, ...tailwind, className, name, children };
 
-	return <AccentBtn {...props} />;
+	return <Btn variant={variant} {...props} />;
 };
 
-export const NavLink = ({ id, name = 'NavLink', className, children, ...tailwind }: iNavLink) => {
+export const NavLink = ({ id, name = 'NavLink', variant = 'accent', className, children, ...tailwind }: iNavLink) => {
 	const base = { align: 'text-left', display: 'flex-start', space: 'space-x-4', width: 'w-full' };
 	const props = { ...base, ...tailwind, className, name, children };
 
-	return <AccentLink {...props} />;
+	return <Link variant={variant} {...props} />;
 };
 
 // Docs

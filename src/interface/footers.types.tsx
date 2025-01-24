@@ -1,4 +1,6 @@
-import { BtnType, HtmlType, LinkType } from 'types';
+import { iBtn } from 'interface/buttons.types';
+import { iLink } from 'interface/links.types';
+import { HtmlType } from 'types';
 
 export type iFooter = HtmlType;
 
@@ -14,6 +16,10 @@ export type iFooterList = HtmlType;
 
 export type iFooterItem = HtmlType;
 
-export type iFooterBtn = BtnType;
+export type iFooterBtn = iBtn & {
+	variant: string;
+};
 
-export type iFooterLink = LinkType;
+export type iFooterLink = iLink & {
+	variant: string;
+};

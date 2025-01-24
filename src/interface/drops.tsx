@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import { Fade } from 'components/animation-wrapper';
 import { useKeyPress, useMouseUp } from 'hooks';
-import { AccentBtn, BorderBtn, Btn } from 'interface/buttons';
+import { AccentBtn, Btn } from 'interface/buttons';
 import {
 	iDrop,
 	iDropBtn,
@@ -63,8 +63,7 @@ export const DropToggle = ({
 	name = 'DropToggle',
 	alt,
 	nextIcon = 'chevron-down',
-	variant,
-	onClick,
+	variant = 'accent',
 	className,
 	children,
 	...tailwind
@@ -72,16 +71,7 @@ export const DropToggle = ({
 	const base = { display: 'flex-between', space: 'space-x-4' };
 	const props = { ...base, ...tailwind, className, name, children };
 
-	switch (variant) {
-		case 'accent':
-			return <AccentBtn alt={alt} nextIcon={nextIcon} onClick={onClick} {...props} />;
-
-		case 'border':
-			return <BorderBtn alt={alt} nextIcon={nextIcon} onClick={onClick} {...props} />;
-
-		default:
-			return <Btn alt={alt} nextIcon={nextIcon} onClick={onClick} {...props} />;
-	}
+	return <Btn alt={alt} variant={variant} nextIcon={nextIcon} {...props} />;
 };
 
 export const DropMenu = ({ id, name = 'DropMenu', open, className, children, ...tailwind }: iDropMenu) => {

@@ -1,4 +1,4 @@
-import { TextBtn } from 'interface/buttons';
+import { Btn } from 'interface/buttons';
 import { Font, P } from 'interface/fonts';
 import {
 	iFooter,
@@ -12,7 +12,7 @@ import {
 	iFooterTitle,
 } from 'interface/footers.types';
 import { Div, Li, Ul } from 'interface/html';
-import { TextLink } from 'interface/links';
+import { Link } from 'interface/links';
 import { borderProps, tailwindClassBuilder } from 'utils';
 
 export const Footer = ({ id, name = 'Footer', className, children, ...tailwind }: iFooter) => {
@@ -98,23 +98,29 @@ export const FooterItem = ({
 export const FooterBtn = ({
 	id,
 	name = 'FooterBtn',
-	taskRunning,
-	onClick,
+	variant = 'text',
 	className,
 	children,
 	...tailwind
 }: iFooterBtn) => {
 	const base = { fontSize: 'text-sm' };
-	const props = { ...base, ...tailwind, className, name, onClick, children };
+	const props = { ...base, ...tailwind, className, name, children };
 
-	return <TextBtn size='' onClick={onClick} {...props} />;
+	return <Btn variant={variant} {...props} />;
 };
 
-export const FooterLink = ({ id, name = 'FooterLink', href = '', className, children, ...tailwind }: iFooterLink) => {
+export const FooterLink = ({
+	id,
+	name = 'FooterLink',
+	variant = 'text',
+	className,
+	children,
+	...tailwind
+}: iFooterLink) => {
 	const base = { fontSize: 'text-sm' };
-	const props = { ...base, ...tailwind, className, name, href, children };
+	const props = { ...base, ...tailwind, className, name, children };
 
-	return <TextLink href={href} {...props} />;
+	return <Link variant={variant} {...props} />;
 };
 
 export const FooterFooter = ({ id, name = 'FooterFooter', className, children, ...tailwind }: iFooterBody) => {

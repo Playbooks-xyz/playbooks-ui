@@ -14,6 +14,10 @@ export type iNavList = HtmlType;
 
 export type iNavItem = HtmlType;
 
-export type iNavBtn = iBtn;
+export type iNavBtn = iBtn & {
+	variant: string;
+};
 
-export type iNavLink = iLink;
+export type iNavLink = iLink & {
+	variant: string;
+};

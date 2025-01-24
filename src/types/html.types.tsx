@@ -53,7 +53,7 @@ export type LabelType = HtmlType & {
 };
 
 export type LinkType = HtmlType & {
-	alt: string;
+	alt?: string;
 	active?: boolean;
 	prevIcon?: any;
 	prevImg?: any;

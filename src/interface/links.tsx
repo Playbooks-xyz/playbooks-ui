@@ -16,7 +16,29 @@ import {
 	tailwindClassBuilder,
 } from 'utils';
 
-export const Link = ({ id, name = 'Link', size = 'sm', alt, active, className, ...tailwind }: iLink) => {
+export const Link = ({ variant = 'primary', ...props }) => {
+	switch (variant) {
+		case 'primary':
+			return <PrimaryLink {...props} />;
+
+		case 'accent':
+			return <AccentLink {...props} />;
+
+		case 'border':
+			return <BorderLink {...props} />;
+
+		case 'tab':
+			return <TabLink {...props} />;
+
+		case 'text':
+			return <TextLink {...props} />;
+
+		default:
+			return <Link {...props} />;
+	}
+};
+
+export const PrimaryLink = ({ id, name = 'Link', size = 'sm', alt, active, className, ...tailwind }: iLink) => {
 	const base = { ...btnProps(active), size: computeBtnSize(size) };
 
 	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;

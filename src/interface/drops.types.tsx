@@ -1,13 +1,13 @@
 import { iBtn } from 'interface/buttons.types';
 import { iLink } from 'interface/links.types';
-import { BtnType, HtmlType } from 'types';
+import { HtmlType } from 'types';
 
 export type iDrop = HtmlType & {
 	open: boolean;
 	onClose: () => void;
 };
 
-export type iDropToggle = BtnType & {
+export type iDropToggle = iBtn & {
 	variant?: string;
 };
 

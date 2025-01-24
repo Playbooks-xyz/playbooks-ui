@@ -15,7 +15,29 @@ import {
 	tailwindClassBuilder,
 } from 'utils';
 
-export const Btn = ({ id, name = 'Btn', size = 'sm', active, className, ...tailwind }: iBtn) => {
+export const Btn = ({ variant = 'primary', ...props }) => {
+	switch (variant) {
+		case 'primary':
+			return <PrimaryBtn {...props} />;
+
+		case 'accent':
+			return <AccentBtn {...props} />;
+
+		case 'border':
+			return <BorderBtn {...props} />;
+
+		case 'tab':
+			return <TabBtn {...props} />;
+
+		case 'text':
+			return <TextBtn {...props} />;
+
+		default:
+			return <Btn {...props} />;
+	}
+};
+
+export const PrimaryBtn = ({ id, name = 'PrimaryBtn', size = 'sm', active, className, ...tailwind }: iBtn) => {
 	const base = { ...btnProps(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
