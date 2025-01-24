@@ -69,7 +69,7 @@ export const DropToggle = ({
 	...tailwind
 }: iDropToggle) => {
 	const base = { display: 'flex-between', space: 'space-x-4' };
-	const props = { ...base, ...tailwind, className, name, children };
+	const props = { ...base, ...tailwind, children, className, name };
 
 	return <Btn alt={alt} variant={variant} nextIcon={nextIcon} {...props} />;
 };
@@ -185,14 +185,14 @@ export const DropItem = ({ id, name = 'DropItem', className, children, ...tailwi
 
 export const DropBtn = ({ id, name = 'DropBtn', className, children, ...tailwind }: iDropBtn) => {
 	const base = { align: 'text-left', display: 'flex-start', space: 'space-x-4', width: 'w-full' };
-	const props = { ...base, ...tailwind, className, name, children };
+	const props = { ...base, ...tailwind, children, className, name };
 
 	return <AccentBtn {...props} />;
 };
 
 export const DropLink = ({ id, name = 'DropLink', className, children, ...tailwind }: iDropLink) => {
 	const base = { align: 'text-left', display: 'flex-start', space: 'space-x-4', width: 'w-full' };
-	const props = { ...base, ...tailwind, className, name, children };
+	const props = { ...base, ...tailwind, children, className, name };
 
 	return <AccentLink {...props} />;
 };

@@ -235,14 +235,14 @@ export const MenuBtn = ({
 	...tailwind
 }: iMenuBtn) => {
 	const base = { align: 'text-left', display: 'flex-start' };
-	const props = { ...base, ...tailwind, className, name, children };
+	const props = { ...base, ...tailwind, children, className, name };
 
 	return <AccentBtn active={active} taskRunning={taskRunning} onClick={onClick} {...props} />;
 };
 
 export const MenuLink = ({ id, name = 'MenuLink', href = '', className, children, ...tailwind }: iMenuLink) => {
 	const base = { align: 'text-left', display: 'flex-start', width: 'w-full' };
-	const props = { ...base, ...tailwind, className, name, children };
+	const props = { ...base, ...tailwind, children, className, name };
 
 	return <AccentLink href={href} {...props} />;
 };

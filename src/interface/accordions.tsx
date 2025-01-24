@@ -55,7 +55,7 @@ export const AccordionToggle = ({
 		span: { display: 'flex-start', flex: 'grow', width: 'w-full' },
 		width: 'w-full',
 	};
-	const props = { ...base, ...tailwind, className, name };
+	const props = { ...base, ...tailwind, children, className, name };
 
 	return <Btn variant={variant} {...props} />;
 };

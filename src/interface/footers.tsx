@@ -104,7 +104,7 @@ export const FooterBtn = ({
 	...tailwind
 }: iFooterBtn) => {
 	const base = { fontSize: 'text-sm' };
-	const props = { ...base, ...tailwind, className, name, children };
+	const props = { ...base, ...tailwind, children, className, name };
 
 	return <Btn variant={variant} {...props} />;
 };
@@ -118,7 +118,7 @@ export const FooterLink = ({
 	...tailwind
 }: iFooterLink) => {
 	const base = { fontSize: 'text-sm' };
-	const props = { ...base, ...tailwind, className, name, children };
+	const props = { ...base, ...tailwind, children, className, name };
 
 	return <Link variant={variant} {...props} />;
 };

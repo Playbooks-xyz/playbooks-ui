@@ -63,14 +63,14 @@ export const NavItem = ({ id, name = 'NavItem', className, children, ...tailwind
 
 export const NavBtn = ({ id, name = 'NavBtn', variant = 'accent', className, children, ...tailwind }: iNavBtn) => {
 	const base = { align: 'text-left', display: 'flex-start', space: 'space-x-4', width: 'w-full' };
-	const props = { ...base, ...tailwind, className, name, children };
+	const props = { ...base, ...tailwind, children, className, name };
 
 	return <Btn variant={variant} {...props} />;
 };
 
 export const NavLink = ({ id, name = 'NavLink', variant = 'accent', className, children, ...tailwind }: iNavLink) => {
 	const base = { align: 'text-left', display: 'flex-start', space: 'space-x-4', width: 'w-full' };
-	const props = { ...base, ...tailwind, className, name, children };
+	const props = { ...base, ...tailwind, children, className, name };
 
 	return <Link variant={variant} {...props} />;
 };
