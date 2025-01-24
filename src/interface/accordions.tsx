@@ -34,6 +34,7 @@ export const AccordionToggle = ({
 	alt = 'toggle',
 	variant = 'border',
 	open,
+	onClick,
 	className,
 	children,
 	...tailwind
@@ -56,7 +57,7 @@ export const AccordionToggle = ({
 	};
 	const props = { ...base, ...tailwind, children, className, name };
 
-	return <Btn variant={variant} {...props} />;
+	return <Btn variant={variant} onClick={() => onClick(id)} {...props} />;
 };
 
 export const AccordionTitle = ({

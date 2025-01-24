@@ -62,8 +62,9 @@ export const DropToggle = ({
 	id,
 	name = 'DropToggle',
 	alt,
-	nextIcon = 'chevron-down',
 	variant = 'accent',
+	nextIcon = 'chevron-down',
+	onClick,
 	className,
 	children,
 	...tailwind
@@ -71,7 +72,7 @@ export const DropToggle = ({
 	const base = { display: 'flex-between', space: 'space-x-4' };
 	const props = { ...base, ...tailwind, children, className, name };
 
-	return <Btn alt={alt} variant={variant} nextIcon={nextIcon} {...props} />;
+	return <Btn alt={alt} variant={variant} nextIcon={nextIcon} onClick={() => onClick(id)} {...props} />;
 };
 
 export const DropMenu = ({ id, name = 'DropMenu', open, className, children, ...tailwind }: iDropMenu) => {

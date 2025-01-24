@@ -1,4 +1,4 @@
-import { AccentBtn, Btn } from 'interface/buttons';
+import { Btn } from 'interface/buttons';
 import { FormSelect } from 'interface/forms';
 import { Div } from 'interface/html';
 import { iTab, iTabPane, iTabPanes, iTabs, iTabSelect, iTabWrapper } from 'interface/tabs.types';
@@ -64,15 +64,9 @@ export const Tab = ({
 			color: 'blue-500 dark:cyan-500',
 		}),
 	};
-	const props = { ...base, ...tailwind, children, className, name };
+	const props = { ...base, ...tailwind, alt, children, className, name };
 
-	switch (variant) {
-		case 'accent':
-			return <AccentBtn alt={alt} size={size} onClick={() => onSelect(value)} {...props} />;
-
-		default:
-			return <Btn alt={alt} size={size} onClick={() => onSelect(value)} {...props} />;
-	}
+	return <Btn variant={variant} onClick={() => onSelect(value)} {...props} />;
 };
 
 export const TabPanes = ({ id, name = 'TabPanes', className, children, ...tailwind }: iTabPanes) => {
