@@ -9,7 +9,7 @@ export type iDrop = HtmlType & {
 
 export type iDropToggle = iBtn & {
 	variant?: string;
-	onClick: (v: any) => void;
+	onClick: (v?: any) => void;
 };
 
 export type iDropMenu = HtmlType & {
