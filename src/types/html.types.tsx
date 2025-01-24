@@ -17,6 +17,7 @@ export type HtmlType = TailwindType & {
 
 export type BtnType = HtmlType & {
 	type?: 'button' | 'submit' | 'reset';
+	alt: string;
 	active?: boolean;
 	prevIcon?: any;
 	icon?: any;
@@ -26,9 +27,9 @@ export type BtnType = HtmlType & {
 };
 
 export type ImgType = HtmlType & {
+	alt: string;
+	src: string;
 	fetchPriority?: 'high' | 'low' | 'auto';
-	src?: string;
-	alt?: string;
 };
 
 export type InputType = HtmlType & {
@@ -49,6 +50,7 @@ export type LabelType = HtmlType & {
 };
 
 export type LinkType = HtmlType & {
+	alt: string;
 	active?: boolean;
 	prevIcon?: any;
 	icon?: any;

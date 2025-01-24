@@ -1,8 +1,8 @@
-import { HtmlType } from 'types';
+import { BtnType, HtmlType } from 'types';
 
 export type iPagination = HtmlType;
 
-export type iPaginationItem = HtmlType & {
+export type iPaginationBtn = BtnType & {
 	page: number;
 	active?: boolean;
 	disabled?: boolean;

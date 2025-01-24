@@ -1,7 +1,7 @@
 import { BtnWrapper } from 'interface/buttons';
 import { FarIcon } from 'interface/icons';
 import { Nav } from 'interface/navs';
-import { iPagination, iPaginationItem } from 'interface/paginations.types';
+import { iPagination, iPaginationBtn } from 'interface/paginations.types';
 import { borderProps, paginationProps, tailwindClassBuilder } from 'utils';
 
 export const Pagination = ({ id, name = 'Pagination', className, children, ...tailwind }: iPagination) => {
@@ -21,17 +21,18 @@ export const Pagination = ({ id, name = 'Pagination', className, children, ...ta
 export const PaginationFirst = ({
 	id,
 	name = 'PaginationFirst',
+	alt = 'first page',
 	page,
 	disabled,
 	className,
 	onClick,
 	...tailwind
-}: iPaginationItem) => {
+}: iPaginationBtn) => {
 	const base = paginationProps();
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<BtnWrapper onClick={() => !disabled && onClick(page)} disabled={disabled} className={classes}>
+		<BtnWrapper name={name} alt={alt} onClick={() => onClick(page)} disabled={disabled} className={classes}>
 			<FarIcon icon='chevrons-left' />
 		</BtnWrapper>
 	);
@@ -40,37 +41,19 @@ export const PaginationFirst = ({
 export const PaginationPrev = ({
 	id,
 	name = 'PaginationPrev',
+	alt = 'prev page',
 	page,
 	disabled,
 	className,
 	onClick,
 	...tailwind
-}: iPaginationItem) => {
+}: iPaginationBtn) => {
 	const base = paginationProps();
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<BtnWrapper onClick={() => !disabled && onClick(page)} disabled={disabled} className={classes}>
+		<BtnWrapper name={name} alt={alt} onClick={() => onClick(page)} disabled={disabled} className={classes}>
 			<FarIcon icon='chevron-left' />
-		</BtnWrapper>
-	);
-};
-
-export const PaginationItem = ({
-	id,
-	name = 'PaginationItem',
-	page,
-	active,
-	className,
-	onClick,
-	...tailwind
-}: iPaginationItem) => {
-	const base = paginationProps(active);
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-
-	return (
-		<BtnWrapper active={active} onClick={onClick} className={classes}>
-			{page}
 		</BtnWrapper>
 	);
 };
@@ -78,17 +61,18 @@ export const PaginationItem = ({
 export const PaginationBtn = ({
 	id,
 	name = 'PaginationBtn',
+	alt = 'specific page',
 	page,
 	active,
 	className = '',
 	onClick,
 	...tailwind
-}: iPaginationItem) => {
+}: iPaginationBtn) => {
 	const base = { ...paginationProps(active) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<BtnWrapper onClick={onClick} className={classes}>
+		<BtnWrapper name={name} alt={alt} active={active} onClick={onClick} className={classes}>
 			{page}
 		</BtnWrapper>
 	);
@@ -97,17 +81,18 @@ export const PaginationBtn = ({
 export const PaginationNext = ({
 	id,
 	name = 'PaginationNext',
+	alt = 'next page',
 	page,
 	disabled,
 	className,
 	onClick,
 	...tailwind
-}: iPaginationItem) => {
+}: iPaginationBtn) => {
 	const base = paginationProps();
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<BtnWrapper onClick={() => !disabled && onClick(page)} disabled={disabled} className={classes}>
+		<BtnWrapper name={name} alt={alt} onClick={() => onClick(page)} disabled={disabled} className={classes}>
 			<FarIcon icon='chevron-right' />
 		</BtnWrapper>
 	);
@@ -116,17 +101,18 @@ export const PaginationNext = ({
 export const PaginationLast = ({
 	id,
 	name = 'PaginationLast',
+	alt = 'last page',
 	page,
 	disabled,
 	className,
 	onClick,
 	...tailwind
-}: iPaginationItem) => {
+}: iPaginationBtn) => {
 	const base = paginationProps();
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<BtnWrapper onClick={() => !disabled && onClick(page)} disabled={disabled} className={classes}>
+		<BtnWrapper name={name} alt={alt} onClick={() => onClick(page)} disabled={disabled} className={classes}>
 			<FarIcon icon='chevrons-right' />
 		</BtnWrapper>
 	);

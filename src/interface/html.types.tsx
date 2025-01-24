@@ -5,7 +5,8 @@ export type iAside = HtmlType;
 export type iBody = HtmlType;
 
 export type iFrame = HtmlType & {
-	src?: string;
+	title: string;
+	src: string;
 };
 
 export type iMain = HtmlType;
