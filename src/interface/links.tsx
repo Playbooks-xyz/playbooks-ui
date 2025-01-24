@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import NLink from 'next/link';
 
-import { Span } from 'interface/html';
+import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { iLink } from 'interface/links.types';
 import { Oval } from 'interface/spinners';
@@ -53,8 +53,11 @@ export const LinkShared = ({
 	target,
 	disabled,
 	prevIcon,
+	prevImg,
 	icon,
+	img,
 	nextIcon,
+	nextImg,
 	taskRunning,
 	className,
 	children,
@@ -71,13 +74,25 @@ export const LinkShared = ({
 			{...tailwind}>
 			{taskRunning ? <Fragment /> : prevIcon && <Icon type='far' icon={prevIcon?.icon || prevIcon} {...prevIcon} />}
 			{taskRunning ? (
+				<Fragment />
+			) : (
+				prevImg && <Img src={prevImg?.src || prevImg} borderRadius='rounded-sm' spacing='w-5 h-5' {...prevImg} />
+			)}
+			{taskRunning ? (
 				<Oval />
 			) : icon ? (
 				<Icon type='far' icon={icon?.icon || icon} {...icon} />
+			) : img ? (
+				<Img src={img?.src || img} borderRadius='rounded-sm' spacing='w-5 h-5' {...img} />
 			) : (
 				<Span space='space-x-4' {...tailwind?.span}>
 					{children}
 				</Span>
+			)}
+			{taskRunning ? (
+				<Fragment />
+			) : (
+				nextImg && <Img src={prevImg?.src || prevImg} borderRadius='rounded-sm' spacing='w-5 h-5' {...prevImg} />
 			)}
 			{taskRunning ? <Fragment /> : nextIcon && <Icon type='far' icon={nextIcon?.icon || nextIcon} {...nextIcon} />}
 		</LinkWrapper>

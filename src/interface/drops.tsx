@@ -61,8 +61,9 @@ export const Drop = ({ id, name = 'Drop', open, onClose, className, children, ..
 export const DropToggle = ({
 	id,
 	name = 'DropToggle',
-	type,
+	alt,
 	nextIcon = 'chevron-down',
+	variant,
 	onClick,
 	className,
 	children,
@@ -71,15 +72,15 @@ export const DropToggle = ({
 	const base = { display: 'flex-between', space: 'space-x-4' };
 	const props = { ...base, ...tailwind, className, name, children };
 
-	switch (type) {
+	switch (variant) {
 		case 'accent':
-			return <AccentBtn nextIcon={nextIcon} onClick={onClick} {...props} />;
+			return <AccentBtn alt={alt} nextIcon={nextIcon} onClick={onClick} {...props} />;
 
 		case 'border':
-			return <BorderBtn nextIcon={nextIcon} onClick={onClick} {...props} />;
+			return <BorderBtn alt={alt} nextIcon={nextIcon} onClick={onClick} {...props} />;
 
 		default:
-			return <Btn nextIcon={nextIcon} onClick={onClick} {...props} />;
+			return <Btn alt={alt} nextIcon={nextIcon} onClick={onClick} {...props} />;
 	}
 };
 

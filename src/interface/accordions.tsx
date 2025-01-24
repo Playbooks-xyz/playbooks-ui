@@ -33,6 +33,7 @@ export const Accordion = ({ id, name = 'Accordion', open, className, children, .
 export const AccordionToggle = ({
 	id,
 	name = 'AccordionToggle',
+	alt,
 	open,
 	onClick,
 	className,
@@ -56,7 +57,7 @@ export const AccordionToggle = ({
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
-		<BtnWrapper id={id} onClick={() => onClick(id)} {...props}>
+		<BtnWrapper id={id} alt={alt} onClick={() => onClick(id)} {...props}>
 			<Span className='flex-start' space='space-x-4' width='w-full'>
 				{children}
 			</Span>

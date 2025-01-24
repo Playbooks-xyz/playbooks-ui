@@ -15,7 +15,7 @@ export const RadioWrapper = ({
 	const base = {
 		animation: 'transition',
 		border: 'border',
-		borderColor: active ? 'border-blue-500 dark:border-cyan-500' : 'border-gray-400',
+		borderColor: 'border-gray-400',
 		borderOpacity: 'border-opacity-25',
 		borderRadius: 'rounded-md',
 		cursor: 'cursor-pointer',
@@ -23,6 +23,9 @@ export const RadioWrapper = ({
 		duration: 'duration-200',
 		position: 'relative',
 		spacing: 'p-4',
+		...(active && {
+			borderColor: 'border-blue-500 dark:border-cyan-500',
+		}),
 	};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 

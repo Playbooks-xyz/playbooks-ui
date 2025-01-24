@@ -15,7 +15,9 @@ export type iTabs = HtmlType & {
 };
 
 export type iTab = SelectType & {
-	type?: string;
+	alt: string;
+	variant?: string;
+	children: any;
 };
 
 export type iTabPanes = HtmlType;

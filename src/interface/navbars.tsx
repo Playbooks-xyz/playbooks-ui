@@ -30,7 +30,7 @@ export const NavbarBrand = ({
 	name = 'NavbarBrand',
 	href = '/',
 	src,
-	alt = 'Playbooks Logo',
+	alt = 'homepage',
 	className,
 	children,
 	...tailwind
@@ -39,8 +39,8 @@ export const NavbarBrand = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<LinkWrapper name={name} href={href} className={classes}>
-			<Img src={src} alt={alt} width='w-full' />
+		<LinkWrapper alt={alt} name={name} href={href} className={classes}>
+			<Img src={src} alt='Brand logo' width='w-full' />
 		</LinkWrapper>
 	);
 };

@@ -1,10 +1,10 @@
-import { HtmlType } from 'types';
+import { BtnType, HtmlType } from 'types';
 
 export type iAccordion = HtmlType & {
 	open?: boolean;
 };
 
-export type iAccordionToggle = HtmlType & {
+export type iAccordionToggle = BtnType & {
 	open?: boolean;
 	onClick: any;
 };

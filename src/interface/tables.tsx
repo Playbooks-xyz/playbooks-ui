@@ -50,6 +50,7 @@ export const TableHeaderRow = ({ id, name = 'TableHeaderRow', className, childre
 export const TableHead = ({
 	id,
 	name = 'TableHead',
+	alt = 'sort table',
 	value,
 	params,
 	setParams,
@@ -74,7 +75,10 @@ export const TableHead = ({
 	return (
 		<th data-name={name} className={classes}>
 			{isObject(params) ? (
-				<BtnWrapper onClick={() => setParams({ ...params, sortProp: value, sortValue: direction })} className='inherit'>
+				<BtnWrapper
+					alt={alt}
+					onClick={() => setParams({ ...params, sortProp: value, sortValue: direction })}
+					className='inherit'>
 					{children}
 					{value === params?.sortProp && params?.sortValue === 'asc' && (
 						<FarIcon icon='sort-up' className='text-xs ml-2' />

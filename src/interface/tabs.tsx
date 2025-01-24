@@ -41,7 +41,8 @@ export const Tabs = ({ id, name = 'Tabs', activeTab, tabs, onSelect, className, 
 export const Tab = ({
 	id,
 	name = 'Tab',
-	type = 'accent',
+	alt = 'select tab',
+	variant = 'accent',
 	size = 'p-4',
 	active,
 	value,
@@ -53,30 +54,24 @@ export const Tab = ({
 	const base = {
 		bgColor: 'h:bg-gray-100 dark:h:bg-gray-700',
 		border: 'border-b-4',
-		borderColor: active
-			? 'border-blue-500 dark:border-cyan-500'
-			: 'border-transparent h:border-gray-300 dark:h:border-gray-600',
-		color: active ? 'blue-500 dark:cyan-500' : 'gray-700 dark:gray-200',
+		borderColor: 'border-transparent h:border-gray-300 dark:h:border-gray-600',
+		color: 'gray-700 dark:gray-200',
 		borderRadius: 'rounded-none',
 		grid: 'hidden sm:block',
 		zIndex: 'z-10',
+		...(active && {
+			borderColor: 'border-blue-500 dark:border-cyan-500',
+			color: 'blue-500 dark:cyan-500',
+		}),
 	};
-	const props = { ...base, ...tailwind, className, name };
+	const props = { ...base, ...tailwind, children, className, name };
 
-	switch (type) {
+	switch (variant) {
 		case 'accent':
-			return (
-				<AccentBtn size={size} onClick={() => onSelect(value)} {...props}>
-					{children}
-				</AccentBtn>
-			);
+			return <AccentBtn alt={alt} size={size} onClick={() => onSelect(value)} {...props} />;
 
 		default:
-			return (
-				<Btn size={size} onClick={() => onSelect(value)} {...props}>
-					{children}
-				</Btn>
-			);
+			return <Btn alt={alt} size={size} onClick={() => onSelect(value)} {...props} />;
 	}
 };
 

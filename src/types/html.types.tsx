@@ -20,8 +20,11 @@ export type BtnType = HtmlType & {
 	alt: string;
 	active?: boolean;
 	prevIcon?: any;
+	prevImg?: any;
 	icon?: any;
+	img?: any;
 	nextIcon?: any;
+	nextImg?: any;
 	disabled?: boolean;
 	taskRunning?: boolean;
 };
@@ -53,8 +56,11 @@ export type LinkType = HtmlType & {
 	alt: string;
 	active?: boolean;
 	prevIcon?: any;
+	prevImg?: any;
 	icon?: any;
+	img?: any;
 	nextIcon?: any;
+	nextImg?: any;
 	href?: string;
 	disabled?: boolean;
 	target?: '_self' | '_blank';

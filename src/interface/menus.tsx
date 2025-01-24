@@ -104,6 +104,7 @@ export const MenuBackdrop = ({
 export const MenuToggle = ({
 	id,
 	name = 'MenuToggle',
+	alt,
 	icon = 'chevron-down',
 	onClick,
 	className,
@@ -114,7 +115,7 @@ export const MenuToggle = ({
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
-		<AccentBtn nextIcon={icon} onClick={onClick} {...props}>
+		<AccentBtn alt={alt} nextIcon={icon} onClick={onClick} {...props}>
 			{children}
 		</AccentBtn>
 	);

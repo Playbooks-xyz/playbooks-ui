@@ -72,7 +72,7 @@ export const ToastHeader = ({ id, name = 'ToastHeader', onRemove, className, chi
 			<Span display='flex-start' space='space-x-2'>
 				{children}
 			</Span>
-			<AccentBtn icon='xmark' color='gray-600 dark:gray-100' size='xs' onClick={onRemove} />
+			<AccentBtn alt='close' icon='xmark' color='gray-600 dark:gray-100' size='xs' onClick={onRemove} />
 		</Div>
 	);
 };

@@ -148,7 +148,7 @@ export const SlideHeader = ({ id, name = 'SlideHeader', onClose, className, chil
 	return (
 		<Div {...props}>
 			{children}
-			<AccentBtn size='icon' icon='xmark' color='gray-500 dark:gray-200' onClick={onClose} />
+			<AccentBtn alt='close' size='icon' icon='xmark' color='gray-500 dark:gray-200' onClick={onClose} />
 		</Div>
 	);
 };

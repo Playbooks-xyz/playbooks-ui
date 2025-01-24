@@ -10,9 +10,7 @@ export type iMenuBackdrop = HtmlType & {
 	onClose: () => void;
 };
 
-export type iMenuToggle = HtmlType & {
-	icon?: string;
-};
+export type iMenuToggle = BtnType;
 
 export type iMenuMenu = HtmlType & {
 	open: boolean;

@@ -34,7 +34,7 @@ export const Switch = ({ id, name = 'Switch', icon, checked, onClick, className,
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<BtnWrapper onClick={() => onClick(!checked)} className={classes}>
+		<BtnWrapper alt='switch' onClick={() => onClick(!checked)} className={classes}>
 			<Span className='sr-only'>Use setting</Span>
 			<SwitchBackdrop checked={checked} />
 			<SwitchInner checked={checked} />

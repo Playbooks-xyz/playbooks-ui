@@ -143,7 +143,7 @@ export const ModalHeader = ({ id, name = 'ModalHeader', onClose, className, chil
 	return (
 		<Div {...props}>
 			<Span>{children}</Span>
-			{onClose && <AccentBtn size='icon' icon='xmark' fontSize='text-xl' onClick={onClose} />}
+			{onClose && <AccentBtn alt='close' size='icon' icon='xmark' fontSize='text-xl' onClick={onClose} />}
 		</Div>
 	);
 };
