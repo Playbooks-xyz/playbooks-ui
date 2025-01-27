@@ -15,9 +15,9 @@ export type iNavList = HtmlType;
 export type iNavItem = HtmlType;
 
 export type iNavBtn = iBtn & {
-	variant: string;
+	variant?: string;
 };
 
 export type iNavLink = iLink & {
-	variant: string;
+	variant?: string;
 };

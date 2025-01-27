@@ -17,9 +17,9 @@ export type iFooterList = HtmlType;
 export type iFooterItem = HtmlType;
 
 export type iFooterBtn = iBtn & {
-	variant: string;
+	variant?: string;
 };
 
 export type iFooterLink = iLink & {
-	variant: string;
+	variant?: string;
 };
