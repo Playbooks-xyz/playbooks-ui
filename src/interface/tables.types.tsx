@@ -7,7 +7,7 @@ export type iTableHeader = HtmlType;
 export type iTableHeaderRow = HtmlType;
 
 export type iTableHead = HtmlType & {
-	alt: string;
+	alt?: string;
 	value?: string;
 	params?: any;
 	setParams?: (v: any) => void;
