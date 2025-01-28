@@ -1,4 +1,4 @@
-import { forwardRef, useRef } from 'react';
+import { useRef } from 'react';
 
 import { CurrencyInputWrapper } from 'components/currency-input-wrapper';
 import { GoogleAutocompleteWrapper } from 'components/google-autocomplete-wrapper';
@@ -129,48 +129,44 @@ export const FormRange = ({
 	);
 };
 
-export const FormInput = forwardRef<any, iFormInput>(
-	(
-		{
-			id,
-			name = 'FormInput',
-			type,
-			size = 'md',
-			value,
-			variant,
-			placeholder,
-			onChange,
-			onFocus,
-			onBlur,
-			onClick,
-			readOnly,
-			className,
-			...tailwind
-		}: iFormInput,
-		ref,
-	) => {
-		const base = { ...inputProps(variant), ...computeInputSize(size) };
-		const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+export const FormInput = ({
+	id,
+	ref,
+	name = 'FormInput',
+	type,
+	size = 'md',
+	value,
+	variant,
+	placeholder,
+	onChange,
+	onFocus,
+	onBlur,
+	onClick,
+	readOnly,
+	className,
+	...tailwind
+}: iFormInput) => {
+	const base = { ...inputProps(variant), ...computeInputSize(size) };
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
-		return (
-			<input
-				id={id}
-				ref={ref}
-				data-name={name}
-				type={type || 'text'}
-				value={value}
-				placeholder={placeholder}
-				onChange={onChange}
-				onFocus={onFocus}
-				onBlur={onBlur}
-				onClick={onClick}
-				readOnly={readOnly}
-				autoComplete='off'
-				className={classes}
-			/>
-		);
-	},
-);
+	return (
+		<input
+			id={id}
+			ref={ref}
+			data-name={name}
+			type={type || 'text'}
+			value={value}
+			placeholder={placeholder}
+			onChange={onChange}
+			onFocus={onFocus}
+			onBlur={onBlur}
+			onClick={onClick}
+			readOnly={readOnly}
+			autoComplete='off'
+			className={classes}
+		/>
+	);
+};
 
 export const FormMaskInput = ({
 	id,

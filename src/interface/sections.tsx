@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Font, P } from 'interface/fonts';
 import { Div, Hr } from 'interface/html';
 import {
@@ -16,27 +14,25 @@ import {
 } from 'interface/sections.types';
 import { borderProps, computeSectionSize, tailwindClassBuilder } from 'utils';
 
-export const Section = forwardRef<any, iSection>(
-	({ id, name = 'Section', className, children, ...tailwind }: iSection, ref) => {
-		const base = {
-			bgColor: 'bg-white dark:bg-gray-900',
-			border: 'border',
-			...borderProps,
-			borderRadius: 'rounded-md',
-			position: 'relative',
-			shadow: '',
-			spacing: 'mb-4',
-			width: 'w-full',
-		};
-		const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+export const Section = ({ id, ref, name = 'Section', className, children, ...tailwind }: iSection) => {
+	const base = {
+		bgColor: 'bg-white dark:bg-gray-900',
+		border: 'border',
+		...borderProps,
+		borderRadius: 'rounded-md',
+		position: 'relative',
+		shadow: '',
+		spacing: 'mb-4',
+		width: 'w-full',
+	};
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
-		return (
-			<section id={id} ref={ref} data-name={name} className={classes}>
-				{children}
-			</section>
-		);
-	},
-);
+	return (
+		<section id={id} ref={ref} data-name={name} className={classes}>
+			{children}
+		</section>
+	);
+};
 
 export const SectionHeader = ({ id, name = 'SectionHeader', className, children, ...tailwind }: iSectionHeader) => {
 	const base = {

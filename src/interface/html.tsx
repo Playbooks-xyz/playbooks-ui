@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { iFrame, iImg } from 'interface/html.types';
 import { HtmlType } from 'types';
 import { borderProps, tailwindClassBuilder } from 'utils';
@@ -26,18 +24,16 @@ export const Body = ({ id, name = 'Body', className, children, style, ...tailwin
 	);
 };
 
-export const Main = forwardRef<any, HtmlType>(
-	({ id, name = 'Main', className, children, style, ...tailwind }: HtmlType, ref) => {
-		const base = { position: 'relative' };
-		const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+export const Main = ({ id, ref, name = 'Main', className, children, style, ...tailwind }: HtmlType) => {
+	const base = { position: 'relative' };
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
-		return (
-			<main id={id} ref={ref} data-name={name} className={classes} style={style}>
-				{children}
-			</main>
-		);
-	},
-);
+	return (
+		<main id={id} ref={ref} data-name={name} className={classes} style={style}>
+			{children}
+		</main>
+	);
+};
 
 export const Aside = ({ id, name = 'Aside', className, children, style, ...tailwind }: HtmlType) => {
 	const base = { ...borderProps };
@@ -50,67 +46,69 @@ export const Aside = ({ id, name = 'Aside', className, children, style, ...tailw
 	);
 };
 
-export const Div = forwardRef<any, HtmlType>(
-	(
-		{
-			id,
-			name = 'Div',
-			html,
-			tabIndex,
-			onClick,
-			onMouseEnter,
-			onMouseLeave,
-			className,
-			children,
-			style,
-			...tailwind
-		}: HtmlType,
-		ref,
-	) => {
-		const base = { position: 'relative', ...borderProps };
-		const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+export const Div = ({
+	id,
+	ref,
+	name = 'Div',
+	html,
+	tabIndex,
+	onClick,
+	onMouseEnter,
+	onMouseLeave,
+	className,
+	children,
+	style,
+	...tailwind
+}: HtmlType) => {
+	const base = { position: 'relative', ...borderProps };
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
-		return (
-			<div
-				id={id}
-				data-name={name}
-				ref={ref}
-				dangerouslySetInnerHTML={html}
-				tabIndex={tabIndex}
-				onClick={onClick}
-				onMouseEnter={onMouseEnter}
-				onMouseLeave={onMouseLeave}
-				className={classes}
-				style={style}>
-				{children}
-			</div>
-		);
-	},
-);
+	return (
+		<div
+			id={id}
+			data-name={name}
+			ref={ref}
+			dangerouslySetInnerHTML={html}
+			tabIndex={tabIndex}
+			onClick={onClick}
+			onMouseEnter={onMouseEnter}
+			onMouseLeave={onMouseLeave}
+			className={classes}
+			style={style}>
+			{children}
+		</div>
+	);
+};
 
-export const Span = forwardRef<any, HtmlType>(
-	(
-		{ id, name = 'Span', onClick, onMouseEnter, onMouseLeave, className, children, style, ...tailwind }: HtmlType,
-		ref,
-	) => {
-		const base = { display: 'inline' };
-		const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+export const Span = ({
+	id,
+	ref,
+	name = 'Span',
+	onClick,
+	onMouseEnter,
+	onMouseLeave,
+	className,
+	children,
+	style,
+	...tailwind
+}: HtmlType) => {
+	const base = { display: 'inline' };
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
-		return (
-			<span
-				id={id}
-				ref={ref}
-				data-name={name}
-				onClick={onClick}
-				onMouseEnter={onMouseEnter}
-				onMouseLeave={onMouseLeave}
-				className={classes}
-				style={style}>
-				{children}
-			</span>
-		);
-	},
-);
+	return (
+		<span
+			id={id}
+			ref={ref}
+			data-name={name}
+			onClick={onClick}
+			onMouseEnter={onMouseEnter}
+			onMouseLeave={onMouseLeave}
+			className={classes}
+			style={style}>
+			{children}
+		</span>
+	);
+};
 
 export const Ul = ({ id, name = 'Ul', className, children, ...tailwind }: HtmlType) => {
 	const base = { ...borderProps, spacing: 'pl-4' };

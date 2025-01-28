@@ -27,18 +27,18 @@
     "prepare": "husky install"
   },
   "peerDependencies": {
-    "next": "^14",
-    "react": "^18",
-    "react-dom": "^18"
+    "next": "^14 || ^15",
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-brands-svg-icons": "^6.4.2",
-    "@fortawesome/pro-duotone-svg-icons": "^6.4.2",
-    "@fortawesome/pro-regular-svg-icons": "^6.4.2",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "@react-google-maps/api": "^2.19.3",
-    "@react-spring/web": "^9.7.3",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/pro-duotone-svg-icons": "^6.5.2",
+    "@fortawesome/pro-regular-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@react-google-maps/api": "^2.20.5",
+    "@react-spring/web": "^9.7.5",
     "dts-bundle-generator": "^9.5.1",
     "react-currency-input-field": "^3.8.0",
     "react-input-mask": "^2.0.4",

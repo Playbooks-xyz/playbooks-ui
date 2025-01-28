@@ -1,5 +1,3 @@
-import { forwardRef } from 'react';
-
 import { Font, P } from 'interface/fonts';
 import {
 	iHero,
@@ -17,43 +15,39 @@ import { Div, Img } from 'interface/html';
 import { FadIcon } from 'interface/icons';
 import { borderProps, computeHeroSize, computeThumbnailSize, tailwindClassBuilder } from 'utils';
 
-export const Hero = forwardRef<any, iHero>(
-	({ id, name = 'Hero', size, className, children, ...tailwind }: iHero, ref) => {
-		const base = {
-			position: 'relative',
-			bgColor: 'bg-white dark:bg-gray-900',
-			...borderProps,
-			display: 'block',
-			size: computeHeroSize(size),
-			spacing: 'py-8',
-			width: 'w-full',
-		};
-		const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+export const Hero = ({ id, ref, name = 'Hero', size, className, children, ...tailwind }: iHero) => {
+	const base = {
+		position: 'relative',
+		bgColor: 'bg-white dark:bg-gray-900',
+		...borderProps,
+		display: 'block',
+		size: computeHeroSize(size),
+		spacing: 'py-8',
+		width: 'w-full',
+	};
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
-		return (
-			<header ref={ref} data-name={name} className={classes}>
-				{children}
-			</header>
-		);
-	},
-);
+	return (
+		<header ref={ref} data-name={name} className={classes}>
+			{children}
+		</header>
+	);
+};
 
-export const HeroBg = forwardRef<any, iHeroBg>(
-	({ id, name = 'HeroBg', className, children, ...tailwind }: iHeroBg, ref) => {
-		const base = {
-			inset: 'inset-0',
-			position: 'absolute',
-			bgColor: 'bg-gray-50 dark:bg-gray-800',
-		};
-		const props = { ...base, ...tailwind, className, name };
+export const HeroBg = ({ id, ref, name = 'HeroBg', className, children, ...tailwind }: iHeroBg) => {
+	const base = {
+		inset: 'inset-0',
+		position: 'absolute',
+		bgColor: 'bg-gray-50 dark:bg-gray-800',
+	};
+	const props = { ...base, ...tailwind, className, name };
 
-		return (
-			<Div ref={ref} {...props}>
-				{children}
-			</Div>
-		);
-	},
-);
+	return (
+		<Div ref={ref} {...props}>
+			{children}
+		</Div>
+	);
+};
 
 export const HeroImg = ({
 	id,

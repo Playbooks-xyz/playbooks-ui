@@ -1,4 +1,3 @@
-import { forwardRef } from 'react';
 import { Range } from 'react-range';
 
 import { tailwindClassBuilder } from 'utils';
@@ -35,7 +34,7 @@ export const RangeSliders = ({ min = 0, max = 100, step = 1, values, onChange, o
 	);
 };
 
-export const RangeSliderTrack = forwardRef<any, any>(({ values, min, max, props, children, onNext }, ref) => {
+export const RangeSliderTrack = ({ ref, values, min, max, props, children, onNext }) => {
 	const base = {
 		bgColor: 'bg-gray-100 dark:bg-gray-800',
 		borderRadius: 'rounded-full',
@@ -63,9 +62,9 @@ export const RangeSliderTrack = forwardRef<any, any>(({ values, min, max, props,
 			</div>
 		</div>
 	);
-});
+};
 
-export const RangeSliderThumb = forwardRef<any, any>(({ isDragged, ...props }, ref) => {
+export const RangeSliderThumb = ({ ref, isDragged, ...props }) => {
 	const base = {
 		size: 'w-6 h-6',
 		bgColor: isDragged ? 'bg-blue-500 dark:bg-cyan-500' : 'bg-gray-300 dark:bg-gray-600',
@@ -79,7 +78,7 @@ export const RangeSliderThumb = forwardRef<any, any>(({ isDragged, ...props }, r
 	const className = tailwindClassBuilder(base);
 
 	return <div ref={ref} {...props} className={className} style={props.style} />;
-});
+};
 
 // Docs
 // https://www.npmjs.com/package/react-range
