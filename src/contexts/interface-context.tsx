@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import { Div } from 'interface/html';
 
 export type iInterface = {
-	ref: any;
+	ref?: any;
 	seo: any;
 	createPortal: any;
 	toggleScroll: any;

@@ -1,7 +1,7 @@
 import { HtmlType } from 'types';
 
 export type iHero = HtmlType & {
-	ref: any;
+	ref?: any;
 };
 
 export type iHeroBg = HtmlType;
