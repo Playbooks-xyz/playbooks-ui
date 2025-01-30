@@ -1,4 +1,4 @@
-import NHead from 'next/head';
+import NextHead from 'next/head';
 
 import { useInterface } from 'contexts';
 import { iHead } from 'interface/head.types';
@@ -11,7 +11,7 @@ export const Head = (props: iHead) => {
 
 	// Render
 	return (
-		<NHead>
+		<NextHead>
 			<title>{computedMeta.title}</title>
 			<link rel='icon' href={computedMeta.favicon} />
 			<link rel='canonical' href={computedMeta.baseUrl + computedMeta.path} />
@@ -32,7 +32,7 @@ export const Head = (props: iHead) => {
 			<meta name='robots' content={computedMeta.robots} />
 			<meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width' />
 			{props.children}
-		</NHead>
+		</NextHead>
 	);
 };
 

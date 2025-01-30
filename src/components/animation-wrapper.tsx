@@ -1,4 +1,3 @@
-import { forwardRef } from 'react';
 import { Transition } from 'react-transition-group';
 
 import { HtmlType } from 'types';
@@ -17,42 +16,38 @@ export type iFade = HtmlType & {
 	unmountOnExit?: boolean;
 };
 
-const Fade = forwardRef<any, iFade>(
-	(
-		{
-			show,
-			timeout = 200,
-			onEnter,
-			onEntering,
-			onEntered,
-			onExit,
-			onExiting,
-			onExited,
-			mountOnEnter = true,
-			unmountOnExit = true,
-			children,
-		}: iFade,
-		ref,
-	) => {
-		return (
-			<Transition
-				nodeRef={ref}
-				in={show}
-				appear={show}
-				timeout={timeout}
-				onEnter={onEnter}
-				onEntering={onEntering}
-				onEntered={onEntered}
-				onExit={onExit}
-				onExiting={onExiting}
-				onExited={onExited}
-				mountOnEnter={mountOnEnter}
-				unmountOnExit={unmountOnExit}>
-				{children}
-			</Transition>
-		);
-	},
-);
+const Fade = ({
+	ref,
+	show,
+	timeout = 200,
+	onEnter,
+	onEntering,
+	onEntered,
+	onExit,
+	onExiting,
+	onExited,
+	mountOnEnter = true,
+	unmountOnExit = true,
+	children,
+}: iFade) => {
+	return (
+		<Transition
+			nodeRef={ref}
+			in={show}
+			appear={show}
+			timeout={timeout}
+			onEnter={onEnter}
+			onEntering={onEntering}
+			onEntered={onEntered}
+			onExit={onExit}
+			onExiting={onExiting}
+			onExited={onExited}
+			mountOnEnter={mountOnEnter}
+			unmountOnExit={unmountOnExit}>
+			{children}
+		</Transition>
+	);
+};
 
 export { Fade };
 

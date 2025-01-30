@@ -74,7 +74,17 @@ export default defineConfig({
 			},
 		},
 		rollupOptions: {
-			external: ['react', 'react-dom', 'react/jsx-runtime', 'next', 'tailwindcss'],
+			external: [
+				'react',
+				'react-dom',
+				'react/jsx-runtime',
+				'next',
+				'next/dynamic',
+				'next/head',
+				'next/link',
+				'next/router',
+				'tailwindcss',
+			],
 			output: {
 				globals: {
 					react: 'React',
