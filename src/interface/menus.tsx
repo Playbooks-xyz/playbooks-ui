@@ -1,5 +1,4 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/router';
 
 import { Fade } from 'components/animation-wrapper';
 import { useInterface } from 'contexts';
@@ -26,7 +25,6 @@ export const Menu = ({ id, name = 'Menu', open, onClose, className, children, ..
 	const base = { zIndex: 'z-20' };
 	const props = { ...base, ...tailwind, className, name };
 	const { toggleScroll } = useInterface();
-	const router = useRouter();
 	const ref = useRef(null);
 
 	// Hooks

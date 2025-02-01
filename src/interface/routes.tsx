@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+// @ts-expect-error peer-dependency
 import { useRouter } from 'next/router';
 
 import { useInterface } from 'contexts';
@@ -24,6 +25,8 @@ export const Route = ({ id, name = 'Route', seo, className, children, ...tailwin
 		);
 		return interfaceContext.seo?.title + formattedPaths.join(' | ');
 	}, [router.pathname]);
+
+	// Hooks
 
 	// Render
 	return (

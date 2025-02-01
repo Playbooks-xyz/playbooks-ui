@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/router';
+import { useRef, useState } from 'react';
 
 import { Fade } from 'components/animation-wrapper';
 import { useKeyPress, useMouseUp } from 'hooks';
@@ -25,14 +24,9 @@ import { borderProps, tailwindClassBuilder } from 'utils';
 export const Drop = ({ id, name = 'Drop', open, onClose, className, children, ...tailwind }: iDrop) => {
 	const base = {};
 	const props = { ...base, ...tailwind, className, name };
-	const router = useRouter();
 	const ref = useRef(null);
 
 	// Hooks
-	useEffect(() => {
-		if (open) onClose();
-	}, [router.asPath]);
-
 	useKeyPress(onKeyDown, [open]);
 
 	useMouseUp(onMouseUp, [open]);
