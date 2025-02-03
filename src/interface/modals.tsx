@@ -99,13 +99,13 @@ export const Modal = ({ id, name = 'Modal', open, onClose, className, children, 
 		toggleScroll(open);
 	}, [open]);
 
-	useKeyPress(onKeyDown, []);
+	useKeyPress(onKeyDown, [open]);
 
 	// Function
 	function onKeyDown(e) {
 		if (!open) return;
 		if (e.target.dataset.name === 'FormInput') return;
-		if (e.keyCode === 27 && onClose) onClose();
+		if (e.keyCode === 27 && typeof onClose === 'function') onClose();
 	}
 
 	// Render
