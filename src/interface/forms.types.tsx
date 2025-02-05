@@ -1,7 +1,7 @@
-import { HtmlType } from 'types';
+import { HtmlType, InputType } from 'types';
 
 export type iForm = HtmlType & {
-	onSubmit?: (v)=> any;
+	onSubmit?: (v) => any;
 };
 
 export type iFormGroup = HtmlType;
@@ -14,7 +14,7 @@ export type iFormCheckbox = HtmlType & {
 	id?: string;
 	type?: string;
 	checked?: boolean;
-	onChange: (e: any)=> any;
+	onChange: (e: any) => any;
 	readOnly?: boolean;
 };
 
@@ -24,7 +24,7 @@ export type iFormRange = HtmlType & {
 	min?: number;
 	max?: number;
 	step?: number;
-	onChange: (e: any)=> any;
+	onChange: (e: any) => any;
 	readOnly?: boolean;
 };
 
@@ -34,22 +34,15 @@ export type iFormFile = HtmlType & {
 	value?: any;
 	defaultValue?: any;
 	placeholder?: string;
-	onChange: (e: any)=> any;
+	onChange: (e: any) => any;
 	readOnly?: boolean;
 };
 
-export type iFormInput = HtmlType & {
+export type iFormInput = InputType & {
 	id?: string;
 	type?: string;
 	size?: string;
-	value?: any;
 	variant?: string;
-	defaultValue?: any;
-	placeholder?: string;
-	onBlur?: (e: any)=> any;
-	onChange?: (e: any)=> any;
-	onFocus?: (e: any)=> any;
-	readOnly?: boolean;
 };
 
 export type iFormInputCurrency = iFormInput & {
@@ -58,7 +51,7 @@ export type iFormInputCurrency = iFormInput & {
 
 export type iFormLocationInput = iFormInput & {
 	options?: any;
-	onSelect: (e: any)=> any;
+	onSelect: (e: any) => any;
 };
 
 export type iFormInputMask = iFormInput & {
@@ -73,7 +66,7 @@ export type iFormSelect = HtmlType & {
 	disabled?: boolean;
 	placeholder?: string;
 	options?: string[];
-	onChange: (e: any)=> any;
+	onChange: (e: any) => any;
 };
 
 export type iFormText = HtmlType;
@@ -85,6 +78,6 @@ export type iFormTextArea = HtmlType & {
 	variant?: string;
 	defaultValue?: any;
 	placeholder?: string;
-	onChange: (e: any)=> any;
+	onChange: (e: any) => any;
 	readOnly?: boolean;
 };

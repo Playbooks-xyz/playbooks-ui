@@ -4,12 +4,12 @@ import { HtmlType } from 'types';
 
 export type iDrop = HtmlType & {
 	open: boolean;
-	onClose: ()=> any;
+	onClose: () => any;
 };
 
 export type iDropToggle = iBtn & {
 	variant?: string;
-	onClick: (v?: any)=> any;
+	onClick: (v?: any) => any;
 };
 
 export type iDropMenu = HtmlType & {

@@ -2,14 +2,14 @@ import { HtmlType, LabelType } from 'types';
 
 export type iRadioWrapper = HtmlType & {
 	active?: boolean;
-	onClick: ()=> any;
+	onClick: () => any;
 };
 
 export type iRadio = HtmlType & {
 	title: string;
 	value: any;
 	text?: string;
-	onClick: ()=> any;
+	onClick: () => any;
 };
 
 export type iRadioInput = HtmlType & {

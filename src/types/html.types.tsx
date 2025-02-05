@@ -1,5 +1,7 @@
 import { TailwindType } from 'types/tailwind.types';
 
+export type Modify<T, R> = Omit<T, keyof R> & R;
+
 export type HtmlType = TailwindType & {
 	id?: string;
 	ref?: any;
@@ -36,15 +38,13 @@ export type ImgType = HtmlType & {
 };
 
 export type InputType = HtmlType & {
-	checked?: string;
-	defaultChecked?: string;
 	value?: string;
 	defaultValue?: string;
-	onBlur?: ()=> any;
-	onChange?: ()=> any;
-	onFocus?: ()=> any;
 	placeholder?: string;
-	readOnly?: string;
+	onBlur?: (e: any) => any;
+	onChange?: (e: any) => any;
+	onFocus?: (e: any) => any;
+	readOnly?: boolean;
 };
 
 export type LabelType = HtmlType & {
@@ -70,10 +70,10 @@ export type LinkType = HtmlType & {
 export type SelectType = HtmlType & {
 	active?: boolean;
 	value?: string;
-	onSelect: (v: string)=> any;
+	onSelect: (v: string) => any;
 };
 
 export type ToggleType = HtmlType & {
 	active?: boolean;
-	onToggle: ()=> any;
+	onToggle: () => any;
 };

@@ -9,7 +9,7 @@ export type iBreadcrumbItem = HtmlType & {
 
 export type iBreadcrumbBtn = BtnType & {
 	active?: boolean;
-	onClick: ()=> any;
+	onClick: () => any;
 	icon?: string;
 };
 

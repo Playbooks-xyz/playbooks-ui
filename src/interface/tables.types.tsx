@@ -10,7 +10,7 @@ export type iTableHead = HtmlType & {
 	alt?: string;
 	value?: string;
 	params?: any;
-	setParams?: (v: any)=> any;
+	setParams?: (v: any) => any;
 };
 
 export type iTableBody = HtmlType;

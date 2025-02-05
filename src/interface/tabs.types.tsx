@@ -5,13 +5,13 @@ export type iTabWrapper = HtmlType;
 export type iTabSelect = HtmlType & {
 	tabs?: string[];
 	activeTab?: string;
-	onSelect: (v: any)=> any;
+	onSelect: (v: any) => any;
 };
 
 export type iTabs = HtmlType & {
 	tabs?: string[];
 	activeTab?: string;
-	onSelect: (v: string)=> any;
+	onSelect: (v: string) => any;
 };
 
 export type iTab = SelectType & {

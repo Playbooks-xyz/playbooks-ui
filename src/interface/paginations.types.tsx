@@ -6,5 +6,5 @@ export type iPaginationBtn = BtnType & {
 	page: number;
 	active?: boolean;
 	disabled?: boolean;
-	onClick: (v: number)=> any;
+	onClick: (v: number) => any;
 };
