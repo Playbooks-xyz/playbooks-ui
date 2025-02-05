@@ -14,6 +14,6 @@ export type iBannerTitle = HtmlType;
 export type iBannerText = HtmlType;
 
 export type iBannerActions = HtmlType & {
-	onClick: () => void;
-	onDismiss: () => void;
+	onClick: ()=> any;
+	onDismiss: ()=> any;
 };

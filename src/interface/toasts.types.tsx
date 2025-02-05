@@ -2,14 +2,14 @@ import { HtmlType } from 'types';
 
 export type iToast = HtmlType & {
 	show?: boolean;
-	setShow?: (v: boolean) => void;
-	onRemove?: () => void;
+	setShow?: (v: boolean)=> any;
+	onRemove?: ()=> any;
 };
 
 export type iToastWrapper = HtmlType;
 
 export type iToastHeader = HtmlType & {
-	onRemove?: () => void;
+	onRemove?: ()=> any;
 };
 
 export type iToastIcon = HtmlType & {

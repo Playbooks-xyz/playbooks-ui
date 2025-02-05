@@ -2,12 +2,12 @@ import { BtnType, HtmlType, LinkType } from 'types';
 
 export type iMenu = HtmlType & {
 	open: boolean;
-	onClose: () => void;
+	onClose: ()=> any;
 };
 
 export type iMenuBackdrop = HtmlType & {
 	open: boolean;
-	onClose: () => void;
+	onClose: ()=> any;
 };
 
 export type iMenuToggle = BtnType;

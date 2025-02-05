@@ -8,7 +8,7 @@ export type iAccordion = HtmlType & {
 export type iAccordionToggle = iBtn & {
 	open?: boolean;
 	variant?: string;
-	onClick: (v?: any) => void;
+	onClick: (v?: any)=> any;
 };
 
 export type iAccordionTitle = HtmlType & {

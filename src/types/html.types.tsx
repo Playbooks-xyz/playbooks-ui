@@ -6,9 +6,9 @@ export type HtmlType = TailwindType & {
 	name?: string;
 	html?: any;
 	tabIndex?: any;
-	onClick?: () => void;
-	onMouseEnter?: () => void;
-	onMouseLeave?: () => void;
+	onClick?: ()=> any;
+	onMouseEnter?: ()=> any;
+	onMouseLeave?: ()=> any;
 	tailwind?: TailwindType;
 	className?: string;
 	style?: any;
@@ -40,9 +40,9 @@ export type InputType = HtmlType & {
 	defaultChecked?: string;
 	value?: string;
 	defaultValue?: string;
-	onBlur?: () => void;
-	onChange?: () => void;
-	onFocus?: () => void;
+	onBlur?: ()=> any;
+	onChange?: ()=> any;
+	onFocus?: ()=> any;
 	placeholder?: string;
 	readOnly?: string;
 };
@@ -70,10 +70,10 @@ export type LinkType = HtmlType & {
 export type SelectType = HtmlType & {
 	active?: boolean;
 	value?: string;
-	onSelect: (v: string) => void;
+	onSelect: (v: string)=> any;
 };
 
 export type ToggleType = HtmlType & {
 	active?: boolean;
-	onToggle: () => void;
+	onToggle: ()=> any;
 };

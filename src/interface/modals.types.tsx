@@ -2,24 +2,24 @@ import { HtmlType } from 'types';
 
 export type iModalWrapper = HtmlType & {
 	open?: boolean;
-	onClose?: () => void;
+	onClose?: ()=> any;
 	tailwind?: any;
 };
 
 export type iModal = HtmlType & {
 	open?: boolean;
-	onClose?: () => void;
+	onClose?: ()=> any;
 	tailwind?: any;
 };
 
 export type iModalBackdrop = HtmlType & {
 	open: boolean;
-	onClose?: () => void;
+	onClose?: ()=> any;
 	tailwind?: any;
 };
 
 export type iModalHeader = HtmlType & {
-	onClose?: () => void;
+	onClose?: ()=> any;
 };
 
 export type iModalTitle = HtmlType;
