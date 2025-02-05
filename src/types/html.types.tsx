@@ -8,9 +8,9 @@ export type HtmlType = TailwindType & {
 	name?: string;
 	html?: any;
 	tabIndex?: any;
-	onClick?: ()=> any;
-	onMouseEnter?: ()=> any;
-	onMouseLeave?: ()=> any;
+	onClick?: (v?: any) => any;
+	onMouseEnter?: (v?: any) => any;
+	onMouseLeave?: (v?: any) => any;
 	tailwind?: TailwindType;
 	className?: string;
 	style?: any;
