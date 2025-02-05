@@ -53,7 +53,7 @@ export type iFormInput = HtmlType & {
 };
 
 export type iFormInputCurrency = iFormInput & {
-	prefix: string;
+	prefix?: string;
 };
 
 export type iFormLocationInput = iFormInput & {

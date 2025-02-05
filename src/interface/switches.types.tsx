@@ -5,7 +5,7 @@ export type iSwitchGroup = HtmlType;
 export type iSwitch = HtmlType & {
 	icon?: string;
 	checked: boolean;
-	onClick: any;
+	onClick: (v: any) => void;
 };
 
 export type iSwitchBackdrop = HtmlType & {

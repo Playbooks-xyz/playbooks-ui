@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { usePopper } from 'react-popper';
 
 import { Fade } from 'components/animation-wrapper';
@@ -29,6 +29,7 @@ export const Tooltip = ({
 	const [refElement, setRefElement] = useState(null);
 	const [popElement, setPopElement] = useState(null);
 	const [arrowElement, setArrowElement] = useState(null);
+	const ref = useRef(null);
 	const { styles, attributes } = usePopper(refElement, popElement, {
 		placement,
 		modifiers: [
@@ -63,6 +64,7 @@ export const Tooltip = ({
 			{...base}>
 			{children}
 			<Fade
+				ref={ref}
 				show={open}
 				timeout={100}
 				onEntering={() => setFade(`opacity-0 ${computeTooltipAnimation(placement)} scale-90`)}

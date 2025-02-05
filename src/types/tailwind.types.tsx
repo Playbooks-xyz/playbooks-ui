@@ -39,6 +39,7 @@ export type TailwindType = {
 	margin?: string;
 	maxHeight?: string;
 	minHeight?: string;
+	opacity?: string;
 	order?: string;
 	origin?: string;
 	outline?: string;
