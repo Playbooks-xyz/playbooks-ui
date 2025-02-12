@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "dev": "vite build --mode development --watch --minify false",
-    "start": "vite build --mode development --minify false && npm link",
+    "start": "vite build --mode development --minify false && yalc publish",
     "start:ts": "vite build --mode development --minify false && dts-bundle-generator --config dts.config.ts && yalc publish",
     "build": "vite build --mode production --minify true && dts-bundle-generator --config dts.config.ts",
     "lint": "eslint src",

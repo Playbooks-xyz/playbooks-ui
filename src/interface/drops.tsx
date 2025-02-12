@@ -69,7 +69,7 @@ export const DropToggle = ({
 	return <Btn alt={alt} variant={variant} nextIcon={nextIcon} onClick={() => onClick(id)} {...props} />;
 };
 
-export const DropMenu = ({ id, name = 'DropMenu', open, className, children, ...tailwind }: iDropMenu) => {
+export const DropMenu = ({ id, name = 'DropMenu', open, placement, className, children, ...tailwind }: iDropMenu) => {
 	const base = {
 		bgColor: 'bg-white dark:bg-gray-900',
 		inset: 'right-0',
@@ -86,7 +86,7 @@ export const DropMenu = ({ id, name = 'DropMenu', open, className, children, ...
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<DropMenuWrapper open={open}>
+		<DropMenuWrapper open={open} placement={placement}>
 			<div role='menu' aria-orientation='vertical' aria-labelledby='menu-button' tabIndex={-1} className={classes}>
 				{children}
 			</div>
@@ -98,6 +98,7 @@ export const DropMenuWrapper = ({
 	id,
 	name = 'DropMenuWrapper',
 	open,
+	placement,
 	className,
 	children,
 	...tailwind
@@ -105,21 +106,27 @@ export const DropMenuWrapper = ({
 	const base = {
 		position: 'absolute',
 		width: 'w-full',
-		transition: 'transition-all',
+		transition: 'transition-opacity transition-transform',
 		zIndex: 'z-10',
 	};
-	const [animation, setAnimation] = useState('opacity-0 scale-90 translate-y-4');
+	const [animation, setAnimation] = useState('hidden');
 	const props = { ...base, ...tailwind, animation, className };
 	const ref = useRef(null);
+	const divRef = useRef(null);
+	const style = placement === 'top' ? { top: `-${divRef.current?.children[0].offsetHeight}px` } : {};
 
 	return (
 		<Fade
 			ref={ref}
 			show={open}
 			timeout={{ enter: 0, exit: 100 }}
+			mountOnEnter={false}
+			unmountOnExit={false}
+			onEnter={() => setAnimation(`opacity-0 scale-90 translate-y-4`)}
 			onEntered={() => setAnimation('opacity-100 scale-100 translate-y-0')}
-			onExiting={() => setAnimation('opacity-0 scale-90 translate-y-4')}>
-			<Div ref={ref} {...props}>
+			onExiting={() => setAnimation('opacity-0 scale-90 translate-y-4')}
+			onExited={() => setAnimation('hidden')}>
+			<Div ref={divRef} style={style} {...props}>
 				{children}
 			</Div>
 		</Fade>

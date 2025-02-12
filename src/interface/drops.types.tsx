@@ -14,10 +14,12 @@ export type iDropToggle = iBtn & {
 
 export type iDropMenu = HtmlType & {
 	open: boolean;
+	placement?: string;
 };
 
 export type iDropMenuWrapper = HtmlType & {
 	open: boolean;
+	placement?: string;
 };
 
 export type iDropHeader = HtmlType;
