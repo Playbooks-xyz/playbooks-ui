@@ -30,7 +30,7 @@ export const Head = (props: iHead) => {
 			<meta name='twitter:image' content={computedMeta.photo} />
 			<meta name='twitter:title' content={computedMeta.title} />
 			<meta name='twitter:description' content={computedMeta.description} />
-			<meta name='robots' content={computedMeta.robots} />
+			<meta name='robots' content={computedMeta.robots ? 'all' : 'none'} />
 			<meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width' />
 			{props.children}
 		</NextHead>

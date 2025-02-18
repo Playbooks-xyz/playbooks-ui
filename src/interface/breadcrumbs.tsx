@@ -42,7 +42,6 @@ export const BreadcrumbItem = ({
 export const BreadcrumbBtn = ({
 	id,
 	name = 'BreadcrumbBtn',
-	icon,
 	size = 'xxs',
 	active,
 	onClick,
