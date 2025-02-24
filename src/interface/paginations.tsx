@@ -7,7 +7,6 @@ import { borderProps, paginationProps, tailwindClassBuilder } from 'utils';
 export const Pagination = ({ id, name = 'Pagination', className, children, ...tailwind }: iPagination) => {
 	const base = {
 		position: 'inline-flex',
-		bgColor: '',
 		border: 'border',
 		...borderProps,
 		borderRadius: 'rounded-md',

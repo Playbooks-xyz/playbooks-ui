@@ -1,7 +1,6 @@
 import { Div, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { iInputAddon, iInputGroup } from 'interface/input-groups.types';
-import { Oval } from 'interface/spinners';
 import { borderProps } from 'utils';
 
 export const InputGroup = ({ id, name = 'InputGroup', active, className, children, ...tailwind }: iInputGroup) => {
@@ -18,7 +17,6 @@ export const InputGroup = ({ id, name = 'InputGroup', active, className, childre
 		ringOffset: 'focus-within:ring-offset-1',
 		ringOffsetColor: 'focus-within:ring-offset-blue-500 focus-within:dark:ring-offset-cyan-500',
 		transition: 'transition ease',
-		// width: 'w-full',
 	};
 	const props = { ...base, ...tailwind, className, name };
 
@@ -30,28 +28,19 @@ export const InputAppend = ({
 	name = 'InputAppend',
 	icon,
 	taskRunning,
-	onClick,
 	className,
 	children,
 	...tailwind
 }: iInputAddon) => {
 	const base = {
-		bgColor: '',
 		...borderProps,
-		cursor: onClick && 'cursor-pointer',
 		display: 'flex-middle',
 		flex: 'shrink-0',
-		spacing: 'px-4',
+		spacing: 'px-2',
 	};
 	const props = { ...base, ...tailwind, className, name };
 
-	return (
-		<Span onClick={onClick} {...props}>
-			{taskRunning && icon ? <Oval /> : icon && <Icon icon={icon?.icon || icon} {...icon} />}
-			{taskRunning && children ? <Oval /> : <Span flex='grow'>{children}</Span>}
-			{taskRunning && !icon && !children && <Oval />}
-		</Span>
-	);
+	return <Span {...props}>{icon ? <Icon icon={icon?.icon || icon} {...icon} /> : children}</Span>;
 };
 
 export const InputPrepend = ({
@@ -65,22 +54,14 @@ export const InputPrepend = ({
 	...tailwind
 }: iInputAddon) => {
 	const base = {
-		bgColor: '',
 		...borderProps,
-		cursor: onClick && 'cursor-pointer',
 		display: 'flex-middle',
 		flex: 'shrink-0',
-		spacing: 'px-4',
+		spacing: 'px-2',
 	};
 	const props = { ...base, ...tailwind, className, name };
 
-	return (
-		<Span onClick={onClick} {...props}>
-			{taskRunning && icon ? <Oval /> : icon && <Icon icon={icon?.icon || icon} {...icon} />}
-			{taskRunning && children ? <Oval /> : <Span flex='grow'>{children}</Span>}
-			{taskRunning && !icon && !children && <Oval />}
-		</Span>
-	);
+	return <Span {...props}>{icon ? <Icon icon={icon?.icon || icon} {...icon} /> : children}</Span>;
 };
 
 // Docs

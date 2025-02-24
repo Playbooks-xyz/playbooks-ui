@@ -104,7 +104,6 @@ export const ErrorBadge = ({ id, className, children, ...tailwind }: iBadge) => 
 
 export const OutlineBadge = ({ id, className, children, ...tailwind }: iBadge) => {
 	const base = {
-		bgColor: '',
 		border: 'border',
 		color: 'gray-600 dark:gray-300',
 		display: 'flex-inline',

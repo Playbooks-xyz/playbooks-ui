@@ -6,7 +6,6 @@ import { borderProps } from 'utils';
 
 export const Banner = ({ id, name = 'Banner', className, children, ...tailwind }: iBanner) => {
 	const base = {
-		bgColor: '',
 		border: 'border-b',
 		...borderProps,
 		color: 'white',
