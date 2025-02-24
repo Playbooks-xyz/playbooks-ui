@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-// @ts-expect-error peer-dependency
 import { useRouter } from 'next/router';
 
 import { useInterface } from 'contexts';

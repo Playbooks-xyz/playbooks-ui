@@ -1,4 +1,3 @@
-// @ts-expect-error peer-dependency
 import NextHead from 'next/head';
 
 import { useInterface } from 'contexts';

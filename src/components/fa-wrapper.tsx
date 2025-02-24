@@ -1,4 +1,3 @@
-// @ts-expect-error peer-dependency
 import dynamic from 'next/dynamic';
 const FontAwesome = dynamic(() => import('@fortawesome/react-fontawesome').then(v => v.FontAwesomeIcon), {
 	ssr: false,

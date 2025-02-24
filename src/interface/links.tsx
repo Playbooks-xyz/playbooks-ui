@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-// @ts-expect-error peer-dependency
 import NLink from 'next/link';
 
 import { Img, Span } from 'interface/html';
