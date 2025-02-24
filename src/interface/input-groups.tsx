@@ -36,7 +36,7 @@ export const InputAppend = ({
 		...borderProps,
 		display: 'flex-middle',
 		flex: 'shrink-0',
-		spacing: 'px-2',
+		spacing: 'px-4',
 	};
 	const props = { ...base, ...tailwind, className, name };
 
@@ -57,7 +57,7 @@ export const InputPrepend = ({
 		...borderProps,
 		display: 'flex-middle',
 		flex: 'shrink-0',
-		spacing: 'px-2',
+		spacing: 'px-4',
 	};
 	const props = { ...base, ...tailwind, className, name };
 
