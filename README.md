@@ -1,4 +1,4 @@
-# playbooks-interface
+# Overview
  An interface library for Playbooks
 
 ## Prerequisites
@@ -36,6 +36,6 @@
 - npm run git
 
 ## Setup Husky
-- npm run prepare
+- npm run husky
 - create .husky/pre-commit
 - add `npm run clean`
