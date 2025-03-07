@@ -148,7 +148,7 @@ export const DropHeader = ({ id, name = 'DropHeader', className, children, ...ta
 
 export const DropTitle = ({ id, name = 'DropTitle', className, children, ...tailwind }: iDropTitle) => {
 	const base = {
-		color: 'gray-800 dark:white',
+		color: 'text-gray-800 dark:text-white',
 		whitespace: 'whitespace-nowrap',
 		fontWeight: 'font-semibold',
 		textTransform: 'capitalize',
@@ -161,7 +161,7 @@ export const DropTitle = ({ id, name = 'DropTitle', className, children, ...tail
 
 export const DropSubtitle = ({ id, name = 'DropSubtitle', className, children, ...tailwind }: iDropSubtitle) => {
 	const base = {
-		color: 'gray-500 dark:gray-300',
+		color: 'text-gray-500 dark:text-gray-300',
 		whitespace: 'whitespace-nowrap',
 		fontWeight: 'font-normal',
 		fontSize: 'text-sm',

@@ -21,7 +21,7 @@ export const ModalLoader = ({
 				<Oval size='w-14 h-14' className='stroke-gray-600 dark:stroke-gray-300  mb-4' />
 				<Div spacing='space-y-1' className='text-center'>
 					{title && <H5 fontWeight='font-bold'>{title}</H5>}
-					{message && <Small className='tracking-wide gray-600'>{message}</Small>}
+					{message && <Small className='tracking-wide text-gray-600'>{message}</Small>}
 					{children}
 				</Div>
 			</Span>
@@ -40,7 +40,7 @@ export const PageLoader = ({
 }: iPageLoader) => {
 	const base = {
 		bgColor: 'bg-white dark:bg-gray-900',
-		color: 'gray-700 dark:gray-300',
+		color: 'text-gray-700 dark:text-gray-300',
 		display: 'flex-middle',
 		position: 'absolute inset-0',
 		spacing: 'h-full w-full',
@@ -83,7 +83,7 @@ export const SectionLoader = ({
 			<Oval size='w-12 h-12' className='stroke-gray-600 dark:stroke-gray-300 mb-4' />
 			<Div spacing='space-y-1' className='text-center'>
 				{title && <H5 fontWeight='font-bold'>{title}</H5>}
-				{message && <Small className='tracking-wide gray-600'>{message}</Small>}
+				{message && <Small className='tracking-wide text-gray-600'>{message}</Small>}
 				{children}
 			</Div>
 		</Div>

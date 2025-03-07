@@ -55,7 +55,7 @@ export const WrappedFabIcon = ({ id, name = 'WrappedFabIcon', icon, wrapper, cla
 	const base = {
 		bgColor: 'bg-gray-100 dark:bg-gray-800',
 		borderRadius: 'rounded-md',
-		color: 'blue-500 dark:cyan-500',
+		color: 'text-blue-500 dark:text-cyan-500',
 		display: 'flex-middle',
 		flex: 'shrink-0',
 		fontSize: 'text-lg',
@@ -74,7 +74,7 @@ export const WrappedFadIcon = ({ id, name = 'WrappedFadIcon', icon, wrapper, cla
 	const base = {
 		bgColor: 'bg-gray-100 dark:bg-gray-800',
 		borderRadius: 'rounded-md',
-		color: 'blue-500 dark:cyan-500',
+		color: 'text-blue-500 dark:text-cyan-500',
 		display: 'flex-middle',
 		flex: 'shrink-0',
 		fontSize: 'text-lg',
@@ -93,7 +93,7 @@ export const WrappedFarIcon = ({ id, name = 'WrappedFarIcon', icon, wrapper, cla
 	const base = {
 		bgColor: 'bg-gray-100 dark:bg-gray-800',
 		borderRadius: 'rounded-md',
-		color: 'blue-500 dark:cyan-500',
+		color: 'text-blue-500 dark:text-cyan-500',
 		display: 'flex-middle',
 		flex: 'shrink-0',
 		fontSize: 'text-lg',

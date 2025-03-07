@@ -1,7 +1,7 @@
 // Breadcrumbs
 export const breadcrumbBtnProps = (active?) => ({
 	cursor: 'cursor-pointer',
-	color: 'gray-600 dark:gray-400',
+	color: 'text-gray-600 dark:text-gray-400',
 	fontFamily: 'font-accent',
 	fontWeight: 'font-medium',
 	textTransform: 'uppercase',
@@ -31,7 +31,7 @@ export const btnAccentProps = (active?) => ({
 	borderColor: 'border-gray-300 dark:border-gray-600',
 	borderOpacity: 'border-opacity-50 dark:border-opacity-50',
 	borderRadius: 'rounded-md',
-	color: 'gray-600 dark:gray-300',
+	color: 'text-gray-600 dark:text-gray-300',
 	stroke: 'stroke-gray-500 dark:stroke-gray-300',
 	hover: 'h:bg-opacity-50 dark:h:bg-opacity-50',
 	...btnSharedProps(
@@ -50,14 +50,14 @@ export const btnBorderProps = (active?) => ({
 	borderColor: 'border-gray-300 dark:border-gray-600',
 	borderOpacity: 'border-opacity-50 dark:border-opacity-50',
 	borderRadius: 'rounded-md',
-	color: 'gray-600 dark:gray-300',
+	color: 'text-gray-600 dark:text-gray-300',
 	stroke: 'stroke-gray-600 dark:stroke-gray-300',
 	hover: 'h:border-opacity-100 dark:h:border-opacity-100 h:opacity-100',
 	...btnSharedProps(
 		active && {
 			borderColor: 'border-cyan-500 dark:border-cyan-500',
 			borderOpacity: 'border-opacity-100 dark:border-opacity-100',
-			color: 'cyan-500',
+			color: 'text-cyan-500',
 			stroke: 'stroke-cyan-500',
 			...active,
 		},
@@ -71,21 +71,21 @@ export const btnTabProps = (active?) => ({
 	borderColor:
 		'border-t-transparent border-b-transparent h:border-b-gray-300 h:border-b-blue-500 dark:h:border-b-cyan-500',
 	borderRadius: '',
-	color: 'gray-500 dark:gray-300',
+	color: 'text-gray-500 dark:text-gray-300',
 	stroke: 'stroke-gray-500 dark:stroke-gray-300',
 	...btnSharedProps(
 		active && {
 			borderColor: 'border-t-transparent border-b-blue-500 dark:border-b-cyan-500',
-			color: 'gray-600 dark:gray-200',
+			color: 'text-gray-600 dark:text-gray-200',
 			...active,
 		},
 	),
 });
 
 export const btnTextProps = (active?) => ({
-	color: 'gray-500 dark:gray-400',
+	color: 'text-gray-500 dark:text-gray-400',
 	fontSize: 'text-inherit',
-	hover: 'h:underline h:gray-700 h:dark:gray-100',
+	hover: 'h:underline h:gray-700 h:dark:text-gray-100',
 	...btnSharedProps(active),
 });
 
@@ -130,7 +130,7 @@ export const inputProps = (variant?) => ({
 	animation: 'transition ease',
 	display: 'block',
 	cursor: 'cursor-auto',
-	color: 'gray-600 dark:gray-200',
+	color: 'text-gray-600 dark:text-gray-200',
 	bgColor: 'bg-white dark:bg-gray-900',
 	border: 'border',
 	borderColor: 'border-gray-400 dark:border-gray-600 f:border-blue-500 dark:f:border-cyan-500',
@@ -171,13 +171,13 @@ export const paginationProps = (active?) => ({
 	borderOpacity: 'border-opacity-25',
 	bgColor: 'h:bg-gray-100 dark:h:bg-gray-800',
 	bgOpacity: 'bg-opacity-100',
-	color: 'gray-500 dark:gray-300',
+	color: 'text-gray-500 dark:text-gray-300',
 	borderRadius: '',
 	fontSize: 'text-sm',
 	fontWeight: 'font-medium',
 	...(active && {
 		bgColor: 'bg-gray-200 dark:bg-gray-700',
-		color: 'gray-600 dark:gray-200',
+		color: 'text-gray-600 dark:text-gray-200',
 	}),
 });
 
@@ -215,6 +215,6 @@ export const tableHeadProps = {
 	fontWeight: 'font-semibold',
 	fontFamily: 'font-primary',
 	width: 'w-full',
-	color: 'gray-800 dark:gray-100',
+	color: 'text-gray-800 dark:text-gray-100',
 	textTransform: 'uppercase',
 };

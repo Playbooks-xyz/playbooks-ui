@@ -79,7 +79,7 @@ export const RadioInput = ({ id, name = 'RadioInput', value, className, children
 };
 
 export const RadioTitle = ({ id, name = 'RadioLabel', className, children, ...tailwind }: iRadioLabel) => {
-	const base = { color: 'gray-700 dark:gray-200', lineSpacing: 'leading-tight', fontSize: 'text-sm' };
+	const base = { color: 'text-gray-700 dark:text-gray-200', lineSpacing: 'leading-tight', fontSize: 'text-sm' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;

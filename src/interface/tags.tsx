@@ -16,7 +16,7 @@ export const Tag = ({ id, name = 'Tag', size = 'sm', className, children, ...tai
 		borderColor: 'border-gray-500 dark:border-gray-400',
 		borderOpacity: 'border-opacity-50',
 		borderRadius: 'rounded-md',
-		color: 'gray-500 dark:gray-300',
+		color: 'text-gray-500 dark:text-gray-300',
 		display: 'flex-between-inline',
 		flex: 'shrink-0',
 		size: computeTagSize(size),

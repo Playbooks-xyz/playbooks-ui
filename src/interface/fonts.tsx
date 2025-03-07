@@ -34,7 +34,7 @@ export const Font = props => {
 
 export const H1 = ({ id, name = 'H1', className, children, ...tailwind }: iFont) => {
 	const base = {
-		color: 'gray-700 dark:gray-100',
+		color: 'text-gray-700 dark:text-gray-100',
 		fontSize: 'text-5xl lg:text-6xl',
 		fontWeight: 'font-medium',
 		fontFamily: 'font-primary',
@@ -50,7 +50,7 @@ export const H1 = ({ id, name = 'H1', className, children, ...tailwind }: iFont)
 
 export const H2 = ({ id, name = 'H2', className, children, ...tailwind }: iFont) => {
 	const base = {
-		color: 'gray-700 dark:gray-100',
+		color: 'text-gray-700 dark:text-gray-100',
 		fontSize: 'text-4xl lg:text-5xl',
 		fontWeight: 'font-medium',
 		fontFamily: 'font-primary',
@@ -66,7 +66,7 @@ export const H2 = ({ id, name = 'H2', className, children, ...tailwind }: iFont)
 
 export const H3 = ({ id, name = 'H3', className, children, ...tailwind }: iFont) => {
 	const base = {
-		color: 'gray-700 dark:gray-100',
+		color: 'text-gray-700 dark:text-gray-100',
 		fontSize: 'text-3xl lg:text-3xl',
 		fontWeight: 'font-medium',
 		fontFamily: 'font-primary',
@@ -82,7 +82,7 @@ export const H3 = ({ id, name = 'H3', className, children, ...tailwind }: iFont)
 
 export const H4 = ({ id, name = 'H4', className, children, ...tailwind }: iFont) => {
 	const base = {
-		color: 'gray-700 dark:gray-100',
+		color: 'text-gray-700 dark:text-gray-100',
 		fontSize: 'text-xl lg:text-2xl',
 		fontWeight: 'font-medium',
 		fontFamily: 'font-primary',
@@ -98,7 +98,7 @@ export const H4 = ({ id, name = 'H4', className, children, ...tailwind }: iFont)
 
 export const H5 = ({ id, name = 'H5', className, children, ...tailwind }: iFont) => {
 	const base = {
-		color: 'gray-700 dark:gray-100',
+		color: 'text-gray-700 dark:text-gray-100',
 		fontSize: 'text-lg lg:text-xl',
 		fontWeight: 'font-medium',
 		fontFamily: 'font-primary',
@@ -114,7 +114,7 @@ export const H5 = ({ id, name = 'H5', className, children, ...tailwind }: iFont)
 
 export const H6 = ({ id, name = 'H6', className, children, ...tailwind }: iFont) => {
 	const base = {
-		color: 'gray-700 dark:gray-100',
+		color: 'text-gray-700 dark:text-gray-100',
 		fontSize: 'text-base lg:text-lg',
 		fontWeight: 'font-medium',
 		fontFamily: 'font-primary',
@@ -130,7 +130,7 @@ export const H6 = ({ id, name = 'H6', className, children, ...tailwind }: iFont)
 
 export const P = ({ id, name = 'P', className, children, ...tailwind }: iFont) => {
 	const base = {
-		color: 'gray-600 dark:gray-300',
+		color: 'text-gray-600 dark:text-gray-300',
 		fontSize: 'text-base',
 		fontWeight: 'font-light',
 		fontFamily: 'font-secondary',
@@ -147,7 +147,7 @@ export const P = ({ id, name = 'P', className, children, ...tailwind }: iFont) =
 
 export const Small = ({ id, name = 'Small', className, children, ...tailwind }: iFont) => {
 	const base = {
-		color: 'gray-600 dark:gray-400',
+		color: 'text-gray-600 dark:text-gray-400',
 		display: 'block',
 		fontSize: 'text-sm',
 		fontWeight: 'font-normal',

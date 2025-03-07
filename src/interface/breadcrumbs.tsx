@@ -34,7 +34,7 @@ export const BreadcrumbItem = ({
 	return (
 		<Li {...props}>
 			{children}
-			{arrow && <FarIcon icon={icon} color='gray-400' fontSize='text-xs' />}
+			{arrow && <FarIcon icon={icon} color='text-gray-400' fontSize='text-xs' />}
 		</Li>
 	);
 };

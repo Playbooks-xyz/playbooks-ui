@@ -106,7 +106,7 @@ export const SwitchLabel = ({ id, name = 'SwitchLabel', htmlFor, className, chil
 		display: 'inline-block',
 		fontSize: 'font-base',
 		fontWeight: 'font-medium',
-		color: 'gray-700 dark:gray-200',
+		color: 'text-gray-700 dark:text-gray-200',
 	};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 

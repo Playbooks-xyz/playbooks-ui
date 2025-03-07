@@ -66,7 +66,7 @@ export const TableHead = ({
 		fontSize: 'text-xs',
 		fontWeight: 'font-medium',
 		fontFamily: 'font-primary',
-		color: 'gray-800 dark:gray-100',
+		color: 'text-gray-800 dark:text-gray-100',
 		tracking: 'tracking-wider',
 	};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
@@ -128,7 +128,7 @@ export const TableData = ({
 }: iTableData) => {
 	const base = {
 		align: 'text-left',
-		color: title ? 'gray-800 dark:gray-100' : 'gray-600 dark:gray-400',
+		color: title ? 'text-gray-800 dark:text-gray-100' : 'text-gray-600 dark:text-gray-400',
 		spacing: 'px-4 py-4',
 		fontSize: 'text-sm',
 		fontFamily: 'font-secondary',

@@ -27,7 +27,7 @@ export const BannerIcon = ({
 	className,
 	...tailwind
 }: iBannerIcon) => {
-	const base = { color: 'blue-500 dark:cyan-500' };
+	const base = { color: 'text-blue-500 dark:text-cyan-500' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Icon type={type} icon={icon} {...props} />;
@@ -48,7 +48,7 @@ export const BannerTitle = ({
 	children,
 	...tailwind
 }: iBannerTitle) => {
-	const base = { color: 'gray-700 dark:white', fontWeight: 'font-semibold' };
+	const base = { color: 'text-gray-700 dark:text-white', fontWeight: 'font-semibold' };
 	const props = { ...base, ...tailwind, className, name };
 
 	switch (size) {
@@ -61,7 +61,7 @@ export const BannerTitle = ({
 };
 
 export const BannerText = ({ id, name = 'BannerText', className, children, ...tailwind }: iBannerText) => {
-	const base = { color: 'gray-600 dark:gray-200' };
+	const base = { color: 'text-gray-600 dark:text-gray-200' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Small {...props}>{children}</Small>;

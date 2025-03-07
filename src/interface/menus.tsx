@@ -198,7 +198,7 @@ export const MenuTitle = ({ id, name = 'MenuTitle', className, children, ...tail
 
 export const MenuSubtitle = ({ id, name = 'MenuSubtitle', className, children, ...tailwind }: iMenuSubtitle) => {
 	const base = {
-		color: 'gray-500 dark:gray-300',
+		color: 'text-gray-500 dark:text-gray-300',
 		whitespace: 'whitespace-nowrap',
 		fontWeight: 'font-normal',
 		fontSize: 'text-sm',

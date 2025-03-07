@@ -22,7 +22,7 @@ export const Card = ({ id, name = 'Card', className, children, ...tailwind }: iC
 		border: 'border',
 		...borderProps,
 		borderRadius: 'rounded-md',
-		color: 'gray-400',
+		color: 'text-gray-400',
 		width: 'w-full',
 	};
 	const props = { ...base, ...tailwind, className, name };
@@ -50,7 +50,7 @@ export const CardIcon = ({
 	className,
 	...tailwind
 }: iCardIcon) => {
-	const props = { color: 'gray-500', fontSize: 'text-xl', ...tailwind, className, name };
+	const props = { color: 'text-gray-500', fontSize: 'text-xl', ...tailwind, className, name };
 
 	return <Icon type={type} icon={icon} {...props} />;
 };
@@ -79,7 +79,7 @@ export const CardBody = ({ id, name = 'CardBody', className, children, ...tailwi
 
 export const CardPretitle = ({ id, name = 'CardPretitle', className, children, ...tailwind }: iCardPretitle) => {
 	const base = {
-		color: 'blue-500 dark:cyan-500',
+		color: 'text-blue-500 dark:text-cyan-500',
 		fontFamily: 'font-accent',
 		fontSize: 'text-sm',
 		fontWeight: 'font-book',
@@ -104,7 +104,7 @@ export const CardTitle = ({ id, name = 'CardTitle', size = 'h6', className, chil
 
 export const CardSubtitle = ({ id, name = 'CardSubtitle', className, children, ...tailwind }: iCardSubtitle) => {
 	const base = {
-		color: 'gray-600 dark:gray-300',
+		color: 'text-gray-600 dark:text-gray-300',
 		fontWeight: 'font-light',
 		fontSize: 'text-base',
 		space: 'space-x-4',
@@ -116,7 +116,7 @@ export const CardSubtitle = ({ id, name = 'CardSubtitle', className, children, .
 };
 
 export const CardText = ({ id, name = 'CardText', className, children, ...tailwind }: iCardText) => {
-	const base = { color: 'gray-600 dark:gray-300', fontSize: 'text-sm', fontWeight: 'font-light' };
+	const base = { color: 'text-gray-600 dark:text-gray-300', fontSize: 'text-sm', fontWeight: 'font-light' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
@@ -126,7 +126,7 @@ export const CardFooter = ({ id, name = 'CardFooter', className, children, ...ta
 	const base = {
 		border: 'border-t',
 		...borderProps,
-		color: 'gray-500',
+		color: 'text-gray-500',
 		display: 'flex-between',
 		fontSize: 'text-sm',
 		space: 'space-x-4',

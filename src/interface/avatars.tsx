@@ -72,7 +72,7 @@ export const AvatarTitle = ({
 	...tailwind
 }: iAvatarTitle) => {
 	const base = {
-		color: 'gray-700 dark:gray-200',
+		color: 'text-gray-700 dark:text-gray-200',
 		fontWeight: 'font-bold',
 		textDecoration: 'capitalize',
 	};

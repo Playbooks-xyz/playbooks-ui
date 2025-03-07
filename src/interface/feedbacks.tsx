@@ -43,7 +43,7 @@ export const FeedbackIcon = ({
 	className,
 	...tailwind
 }: iFeedbackIcon) => {
-	const base = { color: 'gray-500', fontSize };
+	const base = { color: 'text-gray-500', fontSize };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return <Icon type={type} icon={icon} className={classes} />;
@@ -64,7 +64,7 @@ export const FeedbackPretitle = ({
 	...tailwind
 }: iFeedbackTitle) => {
 	const base = {
-		color: 'gray-500',
+		color: 'text-gray-500',
 		fontFamily: 'font-accent',
 		fontSize: 'text-sm',
 		fontWeight: 'font-medium',
@@ -85,7 +85,7 @@ export const FeedbackTitle = ({
 	...tailwind
 }: iFeedbackTitle) => {
 	const base = {
-		color: 'gray-800 dark:white',
+		color: 'text-gray-800 dark:text-white',
 		fontWeight: 'font-semibold',
 		textTransform: 'capitalize',
 		tracking: 'tracking-wide',

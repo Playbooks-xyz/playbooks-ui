@@ -18,7 +18,7 @@ export const borderProps = {
 export const cloudProps = {
 	bgColor: 'bg-gray-200 dark:bg-gray-700',
 	bgOpacity: 'bg-opacity-25 dark:bg-opacity-25',
-	color: 'gray-500 dark:gray-400',
+	color: 'text-gray-500 dark:text-gray-400',
 	fontSize: 'text-sm',
 	fontFamily: 'font-secondary',
 	size: '',
@@ -51,7 +51,7 @@ export const headerBgColor = {
 };
 
 export const metaProps = {
-	color: 'gray-500 dark:gray-400',
+	color: 'text-gray-500 dark:text-gray-400',
 	display: 'flex-start',
 	fontSize: 'text-sm',
 	space: 'space-x-3',
@@ -61,7 +61,7 @@ export const metaProps = {
 export const metaCardProps = {
 	size: '',
 	bgColor: '',
-	color: 'gray-500 dark:gray-400 h:gray-500 dark:h:gray-300',
+	color: 'text-gray-500 dark:text-gray-400 h:gray-500 dark:h:gray-300',
 	fontSize: 'text-sm',
 	spacing: 'mr-4',
 	textDecoration: 'underline',

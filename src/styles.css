@@ -7,11 +7,11 @@
 @layer base {
 	html {
 		overflow-x: hidden;
-		@apply gray-700 dark:gray-200;
+		@apply text-gray-700 dark:text-gray-200;
 	}
 	body {
 		@apply w-full;
-		@apply gray-700 dark:gray-200;
+		@apply text-gray-700 dark:text-gray-200;
 	}
 	h1 {
 		@apply text-6xl;

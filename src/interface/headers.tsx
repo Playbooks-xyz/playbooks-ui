@@ -41,7 +41,7 @@ export const HeaderTitle = ({ id, name = 'HeaderTitle', size, className, childre
 
 export const HeaderSubtitle = ({ id, name = 'HeaderSubtitle', className, children, ...tailwind }: iHeaderSubtitle) => {
 	const base = {
-		color: 'gray-600 dark:gray-300',
+		color: 'text-gray-600 dark:text-gray-300',
 		fontFamily: 'font-secondary',
 		fontWeight: 'font-normal',
 		tracking: 'tracking-normal',
@@ -57,7 +57,7 @@ export const HeaderSubtitle = ({ id, name = 'HeaderSubtitle', className, childre
 
 export const HeaderText = ({ id, name = 'HeaderText', className, children, ...tailwind }: iHeaderText) => {
 	const base = {
-		color: 'gray-700 dark:gray-100',
+		color: 'text-gray-700 dark:text-gray-100',
 		fontWeight: 'font-light',
 		fontFamily: 'font-secondary',
 		tracking: 'tracking-normal',

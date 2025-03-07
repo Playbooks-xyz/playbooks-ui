@@ -64,7 +64,7 @@ export const HeroImg = ({
 		border: '',
 		...borderProps,
 		borderRadius: 'rounded-xl',
-		color: 'gray-500',
+		color: 'text-gray-500',
 		display: 'flex-middle',
 		flex: 'shrink-0',
 		overflow: 'overflow-hidden',
@@ -86,7 +86,7 @@ export const HeroIcon = ({ id, name = 'HeroIcon', size = 'lg', icon = 'code', cl
 		border: '',
 		...borderProps,
 		borderRadius: 'rounded-xl',
-		color: 'gray-500',
+		color: 'text-gray-500',
 		display: 'flex-middle',
 		flex: 'shrink-0',
 		fontSize: 'text-3xl',
@@ -114,7 +114,7 @@ export const HeroBody = ({ id, name = 'HeroBody', className, children, ...tailwi
 
 export const HeroPretitle = ({ id, name = 'HeroPretitle', className, children, ...tailwind }: iHeroPretitle) => {
 	const base = {
-		color: 'blue-500 dark:cyan-500',
+		color: 'text-blue-500 dark:text-cyan-500',
 		fontFamily: 'font-accent',
 		fontSize: 'text-sm',
 		fontWeight: 'font-medium',
@@ -152,7 +152,7 @@ export const HeroSubtitle = ({
 	...tailwind
 }: iHeroSubtitle) => {
 	const base = {
-		color: 'gray-500 dark:gray-400',
+		color: 'text-gray-500 dark:text-gray-400',
 		fontFamily: 'font-secondary',
 		fontWeight: 'font-light',
 		leading: '!leading-relaxed',
@@ -169,7 +169,7 @@ export const HeroSubtitle = ({
 
 export const HeroText = ({ id, name = 'HeroText', className, children, ...tailwind }: iHeroText) => {
 	const base = {
-		color: 'gray-600 dark:gray-200',
+		color: 'text-gray-600 dark:text-gray-200',
 		fontFamily: 'font-secondary',
 		fontWeight: 'font-light',
 		tracking: 'tracking-wide',

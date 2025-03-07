@@ -55,13 +55,13 @@ export const Tab = ({
 		bgColor: 'h:bg-gray-100 dark:h:bg-gray-700',
 		border: 'border-b-4',
 		borderColor: 'border-transparent h:border-gray-300 dark:h:border-gray-600',
-		color: 'gray-700 dark:gray-200',
+		color: 'text-gray-700 dark:text-gray-200',
 		borderRadius: 'rounded-none',
 		grid: 'hidden sm:block',
 		zIndex: 'z-10',
 		...(active && {
 			borderColor: 'border-blue-500 dark:border-cyan-500',
-			color: 'blue-500 dark:cyan-500',
+			color: 'text-blue-500 dark:text-cyan-500',
 		}),
 	};
 	const props = { ...base, ...tailwind, alt, children, className, name };

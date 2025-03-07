@@ -32,7 +32,7 @@ export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, 
 	const base = {
 		bgColor: 'bg-white dark:bg-gray-800',
 		borderRadius: 'rounded-md',
-		color: 'gray-700 dark:white',
+		color: 'text-gray-700 dark:text-white',
 		display: 'block',
 		overflow: 'overflow-hidden',
 		shadow: 'shadow-lg',
@@ -72,13 +72,13 @@ export const ToastHeader = ({ id, name = 'ToastHeader', onRemove, className, chi
 			<Span display='flex-start' space='space-x-2'>
 				{children}
 			</Span>
-			<AccentBtn alt='close' icon='xmark' color='gray-600 dark:gray-100' size='xs' onClick={onRemove} />
+			<AccentBtn alt='close' icon='xmark' color='text-gray-600 dark:text-gray-100' size='xs' onClick={onRemove} />
 		</Div>
 	);
 };
 
 export const ToastIcon = ({ id, name = 'ToastIcon', icon = 'question-circle', className, ...tailwind }: iToastIcon) => {
-	const base = { color: 'gray-700 dark:gray-300', borderRadius: 'rounded-md', spacing: 'px-2 py-1' };
+	const base = { color: 'text-gray-700 dark:text-gray-300', borderRadius: 'rounded-md', spacing: 'px-2 py-1' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -90,7 +90,7 @@ export const ToastIcon = ({ id, name = 'ToastIcon', icon = 'question-circle', cl
 
 export const ToastTitle = ({ id, name = 'ToastTitle', className, children, ...tailwind }: iToastTitle) => {
 	const base = {
-		color: 'gray-800 dark:gray-200',
+		color: 'text-gray-800 dark:text-gray-200',
 		fontWeight: 'font-semibold',
 		fontSize: 'text-sm',
 		tracking: 'tracking-wide',
@@ -108,7 +108,7 @@ export const ToastBody = ({ id, name = 'ToastBody', className, children, ...tail
 };
 
 export const ToastText = ({ id, name = 'ToastText', className, children, ...tailwind }: iToastText) => {
-	const base = { color: 'gray-700 dark:gray-300', fontSize: 'text-sm' };
+	const base = { color: 'text-gray-700 dark:text-gray-300', fontSize: 'text-sm' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;

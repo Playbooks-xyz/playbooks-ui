@@ -61,7 +61,7 @@ export const Badge = ({ id, name = 'Badge', type = '', size = 'sm', className, c
 };
 
 export const DraftBadge = ({ id, className, children, ...tailwind }: iBadge) => {
-	const base = { bgColor: 'bg-gray-200 dark:bg-gray-500', color: 'gray-500 dark:gray-100' };
+	const base = { bgColor: 'bg-gray-200 dark:bg-gray-500', color: 'text-gray-500 dark:text-gray-100' };
 	const props = { ...base, ...tailwind, className };
 
 	return <Span {...props}>{children}</Span>;
@@ -105,7 +105,7 @@ export const ErrorBadge = ({ id, className, children, ...tailwind }: iBadge) => 
 export const OutlineBadge = ({ id, className, children, ...tailwind }: iBadge) => {
 	const base = {
 		border: 'border',
-		color: 'gray-600 dark:gray-300',
+		color: 'text-gray-600 dark:text-gray-300',
 		display: 'flex-inline',
 		space: 'space-x-2',
 		textTransform: 'capitalize',

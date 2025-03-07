@@ -56,7 +56,7 @@ export const SectionPretitle = ({
 	...tailwind
 }: iSectionPretitle) => {
 	const base = {
-		color: 'gray-500',
+		color: 'text-gray-500',
 		fontFamily: 'font-accent',
 		fontSize: 'text-sm',
 		fontWeight: 'font-medium',
@@ -99,7 +99,7 @@ export const SectionSubtitle = ({
 }: iSectionSubtitle) => {
 	const base = {
 		size,
-		color: 'gray-600 dark:gray-300',
+		color: 'text-gray-600 dark:text-gray-300',
 		fontWeight: 'font-light',
 		fontFamily: 'font-secondary',
 		tracking: 'tracking-normal',
@@ -111,7 +111,7 @@ export const SectionSubtitle = ({
 
 export const SectionText = ({ id, name = 'SectionText', className, children, ...tailwind }: iSectionText) => {
 	const base = {
-		color: 'gray-600 dark:gray-200',
+		color: 'text-gray-600 dark:text-gray-200',
 		fontFamily: 'font-secondary',
 	};
 	const props = { ...base, ...tailwind, className, name };

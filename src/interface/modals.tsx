@@ -171,7 +171,7 @@ export const ModalSubtitle = ({
 }: iModalSubtitle) => {
 	const base = {
 		size,
-		color: 'gray-600 dark:gray-400',
+		color: 'text-gray-600 dark:text-gray-400',
 		fontWeight: 'font-normal',
 		fontFamily: 'font-secondary',
 		space: 'space-x-4',
@@ -197,7 +197,7 @@ export const ModalFooter = ({ id, name = 'ModalFooter', className, children, ...
 	const base = {
 		border: 'border-t',
 		...borderProps,
-		color: 'gray-500',
+		color: 'text-gray-500',
 		fontSize: 'text-sm',
 		display: 'flex-end',
 		spacing: 'p-4',

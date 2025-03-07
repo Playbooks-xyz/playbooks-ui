@@ -44,7 +44,7 @@ export const AccordionToggle = ({
 		border: '',
 		...borderProps,
 		borderRadius: 'rounded-md',
-		color: 'gray-500',
+		color: 'text-gray-500',
 		display: 'flex-between',
 		fontFamily: 'font-accent',
 		fontSize: 'text-sm',

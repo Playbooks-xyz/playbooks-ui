@@ -55,7 +55,7 @@ export const FormLabel = ({
 	...tailwind
 }: iFormLabel) => {
 	const base = {
-		color: 'gray-600 dark:gray-400',
+		color: 'text-gray-600 dark:text-gray-400',
 		cursor: 'cursor-pointer',
 		display: 'inline-block',
 		fontFamily: 'font-secondary',
@@ -244,7 +244,7 @@ export const FormDivInput = ({
 	const base = {
 		...inputProps(variant),
 		...computeInputSize(size),
-		color: 'gray-600 dark:gray-400',
+		color: 'text-gray-600 dark:text-gray-400',
 		display: 'flex-center',
 		overflow: 'overflow-x-scroll',
 	};
@@ -376,7 +376,7 @@ export const FormSelect = ({
 
 export const FormText = ({ id, name = 'FormText', className, children, ...tailwind }: iFormText) => {
 	const base = {
-		color: 'gray-500 dark:gray-400',
+		color: 'text-gray-500 dark:text-gray-400',
 		spacing: 'mx-1',
 		tracking: 'tracking-wider',
 		fontSize: 'text-xs',
