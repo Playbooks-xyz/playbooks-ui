@@ -27,7 +27,7 @@ export const Route = ({ id, name = 'Route', seo, className, children, ...tailwin
 	// Render
 	return (
 		<Div {...props}>
-			<Head title={seo?.title || computedTitle} url={computedUrl} {...computedProps} />
+			<Head {...computedProps} title={seo?.title || computedTitle} url={computedUrl} />
 			{children}
 		</Div>
 	);
