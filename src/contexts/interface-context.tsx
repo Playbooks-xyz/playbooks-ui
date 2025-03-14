@@ -1,11 +1,11 @@
-import React, { createRef, useEffect, useState } from 'react';
+import React, { createRef } from 'react';
 import { createPortal } from 'react-dom';
 
 import { Div } from 'interface/html';
 
 export type iInterface = {
 	ref?: any;
-	seo: any;
+	meta: any;
 	createPortal: any;
 	toggleScroll: any;
 };
@@ -13,13 +13,7 @@ export type iInterface = {
 export const InterfaceContext = React.createContext<iInterface>(null);
 
 export const InterfaceProvider = ({ meta, children }: { meta: any; children: any }) => {
-	const [seo, setSeo] = useState(meta);
 	const ref = createRef();
-
-	// Hooks
-	useEffect(() => {
-		setSeo(meta);
-	}, [meta]);
 
 	// Methods
 	const toggleScroll = open => {
@@ -35,7 +29,7 @@ export const InterfaceProvider = ({ meta, children }: { meta: any; children: any
 
 	// Render
 	return (
-		<InterfaceContext.Provider value={{ ref, seo, createPortal, toggleScroll }}>
+		<InterfaceContext.Provider value={{ ref, meta, createPortal, toggleScroll }}>
 			{children}
 			<Div id='interface_portal' ref={ref} />
 		</InterfaceContext.Provider>

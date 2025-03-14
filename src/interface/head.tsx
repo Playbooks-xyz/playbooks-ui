@@ -1,36 +1,30 @@
 import NextHead from 'next/head';
 
-import { useInterface } from 'contexts';
 import { iHead } from 'interface/head.types';
 
 export const Head = (props: iHead) => {
-	const interfaceContext = useInterface();
-
-	// Computed
-	const computedMeta = { ...interfaceContext?.seo, ...props };
-
 	// Render
 	return (
 		<NextHead>
-			<title>{computedMeta.title}</title>
-			<link rel='icon' href={computedMeta.favicon} />
-			<link rel='canonical' href={computedMeta.baseUrl + computedMeta.path} />
-			<meta name='description' content={computedMeta.description} />
-			<meta name='author' content={computedMeta.author} />
-			<meta name='og:type' content={computedMeta.type} />
-			<meta name='og:logo' content={computedMeta.logo} />
-			<meta name='og:site_name' content={computedMeta.siteName} />
-			<meta name='og:locale' content={computedMeta.locale} />
-			<meta name='og:image' content={computedMeta.photo} />
-			<meta name='og:title' content={computedMeta.title} />
-			<meta name='og:description' content={computedMeta.description} />
-			<meta name='og:url' content={computedMeta.baseUrl + computedMeta.path} />
-			<meta name='twitter:card' content={computedMeta.card} />
-			<meta name='twitter:site' content={computedMeta.author} />
-			<meta name='twitter:image' content={computedMeta.photo} />
-			<meta name='twitter:title' content={computedMeta.title} />
-			<meta name='twitter:description' content={computedMeta.description} />
-			<meta name='robots' content={computedMeta.robots ? 'all' : 'none'} />
+			<title>{props.title}</title>
+			<link rel='icon' href={props.favicon} />
+			<link rel='canonical' href={props.url} />
+			<meta name='description' content={props.description} />
+			<meta name='author' content={props.author} />
+			<meta name='og:type' content={props.type} />
+			<meta name='og:logo' content={props.logo} />
+			<meta name='og:site_name' content={props.siteName} />
+			<meta name='og:locale' content={props.locale} />
+			<meta name='og:image' content={props.photo} />
+			<meta name='og:title' content={props.title} />
+			<meta name='og:description' content={props.description} />
+			<meta name='og:url' content={props.url} />
+			<meta name='twitter:card' content={props.card} />
+			<meta name='twitter:site' content={props.author} />
+			<meta name='twitter:image' content={props.photo} />
+			<meta name='twitter:title' content={props.title} />
+			<meta name='twitter:description' content={props.description} />
+			<meta name='robots' content={props.robots ? 'all' : 'none'} />
 			<meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width' />
 			{props.children}
 		</NextHead>

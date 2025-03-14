@@ -9,7 +9,7 @@ import { capitalize } from 'utils/transforms';
 export const Route = ({ id, name = 'Route', seo, className, children, ...tailwind }: iRoute) => {
 	const base = { bgColor: 'bg-white dark:bg-gray-900' };
 	const props = { ...base, ...tailwind, className, name };
-	const interfaceContext = useInterface();
+	const { meta } = useInterface();
 	const router = useRouter();
 
 	// Computed
@@ -20,12 +20,14 @@ export const Route = ({ id, name = 'Route', seo, className, children, ...tailwin
 			.map(v => capitalize(v))
 			.join(' '),
 	);
-	const computedTitle = interfaceContext.seo?.title + formattedPaths.join(' | ');
+	const computedTitle = meta.title + formattedPaths.join(' | ');
+	const computedUrl = meta.baseUrl + router.asPath.split('?')[0];
+	const computedProps = { ...meta, ...seo };
 
 	// Render
 	return (
 		<Div {...props}>
-			<Head title={seo.title || computedTitle} path={router.asPath.split('?')[0]} {...seo} />
+			<Head title={seo.title || computedTitle} url={computedUrl} {...computedProps} />
 			{children}
 		</Div>
 	);
