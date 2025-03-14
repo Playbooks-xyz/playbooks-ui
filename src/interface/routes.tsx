@@ -20,14 +20,14 @@ export const Route = ({ id, name = 'Route', seo, className, children, ...tailwin
 			.map(v => capitalize(v))
 			.join(' '),
 	);
-	const computedTitle = meta.title + formattedPaths.join(' | ');
-	const computedUrl = meta.baseUrl + router.asPath.split('?')[0];
+	const computedTitle = meta?.title + formattedPaths.join(' | ');
+	const computedUrl = meta?.baseUrl + router.asPath.split('?')[0];
 	const computedProps = { ...meta, ...seo };
 
 	// Render
 	return (
 		<Div {...props}>
-			<Head title={seo.title || computedTitle} url={computedUrl} {...computedProps} />
+			<Head title={seo?.title || computedTitle} url={computedUrl} {...computedProps} />
 			{children}
 		</Div>
 	);
