@@ -18,6 +18,7 @@ export const Head = (props: iHead) => {
 			<meta name='description' content={computedMeta.description} />
 			<meta name='author' content={computedMeta.author} />
 			<meta name='og:type' content={computedMeta.type} />
+			<meta name='og:logo' content={computedMeta.logo} />
 			<meta name='og:site_name' content={computedMeta.siteName} />
 			<meta name='og:locale' content={computedMeta.locale} />
 			<meta name='og:image' content={computedMeta.photo} />

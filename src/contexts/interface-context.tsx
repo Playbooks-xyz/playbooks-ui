@@ -10,12 +10,7 @@ export type iInterface = {
 	toggleScroll: any;
 };
 
-export const InterfaceContext = React.createContext<iInterface>({
-	ref: null,
-	seo: null,
-	createPortal: null,
-	toggleScroll: null,
-});
+export const InterfaceContext = React.createContext<iInterface>(null);
 
 export const InterfaceProvider = ({ meta, children }: { meta: any; children: any }) => {
 	const [seo, setSeo] = useState(meta);

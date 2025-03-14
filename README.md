@@ -8,14 +8,10 @@
 - Tailwind
 
 ## Quickstart
-- npm start
-- or `npm run build && npm run build:ts`
-
-## Development
+- npm install
 - npm install -g yalc
-- yalc publish @playbooks/interface
-- Go to consuming application
-- yalc link @playbooks/interface
+- npm start
+- switch to project
 - yalc add @playbooks/interface (simulates NPM)
 - yalc remove @playbooks/interface (when finished)
 
@@ -25,13 +21,9 @@
 - then `import { Accordion } from '@playbooks/interface/accordions';
 - or `import { Accordion } from '@playbooks/interface';
 
-## Development
-- npm run start
-- or...
-- npm run start:ts
-
 ## Deployment
 - npm version [major|minor|patch]
+- npm run build
 - npm publish
 - npm run git
 

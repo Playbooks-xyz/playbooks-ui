@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { useRouter } from 'next/router';
 
 import { useInterface } from 'contexts';
@@ -14,23 +13,19 @@ export const Route = ({ id, name = 'Route', seo, className, children, ...tailwin
 	const router = useRouter();
 
 	// Computed
-	const computedTitle = useMemo(() => {
-		const paths = router.asPath.split('?')[0].split('/');
-		const formattedPaths = paths.map(v =>
-			v
-				.split('-')
-				.map(v => capitalize(v))
-				.join(' '),
-		);
-		return interfaceContext.seo?.title + formattedPaths.join(' | ');
-	}, [router.pathname]);
-
-	// Hooks
+	const paths = router.asPath.split('?')[0].split('/');
+	const formattedPaths = paths.map(path =>
+		path
+			.split('-')
+			.map(v => capitalize(v))
+			.join(' '),
+	);
+	const computedTitle = interfaceContext.seo?.title + formattedPaths.join(' | ');
 
 	// Render
 	return (
 		<Div {...props}>
-			<Head title={seo?.title || computedTitle} path={router.asPath.split('?')[0]} {...seo} />
+			<Head title={seo.title || computedTitle} path={router.asPath.split('?')[0]} {...seo} />
 			{children}
 		</Div>
 	);
