@@ -10,6 +10,7 @@ export const Head = (props: iHead) => {
 			<link rel='icon' href={props.favicon} />
 			<link rel='canonical' href={props.url} />
 			<meta name='description' content={props.description} />
+			<meta name='keywords' content={props.keywords} />
 			<meta name='author' content={props.author} />
 			<meta name='og:type' content={props.type} />
 			<meta name='og:logo' content={props.logo} />
