@@ -132,7 +132,7 @@ export const TableData = ({
 		spacing: 'px-4 py-4',
 		fontSize: 'text-sm',
 		fontFamily: 'font-secondary',
-		whitespace: 'whitespae-nowrap',
+		whitespace: 'whitespace-nowrap',
 	};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 

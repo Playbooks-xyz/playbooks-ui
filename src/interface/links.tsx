@@ -71,6 +71,7 @@ export const TextLink = ({ id, name = 'TextLink', size = 'sm', active, className
 export const LinkShared = ({
 	id,
 	name,
+	alt,
 	href,
 	target,
 	disabled,
@@ -100,17 +101,18 @@ export const LinkShared = ({
 			) : (
 				prevImg && <Img src={prevImg?.src || prevImg} borderRadius='rounded-sm' spacing='w-5 h-5' {...prevImg} />
 			)}
-			{taskRunning ? (
-				<Oval />
-			) : icon ? (
-				<Icon type='far' icon={icon?.icon || icon} {...icon} />
-			) : img ? (
-				<Img src={img?.src || img} borderRadius='rounded-sm' spacing='w-5 h-5' {...img} />
-			) : (
-				<Span space='space-x-4' {...tailwind?.span}>
-					{children}
-				</Span>
-			)}
+			<Span space='space-x-4' {...tailwind?.span}>
+				{taskRunning ? (
+					<Oval />
+				) : icon ? (
+					<Icon type='far' icon={icon?.icon || icon} {...icon} />
+				) : img ? (
+					<Img src={img?.src || img} borderRadius='rounded-sm' spacing='w-5 h-5' {...img} />
+				) : (
+					children
+				)}
+				<Span className='sr-only'>{alt}</Span>
+			</Span>
 			{taskRunning ? (
 				<Fragment />
 			) : (

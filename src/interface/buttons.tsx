@@ -69,8 +69,9 @@ export const TextBtn = ({ id, name = 'TextBtn', size = 'sm', active, className, 
 
 const BtnShared = ({
 	id,
-	name,
 	type,
+	name,
+	alt,
 	disabled,
 	prevIcon,
 	prevImg,
@@ -100,17 +101,18 @@ const BtnShared = ({
 			) : (
 				prevImg && <Img src={prevImg?.src || prevImg} borderRadius='rounded-sm' spacing='w-5 h-5' {...prevImg} />
 			)}
-			{taskRunning ? (
-				<Oval />
-			) : icon ? (
-				<Icon type='far' icon={icon?.icon || icon} {...icon} />
-			) : img ? (
-				<Img src={img?.src || img} borderRadius='rounded-sm' spacing='w-5 h-5' {...img} />
-			) : (
-				<Span space='space-x-4' {...tailwind?.span}>
-					{children}
-				</Span>
-			)}
+			<Span space='space-x-4' {...tailwind?.span}>
+				{taskRunning ? (
+					<Oval />
+				) : icon ? (
+					<Icon type='far' icon={icon?.icon || icon} {...icon} />
+				) : img ? (
+					<Img src={img?.src || img} borderRadius='rounded-sm' spacing='w-5 h-5' {...img} />
+				) : (
+					children
+				)}
+				<Span className='sr-only'>{alt}</Span>
+			</Span>
 			{taskRunning ? (
 				<Fragment />
 			) : (
