@@ -1,6 +1,6 @@
 {
   "name": "@playbooks/interface",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "An interface library for Playbooks.",
   "license": "ISC",
   "type": "module",
