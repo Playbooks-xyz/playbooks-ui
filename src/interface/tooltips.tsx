@@ -29,9 +29,10 @@ export const Tooltip = ({
 	const [refElement, setRefElement] = useState(null);
 	const [popElement, setPopElement] = useState(null);
 	const [arrowElement, setArrowElement] = useState(null);
-	const ref = useRef(null);
+	const fadeRef = useRef(null);
 	const { styles, attributes } = usePopper(refElement, popElement, {
 		placement,
+		strategy: 'fixed',
 		modifiers: [
 			{ name: 'arrow', options: { element: arrowElement } },
 			{ name: 'offset', options: { offset: [0, 5] } },
@@ -58,13 +59,13 @@ export const Tooltip = ({
 			id={id}
 			ref={setRefElement}
 			name={name}
-			onClick={onShow as any}
+			onClick={onShow}
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
 			{...base}>
 			{children}
 			<Fade
-				ref={ref}
+				ref={fadeRef}
 				show={open}
 				timeout={100}
 				onEntering={() => setFade(`opacity-0 ${computeTooltipAnimation(placement)} scale-90`)}

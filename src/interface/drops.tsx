@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { usePopper } from 'react-popper';
 
 import { Fade } from 'components/animation-wrapper';
 import { useKeyPress, useMouseUp } from 'hooks';
@@ -11,7 +12,6 @@ import {
 	iDropLink,
 	iDropList,
 	iDropMenu,
-	iDropMenuWrapper,
 	iDropSubtitle,
 	iDropTitle,
 	iDropToggle,
@@ -28,7 +28,6 @@ export const Drop = ({ id, name = 'Drop', open, onClose, className, children, ..
 
 	// Hooks
 	useKeyPress(onKeyDown, [open]);
-
 	useMouseUp(onMouseUp, [open]);
 
 	// Functions
@@ -66,69 +65,78 @@ export const DropToggle = ({
 	const base = { display: 'flex-between', space: 'space-x-4' };
 	const props = { ...base, ...tailwind, children, className, name };
 
-	return <Btn alt={alt} variant={variant} nextIcon={nextIcon} onClick={() => onClick(id)} {...props} />;
+	return <Btn id={id} alt={alt} variant={variant} nextIcon={nextIcon} onClick={() => onClick(id)} {...props} />;
 };
 
-export const DropMenu = ({ id, name = 'DropMenu', open, placement, className, children, ...tailwind }: iDropMenu) => {
+export const DropMenu = ({ id, ref, name = 'DropMenu', open, className, children, ...tailwind }: iDropMenu) => {
+	const [parentRef, setParentRef] = useState(null);
+	const [dropRef, setDropRef] = useState(null);
+	// const [popperInstance, setPopperInstance] = useState(null);
 	const base = {
 		bgColor: 'bg-white dark:bg-gray-900',
-		inset: 'right-0',
-		position: 'absolute',
 		border: 'border',
 		...borderProps,
 		borderRadius: 'rounded-md',
 		shadow: 'shadow-lg',
 		shadowColor: 'dark:shadow-gray-800/25',
 		textAlign: 'text-left',
-		width: 'min-w-full w-auto',
+		transition: 'transition-opacity transition-transform ease',
+		width: 'w-auto',
 		overflow: 'overflow-hidden overflow-y-scroll',
-	};
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
-
-	return (
-		<DropMenuWrapper open={open} placement={placement}>
-			<div role='menu' aria-orientation='vertical' aria-labelledby='menu-button' tabIndex={-1} className={classes}>
-				{children}
-			</div>
-		</DropMenuWrapper>
-	);
-};
-
-export const DropMenuWrapper = ({
-	id,
-	name = 'DropMenuWrapper',
-	open,
-	placement,
-	className,
-	children,
-	...tailwind
-}: iDropMenuWrapper) => {
-	const base = {
-		position: 'absolute',
-		width: 'w-full',
-		transition: 'transition-opacity transition-transform',
 		zIndex: 'z-10',
 	};
-	const [animation, setAnimation] = useState('hidden');
-	const props = { ...base, ...tailwind, animation, className };
-	const ref = useRef(null);
-	const divRef = useRef(null);
-	const style = placement === 'top' ? { top: `-${divRef.current?.children[0].offsetHeight}px` } : {};
+	const [fade, setFade] = useState('hidden');
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, fade, className });
+	// const ref = useRef(null);
+	const fadeRef = useRef(null);
 
+	const { styles, attributes } = usePopper(ref, dropRef, {
+		placement: 'bottom-end',
+		strategy: 'fixed',
+		modifiers: [{ name: 'offset', options: { offset: [0, 5] } }],
+	});
+
+	// Hooks
+	// useEffect(() => {
+	// 	if (ref?.current) {
+	// 		const parentElement = ref.current.parentElement;
+	// 		if (parentElement) setParentRef(parentElement);
+	// 	}
+	// }, [ref]);
+
+	// useEffect(() => {
+	// 	if (ref?.current) {
+	// 		const instance = usePopper(parentRef, dropRef, {
+	// 			placement: 'bottom-end',
+	// 			strategy: 'fixed',
+	// 			modifiers: [{ name: 'offset', options: { offset: [0, 5] } }],
+	// 		});
+	// 		// setPopperInstance(instance);
+	// 	}
+	// }, [ref]);
+
+	// Render
 	return (
 		<Fade
-			ref={ref}
+			ref={fadeRef}
 			show={open}
-			timeout={{ enter: 0, exit: 100 }}
-			mountOnEnter={false}
-			unmountOnExit={false}
-			onEnter={() => setAnimation(`opacity-0 scale-90 translate-y-4`)}
-			onEntered={() => setAnimation('opacity-100 scale-100 translate-y-0')}
-			onExiting={() => setAnimation('opacity-0 scale-90 translate-y-4')}
-			onExited={() => setAnimation('hidden')}>
-			<Div ref={divRef} style={style} {...props}>
-				{children}
-			</Div>
+			timeout={100}
+			onEnter={() => setFade(`opacity-0 scale-90 translate-y-4`)}
+			onEntered={() => setFade('opacity-100 scale-100 translate-y-0')}
+			onExiting={() => setFade('opacity-0 scale-90 translate-y-4')}
+			onExited={() => setFade('hidden')}>
+			<div
+				id={id}
+				ref={setDropRef}
+				role='menu'
+				aria-orientation='vertical'
+				aria-labelledby='menu-button'
+				tabIndex={-1}
+				style={styles.popper}
+				className='z-10'
+				{...attributes.popper}>
+				<Div className={classes}>{children}</Div>
+			</div>
 		</Fade>
 	);
 };

@@ -17,11 +17,6 @@ export type iDropMenu = HtmlType & {
 	placement?: string;
 };
 
-export type iDropMenuWrapper = HtmlType & {
-	open: boolean;
-	placement?: string;
-};
-
 export type iDropHeader = HtmlType;
 
 export type iDropTitle = HtmlType;

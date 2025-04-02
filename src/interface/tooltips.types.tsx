@@ -3,6 +3,7 @@ import { HtmlType } from 'types';
 export type iTooltip = HtmlType & {
 	open?: boolean;
 	html?: string;
+	onBlur?: () => any;
 	onHover?: () => any;
 	placement?: any;
 	tailwind?: any;
