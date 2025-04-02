@@ -95,7 +95,7 @@ const BtnShared = ({
 			onClick={onClick}
 			className={className}
 			{...tailwind}>
-			{taskRunning ? <Fragment /> : prevIcon && <Icon type='far' icon={prevIcon?.icon || prevIcon} {...prevIcon} />}
+			{taskRunning ? <Span /> : prevIcon && <Icon type='far' icon={prevIcon?.icon || prevIcon} {...prevIcon} />}
 			{taskRunning ? (
 				<Fragment />
 			) : (
@@ -118,7 +118,7 @@ const BtnShared = ({
 			) : (
 				nextImg && <Img src={prevImg?.src || prevImg} borderRadius='rounded-sm' spacing='w-5 h-5' {...prevImg} />
 			)}
-			{taskRunning ? <Fragment /> : nextIcon && <Icon type='far' icon={nextIcon?.icon || nextIcon} {...nextIcon} />}
+			{taskRunning ? <Span /> : nextIcon && <Icon type='far' icon={nextIcon?.icon || nextIcon} {...nextIcon} />}
 		</BtnWrapper>
 	);
 };
