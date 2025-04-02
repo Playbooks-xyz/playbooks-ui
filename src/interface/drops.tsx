@@ -69,9 +69,7 @@ export const DropToggle = ({
 };
 
 export const DropMenu = ({ id, ref, name = 'DropMenu', open, className, children, ...tailwind }: iDropMenu) => {
-	const [parentRef, setParentRef] = useState(null);
 	const [dropRef, setDropRef] = useState(null);
-	// const [popperInstance, setPopperInstance] = useState(null);
 	const base = {
 		bgColor: 'bg-white dark:bg-gray-900',
 		border: 'border',
@@ -87,7 +85,6 @@ export const DropMenu = ({ id, ref, name = 'DropMenu', open, className, children
 	};
 	const [fade, setFade] = useState('hidden');
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, fade, className });
-	// const ref = useRef(null);
 	const fadeRef = useRef(null);
 
 	const { styles, attributes } = usePopper(ref, dropRef, {
@@ -95,25 +92,6 @@ export const DropMenu = ({ id, ref, name = 'DropMenu', open, className, children
 		strategy: 'fixed',
 		modifiers: [{ name: 'offset', options: { offset: [0, 5] } }],
 	});
-
-	// Hooks
-	// useEffect(() => {
-	// 	if (ref?.current) {
-	// 		const parentElement = ref.current.parentElement;
-	// 		if (parentElement) setParentRef(parentElement);
-	// 	}
-	// }, [ref]);
-
-	// useEffect(() => {
-	// 	if (ref?.current) {
-	// 		const instance = usePopper(parentRef, dropRef, {
-	// 			placement: 'bottom-end',
-	// 			strategy: 'fixed',
-	// 			modifiers: [{ name: 'offset', options: { offset: [0, 5] } }],
-	// 		});
-	// 		// setPopperInstance(instance);
-	// 	}
-	// }, [ref]);
 
 	// Render
 	return (
