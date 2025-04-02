@@ -105,7 +105,7 @@ export const DropMenu = ({
 	const fadeRef = useRef(null);
 
 	const { styles, attributes } = usePopper(ref, dropRef, {
-		placement: placement || ('bottom-end' as any),
+		placement: placement || ('bottom-start' as any),
 		strategy: 'fixed',
 		...options,
 	});
