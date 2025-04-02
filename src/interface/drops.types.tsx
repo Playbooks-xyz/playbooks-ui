@@ -15,6 +15,7 @@ export type iDropToggle = iBtn & {
 export type iDropMenu = HtmlType & {
 	open: boolean;
 	placement?: string;
+	options?: any;
 };
 
 export type iDropHeader = HtmlType;

@@ -68,7 +68,18 @@ export const DropToggle = ({
 	return <Btn id={id} alt={alt} variant={variant} nextIcon={nextIcon} onClick={() => onClick(id)} {...props} />;
 };
 
-export const DropMenu = ({ id, ref, name = 'DropMenu', open, className, children, ...tailwind }: iDropMenu) => {
+export const DropMenu = ({
+	id,
+	ref,
+	name = 'DropMenu',
+	open,
+	placement,
+	options,
+	className,
+	style,
+	children,
+	...tailwind
+}: iDropMenu) => {
 	const [dropRef, setDropRef] = useState(null);
 	const base = {
 		bgColor: 'bg-white dark:bg-gray-900',
@@ -88,9 +99,9 @@ export const DropMenu = ({ id, ref, name = 'DropMenu', open, className, children
 	const fadeRef = useRef(null);
 
 	const { styles, attributes } = usePopper(ref, dropRef, {
-		placement: 'bottom-end',
+		placement: placement || ('bottom-end' as any),
 		strategy: 'fixed',
-		modifiers: [{ name: 'offset', options: { offset: [0, 5] } }],
+		...options,
 	});
 
 	// Render
@@ -110,10 +121,12 @@ export const DropMenu = ({ id, ref, name = 'DropMenu', open, className, children
 				aria-orientation='vertical'
 				aria-labelledby='menu-button'
 				tabIndex={-1}
+				className='w-auto z-10'
 				style={styles.popper}
-				className='z-10'
 				{...attributes.popper}>
-				<Div className={classes}>{children}</Div>
+				<Div className={classes} style={style}>
+					{children}
+				</Div>
 			</div>
 		</Fade>
 	);
