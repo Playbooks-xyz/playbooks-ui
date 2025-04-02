@@ -21,10 +21,16 @@ import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
 import { borderProps, tailwindClassBuilder } from 'utils';
 
-export const Drop = ({ id, name = 'Drop', open, onClose, className, children, ...tailwind }: iDrop) => {
+export const Drop = ({ id, ref, name = 'Drop', open, onClose, className, children, ...tailwind }: iDrop) => {
 	const base = {};
 	const props = { ...base, ...tailwind, className, name };
-	const ref = useRef(null);
+	const internalRef = useRef(null);
+
+	// Computed
+	const combinedRef = element => {
+		internalRef.current = element;
+		if (ref) typeof ref === 'function' ? ref(element) : (ref.current = element);
+	};
 
 	// Hooks
 	useKeyPress(onKeyDown, [open]);
@@ -39,13 +45,13 @@ export const Drop = ({ id, name = 'Drop', open, onClose, className, children, ..
 
 	function onMouseUp(e) {
 		if (!open) return;
-		if (ref?.current?.contains(e.target)) return;
+		if (internalRef?.current?.contains(e.target)) return;
 		onClose();
 	}
 
 	// Render
 	return (
-		<Div id={id} ref={ref} {...props}>
+		<Div id={id} ref={combinedRef} {...props}>
 			{children}
 		</Div>
 	);
