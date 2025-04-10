@@ -30,6 +30,7 @@ export default defineConfig({
 				path.resolve(__dirname, 'src/interface/button-groups.tsx'),
 				path.resolve(__dirname, 'src/interface/buttons.tsx'),
 				path.resolve(__dirname, 'src/interface/cards.tsx'),
+				path.resolve(__dirname, 'src/interface/commands.tsx'),
 				path.resolve(__dirname, 'src/interface/drops.tsx'),
 				path.resolve(__dirname, 'src/interface/feedbacks.tsx'),
 				path.resolve(__dirname, 'src/interface/fonts.tsx'),

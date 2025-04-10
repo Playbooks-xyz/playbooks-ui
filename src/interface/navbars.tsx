@@ -5,9 +5,9 @@ import { borderProps, tailwindClassBuilder } from 'utils';
 
 export const Navbar = ({ id, ref, name = 'Navbar', className, children, ...tailwind }: iNavbar) => {
 	const base = {
-		display: 'flex-between',
 		bgColor: 'bg-white dark:bg-gray-900',
 		...borderProps,
+		display: 'flex-between',
 		position: 'relative',
 		spacing: 'p-4',
 		width: 'w-full',

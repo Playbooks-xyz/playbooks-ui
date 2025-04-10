@@ -132,13 +132,25 @@ export const Li = ({ id, name = 'Li', className, children, ...tailwind }: HtmlTy
 	);
 };
 
-export const IFrame = ({ id, name = 'Img', title, src, height, width, className, style, ...tailwind }: iFrame) => {
+export const IFrame = ({
+	id,
+	ref,
+	name = 'iFrame',
+	title,
+	src,
+	height,
+	width,
+	className,
+	style,
+	...tailwind
+}: iFrame) => {
 	const base = {};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
 		<iframe
 			id={id}
+			ref={ref}
 			data-name={name}
 			title={title}
 			src={src}
