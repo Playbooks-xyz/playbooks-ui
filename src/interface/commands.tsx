@@ -50,6 +50,3 @@ export const Command = ({ id, name = 'CMD', keys = [], className, children, ...t
 		</Span>
 	);
 };
-
-// Docs:
-// https://www.npmjs.com/package/keycode
