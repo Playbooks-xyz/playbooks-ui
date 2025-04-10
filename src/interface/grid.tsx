@@ -1,6 +1,6 @@
 import { iCol, iContainer, iGrid } from 'interface/grid.types';
 import { Div } from 'interface/html';
-import { computeCol, computeContainer } from 'utils';
+import { computeCol, computeContainer, computeGrid } from 'utils';
 
 export const Container = ({ id, name = 'Container', size, className, children, ...tailwind }: iContainer) => {
 	const base = {
@@ -14,9 +14,9 @@ export const Container = ({ id, name = 'Container', size, className, children, .
 	return <Div {...props}>{children}</Div>;
 };
 
-export const Grid = ({ id, name = 'Grid', cols = 'grid-cols-12', className, children, ...tailwind }: iGrid) => {
+export const Grid = ({ id, name = 'Grid', cols = '12', className, children, ...tailwind }: iGrid) => {
 	const base = {
-		cols,
+		cols: computeGrid(cols),
 		gap: 'gap-4',
 		grid: 'grid',
 		width: 'w-full',
