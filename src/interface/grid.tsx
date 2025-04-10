@@ -4,7 +4,7 @@ import { computeCol, computeContainer, computeGrid } from 'utils';
 
 export const Container = ({ id, name = 'Container', size, className, children, ...tailwind }: iContainer) => {
 	const base = {
-		// base: 'container',
+		base: 'container',
 		margin: 'mx-auto',
 		spacing: 'px-4',
 		size: computeContainer(size),
