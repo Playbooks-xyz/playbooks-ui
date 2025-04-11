@@ -7,7 +7,6 @@ import { borderProps } from 'utils';
 export const Command = ({ id, name = 'CMD', keys = [], className, children, ...tailwind }: iCommand) => {
 	const base = {
 		...borderProps,
-		color: 'text-gray-500 dark:text-gray-400',
 		flex: 'shrink-0',
 		fontFamily: 'font-secondary',
 		fontSize: 'text-xs',

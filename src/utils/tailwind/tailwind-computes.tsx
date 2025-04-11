@@ -217,10 +217,10 @@ export const computeThumbnailSize = size => {
 			return 'w-20';
 
 		case 'lg':
-			return 'w-14 md:w-28';
+			return 'w-20 md:w-24';
 
 		case 'xl':
-			return 'w-16 md:w-32';
+			return 'w-24 md:w-32';
 
 		default:
 			return size;
