@@ -361,7 +361,7 @@ export const FormSelect = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<select value={value} disabled={disabled} placeholder={placeholder} onChange={onChange} className={classes}>
+		<select value={value} disabled={disabled} onChange={onChange} className={classes}>
 			<option value='' disabled>
 				{placeholder}
 			</option>

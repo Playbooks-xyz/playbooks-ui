@@ -1,6 +1,6 @@
 {
   "name": "@playbooks/interface",
-  "version": "0.3.17",
+  "version": "0.3.16",
   "description": "An interface library for Playbooks.",
   "license": "ISC",
   "type": "module",
@@ -48,6 +48,7 @@
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
+    "@react-spring/types": "^9.7.5",
     "@tailwindcss/forms": "^0.5.7",
     "@types/jest": "^29.5.1",
     "@types/react": "^19.1.1",
