@@ -1,6 +1,6 @@
 {
   "name": "@playbooks/interface",
-  "version": "0.3.17",
+  "version": "0.3.16",
   "description": "An interface library for Playbooks.",
   "license": "ISC",
   "type": "module",
@@ -27,7 +27,7 @@
     "husky": "husky install",
     "test": "jest"
   },
-  "optionalDependencies": {
+  "peerDependencies": {
     "next": "^14 || ^15",
     "react": "^18 || ^19",
     "react-dom": "^18 || ^19"
