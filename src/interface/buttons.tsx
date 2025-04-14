@@ -90,6 +90,7 @@ const BtnShared = ({
 			id={id}
 			type={type}
 			name={name}
+			alt={alt}
 			disabled={disabled}
 			taskRunning={taskRunning}
 			onClick={onClick}

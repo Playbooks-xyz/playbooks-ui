@@ -91,6 +91,7 @@ export const LinkShared = ({
 			id={id}
 			name={name}
 			href={href}
+			alt={alt}
 			target={target}
 			disabled={disabled}
 			className={className}
