@@ -2,7 +2,7 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 
 import { Fade } from 'components/animation-wrapper';
 import { useInterface } from 'contexts';
-import { useKeyPress } from 'hooks';
+import { useKeyPress, useMouseUp } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { H6, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
@@ -33,12 +33,19 @@ export const Menu = ({ id, name = 'Menu', open, onClose, className, children, ..
 	}, [open]);
 
 	useKeyPress(onKeyDown, [open]);
+	useMouseUp(onMouseUp, [open]);
 
 	// Methods
 	function onKeyDown(e) {
 		if (!open) return;
 		if (e.target.dataset.name === 'FormInput') return;
 		if (e.keyCode === 27) onClose();
+	}
+
+	function onMouseUp(e) {
+		if (!open) return;
+		if (ref?.current?.contains(e.target)) return;
+		onClose();
 	}
 
 	// Render
