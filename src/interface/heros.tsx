@@ -17,7 +17,6 @@ import { borderProps, computeHeroSize, computeThumbnailSize, tailwindClassBuilde
 
 export const Hero = ({ id, ref, name = 'Hero', size, className, children, ...tailwind }: iHero) => {
 	const base = {
-		position: 'relative',
 		bgColor: 'bg-white dark:bg-gray-900',
 		...borderProps,
 		display: 'block',
