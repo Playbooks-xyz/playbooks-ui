@@ -169,7 +169,6 @@ export const HeroSubtitle = ({
 
 export const HeroText = ({ id, name = 'HeroText', className, children, ...tailwind }: iHeroText) => {
 	const base = {
-		color: 'text-gray-600 dark:text-gray-200',
 		fontFamily: 'font-secondary',
 		fontWeight: 'font-light',
 		tracking: 'tracking-wide',

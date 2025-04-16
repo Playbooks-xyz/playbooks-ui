@@ -116,7 +116,7 @@ export const CardSubtitle = ({ id, name = 'CardSubtitle', className, children, .
 };
 
 export const CardText = ({ id, name = 'CardText', className, children, ...tailwind }: iCardText) => {
-	const base = { color: 'text-gray-600 dark:text-gray-300', fontSize: 'text-sm', fontWeight: 'font-light' };
+	const base = { fontSize: 'text-sm', fontWeight: 'font-light' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;

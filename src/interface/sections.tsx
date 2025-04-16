@@ -111,7 +111,6 @@ export const SectionSubtitle = ({
 
 export const SectionText = ({ id, name = 'SectionText', className, children, ...tailwind }: iSectionText) => {
 	const base = {
-		color: 'text-gray-600 dark:text-gray-200',
 		fontFamily: 'font-secondary',
 	};
 	const props = { ...base, ...tailwind, className, name };
