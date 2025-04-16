@@ -21,6 +21,7 @@ export const Hero = ({ id, ref, name = 'Hero', size, className, children, ...tai
 		bgColor: 'bg-white dark:bg-gray-900',
 		...borderProps,
 		display: 'block',
+		position: 'relative',
 		size: computeHeroSize(size),
 		spacing: 'py-8',
 		width: 'w-full',

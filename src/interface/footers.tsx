@@ -20,6 +20,7 @@ export const Footer = ({ id, name = 'Footer', className, children, ...tailwind }
 		bgColor: 'bg-white dark:bg-gray-900',
 		border: 'border-t',
 		...borderProps,
+		position: 'relative',
 		spacing: 'py-6',
 	};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });

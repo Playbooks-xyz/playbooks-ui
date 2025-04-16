@@ -8,6 +8,7 @@ export const Header = ({ id, name = 'Header', className, children, ...tailwind }
 		border: ' border-b',
 		...borderProps,
 		display: 'flex-between',
+		position: 'relative',
 		space: 'space-x-4',
 		spacing: 'py-4',
 		width: 'w-full',
