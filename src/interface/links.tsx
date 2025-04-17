@@ -127,7 +127,7 @@ export const LinkShared = ({
 export const LinkWrapper = ({
 	id,
 	name = 'LinkWrapper',
-	alt,
+	alt = '',
 	href,
 	target,
 	disabled,
@@ -149,7 +149,7 @@ export const LinkWrapper = ({
 					{children}
 				</a>
 			) : (
-				<NLink aria-label={name} title={alt || name} data-name={name} href={href} className={classes}>
+				<NLink aria-label={alt} title={alt} data-name={name} href={href} className={classes}>
 					{children}
 				</NLink>
 			)}

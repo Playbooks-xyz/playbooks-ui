@@ -26,7 +26,7 @@ export const NavbarBrand = ({
 	name = 'NavbarBrand',
 	href = '/',
 	src,
-	alt = 'homepage',
+	alt = 'home',
 	className,
 	children,
 	...tailwind

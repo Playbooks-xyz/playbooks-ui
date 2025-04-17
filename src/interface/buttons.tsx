@@ -128,7 +128,7 @@ export const BtnWrapper = ({
 	id = '',
 	type = 'button',
 	name = 'BtnWrapper',
-	alt,
+	alt = '',
 	onClick,
 	disabled = false,
 	taskRunning = false,
