@@ -66,3 +66,26 @@ export const metaCardProps = {
 	spacing: 'mr-4',
 	textDecoration: 'underline',
 };
+
+export const sectionLinkProps = {
+	section: { display: 'flex-start', space: 'space-x-12', spacing: '' },
+	header: { spacing: '', flex: 'shrink-0', width: 'w-auto' },
+	title: {
+		size: 'sm',
+		color: 'gray-500 dark:gray-400',
+		fontFamily: 'font-accent',
+		fontWeight: 'font-regular',
+		tracking: 'tracking-widest',
+		transform: 'uppercase',
+	},
+	body: { size: '', flex: 'grow', width: 'w-full' },
+	list: {
+		col: { sm: '6', lg: '2' },
+		card: { spacing: '' },
+		grid: { cols: '12' },
+		header: { borderRadius: '', width: 'w-10' },
+		title: { fontSize: 'text-base' },
+		text: { display: 'hidden' },
+	},
+	footer: { display: 'hidden' },
+};
