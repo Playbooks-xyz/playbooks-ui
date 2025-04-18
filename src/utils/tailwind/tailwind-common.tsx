@@ -82,7 +82,6 @@ export const sectionLinkProps = {
 	list: {
 		col: { sm: '6', lg: '2' },
 		card: { spacing: '' },
-		feedback: { display: 'hidden' },
 		grid: { cols: '12' },
 		header: { borderRadius: '', width: 'w-10' },
 		title: { fontSize: 'text-base' },
