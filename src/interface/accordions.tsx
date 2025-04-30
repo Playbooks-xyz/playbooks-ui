@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import {
 	iAccordion,
@@ -95,16 +95,24 @@ export const AccordionBody = ({
 	};
 	const base = { ...borderProps };
 	const props = { ...base, ...tailwind, className, name };
+	const [height, setHeight] = useState(0);
 	const ref = useRef(null);
 
 	// Computed
-	const style = animate
-		? {
-				maxHeight: open ? ref.current?.offsetHeight + 'px' : '0px',
-			}
-		: {
-				maxHeight: open ? null : '0px',
-			};
+	const style = useMemo(() => {
+		return { maxHeight: open ? ref.current?.offsetHeight + 'px' : '0px' };
+		return { maxHeight: open ? null : '0px' };
+	}, [height, open, ref?.current]);
+
+	// Hooks
+	useEffect(() => {
+		const observer = new ResizeObserver(entries => {
+			const element = entries[0];
+			setHeight(element.contentRect.height);
+		});
+		if (ref.current) observer.observe(ref.current);
+		return () => observer.disconnect();
+	}, [children]);
 
 	// Render
 	return (
