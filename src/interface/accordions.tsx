@@ -100,7 +100,7 @@ export const AccordionBody = ({
 
 	// Computed
 	const style = useMemo(() => {
-		return { maxHeight: open ? ref.current?.offsetHeight + 'px' : '0px' };
+		if (animate) return { maxHeight: open ? ref.current?.offsetHeight + 'px' : '0px' };
 		return { maxHeight: open ? null : '0px' };
 	}, [height, open, ref?.current]);
 
