@@ -362,7 +362,7 @@ export const FormSelect = ({
 
 	return (
 		<select value={value} disabled={disabled} onChange={onChange} className={classes}>
-			<option value='' disabled>
+			<option value='' disabled className='gray-500 dark:gray-400'>
 				{placeholder}
 			</option>
 			{options.map((option, i) => (

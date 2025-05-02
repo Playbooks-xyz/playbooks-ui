@@ -14,7 +14,7 @@ import {
 } from 'interface/sections.types';
 import { borderProps, computeSectionSize, tailwindClassBuilder } from 'utils';
 
-export const Section = ({ id, ref, name = 'Section', className, children, ...tailwind }: iSection) => {
+export const Section = ({ id, ref, name = 'Section', className, children, style, ...tailwind }: iSection) => {
 	const base = {
 		bgColor: 'bg-white dark:bg-gray-900',
 		border: 'border',
@@ -28,7 +28,7 @@ export const Section = ({ id, ref, name = 'Section', className, children, ...tai
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<section id={id} ref={ref} data-name={name} className={classes}>
+		<section id={id} ref={ref} data-name={name} className={classes} style={style}>
 			{children}
 		</section>
 	);

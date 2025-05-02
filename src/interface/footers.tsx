@@ -15,7 +15,7 @@ import { Div, Li, Ul } from 'interface/html';
 import { Link } from 'interface/links';
 import { borderProps, tailwindClassBuilder } from 'utils';
 
-export const Footer = ({ id, name = 'Footer', className, children, ...tailwind }: iFooter) => {
+export const Footer = ({ id, name = 'Footer', className, children, style, ...tailwind }: iFooter) => {
 	const base = {
 		bgColor: 'bg-white dark:bg-gray-900',
 		border: 'border-t',
@@ -26,7 +26,7 @@ export const Footer = ({ id, name = 'Footer', className, children, ...tailwind }
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<footer data-name={name} className={classes}>
+		<footer data-name={name} className={classes} style={style}>
 			{children}
 		</footer>
 	);
