@@ -12,7 +12,7 @@ export type iHead = HtmlType & {
 	author?: string;
 	keywords?: string;
 	locale?: string;
+	site?: string;
 	siteName?: string;
-	siteUrl?: string;
 	robots?: boolean;
 };

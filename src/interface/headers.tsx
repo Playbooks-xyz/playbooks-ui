@@ -3,7 +3,7 @@ import { iHeader, iHeaderActions, iHeaderSubtitle, iHeaderText, iHeaderTitle } f
 import { Div } from 'interface/html';
 import { borderProps, tailwindClassBuilder } from 'utils';
 
-export const Header = ({ id, name = 'Header', className, children, ...tailwind }: iHeader) => {
+export const Header = ({ id, name = 'Header', className, children, style, ...tailwind }: iHeader) => {
 	const base = {
 		border: ' border-b',
 		...borderProps,
@@ -16,7 +16,7 @@ export const Header = ({ id, name = 'Header', className, children, ...tailwind }
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<header data-name={name} className={classes}>
+		<header data-name={name} className={classes} style={style}>
 			{children}
 		</header>
 	);

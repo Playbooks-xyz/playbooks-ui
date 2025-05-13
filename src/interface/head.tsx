@@ -24,7 +24,7 @@ export const Head = (props: iHead) => {
 			<meta name='twitter:image' content={props.photo} />
 			<meta name='twitter:title' content={props.title} />
 			<meta name='twitter:description' content={props.description} />
-			<meta name='twitter:site' content={props.author} />
+			<meta name='twitter:site' content={props.site} />
 			<meta name='robots' content={props.robots ? 'all' : 'none'} />
 			<meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width' />
 			{props.children}
