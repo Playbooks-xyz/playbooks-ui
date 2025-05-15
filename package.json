@@ -23,6 +23,7 @@
     "format:fix": "prettier --write src",
     "clean": "npm run lint:fix && npm run format:fix",
     "deploy": "scripts/deploy.sh",
+    "publish": "scripts/publish.sh",
     "git": "git push --tags",
     "husky": "husky install",
     "test": "jest"
