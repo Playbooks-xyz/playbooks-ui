@@ -14,6 +14,10 @@ const FabWrapper = ({ icon, transform, className = 'text-inherit' }: FaType) => 
 	<FontAwesome icon={['fab', icon as IconName]} transform={transform} className={className} />
 );
 
+const FalWrapper = ({ icon, transform, className = 'text-inherit' }: FaType) => (
+	<FontAwesome icon={['fal', icon as IconName]} transform={transform} className={className} />
+);
+
 const FadWrapper = ({ icon, transform, className = 'text-inherit' }: FaType) => (
 	<FontAwesome icon={['fad', icon as IconName]} transform={transform} className={className} />
 );

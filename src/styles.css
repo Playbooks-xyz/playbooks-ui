@@ -1,5 +1,3 @@
-@import '@fortawesome/fontawesome-svg-core/styles.css';
-
 @tailwind base;
 @tailwind utilities;
 @tailwind components;

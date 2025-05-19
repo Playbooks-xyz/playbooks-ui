@@ -280,6 +280,7 @@ export const FormLocationInput = ({
 	variant,
 	options,
 	placeholder,
+	googleMapsApiKey,
 	onChange,
 	onSelect,
 	onBlur,
@@ -300,7 +301,7 @@ export const FormLocationInput = ({
 	}
 
 	return (
-		<GoogleAutocompleteWrapper options={options} onSelect={onSelect}>
+		<GoogleAutocompleteWrapper options={options} googleMapsApiKey={googleMapsApiKey} onSelect={onSelect}>
 			<input
 				id={id}
 				ref={ref}

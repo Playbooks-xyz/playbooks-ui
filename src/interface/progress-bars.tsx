@@ -1,4 +1,4 @@
-import { animated, useSpring } from '@react-spring/web';
+import { useMemo } from 'react';
 
 import { Div } from 'interface/html';
 import { iProgress, iProgressBar } from 'interface/progress-bars.types';
@@ -25,15 +25,15 @@ export const Progress = ({ id, name = 'Progress', value = 0, className, children
 		bgOpacity: '',
 		overflow: 'overflow-hidden',
 		height: 'h-2',
+		transition: 'transition-all ease',
 	};
-	const style = useSpring({ width: value ? value + '%' : '0%' });
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const width = useMemo(() => ({ width: `width-[${value}%]` }), [value]);
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, ...width, className });
 
 	return (
-		// @ts-expect-error react 19 dependency conflict
-		<animated.div data-name={name} className={classes} style={style}>
+		<Div data-name={name} className={classes}>
 			{children}
-		</animated.div>
+		</Div>
 	);
 };
 

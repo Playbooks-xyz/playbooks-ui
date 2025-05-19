@@ -5,21 +5,26 @@
 - React
 - Next
 - Font Awesome
+- Google Maps API Key
 - Tailwind
 
-## Quickstart
+## Quick start
+- npm install @playbooks/ui
+-
+
+## Development
 - npm install
 - npm install -g yalc
 - npm start
 - switch to project
-- yalc add @playbooks/interface (simulates NPM)
-- yalc remove @playbooks/interface (when finished)
+- yalc add @playbooks/ui (simulates NPM)
+- yalc remove @playbooks/ui (when finished)
 
 ## Usage
-- npm install @playbooks/interface
-- add `import '@playbooks/interface/dist/styles.css' to app entry point;
-- then `import { Accordion } from '@playbooks/interface/accordions';
-- or `import { Accordion } from '@playbooks/interface';
+- npm install @playbooks/ui
+- add `import '@playbooks/ui/dist/styles.css' to app entry point;
+- then `import { Accordion } from '@playbooks/ui/accordions';
+- or `import { Accordion } from '@playbooks/ui';
 
 ## Deployment
 - npm version [major|minor|patch]

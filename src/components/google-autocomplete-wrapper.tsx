@@ -1,11 +1,9 @@
 import { Autocomplete, LoadScriptNext, LoadScriptProps } from '@react-google-maps/api';
 import { useState } from 'react';
 
-// const GOOGLE_KEY = process.env.NEXT_PUBLIC_GOOGLE_KEY;
-const GOOGLE_KEY = import.meta.env.VITE_GOOGLE_KEY;
 const LIBRARIES: LoadScriptProps['libraries'] = ['places'];
 
-const GoogleAutocompleteWrapper = ({ options = {}, onSelect, children }) => {
+const GoogleAutocompleteWrapper = ({ options = {}, googleMapsApiKey, onSelect, children }) => {
 	const [autocomplete, setAutocomplete] = useState(null);
 
 	// Computed
@@ -51,7 +49,7 @@ const GoogleAutocompleteWrapper = ({ options = {}, onSelect, children }) => {
 
 	// Render
 	return (
-		<LoadScriptNext googleMapsApiKey={GOOGLE_KEY} libraries={LIBRARIES}>
+		<LoadScriptNext googleMapsApiKey={googleMapsApiKey} libraries={LIBRARIES}>
 			<Autocomplete onLoad={setAutocomplete} onPlaceChanged={onPlaceChanged} className='w-full' {...computed}>
 				{children}
 			</Autocomplete>

@@ -51,6 +51,7 @@ export type iFormInputCurrency = iFormInput & {
 
 export type iFormLocationInput = iFormInput & {
 	options?: any;
+	googleMapsApiKey: string;
 	onSelect: (e: any) => any;
 };
 
