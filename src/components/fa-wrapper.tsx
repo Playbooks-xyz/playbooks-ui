@@ -2,31 +2,20 @@ import dynamic from 'next/dynamic';
 const FontAwesome = dynamic(() => import('@fortawesome/react-fontawesome').then(v => v.FontAwesomeIcon), {
 	ssr: false,
 });
-import { IconName } from '@fortawesome/fontawesome-svg-core';
+import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
 
 type FaType = {
+	type?: IconPrefix;
 	icon?: string;
 	transform?: string;
 	className?: string;
 };
 
-const FabWrapper = ({ icon, transform, className = 'text-inherit' }: FaType) => (
-	<FontAwesome icon={['fab', icon as IconName]} transform={transform} className={className} />
+const FaWrapper = ({ type = 'fas', icon, transform, className }: FaType) => (
+	<FontAwesome icon={[type, icon as IconName]} transform={transform} className={className} />
 );
 
-const FalWrapper = ({ icon, transform, className = 'text-inherit' }: FaType) => (
-	<FontAwesome icon={['fal', icon as IconName]} transform={transform} className={className} />
-);
-
-const FadWrapper = ({ icon, transform, className = 'text-inherit' }: FaType) => (
-	<FontAwesome icon={['fad', icon as IconName]} transform={transform} className={className} />
-);
-
-const FarWrapper = ({ icon, transform, className = 'text-inherit' }: FaType) => (
-	<FontAwesome icon={['far', icon as IconName]} transform={transform} className={className} />
-);
-
-export { FabWrapper, FadWrapper, FarWrapper };
+export { FaWrapper };
 
 // Docs
 // https://fontawesome.com/kits/95c629a819/use

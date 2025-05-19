@@ -1,4 +1,4 @@
-import { FabWrapper, FadWrapper, FarWrapper } from 'components/fa-wrapper';
+import { FaWrapper } from 'components/fa-wrapper';
 import { Div } from 'interface/html';
 import { iIcon } from 'interface/icons.types';
 import { tailwindClassBuilder } from 'utils';
@@ -13,8 +13,14 @@ export const Icon = ({ id, name = 'Icon', type, icon, className, ...tailwind }: 
 		case 'fad':
 			return <FadIcon {...props} />;
 
+		case 'fal':
+			return <FalIcon {...props} />;
+
 		case 'far':
 			return <FarIcon {...props} />;
+
+		case 'fas':
+			return <FasIcon {...props} />;
 
 		case 'wrapped-fab':
 			return <WrappedFabIcon {...props} />;
@@ -31,24 +37,38 @@ export const Icon = ({ id, name = 'Icon', type, icon, className, ...tailwind }: 
 };
 
 export const FabIcon = ({ id, name = 'FabIcon', icon, className, ...tailwind }: iIcon) => {
-	const base = { borderRadius: 'rounded-sm', color: 'text-inherit', flex: 'shrink-0', size: '' };
+	const base = { color: 'text-inherit', flex: 'shrink-0', size: '' };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
-	return <FabWrapper icon={icon} className={classes} />;
+	return <FaWrapper type='fab' icon={icon} className={classes} />;
 };
 
 export const FadIcon = ({ id, name = 'FadIcon', icon, className, ...tailwind }: iIcon) => {
-	const base = { borderRadius: 'rounded-sm', color: 'text-inherit', flex: 'shrink-0', size: '' };
+	const base = { color: 'text-inherit', flex: 'shrink-0', size: '' };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
-	return <FadWrapper icon={icon} className={classes} />;
+	return <FaWrapper type='fad' icon={icon} className={classes} />;
+};
+
+export const FalIcon = ({ id, name = 'FalIcon', icon, className, ...tailwind }: iIcon) => {
+	const base = { color: 'text-inherit', flex: 'shrink-0', size: '' };
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+
+	return <FaWrapper type='fal' icon={icon} className={classes} />;
 };
 
 export const FarIcon = ({ id, name = 'FarIcon', icon, className, ...tailwind }: iIcon) => {
-	const base = { borderRadius: 'rounded-sm', color: 'text-inherit', flex: 'shrink-0', size: '' };
+	const base = { color: 'text-inherit', flex: 'shrink-0', size: '' };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
-	return <FarWrapper icon={icon} className={classes} />;
+	return <FaWrapper type='far' icon={icon} className={classes} />;
+};
+
+export const FasIcon = ({ id, name = 'FasIcon', icon, className, ...tailwind }: iIcon) => {
+	const base = { color: 'text-inherit', flex: 'shrink-0', size: '' };
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+
+	return <FaWrapper type='fas' icon={icon} className={classes} />;
 };
 
 export const WrappedFabIcon = ({ id, name = 'WrappedFabIcon', icon, wrapper, className, ...tailwind }: iIcon) => {

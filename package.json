@@ -30,8 +30,6 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6",
-    "@fortawesome/react-fontawesome": "^0.2",
     "next": "^14 || ^15",
     "react": "^18 || ^19",
     "react-dom": "^18 || ^19"
