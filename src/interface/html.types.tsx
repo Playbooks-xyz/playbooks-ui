@@ -7,6 +7,7 @@ export type iBody = HtmlType;
 export type iFrame = HtmlType & {
 	title: string;
 	src: string;
+	onLoad?: () => null;
 };
 
 export type iMain = HtmlType;

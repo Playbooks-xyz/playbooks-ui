@@ -132,18 +132,7 @@ export const Li = ({ id, name = 'Li', className, children, ...tailwind }: HtmlTy
 	);
 };
 
-export const IFrame = ({
-	id,
-	ref,
-	name = 'iFrame',
-	title,
-	src,
-	height,
-	width,
-	className,
-	style,
-	...tailwind
-}: iFrame) => {
+export const IFrame = ({ id, ref, name = 'iFrame', title, src, onLoad, className, style, ...tailwind }: iFrame) => {
 	const base = {};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -154,8 +143,7 @@ export const IFrame = ({
 			data-name={name}
 			title={title}
 			src={src}
-			height={height}
-			width={width}
+			onLoad={onLoad}
 			className={classes}
 			style={style}
 		/>
