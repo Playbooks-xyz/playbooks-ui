@@ -11,7 +11,7 @@ interface Animation {
 export const useAnimation = useSpring;
 
 const Animation: React.FC<Animation> = ({ className, style, children, ...tailwind }) => {
-	const base = {};
+	const base = { position: 'relative' };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	// Render
