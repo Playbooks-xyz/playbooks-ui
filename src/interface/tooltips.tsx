@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { usePopper } from 'react-popper';
 
-import { Fade } from 'components/animation-wrapper';
+import { Fade } from 'components/fade-wrapper';
 import { Div, Span } from 'interface/html';
 import { iTooltip, iTooltipArrow, iTooltipBody, iTooltipInner } from 'interface/tooltips.types';
 import { computeTooltipAnimation } from 'utils';

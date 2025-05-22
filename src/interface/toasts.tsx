@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-import { Fade } from 'components/animation-wrapper';
+import { Fade } from 'components/fade-wrapper';
 import { AccentBtn } from 'interface/buttons';
 import { H6, P } from 'interface/fonts';
 import { Div, Span } from 'interface/html';

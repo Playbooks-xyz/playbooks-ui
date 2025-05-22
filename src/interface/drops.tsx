@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { usePopper } from 'react-popper';
 
-import { Fade } from 'components/animation-wrapper';
+import { Fade } from 'components/fade-wrapper';
 import { useKeyPress, useMouseUp } from 'hooks';
 import { AccentBtn, Btn } from 'interface/buttons';
 import {

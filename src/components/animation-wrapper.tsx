@@ -1,55 +1,28 @@
-import { Transition } from 'react-transition-group';
+import { animated, useSpring } from '@react-spring/web';
 
-import { HtmlType } from 'types';
+import { tailwindClassBuilder } from 'utils';
 
-export type iFade = HtmlType & {
-	ref?: any;
-	show: boolean;
-	timeout?: any;
-	onEnter?: any;
-	onEntering?: any;
-	onEntered?: any;
-	onExit?: any;
-	onExiting?: any;
-	onExited?: any;
-	mountOnEnter?: boolean;
-	unmountOnExit?: boolean;
-};
+interface Animation {
+	className?: string;
+	style?: any;
+	children: React.ReactNode;
+}
 
-const Fade = ({
-	ref,
-	show,
-	timeout = 200,
-	onEnter,
-	onEntering,
-	onEntered,
-	onExit,
-	onExiting,
-	onExited,
-	mountOnEnter = true,
-	unmountOnExit = true,
-	children,
-}: iFade) => {
+export const useAnimation = useSpring;
+
+const Animation: React.FC<Animation> = ({ className, style, children, ...tailwind }) => {
+	const base = {};
+	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+
+	// Render
 	return (
-		<Transition
-			nodeRef={ref}
-			in={show}
-			appear={show}
-			timeout={timeout}
-			onEnter={onEnter}
-			onEntering={onEntering}
-			onEntered={onEntered}
-			onExit={onExit}
-			onExiting={onExiting}
-			onExited={onExited}
-			mountOnEnter={mountOnEnter}
-			unmountOnExit={unmountOnExit}>
+		<animated.div className={classes} style={style}>
 			{children}
-		</Transition>
+		</animated.div>
 	);
 };
 
-export { Fade };
+export { Animation };
 
 // Docs
-// https://reactcommunity.team/react-transition-group/transition
+// https://www.react-spring.dev/docs/components/use-spring
