@@ -40,6 +40,7 @@
     "@react-spring/web": "^10.0.1",
     "react-currency-input-field": "^3.10.0",
     "react-input-mask": "^2.0.4",
+    "react-loading-skeleton": "^3.5.0",
     "react-phone-number-input": "^3.4.3",
     "react-popper": "^2.3.0",
     "react-range": "^1.8.14",
