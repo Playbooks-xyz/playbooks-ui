@@ -26,8 +26,8 @@
     "commit": "scripts/commit.sh",
     "deploy": "scripts/deploy.sh",
     "git": "git push --tags",
-    "husky": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky"
   },
   "peerDependencies": {
     "next": "^14 || ^15",
@@ -63,7 +63,7 @@
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unused-imports": "^4.0.0",
-    "husky": "^8.0.3",
+    "husky": "^9.1.7",
     "jest": "^29.5.0",
     "postcss": "^8.4.39",
     "prettier": "^3.3.2",

@@ -32,4 +32,4 @@ git push & push_id=$!
 wait $push_id
 if [ $? -eq 1 ]; then exit; fi
 
-echo -e "\n deploy finished. \n"
+echo -e "\n commit finished. \n"

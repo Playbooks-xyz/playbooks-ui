@@ -147,13 +147,9 @@ export const P = ({ id, name = 'P', className, children, ...tailwind }: iFont) =
 
 export const Small = ({ id, name = 'Small', className, children, ...tailwind }: iFont) => {
 	const base = {
-		color: 'text-gray-600 dark:text-gray-400',
+		color: 'text-gray-500 dark:text-gray-500',
 		display: 'block',
 		fontSize: 'text-sm',
-		fontWeight: 'font-normal',
-		fontFamily: 'font-secondary',
-		leading: 'leading-relaxed',
-		tracking: 'tracking-wide',
 	};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
