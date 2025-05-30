@@ -21,6 +21,7 @@ export * from 'types/grid-types';
 export * from 'types/head-types';
 export * from 'types/header-types';
 export * from 'types/hero-types';
+export * from 'types/html-types';
 export * from 'types/icon-types';
 export * from 'types/input-group-types';
 export * from 'types/link-types';

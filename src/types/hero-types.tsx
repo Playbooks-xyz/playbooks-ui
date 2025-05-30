@@ -1,28 +1,28 @@
 import { HtmlProps } from 'types';
 
-export type iHero = HtmlProps & {
+export type HeroProps = HtmlProps & {
 	ref?: any;
 };
 
-export type iHeroBg = HtmlProps;
+export type HeroBgProps = HtmlProps;
 
-export type iHeroImg = HtmlProps & {
+export type HeroImgProps = HtmlProps & {
 	src: string;
 	alt: string;
 };
 
-export type iHeroIcon = HtmlProps & {
+export type HeroIconProps = HtmlProps & {
 	icon: string;
 };
 
-export type iHeroBody = HtmlProps;
+export type HeroBodyProps = HtmlProps;
 
-export type iHeroPretitle = HtmlProps;
+export type HeroPretitleProps = HtmlProps;
 
-export type iHeroTitle = HtmlProps;
+export type HeroTitleProps = HtmlProps;
 
-export type iHeroSubtitle = HtmlProps;
+export type HeroSubtitleProps = HtmlProps;
 
-export type iHeroText = HtmlProps;
+export type HeroTextProps = HtmlProps;
 
-export type iHeroActions = HtmlProps;
+export type HeroActionsProps = HtmlProps;

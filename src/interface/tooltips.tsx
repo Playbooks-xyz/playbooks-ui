@@ -18,7 +18,7 @@ export const Tooltip = ({
 	className,
 	children,
 	tailwind,
-}: types.iTooltip) => {
+}: types.TooltipProps) => {
 	const base = {
 		...styles.tooltip,
 		className,
@@ -94,7 +94,7 @@ export const TooltipBody = ({
 	className,
 	styles: popperStyles,
 	tailwind,
-}: types.iTooltipBody) => {
+}: types.TooltipBodyProps) => {
 	const base = styles.tooltipBody;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -110,7 +110,7 @@ export const TooltipBody = ({
 	);
 };
 
-export const TooltipInner = ({ id, name = 'TooltipInner', className, children, tailwind }: types.iTooltipInner) => {
+export const TooltipInner = ({ id, name = 'TooltipInner', className, children, tailwind }: types.TooltipInnerProps) => {
 	const base = styles.tooltipInner;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -124,7 +124,7 @@ export const TooltipArrow = ({
 	className,
 	style,
 	tailwind,
-}: types.iTooltipArrow) => {
+}: types.TooltipArrowProps) => {
 	const base = styles.tooltipArrow;
 	const props = { ...base, ...tailwind, className, name };
 

@@ -1,18 +1,18 @@
 import { HtmlProps } from 'types';
 
-export type iFeedback = HtmlProps;
+export type FeedbackProps = HtmlProps;
 
-export type iFeedbackHeader = HtmlProps;
+export type FeedbackHeaderProps = HtmlProps;
 
-export type iFeedbackIcon = HtmlProps & {
+export type FeedbackIconProps = HtmlProps & {
 	type?: string;
 	icon: string;
 };
 
-export type iFeedbackBody = HtmlProps;
+export type FeedbackBodyProps = HtmlProps;
 
-export type iFeedbackTitle = HtmlProps;
+export type FeedbackTitleProps = HtmlProps;
 
-export type iFeedbackText = HtmlProps;
+export type FeedbackTextProps = HtmlProps;
 
-export type iFeedbackActions = HtmlProps;
+export type FeedbackActionsProps = HtmlProps;

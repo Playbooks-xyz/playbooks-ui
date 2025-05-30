@@ -3,7 +3,7 @@ import * as styles from 'styles/grid-styles';
 import * as types from 'types/grid-types';
 import { computeCol, computeContainer, computeGrid } from 'utils';
 
-export const Container = ({ id, name = 'Container', size, className, children, ...tailwind }: types.iContainer) => {
+export const Container = ({ id, name = 'Container', size, className, children, ...tailwind }: types.ContainerProps) => {
 	const base = {
 		...styles.container,
 		size: computeContainer(size),
@@ -13,7 +13,7 @@ export const Container = ({ id, name = 'Container', size, className, children, .
 	return <Div {...props}>{children}</Div>;
 };
 
-export const Grid = ({ id, name = 'Grid', cols = '12', className, children, ...tailwind }: types.iGrid) => {
+export const Grid = ({ id, name = 'Grid', cols = '12', className, children, ...tailwind }: types.GridProps) => {
 	const base = {
 		...styles.grid,
 		cols: computeGrid(cols),
@@ -35,7 +35,7 @@ export const Col = ({
 	className,
 	children,
 	...tailwind
-}: types.iCol) => {
+}: types.ColProps) => {
 	const base = {
 		span: computeCol('span', span),
 		sm: computeCol('sm', sm),

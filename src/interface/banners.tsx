@@ -4,7 +4,7 @@ import { FarIcon } from 'interface/icons';
 import * as styles from 'styles/banner-styles';
 import * as types from 'types/banner-types';
 
-export const Banner = ({ id, name = 'Banner', className, children, ...tailwind }: types.iBanner) => {
+export const Banner = ({ id, name = 'Banner', className, children, ...tailwind }: types.BannerProps) => {
 	const base = styles.banner;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -17,7 +17,7 @@ export const BannerIcon = ({
 	icon = 'exclamation-circle',
 	className,
 	...tailwind
-}: types.iBannerIcon) => {
+}: types.BannerIconProps) => {
 	const base = styles.bannerIcon;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -28,7 +28,7 @@ export const BannerIcon = ({
 	);
 };
 
-export const BannerBody = ({ id, name = 'BannerBody', className, children, ...tailwind }: types.iBannerBody) => {
+export const BannerBody = ({ id, name = 'BannerBody', className, children, ...tailwind }: types.BannerBodyProps) => {
 	const base = styles.bannerBody;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -42,7 +42,7 @@ export const BannerTitle = ({
 	className,
 	children,
 	...tailwind
-}: types.iBannerTitle) => {
+}: types.BannerTitleProps) => {
 	const base = styles.bannerTitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -53,7 +53,7 @@ export const BannerTitle = ({
 	);
 };
 
-export const BannerText = ({ id, name = 'BannerText', className, children, ...tailwind }: types.iBannerText) => {
+export const BannerText = ({ id, name = 'BannerText', className, children, ...tailwind }: types.BannerTextProps) => {
 	const base = styles.bannerText;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -66,7 +66,7 @@ export const BannerActions = ({
 	className,
 	children,
 	...tailwind
-}: types.iBannerActions) => {
+}: types.BannerActionsProps) => {
 	const base = styles.bannerActions;
 	const props = { ...base, ...tailwind, className, name };
 

@@ -39,31 +39,53 @@ export const Link = ({ variant = 'primary', ...props }) => {
 	}
 };
 
-export const PrimaryLink = ({ id, name = 'Link', size = 'sm', alt, active, className, ...tailwind }: types.iLink) => {
+export const PrimaryLink = ({
+	id,
+	name = 'Link',
+	size = 'sm',
+	alt,
+	active,
+	className,
+	...tailwind
+}: types.LinkProps) => {
 	const base = { ...btnProps(active), size: computeBtnSize(size) };
 
 	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const AccentLink = ({ id, name = 'AccentLink', size = 'sm', active, className, ...tailwind }: types.iLink) => {
+export const AccentLink = ({
+	id,
+	name = 'AccentLink',
+	size = 'sm',
+	active,
+	className,
+	...tailwind
+}: types.LinkProps) => {
 	const base = { ...btnAccentProps(active), size: computeBtnSize(size) };
 
 	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const BorderLink = ({ id, name = 'BorderLink', size = 'sm', active, className, ...tailwind }: types.iLink) => {
+export const BorderLink = ({
+	id,
+	name = 'BorderLink',
+	size = 'sm',
+	active,
+	className,
+	...tailwind
+}: types.LinkProps) => {
 	const base = { ...btnBorderProps(active), size: computeBtnSize(size) };
 
 	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const TabLink = ({ id, name = 'TabLink', size = 'sm', active, className, ...tailwind }: types.iLink) => {
+export const TabLink = ({ id, name = 'TabLink', size = 'sm', active, className, ...tailwind }: types.LinkProps) => {
 	const base = { ...btnTabProps(active), size: computeBtnSize(size) };
 
 	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const TextLink = ({ id, name = 'TextLink', size = 'sm', active, className, ...tailwind }: types.iLink) => {
+export const TextLink = ({ id, name = 'TextLink', size = 'sm', active, className, ...tailwind }: types.LinkProps) => {
 	const base = { ...btnTextProps(active), size: computeBtnSize(size) };
 
 	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
@@ -83,20 +105,21 @@ export const LinkShared = ({
 	nextIcon,
 	nextImg,
 	taskRunning,
+	tailwind,
 	className,
 	children,
-	...tailwind
-}: types.iLink) => {
+	...props
+}: types.LinkProps) => {
 	return (
 		<LinkWrapper
 			id={id}
 			name={name}
-			href={href}
 			alt={alt}
+			href={href}
 			target={target}
 			disabled={disabled}
 			className={className}
-			{...tailwind}>
+			{...props}>
 			{taskRunning ? <Span /> : prevIcon && <Icon type='far' icon={prevIcon?.icon || prevIcon} {...prevIcon} />}
 			{taskRunning ? (
 				<Fragment />
@@ -106,9 +129,9 @@ export const LinkShared = ({
 			<Span space='space-x-4' {...tailwind?.span}>
 				{taskRunning ? (
 					<Oval />
-				) : types.icon ? (
+				) : icon ? (
 					<Icon type='far' icon={icon?.icon || icon} {...icon} />
-				) : types.img ? (
+				) : img ? (
 					<Img src={img?.src || img} borderRadius='rounded-sm' spacing='w-5 h-5' {...img} />
 				) : (
 					children
@@ -135,7 +158,7 @@ export const LinkWrapper = ({
 	className,
 	children,
 	...tailwind
-}: types.iLink) => {
+}: types.LinkProps) => {
 	const base = {
 		...styles.linkWrapper,
 		cursor: disabled ? 'cursor-not-allowed' : 'cursor-pointer',

@@ -1,10 +1,10 @@
 import { HtmlProps } from 'types';
 import { TailwindColProps, TailwindContainerProps } from 'types/tailwind-types';
 
-export type iContainer = HtmlProps & TailwindContainerProps;
+export type ContainerProps = HtmlProps & TailwindContainerProps;
 
-export type iGrid = HtmlProps & {
+export type GridProps = HtmlProps & {
 	cols?: string;
 };
 
-export type iCol = HtmlProps & TailwindColProps;
+export type ColProps = HtmlProps & TailwindColProps;

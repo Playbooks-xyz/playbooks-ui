@@ -1,25 +1,29 @@
-import { HtmlProps, ImgProps } from 'types';
+import { HtmlProps } from 'types';
 
-export type iAside = HtmlProps;
+export type AsideProps = HtmlProps;
 
-export type iBody = HtmlProps;
+export type BodyProps = HtmlProps;
 
-export type iFrame = HtmlProps & {
+export type FrameProps = HtmlProps & {
 	title: string;
 	src: string;
 	onLoad?: () => void;
 };
 
-export type iMain = HtmlProps;
+export type MainProps = HtmlProps;
 
-export type iDiv = HtmlProps;
+export type DivProps = HtmlProps;
 
-export type iUl = HtmlProps;
+export type UlProps = HtmlProps;
 
-export type iLi = HtmlProps;
+export type LiProps = HtmlProps;
 
-export type iSpan = HtmlProps;
+export type SpanProps = HtmlProps;
 
-export type iImg = ImgProps;
+export type ImgProps = HtmlProps & {
+	alt?: string;
+	src: string;
+	fetchPriority?: 'high' | 'low' | 'auto';
+};
 
-export type iHr = HtmlProps;
+export type HrProps = HtmlProps;

@@ -142,7 +142,7 @@ export const IFrame = ({
 	className,
 	style,
 	...props
-}: types.iFrame) => {
+}: types.FrameProps) => {
 	const base = styles.iFrame;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, ...props, className });
 
@@ -151,7 +151,7 @@ export const IFrame = ({
 	);
 };
 
-export const Img = ({ name = 'Img', src, alt, tailwind, className, style, ...props }: types.iImg) => {
+export const Img = ({ name = 'Img', src, alt, tailwind, className, style, ...props }: types.ImgProps) => {
 	const base = styles.img;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, ...props, className });
 

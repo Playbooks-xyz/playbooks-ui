@@ -1,23 +1,23 @@
 import { HtmlProps } from 'types';
 
-export type iToast = HtmlProps & {
+export type ToastProps = HtmlProps & {
 	show?: boolean;
 	setShow?: (v: boolean) => any;
 	onRemove?: () => any;
 };
 
-export type iToastWrapper = HtmlProps;
+export type ToastWrapperProps = HtmlProps;
 
-export type iToastHeader = HtmlProps & {
+export type ToastHeaderProps = HtmlProps & {
 	onRemove?: () => any;
 };
 
-export type iToastIcon = HtmlProps & {
+export type ToastIconProps = HtmlProps & {
 	icon?: string;
 };
 
-export type iToastTitle = HtmlProps;
+export type ToastTitleProps = HtmlProps;
 
-export type iToastBody = HtmlProps;
+export type ToastBodyProps = HtmlProps;
 
-export type iToastText = HtmlProps;
+export type ToastTextProps = HtmlProps;

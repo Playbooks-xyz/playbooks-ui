@@ -1,3 +1,3 @@
 import { HtmlProps } from 'types';
 
-export type iSpinner = HtmlProps;
+export type SpinnerProps = HtmlProps;

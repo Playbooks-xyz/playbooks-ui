@@ -1,12 +1,12 @@
 import { HtmlProps } from 'types';
 
-export type iProgressBar = HtmlProps;
+export type ProgressBarProps = HtmlProps;
 
-export type iProgress = HtmlProps & {
+export type ProgressProps = HtmlProps & {
 	value: number;
 };
 
-export type iFrameworkedProgress = HtmlProps & {
+export type FramePropsworkedProgress = HtmlProps & {
 	value: number;
 	offset: number;
 };

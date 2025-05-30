@@ -5,7 +5,7 @@ import * as styles from 'styles/header-styles';
 import * as types from 'types/header-types';
 import { tailwindClassBuilder } from 'utils';
 
-export const Header = ({ id, name = 'Header', className, children, style, ...tailwind }: types.iHeader) => {
+export const Header = ({ id, name = 'Header', className, children, style, ...tailwind }: types.HeaderProps) => {
 	const base = styles.header;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -23,7 +23,7 @@ export const HeaderTitle = ({
 	className,
 	children,
 	...tailwind
-}: types.iHeaderTitle) => {
+}: types.HeaderTitleProps) => {
 	const base = styles.headerTitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -40,7 +40,7 @@ export const HeaderSubtitle = ({
 	className,
 	children,
 	...tailwind
-}: types.iHeaderSubtitle) => {
+}: types.HeaderSubtitleProps) => {
 	const base = styles.headerSubtitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -51,7 +51,7 @@ export const HeaderSubtitle = ({
 	);
 };
 
-export const HeaderText = ({ id, name = 'HeaderText', className, children, ...tailwind }: types.iHeaderText) => {
+export const HeaderText = ({ id, name = 'HeaderText', className, children, ...tailwind }: types.HeaderTextProps) => {
 	const base = styles.headerText;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -68,7 +68,7 @@ export const HeaderActions = ({
 	className,
 	children,
 	...tailwind
-}: types.iHeaderActions) => {
+}: types.HeaderActionsProps) => {
 	const base = styles.headerActions;
 	const props = { ...base, ...tailwind, className, name };
 

@@ -1,19 +1,19 @@
 import { HtmlProps } from 'types';
 
-export type iBanner = HtmlProps;
+export type BannerProps = HtmlProps;
 
-export type iBannerIcon = HtmlProps & {
+export type BannerIconProps = HtmlProps & {
 	type?: string;
 	icon: string;
 };
 
-export type iBannerBody = HtmlProps;
+export type BannerBodyProps = HtmlProps;
 
-export type iBannerTitle = HtmlProps;
+export type BannerTitleProps = HtmlProps;
 
-export type iBannerText = HtmlProps;
+export type BannerTextProps = HtmlProps;
 
-export type iBannerActions = HtmlProps & {
+export type BannerActionsProps = HtmlProps & {
 	onClick: () => any;
 	onDismiss: () => any;
 };

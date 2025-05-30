@@ -38,31 +38,38 @@ export const Btn = ({ variant = 'primary', ...props }) => {
 	}
 };
 
-export const PrimaryBtn = ({ id, name = 'PrimaryBtn', size = 'sm', active, className, ...tailwind }: types.iBtn) => {
+export const PrimaryBtn = ({
+	id,
+	name = 'PrimaryBtn',
+	size = 'sm',
+	active,
+	className,
+	...tailwind
+}: types.BtnProps) => {
 	const base = { ...btnProps(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const AccentBtn = ({ id, name = 'AccentBtn', size = 'sm', active, className, ...tailwind }: types.iBtn) => {
+export const AccentBtn = ({ id, name = 'AccentBtn', size = 'sm', active, className, ...tailwind }: types.BtnProps) => {
 	const base = { ...btnAccentProps(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const BorderBtn = ({ id, name = 'BorderBtn', size = 'sm', active, className, ...tailwind }: types.iBtn) => {
+export const BorderBtn = ({ id, name = 'BorderBtn', size = 'sm', active, className, ...tailwind }: types.BtnProps) => {
 	const base = { ...btnBorderProps(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const TabBtn = ({ id, name = 'TabBtn', size = 'sm', active, className, ...tailwind }: types.iBtn) => {
+export const TabBtn = ({ id, name = 'TabBtn', size = 'sm', active, className, ...tailwind }: types.BtnProps) => {
 	const base = { ...btnTabProps(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const TextBtn = ({ id, name = 'TextBtn', size = 'sm', active, className, ...tailwind }: types.iBtn) => {
+export const TextBtn = ({ id, name = 'TextBtn', size = 'sm', active, className, ...tailwind }: types.BtnProps) => {
 	const base = { ...btnTextProps(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
@@ -82,10 +89,11 @@ const BtnShared = ({
 	nextImg,
 	taskRunning,
 	onClick,
+	tailwind,
 	className,
 	children,
-	...tailwind
-}: types.iBtn) => {
+	...props
+}: types.BtnProps) => {
 	return (
 		<BtnWrapper
 			id={id}
@@ -96,7 +104,7 @@ const BtnShared = ({
 			taskRunning={taskRunning}
 			onClick={onClick}
 			className={className}
-			{...tailwind}>
+			{...props}>
 			{taskRunning ? <Span /> : prevIcon && <Icon type='far' icon={prevIcon?.icon || prevIcon} {...prevIcon} />}
 			{taskRunning ? (
 				<Fragment />
@@ -106,9 +114,9 @@ const BtnShared = ({
 			<Span space='space-x-4' {...tailwind?.span}>
 				{taskRunning ? (
 					<Oval />
-				) : types.icon ? (
+				) : icon ? (
 					<Icon type='far' icon={icon?.icon || icon} {...icon} />
-				) : types.img ? (
+				) : img ? (
 					<Img src={img?.src || img} borderRadius='rounded-sm' spacing='w-5 h-5' {...img} />
 				) : (
 					children
@@ -136,7 +144,7 @@ export const BtnWrapper = ({
 	children,
 	className,
 	...tailwind
-}: types.iBtn) => {
+}: types.BtnProps) => {
 	const base = {
 		...styles.btnWrapper,
 		cursor: disabled ? 'cursor-not-allowed' : 'cursor-pointer',

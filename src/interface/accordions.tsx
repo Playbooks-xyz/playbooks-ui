@@ -6,7 +6,7 @@ import { Div } from 'interface/html';
 import * as styles from 'styles/accordion-styles';
 import * as types from 'types/accordion-types';
 
-export const Accordion = ({ id, name = 'Accordion', open, className, children, ...tailwind }: types.iAccordion) => {
+export const Accordion = ({ id, name = 'Accordion', open, className, children, ...tailwind }: types.AccordionProps) => {
 	const base = styles.accordion;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -27,7 +27,7 @@ export const AccordionToggle = ({
 	className,
 	children,
 	...tailwind
-}: types.iAccordionToggle) => {
+}: types.AccordionToggleProps) => {
 	const base = {
 		...styles.accordionToggle,
 		nextIcon: {
@@ -47,7 +47,7 @@ export const AccordionTitle = ({
 	className,
 	children,
 	...tailwind
-}: types.iAccordionTitle) => {
+}: types.AccordionTitleProps) => {
 	const base = styles.accordionTitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -66,7 +66,7 @@ export const AccordionBody = ({
 	className,
 	children,
 	...tailwind
-}: types.iAccordionBody) => {
+}: types.AccordionBodyProps) => {
 	const wrapperBase = styles.accordionBodyWrapper;
 	const base = styles.accordionBody;
 	const props = { ...base, ...tailwind, className, name };
@@ -105,7 +105,7 @@ export const AccordionText = ({
 	className,
 	children,
 	...tailwind
-}: types.iAccordionText) => {
+}: types.AccordionTextProps) => {
 	const base = styles.accordionText;
 	const props = { ...base, ...tailwind, className, name };
 

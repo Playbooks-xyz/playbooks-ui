@@ -1,19 +1,19 @@
 import { BtnProps, HtmlProps, LinkProps } from 'types';
 
-export type iBreadcrumbs = HtmlProps;
+export type BreadcrumbsProps = HtmlProps;
 
-export type iBreadcrumbItem = HtmlProps & {
+export type BreadcrumbItemProps = HtmlProps & {
 	icon?: string;
 	arrow?: boolean;
 };
 
-export type iBreadcrumbBtn = BtnProps & {
+export type BreadcrumbBtnProps = BtnProps & {
 	active?: boolean;
 	onClick: () => any;
 	icon?: string;
 };
 
-export type iBreadcrumbLink = LinkProps & {
+export type BreadcrumbLinkProps = LinkProps & {
 	active?: boolean;
 	href?: string;
 	icon?: string;

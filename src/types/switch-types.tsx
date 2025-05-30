@@ -1,24 +1,27 @@
-import { HtmlProps, LabelProps } from 'types';
+import { HtmlProps } from 'types';
 
-export type iSwitchGroup = HtmlProps;
+export type SwitchGroupProps = HtmlProps;
 
-export type iSwitch = HtmlProps & {
+export type SwitchProps = HtmlProps & {
 	icon?: string;
 	checked: boolean;
 	onClick: (v?: any) => any;
 };
 
-export type iSwitchBackdrop = HtmlProps & {
+export type SwitchBackdropProps = HtmlProps & {
 	checked?: boolean;
 };
 
-export type iSwitchInner = HtmlProps & {
+export type SwitchInnerProps = HtmlProps & {
 	checked: boolean;
 };
 
-export type iSwitchToggle = HtmlProps & {
+export type SwitchToggleProps = HtmlProps & {
 	icon?: string;
 	checked: boolean;
 };
 
-export type iSwitchLabel = LabelProps;
+export type SwitchLabelProps = HtmlProps & {
+	active?: boolean;
+	htmlFor?: string;
+};

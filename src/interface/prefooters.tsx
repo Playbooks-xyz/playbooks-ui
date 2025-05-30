@@ -2,8 +2,9 @@ import { Font, H6, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { Section } from 'interface/sections';
 import * as styles from 'styles/prefooter-styles';
+import * as types from 'types/prefooter-types';
 
-export const Prefooter = ({ id, name = 'Prefooter', className, children, ...tailwind }: types.iPrefooter) => {
+export const Prefooter = ({ id, name = 'Prefooter', className, children, ...tailwind }: types.PrefooterProps) => {
 	const base = styles.prefooter;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -16,7 +17,7 @@ export const PrefooterBody = ({
 	className,
 	children,
 	...tailwind
-}: types.iPrefooterBody) => {
+}: types.PrefooterBodyProps) => {
 	const base = styles.prefooterBody;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -29,7 +30,7 @@ export const PrefooterPretitle = ({
 	className,
 	children,
 	...tailwind
-}: types.iPrefooterPretitle) => {
+}: types.PrefooterPretitleProps) => {
 	const base = styles.prefooterPretitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -43,7 +44,7 @@ export const PrefooterTitle = ({
 	className,
 	children,
 	...tailwind
-}: types.iPrefooterTitle) => {
+}: types.PrefooterTitleProps) => {
 	const base = styles.prefooterTitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -61,7 +62,7 @@ export const PrefooterSubtitle = ({
 	className,
 	children,
 	...tailwind
-}: types.iPrefooterSubtitle) => {
+}: types.PrefooterSubtitleProps) => {
 	const base = styles.prefooterSubtitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -78,7 +79,7 @@ export const PrefooterText = ({
 	className,
 	children,
 	...tailwind
-}: types.iPrefooterText) => {
+}: types.PrefooterTextProps) => {
 	const base = styles.prefooterText;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -91,7 +92,7 @@ export const PrefooterActions = ({
 	className,
 	children,
 	...tailwind
-}: types.iPrefooterActions) => {
+}: types.PrefooterActionsProps) => {
 	const base = styles.prefooterActions;
 	const props = { ...base, ...tailwind, className, name };
 

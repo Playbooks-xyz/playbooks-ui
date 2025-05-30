@@ -1,13 +1,13 @@
 import { BtnProps, HtmlProps, LinkProps } from 'types';
 
-export type iNavbar = HtmlProps & {
+export type NavPropsbar = HtmlProps & {
 	ref?: any;
 };
 
-export type iNavbarBrand = LinkProps & {
+export type NavPropsbarBrand = LinkProps & {
 	src: string;
 };
 
-export type iNavbarToggle = BtnProps;
+export type NavPropsbarToggle = BtnProps;
 
-export type iNavbarList = HtmlProps;
+export type NavPropsbarList = HtmlProps;

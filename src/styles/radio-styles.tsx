@@ -1,8 +1,9 @@
+import { borderProps } from 'utils';
+
 export const radioWrapper = {
 	animation: 'transition',
 	border: 'border',
-	borderColor: 'border-gray-400',
-	borderOpacity: 'border-opacity-25',
+	...borderProps,
 	borderRadius: 'rounded-md',
 	cursor: 'cursor-pointer',
 	display: 'inline-block',

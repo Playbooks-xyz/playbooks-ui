@@ -1,7 +1,7 @@
 export const tooltip = {
 	cursor: 'cursor-pointer',
 	duration: 'duration-100',
-	transition: 'transition-all ease',
+	animation: 'transition-all ease',
 };
 
 export const tooltipBody = {

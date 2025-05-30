@@ -1,26 +1,25 @@
-import { HtmlProps } from 'types';
-import { iBtn } from 'types/button-types';
+import { BtnProps, HtmlProps } from 'types';
 
-export type iAccordion = HtmlProps & {
+export type AccordionProps = HtmlProps & {
 	open?: boolean;
 };
 
-export type iAccordionToggle = iBtn & {
+export type AccordionToggleProps = BtnProps & {
 	open?: boolean;
 	variant?: string;
 	onClick: (v?: any) => any;
 };
 
-export type iAccordionTitle = HtmlProps & {
+export type AccordionTitleProps = HtmlProps & {
 	icon?: string;
 	title?: string;
 };
 
-export type iAccordionBody = HtmlProps & {
+export type AccordionBodyProps = HtmlProps & {
 	open?: boolean;
 	animate?: boolean;
 };
 
-export type iAccordionText = HtmlProps & {
+export type AccordionTextProps = HtmlProps & {
 	size?: string;
 };

@@ -8,9 +8,10 @@ import { PhoneInputWrapper } from 'components/phone-input-wrapper';
 import { useElementKeyPress } from 'hooks';
 import { Div, Span } from 'interface/html';
 import * as styles from 'styles/form-styles';
+import * as types from 'types/form-types';
 import { checkboxProps, computeInputSize, inputProps, rangeProps, tailwindClassBuilder } from 'utils';
 
-export const Form = ({ id, name = 'Form', onSubmit, className, children, ...tailwind }: types.iForm) => {
+export const Form = ({ id, name = 'Form', onSubmit, className, children, ...tailwind }: types.FormProps) => {
 	const base = styles.form;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -21,7 +22,7 @@ export const Form = ({ id, name = 'Form', onSubmit, className, children, ...tail
 	);
 };
 
-export const FormGroup = ({ id, name = 'FormGroup', className, children, ...tailwind }: types.iFormGroup) => {
+export const FormGroup = ({ id, name = 'FormGroup', className, children, ...tailwind }: types.FormGroupProps) => {
 	const base = styles.formGroup;
 	const props = { ...base, ...tailwind, name, className };
 
@@ -40,7 +41,7 @@ export const FormLabel = ({
 	className,
 	children,
 	...tailwind
-}: types.iFormLabel) => {
+}: types.FormLabelProps) => {
 	const base = styles.formLabel;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -59,7 +60,7 @@ export const FormCheckbox = ({
 	readOnly,
 	className,
 	...tailwind
-}: types.iFormCheckbox) => {
+}: types.FormCheckboxProps) => {
 	const base = checkboxProps(checked);
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -87,7 +88,7 @@ export const FormRange = ({
 	readOnly,
 	className,
 	...tailwind
-}: types.iFormRange) => {
+}: types.FormRangeProps) => {
 	const base = rangeProps();
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -123,7 +124,7 @@ export const FormInput = ({
 	readOnly,
 	className,
 	...tailwind
-}: types.iFormInput) => {
+}: types.FormInputProps) => {
 	const base = { ...inputProps(variant), ...computeInputSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -159,7 +160,7 @@ export const FormMaskInput = ({
 	readOnly,
 	className,
 	...tailwind
-}: types.iFormInputMask) => {
+}: types.FormInputPropsMask) => {
 	const base = { ...inputProps(variant), ...computeInputSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -190,7 +191,7 @@ export const FormCurrencyInput = ({
 	readOnly,
 	className,
 	...tailwind
-}: types.iFormInputCurrency) => {
+}: types.FormInputPropsCurrency) => {
 	const base = { ...inputProps(variant), ...computeInputSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -218,7 +219,7 @@ export const FormDivInput = ({
 	className,
 	children,
 	...tailwind
-}: types.iFormInput) => {
+}: types.FormInputProps) => {
 	const base = {
 		...inputProps(variant),
 		...computeInputSize(size),
@@ -241,7 +242,7 @@ export const FormFileInput = ({
 	onChange,
 	className,
 	...tailwind
-}: types.iFormFile) => {
+}: types.FormFileProps) => {
 	const base = styles.formFileInput;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -263,7 +264,7 @@ export const FormLocationInput = ({
 	readOnly,
 	className,
 	...tailwind
-}: types.iFormLocationInput) => {
+}: types.FormLocationPropsInput) => {
 	const base = { ...inputProps(variant), ...computeInputSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 	const ref = useRef(null);
@@ -304,7 +305,7 @@ export const FormPhoneInput = ({
 	readOnly,
 	className,
 	...tailwind
-}: types.iFormInput) => {
+}: types.FormInputProps) => {
 	const base = { ...inputProps(variant), ...computeInputSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -333,7 +334,7 @@ export const FormSelect = ({
 	onChange,
 	className,
 	...tailwind
-}: types.iFormSelect) => {
+}: types.FormSelectProps) => {
 	const base = { ...inputProps(variant), ...computeInputSize(size), cursor: 'cursor-pointer' };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -351,7 +352,7 @@ export const FormSelect = ({
 	);
 };
 
-export const FormText = ({ id, name = 'FormText', className, children, ...tailwind }: types.iFormText) => {
+export const FormText = ({ id, name = 'FormText', className, children, ...tailwind }: types.FormTextProps) => {
 	const base = styles.formText;
 	const props = { ...base, ...tailwind, name, className };
 
@@ -370,7 +371,7 @@ export const FormTextArea = ({
 	readOnly,
 	className,
 	...tailwind
-}: types.iFormTextArea) => {
+}: types.FormTextPropsArea) => {
 	const base = { ...inputProps(variant), ...computeInputSize(size) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 

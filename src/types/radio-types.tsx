@@ -1,19 +1,22 @@
-import { HtmlProps, LabelProps } from 'types';
+import { HtmlProps } from 'types';
 
-export type iRadioWrapper = HtmlProps & {
+export type RadioWrapperProps = HtmlProps & {
 	active?: boolean;
 	onClick: () => any;
 };
 
-export type iRadio = HtmlProps & {
+export type RadioProps = HtmlProps & {
 	title: string;
 	value: any;
 	text?: string;
 	onClick: () => any;
 };
 
-export type iRadioInput = HtmlProps & {
+export type RadioInputProps = HtmlProps & {
 	value: boolean;
 };
 
-export type iRadioLabel = LabelProps;
+export type RadioLabelProps = HtmlProps & {
+	active?: boolean;
+	htmlFor?: string;
+};

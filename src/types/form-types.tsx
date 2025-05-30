@@ -1,16 +1,16 @@
 import { HtmlProps, InputProps } from 'types';
 
-export type iForm = HtmlProps & {
+export type FormProps = HtmlProps & {
 	onSubmit?: (v) => any;
 };
 
-export type iFormGroup = HtmlProps;
+export type FormGroupProps = HtmlProps;
 
-export type iFormLabel = HtmlProps & {
+export type FormLabelProps = HtmlProps & {
 	htmlFor?: string;
 };
 
-export type iFormCheckbox = HtmlProps & {
+export type FormCheckboxProps = HtmlProps & {
 	id?: string;
 	type?: string;
 	checked?: boolean;
@@ -18,7 +18,7 @@ export type iFormCheckbox = HtmlProps & {
 	readOnly?: boolean;
 };
 
-export type iFormRange = HtmlProps & {
+export type FormRangeProps = HtmlProps & {
 	id?: string;
 	value?: number;
 	min?: number;
@@ -28,7 +28,7 @@ export type iFormRange = HtmlProps & {
 	readOnly?: boolean;
 };
 
-export type iFormFile = HtmlProps & {
+export type FormFileProps = HtmlProps & {
 	id?: string;
 	type?: string;
 	value?: any;
@@ -38,28 +38,28 @@ export type iFormFile = HtmlProps & {
 	readOnly?: boolean;
 };
 
-export type iFormInput = InputProps & {
+export type FormInputProps = InputProps & {
 	id?: string;
 	type?: string;
 	size?: string;
 	variant?: string;
 };
 
-export type iFormInputCurrency = iFormInput & {
+export type FormInputPropsCurrency = FormInputProps & {
 	prefix?: string;
 };
 
-export type iFormLocationInput = iFormInput & {
+export type FormLocationPropsInput = FormInputProps & {
 	options?: any;
 	googleMapsApiKey: string;
 	onSelect: (e: any) => any;
 };
 
-export type iFormInputMask = iFormInput & {
+export type FormInputPropsMask = FormInputProps & {
 	mask: string;
 };
 
-export type iFormSelect = HtmlProps & {
+export type FormSelectProps = HtmlProps & {
 	id?: string;
 	value?: any;
 	variant?: string;
@@ -70,9 +70,9 @@ export type iFormSelect = HtmlProps & {
 	onChange: (e: any) => any;
 };
 
-export type iFormText = HtmlProps;
+export type FormTextProps = HtmlProps;
 
-export type iFormTextArea = HtmlProps & {
+export type FormTextPropsArea = HtmlProps & {
 	id?: string;
 	rows?: number;
 	value?: any;

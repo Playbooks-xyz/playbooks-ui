@@ -3,10 +3,11 @@ import { BtnWrapper } from 'interface/buttons';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
 import * as styles from 'styles/table-styles';
+import * as types from 'types/table-types';
 import { tailwindClassBuilder } from 'utils';
 import { isObject } from 'utils/helpers';
 
-export const Table = ({ id, name = 'Table', className, children, ...tailwind }: types.iTable) => {
+export const Table = ({ id, name = 'Table', className, children, ...tailwind }: types.TabPropsle) => {
 	const base = styles.table;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -17,7 +18,7 @@ export const Table = ({ id, name = 'Table', className, children, ...tailwind }: 
 	);
 };
 
-export const TableHeader = ({ id, name = 'TableHeader', className, children, ...tailwind }: types.iTableHeader) => {
+export const TableHeader = ({ id, name = 'TableHeader', className, children, ...tailwind }: types.TabPropsleHeader) => {
 	const base = styles.tableHeader;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -34,7 +35,7 @@ export const TableHeaderRow = ({
 	className,
 	children,
 	...tailwind
-}: types.iTableHeaderRow) => {
+}: types.TabPropsleHeaderRow) => {
 	const base = styles.tableHeaderRow;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -51,7 +52,7 @@ export const TableHead = ({
 	className,
 	children,
 	...tailwind
-}: types.iTableHead) => {
+}: types.TabPropsleHead) => {
 	const base = styles.tableHead;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 	const direction = value === params?.sortProp && params?.sortValue === 'asc' ? 'desc' : 'asc';
@@ -79,7 +80,7 @@ export const TableHead = ({
 	);
 };
 
-export const TableBody = ({ id, name = 'TableBody', className, children, ...tailwind }: types.iTableBody) => {
+export const TableBody = ({ id, name = 'TableBody', className, children, ...tailwind }: types.TabPropsleBody) => {
 	const base = styles.tableBody;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -90,7 +91,7 @@ export const TableBody = ({ id, name = 'TableBody', className, children, ...tail
 	);
 };
 
-export const TableRow = ({ id, name = 'TableRow', className, children, ...tailwind }: types.iTableRow) => {
+export const TableRow = ({ id, name = 'TableRow', className, children, ...tailwind }: types.TabPropsleRow) => {
 	const base = styles.tableRow;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -109,7 +110,7 @@ export const TableData = ({
 	className,
 	children,
 	...tailwind
-}: types.iTableData) => {
+}: types.TabPropsleData) => {
 	const base = {
 		...styles.tableData,
 		color: title ? 'text-gray-800 dark:text-gray-100' : 'text-gray-600 dark:text-gray-400',

@@ -7,7 +7,7 @@ import * as styles from 'styles/route-styles';
 import * as types from 'types/route-types';
 import { capitalize } from 'utils/transforms';
 
-export const Route = ({ id, name = 'Route', seo, style, className, children, ...tailwind }: types.iRoute) => {
+export const Route = ({ id, name = 'Route', seo, style, className, children, ...tailwind }: types.RouteProps) => {
 	const base = styles.route;
 	const props = { ...base, ...tailwind, className, name };
 	const { meta } = useInterface();

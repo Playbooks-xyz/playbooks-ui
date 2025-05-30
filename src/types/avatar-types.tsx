@@ -1,18 +1,18 @@
 import { HtmlProps } from 'types';
 
-export type iAvatar = HtmlProps;
+export type AvatarProps = HtmlProps;
 
-export type iAvatarBadge = HtmlProps;
+export type AvatarBadgeProps = HtmlProps;
 
-export type iAvatarImg = HtmlProps & {
+export type AvatarImgProps = HtmlProps & {
 	src?: string;
 	alt?: string;
 };
 
-export type iAvatarBody = HtmlProps;
+export type AvatarBodyProps = HtmlProps;
 
-export type iAvatarTitle = HtmlProps;
+export type AvatarTitleProps = HtmlProps;
 
-export type iAvatarText = HtmlProps;
+export type AvatarTextProps = HtmlProps;
 
-export type iAvatarActions = HtmlProps;
+export type AvatarActionsProps = HtmlProps;

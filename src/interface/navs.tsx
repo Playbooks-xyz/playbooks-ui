@@ -7,7 +7,7 @@ import * as styles from 'styles/nav-styles';
 import * as types from 'types/nav-types';
 import { computeSectionSize, tailwindClassBuilder } from 'utils';
 
-export const Nav = ({ id, name = 'Nav', className, children, ...tailwind }: types.iNav) => {
+export const Nav = ({ id, name = 'Nav', className, children, ...tailwind }: types.NavProps) => {
 	const base = styles.nav;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -18,14 +18,21 @@ export const Nav = ({ id, name = 'Nav', className, children, ...tailwind }: type
 	);
 };
 
-export const NavHeader = ({ id, name = 'NavHeader', className, children, ...tailwind }: types.iNavHeader) => {
+export const NavHeader = ({ id, name = 'NavHeader', className, children, ...tailwind }: types.NavHeaderProps) => {
 	const base = styles.navHeader;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const NavTitle = ({ id, name = 'NavTitle', size = 'h5', className, children, ...tailwind }: types.iNavTitle) => {
+export const NavTitle = ({
+	id,
+	name = 'NavTitle',
+	size = 'h5',
+	className,
+	children,
+	...tailwind
+}: types.NavTitleProps) => {
 	const base = styles.navTitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -36,21 +43,21 @@ export const NavTitle = ({ id, name = 'NavTitle', size = 'h5', className, childr
 	);
 };
 
-export const NavBody = ({ id, name = 'NavBody', size = '', className, children, ...tailwind }: types.iNavBody) => {
+export const NavBody = ({ id, name = 'NavBody', size = '', className, children, ...tailwind }: types.NavBodyProps) => {
 	const base = { ...styles.navBody, size: computeSectionSize(size) };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const NavList = ({ id, name = 'NavList', className, children, ...tailwind }: types.iNavList) => {
+export const NavList = ({ id, name = 'NavList', className, children, ...tailwind }: types.NavListProps) => {
 	const base = styles.navList;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Ul {...props}>{children}</Ul>;
 };
 
-export const NavItem = ({ id, name = 'NavItem', className, children, ...tailwind }: types.iNavItem) => {
+export const NavItem = ({ id, name = 'NavItem', className, children, ...tailwind }: types.NavItemProps) => {
 	const base = styles.navItem;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -64,7 +71,7 @@ export const NavBtn = ({
 	className,
 	children,
 	...tailwind
-}: types.iNavBtn) => {
+}: types.NavBtnProps) => {
 	const base = styles.navBtn;
 	const props = { ...base, ...tailwind, children, className, name };
 
@@ -78,7 +85,7 @@ export const NavLink = ({
 	className,
 	children,
 	...tailwind
-}: types.iNavLink) => {
+}: types.NavLinkProps) => {
 	const base = styles.navLink;
 	const props = { ...base, ...tailwind, children, className, name };
 

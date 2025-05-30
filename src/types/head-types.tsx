@@ -1,6 +1,6 @@
 import { HtmlProps } from 'types';
 
-export type iHead = HtmlProps & {
+export type HeadProps = HtmlProps & {
 	type?: string;
 	favicon?: string;
 	logo?: string;

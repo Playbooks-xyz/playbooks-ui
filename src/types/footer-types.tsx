@@ -1,25 +1,23 @@
-import { HtmlProps } from 'types';
-import { iBtn } from 'types/button-types';
-import { iLink } from 'types/link-types';
+import { BtnProps, HtmlProps, LinkProps } from 'types';
 
-export type iFooter = HtmlProps;
+export type FooterProps = HtmlProps;
 
-export type iFooterHeader = HtmlProps;
+export type FooterHeaderProps = HtmlProps;
 
-export type iFooterTitle = HtmlProps;
+export type FooterTitleProps = HtmlProps;
 
-export type iFooterText = HtmlProps;
+export type FooterTextProps = HtmlProps;
 
-export type iFooterBody = HtmlProps;
+export type FooterBodyProps = HtmlProps;
 
-export type iFooterList = HtmlProps;
+export type FooterListProps = HtmlProps;
 
-export type iFooterItem = HtmlProps;
+export type FooterItemProps = HtmlProps;
 
-export type iFooterBtn = iBtn & {
+export type FooterBtnProps = BtnProps & {
 	variant?: string;
 };
 
-export type iFooterLink = iLink & {
+export type FooterLinkProps = LinkProps & {
 	variant?: string;
 };

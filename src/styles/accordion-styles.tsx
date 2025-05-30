@@ -3,8 +3,6 @@ import { borderProps } from 'utils';
 export const accordion = {
 	border: 'border',
 	...borderProps,
-	borderRadius: 'rounded-md',
-	spacing: 'mb-4',
 	width: 'w-full',
 };
 
@@ -12,17 +10,10 @@ export const accordionToggle = {
 	bgColor: 'bg-transparent',
 	border: 'border-transparent',
 	borderRadius: 'rounded-none',
-	display: 'block',
-	grid: 'grid-2',
+	display: 'flex-between',
 	nextIcon: {
-		bgColor: 'bg-gray-200 dark:bg-gray-600',
-		borderRadius: 'rounded-md',
-		color: 'text-gray-700 dark:text-gray-100',
+		animation: 'transition-all ease',
 		icon: 'chevron-down',
-		size: 'w-6 h-6',
-		transform: 'transform',
-		transition: 'transition-all ease',
-		variant: 'basic',
 	},
 	spacing: 'p-0',
 	textAlign: 'text-left',
@@ -36,9 +27,9 @@ export const accordionTitle = {
 };
 
 export const accordionBodyWrapper = {
+	animation: 'transition-all ease',
 	duration: 'duration-200',
 	overflow: 'overflow-hidden',
-	transition: 'transition-all ease',
 };
 
 export const accordionBody = {

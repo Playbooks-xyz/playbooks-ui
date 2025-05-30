@@ -4,7 +4,7 @@ const FontAwesome = dynamic(() => import('@fortawesome/react-fontawesome').then(
 });
 import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
 
-type FaType = {
+type FaProps = {
 	type?: IconPrefix;
 	icon?: string;
 	transform?: string;

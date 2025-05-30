@@ -6,7 +6,9 @@ import { useKeyPress } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { H4 } from 'interface/fonts';
 import { Div } from 'interface/html';
-import { borderProps, computeSlideAnimation } from 'utils';
+import * as styles from 'styles/slide-styles';
+import * as types from 'types/slide-types';
+import { computeSlideAnimation } from 'utils';
 
 export const SlideWrapper = ({
 	id,
@@ -16,12 +18,8 @@ export const SlideWrapper = ({
 	className,
 	children,
 	...tailwind
-}: types.iSlideWrapper) => {
-	const base = {
-		position: 'fixed',
-		inset: 'inset-0',
-		zIndex: 'z-20',
-	};
+}: types.SlideWrapperProps) => {
+	const base = styles.slideWrapper;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -32,16 +30,8 @@ export const SlideWrapper = ({
 	);
 };
 
-export const SlideBackdrop = ({ id, name = 'SlideBackdrop', open, onClose, ...tailwind }: types.iSlideBackdrop) => {
-	const base = {
-		bgColor: 'bg-black dark:bg-gray-700',
-		duration: 'duration-200',
-		ease: 'ease-in',
-		height: 'h-full',
-		inset: 'inset-0',
-		position: 'fixed',
-		transition: 'transition-all',
-	};
+export const SlideBackdrop = ({ id, name = 'SlideBackdrop', open, onClose, ...tailwind }: types.SlideBackdropProps) => {
+	const base = styles.slideBackdrop;
 	const [fade, setFade] = useState({ display: 'hidden', bgOpacity: '' });
 	const props = { ...base, ...fade, ...tailwind, name };
 	const ref = useRef(null);
@@ -69,21 +59,12 @@ export const Slide = ({
 	className,
 	children,
 	...tailwind
-}: types.iSlide) => {
+}: types.SlideProps) => {
 	const base = {
-		bgColor: 'bg-white dark:bg-gray-900',
-		ease: 'ease-out',
+		...styles.slide,
 		delay: open ? 'delay-200' : '',
-		display: 'flex-column',
-		duration: 'duration-200',
-		height: 'h-full',
 		inset: placement === 'left' ? 'left-0' : 'right-0',
-		position: 'fixed',
-		transition: 'transition-all',
-		transform: 'transform',
 		shadow: placement === 'left' ? 'shadow-r-lg' : 'shadow-l-lg',
-		width: 'w-[400px] max-w-80vw min-w-40vw',
-		zIndex: 'z-20',
 	};
 	const [animation, setAnimation] = useState(`opacity-0 ${computeSlideAnimation(placement)}`);
 	const props = { ...base, ...tailwind, animation, className };
@@ -133,14 +114,8 @@ export const SlideHeader = ({
 	className,
 	children,
 	...tailwind
-}: types.iSlideHeader) => {
-	const base = {
-		display: 'flex-between',
-		border: 'border-b',
-		...borderProps,
-		spacing: 'p-4',
-		width: 'w-full',
-	};
+}: types.SlideHeaderProps) => {
+	const base = styles.slideHeader;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -151,22 +126,22 @@ export const SlideHeader = ({
 	);
 };
 
-export const SlideTitle = ({ id, name = 'SlideTitle', className, children, ...tailwind }: types.iSlideTitle) => {
-	const base = { fontWeight: 'font-bold', tracking: 'tracking-wide' };
+export const SlideTitle = ({ id, name = 'SlideTitle', className, children, ...tailwind }: types.SlideTitleProps) => {
+	const base = styles.slideTitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <H4 {...props}>{children}</H4>;
 };
 
-export const SlideBody = ({ id, name = 'SlideBody', className, children, ...tailwind }: types.iSlideBody) => {
-	const base = { display: 'grow', overflow: 'overflow-y-scroll', spacing: 'p-4' };
+export const SlideBody = ({ id, name = 'SlideBody', className, children, ...tailwind }: types.SlideBodyProps) => {
+	const base = styles.slideBody;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const SlideFooter = ({ id, name = 'SlideFooter', className, children, ...tailwind }: types.iSlideFooter) => {
-	const base = { border: 'border-t', ...borderProps, spacing: 'p-4' };
+export const SlideFooter = ({ id, name = 'SlideFooter', className, children, ...tailwind }: types.SlideFooterProps) => {
+	const base = styles.slideFooter;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;

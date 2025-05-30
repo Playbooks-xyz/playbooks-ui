@@ -2,7 +2,7 @@ import * as HTML from '@ehubbell/html';
 import { P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
 import * as styles from 'styles/radio-styles';
-import * as types from 'types/radio-types';
+import * as types from 'types';
 import { checkboxProps, tailwindClassBuilder } from 'utils';
 
 export const RadioWrapper = ({
@@ -13,7 +13,7 @@ export const RadioWrapper = ({
 	className,
 	children,
 	...tailwind
-}: types.iRadioWrapper) => {
+}: types.RadioWrapperProps) => {
 	const base = {
 		...styles.radioWrapper,
 		...(active && {
@@ -39,7 +39,7 @@ export const Radio = ({
 	className,
 	children,
 	...tailwind
-}: types.iRadio) => {
+}: types.RadioProps) => {
 	const base = styles.radio;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -54,7 +54,14 @@ export const Radio = ({
 	);
 };
 
-export const RadioInput = ({ id, name = 'RadioInput', value, className, children, ...tailwind }: types.iRadioInput) => {
+export const RadioInput = ({
+	id,
+	name = 'RadioInput',
+	value,
+	className,
+	children,
+	...tailwind
+}: types.RadioInputProps) => {
 	const base = { ...checkboxProps(value), ...styles.radioInput };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, name, className });
 	return (
@@ -71,14 +78,14 @@ export const RadioInput = ({ id, name = 'RadioInput', value, className, children
 	);
 };
 
-export const RadioTitle = ({ id, name = 'RadioLabel', className, children, ...tailwind }: types.iRadioLabel) => {
+export const RadioTitle = ({ id, name = 'RadioLabel', className, children, ...tailwind }: types.FontProps) => {
 	const base = styles.radioTitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
-export const RadioText = ({ id, name = 'RadioLabel', className, children, ...tailwind }: types.iRadioLabel) => {
+export const RadioText = ({ id, name = 'RadioLabel', className, children, ...tailwind }: types.FontProps) => {
 	const base = styles.radioText;
 	const props = { ...base, ...tailwind, className, name };
 

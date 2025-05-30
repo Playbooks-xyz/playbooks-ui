@@ -2,7 +2,6 @@ import { Div, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import * as styles from 'styles/input-group-styles';
 import * as types from 'types/input-group-types';
-import { borderProps } from 'utils';
 
 export const InputGroup = ({
 	id,
@@ -11,7 +10,7 @@ export const InputGroup = ({
 	className,
 	children,
 	...tailwind
-}: types.iInputGroup) => {
+}: types.InputGroupProps) => {
 	const base = styles.inputGroup;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -26,11 +25,8 @@ export const InputAppend = ({
 	className,
 	children,
 	...tailwind
-}: types.iInputAddon) => {
-	const base = {
-		...borderProps,
-		...styles.inputAddon,
-	};
+}: types.InputAddonProps) => {
+	const base = styles.inputAppend;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Span {...props}>{icon ? <Icon icon={icon?.icon || icon} {...icon} /> : children}</Span>;
@@ -45,11 +41,8 @@ export const InputPrepend = ({
 	className,
 	children,
 	...tailwind
-}: types.iInputAddon) => {
-	const base = {
-		...borderProps,
-		...styles.inputAddon,
-	};
+}: types.InputAddonProps) => {
+	const base = styles.inputPrepend;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Span {...props}>{icon ? <Icon icon={icon?.icon || icon} {...icon} /> : children}</Span>;

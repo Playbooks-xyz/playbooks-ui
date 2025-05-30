@@ -1,23 +1,23 @@
 import { HtmlProps } from 'types';
 
-export type iTable = HtmlProps;
+export type TabPropsle = HtmlProps;
 
-export type iTableHeader = HtmlProps;
+export type TabPropsleHeader = HtmlProps;
 
-export type iTableHeaderRow = HtmlProps;
+export type TabPropsleHeaderRow = HtmlProps;
 
-export type iTableHead = HtmlProps & {
+export type TabPropsleHead = HtmlProps & {
 	alt?: string;
 	value?: string;
 	params?: any;
 	setParams?: (v: any) => any;
 };
 
-export type iTableBody = HtmlProps;
+export type TabPropsleBody = HtmlProps;
 
-export type iTableRow = HtmlProps;
+export type TabPropsleRow = HtmlProps;
 
-export type iTableData = HtmlProps & {
+export type TabPropsleData = HtmlProps & {
 	title?: boolean;
 	value?: string | number;
 };

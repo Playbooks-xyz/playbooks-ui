@@ -3,10 +3,10 @@ import { BtnWrapper } from 'interface/buttons';
 import { Div, Span } from 'interface/html';
 import { FadIcon } from 'interface/icons';
 import * as styles from 'styles/switch-styles';
-import * as types from 'types/switch-types';
+import * as types from 'types';
 import { tailwindClassBuilder } from 'utils';
 
-export const SwitchGroup = ({ id, name = 'SwitchGroup', className, children, ...tailwind }: types.iSwitchGroup) => {
+export const SwitchGroup = ({ id, name = 'SwitchGroup', className, children, ...tailwind }: types.SwitchGroupProps) => {
 	const base = styles.switchGroup;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -17,7 +17,7 @@ export const SwitchGroup = ({ id, name = 'SwitchGroup', className, children, ...
 	);
 };
 
-export const Switch = ({ id, name = 'Switch', icon, checked, onClick, className, ...tailwind }: types.iSwitch) => {
+export const Switch = ({ id, name = 'Switch', icon, checked, onClick, className, ...tailwind }: types.SwitchProps) => {
 	const base = styles.switchBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -37,14 +37,14 @@ export const SwitchBackdrop = ({
 	checked,
 	className,
 	...tailwind
-}: types.iSwitchBackdrop) => {
+}: types.SwitchBackdropProps) => {
 	const base = styles.switchBackdrop;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Span aria-hidden='true' {...props} />;
 };
 
-export const SwitchInner = ({ id, name = 'SwitchInner', checked, className, ...tailwind }: types.iSwitchInner) => {
+export const SwitchInner = ({ id, name = 'SwitchInner', checked, className, ...tailwind }: types.SwitchInnerProps) => {
 	const base = {
 		...styles.switchInner,
 		bgColor: checked ? 'bg-gray-100 dark:bg-gray-600' : 'bg-gray-100 dark:bg-gray-800',
@@ -61,7 +61,7 @@ export const SwitchToggle = ({
 	checked,
 	className,
 	...tailwind
-}: types.iSwitchToggle) => {
+}: types.SwitchToggleProps) => {
 	const base = {
 		...styles.switchToggle,
 		bgColor: checked ? 'bg-blue-500 dark:bg-cyan-500' : 'bg-gray-300 dark:bg-gray-600',
@@ -87,7 +87,7 @@ export const SwitchLabel = ({
 	className,
 	children,
 	...tailwind
-}: types.iSwitchLabel) => {
+}: types.SwitchLabelProps) => {
 	const base = styles.switchLabel;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 

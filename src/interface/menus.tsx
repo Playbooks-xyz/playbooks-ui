@@ -7,10 +7,12 @@ import { AccentBtn } from 'interface/buttons';
 import { H6, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
-import { borderProps, tailwindClassBuilder } from 'utils';
+import * as styles from 'styles/menu-styles';
+import * as types from 'types/menu-types';
+import { tailwindClassBuilder } from 'utils';
 
-export const Menu = ({ id, name = 'Menu', open, onClose, className, children, ...tailwind }: types.iMenu) => {
-	const base = { zIndex: 'z-20' };
+export const Menu = ({ id, name = 'Menu', open, onClose, className, children, ...tailwind }: types.MenuProps) => {
+	const base = styles.menu;
 	const props = { ...base, ...tailwind, className, name };
 	const { toggleScroll } = useInterface();
 	const ref = useRef(null);
@@ -55,17 +57,8 @@ export const MenuBackdrop = ({
 	className,
 	children,
 	...tailwind
-}: types.iMenuBackdrop) => {
-	const base = {
-		bgColor: 'bg-black dark:bg-gray-700',
-		duration: 'duration-200',
-		ease: 'ease-in',
-		height: 'h-full',
-		inset: 'left-0 right-0 bottom-0',
-		position: 'fixed',
-		transition: 'transition-all',
-		zIndex: 'z-1',
-	};
+}: types.MenuBackdropProps) => {
+	const base = styles.menuBackdrop;
 	const [fade, setFade] = useState({ display: 'hidden', bgOpacity: '' });
 	const props = { ...base, ...tailwind, ...fade, className, name };
 	const ref = useRef(null);
@@ -95,7 +88,7 @@ export const MenuToggle = ({
 	className,
 	children,
 	...tailwind
-}: types.iMenuToggle) => {
+}: types.MenuToggleProps) => {
 	const base = { display: 'flex-between', space: 'space-x-4' };
 	const props = { ...base, ...tailwind, className, name };
 
@@ -106,21 +99,8 @@ export const MenuToggle = ({
 	);
 };
 
-export const MenuMenu = ({ id, name = 'MenuMenu', open, className, children, ...tailwind }: types.iMenuMenu) => {
-	const base = {
-		bgColor: 'bg-white dark:bg-gray-900',
-		border: 'border-b',
-		...borderProps,
-		ease: 'ease-in',
-		height: 'max-h-[100vh]',
-		inset: 'right-0 left-0',
-		position: 'absolute',
-		shadow: 'shadow-lg',
-		shadowColor: 'dark:shadow-gray-800/25',
-		textAlign: 'text-left',
-		width: 'min-w-full w-auto',
-		overflow: 'overflow-hidden overflow-y-scroll',
-	};
+export const MenuMenu = ({ id, name = 'MenuMenu', open, className, children, ...tailwind }: types.MenuMenuProps) => {
+	const base = styles.menuMenu;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -139,13 +119,8 @@ export const MenuMenuWrapper = ({
 	className,
 	children,
 	...tailwind
-}: types.iMenuMenu) => {
-	const base = {
-		position: 'absolute',
-		width: 'w-full',
-		transition: 'transition-all',
-		zIndex: 'z-20',
-	};
+}: types.MenuMenuProps) => {
+	const base = styles.menuMenuWrapper;
 	const [animation, setAnimation] = useState('opacity-0 scale-90 -translate-y-4');
 	const props = { ...base, ...tailwind, animation, className };
 	const ref = useRef(null);
@@ -164,46 +139,42 @@ export const MenuMenuWrapper = ({
 	);
 };
 
-export const MenuBlock = ({ id, name = 'MenuBlock', className, children, ...tailwind }: types.iMenuList) => {
-	const base = { spacing: 'p-4' };
+export const MenuBlock = ({ id, name = 'MenuBlock', className, children, ...tailwind }: types.MenuListProps) => {
+	const base = styles.menuBlock;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const MenuTitle = ({ id, name = 'MenuTitle', className, children, ...tailwind }: types.iMenuTitle) => {
-	const base = {
-		fontWeight: 'font-bold',
-		spacing: 'px-3 mb-4',
-		textTransform: 'capitalize',
-		tracking: 'tracking-wide',
-	};
+export const MenuTitle = ({ id, name = 'MenuTitle', className, children, ...tailwind }: types.MenuTitleProps) => {
+	const base = styles.menuTitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <H6 {...props}>{children}</H6>;
 };
 
-export const MenuSubtitle = ({ id, name = 'MenuSubtitle', className, children, ...tailwind }: types.iMenuSubtitle) => {
-	const base = {
-		color: 'text-gray-500 dark:text-gray-300',
-		whitespace: 'whitespace-nowrap',
-		fontWeight: 'font-normal',
-		fontSize: 'text-sm',
-	};
+export const MenuSubtitle = ({
+	id,
+	name = 'MenuSubtitle',
+	className,
+	children,
+	...tailwind
+}: types.MenuSubtitleProps) => {
+	const base = styles.menuSubtitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
-export const MenuList = ({ id, name = 'MenuList', className, children, ...tailwind }: types.iMenuList) => {
-	const base = { display: 'flex-column', space: 'space-y-2', spacing: 'py-4' };
+export const MenuList = ({ id, name = 'MenuList', className, children, ...tailwind }: types.MenuListProps) => {
+	const base = styles.menuList;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Ul {...props}>{children}</Ul>;
 };
 
-export const MenuItem = ({ id, name = 'MenuItem', className, children, ...tailwind }: types.iMenuItem) => {
-	const base = { display: 'flex', spacing: '', width: 'w-inherit' };
+export const MenuItem = ({ id, name = 'MenuItem', className, children, ...tailwind }: types.MenuItemProps) => {
+	const base = styles.menuItem;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Li {...props}>{children}</Li>;
@@ -218,15 +189,22 @@ export const MenuBtn = ({
 	className,
 	children,
 	...tailwind
-}: types.iMenuBtn) => {
-	const base = { align: 'text-left', display: 'flex-start' };
+}: types.MenuBtnProps) => {
+	const base = styles.menuBtn;
 	const props = { ...base, ...tailwind, children, className, name };
 
 	return <AccentBtn active={active} taskRunning={taskRunning} onClick={onClick} {...props} />;
 };
 
-export const MenuLink = ({ id, name = 'MenuLink', href = '', className, children, ...tailwind }: types.iMenuLink) => {
-	const base = { align: 'text-left', display: 'flex-start', width: 'w-full' };
+export const MenuLink = ({
+	id,
+	name = 'MenuLink',
+	href = '',
+	className,
+	children,
+	...tailwind
+}: types.MenuLinkProps) => {
+	const base = styles.menuLink;
 	const props = { ...base, ...tailwind, children, className, name };
 
 	return <AccentLink href={href} {...props} />;

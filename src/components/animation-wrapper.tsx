@@ -4,7 +4,13 @@ import { tailwindClassBuilder } from 'utils';
 
 export const useAnimation = useSpring;
 
-const Animation = ({ className, style, children, ...tailwind }) => {
+export type AnimationType = {
+	className?: string;
+	style: any;
+	children: any;
+};
+
+const Animation = ({ className, style, children, ...tailwind }: AnimationType) => {
 	const base = { position: 'relative' };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 

@@ -1,5 +1,15 @@
-import { BtnProps } from 'types';
+import { HtmlProps } from 'types';
 
-export type iBtn = BtnProps & {
-	span?: any;
+export type BtnProps = HtmlProps & {
+	type?: 'button' | 'submit' | 'reset';
+	alt?: string;
+	active?: boolean;
+	prevIcon?: any;
+	prevImg?: any;
+	icon?: any;
+	img?: any;
+	nextIcon?: any;
+	nextImg?: any;
+	disabled?: boolean;
+	taskRunning?: boolean;
 };

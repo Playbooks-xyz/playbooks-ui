@@ -11,7 +11,7 @@ export const Badge = ({
 	className,
 	children,
 	...tailwind
-}: types.iBadge) => {
+}: types.BadgeProps) => {
 	const base = { ...styles.badge, size: computeBadgeSize(size) };
 	const props = { ...base, ...tailwind, className, name };
 
@@ -58,49 +58,49 @@ export const Badge = ({
 	}
 };
 
-export const DraftBadge = ({ id, className, children, ...tailwind }: types.iBadge) => {
+export const DraftBadge = ({ id, className, children, ...tailwind }: types.BadgeProps) => {
 	const base = { ...styles.badge, ...styles.draftBadge };
 	const props = { ...base, ...tailwind, className };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const PendingBadge = ({ id, className, children, ...tailwind }: types.iBadge) => {
+export const PendingBadge = ({ id, className, children, ...tailwind }: types.BadgeProps) => {
 	const base = { ...styles.badge, ...styles.pendingBadge };
 	const props = { ...base, ...tailwind, className };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const WarningBadge = ({ id, className, children, ...tailwind }: types.iBadge) => {
+export const WarningBadge = ({ id, className, children, ...tailwind }: types.BadgeProps) => {
 	const base = { ...styles.badge, ...styles.warningBadge };
 	const props = { ...base, ...tailwind, className };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const SuccessBadge = ({ id, className, children, ...tailwind }: types.iBadge) => {
+export const SuccessBadge = ({ id, className, children, ...tailwind }: types.BadgeProps) => {
 	const base = { ...styles.badge, ...styles.successBadge };
 	const props = { ...base, ...tailwind, className };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const FinishedBadge = ({ id, className, children, ...tailwind }: types.iBadge) => {
+export const FinishedBadge = ({ id, className, children, ...tailwind }: types.BadgeProps) => {
 	const base = { ...styles.badge, ...styles.finishedBadge };
 	const props = { ...base, ...tailwind, className };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const ErrorBadge = ({ id, className, children, ...tailwind }: types.iBadge) => {
+export const ErrorBadge = ({ id, className, children, ...tailwind }: types.BadgeProps) => {
 	const base = { ...styles.badge, ...styles.errorBadge };
 	const props = { ...base, ...tailwind, className };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const OutlineBadge = ({ id, className, children, ...tailwind }: types.iBadge) => {
+export const OutlineBadge = ({ id, className, children, ...tailwind }: types.BadgeProps) => {
 	const base = { ...styles.badge, ...styles.outlineBadge };
 	const props = { ...base, ...tailwind, className };
 

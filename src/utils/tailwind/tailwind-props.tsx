@@ -208,7 +208,7 @@ export const rangeProps = () => ({
 
 // Tables
 export const tableHeadProps = {
-	transition: 'transition-all ease',
+	animation: 'transition-all ease',
 	align: 'text-left',
 	spacing: 'p-4',
 	whiteSpace: 'whitespace-nowrap',

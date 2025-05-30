@@ -3,14 +3,21 @@ import { Div } from 'interface/html';
 import * as styles from 'styles/progress-bar-styles';
 import * as types from 'types/progress-bar-types';
 
-export const ProgressBar = ({ id, name = 'ProgressBar', className, children, ...tailwind }: types.iProgressBar) => {
+export const ProgressBar = ({ id, name = 'ProgressBar', className, children, ...tailwind }: types.ProgressBarProps) => {
 	const base = styles.progressBar;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const Progress = ({ id, name = 'Progress', value = 0, className, children, ...tailwind }: types.iProgress) => {
+export const Progress = ({
+	id,
+	name = 'Progress',
+	value = 0,
+	className,
+	children,
+	...tailwind
+}: types.ProgressProps) => {
 	const base = styles.progress;
 	const style = useAnimation({ width: value ? value + '%' : '0%' });
 	const props = { ...base, ...tailwind, className, style, name };

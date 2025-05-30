@@ -1,6 +1,6 @@
 import { HtmlProps } from 'types';
 
-export type iIcon = HtmlProps & {
+export type IconProps = HtmlProps & {
 	type?: string;
 	icon?: string;
 	wrapper?: any;

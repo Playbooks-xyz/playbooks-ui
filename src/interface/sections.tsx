@@ -2,9 +2,10 @@ import * as HTML from '@ehubbell/html';
 import { Font, P } from 'interface/fonts';
 import { Div, Hr } from 'interface/html';
 import * as styles from 'styles/section-styles';
+import * as types from 'types/section-types';
 import { computeSectionSize, tailwindClassBuilder } from 'utils';
 
-export const Section = ({ id, ref, name = 'Section', className, children, style, ...tailwind }: types.iSection) => {
+export const Section = ({ id, ref, name = 'Section', className, children, style, ...tailwind }: types.SectionProps) => {
 	const base = styles.section;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -21,7 +22,7 @@ export const SectionHeader = ({
 	className,
 	children,
 	...tailwind
-}: types.iSectionHeader) => {
+}: types.SectionHeaderProps) => {
 	const base = styles.sectionHeader;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -34,7 +35,7 @@ export const SectionPretitle = ({
 	className,
 	children,
 	...tailwind
-}: types.iSectionPretitle) => {
+}: types.SectionPretitleProps) => {
 	const base = styles.sectionPretitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -48,11 +49,8 @@ export const SectionTitle = ({
 	className,
 	children,
 	...tailwind
-}: types.iSectionTitle) => {
-	const base = {
-		...styles.sectionTitle,
-		size,
-	};
+}: types.SectionTitleProps) => {
+	const base = { ...styles.sectionTitle, size };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Font {...props}>{children}</Font>;
@@ -65,17 +63,14 @@ export const SectionSubtitle = ({
 	className,
 	children,
 	...tailwind
-}: types.iSectionSubtitle) => {
-	const base = {
-		...styles.sectionSubtitle,
-		size,
-	};
+}: types.SectionSubtitleProps) => {
+	const base = { ...styles.sectionSubtitle, size };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Font {...props}>{children}</Font>;
 };
 
-export const SectionText = ({ id, name = 'SectionText', className, children, ...tailwind }: types.iSectionText) => {
+export const SectionText = ({ id, name = 'SectionText', className, children, ...tailwind }: types.SectionTextProps) => {
 	const base = styles.sectionText;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -88,7 +83,7 @@ export const SectionActions = ({
 	className,
 	children,
 	...tailwind
-}: types.iSectionActions) => {
+}: types.SectionActionsProps) => {
 	const base = styles.sectionActions;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -102,7 +97,7 @@ export const SectionBody = ({
 	className,
 	children,
 	...tailwind
-}: types.iSectionBody) => {
+}: types.SectionBodyProps) => {
 	const base = {
 		...styles.sectionBody,
 		size: computeSectionSize(size),
@@ -112,7 +107,7 @@ export const SectionBody = ({
 	return <Div {...props}>{children}</Div>;
 };
 
-export const SectionHr = ({ id, name = 'SectionHr', className, ...tailwind }: types.iSectionHr) => {
+export const SectionHr = ({ id, name = 'SectionHr', className, ...tailwind }: types.SectionHrProps) => {
 	const base = styles.sectionHr;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -125,7 +120,7 @@ export const SectionFooter = ({
 	className,
 	children,
 	...tailwind
-}: types.iSectionFooter) => {
+}: types.SectionFooterProps) => {
 	const base = styles.sectionFooter;
 	const props = { ...base, ...tailwind, className, name };
 

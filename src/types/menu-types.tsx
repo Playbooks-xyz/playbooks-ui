@@ -1,31 +1,31 @@
 import { BtnProps, HtmlProps, LinkProps } from 'types';
 
-export type iMenu = HtmlProps & {
+export type MenuProps = HtmlProps & {
 	open: boolean;
 	onClose: () => any;
 };
 
-export type iMenuBackdrop = HtmlProps & {
+export type MenuBackdropProps = HtmlProps & {
 	open: boolean;
 	onClose: () => any;
 };
 
-export type iMenuToggle = BtnProps;
+export type MenuToggleProps = BtnProps;
 
-export type iMenuMenu = HtmlProps & {
+export type MenuMenuProps = HtmlProps & {
 	open: boolean;
 };
 
-export type iMenuHeader = HtmlProps;
+export type MenuHeaderProps = HtmlProps;
 
-export type iMenuTitle = HtmlProps;
+export type MenuTitleProps = HtmlProps;
 
-export type iMenuSubtitle = HtmlProps;
+export type MenuSubtitleProps = HtmlProps;
 
-export type iMenuList = HtmlProps;
+export type MenuListProps = HtmlProps;
 
-export type iMenuItem = HtmlProps;
+export type MenuItemProps = HtmlProps;
 
-export type iMenuBtn = BtnProps;
+export type MenuBtnProps = BtnProps;
 
-export type iMenuLink = LinkProps;
+export type MenuLinkProps = LinkProps;

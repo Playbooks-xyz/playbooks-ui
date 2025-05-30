@@ -1,34 +1,32 @@
-import { HtmlProps } from 'types';
-import { iBtn } from 'types/button-types';
-import { iLink } from 'types/link-types';
+import { BtnProps, HtmlProps, LinkProps } from 'types';
 
-export type iDrop = HtmlProps & {
+export type DropProps = HtmlProps & {
 	open: boolean;
 	onClose: () => any;
 };
 
-export type iDropToggle = iBtn & {
+export type DropToggleProps = BtnProps & {
 	variant?: string;
 	open: boolean;
 	onClick: (v?: any) => any;
 };
 
-export type iDropMenu = HtmlProps & {
+export type DropMenuProps = HtmlProps & {
 	open: boolean;
 	placement?: string;
 	options?: any;
 };
 
-export type iDropHeader = HtmlProps;
+export type DropHeaderProps = HtmlProps;
 
-export type iDropTitle = HtmlProps;
+export type DropTitleProps = HtmlProps;
 
-export type iDropSubtitle = HtmlProps;
+export type DropSubtitleProps = HtmlProps;
 
-export type iDropList = HtmlProps;
+export type DropListProps = HtmlProps;
 
-export type iDropItem = HtmlProps;
+export type DropItemProps = HtmlProps;
 
-export type iDropBtn = iBtn;
+export type DropBtnProps = BtnProps;
 
-export type iDropLink = iLink;
+export type DropLinkProps = LinkProps;

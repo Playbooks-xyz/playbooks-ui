@@ -1,5 +1,5 @@
 import { HtmlProps } from 'types';
 
-export type iListGroup = HtmlProps;
+export type LiPropsstGroup = HtmlProps;
 
-export type iListItem = HtmlProps;
+export type LiPropsstItem = HtmlProps;

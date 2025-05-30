@@ -6,7 +6,9 @@ import { useKeyPress } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { Font } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
-import { borderProps, computeSectionSize } from 'utils';
+import * as styles from 'styles/modal-styles';
+import * as types from 'types/modal-types';
+import { computeSectionSize } from 'utils';
 
 export const ModalWrapper = ({
 	id,
@@ -16,13 +18,8 @@ export const ModalWrapper = ({
 	className,
 	children,
 	tailwind,
-}: types.iModalWrapper) => {
-	const base = {
-		position: 'fixed',
-		inset: 'inset-0',
-		overflow: 'overflow-y-auto',
-		zIndex: 'z-20',
-	};
+}: types.ModalWrapperProps) => {
+	const base = styles.modalWrapper;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -37,16 +34,8 @@ export const ModalWrapper = ({
 	);
 };
 
-export const ModalBackdrop = ({ id, name = 'ModalBackdrop', open, onClose, tailwind }: types.iModalBackdrop) => {
-	const base = {
-		bgColor: 'bg-black dark:bg-gray-700',
-		duration: 'duration-200',
-		ease: 'ease-in',
-		height: 'h-full',
-		inset: 'inset-0',
-		position: 'fixed',
-		transition: 'transition-all',
-	};
+export const ModalBackdrop = ({ id, name = 'ModalBackdrop', open, onClose, tailwind }: types.ModalBackdropProps) => {
+	const base = styles.modalBackdrop;
 	const [fade, setFade] = useState({ display: 'hidden', bgOpacity: '' });
 	const props = { ...base, ...fade, ...tailwind, name };
 	const ref = useRef(null);
@@ -65,20 +54,8 @@ export const ModalBackdrop = ({ id, name = 'ModalBackdrop', open, onClose, tailw
 	);
 };
 
-export const Modal = ({ id, name = 'Modal', open, onClose, className, children, tailwind }: types.iModal) => {
-	const base = {
-		align: 'text-left',
-		bgColor: 'bg-white dark:bg-gray-900',
-		border: 'border',
-		...borderProps,
-		borderRadius: 'rounded-lg',
-		duration: 'duration-200',
-		ease: 'ease-in',
-		spacing: 'mx-auto my-8',
-		transition: 'transition-all',
-		width: 'w-sm max-w-full',
-		zIndex: 'z-30',
-	};
+export const Modal = ({ id, name = 'Modal', open, onClose, className, children, tailwind }: types.ModalProps) => {
+	const base = styles.modal;
 	const [fade, setFade] = useState('hidden');
 	const props = { ...base, ...tailwind, fade, className, name };
 	const { ref, createPortal, toggleScroll } = useInterface();
@@ -127,14 +104,8 @@ export const ModalHeader = ({
 	className,
 	children,
 	...tailwind
-}: types.iModalHeader) => {
-	const base = {
-		display: 'flex-between',
-		border: 'border-b',
-		...borderProps,
-		space: 'space-x-4',
-		spacing: 'p-4',
-	};
+}: types.ModalHeaderProps) => {
+	const base = styles.modalHeader;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -145,14 +116,15 @@ export const ModalHeader = ({
 	);
 };
 
-export const ModalTitle = ({ id, name = 'ModalTitle', size, className, children, ...tailwind }: types.iModalTitle) => {
-	const base = {
-		display: 'flex-start',
-		fontWeight: 'font-bold',
-		size: size || 'h4',
-		space: 'space-x-4',
-		tracking: 'tracking-wide',
-	};
+export const ModalTitle = ({
+	id,
+	name = 'ModalTitle',
+	size,
+	className,
+	children,
+	...tailwind
+}: types.ModalTitleProps) => {
+	const base = { ...styles.modalTitle, size: size || 'h4' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Font {...props}>{children}</Font>;
@@ -165,41 +137,22 @@ export const ModalSubtitle = ({
 	className,
 	children,
 	...tailwind
-}: types.iModalSubtitle) => {
-	const base = {
-		size,
-		color: 'text-gray-600 dark:text-gray-400',
-		fontWeight: 'font-normal',
-		fontFamily: 'font-secondary',
-		space: 'space-x-4',
-	};
+}: types.ModalSubtitleProps) => {
+	const base = styles.modalSubtitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Font {...props}>{children}</Font>;
 };
 
-export const ModalBody = ({ id, name = 'ModalBody', size, className, children, ...tailwind }: types.iModalBody) => {
-	const base = {
-		align: 'text-left',
-		...borderProps,
-		spacing: 'p-4',
-		size: computeSectionSize(size),
-	};
+export const ModalBody = ({ id, name = 'ModalBody', size, className, children, ...tailwind }: types.ModalBodyProps) => {
+	const base = { ...styles.modalBody, size: computeSectionSize(size) };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const ModalFooter = ({ id, name = 'ModalFooter', className, children, ...tailwind }: types.iModalFooter) => {
-	const base = {
-		border: 'border-t',
-		...borderProps,
-		color: 'text-gray-500',
-		fontSize: 'text-sm',
-		display: 'flex-end',
-		spacing: 'p-4',
-		space: 'space-x-4',
-	};
+export const ModalFooter = ({ id, name = 'ModalFooter', className, children, ...tailwind }: types.ModalFooterProps) => {
+	const base = styles.modalFooter;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;

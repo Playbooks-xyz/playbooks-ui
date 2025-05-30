@@ -1,3 +1,5 @@
+import { borderProps } from 'utils';
+
 export const inputGroup = {
 	bgColor: 'bg-gray-white dark:bg-gray-900',
 	border: 'border',
@@ -13,7 +15,15 @@ export const inputGroup = {
 	transition: 'transition ease',
 };
 
-export const inputAddon = {
+export const inputAppend = {
+	...borderProps,
+	display: 'flex-middle',
+	flex: 'shrink-0',
+	spacing: 'px-4',
+};
+
+export const inputPrepend = {
+	...borderProps,
 	display: 'flex-middle',
 	flex: 'shrink-0',
 	spacing: 'px-4',

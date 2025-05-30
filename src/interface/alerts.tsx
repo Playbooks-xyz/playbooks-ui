@@ -4,7 +4,7 @@ import { FarIcon } from 'interface/icons';
 import * as styles from 'styles/alert-styles';
 import * as types from 'types/alert-types';
 
-export const Alert = ({ id, name = 'Alert', className, children, ...tailwind }: types.iAlert) => {
+export const Alert = ({ id, name = 'Alert', className, children, ...tailwind }: types.AlertProps) => {
 	const base = styles.alert;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -17,7 +17,7 @@ export const AlertIcon = ({
 	icon = 'exclamation-circle',
 	className,
 	...tailwind
-}: types.iAlertIcon) => {
+}: types.AlertIconProps) => {
 	const base = styles.alertIcon;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -28,7 +28,7 @@ export const AlertIcon = ({
 	);
 };
 
-export const AlertBody = ({ id, name = 'AlertBody', className, children, ...tailwind }: types.iAlertBody) => {
+export const AlertBody = ({ id, name = 'AlertBody', className, children, ...tailwind }: types.AlertBodyProps) => {
 	const base = styles.alertBody;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -42,7 +42,7 @@ export const AlertTitle = ({
 	className,
 	children,
 	...tailwind
-}: types.iAlertTitle) => {
+}: types.AlertTitleProps) => {
 	const base = styles.alertTitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -53,14 +53,20 @@ export const AlertTitle = ({
 	);
 };
 
-export const AlertText = ({ id, name = 'AlertText', className, children, ...tailwind }: types.iAlertText) => {
+export const AlertText = ({ id, name = 'AlertText', className, children, ...tailwind }: types.AlertTextProps) => {
 	const base = styles.alertText;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
-export const AlertActions = ({ id, name = 'AlertActions', className, children, ...tailwind }: types.iAlertActions) => {
+export const AlertActions = ({
+	id,
+	name = 'AlertActions',
+	className,
+	children,
+	...tailwind
+}: types.AlertActionsProps) => {
 	const base = styles.alertActions;
 	const props = { ...base, ...tailwind, className, name };
 

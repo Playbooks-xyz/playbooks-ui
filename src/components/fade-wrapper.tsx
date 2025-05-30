@@ -1,6 +1,8 @@
 import { Transition } from 'react-transition-group';
 
-export type iFade = HtmlType & {
+import { HtmlProps } from 'types';
+
+export type FadeProps = HtmlProps & {
 	ref?: any;
 	show: boolean;
 	timeout?: any;
@@ -27,7 +29,7 @@ const Fade = ({
 	mountOnEnter = true,
 	unmountOnExit = true,
 	children,
-}: iFade) => {
+}: FadeProps) => {
 	return (
 		<Transition
 			nodeRef={ref}

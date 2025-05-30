@@ -4,7 +4,7 @@ import { Span } from 'interface/html';
 import * as styles from 'styles/command-styles';
 import * as types from 'types/command-types';
 
-export const Command = ({ id, name = 'CMD', keys = [], className, children, ...tailwind }: types.iCommand) => {
+export const Command = ({ id, name = 'CMD', keys = [], className, children, ...tailwind }: types.CommandProps) => {
 	const base = styles.command;
 	const props = { ...base, ...tailwind, className, name };
 

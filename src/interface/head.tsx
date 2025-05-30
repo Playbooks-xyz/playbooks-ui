@@ -2,7 +2,7 @@ import NextHead from 'next/head';
 
 import * as types from 'types/head-types';
 
-export const Head = (props: types.iHead) => {
+export const Head = (props: types.HeadProps) => {
 	// Render
 	return (
 		<NextHead>

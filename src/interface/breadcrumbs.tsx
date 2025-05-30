@@ -7,7 +7,7 @@ import * as styles from 'styles/breadcrumb-styles';
 import * as types from 'types/breadcrumb-types';
 import { breadcrumbBtnProps } from 'utils';
 
-export const Breadcrumbs = ({ id, name = 'Breadcrumbs', className, children, ...tailwind }: types.iBreadcrumbs) => {
+export const Breadcrumbs = ({ id, name = 'Breadcrumbs', className, children, ...tailwind }: types.BreadcrumbsProps) => {
 	const base = styles.breadcrumbs;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -28,7 +28,7 @@ export const BreadcrumbItem = ({
 	className,
 	children,
 	...tailwind
-}: types.iBreadcrumbItem) => {
+}: types.BreadcrumbItemProps) => {
 	const base = styles.breadcrumbItem;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -49,7 +49,7 @@ export const BreadcrumbBtn = ({
 	className,
 	children,
 	...tailwind
-}: types.iBreadcrumbBtn) => {
+}: types.BreadcrumbBtnProps) => {
 	const base = { ...breadcrumbBtnProps(active) };
 	const props = { ...base, ...tailwind, size, className, name, active, children };
 
@@ -65,7 +65,7 @@ export const BreadcrumbLink = ({
 	className,
 	children,
 	...tailwind
-}: types.iBreadcrumbLink) => {
+}: types.BreadcrumbLinkProps) => {
 	const base = { ...breadcrumbBtnProps(active) };
 	const props = { ...base, ...tailwind, size, className, name, active, children };
 
