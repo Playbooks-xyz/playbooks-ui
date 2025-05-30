@@ -13,14 +13,14 @@ import {
 } from 'types/prefooter-types';
 
 export const Prefooter = ({ id, name = 'Prefooter', className, children, ...tailwind }: iPrefooter) => {
-	const base = styles.prefooterBase;
+	const base = styles.prefooter;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Section {...props}>{children}</Section>;
 };
 
 export const PrefooterBody = ({ id, name = 'PrefooterBody', className, children, ...tailwind }: iPrefooterBody) => {
-	const base = styles.prefooterBodyBase;
+	const base = styles.prefooterBody;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -33,7 +33,7 @@ export const PrefooterPretitle = ({
 	children,
 	...tailwind
 }: iPrefooterPretitle) => {
-	const base = styles.prefooterPretitleBase;
+	const base = styles.prefooterPretitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <H6 {...props}>{children}</H6>;
@@ -47,7 +47,7 @@ export const PrefooterTitle = ({
 	children,
 	...tailwind
 }: iPrefooterTitle) => {
-	const base = styles.prefooterTitleBase;
+	const base = styles.prefooterTitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -65,7 +65,7 @@ export const PrefooterSubtitle = ({
 	children,
 	...tailwind
 }: iPrefooterSubtitle) => {
-	const base = styles.prefooterSubtitleBase;
+	const base = styles.prefooterSubtitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -76,7 +76,7 @@ export const PrefooterSubtitle = ({
 };
 
 export const PrefooterText = ({ id, name = 'PrefooterText', className, children, ...tailwind }: iPrefooterText) => {
-	const base = styles.prefooterTextBase;
+	const base = styles.prefooterText;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
@@ -89,7 +89,7 @@ export const PrefooterActions = ({
 	children,
 	...tailwind
 }: iPrefooterActions) => {
-	const base = styles.prefooterActionsBase;
+	const base = styles.prefooterActions;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;

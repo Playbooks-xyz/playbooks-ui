@@ -1,6 +1,6 @@
 import { interactiveProps } from 'utils';
 
-export const btnWrapperBase = {
+export const btnWrapper = {
 	...interactiveProps(),
 	width: 'w-inherit',
 };

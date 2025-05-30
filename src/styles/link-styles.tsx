@@ -1,6 +1,6 @@
 import { interactiveProps } from 'utils';
 
-export const linkWrapperBase = {
+export const linkWrapper = {
 	...interactiveProps(),
 	width: 'w-inherit',
 };

@@ -1,10 +1,10 @@
-export const iconBase = {
+export const icon = {
 	color: 'text-inherit',
 	flex: 'shrink-0',
 	size: '',
 };
 
-export const wrappedIconBase = {
+export const wrappedIcon = {
 	bgColor: 'bg-gray-100 dark:bg-gray-800',
 	borderRadius: 'rounded-md',
 	color: 'text-blue-500 dark:text-cyan-500',

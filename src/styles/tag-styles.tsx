@@ -1,10 +1,10 @@
-export const tagsWrapperBase = {
+export const tagsWrapper = {
 	display: 'flex-start',
 	spacing: '',
 	flex: 'flex-wrap',
 };
 
-export const tagBase = {
+export const tag = {
 	bgColor: 'bg-gray-200 dark:bg-gray-700',
 	bgOpacity: 'bg-opacity-50 dark:bg-opacity-50',
 	borderColor: 'border-gray-500 dark:border-gray-400',
@@ -17,11 +17,11 @@ export const tagBase = {
 	tracking: 'tracking-wide',
 };
 
-export const tagImgBase = {
+export const tagImg = {
 	borderRadius: 'rounded-full',
 };
 
-export const tagBodyBase = {
+export const tagBody = {
 	borderColor: 'border-gray-500 dark:border-gray-400',
 	borderOpacity: 'border-opacity-25 dark:border-opacity-25',
 	fontSize: 'text-sm',
@@ -29,7 +29,7 @@ export const tagBodyBase = {
 	spacing: 'px-2',
 };
 
-export const tagActionsBase = {
+export const tagActions = {
 	display: 'flex-end',
 	flex: 'shrink-0',
 	space: 'space-x-2',

@@ -1,5 +1,5 @@
-import { Font } from 'interface/fonts';
-import { Div, Img, Span } from 'interface/html';
+import { Font, P } from 'interface/fonts';
+import { Div, Img } from 'interface/html';
 import * as styles from 'styles';
 import {
 	iAvatar,
@@ -13,17 +13,24 @@ import {
 import { computeAvatarSize } from 'utils';
 
 export const Avatar = ({ id, name = 'Avatar', className, children, ...tailwind }: iAvatar) => {
-	const base = styles.avatarBase;
+	const base = styles.avatar;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const AvatarBadge = ({ id, name = 'AvatarBadge', className, children, ...tailwind }: iAvatarBadge) => {
-	const base = styles.avatarBadgeBase;
+export const AvatarBadge = ({
+	id,
+	name = 'AvatarBadge',
+	size = 'sm',
+	className,
+	children,
+	...tailwind
+}: iAvatarBadge) => {
+	const base = { ...styles.avatarBadge, size: computeAvatarSize(size) };
 	const props = { ...base, ...tailwind, className, name };
 
-	return <Span {...props}>{children}</Span>;
+	return <Div {...props}>{children}</Div>;
 };
 
 export const AvatarImg = ({
@@ -35,17 +42,14 @@ export const AvatarImg = ({
 	className,
 	...tailwind
 }: iAvatarImg) => {
-	const base = {
-		...styles.avatarImgBase,
-		size: computeAvatarSize(size),
-	};
+	const base = { ...styles.avatarImg, size: computeAvatarSize(size) };
 	const props = { ...base, ...tailwind, className, name };
 
-	return <Img src={src} alt={alt} width='60px' {...props} />;
+	return <Img src={src} alt={alt} {...props} />;
 };
 
 export const AvatarBody = ({ id, name = 'AvatarBody', className, children, ...tailwind }: iAvatarBody) => {
-	const base = styles.avatarBodyBase;
+	const base = styles.avatarBody;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -59,7 +63,7 @@ export const AvatarTitle = ({
 	children,
 	...tailwind
 }: iAvatarTitle) => {
-	const base = styles.avatarTitleBase;
+	const base = styles.avatarTitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -69,23 +73,19 @@ export const AvatarTitle = ({
 	);
 };
 
-export const AvatarText = ({ id, name = 'AvatarText', size = 'sm', className, children, ...tailwind }: iAvatarText) => {
-	const base = styles.avatarTextBase;
+export const AvatarText = ({ id, name = 'AvatarText', className, children, ...tailwind }: iAvatarText) => {
+	const base = styles.avatarText;
 	const props = { ...base, ...tailwind, className, name };
 
-	return (
-		<Font size={size} {...props}>
-			{children}
-		</Font>
-	);
+	return <P {...props}>{children}</P>;
 };
 
 export const AvatarActions = ({ id, name = 'AvatarActions', className, children, ...tailwind }: iAvatarActions) => {
-	const base = styles.avatarActionsBase;
+	const base = styles.avatarActions;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-// Docs
-//
+// Docs:
+// https://tailwindui.com/interface/application-ui/elements/avatars

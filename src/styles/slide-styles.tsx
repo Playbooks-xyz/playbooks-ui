@@ -1,12 +1,12 @@
 import { borderProps } from 'utils';
 
-export const slideWrapperBase = {
+export const slideWrapper = {
 	position: 'fixed',
 	inset: 'inset-0',
 	zIndex: 'z-20',
 };
 
-export const slideBackdropBase = {
+export const slideBackdrop = {
 	bgColor: 'bg-black dark:bg-gray-700',
 	duration: 'duration-200',
 	ease: 'ease-in',
@@ -16,7 +16,7 @@ export const slideBackdropBase = {
 	transition: 'transition-all',
 };
 
-export const slideBase = {
+export const slide = {
 	bgColor: 'bg-white dark:bg-gray-900',
 	ease: 'ease-out',
 	display: 'flex-column',
@@ -29,7 +29,7 @@ export const slideBase = {
 	zIndex: 'z-20',
 };
 
-export const slideHeaderBase = {
+export const slideHeader = {
 	display: 'flex-between',
 	border: 'border-b',
 	...borderProps,
@@ -37,18 +37,18 @@ export const slideHeaderBase = {
 	width: 'w-full',
 };
 
-export const slideTitleBase = {
+export const slideTitle = {
 	fontWeight: 'font-bold',
 	tracking: 'tracking-wide',
 };
 
-export const slideBodyBase = {
+export const slideBody = {
 	display: 'grow',
 	overflow: 'overflow-y-scroll',
 	spacing: 'p-4',
 };
 
-export const slideFooterBase = {
+export const slideFooter = {
 	border: 'border-t',
 	...borderProps,
 	spacing: 'p-4',

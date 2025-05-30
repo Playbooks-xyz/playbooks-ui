@@ -15,7 +15,7 @@ export const RadioWrapper = ({
 	...tailwind
 }: iRadioWrapper) => {
 	const base = {
-		...styles.radioWrapperBase,
+		...styles.radioWrapper,
 		...(active && {
 			borderColor: 'border-blue-500 dark:border-cyan-500',
 		}),
@@ -40,7 +40,7 @@ export const Radio = ({
 	children,
 	...tailwind
 }: iRadio) => {
-	const base = styles.radioBase;
+	const base = styles.radio;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -55,7 +55,7 @@ export const Radio = ({
 };
 
 export const RadioInput = ({ id, name = 'RadioInput', value, className, children, ...tailwind }: iRadioInput) => {
-	const base = { ...checkboxProps(value), ...styles.radioInputBase };
+	const base = { ...checkboxProps(value), ...styles.radioInput };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, name, className });
 	return (
 		<HTML.Input
@@ -72,14 +72,14 @@ export const RadioInput = ({ id, name = 'RadioInput', value, className, children
 };
 
 export const RadioTitle = ({ id, name = 'RadioLabel', className, children, ...tailwind }: iRadioLabel) => {
-	const base = styles.radioTitleBase;
+	const base = styles.radioTitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
 export const RadioText = ({ id, name = 'RadioLabel', className, children, ...tailwind }: iRadioLabel) => {
-	const base = styles.radioTextBase;
+	const base = styles.radioText;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Small {...props}>{children}</Small>;

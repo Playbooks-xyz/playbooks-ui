@@ -4,7 +4,7 @@ import { iTag, iTagActions, iTagBody, iTagImg, iTagWrapper } from 'types/tag-typ
 import { computeTagImgSize, computeTagSize } from 'utils';
 
 export const TagsWrapper = ({ id, name = 'TagsWrapper', className, children, ...tailwind }: iTagWrapper) => {
-	const base = styles.tagsWrapperBase;
+	const base = styles.tagsWrapper;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -12,7 +12,7 @@ export const TagsWrapper = ({ id, name = 'TagsWrapper', className, children, ...
 
 export const Tag = ({ id, name = 'Tag', size = 'sm', className, children, ...tailwind }: iTag) => {
 	const base = {
-		...styles.tagBase,
+		...styles.tag,
 		size: computeTagSize(size),
 	};
 	const props = { ...base, ...tailwind, className, name };
@@ -29,21 +29,21 @@ export const TagImg = ({
 	className,
 	...tailwind
 }: iTagImg) => {
-	const base = { ...styles.tagImgBase, size: computeTagImgSize(size) };
+	const base = { ...styles.tagImg, size: computeTagImgSize(size) };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Img src={src} alt={alt} {...props} />;
 };
 
 export const TagBody = ({ id, name = 'TagBody', className, children, ...tailwind }: iTagBody) => {
-	const base = styles.tagBodyBase;
+	const base = styles.tagBody;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
 export const TagActions = ({ id, name = 'TagActions', onClick, className, children, ...tailwind }: iTagActions) => {
-	const base = styles.tagActionsBase;
+	const base = styles.tagActions;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;

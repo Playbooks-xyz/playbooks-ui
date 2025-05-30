@@ -1,15 +1,15 @@
-export const tooltipBase = {
+export const tooltip = {
 	cursor: 'cursor-pointer',
 	duration: 'duration-100',
 	transition: 'transition-all ease',
 };
 
-export const tooltipBodyBase = {
+export const tooltipBody = {
 	animation: 'transition ease',
 	zIndex: 'z-10',
 };
 
-export const tooltipInnerBase = {
+export const tooltipInner = {
 	bgColor: 'bg-gray-800',
 	borderRadius: 'rounded-md',
 	color: 'white',
@@ -18,7 +18,7 @@ export const tooltipInnerBase = {
 	width: 'w-auto',
 };
 
-export const tooltipArrowBase = {
+export const tooltipArrow = {
 	bgColor: 'bg-gray-800',
 	borderRadius: 'rounded-sm',
 	rotate: 'rotate-45',

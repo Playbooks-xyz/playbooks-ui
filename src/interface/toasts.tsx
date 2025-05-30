@@ -17,14 +17,14 @@ import {
 } from 'types/toast-types';
 
 export const ToastWrapper = ({ id, name = 'ToastWrapper', className, children, ...tailwind }: iToastWrapper) => {
-	const base = styles.toastWrapperBase;
+	const base = styles.toastWrapper;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
 export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, children, ...tailwind }: iToast) => {
-	const base = styles.toastBase;
+	const base = styles.toast;
 	const [fade, setFade] = useState({ opacity: 'opacity-0', translate: 'translate-y-12' });
 	const props = { ...base, ...tailwind, ...fade, className };
 	const ref = useRef(null);
@@ -48,7 +48,7 @@ export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, 
 };
 
 export const ToastHeader = ({ id, name = 'ToastHeader', onRemove, className, children, ...tailwind }: iToastHeader) => {
-	const base = styles.toastHeaderBase;
+	const base = styles.toastHeader;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -62,7 +62,7 @@ export const ToastHeader = ({ id, name = 'ToastHeader', onRemove, className, chi
 };
 
 export const ToastIcon = ({ id, name = 'ToastIcon', icon = 'question-circle', className, ...tailwind }: iToastIcon) => {
-	const base = styles.toastIconBase;
+	const base = styles.toastIcon;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -73,21 +73,21 @@ export const ToastIcon = ({ id, name = 'ToastIcon', icon = 'question-circle', cl
 };
 
 export const ToastTitle = ({ id, name = 'ToastTitle', className, children, ...tailwind }: iToastTitle) => {
-	const base = styles.toastTitleBase;
+	const base = styles.toastTitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <H6 {...props}>{children}</H6>;
 };
 
 export const ToastBody = ({ id, name = 'ToastBody', className, children, ...tailwind }: iToastBody) => {
-	const base = styles.toastBodyBase;
+	const base = styles.toastBody;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
 export const ToastText = ({ id, name = 'ToastText', className, children, ...tailwind }: iToastText) => {
-	const base = styles.toastTextBase;
+	const base = styles.toastText;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;

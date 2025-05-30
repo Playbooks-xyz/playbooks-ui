@@ -1,6 +1,6 @@
 import { borderProps } from 'utils';
 
-export const sectionBase = {
+export const section = {
 	bgColor: 'bg-white dark:bg-gray-900',
 	border: 'border',
 	...borderProps,
@@ -11,7 +11,7 @@ export const sectionBase = {
 	width: 'w-full',
 };
 
-export const sectionHeaderBase = {
+export const sectionHeader = {
 	spacing: 'p-4',
 	border: 'border-b',
 	...borderProps,
@@ -20,7 +20,7 @@ export const sectionHeaderBase = {
 	width: 'w-full',
 };
 
-export const sectionPretitleBase = {
+export const sectionPretitle = {
 	color: 'text-gray-500',
 	fontFamily: 'font-accent',
 	fontSize: 'text-sm',
@@ -29,7 +29,7 @@ export const sectionPretitleBase = {
 	tracking: 'tracking-wider',
 };
 
-export const sectionTitleBase = {
+export const sectionTitle = {
 	display: 'flex-start',
 	fontWeight: 'font-bold',
 	leading: 'leading-normal',
@@ -37,32 +37,32 @@ export const sectionTitleBase = {
 	tracking: 'tracking-wide',
 };
 
-export const sectionSubtitleBase = {
+export const sectionSubtitle = {
 	color: 'text-gray-600 dark:text-gray-300',
 	fontWeight: 'font-light',
 	fontFamily: 'font-secondary',
 	tracking: 'tracking-normal',
 };
 
-export const sectionTextBase = {
+export const sectionText = {
 	fontFamily: 'font-secondary',
 };
 
-export const sectionActionsBase = {
+export const sectionActions = {
 	display: 'lg:flex-end',
 	space: 'space-y-4 space-x-0 lg:space-y-0 lg:space-x-4',
 	width: 'w-full lg:w-1/2',
 };
 
-export const sectionBodyBase = {
+export const sectionBody = {
 	spacing: 'p-4',
 	...borderProps,
 	width: 'w-full',
 };
 
-export const sectionHrBase = {};
+export const sectionHr = {};
 
-export const sectionFooterBase = {
+export const sectionFooter = {
 	display: 'flex-between',
 	border: 'border-t',
 	...borderProps,

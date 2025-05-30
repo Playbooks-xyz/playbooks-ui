@@ -1,13 +1,13 @@
 import { borderProps } from 'utils';
 
-export const dropBase = {};
+export const drop = {};
 
-export const dropToggleBase = {
+export const dropToggle = {
 	display: 'flex-between',
 	space: 'space-x-4',
 };
 
-export const dropMenuBase = {
+export const dropMenu = {
 	bgColor: 'bg-white dark:bg-gray-900',
 	border: 'border',
 	...borderProps,
@@ -21,7 +21,7 @@ export const dropMenuBase = {
 	zIndex: 'z-10',
 };
 
-export const dropHeaderBase = {
+export const dropHeader = {
 	align: 'text-left',
 	border: 'border-b',
 	...borderProps,
@@ -29,7 +29,7 @@ export const dropHeaderBase = {
 	spacing: 'px-6 py-4',
 };
 
-export const dropTitleBase = {
+export const dropTitle = {
 	color: 'text-gray-800 dark:text-white',
 	whitespace: 'whitespace-nowrap',
 	fontWeight: 'font-semibold',
@@ -37,33 +37,33 @@ export const dropTitleBase = {
 	tracking: 'tracking-wide',
 };
 
-export const dropSubtitleBase = {
+export const dropSubtitle = {
 	color: 'text-gray-500 dark:text-gray-300',
 	whitespace: 'whitespace-nowrap',
 	fontWeight: 'font-normal',
 	fontSize: 'text-sm',
 };
 
-export const dropListBase = {
+export const dropList = {
 	border: '',
 	...borderProps,
 	space: 'space-y-1',
 	spacing: 'p-2',
 };
 
-export const dropItemBase = {
+export const dropItem = {
 	display: 'block',
 	width: 'w-full',
 };
 
-export const dropBtnBase = {
+export const dropBtn = {
 	align: 'text-left',
 	display: 'flex-start',
 	space: 'space-x-4',
 	width: 'w-full',
 };
 
-export const dropLinkBase = {
+export const dropLink = {
 	align: 'text-left',
 	display: 'flex-start',
 	space: 'space-x-4',

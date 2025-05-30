@@ -2,11 +2,12 @@ import * as HTML from '@ehubbell/html';
 import { BtnWrapper } from 'interface/buttons';
 import { Div, Span } from 'interface/html';
 import { FadIcon } from 'interface/icons';
+import * as styles from 'styles';
 import { iSwitch, iSwitchBackdrop, iSwitchGroup, iSwitchInner, iSwitchLabel, iSwitchToggle } from 'types/switch-types';
 import { tailwindClassBuilder } from 'utils';
 
 export const SwitchGroup = ({ id, name = 'SwitchGroup', className, children, ...tailwind }: iSwitchGroup) => {
-	const base = { display: 'flex-between', space: 'space-x-4' };
+	const base = styles.switchGroup;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -17,14 +18,7 @@ export const SwitchGroup = ({ id, name = 'SwitchGroup', className, children, ...
 };
 
 export const Switch = ({ id, name = 'Switch', icon, checked, onClick, className, ...tailwind }: iSwitch) => {
-	const base = {
-		display: 'inline-flex items-center justify-center shrink-0',
-		position: 'relative',
-		overflow: 'overflow-hidden',
-		size: 'w-12 h-10',
-		cursor: 'cursor-pointer',
-		ring: 'ring-sky',
-	};
+	const base = styles.switchBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -38,13 +32,7 @@ export const Switch = ({ id, name = 'Switch', icon, checked, onClick, className,
 };
 
 export const SwitchBackdrop = ({ id, name = 'SwitchBackdrop', checked, className, ...tailwind }: iSwitchBackdrop) => {
-	const base = {
-		bgColor: 'bg-gray-200',
-		transition: 'transition',
-		pointer: ' pointer-events-none',
-		size: 'w-10 h-2',
-		borderRadius: 'rounded-full',
-	};
+	const base = styles.switchBackdrop;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Span aria-hidden='true' {...props} />;
@@ -52,14 +40,8 @@ export const SwitchBackdrop = ({ id, name = 'SwitchBackdrop', checked, className
 
 export const SwitchInner = ({ id, name = 'SwitchInner', checked, className, ...tailwind }: iSwitchInner) => {
 	const base = {
-		position: 'absolute',
+		...styles.switchInner,
 		bgColor: checked ? 'bg-gray-100 dark:bg-gray-600' : 'bg-gray-100 dark:bg-gray-800',
-		transition: 'transition',
-		duration: 'duration-200',
-		pointer: ' pointer-events-none',
-		size: 'w-10 h-3',
-		spacing: 'mx-auto',
-		borderRadius: 'rounded-full',
 	};
 	const props = { ...base, ...tailwind, className, name };
 
@@ -68,19 +50,9 @@ export const SwitchInner = ({ id, name = 'SwitchInner', checked, className, ...t
 
 export const SwitchToggle = ({ id, name = 'SwitchToggle', icon, checked, className, ...tailwind }: iSwitchToggle) => {
 	const base = {
-		animation: checked ? 'translate-x-6' : 'translate-x-0',
-		inset: 'left-0',
-		position: 'absolute',
-		display: 'inline-block',
+		...styles.switchToggle,
 		bgColor: checked ? 'bg-blue-500 dark:bg-cyan-500' : 'bg-gray-300 dark:bg-gray-600',
-		border: '',
-		transition: 'transition',
-		transform: 'transform',
-		duration: 'duration-200',
-		pointer: ' pointer-events-none',
-		// shadow: 'shadow-md',
-		size: 'w-6 h-6',
-		borderRadius: 'rounded-full',
+		transform: checked ? 'translate-x-6' : 'translate-x-0',
 	};
 	const props = { ...base, ...tailwind, className, name };
 
@@ -96,12 +68,7 @@ export const SwitchToggle = ({ id, name = 'SwitchToggle', icon, checked, classNa
 };
 
 export const SwitchLabel = ({ id, name = 'SwitchLabel', htmlFor, className, children, ...tailwind }: iSwitchLabel) => {
-	const base = {
-		display: 'inline-block',
-		fontSize: 'font-base',
-		fontWeight: 'font-medium',
-		color: 'text-gray-700 dark:text-gray-200',
-	};
+	const base = styles.switchLabel;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (

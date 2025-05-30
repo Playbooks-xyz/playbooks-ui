@@ -5,7 +5,7 @@ import { iInputAddon, iInputGroup } from 'types/input-group-types';
 import { borderProps } from 'utils';
 
 export const InputGroup = ({ id, name = 'InputGroup', active, className, children, ...tailwind }: iInputGroup) => {
-	const base = styles.inputGroupBase;
+	const base = styles.inputGroup;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -22,7 +22,7 @@ export const InputAppend = ({
 }: iInputAddon) => {
 	const base = {
 		...borderProps,
-		...styles.inputAddonBase,
+		...styles.inputAddon,
 	};
 	const props = { ...base, ...tailwind, className, name };
 
@@ -41,7 +41,7 @@ export const InputPrepend = ({
 }: iInputAddon) => {
 	const base = {
 		...borderProps,
-		...styles.inputAddonBase,
+		...styles.inputAddon,
 	};
 	const props = { ...base, ...tailwind, className, name };
 

@@ -1,6 +1,6 @@
 import { borderProps } from 'utils';
 
-export const heroBase = {
+export const hero = {
 	bgColor: 'bg-white dark:bg-gray-900',
 	...borderProps,
 	display: 'block',
@@ -9,12 +9,12 @@ export const heroBase = {
 	width: 'w-full',
 };
 
-export const heroBgBase = {
+export const heroBg = {
 	inset: 'inset-0',
 	position: 'absolute',
 };
 
-export const heroImgBase = {
+export const heroImg = {
 	aspect: 'aspect-[1/1]',
 	bgColor: 'bg-gray-100 dark:bg-gray-800',
 	border: '',
@@ -26,7 +26,7 @@ export const heroImgBase = {
 	overflow: 'overflow-hidden',
 };
 
-export const heroIconBase = {
+export const heroIcon = {
 	aspect: 'aspect-[1/1]',
 	bgColor: 'bg-gray-100 dark:bg-gray-800',
 	border: '',
@@ -39,12 +39,12 @@ export const heroIconBase = {
 	overflow: 'overflow-hidden',
 };
 
-export const heroBodyBase = {
+export const heroBody = {
 	align: 'text-left',
 	space: 'space-y-1',
 };
 
-export const heroPretitleBase = {
+export const heroPretitle = {
 	color: 'text-blue-500 dark:text-cyan-500',
 	fontFamily: 'font-accent',
 	fontSize: 'text-sm',
@@ -53,7 +53,7 @@ export const heroPretitleBase = {
 	tracking: 'tracking-widest',
 };
 
-export const heroTitleBase = {
+export const heroTitle = {
 	display: 'flex-start',
 	fontWeight: 'font-extrabold',
 	leading: '!leading-tight',
@@ -61,7 +61,7 @@ export const heroTitleBase = {
 	tracking: 'tracking-wide',
 };
 
-export const heroSubtitleBase = {
+export const heroSubtitle = {
 	color: 'text-gray-500 dark:text-gray-400',
 	fontFamily: 'font-secondary',
 	fontWeight: 'font-light',
@@ -69,13 +69,13 @@ export const heroSubtitleBase = {
 	tracking: 'tracking-normal',
 };
 
-export const heroTextBase = {
+export const heroText = {
 	fontFamily: 'font-secondary',
 	fontWeight: 'font-light',
 	tracking: 'tracking-wide',
 };
 
-export const heroActionsBase = {
+export const heroActions = {
 	display: 'lg:flex-end',
 	space: 'space-y-4 space-x-0 lg:space-y-0 lg:space-x-4',
 	width: 'w-full',

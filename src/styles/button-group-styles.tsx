@@ -1,6 +1,6 @@
 import { borderProps } from 'utils';
 
-export const btnGroupBase = {
+export const btnGroup = {
 	display: 'inline-flex',
 	border: 'border',
 	...borderProps,

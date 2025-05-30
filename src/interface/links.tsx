@@ -137,7 +137,7 @@ export const LinkWrapper = ({
 	...tailwind
 }: iLink) => {
 	const base = {
-		...styles.linkWrapperBase,
+		...styles.linkWrapper,
 		cursor: disabled ? 'cursor-not-allowed' : 'cursor-pointer',
 	};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });

@@ -11,17 +11,17 @@ import {
 	iFeedbackText,
 	iFeedbackTitle,
 } from 'types/feedback-types';
-import { borderProps, tailwindClassBuilder } from 'utils';
+import { tailwindClassBuilder } from 'utils';
 
 export const Feedback = ({ id, name = 'Feedback', className, children, ...tailwind }: iFeedback) => {
-	const base = styles.feedbackBase;
+	const base = styles.feedback;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
 export const FeedbackHeader = ({ id, name = 'FeedbackHeader', className, children, ...tailwind }: iFeedbackHeader) => {
-	const base = styles.feedbackHeaderBase;
+	const base = styles.feedbackHeader;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -36,14 +36,14 @@ export const FeedbackIcon = ({
 	className,
 	...tailwind
 }: iFeedbackIcon) => {
-	const base = { ...styles.feedbackIconBase, fontSize };
+	const base = { ...styles.feedbackIcon, fontSize };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return <Icon type={type} icon={icon} className={classes} />;
 };
 
 export const FeedbackBody = ({ id, name = 'FeedbackBody', className, children, ...tailwind }: iFeedbackBody) => {
-	const base = styles.feedbackBodyBase;
+	const base = styles.feedbackBody;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -56,7 +56,7 @@ export const FeedbackPretitle = ({
 	children,
 	...tailwind
 }: iFeedbackTitle) => {
-	const base = styles.feedbackPretitleBase;
+	const base = styles.feedbackPretitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Small {...props}>{children}</Small>;
@@ -70,7 +70,7 @@ export const FeedbackTitle = ({
 	children,
 	...tailwind
 }: iFeedbackTitle) => {
-	const base = styles.feedbackTitleBase;
+	const base = styles.feedbackTitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -81,7 +81,7 @@ export const FeedbackTitle = ({
 };
 
 export const FeedbackText = ({ id, name = 'FeedbackText', className, children, ...tailwind }: iFeedbackText) => {
-	const base = styles.feedbackTextBase;
+	const base = styles.feedbackText;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
@@ -94,7 +94,7 @@ export const FeedbackActions = ({
 	children,
 	...tailwind
 }: iFeedbackActions) => {
-	const base = styles.feedbackActionsBase;
+	const base = styles.feedbackActions;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;

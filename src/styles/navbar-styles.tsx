@@ -1,6 +1,6 @@
 import { borderProps } from 'utils';
 
-export const navbarBase = {
+export const navbar = {
 	bgColor: 'bg-white dark:bg-gray-900',
 	...borderProps,
 	display: 'flex-between',
@@ -9,13 +9,13 @@ export const navbarBase = {
 	width: 'w-full',
 };
 
-export const navbarBrandBase = {
+export const navbarBrand = {
 	display: 'inline-block',
 	flex: 'shrink-0',
 	width: 'w-44',
 };
 
-export const navbarListBase = {
+export const navbarList = {
 	display: 'flex-end',
 	space: 'space-x-2',
 	spacing: '',

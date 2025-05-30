@@ -1,46 +1,54 @@
 import { borderProps } from 'utils';
 
-export const accordionBase = {
-	border: '',
-	...borderProps,
-	transition: 'transition-all',
-	origin: 'origin-top',
-};
-
-export const accordionToggleBase = {
-	animation: 'transition-all ease',
-	border: '',
+export const accordion = {
+	border: 'border',
 	...borderProps,
 	borderRadius: 'rounded-md',
-	color: 'text-gray-500',
-	display: 'flex-between',
-	fontFamily: 'font-accent',
-	fontSize: 'text-sm',
-	fontWeight: 'font-medium',
-	hover: 'h:bg-gray-100 dark:h:bg-gray-800',
-	nextIcon: { icon: 'chevron-down', rotate: 'rotate-0', transition: 'transition-all ease' },
-	spacing: 'py-4',
-	span: { display: 'flex-start', flex: 'grow', width: 'w-full' },
+	spacing: 'mb-4',
 	width: 'w-full',
 };
 
-export const accordionTitleBase = {
-	display: 'flex-start',
-	fontWeight: 'font-medium',
+export const accordionToggle = {
+	bgColor: 'bg-transparent',
+	border: 'border-transparent',
+	borderRadius: 'rounded-none',
+	display: 'block',
+	grid: 'grid-2',
+	nextIcon: {
+		bgColor: 'bg-gray-200 dark:bg-gray-600',
+		borderRadius: 'rounded-md',
+		color: 'text-gray-700 dark:text-gray-100',
+		icon: 'chevron-down',
+		size: 'w-6 h-6',
+		transform: 'transform',
+		transition: 'transition-all ease',
+		variant: 'basic',
+	},
+	spacing: 'p-0',
+	textAlign: 'text-left',
+	width: 'w-full',
 };
 
-export const accordionBodyWrapperBase = {
+export const accordionTitle = {
+	color: 'text-gray-700 dark:text-gray-100',
+	fontWeight: 'font-semibold',
+	tracking: 'tracking-wide',
+};
+
+export const accordionBodyWrapper = {
+	duration: 'duration-200',
 	overflow: 'overflow-hidden',
-	origin: 'origin-top',
-	ease: 'ease-out',
-	transition: 'transition-all',
+	transition: 'transition-all ease',
 };
 
-export const accordionBodyBase = {
+export const accordionBody = {
+	border: 'border-t',
 	...borderProps,
+	spacing: 'p-4',
+	width: 'w-full',
 };
 
-export const accordionTextBase = {
-	fontSize: 'text-sm',
-	fontWeight: 'font-light',
+export const accordionText = {
+	color: 'text-gray-600 dark:text-gray-300',
+	fontFamily: 'font-secondary',
 };

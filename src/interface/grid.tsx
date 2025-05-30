@@ -5,7 +5,7 @@ import { computeCol, computeContainer, computeGrid } from 'utils';
 
 export const Container = ({ id, name = 'Container', size, className, children, ...tailwind }: iContainer) => {
 	const base = {
-		...styles.containerBase,
+		...styles.container,
 		size: computeContainer(size),
 	};
 	const props = { ...base, ...tailwind, className, name };
@@ -15,7 +15,7 @@ export const Container = ({ id, name = 'Container', size, className, children, .
 
 export const Grid = ({ id, name = 'Grid', cols = '12', className, children, ...tailwind }: iGrid) => {
 	const base = {
-		...styles.gridBase,
+		...styles.grid,
 		cols: computeGrid(cols),
 	};
 	const props = { ...base, ...tailwind, className, name };

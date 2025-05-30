@@ -1,60 +1,60 @@
 import { borderProps } from 'utils';
 
-export const htmlBase = {};
+export const html = {};
 
-export const bodyBase = {};
+export const body = {};
 
-export const mainBase = {
+export const main = {
 	position: 'relative',
 };
 
-export const asideBase = {
+export const aside = {
 	...borderProps,
 };
 
-export const divBase = {
+export const div = {
 	position: 'relative',
 	...borderProps,
 };
 
-export const spanBase = {
+export const span = {
 	display: 'inline',
 };
 
-export const ulBase = {
+export const ul = {
 	...borderProps,
 	spacing: 'pl-4',
 };
 
-export const liBase = {
+export const li = {
 	...borderProps,
 	fontFamily: 'font-secondary',
 	color: 'text-inherit',
 };
 
-export const iFrameBase = {};
+export const iFrame = {};
 
-export const imgBase = {
+export const img = {
 	display: 'inline-block',
 };
 
-export const hrBase = {
+export const hr = {
 	border: 'border-t',
 	borderRadius: 'rounded-md',
 	...borderProps,
 };
 
-export const articleBase = {};
+export const article = {};
 
-export const figureBase = {};
+export const figure = {};
 
-export const captionBase = {};
+export const caption = {};
 
-export const blockquoteBase = {};
+export const blockquote = {};
 
-export const preBase = {};
+export const pre = {};
 
-export const codeBase = {
+export const code = {
 	bgColor: 'bg-gray-100 dark:bg-gray-800',
 	borderRadius: 'rounded-md',
 	display: 'inline-block',

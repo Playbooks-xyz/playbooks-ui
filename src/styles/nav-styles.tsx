@@ -1,6 +1,6 @@
 import { borderProps } from 'utils';
 
-export const navBase = {
+export const nav = {
 	bgColor: 'bg-white dark:bg-gray-900',
 	...borderProps,
 	borderRadius: 'rounded-md',
@@ -8,38 +8,38 @@ export const navBase = {
 	position: 'relative',
 };
 
-export const navHeaderBase = {
+export const navHeader = {
 	...borderProps,
 	spacing: 'p-4',
 };
 
-export const navTitleBase = {
+export const navTitle = {
 	fontWeight: 'font-bold',
 };
 
-export const navBodyBase = {
+export const navBody = {
 	spacing: 'p-4',
 };
 
-export const navListBase = {
+export const navList = {
 	align: 'text-left',
 	display: 'flex-column',
 	space: 'space-y-1',
 	spacing: '',
 };
 
-export const navItemBase = {
+export const navItem = {
 	display: 'block',
 };
 
-export const navBtnBase = {
+export const navBtn = {
 	align: 'text-left',
 	display: 'flex-start',
 	space: 'space-x-4',
 	width: 'w-full',
 };
 
-export const navLinkBase = {
+export const navLink = {
 	align: 'text-left',
 	display: 'flex-start',
 	space: 'space-x-4',

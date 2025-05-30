@@ -6,7 +6,7 @@ import { iNavbar, iNavbarBrand, iNavbarList } from 'types/navbar-types';
 import { tailwindClassBuilder } from 'utils';
 
 export const Navbar = ({ id, ref, name = 'Navbar', className, children, ...tailwind }: iNavbar) => {
-	const base = styles.navbarBase;
+	const base = styles.navbar;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -26,7 +26,7 @@ export const NavbarBrand = ({
 	children,
 	...tailwind
 }: iNavbarBrand) => {
-	const base = styles.navbarBrandBase;
+	const base = styles.navbarBrand;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -37,7 +37,7 @@ export const NavbarBrand = ({
 };
 
 export const NavbarList = ({ id, name = 'NavbarList', className, children, ...tailwind }: iNavbarList) => {
-	const base = styles.navbarListBase;
+	const base = styles.navbarList;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Ul {...props}>{children}</Ul>;

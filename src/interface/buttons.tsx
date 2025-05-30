@@ -138,7 +138,7 @@ export const BtnWrapper = ({
 	...tailwind
 }: iBtn) => {
 	const base = {
-		...styles.btnWrapperBase,
+		...styles.btnWrapper,
 		cursor: disabled ? 'cursor-not-allowed' : 'cursor-pointer',
 	};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });

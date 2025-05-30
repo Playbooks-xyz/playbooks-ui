@@ -8,7 +8,7 @@ import { iBreadcrumbBtn, iBreadcrumbItem, iBreadcrumbLink, iBreadcrumbs } from '
 import { breadcrumbBtnProps } from 'utils';
 
 export const Breadcrumbs = ({ id, name = 'Breadcrumbs', className, children, ...tailwind }: iBreadcrumbs) => {
-	const base = styles.breadcrumbsBase;
+	const base = styles.breadcrumbs;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -29,7 +29,7 @@ export const BreadcrumbItem = ({
 	children,
 	...tailwind
 }: iBreadcrumbItem) => {
-	const base = styles.breadcrumbItemBase;
+	const base = styles.breadcrumbItem;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (

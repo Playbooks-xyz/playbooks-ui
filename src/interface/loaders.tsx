@@ -13,7 +13,7 @@ export const ModalLoader = ({
 	children,
 	...tailwind
 }: iPageLoader) => {
-	const base = styles.modalLoaderBase;
+	const base = styles.modalLoader;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -39,7 +39,7 @@ export const PageLoader = ({
 	children,
 	...tailwind
 }: iPageLoader) => {
-	const base = styles.pageLoaderBase;
+	const base = styles.pageLoader;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -69,7 +69,7 @@ export const SectionLoader = ({
 	children,
 	...tailwind
 }: iSectionLoader) => {
-	const base = styles.sectionLoaderBase;
+	const base = styles.sectionLoader;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (

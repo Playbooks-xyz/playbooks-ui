@@ -8,7 +8,7 @@ import { iRoute } from 'types/route-types';
 import { capitalize } from 'utils/transforms';
 
 export const Route = ({ id, name = 'Route', seo, style, className, children, ...tailwind }: iRoute) => {
-	const base = styles.routeBase;
+	const base = styles.route;
 	const props = { ...base, ...tailwind, className, name };
 	const { meta } = useInterface();
 	const router = useRouter();

@@ -1,12 +1,12 @@
 import * as HTML from '@ehubbell/html';
 import { Font } from 'interface/fonts';
 import { Div } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/header-styles';
 import { iHeader, iHeaderActions, iHeaderSubtitle, iHeaderText, iHeaderTitle } from 'types/header-types';
 import { tailwindClassBuilder } from 'utils';
 
 export const Header = ({ id, name = 'Header', className, children, style, ...tailwind }: iHeader) => {
-	const base = styles.headerBase;
+	const base = styles.header;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -17,7 +17,7 @@ export const Header = ({ id, name = 'Header', className, children, style, ...tai
 };
 
 export const HeaderTitle = ({ id, name = 'HeaderTitle', size, className, children, ...tailwind }: iHeaderTitle) => {
-	const base = styles.headerTitleBase;
+	const base = styles.headerTitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -28,7 +28,7 @@ export const HeaderTitle = ({ id, name = 'HeaderTitle', size, className, childre
 };
 
 export const HeaderSubtitle = ({ id, name = 'HeaderSubtitle', className, children, ...tailwind }: iHeaderSubtitle) => {
-	const base = styles.headerSubtitleBase;
+	const base = styles.headerSubtitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -39,7 +39,7 @@ export const HeaderSubtitle = ({ id, name = 'HeaderSubtitle', className, childre
 };
 
 export const HeaderText = ({ id, name = 'HeaderText', className, children, ...tailwind }: iHeaderText) => {
-	const base = styles.headerTextBase;
+	const base = styles.headerText;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -50,7 +50,7 @@ export const HeaderText = ({ id, name = 'HeaderText', className, children, ...ta
 };
 
 export const HeaderActions = ({ id, name = 'HeaderActions', className, children, ...tailwind }: iHeaderActions) => {
-	const base = styles.headerActionsBase;
+	const base = styles.headerActions;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;

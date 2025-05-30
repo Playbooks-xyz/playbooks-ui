@@ -1,44 +1,38 @@
-export const avatarBase = {
+export const avatar = {
 	display: 'flex-start',
 	space: 'space-x-4',
 	width: 'w-full',
 };
 
-export const avatarBadgeBase = {
-	bgColor: 'bg-blue-500 dark:bg-cyan-500',
-	border: 'border-2',
-	borderColor: 'border-white dark:border-gray-900',
-	borderOpacity: 'border-opacity-100',
+export const avatarBadge = {
 	borderRadius: 'rounded-full',
-	color: 'white',
-	fontSize: 'text-sm',
-	spacing: 'w-6 h-6',
-	flex: 'flex-middle',
+	display: 'flex-middle',
+	position: 'relative',
 };
 
-export const avatarImgBase = {
-	aspect: 'aspect-[1/1]',
-	borderColor: 'border-gray-100 dark:border-gray-900',
+export const avatarImg = {
 	borderRadius: 'rounded-full',
-	flex: 'shrink-0',
+	objectFit: 'object-cover',
 };
 
-export const avatarBodyBase = {
-	space: '',
+export const avatarBody = {
+	display: 'flex-column',
+	width: 'w-full',
 };
 
-export const avatarTitleBase = {
-	color: 'text-gray-700 dark:text-gray-200',
-	fontWeight: 'font-bold',
-	textDecoration: 'capitalize',
+export const avatarTitle = {
+	fontWeight: 'font-semibold',
+	tracking: 'tracking-wide',
 };
 
-export const avatarTextBase = {
-	fontWeight: 'font-normal',
+export const avatarText = {
+	color: 'text-gray-600 dark:text-gray-300',
+	fontFamily: 'font-secondary',
+	spacing: 'mt-1',
 };
 
-export const avatarActionsBase = {
-	display: 'flex-start',
-	flex: 'shrink-0',
+export const avatarActions = {
+	display: 'flex-end',
 	space: 'space-x-2',
+	spacing: 'mt-4',
 };

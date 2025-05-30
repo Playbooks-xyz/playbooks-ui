@@ -1,4 +1,4 @@
-export const inputGroupBase = {
+export const inputGroup = {
 	bgColor: 'bg-gray-white dark:bg-gray-900',
 	border: 'border',
 	borderColor: 'border-gray-400 dark:border-gray-500 focus-within:border-blue-500 dark:focus-within:border-cyan-500',
@@ -13,7 +13,7 @@ export const inputGroupBase = {
 	transition: 'transition ease',
 };
 
-export const inputAddonBase = {
+export const inputAddon = {
 	display: 'flex-middle',
 	flex: 'shrink-0',
 	spacing: 'px-4',

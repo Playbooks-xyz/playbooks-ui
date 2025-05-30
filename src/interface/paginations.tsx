@@ -6,7 +6,7 @@ import { iPagination, iPaginationBtn } from 'types/pagination-types';
 import { paginationProps, tailwindClassBuilder } from 'utils';
 
 export const Pagination = ({ id, name = 'Pagination', className, children, ...tailwind }: iPagination) => {
-	const base = styles.paginationBase;
+	const base = styles.pagination;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Nav {...props}>{children}</Nav>;

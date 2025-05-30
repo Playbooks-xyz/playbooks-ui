@@ -1,9 +1,9 @@
-export const modalLoaderBase = {
+export const modalLoader = {
 	align: 'text-center',
 	spacing: 'mx-auto',
 };
 
-export const pageLoaderBase = {
+export const pageLoader = {
 	bgColor: 'bg-white dark:bg-gray-900',
 	color: 'text-gray-700 dark:text-gray-300',
 	display: 'flex-middle',
@@ -12,7 +12,7 @@ export const pageLoaderBase = {
 	zIndex: 'z-50',
 };
 
-export const sectionLoaderBase = {
+export const sectionLoader = {
 	align: 'text-center',
 	spacing: 'mx-auto',
 };

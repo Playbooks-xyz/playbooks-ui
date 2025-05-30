@@ -1,18 +1,18 @@
-export const tabWrapperBase = {
+export const tabWrapper = {
 	width: 'w-full',
 };
 
-export const tabSelectBase = {
+export const tabSelect = {
 	border: 'border-1',
 	borderRadius: '',
 	sm: 'sm:hidden',
 };
 
-export const tabsBase = {
+export const tabs = {
 	display: 'flex-start',
 };
 
-export const tabBase = {
+export const tab = {
 	bgColor: 'h:bg-gray-100 dark:h:bg-gray-700',
 	border: 'border-b-4',
 	borderColor: 'border-transparent h:border-gray-300 dark:h:border-gray-600',
@@ -22,6 +22,6 @@ export const tabBase = {
 	zIndex: 'z-10',
 };
 
-export const tabPanesBase = {};
+export const tabPanes = {};
 
-export const tabPaneBase = {};
+export const tabPane = {};

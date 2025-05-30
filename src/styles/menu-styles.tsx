@@ -1,10 +1,10 @@
 import { borderProps } from 'utils';
 
-export const menuBase = {
+export const menu = {
 	zIndex: 'z-20',
 };
 
-export const menuBackdropBase = {
+export const menuBackdrop = {
 	bgColor: 'bg-black dark:bg-gray-700',
 	duration: 'duration-200',
 	ease: 'ease-in',
@@ -15,12 +15,12 @@ export const menuBackdropBase = {
 	zIndex: 'z-1',
 };
 
-export const menuToggleBase = {
+export const menuToggle = {
 	display: 'flex-between',
 	space: 'space-x-4',
 };
 
-export const menuMenuBase = {
+export const menuMenu = {
 	bgColor: 'bg-white dark:bg-gray-900',
 	border: 'border-b',
 	...borderProps,
@@ -35,49 +35,49 @@ export const menuMenuBase = {
 	overflow: 'overflow-hidden overflow-y-scroll',
 };
 
-export const menuMenuWrapperBase = {
+export const menuMenuWrapper = {
 	position: 'absolute',
 	width: 'w-full',
 	transition: 'transition-all',
 	zIndex: 'z-20',
 };
 
-export const menuBlockBase = {
+export const menuBlock = {
 	spacing: 'p-4',
 };
 
-export const menuTitleBase = {
+export const menuTitle = {
 	fontWeight: 'font-bold',
 	spacing: 'px-3 mb-4',
 	textTransform: 'capitalize',
 	tracking: 'tracking-wide',
 };
 
-export const menuSubtitleBase = {
+export const menuSubtitle = {
 	color: 'text-gray-500 dark:text-gray-300',
 	whitespace: 'whitespace-nowrap',
 	fontWeight: 'font-normal',
 	fontSize: 'text-sm',
 };
 
-export const menuListBase = {
+export const menuList = {
 	display: 'flex-column',
 	space: 'space-y-2',
 	spacing: 'py-4',
 };
 
-export const menuItemBase = {
+export const menuItem = {
 	display: 'flex',
 	spacing: '',
 	width: 'w-inherit',
 };
 
-export const menuBtnBase = {
+export const menuBtn = {
 	align: 'text-left',
 	display: 'flex-start',
 };
 
-export const menuLinkBase = {
+export const menuLink = {
 	align: 'text-left',
 	display: 'flex-start',
 	width: 'w-full',

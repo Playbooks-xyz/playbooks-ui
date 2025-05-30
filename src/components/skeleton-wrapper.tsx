@@ -1,3 +1,4 @@
+import 'react-loading-skeleton/dist/skeleton.css';
 import SkeletonWrapper, { SkeletonTheme } from 'react-loading-skeleton';
 
 import { tailwindClassBuilder } from 'utils';

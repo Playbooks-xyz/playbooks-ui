@@ -1,20 +1,20 @@
 import { borderProps } from 'utils';
 
-export const tableBase = {
+export const table = {
 	divide: 'divide-y',
 	divideColor: 'divide-gray-200',
 	divideOpacity: 'divide-opacity-25',
 	width: 'w-full',
 };
 
-export const tableHeaderBase = {
+export const tableHeader = {
 	border: 'border-b',
 	...borderProps,
 };
 
-export const tableHeaderRowBase = {};
+export const tableHeaderRow = {};
 
-export const tableHeadBase = {
+export const tableHead = {
 	animation: 'transition-all ease',
 	align: 'text-left',
 	spacing: 'px-4 py-4',
@@ -26,15 +26,15 @@ export const tableHeadBase = {
 	tracking: 'tracking-wider',
 };
 
-export const tableBodyBase = {};
+export const tableBody = {};
 
-export const tableRowBase = {
+export const tableRow = {
 	bgColor: '',
 	border: 'border-b',
 	...borderProps,
 };
 
-export const tableDataBase = {
+export const tableData = {
 	align: 'text-left',
 	spacing: 'px-4 py-4',
 	fontSize: 'text-sm',

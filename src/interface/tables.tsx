@@ -16,7 +16,7 @@ import { tailwindClassBuilder } from 'utils';
 import { isObject } from 'utils/helpers';
 
 export const Table = ({ id, name = 'Table', className, children, ...tailwind }: iTable) => {
-	const base = styles.tableBase;
+	const base = styles.table;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -27,7 +27,7 @@ export const Table = ({ id, name = 'Table', className, children, ...tailwind }: 
 };
 
 export const TableHeader = ({ id, name = 'TableHeader', className, children, ...tailwind }: iTableHeader) => {
-	const base = styles.tableHeaderBase;
+	const base = styles.tableHeader;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -38,7 +38,7 @@ export const TableHeader = ({ id, name = 'TableHeader', className, children, ...
 };
 
 export const TableHeaderRow = ({ id, name = 'TableHeaderRow', className, children, ...tailwind }: iTableHeaderRow) => {
-	const base = styles.tableHeaderRowBase;
+	const base = styles.tableHeaderRow;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return <tr className={classes}>{children}</tr>;
@@ -55,7 +55,7 @@ export const TableHead = ({
 	children,
 	...tailwind
 }: iTableHead) => {
-	const base = styles.tableHeadBase;
+	const base = styles.tableHead;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 	const direction = value === params?.sortProp && params?.sortValue === 'asc' ? 'desc' : 'asc';
 
@@ -83,7 +83,7 @@ export const TableHead = ({
 };
 
 export const TableBody = ({ id, name = 'TableBody', className, children, ...tailwind }: iTableBody) => {
-	const base = styles.tableBodyBase;
+	const base = styles.tableBody;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -94,7 +94,7 @@ export const TableBody = ({ id, name = 'TableBody', className, children, ...tail
 };
 
 export const TableRow = ({ id, name = 'TableRow', className, children, ...tailwind }: iTableRow) => {
-	const base = styles.tableRowBase;
+	const base = styles.tableRow;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -114,7 +114,7 @@ export const TableData = ({
 	...tailwind
 }: iTableData) => {
 	const base = {
-		...styles.tableDataBase,
+		...styles.tableData,
 		color: title ? 'text-gray-800 dark:text-gray-100' : 'text-gray-600 dark:text-gray-400',
 	};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });

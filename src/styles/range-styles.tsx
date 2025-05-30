@@ -1,4 +1,4 @@
-export const rangeSliderTrackBase = {
+export const rangeSliderTrack = {
 	bgColor: 'bg-gray-100 dark:bg-gray-800',
 	borderRadius: 'rounded-full',
 	height: 'h-inherit',
@@ -6,7 +6,7 @@ export const rangeSliderTrackBase = {
 	width: 'w-full',
 };
 
-export const rangeSliderThumbBase = {
+export const rangeSliderThumb = {
 	size: 'w-6 h-6',
 	border: 'border-2',
 	borderRadius: 'rounded-full',

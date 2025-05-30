@@ -1,13 +1,13 @@
 import { borderProps } from 'utils';
 
-export const modalWrapperBase = {
+export const modalWrapper = {
 	position: 'fixed',
 	inset: 'inset-0',
 	overflow: 'overflow-y-auto',
 	zIndex: 'z-20',
 };
 
-export const modalBackdropBase = {
+export const modalBackdrop = {
 	bgColor: 'bg-black dark:bg-gray-700',
 	duration: 'duration-200',
 	ease: 'ease-in',
@@ -17,7 +17,7 @@ export const modalBackdropBase = {
 	transition: 'transition-all',
 };
 
-export const modalBase = {
+export const modal = {
 	align: 'text-left',
 	bgColor: 'bg-white dark:bg-gray-900',
 	border: 'border',
@@ -31,7 +31,7 @@ export const modalBase = {
 	zIndex: 'z-30',
 };
 
-export const modalHeaderBase = {
+export const modalHeader = {
 	display: 'flex-between',
 	border: 'border-b',
 	...borderProps,
@@ -39,27 +39,27 @@ export const modalHeaderBase = {
 	spacing: 'p-4',
 };
 
-export const modalTitleBase = {
+export const modalTitle = {
 	display: 'flex-start',
 	fontWeight: 'font-bold',
 	space: 'space-x-4',
 	tracking: 'tracking-wide',
 };
 
-export const modalSubtitleBase = {
+export const modalSubtitle = {
 	color: 'text-gray-600 dark:text-gray-400',
 	fontWeight: 'font-normal',
 	fontFamily: 'font-secondary',
 	space: 'space-x-4',
 };
 
-export const modalBodyBase = {
+export const modalBody = {
 	align: 'text-left',
 	...borderProps,
 	spacing: 'p-4',
 };
 
-export const modalFooterBase = {
+export const modalFooter = {
 	border: 'border-t',
 	...borderProps,
 	color: 'text-gray-500',

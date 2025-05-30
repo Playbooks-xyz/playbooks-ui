@@ -5,7 +5,7 @@ import * as styles from 'styles';
 import { iCommand } from 'types/command-types';
 
 export const Command = ({ id, name = 'CMD', keys = [], className, children, ...tailwind }: iCommand) => {
-	const base = styles.commandBase;
+	const base = styles.command;
 	const props = { ...base, ...tailwind, className, name };
 
 	// Computed

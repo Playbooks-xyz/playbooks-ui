@@ -5,7 +5,7 @@ import * as styles from 'styles';
 import { iTab, iTabPane, iTabPanes, iTabs, iTabSelect, iTabWrapper } from 'types/tab-types';
 
 export const TabWrapper = ({ id, name = 'TabWrapper', className, children, ...tailwind }: iTabWrapper) => {
-	const base = styles.tabWrapperBase;
+	const base = styles.tabWrapper;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -21,14 +21,14 @@ export const TabSelect = ({
 	children,
 	...tailwind
 }: iTabSelect) => {
-	const base = styles.tabSelectBase;
+	const base = styles.tabSelect;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <FormSelect value={activeTab} options={tabs} onChange={onSelect} {...props} />;
 };
 
 export const Tabs = ({ id, name = 'Tabs', activeTab, tabs, onSelect, className, children, ...tailwind }: iTabs) => {
-	const base = styles.tabsBase;
+	const base = styles.tabs;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -53,7 +53,7 @@ export const Tab = ({
 	...tailwind
 }: iTab) => {
 	const base = {
-		...styles.tabBase,
+		...styles.tab,
 		...(active && {
 			borderColor: 'border-blue-500 dark:border-cyan-500',
 			color: 'text-blue-500 dark:text-cyan-500',
@@ -65,14 +65,14 @@ export const Tab = ({
 };
 
 export const TabPanes = ({ id, name = 'TabPanes', className, children, ...tailwind }: iTabPanes) => {
-	const base = styles.tabPanesBase;
+	const base = styles.tabPanes;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
 export const TabPane = ({ id, name = 'TabPane', active, value, className, children, ...tailwind }: iTabPane) => {
-	const base = { ...styles.tabPaneBase, display: active ? 'block' : 'hidden' };
+	const base = { ...styles.tabPane, display: active ? 'block' : 'hidden' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;

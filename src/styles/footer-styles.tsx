@@ -1,6 +1,6 @@
 import { borderProps } from 'utils';
 
-export const footerBase = {
+export const footer = {
 	bgColor: 'bg-white dark:bg-gray-900',
 	border: 'border-t',
 	...borderProps,
@@ -8,47 +8,47 @@ export const footerBase = {
 	spacing: 'py-6',
 };
 
-export const footerHeaderBase = {
+export const footerHeader = {
 	border: 'border',
 	...borderProps,
 	spacing: 'py-8',
 };
 
-export const footerBodyBase = {
+export const footerBody = {
 	spacing: 'py-10',
 	width: 'w-full',
 };
 
-export const footerTitleBase = {
+export const footerTitle = {
 	fontSize: 'text-base',
 	fontWeight: 'font-bold',
 	tracking: 'tracking-wider',
 };
 
-export const footerTextBase = {
+export const footerText = {
 	fontSize: 'text-sm',
 };
 
-export const footerListBase = {
+export const footerList = {
 	display: 'flex-column',
 	space: 'space-y-2',
 	spacing: '',
 };
 
-export const footerItemBase = {
+export const footerItem = {
 	display: 'block',
 	spacing: 'py-1',
 };
 
-export const footerBtnBase = {
+export const footerBtn = {
 	fontSize: 'text-sm',
 };
 
-export const footerLinkBase = {
+export const footerLink = {
 	fontSize: 'text-sm',
 };
 
-export const footerFooterBase = {
+export const footerFooter = {
 	border: 'border-t',
 	...borderProps,
 	spacing: 'pt-6',

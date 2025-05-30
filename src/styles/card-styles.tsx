@@ -1,6 +1,6 @@
 import { borderProps } from 'utils';
 
-export const cardBase = {
+export const card = {
 	animation: 'transition-all ease',
 	border: 'border',
 	...borderProps,
@@ -9,30 +9,30 @@ export const cardBase = {
 	width: 'w-full',
 };
 
-export const cardHeaderBase = {
+export const cardHeader = {
 	bgColor: 'bg-gray-100 dark:bg-gray-800',
 	...borderProps,
 	borderRadius: 'rounded-md',
 };
 
-export const cardIconBase = {
+export const cardIcon = {
 	color: 'text-gray-500',
 	fontSize: 'text-xl',
 };
 
-export const cardImgBase = {
+export const cardImg = {
 	bgColor: 'bg-gray-100 dark:bg-gray-800',
 	width: 'w-full',
 };
 
-export const cardBodyBase = {
+export const cardBody = {
 	align: 'text-left',
 	...borderProps,
 	space: 'space-y-1',
 	spacing: 'p-4',
 };
 
-export const cardPretitleBase = {
+export const cardPretitle = {
 	color: 'text-blue-500 dark:text-cyan-500',
 	fontFamily: 'font-accent',
 	fontSize: 'text-sm',
@@ -41,13 +41,13 @@ export const cardPretitleBase = {
 	tracking: 'tracking-wider',
 };
 
-export const cardTitleBase = {
+export const cardTitle = {
 	display: 'flex-start',
 	fontWeight: 'font-semibold',
 	space: 'space-x-4',
 };
 
-export const cardSubtitleBase = {
+export const cardSubtitle = {
 	color: 'text-gray-600 dark:text-gray-300',
 	fontWeight: 'font-light',
 	fontSize: 'text-base',
@@ -55,12 +55,12 @@ export const cardSubtitleBase = {
 	tracking: 'tracking-normal',
 };
 
-export const cardTextBase = {
+export const cardText = {
 	fontSize: 'text-sm',
 	fontWeight: 'font-light',
 };
 
-export const cardFooterBase = {
+export const cardFooter = {
 	border: 'border-t',
 	...borderProps,
 	color: 'text-gray-500',
@@ -70,7 +70,7 @@ export const cardFooterBase = {
 	spacing: 'p-4',
 };
 
-export const cardActionsBase = {
+export const cardActions = {
 	display: 'flex-start',
 	flex: 'shrink-0',
 	space: 'space-x-4',

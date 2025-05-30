@@ -1,15 +1,13 @@
 import react from '@vitejs/plugin-react';
 
+import { exec } from 'node:child_process';
 import path from 'path';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import tailwindcss from 'tailwindcss';
 import { defineConfig } from 'vite';
 
 function pushBuild() {
-	// exec('npx yalc push', (response, error) => {
-	// 	if (error) console.error(error);
-	// 	// console.log('build projects finished');
-	// });
+	exec('npx yalc push', (response, error) => (error ? console.error(error) : null));
 }
 
 export default defineConfig({
@@ -65,6 +63,7 @@ export default defineConfig({
 				path.resolve(__dirname, 'src/interface/tags.tsx'),
 				path.resolve(__dirname, 'src/interface/toasts.tsx'),
 				path.resolve(__dirname, 'src/interface/tooltips.tsx'),
+				path.resolve(__dirname, 'src/styles/styles.tsx'),
 				path.resolve(__dirname, 'src/utils/utils.tsx'),
 			],
 			formats: ['cjs'],
@@ -120,6 +119,7 @@ export default defineConfig({
 			hooks: path.resolve(__dirname, '/src/hooks'),
 			icons: path.resolve(__dirname, '/src/icons'),
 			interface: path.resolve(__dirname, '/src/interface'),
+			styles: path.resolve(__dirname, '/src/styles'),
 			types: path.resolve(__dirname, '/src/types'),
 			utils: path.resolve(__dirname, '/src/utils'),
 		},

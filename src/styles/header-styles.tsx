@@ -1,6 +1,6 @@
 import { borderProps } from 'utils';
 
-export const headerBase = {
+export const header = {
 	border: ' border-b',
 	...borderProps,
 	display: 'flex-between',
@@ -10,7 +10,7 @@ export const headerBase = {
 	width: 'w-full',
 };
 
-export const headerTitleBase = {
+export const headerTitle = {
 	display: 'flex-start',
 	flex: 'grow',
 	fontWeight: 'font-bold',
@@ -19,21 +19,21 @@ export const headerTitleBase = {
 	textTransform: 'capitalize',
 };
 
-export const headerSubtitleBase = {
+export const headerSubtitle = {
 	color: 'text-gray-600 dark:text-gray-300',
 	fontFamily: 'font-secondary',
 	fontWeight: 'font-normal',
 	tracking: 'tracking-normal',
 };
 
-export const headerTextBase = {
+export const headerText = {
 	color: 'text-gray-700 dark:text-gray-100',
 	fontWeight: 'font-light',
 	fontFamily: 'font-secondary',
 	tracking: 'tracking-normal',
 };
 
-export const headerActionsBase = {
+export const headerActions = {
 	display: 'flex-end',
 	space: 'space-x-4',
 };

@@ -26,7 +26,7 @@ import {
 import { checkboxProps, computeInputSize, inputProps, rangeProps, tailwindClassBuilder } from 'utils';
 
 export const Form = ({ id, name = 'Form', onSubmit, className, children, ...tailwind }: iForm) => {
-	const base = styles.formBase;
+	const base = styles.form;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -37,7 +37,7 @@ export const Form = ({ id, name = 'Form', onSubmit, className, children, ...tail
 };
 
 export const FormGroup = ({ id, name = 'FormGroup', className, children, ...tailwind }: iFormGroup) => {
-	const base = styles.formGroupBase;
+	const base = styles.formGroup;
 	const props = { ...base, ...tailwind, name, className };
 
 	return (
@@ -56,7 +56,7 @@ export const FormLabel = ({
 	children,
 	...tailwind
 }: iFormLabel) => {
-	const base = styles.formLabelBase;
+	const base = styles.formLabel;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -237,7 +237,7 @@ export const FormDivInput = ({
 	const base = {
 		...inputProps(variant),
 		...computeInputSize(size),
-		...styles.formDivInputBase,
+		...styles.formDivInput,
 	};
 	const props = { ...base, ...tailwind, name, className };
 
@@ -257,7 +257,7 @@ export const FormFileInput = ({
 	className,
 	...tailwind
 }: iFormFile) => {
-	const base = styles.formFileInputBase;
+	const base = styles.formFileInput;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return <input placeholder={placeholder} value={value} onChange={onChange} className={classes} />;
@@ -367,7 +367,7 @@ export const FormSelect = ({
 };
 
 export const FormText = ({ id, name = 'FormText', className, children, ...tailwind }: iFormText) => {
-	const base = styles.formTextBase;
+	const base = styles.formText;
 	const props = { ...base, ...tailwind, name, className };
 
 	return <Div {...props}>{children}</Div>;

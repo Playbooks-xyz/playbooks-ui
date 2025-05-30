@@ -19,7 +19,7 @@ import { computeHeroSize, computeThumbnailSize, tailwindClassBuilder } from 'uti
 
 export const Hero = ({ id, ref, name = 'Hero', size, className, children, style, ...tailwind }: iHero) => {
 	const base = {
-		...styles.heroBase,
+		...styles.hero,
 		size: computeHeroSize(size),
 	};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
@@ -32,7 +32,7 @@ export const Hero = ({ id, ref, name = 'Hero', size, className, children, style,
 };
 
 export const HeroBg = ({ id, ref, name = 'HeroBg', className, children, ...tailwind }: iHeroBg) => {
-	const base = styles.heroBgBase;
+	const base = styles.heroBg;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -52,7 +52,7 @@ export const HeroImg = ({
 	...tailwind
 }: iHeroImg) => {
 	const base = {
-		...styles.heroImgBase,
+		...styles.heroImg,
 		size: computeThumbnailSize(size),
 	};
 	const props = { ...base, ...tailwind, className, name };
@@ -66,7 +66,7 @@ export const HeroImg = ({
 
 export const HeroIcon = ({ id, name = 'HeroIcon', size = 'lg', icon = 'code', className, ...tailwind }: iHeroIcon) => {
 	const base = {
-		...styles.heroIconBase,
+		...styles.heroIcon,
 		size: computeThumbnailSize(size),
 	};
 	const props = { ...base, ...tailwind, className, name };
@@ -79,21 +79,21 @@ export const HeroIcon = ({ id, name = 'HeroIcon', size = 'lg', icon = 'code', cl
 };
 
 export const HeroBody = ({ id, name = 'HeroBody', className, children, ...tailwind }: iHeroBody) => {
-	const base = styles.heroBodyBase;
+	const base = styles.heroBody;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
 export const HeroPretitle = ({ id, name = 'HeroPretitle', className, children, ...tailwind }: iHeroPretitle) => {
-	const base = styles.heroPretitleBase;
+	const base = styles.heroPretitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
 export const HeroTitle = ({ id, name = 'HeroTitle', size, className, children, ...tailwind }: iHeroTitle) => {
-	const base = styles.heroTitleBase;
+	const base = styles.heroTitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -111,7 +111,7 @@ export const HeroSubtitle = ({
 	children,
 	...tailwind
 }: iHeroSubtitle) => {
-	const base = styles.heroSubtitleBase;
+	const base = styles.heroSubtitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -122,14 +122,14 @@ export const HeroSubtitle = ({
 };
 
 export const HeroText = ({ id, name = 'HeroText', className, children, ...tailwind }: iHeroText) => {
-	const base = styles.heroTextBase;
+	const base = styles.heroText;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
 export const HeroActions = ({ id, name = 'HeroActions', className, children, ...tailwind }: iHeroActions) => {
-	const base = styles.heroActionsBase;
+	const base = styles.heroActions;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;

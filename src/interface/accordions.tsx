@@ -7,7 +7,7 @@ import * as styles from 'styles';
 import { iAccordion, iAccordionBody, iAccordionText, iAccordionTitle, iAccordionToggle } from 'types/accordion-types';
 
 export const Accordion = ({ id, name = 'Accordion', open, className, children, ...tailwind }: iAccordion) => {
-	const base = styles.accordionBase;
+	const base = styles.accordion;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -29,10 +29,10 @@ export const AccordionToggle = ({
 	...tailwind
 }: iAccordionToggle) => {
 	const base = {
-		...styles.accordionToggleBase,
+		...styles.accordionToggle,
 		nextIcon: {
-			...styles.accordionToggleBase.nextIcon,
-			rotate: open ? 'rotate-180' : 'rotate-0'
+			...styles.accordionToggle.nextIcon,
+			rotate: open ? 'rotate-180' : 'rotate-0',
 		},
 	};
 	const props = { ...base, ...tailwind, children, className, name };
@@ -48,7 +48,7 @@ export const AccordionTitle = ({
 	children,
 	...tailwind
 }: iAccordionTitle) => {
-	const base = styles.accordionTitleBase;
+	const base = styles.accordionTitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -67,8 +67,8 @@ export const AccordionBody = ({
 	children,
 	...tailwind
 }: iAccordionBody) => {
-	const wrapperBase = styles.accordionBodyWrapperBase;
-	const base = styles.accordionBodyBase;
+	const wrapperBase = styles.accordionBodyWrapper;
+	const base = styles.accordionBody;
 	const props = { ...base, ...tailwind, className, name };
 	const [height, setHeight] = useState(0);
 	const ref = useRef(null);
@@ -100,7 +100,7 @@ export const AccordionBody = ({
 };
 
 export const AccordionText = ({ id, name = 'AccordionText', className, children, ...tailwind }: iAccordionText) => {
-	const base = styles.accordionTextBase;
+	const base = styles.accordionText;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;

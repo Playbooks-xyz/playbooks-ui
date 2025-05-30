@@ -1,6 +1,6 @@
 import { borderProps } from 'utils';
 
-export const commandBase = {
+export const command = {
 	...borderProps,
 	flex: 'shrink-0',
 	fontFamily: 'font-secondary',

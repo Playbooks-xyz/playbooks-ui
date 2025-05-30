@@ -8,7 +8,7 @@ import { iNav, iNavBody, iNavBtn, iNavHeader, iNavItem, iNavLink, iNavList, iNav
 import { computeSectionSize, tailwindClassBuilder } from 'utils';
 
 export const Nav = ({ id, name = 'Nav', className, children, ...tailwind }: iNav) => {
-	const base = styles.navBase;
+	const base = styles.nav;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -19,14 +19,14 @@ export const Nav = ({ id, name = 'Nav', className, children, ...tailwind }: iNav
 };
 
 export const NavHeader = ({ id, name = 'NavHeader', className, children, ...tailwind }: iNavHeader) => {
-	const base = styles.navHeaderBase;
+	const base = styles.navHeader;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
 export const NavTitle = ({ id, name = 'NavTitle', size = 'h5', className, children, ...tailwind }: iNavTitle) => {
-	const base = styles.navTitleBase;
+	const base = styles.navTitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -37,35 +37,35 @@ export const NavTitle = ({ id, name = 'NavTitle', size = 'h5', className, childr
 };
 
 export const NavBody = ({ id, name = 'NavBody', size = '', className, children, ...tailwind }: iNavBody) => {
-	const base = { ...styles.navBodyBase, size: computeSectionSize(size) };
+	const base = { ...styles.navBody, size: computeSectionSize(size) };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
 export const NavList = ({ id, name = 'NavList', className, children, ...tailwind }: iNavList) => {
-	const base = styles.navListBase;
+	const base = styles.navList;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Ul {...props}>{children}</Ul>;
 };
 
 export const NavItem = ({ id, name = 'NavItem', className, children, ...tailwind }: iNavItem) => {
-	const base = styles.navItemBase;
+	const base = styles.navItem;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Li {...props}>{children}</Li>;
 };
 
 export const NavBtn = ({ id, name = 'NavBtn', variant = 'accent', className, children, ...tailwind }: iNavBtn) => {
-	const base = styles.navBtnBase;
+	const base = styles.navBtn;
 	const props = { ...base, ...tailwind, children, className, name };
 
 	return <Btn variant={variant} {...props} />;
 };
 
 export const NavLink = ({ id, name = 'NavLink', variant = 'accent', className, children, ...tailwind }: iNavLink) => {
-	const base = styles.navLinkBase;
+	const base = styles.navLink;
 	const props = { ...base, ...tailwind, children, className, name };
 
 	return <Link variant={variant} {...props} />;

@@ -1,6 +1,6 @@
 import { borderProps } from 'utils';
 
-export const paginationBase = {
+export const pagination = {
 	position: 'inline-flex',
 	border: 'border',
 	...borderProps,

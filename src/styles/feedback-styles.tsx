@@ -1,6 +1,6 @@
 import { borderProps } from 'utils';
 
-export const feedbackBase = {
+export const feedback = {
 	align: 'text-left',
 	bgColor: 'bg-gray-50 dark:bg-gray-800',
 	border: '',
@@ -9,20 +9,20 @@ export const feedbackBase = {
 	spacing: 'p-8',
 };
 
-export const feedbackHeaderBase = {
+export const feedbackHeader = {
 	spacing: 'p-4',
 };
 
-export const feedbackIconBase = {
+export const feedbackIcon = {
 	color: 'text-gray-500',
 };
 
-export const feedbackBodyBase = {
+export const feedbackBody = {
 	space: 'space-y-2',
 	spacing: 'p-4',
 };
 
-export const feedbackPretitleBase = {
+export const feedbackPretitle = {
 	color: 'text-gray-500',
 	fontFamily: 'font-accent',
 	fontSize: 'text-sm',
@@ -31,18 +31,18 @@ export const feedbackPretitleBase = {
 	tracking: 'tracking-wider',
 };
 
-export const feedbackTitleBase = {
+export const feedbackTitle = {
 	color: 'text-gray-800 dark:text-white',
 	fontWeight: 'font-semibold',
 	textTransform: 'capitalize',
 	tracking: 'tracking-wide',
 };
 
-export const feedbackTextBase = {
+export const feedbackText = {
 	fontFamily: 'font-secondary',
 };
 
-export const feedbackActionsBase = {
+export const feedbackActions = {
 	display: 'flex-start',
 	flex: 'shrink-0',
 	space: 'space-x-4',

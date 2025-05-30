@@ -17,7 +17,7 @@ import {
 import { computeSectionSize, tailwindClassBuilder } from 'utils';
 
 export const Section = ({ id, ref, name = 'Section', className, children, style, ...tailwind }: iSection) => {
-	const base = styles.sectionBase;
+	const base = styles.section;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -28,7 +28,7 @@ export const Section = ({ id, ref, name = 'Section', className, children, style,
 };
 
 export const SectionHeader = ({ id, name = 'SectionHeader', className, children, ...tailwind }: iSectionHeader) => {
-	const base = styles.sectionHeaderBase;
+	const base = styles.sectionHeader;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -41,7 +41,7 @@ export const SectionPretitle = ({
 	children,
 	...tailwind
 }: iSectionPretitle) => {
-	const base = styles.sectionPretitleBase;
+	const base = styles.sectionPretitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
@@ -56,7 +56,7 @@ export const SectionTitle = ({
 	...tailwind
 }: iSectionTitle) => {
 	const base = {
-		...styles.sectionTitleBase,
+		...styles.sectionTitle,
 		size,
 	};
 	const props = { ...base, ...tailwind, className, name };
@@ -73,7 +73,7 @@ export const SectionSubtitle = ({
 	...tailwind
 }: iSectionSubtitle) => {
 	const base = {
-		...styles.sectionSubtitleBase,
+		...styles.sectionSubtitle,
 		size,
 	};
 	const props = { ...base, ...tailwind, className, name };
@@ -82,14 +82,14 @@ export const SectionSubtitle = ({
 };
 
 export const SectionText = ({ id, name = 'SectionText', className, children, ...tailwind }: iSectionText) => {
-	const base = styles.sectionTextBase;
+	const base = styles.sectionText;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
 export const SectionActions = ({ id, name = 'SectionActions', className, children, ...tailwind }: iSectionActions) => {
-	const base = styles.sectionActionsBase;
+	const base = styles.sectionActions;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -97,7 +97,7 @@ export const SectionActions = ({ id, name = 'SectionActions', className, childre
 
 export const SectionBody = ({ id, name = 'SectionBody', size, className, children, ...tailwind }: iSectionBody) => {
 	const base = {
-		...styles.sectionBodyBase,
+		...styles.sectionBody,
 		size: computeSectionSize(size),
 	};
 	const props = { ...base, ...tailwind, className, name };
@@ -106,14 +106,14 @@ export const SectionBody = ({ id, name = 'SectionBody', size, className, childre
 };
 
 export const SectionHr = ({ id, name = 'SectionHr', className, ...tailwind }: iSectionHr) => {
-	const base = styles.sectionHrBase;
+	const base = styles.sectionHr;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Hr {...props} />;
 };
 
 export const SectionFooter = ({ id, name = 'SectionFooter', className, children, ...tailwind }: iSectionFooter) => {
-	const base = styles.sectionFooterBase;
+	const base = styles.sectionFooter;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
