@@ -7,7 +7,10 @@ import tailwindcss from 'tailwindcss';
 import { defineConfig } from 'vite';
 
 function pushBuild() {
-	exec('npx yalc push', (response, error) => (error ? console.error(error) : null));
+	exec('dts-bundle-generator --config dts.config.ts', (response, error) => {
+		if (error) console.error(error);
+		exec('npx yalc push', (response, error) => (error ? console.error(error) : null));
+	});
 }
 
 export default defineConfig({
