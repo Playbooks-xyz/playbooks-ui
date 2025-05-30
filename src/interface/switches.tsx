@@ -2,7 +2,7 @@ import * as HTML from '@ehubbell/html';
 import { BtnWrapper } from 'interface/buttons';
 import { Div, Span } from 'interface/html';
 import { FadIcon } from 'interface/icons';
-import * as styles from 'styles';
+import * as styles from 'styles/switch-styles';
 import { iSwitch, iSwitchBackdrop, iSwitchGroup, iSwitchInner, iSwitchLabel, iSwitchToggle } from 'types/switch-types';
 import { tailwindClassBuilder } from 'utils';
 

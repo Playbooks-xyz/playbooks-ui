@@ -1,7 +1,7 @@
 import { Font, H5, P, Small } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
 import { Oval } from 'interface/spinners';
-import * as styles from 'styles';
+import * as styles from 'styles/loader-styles';
 import { iPageLoader, iSectionLoader } from 'types/loader-types';
 
 export const ModalLoader = ({

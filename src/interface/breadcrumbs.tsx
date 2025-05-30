@@ -3,7 +3,7 @@ import { Li } from 'interface/html';
 import { FarIcon } from 'interface/icons';
 import { TextLink } from 'interface/links';
 import { Nav, NavList } from 'interface/navs';
-import * as styles from 'styles';
+import * as styles from 'styles/breadcrumb-styles';
 import { iBreadcrumbBtn, iBreadcrumbItem, iBreadcrumbLink, iBreadcrumbs } from 'types/breadcrumb-types';
 import { breadcrumbBtnProps } from 'utils';
 

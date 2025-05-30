@@ -1,7 +1,7 @@
 import { Btn } from 'interface/buttons';
 import { FormSelect } from 'interface/forms';
 import { Div } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/tab-styles';
 import { iTab, iTabPane, iTabPanes, iTabs, iTabSelect, iTabWrapper } from 'types/tab-types';
 
 export const TabWrapper = ({ id, name = 'TabWrapper', className, children, ...tailwind }: iTabWrapper) => {

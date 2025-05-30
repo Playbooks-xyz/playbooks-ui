@@ -1,7 +1,7 @@
 import { Font, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import { Icon } from 'interface/icons';
-import * as styles from 'styles';
+import * as styles from 'styles/card-styles';
 import {
 	iCard,
 	iCardActions,

@@ -1,5 +1,5 @@
 import { Div } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/badge-styles';
 import { iBadge } from 'types/badge-types';
 import { computeBadgeSize } from 'utils';
 

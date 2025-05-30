@@ -1,7 +1,7 @@
 import * as HTML from '@ehubbell/html';
 import { P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/radio-styles';
 import { iRadio, iRadioInput, iRadioLabel, iRadioWrapper } from 'types/radio-types';
 import { checkboxProps, tailwindClassBuilder } from 'utils';
 

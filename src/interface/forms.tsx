@@ -7,7 +7,7 @@ import { MaskedInput } from 'components/masked-input-wrapper';
 import { PhoneInputWrapper } from 'components/phone-input-wrapper';
 import { useElementKeyPress } from 'hooks';
 import { Div, Span } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/form-styles';
 import {
 	iForm,
 	iFormCheckbox,

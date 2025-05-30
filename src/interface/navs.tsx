@@ -3,7 +3,7 @@ import { Btn } from 'interface/buttons';
 import { Font } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { Link } from 'interface/links';
-import * as styles from 'styles';
+import * as styles from 'styles/nav-styles';
 import { iNav, iNavBody, iNavBtn, iNavHeader, iNavItem, iNavLink, iNavList, iNavTitle } from 'types/nav-types';
 import { computeSectionSize, tailwindClassBuilder } from 'utils';
 

@@ -2,7 +2,7 @@ import * as HTML from '@ehubbell/html';
 import { BtnWrapper } from 'interface/buttons';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
-import * as styles from 'styles';
+import * as styles from 'styles/table-styles';
 import {
 	iTable,
 	iTableBody,

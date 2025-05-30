@@ -1,5 +1,5 @@
 import { Div } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/button-group-styles';
 import { iButtonGroup } from 'types/button-group-types';
 
 export const BtnGroup = ({ id, name = 'BtnGroup', className, children, ...tailwind }: iButtonGroup) => {

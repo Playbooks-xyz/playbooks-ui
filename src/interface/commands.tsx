@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { Span } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/command-styles';
 import { iCommand } from 'types/command-types';
 
 export const Command = ({ id, name = 'CMD', keys = [], className, children, ...tailwind }: iCommand) => {

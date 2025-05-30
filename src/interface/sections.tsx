@@ -1,7 +1,7 @@
 import * as HTML from '@ehubbell/html';
 import { Font, P } from 'interface/fonts';
 import { Div, Hr } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/section-styles';
 import {
 	iSection,
 	iSectionActions,

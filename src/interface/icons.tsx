@@ -1,6 +1,6 @@
 import { FaWrapper } from 'components/fa-wrapper';
 import { Div } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/icon-styles';
 import { iIcon } from 'types/icon-types';
 import { tailwindClassBuilder } from 'utils';
 

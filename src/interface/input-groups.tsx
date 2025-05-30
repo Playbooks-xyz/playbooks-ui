@@ -1,6 +1,6 @@
 import { Div, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
-import * as styles from 'styles';
+import * as styles from 'styles/input-group-styles';
 import { iInputAddon, iInputGroup } from 'types/input-group-types';
 import { borderProps } from 'utils';
 

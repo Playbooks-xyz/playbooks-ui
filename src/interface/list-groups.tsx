@@ -1,5 +1,5 @@
 import { Li, Ul } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/list-group-styles';
 import { iListGroup, iListItem } from 'types/list-group-types';
 
 export const ListGroup = ({ id, name = 'ListGroup', className, children, ...tailwind }: iListGroup) => {

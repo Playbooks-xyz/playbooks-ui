@@ -3,7 +3,7 @@ import { usePopper } from 'react-popper';
 
 import { Fade } from 'components/fade-wrapper';
 import { Div, Span } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/tooltip-styles';
 import { iTooltip, iTooltipArrow, iTooltipBody, iTooltipInner } from 'types/tooltip-types';
 import { computeTooltipAnimation } from 'utils';
 

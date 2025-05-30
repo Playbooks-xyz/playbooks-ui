@@ -1,7 +1,7 @@
 import * as HTML from '@ehubbell/html';
 import { Img, Ul } from 'interface/html';
 import { LinkWrapper } from 'interface/links';
-import * as styles from 'styles';
+import * as styles from 'styles/navbar-styles';
 import { iNavbar, iNavbarBrand, iNavbarList } from 'types/navbar-types';
 import { tailwindClassBuilder } from 'utils';
 

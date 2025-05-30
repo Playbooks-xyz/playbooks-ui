@@ -1,7 +1,7 @@
 import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
-import * as styles from 'styles';
+import * as styles from 'styles/alert-styles';
 import { iAlert, iAlertActions, iAlertBody, iAlertIcon, iAlertText, iAlertTitle } from 'types/alert-types';
 
 export const Alert = ({ id, name = 'Alert', className, children, ...tailwind }: iAlert) => {
@@ -11,7 +11,13 @@ export const Alert = ({ id, name = 'Alert', className, children, ...tailwind }: 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const AlertIcon = ({ id, name = 'AlertIcon', icon = 'exclamation-circle', className, ...tailwind }: iAlertIcon) => {
+export const AlertIcon = ({
+	id,
+	name = 'AlertIcon',
+	icon = 'exclamation-circle',
+	className,
+	...tailwind
+}: iAlertIcon) => {
 	const base = styles.alertIcon;
 	const props = { ...base, ...tailwind, className, name };
 

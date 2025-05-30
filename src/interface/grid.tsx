@@ -1,5 +1,5 @@
 import { Div } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/grid-styles';
 import { iCol, iContainer, iGrid } from 'types/grid-types';
 import { computeCol, computeContainer, computeGrid } from 'utils';
 

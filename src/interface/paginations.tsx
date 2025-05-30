@@ -1,7 +1,7 @@
 import { BtnWrapper } from 'interface/buttons';
 import { FarIcon } from 'interface/icons';
 import { Nav } from 'interface/navs';
-import * as styles from 'styles';
+import * as styles from 'styles/pagination-styles';
 import { iPagination, iPaginationBtn } from 'types/pagination-types';
 import { paginationProps, tailwindClassBuilder } from 'utils';
 

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useInterface } from 'contexts';
 import { Head } from 'interface/head';
 import { Div } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/route-styles';
 import { iRoute } from 'types/route-types';
 import { capitalize } from 'utils/transforms';
 

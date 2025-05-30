@@ -7,7 +7,7 @@ import { AccentBtn, Btn } from 'interface/buttons';
 import { H6, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
-import * as styles from 'styles';
+import * as styles from 'styles/drop-styles';
 import {
 	iDrop,
 	iDropBtn,

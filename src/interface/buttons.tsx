@@ -4,7 +4,7 @@ import * as HTML from '@ehubbell/html';
 import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
-import * as styles from 'styles';
+import * as styles from 'styles/button-styles';
 import { iBtn } from 'types/button-types';
 import {
 	btnAccentProps,

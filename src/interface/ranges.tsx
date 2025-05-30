@@ -1,7 +1,7 @@
 import { Range } from 'react-range';
 
 import * as HTML from '@ehubbell/html';
-import * as styles from 'styles';
+import * as styles from 'styles/range-styles';
 import { tailwindClassBuilder } from 'utils';
 
 export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange }) => {

@@ -1,6 +1,6 @@
 import { Font, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/avatar-styles';
 import {
 	iAvatar,
 	iAvatarActions,

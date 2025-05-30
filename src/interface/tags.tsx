@@ -1,5 +1,5 @@
 import { Div, Img } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/tag-styles';
 import { iTag, iTagActions, iTagBody, iTagImg, iTagWrapper } from 'types/tag-types';
 import { computeTagImgSize, computeTagSize } from 'utils';
 

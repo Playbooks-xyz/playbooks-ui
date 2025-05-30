@@ -1,7 +1,7 @@
 import { Font, P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { Icon } from 'interface/icons';
-import * as styles from 'styles';
+import * as styles from 'styles/feedback-styles';
 import {
 	iFeedback,
 	iFeedbackActions,

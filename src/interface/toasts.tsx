@@ -5,7 +5,7 @@ import { AccentBtn } from 'interface/buttons';
 import { H6, P } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
 import { FadIcon } from 'interface/icons';
-import * as styles from 'styles';
+import * as styles from 'styles/toast-styles';
 import {
 	iToast,
 	iToastBody,

@@ -2,7 +2,7 @@ import * as HTML from '@ehubbell/html';
 import { Font, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import { FadIcon } from 'interface/icons';
-import * as styles from 'styles';
+import * as styles from 'styles/hero-styles';
 import {
 	iHero,
 	iHeroActions,

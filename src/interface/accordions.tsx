@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Btn } from 'interface/buttons';
 import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
-import * as styles from 'styles';
+import * as styles from 'styles/accordion-styles';
 import { iAccordion, iAccordionBody, iAccordionText, iAccordionTitle, iAccordionToggle } from 'types/accordion-types';
 
 export const Accordion = ({ id, name = 'Accordion', open, className, children, ...tailwind }: iAccordion) => {

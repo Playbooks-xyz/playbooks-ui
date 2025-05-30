@@ -1,5 +1,5 @@
 import * as HTML from '@ehubbell/html';
-import * as styles from 'styles';
+import * as styles from 'styles/font-styles';
 import { iFont } from 'types/font-types';
 import { tailwindClassBuilder } from 'utils';
 

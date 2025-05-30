@@ -3,7 +3,7 @@ import { Btn } from 'interface/buttons';
 import { Font, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { Link } from 'interface/links';
-import * as styles from 'styles';
+import * as styles from 'styles/footer-styles';
 import {
 	iFooter,
 	iFooterBody,
