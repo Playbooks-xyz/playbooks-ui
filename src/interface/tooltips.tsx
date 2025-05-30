@@ -4,7 +4,7 @@ import { usePopper } from 'react-popper';
 import { Fade } from 'components/fade-wrapper';
 import { Div, Span } from 'interface/html';
 import * as styles from 'styles/tooltip-styles';
-import { iTooltip, iTooltipArrow, iTooltipBody, iTooltipInner } from 'types/tooltip-types';
+import * as types from 'types/tooltip-types';
 import { computeTooltipAnimation } from 'utils';
 
 export const Tooltip = ({
@@ -18,7 +18,7 @@ export const Tooltip = ({
 	className,
 	children,
 	tailwind,
-}: iTooltip) => {
+}: types.iTooltip) => {
 	const base = {
 		...styles.tooltip,
 		className,
@@ -94,7 +94,7 @@ export const TooltipBody = ({
 	className,
 	styles: popperStyles,
 	tailwind,
-}: iTooltipBody) => {
+}: types.iTooltipBody) => {
 	const base = styles.tooltipBody;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -110,7 +110,7 @@ export const TooltipBody = ({
 	);
 };
 
-export const TooltipInner = ({ id, name = 'TooltipInner', className, children, tailwind }: iTooltipInner) => {
+export const TooltipInner = ({ id, name = 'TooltipInner', className, children, tailwind }: types.iTooltipInner) => {
 	const base = styles.tooltipInner;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -124,7 +124,7 @@ export const TooltipArrow = ({
 	className,
 	style,
 	tailwind,
-}: iTooltipArrow) => {
+}: types.iTooltipArrow) => {
 	const base = styles.tooltipArrow;
 	const props = { ...base, ...tailwind, className, name };
 

@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 
 import { Span } from 'interface/html';
 import * as styles from 'styles/command-styles';
-import { iCommand } from 'types/command-types';
+import * as types from 'types/command-types';
 
-export const Command = ({ id, name = 'CMD', keys = [], className, children, ...tailwind }: iCommand) => {
+export const Command = ({ id, name = 'CMD', keys = [], className, children, ...tailwind }: types.iCommand) => {
 	const base = styles.command;
 	const props = { ...base, ...tailwind, className, name };
 

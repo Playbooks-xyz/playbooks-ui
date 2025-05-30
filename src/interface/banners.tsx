@@ -2,9 +2,9 @@ import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
 import * as styles from 'styles/banner-styles';
-import { iBanner, iBannerActions, iBannerBody, iBannerIcon, iBannerText, iBannerTitle } from 'types/banner-types';
+import * as types from 'types/banner-types';
 
-export const Banner = ({ id, name = 'Banner', className, children, ...tailwind }: iBanner) => {
+export const Banner = ({ id, name = 'Banner', className, children, ...tailwind }: types.iBanner) => {
 	const base = styles.banner;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -17,7 +17,7 @@ export const BannerIcon = ({
 	icon = 'exclamation-circle',
 	className,
 	...tailwind
-}: iBannerIcon) => {
+}: types.iBannerIcon) => {
 	const base = styles.bannerIcon;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -28,7 +28,7 @@ export const BannerIcon = ({
 	);
 };
 
-export const BannerBody = ({ id, name = 'BannerBody', className, children, ...tailwind }: iBannerBody) => {
+export const BannerBody = ({ id, name = 'BannerBody', className, children, ...tailwind }: types.iBannerBody) => {
 	const base = styles.bannerBody;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -42,7 +42,7 @@ export const BannerTitle = ({
 	className,
 	children,
 	...tailwind
-}: iBannerTitle) => {
+}: types.iBannerTitle) => {
 	const base = styles.bannerTitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -53,14 +53,20 @@ export const BannerTitle = ({
 	);
 };
 
-export const BannerText = ({ id, name = 'BannerText', className, children, ...tailwind }: iBannerText) => {
+export const BannerText = ({ id, name = 'BannerText', className, children, ...tailwind }: types.iBannerText) => {
 	const base = styles.bannerText;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
-export const BannerActions = ({ id, name = 'BannerActions', className, children, ...tailwind }: iBannerActions) => {
+export const BannerActions = ({
+	id,
+	name = 'BannerActions',
+	className,
+	children,
+	...tailwind
+}: types.iBannerActions) => {
 	const base = styles.bannerActions;
 	const props = { ...base, ...tailwind, className, name };
 

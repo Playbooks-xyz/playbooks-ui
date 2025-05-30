@@ -7,21 +7,9 @@ import { AccentBtn } from 'interface/buttons';
 import { H6, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
-import {
-	iMenu,
-	iMenuBackdrop,
-	iMenuBtn,
-	iMenuItem,
-	iMenuLink,
-	iMenuList,
-	iMenuMenu,
-	iMenuSubtitle,
-	iMenuTitle,
-	iMenuToggle,
-} from 'types/menu-types';
 import { borderProps, tailwindClassBuilder } from 'utils';
 
-export const Menu = ({ id, name = 'Menu', open, onClose, className, children, ...tailwind }: iMenu) => {
+export const Menu = ({ id, name = 'Menu', open, onClose, className, children, ...tailwind }: types.iMenu) => {
 	const base = { zIndex: 'z-20' };
 	const props = { ...base, ...tailwind, className, name };
 	const { toggleScroll } = useInterface();
@@ -67,7 +55,7 @@ export const MenuBackdrop = ({
 	className,
 	children,
 	...tailwind
-}: iMenuBackdrop) => {
+}: types.iMenuBackdrop) => {
 	const base = {
 		bgColor: 'bg-black dark:bg-gray-700',
 		duration: 'duration-200',
@@ -107,7 +95,7 @@ export const MenuToggle = ({
 	className,
 	children,
 	...tailwind
-}: iMenuToggle) => {
+}: types.iMenuToggle) => {
 	const base = { display: 'flex-between', space: 'space-x-4' };
 	const props = { ...base, ...tailwind, className, name };
 
@@ -118,7 +106,7 @@ export const MenuToggle = ({
 	);
 };
 
-export const MenuMenu = ({ id, name = 'MenuMenu', open, className, children, ...tailwind }: iMenuMenu) => {
+export const MenuMenu = ({ id, name = 'MenuMenu', open, className, children, ...tailwind }: types.iMenuMenu) => {
 	const base = {
 		bgColor: 'bg-white dark:bg-gray-900',
 		border: 'border-b',
@@ -151,7 +139,7 @@ export const MenuMenuWrapper = ({
 	className,
 	children,
 	...tailwind
-}: iMenuMenu) => {
+}: types.iMenuMenu) => {
 	const base = {
 		position: 'absolute',
 		width: 'w-full',
@@ -176,14 +164,14 @@ export const MenuMenuWrapper = ({
 	);
 };
 
-export const MenuBlock = ({ id, name = 'MenuBlock', className, children, ...tailwind }: iMenuList) => {
+export const MenuBlock = ({ id, name = 'MenuBlock', className, children, ...tailwind }: types.iMenuList) => {
 	const base = { spacing: 'p-4' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const MenuTitle = ({ id, name = 'MenuTitle', className, children, ...tailwind }: iMenuTitle) => {
+export const MenuTitle = ({ id, name = 'MenuTitle', className, children, ...tailwind }: types.iMenuTitle) => {
 	const base = {
 		fontWeight: 'font-bold',
 		spacing: 'px-3 mb-4',
@@ -195,7 +183,7 @@ export const MenuTitle = ({ id, name = 'MenuTitle', className, children, ...tail
 	return <H6 {...props}>{children}</H6>;
 };
 
-export const MenuSubtitle = ({ id, name = 'MenuSubtitle', className, children, ...tailwind }: iMenuSubtitle) => {
+export const MenuSubtitle = ({ id, name = 'MenuSubtitle', className, children, ...tailwind }: types.iMenuSubtitle) => {
 	const base = {
 		color: 'text-gray-500 dark:text-gray-300',
 		whitespace: 'whitespace-nowrap',
@@ -207,14 +195,14 @@ export const MenuSubtitle = ({ id, name = 'MenuSubtitle', className, children, .
 	return <P {...props}>{children}</P>;
 };
 
-export const MenuList = ({ id, name = 'MenuList', className, children, ...tailwind }: iMenuList) => {
+export const MenuList = ({ id, name = 'MenuList', className, children, ...tailwind }: types.iMenuList) => {
 	const base = { display: 'flex-column', space: 'space-y-2', spacing: 'py-4' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Ul {...props}>{children}</Ul>;
 };
 
-export const MenuItem = ({ id, name = 'MenuItem', className, children, ...tailwind }: iMenuItem) => {
+export const MenuItem = ({ id, name = 'MenuItem', className, children, ...tailwind }: types.iMenuItem) => {
 	const base = { display: 'flex', spacing: '', width: 'w-inherit' };
 	const props = { ...base, ...tailwind, className, name };
 
@@ -230,14 +218,14 @@ export const MenuBtn = ({
 	className,
 	children,
 	...tailwind
-}: iMenuBtn) => {
+}: types.iMenuBtn) => {
 	const base = { align: 'text-left', display: 'flex-start' };
 	const props = { ...base, ...tailwind, children, className, name };
 
 	return <AccentBtn active={active} taskRunning={taskRunning} onClick={onClick} {...props} />;
 };
 
-export const MenuLink = ({ id, name = 'MenuLink', href = '', className, children, ...tailwind }: iMenuLink) => {
+export const MenuLink = ({ id, name = 'MenuLink', href = '', className, children, ...tailwind }: types.iMenuLink) => {
 	const base = { align: 'text-left', display: 'flex-start', width: 'w-full' };
 	const props = { ...base, ...tailwind, children, className, name };
 

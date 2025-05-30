@@ -1,5 +1,5 @@
-import { BtnType } from 'types';
+import { BtnProps } from 'types';
 
-export type iBtn = BtnType & {
+export type iBtn = BtnProps & {
 	span?: any;
 };

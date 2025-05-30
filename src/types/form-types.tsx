@@ -1,16 +1,16 @@
-import { HtmlType, InputType } from 'types';
+import { HtmlProps, InputProps } from 'types';
 
-export type iForm = HtmlType & {
+export type iForm = HtmlProps & {
 	onSubmit?: (v) => any;
 };
 
-export type iFormGroup = HtmlType;
+export type iFormGroup = HtmlProps;
 
-export type iFormLabel = HtmlType & {
+export type iFormLabel = HtmlProps & {
 	htmlFor?: string;
 };
 
-export type iFormCheckbox = HtmlType & {
+export type iFormCheckbox = HtmlProps & {
 	id?: string;
 	type?: string;
 	checked?: boolean;
@@ -18,7 +18,7 @@ export type iFormCheckbox = HtmlType & {
 	readOnly?: boolean;
 };
 
-export type iFormRange = HtmlType & {
+export type iFormRange = HtmlProps & {
 	id?: string;
 	value?: number;
 	min?: number;
@@ -28,7 +28,7 @@ export type iFormRange = HtmlType & {
 	readOnly?: boolean;
 };
 
-export type iFormFile = HtmlType & {
+export type iFormFile = HtmlProps & {
 	id?: string;
 	type?: string;
 	value?: any;
@@ -38,7 +38,7 @@ export type iFormFile = HtmlType & {
 	readOnly?: boolean;
 };
 
-export type iFormInput = InputType & {
+export type iFormInput = InputProps & {
 	id?: string;
 	type?: string;
 	size?: string;
@@ -59,7 +59,7 @@ export type iFormInputMask = iFormInput & {
 	mask: string;
 };
 
-export type iFormSelect = HtmlType & {
+export type iFormSelect = HtmlProps & {
 	id?: string;
 	value?: any;
 	variant?: string;
@@ -70,9 +70,9 @@ export type iFormSelect = HtmlType & {
 	onChange: (e: any) => any;
 };
 
-export type iFormText = HtmlType;
+export type iFormText = HtmlProps;
 
-export type iFormTextArea = HtmlType & {
+export type iFormTextArea = HtmlProps & {
 	id?: string;
 	rows?: number;
 	value?: any;

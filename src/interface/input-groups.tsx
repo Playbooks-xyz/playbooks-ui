@@ -1,10 +1,17 @@
 import { Div, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import * as styles from 'styles/input-group-styles';
-import { iInputAddon, iInputGroup } from 'types/input-group-types';
+import * as types from 'types/input-group-types';
 import { borderProps } from 'utils';
 
-export const InputGroup = ({ id, name = 'InputGroup', active, className, children, ...tailwind }: iInputGroup) => {
+export const InputGroup = ({
+	id,
+	name = 'InputGroup',
+	active,
+	className,
+	children,
+	...tailwind
+}: types.iInputGroup) => {
 	const base = styles.inputGroup;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -19,7 +26,7 @@ export const InputAppend = ({
 	className,
 	children,
 	...tailwind
-}: iInputAddon) => {
+}: types.iInputAddon) => {
 	const base = {
 		...borderProps,
 		...styles.inputAddon,
@@ -38,7 +45,7 @@ export const InputPrepend = ({
 	className,
 	children,
 	...tailwind
-}: iInputAddon) => {
+}: types.iInputAddon) => {
 	const base = {
 		...borderProps,
 		...styles.inputAddon,

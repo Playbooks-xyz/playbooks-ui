@@ -2,24 +2,21 @@ import { Font, H6, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { Section } from 'interface/sections';
 import * as styles from 'styles/prefooter-styles';
-import {
-	iPrefooter,
-	iPrefooterActions,
-	iPrefooterBody,
-	iPrefooterPretitle,
-	iPrefooterSubtitle,
-	iPrefooterText,
-	iPrefooterTitle,
-} from 'types/prefooter-types';
 
-export const Prefooter = ({ id, name = 'Prefooter', className, children, ...tailwind }: iPrefooter) => {
+export const Prefooter = ({ id, name = 'Prefooter', className, children, ...tailwind }: types.iPrefooter) => {
 	const base = styles.prefooter;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Section {...props}>{children}</Section>;
 };
 
-export const PrefooterBody = ({ id, name = 'PrefooterBody', className, children, ...tailwind }: iPrefooterBody) => {
+export const PrefooterBody = ({
+	id,
+	name = 'PrefooterBody',
+	className,
+	children,
+	...tailwind
+}: types.iPrefooterBody) => {
 	const base = styles.prefooterBody;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -32,7 +29,7 @@ export const PrefooterPretitle = ({
 	className,
 	children,
 	...tailwind
-}: iPrefooterPretitle) => {
+}: types.iPrefooterPretitle) => {
 	const base = styles.prefooterPretitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -46,7 +43,7 @@ export const PrefooterTitle = ({
 	className,
 	children,
 	...tailwind
-}: iPrefooterTitle) => {
+}: types.iPrefooterTitle) => {
 	const base = styles.prefooterTitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -64,7 +61,7 @@ export const PrefooterSubtitle = ({
 	className,
 	children,
 	...tailwind
-}: iPrefooterSubtitle) => {
+}: types.iPrefooterSubtitle) => {
 	const base = styles.prefooterSubtitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -75,7 +72,13 @@ export const PrefooterSubtitle = ({
 	);
 };
 
-export const PrefooterText = ({ id, name = 'PrefooterText', className, children, ...tailwind }: iPrefooterText) => {
+export const PrefooterText = ({
+	id,
+	name = 'PrefooterText',
+	className,
+	children,
+	...tailwind
+}: types.iPrefooterText) => {
 	const base = styles.prefooterText;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -88,7 +91,7 @@ export const PrefooterActions = ({
 	className,
 	children,
 	...tailwind
-}: iPrefooterActions) => {
+}: types.iPrefooterActions) => {
 	const base = styles.prefooterActions;
 	const props = { ...base, ...tailwind, className, name };
 

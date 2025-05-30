@@ -1,16 +1,16 @@
 import { Animation, useAnimation } from 'components/animation-wrapper';
 import { Div } from 'interface/html';
 import * as styles from 'styles/progress-bar-styles';
-import { iProgress, iProgressBar } from 'types/progress-bar-types';
+import * as types from 'types/progress-bar-types';
 
-export const ProgressBar = ({ id, name = 'ProgressBar', className, children, ...tailwind }: iProgressBar) => {
+export const ProgressBar = ({ id, name = 'ProgressBar', className, children, ...tailwind }: types.iProgressBar) => {
 	const base = styles.progressBar;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const Progress = ({ id, name = 'Progress', value = 0, className, children, ...tailwind }: iProgress) => {
+export const Progress = ({ id, name = 'Progress', value = 0, className, children, ...tailwind }: types.iProgress) => {
 	const base = styles.progress;
 	const style = useAnimation({ width: value ? value + '%' : '0%' });
 	const props = { ...base, ...tailwind, className, style, name };

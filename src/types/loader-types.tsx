@@ -1,11 +1,11 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iPageLoader = HtmlType & {
+export type iPageLoader = HtmlProps & {
 	title: string;
 	message: string;
 };
 
-export type iSectionLoader = HtmlType & {
+export type iSectionLoader = HtmlProps & {
 	title: string;
 	message: string;
 };

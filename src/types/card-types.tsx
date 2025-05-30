@@ -1,30 +1,30 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iCard = HtmlType;
+export type iCard = HtmlProps;
 
-export type iCardHeader = HtmlType;
+export type iCardHeader = HtmlProps;
 
-export type iCardIcon = HtmlType & {
+export type iCardIcon = HtmlProps & {
 	type?: string;
 	icon: string;
 	wrapper?: any;
 };
 
-export type iCardImg = HtmlType & {
+export type iCardImg = HtmlProps & {
 	alt: string;
 	src: string;
 };
 
-export type iCardBody = HtmlType;
+export type iCardBody = HtmlProps;
 
-export type iCardPretitle = HtmlType;
+export type iCardPretitle = HtmlProps;
 
-export type iCardTitle = HtmlType;
+export type iCardTitle = HtmlProps;
 
-export type iCardSubtitle = HtmlType;
+export type iCardSubtitle = HtmlProps;
 
-export type iCardText = HtmlType;
+export type iCardText = HtmlProps;
 
-export type iCardFooter = HtmlType;
+export type iCardFooter = HtmlProps;
 
-export type iCardActions = HtmlType;
+export type iCardActions = HtmlProps;

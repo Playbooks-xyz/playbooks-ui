@@ -1,4 +1,4 @@
-export type TailwindType = {
+export type TailwindProps = {
 	align?: string;
 	aspect?: string;
 	animation?: string;
@@ -66,7 +66,7 @@ export type TailwindType = {
 	zIndex?: string;
 };
 
-export type TailwindContainerType = {
+export type TailwindContainerProps = {
 	sm?: string;
 	md?: string;
 	lg?: string;
@@ -76,7 +76,7 @@ export type TailwindContainerType = {
 	gutters?: boolean;
 };
 
-export type TailwindGridType = {
+export type TailwindGridProps = {
 	sm?: string;
 	md?: string;
 	lg?: string;
@@ -90,7 +90,7 @@ export type TailwindGridType = {
 	gapY?: string;
 };
 
-export type TailwindColType = {
+export type TailwindColProps = {
 	sm?: string;
 	md?: string;
 	lg?: string;

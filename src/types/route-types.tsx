@@ -1,6 +1,6 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iRoute = HtmlType & {
+export type iRoute = HtmlProps & {
 	title?: string;
 	seo?: any;
 };

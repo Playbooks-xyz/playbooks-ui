@@ -1,13 +1,13 @@
-import { HtmlType, ImgType } from 'types';
+import { HtmlProps, ImgProps } from 'types';
 
-export type iTagWrapper = HtmlType;
+export type iTagWrapper = HtmlProps;
 
-export type iTag = HtmlType;
+export type iTag = HtmlProps;
 
-export type iTagAvatar = HtmlType;
+export type iTagAvatar = HtmlProps;
 
-export type iTagImg = ImgType;
+export type iTagImg = ImgProps;
 
-export type iTagBody = HtmlType;
+export type iTagBody = HtmlProps;
 
-export type iTagActions = HtmlType;
+export type iTagActions = HtmlProps;

@@ -1,3 +1,3 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iButtonGroup = HtmlType;
+export type iButtonGroup = HtmlProps;

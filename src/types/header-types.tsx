@@ -1,13 +1,13 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iHeader = HtmlType;
+export type iHeader = HtmlProps;
 
-export type iHeaderBody = HtmlType;
+export type iHeaderBody = HtmlProps;
 
-export type iHeaderTitle = HtmlType;
+export type iHeaderTitle = HtmlProps;
 
-export type iHeaderSubtitle = HtmlType;
+export type iHeaderSubtitle = HtmlProps;
 
-export type iHeaderText = HtmlType;
+export type iHeaderText = HtmlProps;
 
-export type iHeaderActions = HtmlType;
+export type iHeaderActions = HtmlProps;

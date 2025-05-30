@@ -1,19 +1,19 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iBanner = HtmlType;
+export type iBanner = HtmlProps;
 
-export type iBannerIcon = HtmlType & {
+export type iBannerIcon = HtmlProps & {
 	type?: string;
 	icon: string;
 };
 
-export type iBannerBody = HtmlType;
+export type iBannerBody = HtmlProps;
 
-export type iBannerTitle = HtmlType;
+export type iBannerTitle = HtmlProps;
 
-export type iBannerText = HtmlType;
+export type iBannerText = HtmlProps;
 
-export type iBannerActions = HtmlType & {
+export type iBannerActions = HtmlProps & {
 	onClick: () => any;
 	onDismiss: () => any;
 };

@@ -1,6 +1,6 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iBadge = HtmlType & {
+export type iBadge = HtmlProps & {
 	type?: string;
 	size?: string;
 };

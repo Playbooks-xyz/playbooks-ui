@@ -3,21 +3,9 @@ import { Font, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import { FadIcon } from 'interface/icons';
 import * as styles from 'styles/hero-styles';
-import {
-	iHero,
-	iHeroActions,
-	iHeroBg,
-	iHeroBody,
-	iHeroIcon,
-	iHeroImg,
-	iHeroPretitle,
-	iHeroSubtitle,
-	iHeroText,
-	iHeroTitle,
-} from 'types/hero-types';
 import { computeHeroSize, computeThumbnailSize, tailwindClassBuilder } from 'utils';
 
-export const Hero = ({ id, ref, name = 'Hero', size, className, children, style, ...tailwind }: iHero) => {
+export const Hero = ({ id, ref, name = 'Hero', size, className, children, style, ...tailwind }: types.iHero) => {
 	const base = {
 		...styles.hero,
 		size: computeHeroSize(size),
@@ -31,7 +19,7 @@ export const Hero = ({ id, ref, name = 'Hero', size, className, children, style,
 	);
 };
 
-export const HeroBg = ({ id, ref, name = 'HeroBg', className, children, ...tailwind }: iHeroBg) => {
+export const HeroBg = ({ id, ref, name = 'HeroBg', className, children, ...tailwind }: types.iHeroBg) => {
 	const base = styles.heroBg;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -50,7 +38,7 @@ export const HeroImg = ({
 	src,
 	className,
 	...tailwind
-}: iHeroImg) => {
+}: types.iHeroImg) => {
 	const base = {
 		...styles.heroImg,
 		size: computeThumbnailSize(size),
@@ -64,7 +52,14 @@ export const HeroImg = ({
 	);
 };
 
-export const HeroIcon = ({ id, name = 'HeroIcon', size = 'lg', icon = 'code', className, ...tailwind }: iHeroIcon) => {
+export const HeroIcon = ({
+	id,
+	name = 'HeroIcon',
+	size = 'lg',
+	icon = 'code',
+	className,
+	...tailwind
+}: types.iHeroIcon) => {
 	const base = {
 		...styles.heroIcon,
 		size: computeThumbnailSize(size),
@@ -78,21 +73,21 @@ export const HeroIcon = ({ id, name = 'HeroIcon', size = 'lg', icon = 'code', cl
 	);
 };
 
-export const HeroBody = ({ id, name = 'HeroBody', className, children, ...tailwind }: iHeroBody) => {
+export const HeroBody = ({ id, name = 'HeroBody', className, children, ...tailwind }: types.iHeroBody) => {
 	const base = styles.heroBody;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const HeroPretitle = ({ id, name = 'HeroPretitle', className, children, ...tailwind }: iHeroPretitle) => {
+export const HeroPretitle = ({ id, name = 'HeroPretitle', className, children, ...tailwind }: types.iHeroPretitle) => {
 	const base = styles.heroPretitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
-export const HeroTitle = ({ id, name = 'HeroTitle', size, className, children, ...tailwind }: iHeroTitle) => {
+export const HeroTitle = ({ id, name = 'HeroTitle', size, className, children, ...tailwind }: types.iHeroTitle) => {
 	const base = styles.heroTitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -110,7 +105,7 @@ export const HeroSubtitle = ({
 	className,
 	children,
 	...tailwind
-}: iHeroSubtitle) => {
+}: types.iHeroSubtitle) => {
 	const base = styles.heroSubtitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -121,14 +116,14 @@ export const HeroSubtitle = ({
 	);
 };
 
-export const HeroText = ({ id, name = 'HeroText', className, children, ...tailwind }: iHeroText) => {
+export const HeroText = ({ id, name = 'HeroText', className, children, ...tailwind }: types.iHeroText) => {
 	const base = styles.heroText;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
-export const HeroActions = ({ id, name = 'HeroActions', className, children, ...tailwind }: iHeroActions) => {
+export const HeroActions = ({ id, name = 'HeroActions', className, children, ...tailwind }: types.iHeroActions) => {
 	const base = styles.heroActions;
 	const props = { ...base, ...tailwind, className, name };
 

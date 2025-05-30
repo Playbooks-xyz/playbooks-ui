@@ -1,18 +1,18 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 import { iBtn } from 'types/button-types';
 import { iLink } from 'types/link-types';
 
-export type iNav = HtmlType;
+export type iNav = HtmlProps;
 
-export type iNavHeader = HtmlType;
+export type iNavHeader = HtmlProps;
 
-export type iNavTitle = HtmlType;
+export type iNavTitle = HtmlProps;
 
-export type iNavBody = HtmlType;
+export type iNavBody = HtmlProps;
 
-export type iNavList = HtmlType;
+export type iNavList = HtmlProps;
 
-export type iNavItem = HtmlType;
+export type iNavItem = HtmlProps;
 
 export type iNavBtn = iBtn & {
 	variant?: string;

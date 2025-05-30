@@ -2,7 +2,7 @@ import { Font, H5, P, Small } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
 import { Oval } from 'interface/spinners';
 import * as styles from 'styles/loader-styles';
-import { iPageLoader, iSectionLoader } from 'types/loader-types';
+import * as types from 'types/loader-types';
 
 export const ModalLoader = ({
 	id,
@@ -12,7 +12,7 @@ export const ModalLoader = ({
 	className,
 	children,
 	...tailwind
-}: iPageLoader) => {
+}: types.iPageLoader) => {
 	const base = styles.modalLoader;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -38,7 +38,7 @@ export const PageLoader = ({
 	className,
 	children,
 	...tailwind
-}: iPageLoader) => {
+}: types.iPageLoader) => {
 	const base = styles.pageLoader;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -68,7 +68,7 @@ export const SectionLoader = ({
 	className,
 	children,
 	...tailwind
-}: iSectionLoader) => {
+}: types.iSectionLoader) => {
 	const base = styles.sectionLoader;
 	const props = { ...base, ...tailwind, className, name };
 

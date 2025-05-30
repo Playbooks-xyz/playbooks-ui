@@ -3,10 +3,10 @@ import { BtnWrapper } from 'interface/buttons';
 import { Div, Span } from 'interface/html';
 import { FadIcon } from 'interface/icons';
 import * as styles from 'styles/switch-styles';
-import { iSwitch, iSwitchBackdrop, iSwitchGroup, iSwitchInner, iSwitchLabel, iSwitchToggle } from 'types/switch-types';
+import * as types from 'types/switch-types';
 import { tailwindClassBuilder } from 'utils';
 
-export const SwitchGroup = ({ id, name = 'SwitchGroup', className, children, ...tailwind }: iSwitchGroup) => {
+export const SwitchGroup = ({ id, name = 'SwitchGroup', className, children, ...tailwind }: types.iSwitchGroup) => {
 	const base = styles.switchGroup;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -17,7 +17,7 @@ export const SwitchGroup = ({ id, name = 'SwitchGroup', className, children, ...
 	);
 };
 
-export const Switch = ({ id, name = 'Switch', icon, checked, onClick, className, ...tailwind }: iSwitch) => {
+export const Switch = ({ id, name = 'Switch', icon, checked, onClick, className, ...tailwind }: types.iSwitch) => {
 	const base = styles.switchBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -31,14 +31,20 @@ export const Switch = ({ id, name = 'Switch', icon, checked, onClick, className,
 	);
 };
 
-export const SwitchBackdrop = ({ id, name = 'SwitchBackdrop', checked, className, ...tailwind }: iSwitchBackdrop) => {
+export const SwitchBackdrop = ({
+	id,
+	name = 'SwitchBackdrop',
+	checked,
+	className,
+	...tailwind
+}: types.iSwitchBackdrop) => {
 	const base = styles.switchBackdrop;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Span aria-hidden='true' {...props} />;
 };
 
-export const SwitchInner = ({ id, name = 'SwitchInner', checked, className, ...tailwind }: iSwitchInner) => {
+export const SwitchInner = ({ id, name = 'SwitchInner', checked, className, ...tailwind }: types.iSwitchInner) => {
 	const base = {
 		...styles.switchInner,
 		bgColor: checked ? 'bg-gray-100 dark:bg-gray-600' : 'bg-gray-100 dark:bg-gray-800',
@@ -48,7 +54,14 @@ export const SwitchInner = ({ id, name = 'SwitchInner', checked, className, ...t
 	return <Span aria-hidden='true' {...props} />;
 };
 
-export const SwitchToggle = ({ id, name = 'SwitchToggle', icon, checked, className, ...tailwind }: iSwitchToggle) => {
+export const SwitchToggle = ({
+	id,
+	name = 'SwitchToggle',
+	icon,
+	checked,
+	className,
+	...tailwind
+}: types.iSwitchToggle) => {
 	const base = {
 		...styles.switchToggle,
 		bgColor: checked ? 'bg-blue-500 dark:bg-cyan-500' : 'bg-gray-300 dark:bg-gray-600',
@@ -67,7 +80,14 @@ export const SwitchToggle = ({ id, name = 'SwitchToggle', icon, checked, classNa
 	);
 };
 
-export const SwitchLabel = ({ id, name = 'SwitchLabel', htmlFor, className, children, ...tailwind }: iSwitchLabel) => {
+export const SwitchLabel = ({
+	id,
+	name = 'SwitchLabel',
+	htmlFor,
+	className,
+	children,
+	...tailwind
+}: types.iSwitchLabel) => {
 	const base = styles.switchLabel;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 

@@ -11,7 +11,7 @@ type FaType = {
 	className?: string;
 };
 
-const FaWrapper = ({ type = 'fas', icon, transform, className }: FaType) => (
+const FaWrapper = ({ type = 'fas', icon, transform, className }: FaProps) => (
 	<FontAwesome icon={[type, icon as IconName]} transform={transform} className={className} />
 );
 

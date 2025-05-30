@@ -1,26 +1,26 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iSlide = HtmlType & {
+export type iSlide = HtmlProps & {
 	open: boolean;
 	onClose: () => any;
 	placement: string;
 };
 
-export type iSlideWrapper = HtmlType & {
+export type iSlideWrapper = HtmlProps & {
 	open: boolean;
 	onClose: () => any;
 };
 
-export type iSlideBackdrop = HtmlType & iSlideWrapper;
+export type iSlideBackdrop = HtmlProps & iSlideWrapper;
 
-export type iSlideContainer = HtmlType;
+export type iSlideContainer = HtmlProps;
 
-export type iSlideHeader = HtmlType & {
+export type iSlideHeader = HtmlProps & {
 	onClose: () => any;
 };
 
-export type iSlideTitle = HtmlType;
+export type iSlideTitle = HtmlProps;
 
-export type iSlideBody = HtmlType;
+export type iSlideBody = HtmlProps;
 
-export type iSlideFooter = HtmlType;
+export type iSlideFooter = HtmlProps;

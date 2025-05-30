@@ -1,8 +1,8 @@
 import { Div } from 'interface/html';
 import * as styles from 'styles/button-group-styles';
-import { iButtonGroup } from 'types/button-group-types';
+import * as types from 'types/button-group-types';
 
-export const BtnGroup = ({ id, name = 'BtnGroup', className, children, ...tailwind }: iButtonGroup) => {
+export const BtnGroup = ({ id, name = 'BtnGroup', className, children, ...tailwind }: types.iButtonGroup) => {
 	const base = styles.btnGroup;
 	const props = { ...base, ...tailwind, className, name };
 

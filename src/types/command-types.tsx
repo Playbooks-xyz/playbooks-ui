@@ -1,6 +1,6 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iCommand = HtmlType & {
+export type iCommand = HtmlProps & {
 	keys?: string[];
 	variant?: string;
 };

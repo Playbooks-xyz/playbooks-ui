@@ -1,6 +1,6 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iTooltip = HtmlType & {
+export type iTooltip = HtmlProps & {
 	open?: boolean;
 	html?: string;
 	onBlur?: () => any;
@@ -9,18 +9,18 @@ export type iTooltip = HtmlType & {
 	tailwind?: any;
 };
 
-export type iTooltipBody = HtmlType & {
+export type iTooltipBody = HtmlProps & {
 	setArrowElement: any;
 	html?: any;
 	styles: any;
 	tailwind?: any;
 };
 
-export type iTooltipInner = HtmlType & {
+export type iTooltipInner = HtmlProps & {
 	tailwind?: any;
 };
 
-export type iTooltipArrow = HtmlType & {
+export type iTooltipArrow = HtmlProps & {
 	setArrowElement: any;
 	tailwind?: any;
 };

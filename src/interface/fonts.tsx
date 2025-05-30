@@ -1,6 +1,6 @@
 import * as HTML from '@ehubbell/html';
 import * as styles from 'styles/font-styles';
-import { iFont } from 'types/font-types';
+import * as types from 'types/font-types';
 import { tailwindClassBuilder } from 'utils';
 
 export const Font = props => {
@@ -34,7 +34,7 @@ export const Font = props => {
 	}
 };
 
-export const H1 = ({ id, name = 'H1', className, children, ...tailwind }: iFont) => {
+export const H1 = ({ id, name = 'H1', className, children, ...tailwind }: types.iFont) => {
 	const base = styles.h1;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -45,7 +45,7 @@ export const H1 = ({ id, name = 'H1', className, children, ...tailwind }: iFont)
 	);
 };
 
-export const H2 = ({ id, name = 'H2', className, children, ...tailwind }: iFont) => {
+export const H2 = ({ id, name = 'H2', className, children, ...tailwind }: types.iFont) => {
 	const base = styles.h2;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -56,7 +56,7 @@ export const H2 = ({ id, name = 'H2', className, children, ...tailwind }: iFont)
 	);
 };
 
-export const H3 = ({ id, name = 'H3', className, children, ...tailwind }: iFont) => {
+export const H3 = ({ id, name = 'H3', className, children, ...tailwind }: types.iFont) => {
 	const base = styles.h3;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -67,7 +67,7 @@ export const H3 = ({ id, name = 'H3', className, children, ...tailwind }: iFont)
 	);
 };
 
-export const H4 = ({ id, name = 'H4', className, children, ...tailwind }: iFont) => {
+export const H4 = ({ id, name = 'H4', className, children, ...tailwind }: types.iFont) => {
 	const base = styles.h4;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -78,7 +78,7 @@ export const H4 = ({ id, name = 'H4', className, children, ...tailwind }: iFont)
 	);
 };
 
-export const H5 = ({ id, name = 'H5', className, children, ...tailwind }: iFont) => {
+export const H5 = ({ id, name = 'H5', className, children, ...tailwind }: types.iFont) => {
 	const base = styles.h5;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -89,7 +89,7 @@ export const H5 = ({ id, name = 'H5', className, children, ...tailwind }: iFont)
 	);
 };
 
-export const H6 = ({ id, name = 'H6', className, children, ...tailwind }: iFont) => {
+export const H6 = ({ id, name = 'H6', className, children, ...tailwind }: types.iFont) => {
 	const base = styles.h6;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -100,7 +100,7 @@ export const H6 = ({ id, name = 'H6', className, children, ...tailwind }: iFont)
 	);
 };
 
-export const P = ({ id, name = 'P', className, children, ...tailwind }: iFont) => {
+export const P = ({ id, name = 'P', className, children, ...tailwind }: types.iFont) => {
 	const base = styles.p;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -111,7 +111,7 @@ export const P = ({ id, name = 'P', className, children, ...tailwind }: iFont) =
 	);
 };
 
-export const Small = ({ id, name = 'Small', className, children, ...tailwind }: iFont) => {
+export const Small = ({ id, name = 'Small', className, children, ...tailwind }: types.iFont) => {
 	const base = styles.small;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 

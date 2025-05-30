@@ -1,5 +1,5 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iListGroup = HtmlType;
+export type iListGroup = HtmlProps;
 
-export type iListItem = HtmlType;
+export type iListItem = HtmlProps;

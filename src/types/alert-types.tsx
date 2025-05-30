@@ -1,17 +1,17 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iAlert = HtmlType & {
+export type iAlert = HtmlProps & {
 	show?: boolean;
 };
 
-export type iAlertIcon = HtmlType & {
+export type iAlertIcon = HtmlProps & {
 	icon: string;
 };
 
-export type iAlertBody = HtmlType;
+export type iAlertBody = HtmlProps;
 
-export type iAlertTitle = HtmlType;
+export type iAlertTitle = HtmlProps;
 
-export type iAlertText = HtmlType;
+export type iAlertText = HtmlProps;
 
-export type iAlertActions = HtmlType;
+export type iAlertActions = HtmlProps;

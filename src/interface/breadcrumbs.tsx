@@ -4,10 +4,10 @@ import { FarIcon } from 'interface/icons';
 import { TextLink } from 'interface/links';
 import { Nav, NavList } from 'interface/navs';
 import * as styles from 'styles/breadcrumb-styles';
-import { iBreadcrumbBtn, iBreadcrumbItem, iBreadcrumbLink, iBreadcrumbs } from 'types/breadcrumb-types';
+import * as types from 'types/breadcrumb-types';
 import { breadcrumbBtnProps } from 'utils';
 
-export const Breadcrumbs = ({ id, name = 'Breadcrumbs', className, children, ...tailwind }: iBreadcrumbs) => {
+export const Breadcrumbs = ({ id, name = 'Breadcrumbs', className, children, ...tailwind }: types.iBreadcrumbs) => {
 	const base = styles.breadcrumbs;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -28,7 +28,7 @@ export const BreadcrumbItem = ({
 	className,
 	children,
 	...tailwind
-}: iBreadcrumbItem) => {
+}: types.iBreadcrumbItem) => {
 	const base = styles.breadcrumbItem;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -49,7 +49,7 @@ export const BreadcrumbBtn = ({
 	className,
 	children,
 	...tailwind
-}: iBreadcrumbBtn) => {
+}: types.iBreadcrumbBtn) => {
 	const base = { ...breadcrumbBtnProps(active) };
 	const props = { ...base, ...tailwind, size, className, name, active, children };
 
@@ -65,7 +65,7 @@ export const BreadcrumbLink = ({
 	className,
 	children,
 	...tailwind
-}: iBreadcrumbLink) => {
+}: types.iBreadcrumbLink) => {
 	const base = { ...breadcrumbBtnProps(active) };
 	const props = { ...base, ...tailwind, size, className, name, active, children };
 

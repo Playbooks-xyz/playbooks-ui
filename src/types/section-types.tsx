@@ -1,23 +1,23 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iSection = HtmlType & {
+export type iSection = HtmlProps & {
 	ref?: any;
 };
 
-export type iSectionHeader = HtmlType;
+export type iSectionHeader = HtmlProps;
 
-export type iSectionPretitle = HtmlType;
+export type iSectionPretitle = HtmlProps;
 
-export type iSectionTitle = HtmlType;
+export type iSectionTitle = HtmlProps;
 
-export type iSectionSubtitle = HtmlType;
+export type iSectionSubtitle = HtmlProps;
 
-export type iSectionText = HtmlType;
+export type iSectionText = HtmlProps;
 
-export type iSectionActions = HtmlType;
+export type iSectionActions = HtmlProps;
 
-export type iSectionBody = HtmlType;
+export type iSectionBody = HtmlProps;
 
-export type iSectionHr = HtmlType;
+export type iSectionHr = HtmlProps;
 
-export type iSectionFooter = HtmlType;
+export type iSectionFooter = HtmlProps;

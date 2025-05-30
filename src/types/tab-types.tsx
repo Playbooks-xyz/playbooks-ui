@@ -1,20 +1,20 @@
-import { BtnType, HtmlType } from 'types';
+import { BtnProps, HtmlProps } from 'types';
 
-export type iTabWrapper = HtmlType;
+export type iTabWrapper = HtmlProps;
 
-export type iTabSelect = HtmlType & {
+export type iTabSelect = HtmlProps & {
 	tabs?: string[];
 	activeTab?: string;
 	onSelect: (v: any) => any;
 };
 
-export type iTabs = HtmlType & {
+export type iTabs = HtmlProps & {
 	tabs?: string[];
 	activeTab?: string;
 	onSelect: (v: string) => any;
 };
 
-export type iTab = BtnType & {
+export type iTab = BtnProps & {
 	value?: string;
 	active?: boolean;
 	alt: string;
@@ -23,9 +23,9 @@ export type iTab = BtnType & {
 	children: any;
 };
 
-export type iTabPanes = HtmlType;
+export type iTabPanes = HtmlProps;
 
-export type iTabPane = HtmlType & {
+export type iTabPane = HtmlProps & {
 	active?: boolean;
 	value?: string;
 };

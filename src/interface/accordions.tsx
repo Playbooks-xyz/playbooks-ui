@@ -4,9 +4,9 @@ import { Btn } from 'interface/buttons';
 import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import * as styles from 'styles/accordion-styles';
-import { iAccordion, iAccordionBody, iAccordionText, iAccordionTitle, iAccordionToggle } from 'types/accordion-types';
+import * as types from 'types/accordion-types';
 
-export const Accordion = ({ id, name = 'Accordion', open, className, children, ...tailwind }: iAccordion) => {
+export const Accordion = ({ id, name = 'Accordion', open, className, children, ...tailwind }: types.iAccordion) => {
 	const base = styles.accordion;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -27,7 +27,7 @@ export const AccordionToggle = ({
 	className,
 	children,
 	...tailwind
-}: iAccordionToggle) => {
+}: types.iAccordionToggle) => {
 	const base = {
 		...styles.accordionToggle,
 		nextIcon: {
@@ -47,7 +47,7 @@ export const AccordionTitle = ({
 	className,
 	children,
 	...tailwind
-}: iAccordionTitle) => {
+}: types.iAccordionTitle) => {
 	const base = styles.accordionTitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -66,7 +66,7 @@ export const AccordionBody = ({
 	className,
 	children,
 	...tailwind
-}: iAccordionBody) => {
+}: types.iAccordionBody) => {
 	const wrapperBase = styles.accordionBodyWrapper;
 	const base = styles.accordionBody;
 	const props = { ...base, ...tailwind, className, name };
@@ -99,7 +99,13 @@ export const AccordionBody = ({
 	);
 };
 
-export const AccordionText = ({ id, name = 'AccordionText', className, children, ...tailwind }: iAccordionText) => {
+export const AccordionText = ({
+	id,
+	name = 'AccordionText',
+	className,
+	children,
+	...tailwind
+}: types.iAccordionText) => {
 	const base = styles.accordionText;
 	const props = { ...base, ...tailwind, className, name };
 

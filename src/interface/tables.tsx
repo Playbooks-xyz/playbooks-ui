@@ -3,19 +3,10 @@ import { BtnWrapper } from 'interface/buttons';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
 import * as styles from 'styles/table-styles';
-import {
-	iTable,
-	iTableBody,
-	iTableData,
-	iTableHead,
-	iTableHeader,
-	iTableHeaderRow,
-	iTableRow,
-} from 'types/table-types';
 import { tailwindClassBuilder } from 'utils';
 import { isObject } from 'utils/helpers';
 
-export const Table = ({ id, name = 'Table', className, children, ...tailwind }: iTable) => {
+export const Table = ({ id, name = 'Table', className, children, ...tailwind }: types.iTable) => {
 	const base = styles.table;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -26,7 +17,7 @@ export const Table = ({ id, name = 'Table', className, children, ...tailwind }: 
 	);
 };
 
-export const TableHeader = ({ id, name = 'TableHeader', className, children, ...tailwind }: iTableHeader) => {
+export const TableHeader = ({ id, name = 'TableHeader', className, children, ...tailwind }: types.iTableHeader) => {
 	const base = styles.tableHeader;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -37,7 +28,13 @@ export const TableHeader = ({ id, name = 'TableHeader', className, children, ...
 	);
 };
 
-export const TableHeaderRow = ({ id, name = 'TableHeaderRow', className, children, ...tailwind }: iTableHeaderRow) => {
+export const TableHeaderRow = ({
+	id,
+	name = 'TableHeaderRow',
+	className,
+	children,
+	...tailwind
+}: types.iTableHeaderRow) => {
 	const base = styles.tableHeaderRow;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -54,7 +51,7 @@ export const TableHead = ({
 	className,
 	children,
 	...tailwind
-}: iTableHead) => {
+}: types.iTableHead) => {
 	const base = styles.tableHead;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 	const direction = value === params?.sortProp && params?.sortValue === 'asc' ? 'desc' : 'asc';
@@ -82,7 +79,7 @@ export const TableHead = ({
 	);
 };
 
-export const TableBody = ({ id, name = 'TableBody', className, children, ...tailwind }: iTableBody) => {
+export const TableBody = ({ id, name = 'TableBody', className, children, ...tailwind }: types.iTableBody) => {
 	const base = styles.tableBody;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -93,7 +90,7 @@ export const TableBody = ({ id, name = 'TableBody', className, children, ...tail
 	);
 };
 
-export const TableRow = ({ id, name = 'TableRow', className, children, ...tailwind }: iTableRow) => {
+export const TableRow = ({ id, name = 'TableRow', className, children, ...tailwind }: types.iTableRow) => {
 	const base = styles.tableRow;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -112,7 +109,7 @@ export const TableData = ({
 	className,
 	children,
 	...tailwind
-}: iTableData) => {
+}: types.iTableData) => {
 	const base = {
 		...styles.tableData,
 		color: title ? 'text-gray-800 dark:text-gray-100' : 'text-gray-600 dark:text-gray-400',

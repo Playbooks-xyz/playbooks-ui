@@ -1,31 +1,31 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iModalWrapper = HtmlType & {
+export type iModalWrapper = HtmlProps & {
 	open?: boolean;
 	onClose?: () => any;
 	tailwind?: any;
 };
 
-export type iModal = HtmlType & {
+export type iModal = HtmlProps & {
 	open?: boolean;
 	onClose?: () => any;
 	tailwind?: any;
 };
 
-export type iModalBackdrop = HtmlType & {
+export type iModalBackdrop = HtmlProps & {
 	open: boolean;
 	onClose?: () => any;
 	tailwind?: any;
 };
 
-export type iModalHeader = HtmlType & {
+export type iModalHeader = HtmlProps & {
 	onClose?: () => any;
 };
 
-export type iModalTitle = HtmlType;
+export type iModalTitle = HtmlProps;
 
-export type iModalSubtitle = HtmlType;
+export type iModalSubtitle = HtmlProps;
 
-export type iModalBody = HtmlType;
+export type iModalBody = HtmlProps;
 
-export type iModalFooter = HtmlType;
+export type iModalFooter = HtmlProps;

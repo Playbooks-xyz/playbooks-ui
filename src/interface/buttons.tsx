@@ -5,7 +5,7 @@ import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
 import * as styles from 'styles/button-styles';
-import { iBtn } from 'types/button-types';
+import * as types from 'types/button-types';
 import {
 	btnAccentProps,
 	btnBorderProps,
@@ -38,31 +38,31 @@ export const Btn = ({ variant = 'primary', ...props }) => {
 	}
 };
 
-export const PrimaryBtn = ({ id, name = 'PrimaryBtn', size = 'sm', active, className, ...tailwind }: iBtn) => {
+export const PrimaryBtn = ({ id, name = 'PrimaryBtn', size = 'sm', active, className, ...tailwind }: types.iBtn) => {
 	const base = { ...btnProps(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const AccentBtn = ({ id, name = 'AccentBtn', size = 'sm', active, className, ...tailwind }: iBtn) => {
+export const AccentBtn = ({ id, name = 'AccentBtn', size = 'sm', active, className, ...tailwind }: types.iBtn) => {
 	const base = { ...btnAccentProps(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const BorderBtn = ({ id, name = 'BorderBtn', size = 'sm', active, className, ...tailwind }: iBtn) => {
+export const BorderBtn = ({ id, name = 'BorderBtn', size = 'sm', active, className, ...tailwind }: types.iBtn) => {
 	const base = { ...btnBorderProps(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const TabBtn = ({ id, name = 'TabBtn', size = 'sm', active, className, ...tailwind }: iBtn) => {
+export const TabBtn = ({ id, name = 'TabBtn', size = 'sm', active, className, ...tailwind }: types.iBtn) => {
 	const base = { ...btnTabProps(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
 };
 
-export const TextBtn = ({ id, name = 'TextBtn', size = 'sm', active, className, ...tailwind }: iBtn) => {
+export const TextBtn = ({ id, name = 'TextBtn', size = 'sm', active, className, ...tailwind }: types.iBtn) => {
 	const base = { ...btnTextProps(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
@@ -85,7 +85,7 @@ const BtnShared = ({
 	className,
 	children,
 	...tailwind
-}: iBtn) => {
+}: types.iBtn) => {
 	return (
 		<BtnWrapper
 			id={id}
@@ -106,9 +106,9 @@ const BtnShared = ({
 			<Span space='space-x-4' {...tailwind?.span}>
 				{taskRunning ? (
 					<Oval />
-				) : icon ? (
+				) : types.icon ? (
 					<Icon type='far' icon={icon?.icon || icon} {...icon} />
-				) : img ? (
+				) : types.img ? (
 					<Img src={img?.src || img} borderRadius='rounded-sm' spacing='w-5 h-5' {...img} />
 				) : (
 					children
@@ -136,7 +136,7 @@ export const BtnWrapper = ({
 	children,
 	className,
 	...tailwind
-}: iBtn) => {
+}: types.iBtn) => {
 	const base = {
 		...styles.btnWrapper,
 		cursor: disabled ? 'cursor-not-allowed' : 'cursor-pointer',

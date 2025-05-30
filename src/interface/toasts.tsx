@@ -6,24 +6,24 @@ import { H6, P } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
 import { FadIcon } from 'interface/icons';
 import * as styles from 'styles/toast-styles';
-import {
-	iToast,
-	iToastBody,
-	iToastHeader,
-	iToastIcon,
-	iToastText,
-	iToastTitle,
-	iToastWrapper,
-} from 'types/toast-types';
 
-export const ToastWrapper = ({ id, name = 'ToastWrapper', className, children, ...tailwind }: iToastWrapper) => {
+export const ToastWrapper = ({ id, name = 'ToastWrapper', className, children, ...tailwind }: types.iToastWrapper) => {
 	const base = styles.toastWrapper;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, children, ...tailwind }: iToast) => {
+export const Toast = ({
+	id,
+	name = 'Toast',
+	show,
+	setShow,
+	onRemove,
+	className,
+	children,
+	...tailwind
+}: types.iToast) => {
 	const base = styles.toast;
 	const [fade, setFade] = useState({ opacity: 'opacity-0', translate: 'translate-y-12' });
 	const props = { ...base, ...tailwind, ...fade, className };
@@ -47,7 +47,14 @@ export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, 
 	);
 };
 
-export const ToastHeader = ({ id, name = 'ToastHeader', onRemove, className, children, ...tailwind }: iToastHeader) => {
+export const ToastHeader = ({
+	id,
+	name = 'ToastHeader',
+	onRemove,
+	className,
+	children,
+	...tailwind
+}: types.iToastHeader) => {
 	const base = styles.toastHeader;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -61,7 +68,13 @@ export const ToastHeader = ({ id, name = 'ToastHeader', onRemove, className, chi
 	);
 };
 
-export const ToastIcon = ({ id, name = 'ToastIcon', icon = 'question-circle', className, ...tailwind }: iToastIcon) => {
+export const ToastIcon = ({
+	id,
+	name = 'ToastIcon',
+	icon = 'question-circle',
+	className,
+	...tailwind
+}: types.iToastIcon) => {
 	const base = styles.toastIcon;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -72,21 +85,21 @@ export const ToastIcon = ({ id, name = 'ToastIcon', icon = 'question-circle', cl
 	);
 };
 
-export const ToastTitle = ({ id, name = 'ToastTitle', className, children, ...tailwind }: iToastTitle) => {
+export const ToastTitle = ({ id, name = 'ToastTitle', className, children, ...tailwind }: types.iToastTitle) => {
 	const base = styles.toastTitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <H6 {...props}>{children}</H6>;
 };
 
-export const ToastBody = ({ id, name = 'ToastBody', className, children, ...tailwind }: iToastBody) => {
+export const ToastBody = ({ id, name = 'ToastBody', className, children, ...tailwind }: types.iToastBody) => {
 	const base = styles.toastBody;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const ToastText = ({ id, name = 'ToastText', className, children, ...tailwind }: iToastText) => {
+export const ToastText = ({ id, name = 'ToastText', className, children, ...tailwind }: types.iToastText) => {
 	const base = styles.toastText;
 	const props = { ...base, ...tailwind, className, name };
 

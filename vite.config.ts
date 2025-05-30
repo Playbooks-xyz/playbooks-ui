@@ -63,7 +63,6 @@ export default defineConfig({
 				path.resolve(__dirname, 'src/interface/tags.tsx'),
 				path.resolve(__dirname, 'src/interface/toasts.tsx'),
 				path.resolve(__dirname, 'src/interface/tooltips.tsx'),
-				path.resolve(__dirname, 'src/styles/styles.tsx'),
 				path.resolve(__dirname, 'src/utils/utils.tsx'),
 			],
 			formats: ['cjs'],

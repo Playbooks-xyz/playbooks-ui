@@ -1,15 +1,15 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iPrefooter = HtmlType;
+export type iPrefooter = HtmlProps;
 
-export type iPrefooterBody = HtmlType;
+export type iPrefooterBody = HtmlProps;
 
-export type iPrefooterPretitle = HtmlType;
+export type iPrefooterPretitle = HtmlProps;
 
-export type iPrefooterTitle = HtmlType;
+export type iPrefooterTitle = HtmlProps;
 
-export type iPrefooterSubtitle = HtmlType;
+export type iPrefooterSubtitle = HtmlProps;
 
-export type iPrefooterText = HtmlType;
+export type iPrefooterText = HtmlProps;
 
-export type iPrefooterActions = HtmlType;
+export type iPrefooterActions = HtmlProps;

@@ -1,18 +1,18 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iFeedback = HtmlType;
+export type iFeedback = HtmlProps;
 
-export type iFeedbackHeader = HtmlType;
+export type iFeedbackHeader = HtmlProps;
 
-export type iFeedbackIcon = HtmlType & {
+export type iFeedbackIcon = HtmlProps & {
 	type?: string;
 	icon: string;
 };
 
-export type iFeedbackBody = HtmlType;
+export type iFeedbackBody = HtmlProps;
 
-export type iFeedbackTitle = HtmlType;
+export type iFeedbackTitle = HtmlProps;
 
-export type iFeedbackText = HtmlType;
+export type iFeedbackText = HtmlProps;
 
-export type iFeedbackActions = HtmlType;
+export type iFeedbackActions = HtmlProps;

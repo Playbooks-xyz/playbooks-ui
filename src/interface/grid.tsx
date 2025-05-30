@@ -1,9 +1,9 @@
 import { Div } from 'interface/html';
 import * as styles from 'styles/grid-styles';
-import { iCol, iContainer, iGrid } from 'types/grid-types';
+import * as types from 'types/grid-types';
 import { computeCol, computeContainer, computeGrid } from 'utils';
 
-export const Container = ({ id, name = 'Container', size, className, children, ...tailwind }: iContainer) => {
+export const Container = ({ id, name = 'Container', size, className, children, ...tailwind }: types.iContainer) => {
 	const base = {
 		...styles.container,
 		size: computeContainer(size),
@@ -13,7 +13,7 @@ export const Container = ({ id, name = 'Container', size, className, children, .
 	return <Div {...props}>{children}</Div>;
 };
 
-export const Grid = ({ id, name = 'Grid', cols = '12', className, children, ...tailwind }: iGrid) => {
+export const Grid = ({ id, name = 'Grid', cols = '12', className, children, ...tailwind }: types.iGrid) => {
 	const base = {
 		...styles.grid,
 		cols: computeGrid(cols),
@@ -23,7 +23,19 @@ export const Grid = ({ id, name = 'Grid', cols = '12', className, children, ...t
 	return <Div {...props}>{children}</Div>;
 };
 
-export const Col = ({ id, name = 'Col', span = '12', sm, md, lg, xl, xxl, className, children, ...tailwind }: iCol) => {
+export const Col = ({
+	id,
+	name = 'Col',
+	span = '12',
+	sm,
+	md,
+	lg,
+	xl,
+	xxl,
+	className,
+	children,
+	...tailwind
+}: types.iCol) => {
 	const base = {
 		span: computeCol('span', span),
 		sm: computeCol('sm', sm),

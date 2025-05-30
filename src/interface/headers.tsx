@@ -2,10 +2,10 @@ import * as HTML from '@ehubbell/html';
 import { Font } from 'interface/fonts';
 import { Div } from 'interface/html';
 import * as styles from 'styles/header-styles';
-import { iHeader, iHeaderActions, iHeaderSubtitle, iHeaderText, iHeaderTitle } from 'types/header-types';
+import * as types from 'types/header-types';
 import { tailwindClassBuilder } from 'utils';
 
-export const Header = ({ id, name = 'Header', className, children, style, ...tailwind }: iHeader) => {
+export const Header = ({ id, name = 'Header', className, children, style, ...tailwind }: types.iHeader) => {
 	const base = styles.header;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -16,7 +16,14 @@ export const Header = ({ id, name = 'Header', className, children, style, ...tai
 	);
 };
 
-export const HeaderTitle = ({ id, name = 'HeaderTitle', size, className, children, ...tailwind }: iHeaderTitle) => {
+export const HeaderTitle = ({
+	id,
+	name = 'HeaderTitle',
+	size,
+	className,
+	children,
+	...tailwind
+}: types.iHeaderTitle) => {
 	const base = styles.headerTitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -27,7 +34,13 @@ export const HeaderTitle = ({ id, name = 'HeaderTitle', size, className, childre
 	);
 };
 
-export const HeaderSubtitle = ({ id, name = 'HeaderSubtitle', className, children, ...tailwind }: iHeaderSubtitle) => {
+export const HeaderSubtitle = ({
+	id,
+	name = 'HeaderSubtitle',
+	className,
+	children,
+	...tailwind
+}: types.iHeaderSubtitle) => {
 	const base = styles.headerSubtitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -38,7 +51,7 @@ export const HeaderSubtitle = ({ id, name = 'HeaderSubtitle', className, childre
 	);
 };
 
-export const HeaderText = ({ id, name = 'HeaderText', className, children, ...tailwind }: iHeaderText) => {
+export const HeaderText = ({ id, name = 'HeaderText', className, children, ...tailwind }: types.iHeaderText) => {
 	const base = styles.headerText;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -49,7 +62,13 @@ export const HeaderText = ({ id, name = 'HeaderText', className, children, ...ta
 	);
 };
 
-export const HeaderActions = ({ id, name = 'HeaderActions', className, children, ...tailwind }: iHeaderActions) => {
+export const HeaderActions = ({
+	id,
+	name = 'HeaderActions',
+	className,
+	children,
+	...tailwind
+}: types.iHeaderActions) => {
 	const base = styles.headerActions;
 	const props = { ...base, ...tailwind, className, name };
 

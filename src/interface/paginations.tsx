@@ -2,10 +2,10 @@ import { BtnWrapper } from 'interface/buttons';
 import { FarIcon } from 'interface/icons';
 import { Nav } from 'interface/navs';
 import * as styles from 'styles/pagination-styles';
-import { iPagination, iPaginationBtn } from 'types/pagination-types';
+import * as types from 'types/pagination-types';
 import { paginationProps, tailwindClassBuilder } from 'utils';
 
-export const Pagination = ({ id, name = 'Pagination', className, children, ...tailwind }: iPagination) => {
+export const Pagination = ({ id, name = 'Pagination', className, children, ...tailwind }: types.iPagination) => {
 	const base = styles.pagination;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -21,7 +21,7 @@ export const PaginationFirst = ({
 	className,
 	onClick,
 	...tailwind
-}: iPaginationBtn) => {
+}: types.iPaginationBtn) => {
 	const base = paginationProps();
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -41,7 +41,7 @@ export const PaginationPrev = ({
 	className,
 	onClick,
 	...tailwind
-}: iPaginationBtn) => {
+}: types.iPaginationBtn) => {
 	const base = paginationProps();
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -61,7 +61,7 @@ export const PaginationBtn = ({
 	className = '',
 	onClick,
 	...tailwind
-}: iPaginationBtn) => {
+}: types.iPaginationBtn) => {
 	const base = { ...paginationProps(active) };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -81,7 +81,7 @@ export const PaginationNext = ({
 	className,
 	onClick,
 	...tailwind
-}: iPaginationBtn) => {
+}: types.iPaginationBtn) => {
 	const base = paginationProps();
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -101,7 +101,7 @@ export const PaginationLast = ({
 	className,
 	onClick,
 	...tailwind
-}: iPaginationBtn) => {
+}: types.iPaginationBtn) => {
 	const base = paginationProps();
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 

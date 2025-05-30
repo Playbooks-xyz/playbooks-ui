@@ -1,5 +1,5 @@
-import { LinkType } from 'types';
+import { LinkProps } from 'types';
 
-export type iLink = LinkType & {
+export type iLink = LinkProps & {
 	span?: any;
 };

@@ -4,10 +4,10 @@ import { useInterface } from 'contexts';
 import { Head } from 'interface/head';
 import { Div } from 'interface/html';
 import * as styles from 'styles/route-styles';
-import { iRoute } from 'types/route-types';
+import * as types from 'types/route-types';
 import { capitalize } from 'utils/transforms';
 
-export const Route = ({ id, name = 'Route', seo, style, className, children, ...tailwind }: iRoute) => {
+export const Route = ({ id, name = 'Route', seo, style, className, children, ...tailwind }: types.iRoute) => {
 	const base = styles.route;
 	const props = { ...base, ...tailwind, className, name };
 	const { meta } = useInterface();

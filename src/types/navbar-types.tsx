@@ -1,13 +1,13 @@
-import { BtnType, HtmlType, LinkType } from 'types';
+import { BtnProps, HtmlProps, LinkProps } from 'types';
 
-export type iNavbar = HtmlType & {
+export type iNavbar = HtmlProps & {
 	ref?: any;
 };
 
-export type iNavbarBrand = LinkType & {
+export type iNavbarBrand = LinkProps & {
 	src: string;
 };
 
-export type iNavbarToggle = BtnType;
+export type iNavbarToggle = BtnProps;
 
-export type iNavbarList = HtmlType;
+export type iNavbarList = HtmlProps;

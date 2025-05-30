@@ -6,15 +6,6 @@ import { useKeyPress } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { H4 } from 'interface/fonts';
 import { Div } from 'interface/html';
-import {
-	iSlide,
-	iSlideBackdrop,
-	iSlideBody,
-	iSlideFooter,
-	iSlideHeader,
-	iSlideTitle,
-	iSlideWrapper,
-} from 'types/slide-types';
 import { borderProps, computeSlideAnimation } from 'utils';
 
 export const SlideWrapper = ({
@@ -25,7 +16,7 @@ export const SlideWrapper = ({
 	className,
 	children,
 	...tailwind
-}: iSlideWrapper) => {
+}: types.iSlideWrapper) => {
 	const base = {
 		position: 'fixed',
 		inset: 'inset-0',
@@ -41,7 +32,7 @@ export const SlideWrapper = ({
 	);
 };
 
-export const SlideBackdrop = ({ id, name = 'SlideBackdrop', open, onClose, ...tailwind }: iSlideBackdrop) => {
+export const SlideBackdrop = ({ id, name = 'SlideBackdrop', open, onClose, ...tailwind }: types.iSlideBackdrop) => {
 	const base = {
 		bgColor: 'bg-black dark:bg-gray-700',
 		duration: 'duration-200',
@@ -78,7 +69,7 @@ export const Slide = ({
 	className,
 	children,
 	...tailwind
-}: iSlide) => {
+}: types.iSlide) => {
 	const base = {
 		bgColor: 'bg-white dark:bg-gray-900',
 		ease: 'ease-out',
@@ -135,7 +126,14 @@ export const Slide = ({
 		: null;
 };
 
-export const SlideHeader = ({ id, name = 'SlideHeader', onClose, className, children, ...tailwind }: iSlideHeader) => {
+export const SlideHeader = ({
+	id,
+	name = 'SlideHeader',
+	onClose,
+	className,
+	children,
+	...tailwind
+}: types.iSlideHeader) => {
 	const base = {
 		display: 'flex-between',
 		border: 'border-b',
@@ -153,21 +151,21 @@ export const SlideHeader = ({ id, name = 'SlideHeader', onClose, className, chil
 	);
 };
 
-export const SlideTitle = ({ id, name = 'SlideTitle', className, children, ...tailwind }: iSlideTitle) => {
+export const SlideTitle = ({ id, name = 'SlideTitle', className, children, ...tailwind }: types.iSlideTitle) => {
 	const base = { fontWeight: 'font-bold', tracking: 'tracking-wide' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <H4 {...props}>{children}</H4>;
 };
 
-export const SlideBody = ({ id, name = 'SlideBody', className, children, ...tailwind }: iSlideBody) => {
+export const SlideBody = ({ id, name = 'SlideBody', className, children, ...tailwind }: types.iSlideBody) => {
 	const base = { display: 'grow', overflow: 'overflow-y-scroll', spacing: 'p-4' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const SlideFooter = ({ id, name = 'SlideFooter', className, children, ...tailwind }: iSlideFooter) => {
+export const SlideFooter = ({ id, name = 'SlideFooter', className, children, ...tailwind }: types.iSlideFooter) => {
 	const base = { border: 'border-t', ...borderProps, spacing: 'p-4' };
 	const props = { ...base, ...tailwind, className, name };
 

@@ -63,8 +63,8 @@ export const RangeSliderTrack = ({ ref, values, min, max, props, children, onNex
 export const RangeSliderThumb = ({ ref, isDragged, ...props }) => {
 	const base = {
 		...styles.rangeSliderThumb,
-		bgColor: isDragged ? 'bg-blue-500 dark:bg-cyan-500' : 'bg-gray-300 dark:bg-gray-600',
-		borderColor: isDragged ? 'border-blue-500 dark:border-cyan-500' : 'border-gray-300 dark:border-gray-600',
+		bgColor: types.isDragged ? 'bg-blue-500 dark:bg-cyan-500' : 'bg-gray-300 dark:bg-gray-600',
+		borderColor: types.isDragged ? 'border-blue-500 dark:border-cyan-500' : 'border-gray-300 dark:border-gray-600',
 	};
 	const className = tailwindClassBuilder(base);
 

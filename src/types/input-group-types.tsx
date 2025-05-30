@@ -1,10 +1,10 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 
-export type iInputGroup = HtmlType & {
+export type iInputGroup = HtmlProps & {
 	active?: boolean;
 };
 
-export type iInputAddon = HtmlType & {
+export type iInputAddon = HtmlProps & {
 	icon?: any;
 	html?: string;
 	taskRunning?: boolean;

@@ -1,15 +1,15 @@
 import { Li, Ul } from 'interface/html';
 import * as styles from 'styles/list-group-styles';
-import { iListGroup, iListItem } from 'types/list-group-types';
+import * as types from 'types/list-group-types';
 
-export const ListGroup = ({ id, name = 'ListGroup', className, children, ...tailwind }: iListGroup) => {
+export const ListGroup = ({ id, name = 'ListGroup', className, children, ...tailwind }: types.iListGroup) => {
 	const base = styles.listGroup;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Ul {...props}>{children}</Ul>;
 };
 
-export const ListItem = ({ id, name = 'ListItem', className, children, ...tailwind }: iListItem) => {
+export const ListItem = ({ id, name = 'ListItem', className, children, ...tailwind }: types.iListItem) => {
 	const base = styles.listItem;
 	const props = { ...base, ...tailwind, className, name };
 

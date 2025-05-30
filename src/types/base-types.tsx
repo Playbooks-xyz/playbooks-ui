@@ -1,8 +1,6 @@
-import { TailwindType } from 'types/tailwind-types';
+import { TailwindProps } from 'types/tailwind-types';
 
-export type Modify<T, R> = Omit<T, keyof R> & R;
-
-export type HtmlType = TailwindType & {
+export type HtmlProps = TailwindProps & {
 	id?: string;
 	ref?: any;
 	name?: string;
@@ -11,13 +9,13 @@ export type HtmlType = TailwindType & {
 	onClick?: (v?: any) => any;
 	onMouseEnter?: (v?: any) => any;
 	onMouseLeave?: (v?: any) => any;
-	tailwind?: TailwindType;
+	tailwind?: TailwindProps;
 	className?: string;
 	style?: any;
 	children?: any;
 };
 
-export type BtnType = HtmlType & {
+export type BtnProps = HtmlProps & {
 	type?: 'button' | 'submit' | 'reset';
 	alt?: string;
 	active?: boolean;
@@ -31,13 +29,13 @@ export type BtnType = HtmlType & {
 	taskRunning?: boolean;
 };
 
-export type ImgType = HtmlType & {
+export type ImgProps = HtmlProps & {
 	alt: string;
 	src: string;
 	fetchPriority?: 'high' | 'low' | 'auto';
 };
 
-export type InputType = HtmlType & {
+export type InputProps = HtmlProps & {
 	value?: string;
 	defaultValue?: string;
 	placeholder?: string;
@@ -47,12 +45,12 @@ export type InputType = HtmlType & {
 	readOnly?: boolean;
 };
 
-export type LabelType = HtmlType & {
+export type LabelProps = HtmlProps & {
 	active?: boolean;
 	htmlFor?: string;
 };
 
-export type LinkType = HtmlType & {
+export type LinkProps = HtmlProps & {
 	alt?: string;
 	active?: boolean;
 	prevIcon?: any;

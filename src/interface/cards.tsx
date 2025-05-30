@@ -2,28 +2,16 @@ import { Font, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import { Icon } from 'interface/icons';
 import * as styles from 'styles/card-styles';
-import {
-	iCard,
-	iCardActions,
-	iCardBody,
-	iCardFooter,
-	iCardHeader,
-	iCardIcon,
-	iCardImg,
-	iCardPretitle,
-	iCardSubtitle,
-	iCardText,
-	iCardTitle,
-} from 'types/card-types';
+import * as types from 'types/card-types';
 
-export const Card = ({ id, name = 'Card', className, children, ...tailwind }: iCard) => {
+export const Card = ({ id, name = 'Card', className, children, ...tailwind }: types.iCard) => {
 	const base = styles.card;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const CardHeader = ({ id, name = 'CardHeader', className, children, ...tailwind }: iCardHeader) => {
+export const CardHeader = ({ id, name = 'CardHeader', className, children, ...tailwind }: types.iCardHeader) => {
 	const base = styles.cardHeader;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -38,7 +26,7 @@ export const CardIcon = ({
 	wrapper,
 	className,
 	...tailwind
-}: iCardIcon) => {
+}: types.iCardIcon) => {
 	const props = { ...styles.cardIcon, ...tailwind, className, name };
 
 	return <Icon type={type} icon={icon} {...props} />;
@@ -52,28 +40,35 @@ export const CardImg = ({
 	className,
 	children,
 	...tailwind
-}: iCardImg) => {
+}: types.iCardImg) => {
 	const base = styles.cardImg;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Img src={src} alt={alt} {...props} />;
 };
 
-export const CardBody = ({ id, name = 'CardBody', className, children, ...tailwind }: iCardBody) => {
+export const CardBody = ({ id, name = 'CardBody', className, children, ...tailwind }: types.iCardBody) => {
 	const base = styles.cardBody;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const CardPretitle = ({ id, name = 'CardPretitle', className, children, ...tailwind }: iCardPretitle) => {
+export const CardPretitle = ({ id, name = 'CardPretitle', className, children, ...tailwind }: types.iCardPretitle) => {
 	const base = styles.cardPretitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
-export const CardTitle = ({ id, name = 'CardTitle', size = 'h6', className, children, ...tailwind }: iCardTitle) => {
+export const CardTitle = ({
+	id,
+	name = 'CardTitle',
+	size = 'h6',
+	className,
+	children,
+	...tailwind
+}: types.iCardTitle) => {
 	const base = styles.cardTitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -84,28 +79,28 @@ export const CardTitle = ({ id, name = 'CardTitle', size = 'h6', className, chil
 	);
 };
 
-export const CardSubtitle = ({ id, name = 'CardSubtitle', className, children, ...tailwind }: iCardSubtitle) => {
+export const CardSubtitle = ({ id, name = 'CardSubtitle', className, children, ...tailwind }: types.iCardSubtitle) => {
 	const base = styles.cardSubtitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
-export const CardText = ({ id, name = 'CardText', className, children, ...tailwind }: iCardText) => {
+export const CardText = ({ id, name = 'CardText', className, children, ...tailwind }: types.iCardText) => {
 	const base = styles.cardText;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
-export const CardFooter = ({ id, name = 'CardFooter', className, children, ...tailwind }: iCardFooter) => {
+export const CardFooter = ({ id, name = 'CardFooter', className, children, ...tailwind }: types.iCardFooter) => {
 	const base = styles.cardFooter;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const CardActions = ({ id, name = 'CardActions', className, children, ...tailwind }: iCardActions) => {
+export const CardActions = ({ id, name = 'CardActions', className, children, ...tailwind }: types.iCardActions) => {
 	const base = styles.cardActions;
 	const props = { ...base, ...tailwind, className, name };
 

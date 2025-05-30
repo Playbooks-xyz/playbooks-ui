@@ -1,8 +1,8 @@
-import { HtmlType } from 'types';
+import { HtmlProps } from 'types';
 import { iBtn } from 'types/button-types';
 import { iLink } from 'types/link-types';
 
-export type iDrop = HtmlType & {
+export type iDrop = HtmlProps & {
 	open: boolean;
 	onClose: () => any;
 };
@@ -13,21 +13,21 @@ export type iDropToggle = iBtn & {
 	onClick: (v?: any) => any;
 };
 
-export type iDropMenu = HtmlType & {
+export type iDropMenu = HtmlProps & {
 	open: boolean;
 	placement?: string;
 	options?: any;
 };
 
-export type iDropHeader = HtmlType;
+export type iDropHeader = HtmlProps;
 
-export type iDropTitle = HtmlType;
+export type iDropTitle = HtmlProps;
 
-export type iDropSubtitle = HtmlType;
+export type iDropSubtitle = HtmlProps;
 
-export type iDropList = HtmlType;
+export type iDropList = HtmlProps;
 
-export type iDropItem = HtmlType;
+export type iDropItem = HtmlProps;
 
 export type iDropBtn = iBtn;
 

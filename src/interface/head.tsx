@@ -1,8 +1,8 @@
 import NextHead from 'next/head';
 
-import { iHead } from 'types/head-types';
+import * as types from 'types/head-types';
 
-export const Head = (props: iHead) => {
+export const Head = (props: types.iHead) => {
 	// Render
 	return (
 		<NextHead>

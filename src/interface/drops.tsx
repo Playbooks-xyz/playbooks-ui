@@ -8,21 +8,9 @@ import { H6, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
 import * as styles from 'styles/drop-styles';
-import {
-	iDrop,
-	iDropBtn,
-	iDropHeader,
-	iDropItem,
-	iDropLink,
-	iDropList,
-	iDropMenu,
-	iDropSubtitle,
-	iDropTitle,
-	iDropToggle,
-} from 'types/drop-types';
 import { tailwindClassBuilder } from 'utils';
 
-export const Drop = ({ id, ref, name = 'Drop', open, onClose, className, children, ...tailwind }: iDrop) => {
+export const Drop = ({ id, ref, name = 'Drop', open, onClose, className, children, ...tailwind }: types.iDrop) => {
 	const base = styles.drop;
 	const props = { ...base, ...tailwind, className, name };
 	const internalRef = useRef(null);
@@ -68,7 +56,7 @@ export const DropToggle = ({
 	className,
 	children,
 	...tailwind
-}: iDropToggle) => {
+}: types.iDropToggle) => {
 	const base = styles.dropToggle;
 	const props = { ...base, ...tailwind, children, className, name };
 
@@ -86,7 +74,7 @@ export const DropMenu = ({
 	style,
 	children,
 	...tailwind
-}: iDropMenu) => {
+}: types.iDropMenu) => {
 	const [dropRef, setDropRef] = useState(null);
 	const base = styles.dropMenu;
 	const [fade, setFade] = useState('hidden');
@@ -127,49 +115,49 @@ export const DropMenu = ({
 	);
 };
 
-export const DropHeader = ({ id, name = 'DropHeader', className, children, ...tailwind }: iDropHeader) => {
+export const DropHeader = ({ id, name = 'DropHeader', className, children, ...tailwind }: types.iDropHeader) => {
 	const base = styles.dropHeader;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const DropTitle = ({ id, name = 'DropTitle', className, children, ...tailwind }: iDropTitle) => {
+export const DropTitle = ({ id, name = 'DropTitle', className, children, ...tailwind }: types.iDropTitle) => {
 	const base = styles.dropTitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <H6 {...props}>{children}</H6>;
 };
 
-export const DropSubtitle = ({ id, name = 'DropSubtitle', className, children, ...tailwind }: iDropSubtitle) => {
+export const DropSubtitle = ({ id, name = 'DropSubtitle', className, children, ...tailwind }: types.iDropSubtitle) => {
 	const base = styles.dropSubtitle;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
-export const DropList = ({ id, name = 'DropList', className, children, ...tailwind }: iDropList) => {
+export const DropList = ({ id, name = 'DropList', className, children, ...tailwind }: types.iDropList) => {
 	const base = styles.dropList;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Ul {...props}>{children}</Ul>;
 };
 
-export const DropItem = ({ id, name = 'DropItem', className, children, ...tailwind }: iDropItem) => {
+export const DropItem = ({ id, name = 'DropItem', className, children, ...tailwind }: types.iDropItem) => {
 	const base = styles.dropItem;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Li {...props}>{children}</Li>;
 };
 
-export const DropBtn = ({ id, name = 'DropBtn', className, children, ...tailwind }: iDropBtn) => {
+export const DropBtn = ({ id, name = 'DropBtn', className, children, ...tailwind }: types.iDropBtn) => {
 	const base = styles.dropBtn;
 	const props = { ...base, ...tailwind, children, className, name };
 
 	return <AccentBtn {...props} />;
 };
 
-export const DropLink = ({ id, name = 'DropLink', className, children, ...tailwind }: iDropLink) => {
+export const DropLink = ({ id, name = 'DropLink', className, children, ...tailwind }: types.iDropLink) => {
 	const base = styles.dropLink;
 	const props = { ...base, ...tailwind, children, className, name };
 

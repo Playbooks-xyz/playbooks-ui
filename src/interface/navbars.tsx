@@ -2,10 +2,10 @@ import * as HTML from '@ehubbell/html';
 import { Img, Ul } from 'interface/html';
 import { LinkWrapper } from 'interface/links';
 import * as styles from 'styles/navbar-styles';
-import { iNavbar, iNavbarBrand, iNavbarList } from 'types/navbar-types';
+import * as types from 'types/navbar-types';
 import { tailwindClassBuilder } from 'utils';
 
-export const Navbar = ({ id, ref, name = 'Navbar', className, children, ...tailwind }: iNavbar) => {
+export const Navbar = ({ id, ref, name = 'Navbar', className, children, ...tailwind }: types.iNavbar) => {
 	const base = styles.navbar;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -25,7 +25,7 @@ export const NavbarBrand = ({
 	className,
 	children,
 	...tailwind
-}: iNavbarBrand) => {
+}: types.iNavbarBrand) => {
 	const base = styles.navbarBrand;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -36,7 +36,7 @@ export const NavbarBrand = ({
 	);
 };
 
-export const NavbarList = ({ id, name = 'NavbarList', className, children, ...tailwind }: iNavbarList) => {
+export const NavbarList = ({ id, name = 'NavbarList', className, children, ...tailwind }: types.iNavbarList) => {
 	const base = styles.navbarList;
 	const props = { ...base, ...tailwind, className, name };
 

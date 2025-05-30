@@ -1,7 +1,5 @@
 import { Transition } from 'react-transition-group';
 
-import { HtmlType } from 'types';
-
 export type iFade = HtmlType & {
 	ref?: any;
 	show: boolean;

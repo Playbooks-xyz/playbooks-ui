@@ -4,20 +4,9 @@ import { Font, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { Link } from 'interface/links';
 import * as styles from 'styles/footer-styles';
-import {
-	iFooter,
-	iFooterBody,
-	iFooterBtn,
-	iFooterHeader,
-	iFooterItem,
-	iFooterLink,
-	iFooterList,
-	iFooterText,
-	iFooterTitle,
-} from 'types/footer-types';
 import { tailwindClassBuilder } from 'utils';
 
-export const Footer = ({ id, name = 'Footer', className, children, style, ...tailwind }: iFooter) => {
+export const Footer = ({ id, name = 'Footer', className, children, style, ...tailwind }: types.iFooter) => {
 	const base = styles.footer;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
@@ -28,14 +17,14 @@ export const Footer = ({ id, name = 'Footer', className, children, style, ...tai
 	);
 };
 
-export const FooterHeader = ({ id, name = 'FooterHeader', className, children, ...tailwind }: iFooterHeader) => {
+export const FooterHeader = ({ id, name = 'FooterHeader', className, children, ...tailwind }: types.iFooterHeader) => {
 	const base = styles.footerHeader;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
-export const FooterBody = ({ id, name = 'FooterBody', className, children, ...tailwind }: iFooterBody) => {
+export const FooterBody = ({ id, name = 'FooterBody', className, children, ...tailwind }: types.iFooterBody) => {
 	const base = styles.footerBody;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -49,7 +38,7 @@ export const FooterTitle = ({
 	className,
 	children,
 	...tailwind
-}: iFooterTitle) => {
+}: types.iFooterTitle) => {
 	const base = styles.footerTitle;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -60,14 +49,14 @@ export const FooterTitle = ({
 	);
 };
 
-export const FooterText = ({ id, name = 'FooterText', size, className, children, ...tailwind }: iFooterText) => {
+export const FooterText = ({ id, name = 'FooterText', size, className, children, ...tailwind }: types.iFooterText) => {
 	const base = styles.footerText;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
-export const FooterList = ({ id, name = 'FooterList', className, children, ...tailwind }: iFooterList) => {
+export const FooterList = ({ id, name = 'FooterList', className, children, ...tailwind }: types.iFooterList) => {
 	const base = styles.footerList;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -81,7 +70,7 @@ export const FooterItem = ({
 	className,
 	children,
 	...tailwind
-}: iFooterItem) => {
+}: types.iFooterItem) => {
 	const base = styles.footerItem;
 	const props = { ...base, ...tailwind, className, name };
 
@@ -95,7 +84,7 @@ export const FooterBtn = ({
 	className,
 	children,
 	...tailwind
-}: iFooterBtn) => {
+}: types.iFooterBtn) => {
 	const base = styles.footerBtn;
 	const props = { ...base, ...tailwind, children, className, name };
 
@@ -109,14 +98,14 @@ export const FooterLink = ({
 	className,
 	children,
 	...tailwind
-}: iFooterLink) => {
+}: types.iFooterLink) => {
 	const base = styles.footerLink;
 	const props = { ...base, ...tailwind, children, className, name };
 
 	return <Link variant={variant} {...props} />;
 };
 
-export const FooterFooter = ({ id, name = 'FooterFooter', className, children, ...tailwind }: iFooterBody) => {
+export const FooterFooter = ({ id, name = 'FooterFooter', className, children, ...tailwind }: types.iFooterBody) => {
 	const base = styles.footerFooter;
 	const props = { ...base, ...tailwind, className, name };
 
