@@ -270,6 +270,6 @@
       "import": "./dist/utils.cjs",
       "types": "./dist/index.d.ts"
     },
-    "./dist/styles.css": "./dist/style.css"
+    "./styles.css": "./dist/style.css"
   }
 }

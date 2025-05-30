@@ -64,6 +64,7 @@ export default defineConfig({
 				path.resolve(__dirname, 'src/interface/toasts.tsx'),
 				path.resolve(__dirname, 'src/interface/tooltips.tsx'),
 				path.resolve(__dirname, 'src/utils/utils.tsx'),
+				path.resolve(__dirname, 'src/styles.css'),
 			],
 			formats: ['cjs'],
 			name: 'playbooks-interface',

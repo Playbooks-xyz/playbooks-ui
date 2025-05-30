@@ -9,6 +9,7 @@ export type LinkProps = HtmlProps & {
 	img?: any;
 	nextIcon?: any;
 	nextImg?: any;
+	span?: any;
 	href?: string;
 	disabled?: boolean;
 	target?: '_self' | '_blank';

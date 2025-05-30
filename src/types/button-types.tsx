@@ -10,6 +10,7 @@ export type BtnProps = HtmlProps & {
 	img?: any;
 	nextIcon?: any;
 	nextImg?: any;
+	span?: any;
 	disabled?: boolean;
 	taskRunning?: boolean;
 };
