@@ -3,7 +3,7 @@ import { P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
 import * as styles from 'styles/radio-styles';
 import * as types from 'types';
-import { checkboxProps, classBuilder } from 'utils';
+import { classBuilder } from 'utils';
 
 export const RadioWrapper = ({
 	id,
@@ -65,7 +65,7 @@ export const RadioInput = ({
 	children,
 	...props
 }: types.RadioInputProps) => {
-	const base = { ...checkboxProps(value), ...styles.radioInput };
+	const base = styles.radioInput;
 	const computed = classBuilder({ ...base, ...props, tailwind, name, className });
 	return (
 		<HTML.Input

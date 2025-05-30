@@ -5,7 +5,6 @@ import { TextLink } from 'interface/links';
 import { Nav, NavList } from 'interface/navs';
 import * as styles from 'styles/breadcrumb-styles';
 import * as types from 'types/breadcrumb-types';
-import { breadcrumbBtnProps } from 'utils';
 
 export const Breadcrumbs = ({
 	id,
@@ -59,7 +58,7 @@ export const BreadcrumbBtn = ({
 	children,
 	...props
 }: types.BreadcrumbBtnProps) => {
-	const base = { ...breadcrumbBtnProps(active) };
+	const base = styles.breadcrumbBtn(active);
 	const computed = { ...base, ...props, tailwind, size, className, name, active, children };
 
 	return <TextBtn onClick={onClick} {...computed} />;
@@ -76,7 +75,7 @@ export const BreadcrumbLink = ({
 	children,
 	...props
 }: types.BreadcrumbLinkProps) => {
-	const base = { ...breadcrumbBtnProps(active) };
+	const base = styles.breadcrumbLink(active);
 	const computed = { ...base, ...props, tailwind, size, className, name, active, children };
 
 	return <TextLink href={href} {...computed} />;

@@ -6,15 +6,7 @@ import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
 import * as styles from 'styles/button-styles';
 import * as types from 'types/button-types';
-import {
-	btnAccentProps,
-	btnBorderProps,
-	btnProps,
-	btnTabProps,
-	btnTextProps,
-	classBuilder,
-	computeBtnSize,
-} from 'utils';
+import { classBuilder, computeBtnSize } from 'utils';
 
 export const Btn = ({ variant = 'primary', ...props }) => {
 	switch (variant) {
@@ -47,7 +39,7 @@ export const PrimaryBtn = ({
 	className,
 	...props
 }: types.BtnProps) => {
-	const base = { ...btnProps(active), size: computeBtnSize(size) };
+	const base = { ...styles.primaryBtn(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
@@ -61,7 +53,7 @@ export const AccentBtn = ({
 	className,
 	...props
 }: types.BtnProps) => {
-	const base = { ...btnAccentProps(active), size: computeBtnSize(size) };
+	const base = { ...styles.accentBtn(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
@@ -75,13 +67,13 @@ export const BorderBtn = ({
 	className,
 	...props
 }: types.BtnProps) => {
-	const base = { ...btnBorderProps(active), size: computeBtnSize(size) };
+	const base = { ...styles.borderBtn(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
 export const TabBtn = ({ id, name = 'TabBtn', size = 'sm', active, tailwind, className, ...props }: types.BtnProps) => {
-	const base = { ...btnTabProps(active), size: computeBtnSize(size) };
+	const base = { ...styles.tabBtn(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
@@ -95,7 +87,7 @@ export const TextBtn = ({
 	className,
 	...props
 }: types.BtnProps) => {
-	const base = { ...btnTextProps(active), size: computeBtnSize(size) };
+	const base = { ...styles.textBtn(active), size: computeBtnSize(size) };
 
 	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };

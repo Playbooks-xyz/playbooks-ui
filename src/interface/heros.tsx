@@ -4,7 +4,7 @@ import { Div, Img } from 'interface/html';
 import { FadIcon } from 'interface/icons';
 import * as styles from 'styles/hero-styles';
 import * as types from 'types/hero-types';
-import { computeHeroSize, computeThumbnailSize, classBuilder } from 'utils';
+import { classBuilder, computeHeroSize, computeThumbnailSize } from 'utils';
 
 export const Hero = ({
 	id,

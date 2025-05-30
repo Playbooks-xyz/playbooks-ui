@@ -3,7 +3,7 @@ import { FarIcon } from 'interface/icons';
 import { Nav } from 'interface/navs';
 import * as styles from 'styles/pagination-styles';
 import * as types from 'types/pagination-types';
-import { paginationProps, classBuilder } from 'utils';
+import { classBuilder } from 'utils';
 
 export const Pagination = ({
 	id,
@@ -30,7 +30,7 @@ export const PaginationFirst = ({
 	onClick,
 	...props
 }: types.PaginationBtnProps) => {
-	const base = paginationProps();
+	const base = styles.paginationBtn();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -51,7 +51,7 @@ export const PaginationPrev = ({
 	onClick,
 	...props
 }: types.PaginationBtnProps) => {
-	const base = paginationProps();
+	const base = styles.paginationBtn();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -72,7 +72,7 @@ export const PaginationBtn = ({
 	onClick,
 	...props
 }: types.PaginationBtnProps) => {
-	const base = { ...paginationProps(active) };
+	const base = styles.paginationBtn(active);
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -93,7 +93,7 @@ export const PaginationNext = ({
 	onClick,
 	...props
 }: types.PaginationBtnProps) => {
-	const base = paginationProps();
+	const base = styles.paginationBtn();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -114,7 +114,7 @@ export const PaginationLast = ({
 	onClick,
 	...props
 }: types.PaginationBtnProps) => {
-	const base = paginationProps();
+	const base = styles.paginationBtn();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (

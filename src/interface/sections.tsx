@@ -3,7 +3,7 @@ import { Font, P } from 'interface/fonts';
 import { Div, Hr } from 'interface/html';
 import * as styles from 'styles/section-styles';
 import * as types from 'types/section-types';
-import { computeSectionSize, classBuilder } from 'utils';
+import { classBuilder, computeSectionSize } from 'utils';
 
 export const Section = ({
 	id,

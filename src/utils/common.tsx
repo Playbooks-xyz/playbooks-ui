@@ -1,15 +1,3 @@
-export const accordionProps = open => ({
-	body: {
-		border: open ? 'border-b border-l border-r' : 'border',
-		borderRadius: open ? 'rounded-bl rounded-br' : 'rounded-md',
-	},
-	toggle: {
-		border: 'border',
-		borderRadius: open ? 'rounded-tl rounded-tr' : 'rounded-md',
-		spacing: 'p-4',
-	},
-});
-
 export const borderProps = {
 	borderColor: 'border-gray-300 dark:border-gray-600',
 	borderOpacity: 'border-opacity-50 dark:border-opacity-50',

@@ -7,15 +7,7 @@ import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
 import * as styles from 'styles/link-styles';
 import * as types from 'types/link-types';
-import {
-	btnAccentProps,
-	btnBorderProps,
-	btnProps,
-	btnTabProps,
-	btnTextProps,
-	computeBtnSize,
-	classBuilder,
-} from 'utils';
+import { classBuilder, computeBtnSize } from 'utils';
 
 export const Link = ({ variant = 'primary', tailwind, ...props }) => {
 	switch (variant) {
@@ -49,7 +41,7 @@ export const PrimaryLink = ({
 	className,
 	...props
 }: types.LinkProps) => {
-	const base = { ...btnProps(active), size: computeBtnSize(size) };
+	const base = { ...styles.primaryLink(active), size: computeBtnSize(size) };
 
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
@@ -63,7 +55,7 @@ export const AccentLink = ({
 	className,
 	...props
 }: types.LinkProps) => {
-	const base = { ...btnAccentProps(active), size: computeBtnSize(size) };
+	const base = { ...styles.accentLink(active), size: computeBtnSize(size) };
 
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
@@ -77,7 +69,7 @@ export const BorderLink = ({
 	className,
 	...props
 }: types.LinkProps) => {
-	const base = { ...btnBorderProps(active), size: computeBtnSize(size) };
+	const base = { ...styles.borderLink(active), size: computeBtnSize(size) };
 
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
@@ -91,7 +83,7 @@ export const TabLink = ({
 	className,
 	...props
 }: types.LinkProps) => {
-	const base = { ...btnTabProps(active), size: computeBtnSize(size) };
+	const base = { ...styles.tabLink(active), size: computeBtnSize(size) };
 
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
@@ -105,7 +97,7 @@ export const TextLink = ({
 	className,
 	...props
 }: types.LinkProps) => {
-	const base = { ...btnTextProps(active), size: computeBtnSize(size) };
+	const base = { ...styles.textLink(active), size: computeBtnSize(size) };
 
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
