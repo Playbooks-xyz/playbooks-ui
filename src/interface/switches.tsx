@@ -2,14 +2,7 @@ import * as HTML from '@ehubbell/html';
 import { BtnWrapper } from 'interface/buttons';
 import { Div, Span } from 'interface/html';
 import { FadIcon } from 'interface/icons';
-import {
-	iSwitch,
-	iSwitchBackdrop,
-	iSwitchGroup,
-	iSwitchInner,
-	iSwitchLabel,
-	iSwitchToggle,
-} from 'types/switch-types';
+import { iSwitch, iSwitchBackdrop, iSwitchGroup, iSwitchInner, iSwitchLabel, iSwitchToggle } from 'types/switch-types';
 import { tailwindClassBuilder } from 'utils';
 
 export const SwitchGroup = ({ id, name = 'SwitchGroup', className, children, ...tailwind }: iSwitchGroup) => {

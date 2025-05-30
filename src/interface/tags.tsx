@@ -1,9 +1,10 @@
 import { Div, Img } from 'interface/html';
+import * as styles from 'styles';
 import { iTag, iTagActions, iTagBody, iTagImg, iTagWrapper } from 'types/tag-types';
 import { computeTagImgSize, computeTagSize } from 'utils';
 
 export const TagsWrapper = ({ id, name = 'TagsWrapper', className, children, ...tailwind }: iTagWrapper) => {
-	const base = { display: 'flex-start', spacing: '', flex: 'flex-wrap' };
+	const base = styles.tagsWrapperBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -11,17 +12,8 @@ export const TagsWrapper = ({ id, name = 'TagsWrapper', className, children, ...
 
 export const Tag = ({ id, name = 'Tag', size = 'sm', className, children, ...tailwind }: iTag) => {
 	const base = {
-		bgColor: 'bg-gray-200 dark:bg-gray-700',
-		bgOpacity: 'bg-opacity-50 dark:bg-opacity-50',
-		borderColor: 'border-gray-500 dark:border-gray-400',
-		borderOpacity: 'border-opacity-50',
-		borderRadius: 'rounded-md',
-		color: 'text-gray-500 dark:text-gray-300',
-		display: 'flex-between-inline',
-		flex: 'shrink-0',
+		...styles.tagBase,
 		size: computeTagSize(size),
-		spacing: 'mb-2 mr-4',
-		tracking: 'tracking-wide',
 	};
 	const props = { ...base, ...tailwind, className, name };
 
@@ -37,27 +29,21 @@ export const TagImg = ({
 	className,
 	...tailwind
 }: iTagImg) => {
-	const base = { size: computeTagImgSize(size), borderRadius: 'rounded-full' };
+	const base = { ...styles.tagImgBase, size: computeTagImgSize(size) };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Img src={src} alt={alt} {...props} />;
 };
 
 export const TagBody = ({ id, name = 'TagBody', className, children, ...tailwind }: iTagBody) => {
-	const base = {
-		borderColor: 'border-gray-500 dark:border-gray-400',
-		borderOpacity: 'border-opacity-25 dark:border-opacity-25',
-		fontSize: 'text-sm',
-		space: 'space-x-2',
-		spacing: 'px-2',
-	};
+	const base = styles.tagBodyBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
 export const TagActions = ({ id, name = 'TagActions', onClick, className, children, ...tailwind }: iTagActions) => {
-	const base = { display: 'flex-end', flex: 'shrink-0', space: 'space-x-2' };
+	const base = styles.tagActionsBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;

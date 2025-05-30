@@ -3,11 +3,12 @@ import { useRouter } from 'next/router';
 import { useInterface } from 'contexts';
 import { Head } from 'interface/head';
 import { Div } from 'interface/html';
+import * as styles from 'styles';
 import { iRoute } from 'types/route-types';
 import { capitalize } from 'utils/transforms';
 
 export const Route = ({ id, name = 'Route', seo, style, className, children, ...tailwind }: iRoute) => {
-	const base = { bgColor: 'bg-white dark:bg-gray-900' };
+	const base = styles.routeBase;
 	const props = { ...base, ...tailwind, className, name };
 	const { meta } = useInterface();
 	const router = useRouter();

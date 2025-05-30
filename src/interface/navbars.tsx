@@ -1,18 +1,12 @@
 import * as HTML from '@ehubbell/html';
 import { Img, Ul } from 'interface/html';
 import { LinkWrapper } from 'interface/links';
+import * as styles from 'styles';
 import { iNavbar, iNavbarBrand, iNavbarList } from 'types/navbar-types';
-import { borderProps, tailwindClassBuilder } from 'utils';
+import { tailwindClassBuilder } from 'utils';
 
 export const Navbar = ({ id, ref, name = 'Navbar', className, children, ...tailwind }: iNavbar) => {
-	const base = {
-		bgColor: 'bg-white dark:bg-gray-900',
-		...borderProps,
-		display: 'flex-between',
-		position: 'relative',
-		spacing: 'p-4',
-		width: 'w-full',
-	};
+	const base = styles.navbarBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -32,7 +26,7 @@ export const NavbarBrand = ({
 	children,
 	...tailwind
 }: iNavbarBrand) => {
-	const base = { display: 'inline-block', flex: 'shrink-0', width: 'w-44' };
+	const base = styles.navbarBrandBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -43,7 +37,7 @@ export const NavbarBrand = ({
 };
 
 export const NavbarList = ({ id, name = 'NavbarList', className, children, ...tailwind }: iNavbarList) => {
-	const base = { display: 'flex-end', space: 'space-x-2', spacing: '' };
+	const base = styles.navbarListBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Ul {...props}>{children}</Ul>;

@@ -7,6 +7,7 @@ import { MaskedInput } from 'components/masked-input-wrapper';
 import { PhoneInputWrapper } from 'components/phone-input-wrapper';
 import { useElementKeyPress } from 'hooks';
 import { Div, Span } from 'interface/html';
+import * as styles from 'styles';
 import {
 	iForm,
 	iFormCheckbox,
@@ -25,7 +26,7 @@ import {
 import { checkboxProps, computeInputSize, inputProps, rangeProps, tailwindClassBuilder } from 'utils';
 
 export const Form = ({ id, name = 'Form', onSubmit, className, children, ...tailwind }: iForm) => {
-	const base = {};
+	const base = styles.formBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -36,7 +37,7 @@ export const Form = ({ id, name = 'Form', onSubmit, className, children, ...tail
 };
 
 export const FormGroup = ({ id, name = 'FormGroup', className, children, ...tailwind }: iFormGroup) => {
-	const base = { space: 'space-y-2', spacing: 'mb-4', width: 'w-full' };
+	const base = styles.formGroupBase;
 	const props = { ...base, ...tailwind, name, className };
 
 	return (
@@ -55,16 +56,7 @@ export const FormLabel = ({
 	children,
 	...tailwind
 }: iFormLabel) => {
-	const base = {
-		color: 'text-gray-600 dark:text-gray-400',
-		cursor: 'cursor-pointer',
-		display: 'inline-block',
-		fontFamily: 'font-secondary',
-		fontWeight: 'font-medium',
-		fontSize: 'text-sm',
-		spacing: 'p-1',
-		tracking: 'tracking-wide',
-	};
+	const base = styles.formLabelBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -245,9 +237,7 @@ export const FormDivInput = ({
 	const base = {
 		...inputProps(variant),
 		...computeInputSize(size),
-		color: 'text-gray-600 dark:text-gray-400',
-		display: 'flex-center',
-		overflow: 'overflow-x-scroll',
+		...styles.formDivInputBase,
 	};
 	const props = { ...base, ...tailwind, name, className };
 
@@ -267,7 +257,7 @@ export const FormFileInput = ({
 	className,
 	...tailwind
 }: iFormFile) => {
-	const base = {};
+	const base = styles.formFileInputBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return <input placeholder={placeholder} value={value} onChange={onChange} className={classes} />;
@@ -377,12 +367,7 @@ export const FormSelect = ({
 };
 
 export const FormText = ({ id, name = 'FormText', className, children, ...tailwind }: iFormText) => {
-	const base = {
-		color: 'text-gray-500 dark:text-gray-400',
-		spacing: 'mx-1',
-		tracking: 'tracking-wider',
-		fontSize: 'text-xs',
-	};
+	const base = styles.formTextBase;
 	const props = { ...base, ...tailwind, name, className };
 
 	return <Div {...props}>{children}</Div>;

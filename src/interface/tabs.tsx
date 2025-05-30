@@ -1,10 +1,11 @@
 import { Btn } from 'interface/buttons';
 import { FormSelect } from 'interface/forms';
 import { Div } from 'interface/html';
+import * as styles from 'styles';
 import { iTab, iTabPane, iTabPanes, iTabs, iTabSelect, iTabWrapper } from 'types/tab-types';
 
 export const TabWrapper = ({ id, name = 'TabWrapper', className, children, ...tailwind }: iTabWrapper) => {
-	const base = { width: 'w-full' };
+	const base = styles.tabWrapperBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -20,14 +21,14 @@ export const TabSelect = ({
 	children,
 	...tailwind
 }: iTabSelect) => {
-	const base = { border: 'border-1', borderRadius: '', sm: 'sm:hidden' };
+	const base = styles.tabSelectBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <FormSelect value={activeTab} options={tabs} onChange={onSelect} {...props} />;
 };
 
 export const Tabs = ({ id, name = 'Tabs', activeTab, tabs, onSelect, className, children, ...tailwind }: iTabs) => {
-	const base = { display: 'flex-start' };
+	const base = styles.tabsBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -52,13 +53,7 @@ export const Tab = ({
 	...tailwind
 }: iTab) => {
 	const base = {
-		bgColor: 'h:bg-gray-100 dark:h:bg-gray-700',
-		border: 'border-b-4',
-		borderColor: 'border-transparent h:border-gray-300 dark:h:border-gray-600',
-		color: 'text-gray-700 dark:text-gray-200',
-		borderRadius: 'rounded-none',
-		grid: 'hidden sm:block',
-		zIndex: 'z-10',
+		...styles.tabBase,
 		...(active && {
 			borderColor: 'border-blue-500 dark:border-cyan-500',
 			color: 'text-blue-500 dark:text-cyan-500',
@@ -70,14 +65,14 @@ export const Tab = ({
 };
 
 export const TabPanes = ({ id, name = 'TabPanes', className, children, ...tailwind }: iTabPanes) => {
-	const base = {};
+	const base = styles.tabPanesBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
 export const TabPane = ({ id, name = 'TabPane', active, value, className, children, ...tailwind }: iTabPane) => {
-	const base = { display: active ? 'block' : 'hidden' };
+	const base = { ...styles.tabPaneBase, display: active ? 'block' : 'hidden' };
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;

@@ -3,6 +3,7 @@ import { usePopper } from 'react-popper';
 
 import { Fade } from 'components/fade-wrapper';
 import { Div, Span } from 'interface/html';
+import * as styles from 'styles';
 import { iTooltip, iTooltipArrow, iTooltipBody, iTooltipInner } from 'types/tooltip-types';
 import { computeTooltipAnimation } from 'utils';
 
@@ -19,9 +20,7 @@ export const Tooltip = ({
 	tailwind,
 }: iTooltip) => {
 	const base = {
-		cursor: 'cursor-pointer',
-		duration: 'duration-100',
-		transition: 'transition-all ease',
+		...styles.tooltipBase,
 		className,
 		...tailwind?.span,
 	};
@@ -30,7 +29,7 @@ export const Tooltip = ({
 	const [popElement, setPopElement] = useState(null);
 	const [arrowElement, setArrowElement] = useState(null);
 	const fadeRef = useRef(null);
-	const { styles, attributes } = usePopper(refElement, popElement, {
+	const { styles: popperStyles, attributes } = usePopper(refElement, popElement, {
 		placement,
 		strategy: 'fixed',
 		modifiers: [
@@ -72,13 +71,13 @@ export const Tooltip = ({
 				onEntered={() => setFade('opacity-100 scale-100')}
 				onExiting={() => setFade(`opacity-0 ${computeTooltipAnimation(placement)} scale-90`)}
 				onExited={() => setFade('hidden')}>
-				<Div ref={setPopElement} zIndex='z-10' style={styles.popper} {...attributes.popper}>
+				<Div ref={setPopElement} zIndex='z-10' style={popperStyles.popper} {...attributes.popper}>
 					<TooltipBody
 						setArrowElement={setArrowElement}
 						fade={fade}
 						html={html}
 						className={className}
-						styles={styles}
+						styles={popperStyles}
 						tailwind={tailwind?.tooltip}
 					/>
 				</Div>
@@ -93,17 +92,17 @@ export const TooltipBody = ({
 	setArrowElement,
 	html,
 	className,
-	styles,
+	styles: popperStyles,
 	tailwind,
 }: iTooltipBody) => {
-	const base = { animation: 'transition ease', zIndex: 'z-10' };
+	const base = styles.tooltipBodyBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
 		<Div {...props}>
 			<TooltipArrow
 				setArrowElement={setArrowElement}
-				style={{ ...styles.popper, ...styles.arrow }}
+				style={{ ...popperStyles.popper, ...popperStyles.arrow }}
 				tailwind={tailwind?.arrow}
 			/>
 			<TooltipInner tailwind={tailwind?.inner}>{html}</TooltipInner>
@@ -112,14 +111,7 @@ export const TooltipBody = ({
 };
 
 export const TooltipInner = ({ id, name = 'TooltipInner', className, children, tailwind }: iTooltipInner) => {
-	const base = {
-		bgColor: 'bg-gray-800',
-		borderRadius: 'rounded-md',
-		color: 'white',
-		fontSize: 'text-sm',
-		spacing: 'px-4 py-3 m-1',
-		width: 'w-auto',
-	};
+	const base = styles.tooltipInnerBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -133,12 +125,7 @@ export const TooltipArrow = ({
 	style,
 	tailwind,
 }: iTooltipArrow) => {
-	const base = {
-		bgColor: 'bg-gray-800',
-		borderRadius: 'rounded-sm',
-		rotate: 'rotate-45',
-		size: 'h-4 w-4',
-	};
+	const base = styles.tooltipArrowBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (

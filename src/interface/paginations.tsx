@@ -1,17 +1,12 @@
 import { BtnWrapper } from 'interface/buttons';
 import { FarIcon } from 'interface/icons';
 import { Nav } from 'interface/navs';
+import * as styles from 'styles';
 import { iPagination, iPaginationBtn } from 'types/pagination-types';
-import { borderProps, paginationProps, tailwindClassBuilder } from 'utils';
+import { paginationProps, tailwindClassBuilder } from 'utils';
 
 export const Pagination = ({ id, name = 'Pagination', className, children, ...tailwind }: iPagination) => {
-	const base = {
-		position: 'inline-flex',
-		border: 'border',
-		...borderProps,
-		borderRadius: 'rounded-md',
-		overflow: 'overflow-hidden',
-	};
+	const base = styles.paginationBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Nav {...props}>{children}</Nav>;

@@ -3,16 +3,11 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Btn } from 'interface/buttons';
 import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
+import * as styles from 'styles';
 import { iAccordion, iAccordionBody, iAccordionText, iAccordionTitle, iAccordionToggle } from 'types/accordion-types';
-import { borderProps } from 'utils';
 
 export const Accordion = ({ id, name = 'Accordion', open, className, children, ...tailwind }: iAccordion) => {
-	const base = {
-		border: '',
-		...borderProps,
-		transition: 'transition-all',
-		origin: 'origin-top',
-	};
+	const base = styles.accordionBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -34,20 +29,11 @@ export const AccordionToggle = ({
 	...tailwind
 }: iAccordionToggle) => {
 	const base = {
-		animation: 'transition-all ease',
-		border: '',
-		...borderProps,
-		borderRadius: 'rounded-md',
-		color: 'text-gray-500',
-		display: 'flex-between',
-		fontFamily: 'font-accent',
-		fontSize: 'text-sm',
-		fontWeight: 'font-medium',
-		hover: 'h:bg-gray-100 dark:h:bg-gray-800',
-		nextIcon: { icon: 'chevron-down', rotate: open ? 'rotate-180' : 'rotate-0', transition: 'transition-all ease' },
-		spacing: 'py-4',
-		span: { display: 'flex-start', flex: 'grow', width: 'w-full' },
-		width: 'w-full',
+		...styles.accordionToggleBase,
+		nextIcon: {
+			...styles.accordionToggleBase.nextIcon,
+			rotate: open ? 'rotate-180' : 'rotate-0'
+		},
 	};
 	const props = { ...base, ...tailwind, children, className, name };
 
@@ -62,7 +48,7 @@ export const AccordionTitle = ({
 	children,
 	...tailwind
 }: iAccordionTitle) => {
-	const base = { display: 'flex-start', fontWeight: 'font-medium' };
+	const base = styles.accordionTitleBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -81,13 +67,8 @@ export const AccordionBody = ({
 	children,
 	...tailwind
 }: iAccordionBody) => {
-	const wrapperBase = {
-		overflow: 'overflow-hidden',
-		origin: 'origin-top',
-		ease: 'ease-out',
-		transition: 'transition-all',
-	};
-	const base = { ...borderProps };
+	const wrapperBase = styles.accordionBodyWrapperBase;
+	const base = styles.accordionBodyBase;
 	const props = { ...base, ...tailwind, className, name };
 	const [height, setHeight] = useState(0);
 	const ref = useRef(null);
@@ -119,7 +100,7 @@ export const AccordionBody = ({
 };
 
 export const AccordionText = ({ id, name = 'AccordionText', className, children, ...tailwind }: iAccordionText) => {
-	const base = { fontSize: 'text-sm', fontWeight: 'font-light' };
+	const base = styles.accordionTextBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;

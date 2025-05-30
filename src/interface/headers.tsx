@@ -1,19 +1,12 @@
 import * as HTML from '@ehubbell/html';
 import { Font } from 'interface/fonts';
 import { Div } from 'interface/html';
+import * as styles from 'styles';
 import { iHeader, iHeaderActions, iHeaderSubtitle, iHeaderText, iHeaderTitle } from 'types/header-types';
-import { borderProps, tailwindClassBuilder } from 'utils';
+import { tailwindClassBuilder } from 'utils';
 
 export const Header = ({ id, name = 'Header', className, children, style, ...tailwind }: iHeader) => {
-	const base = {
-		border: ' border-b',
-		...borderProps,
-		display: 'flex-between',
-		position: 'relative',
-		space: 'space-x-4',
-		spacing: 'py-4',
-		width: 'w-full',
-	};
+	const base = styles.headerBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -24,14 +17,7 @@ export const Header = ({ id, name = 'Header', className, children, style, ...tai
 };
 
 export const HeaderTitle = ({ id, name = 'HeaderTitle', size, className, children, ...tailwind }: iHeaderTitle) => {
-	const base = {
-		display: 'flex-start',
-		flex: 'grow',
-		fontWeight: 'font-bold',
-		space: 'space-x-4',
-		tracking: 'tracking-wide',
-		textTransform: 'capitalize',
-	};
+	const base = styles.headerTitleBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -42,12 +28,7 @@ export const HeaderTitle = ({ id, name = 'HeaderTitle', size, className, childre
 };
 
 export const HeaderSubtitle = ({ id, name = 'HeaderSubtitle', className, children, ...tailwind }: iHeaderSubtitle) => {
-	const base = {
-		color: 'text-gray-600 dark:text-gray-300',
-		fontFamily: 'font-secondary',
-		fontWeight: 'font-normal',
-		tracking: 'tracking-normal',
-	};
+	const base = styles.headerSubtitleBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -58,12 +39,7 @@ export const HeaderSubtitle = ({ id, name = 'HeaderSubtitle', className, childre
 };
 
 export const HeaderText = ({ id, name = 'HeaderText', className, children, ...tailwind }: iHeaderText) => {
-	const base = {
-		color: 'text-gray-700 dark:text-gray-100',
-		fontWeight: 'font-light',
-		fontFamily: 'font-secondary',
-		tracking: 'tracking-normal',
-	};
+	const base = styles.headerTextBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -74,10 +50,7 @@ export const HeaderText = ({ id, name = 'HeaderText', className, children, ...ta
 };
 
 export const HeaderActions = ({ id, name = 'HeaderActions', className, children, ...tailwind }: iHeaderActions) => {
-	const base = {
-		display: 'flex-end',
-		space: 'space-x-4',
-	};
+	const base = styles.headerActionsBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;

@@ -1,6 +1,7 @@
 import { Font, H5, P, Small } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
 import { Oval } from 'interface/spinners';
+import * as styles from 'styles';
 import { iPageLoader, iSectionLoader } from 'types/loader-types';
 
 export const ModalLoader = ({
@@ -12,7 +13,7 @@ export const ModalLoader = ({
 	children,
 	...tailwind
 }: iPageLoader) => {
-	const base = { align: 'text-center', spacing: 'mx-auto' };
+	const base = styles.modalLoaderBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -38,14 +39,7 @@ export const PageLoader = ({
 	children,
 	...tailwind
 }: iPageLoader) => {
-	const base = {
-		bgColor: 'bg-white dark:bg-gray-900',
-		color: 'text-gray-700 dark:text-gray-300',
-		display: 'flex-middle',
-		position: 'absolute inset-0',
-		spacing: 'h-full w-full',
-		zIndex: 'z-50',
-	};
+	const base = styles.pageLoaderBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -75,7 +69,7 @@ export const SectionLoader = ({
 	children,
 	...tailwind
 }: iSectionLoader) => {
-	const base = { align: 'text-center', spacing: 'mx-auto' };
+	const base = styles.sectionLoaderBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (

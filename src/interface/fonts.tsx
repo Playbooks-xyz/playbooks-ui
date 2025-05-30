@@ -1,4 +1,5 @@
 import * as HTML from '@ehubbell/html';
+import * as styles from 'styles';
 import { iFont } from 'types/font-types';
 import { tailwindClassBuilder } from 'utils';
 
@@ -34,12 +35,7 @@ export const Font = props => {
 };
 
 export const H1 = ({ id, name = 'H1', className, children, ...tailwind }: iFont) => {
-	const base = {
-		color: 'text-gray-800 dark:text-gray-100',
-		fontSize: 'text-5xl lg:text-6xl',
-		fontWeight: 'font-medium',
-		fontFamily: 'font-primary',
-	};
+	const base = styles.h1Base;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -50,12 +46,7 @@ export const H1 = ({ id, name = 'H1', className, children, ...tailwind }: iFont)
 };
 
 export const H2 = ({ id, name = 'H2', className, children, ...tailwind }: iFont) => {
-	const base = {
-		color: 'text-gray-800 dark:text-gray-100',
-		fontSize: 'text-4xl lg:text-5xl',
-		fontWeight: 'font-medium',
-		fontFamily: 'font-primary',
-	};
+	const base = styles.h2Base;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -66,12 +57,7 @@ export const H2 = ({ id, name = 'H2', className, children, ...tailwind }: iFont)
 };
 
 export const H3 = ({ id, name = 'H3', className, children, ...tailwind }: iFont) => {
-	const base = {
-		color: 'text-gray-800 dark:text-gray-100',
-		fontSize: 'text-3xl lg:text-3xl',
-		fontWeight: 'font-medium',
-		fontFamily: 'font-primary',
-	};
+	const base = styles.h3Base;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -82,12 +68,7 @@ export const H3 = ({ id, name = 'H3', className, children, ...tailwind }: iFont)
 };
 
 export const H4 = ({ id, name = 'H4', className, children, ...tailwind }: iFont) => {
-	const base = {
-		color: 'text-gray-800 dark:text-gray-100',
-		fontSize: 'text-xl lg:text-2xl',
-		fontWeight: 'font-medium',
-		fontFamily: 'font-primary',
-	};
+	const base = styles.h4Base;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -98,12 +79,7 @@ export const H4 = ({ id, name = 'H4', className, children, ...tailwind }: iFont)
 };
 
 export const H5 = ({ id, name = 'H5', className, children, ...tailwind }: iFont) => {
-	const base = {
-		color: 'text-gray-800 dark:text-gray-100',
-		fontSize: 'text-lg lg:text-xl',
-		fontWeight: 'font-medium',
-		fontFamily: 'font-primary',
-	};
+	const base = styles.h5Base;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -114,12 +90,7 @@ export const H5 = ({ id, name = 'H5', className, children, ...tailwind }: iFont)
 };
 
 export const H6 = ({ id, name = 'H6', className, children, ...tailwind }: iFont) => {
-	const base = {
-		color: 'text-gray-800 dark:text-gray-100',
-		fontSize: 'text-base lg:text-lg',
-		fontWeight: 'font-medium',
-		fontFamily: 'font-primary',
-	};
+	const base = styles.h6Base;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -130,13 +101,7 @@ export const H6 = ({ id, name = 'H6', className, children, ...tailwind }: iFont)
 };
 
 export const P = ({ id, name = 'P', className, children, ...tailwind }: iFont) => {
-	const base = {
-		color: 'text-gray-600 dark:text-gray-200',
-		fontSize: 'text-base',
-		fontWeight: 'font-light',
-		fontFamily: 'font-secondary',
-		tracking: 'tracking-wide',
-	};
+	const base = styles.pBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -147,11 +112,7 @@ export const P = ({ id, name = 'P', className, children, ...tailwind }: iFont) =
 };
 
 export const Small = ({ id, name = 'Small', className, children, ...tailwind }: iFont) => {
-	const base = {
-		color: 'text-gray-500 dark:text-gray-500',
-		display: 'block',
-		fontSize: 'text-sm',
-	};
+	const base = styles.smallBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (

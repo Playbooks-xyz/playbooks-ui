@@ -1,21 +1,9 @@
 import { Div } from 'interface/html';
+import * as styles from 'styles';
 import { iButtonGroup } from 'types/button-group-types';
-import { borderProps } from 'utils';
 
 export const BtnGroup = ({ id, name = 'BtnGroup', className, children, ...tailwind }: iButtonGroup) => {
-	const base = {
-		display: 'inline-flex',
-		border: 'border',
-		...borderProps,
-		borderRadius: 'rounded-md',
-		overflow: 'overflow-hidden',
-		divide: 'divide-x',
-		divideColor: 'divide-gray-400',
-		divideOpacity: 'divide-opacity-25',
-		flex: 'shrink-0',
-		space: 'space-x-0',
-		width: 'width-inherit',
-	};
+	const base = styles.btnGroupBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;

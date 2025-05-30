@@ -4,6 +4,7 @@ import * as HTML from '@ehubbell/html';
 import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
+import * as styles from 'styles';
 import { iBtn } from 'types/button-types';
 import {
 	btnAccentProps,
@@ -12,7 +13,6 @@ import {
 	btnTabProps,
 	btnTextProps,
 	computeBtnSize,
-	interactiveProps,
 	tailwindClassBuilder,
 } from 'utils';
 
@@ -138,8 +138,7 @@ export const BtnWrapper = ({
 	...tailwind
 }: iBtn) => {
 	const base = {
-		...interactiveProps(),
-		width: 'w-inherit',
+		...styles.btnWrapperBase,
 		cursor: disabled ? 'cursor-not-allowed' : 'cursor-pointer',
 	};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });

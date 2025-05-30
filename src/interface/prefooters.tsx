@@ -1,6 +1,7 @@
 import { Font, H6, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { Section } from 'interface/sections';
+import * as styles from 'styles';
 import {
 	iPrefooter,
 	iPrefooterActions,
@@ -12,14 +13,14 @@ import {
 } from 'types/prefooter-types';
 
 export const Prefooter = ({ id, name = 'Prefooter', className, children, ...tailwind }: iPrefooter) => {
-	const base = { bgColor: 'bg-gray-100 dark:bg-gray-800', spacing: 'px-16 py-20' };
+	const base = styles.prefooterBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Section {...props}>{children}</Section>;
 };
 
 export const PrefooterBody = ({ id, name = 'PrefooterBody', className, children, ...tailwind }: iPrefooterBody) => {
-	const base = { align: 'text-left', space: 'space-y-4' };
+	const base = styles.prefooterBodyBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -32,7 +33,7 @@ export const PrefooterPretitle = ({
 	children,
 	...tailwind
 }: iPrefooterPretitle) => {
-	const base = {};
+	const base = styles.prefooterPretitleBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <H6 {...props}>{children}</H6>;
@@ -46,7 +47,7 @@ export const PrefooterTitle = ({
 	children,
 	...tailwind
 }: iPrefooterTitle) => {
-	const base = { color: 'white', fontWeight: 'font-bold' };
+	const base = styles.prefooterTitleBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -64,12 +65,7 @@ export const PrefooterSubtitle = ({
 	children,
 	...tailwind
 }: iPrefooterSubtitle) => {
-	const base = {
-		color: 'white',
-		fontFamily: 'font-secondary',
-		fontSize: 'font-base',
-		fontWeight: 'font-light',
-	};
+	const base = styles.prefooterSubtitleBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -80,7 +76,7 @@ export const PrefooterSubtitle = ({
 };
 
 export const PrefooterText = ({ id, name = 'PrefooterText', className, children, ...tailwind }: iPrefooterText) => {
-	const base = {};
+	const base = styles.prefooterTextBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
@@ -93,7 +89,7 @@ export const PrefooterActions = ({
 	children,
 	...tailwind
 }: iPrefooterActions) => {
-	const base = { space: 'space-x-4', flex: 'shrink-0', spacing: 'py-4' };
+	const base = styles.prefooterActionsBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;

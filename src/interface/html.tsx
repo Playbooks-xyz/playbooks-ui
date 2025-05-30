@@ -1,10 +1,11 @@
 import * as HTML from '@ehubbell/html';
+import * as styles from 'styles';
 import { HtmlType } from 'types';
 import { iFrame, iImg } from 'types/html-types';
-import { borderProps, tailwindClassBuilder } from 'utils';
+import { tailwindClassBuilder } from 'utils';
 
 export const Html = ({ name = 'Html', className, tailwind, children, style, ...props }: HtmlType) => {
-	const base = {};
+	const base = styles.htmlBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, ...props, className });
 
 	return (
@@ -15,7 +16,7 @@ export const Html = ({ name = 'Html', className, tailwind, children, style, ...p
 };
 
 export const Body = ({ name = 'Body', className, tailwind, children, style, ...props }: HtmlType) => {
-	const base = {};
+	const base = styles.bodyBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, ...props, className });
 
 	return (
@@ -26,7 +27,7 @@ export const Body = ({ name = 'Body', className, tailwind, children, style, ...p
 };
 
 export const Main = ({ ref, name = 'Main', className, tailwind, children, style, ...props }: HtmlType) => {
-	const base = { position: 'relative' };
+	const base = styles.mainBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, ...props, className });
 
 	return (
@@ -37,7 +38,7 @@ export const Main = ({ ref, name = 'Main', className, tailwind, children, style,
 };
 
 export const Aside = ({ ref, name = 'Aside', className, tailwind, children, style, ...props }: HtmlType) => {
-	const base = { ...borderProps };
+	const base = styles.asideBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, ...props, className });
 
 	return (
@@ -61,7 +62,7 @@ export const Div = ({
 	style,
 	...props
 }: HtmlType) => {
-	const base = { position: 'relative', ...borderProps };
+	const base = styles.divBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, ...props, className });
 
 	return (
@@ -92,7 +93,7 @@ export const Span = ({
 	style,
 	...props
 }: HtmlType) => {
-	const base = { display: 'inline' };
+	const base = styles.spanBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, ...props, className });
 
 	return (
@@ -110,7 +111,7 @@ export const Span = ({
 };
 
 export const Ul = ({ name = 'Ul', className, tailwind, children, ...props }: HtmlType) => {
-	const base = { ...borderProps, spacing: 'pl-4' };
+	const base = styles.ulBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, ...props, className });
 
 	return (
@@ -121,7 +122,7 @@ export const Ul = ({ name = 'Ul', className, tailwind, children, ...props }: Htm
 };
 
 export const Li = ({ name = 'Li', className, tailwind, children, ...props }: HtmlType) => {
-	const base = { ...borderProps, fontFamily: 'font-secondary', color: 'text-inherit' };
+	const base = styles.liBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, ...props, className });
 
 	return (
@@ -132,7 +133,7 @@ export const Li = ({ name = 'Li', className, tailwind, children, ...props }: Htm
 };
 
 export const IFrame = ({ ref, name = 'iFrame', title, src, onLoad, tailwind, className, style, ...props }: iFrame) => {
-	const base = {};
+	const base = styles.iFrameBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, ...props, className });
 
 	return (
@@ -141,14 +142,14 @@ export const IFrame = ({ ref, name = 'iFrame', title, src, onLoad, tailwind, cla
 };
 
 export const Img = ({ name = 'Img', src, alt, tailwind, className, style, ...props }: iImg) => {
-	const base = { display: 'inline-block' };
+	const base = styles.imgBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, ...props, className });
 
 	return <HTML.Img name={name} src={src} alt={alt} className={classes} style={style} />;
 };
 
 export const Hr = ({ name = 'Hr', className, tailwind, children, style, ...props }: HtmlType) => {
-	const base = { border: 'border-t', borderRadius: 'rounded-md', ...borderProps };
+	const base = styles.hrBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, ...props, className });
 
 	return (
@@ -159,7 +160,7 @@ export const Hr = ({ name = 'Hr', className, tailwind, children, style, ...props
 };
 
 export const Article = ({ name = 'Article', className, tailwind, children, style, ...props }: HtmlType) => {
-	const base = {};
+	const base = styles.articleBase;
 	const classes = tailwindClassBuilder({ ...base, ...props, className });
 
 	return (
@@ -170,7 +171,7 @@ export const Article = ({ name = 'Article', className, tailwind, children, style
 };
 
 export const Figure = ({ name = 'Figure', className, tailwind, children, style, ...props }: HtmlType) => {
-	const base = {};
+	const base = styles.figureBase;
 	const classes = tailwindClassBuilder({ ...base, ...props, className });
 
 	return (
@@ -181,7 +182,7 @@ export const Figure = ({ name = 'Figure', className, tailwind, children, style, 
 };
 
 export const Caption = ({ name = 'Caption', className, tailwind, children, style, ...props }: HtmlType) => {
-	const base = {};
+	const base = styles.captionBase;
 	const classes = tailwindClassBuilder({ ...base, ...props, className });
 
 	return (
@@ -192,7 +193,7 @@ export const Caption = ({ name = 'Caption', className, tailwind, children, style
 };
 
 export const Blockquote = ({ name = 'Blockquote', className, tailwind, children, style, ...props }: HtmlType) => {
-	const base = {};
+	const base = styles.blockquoteBase;
 	const classes = tailwindClassBuilder({ ...base, ...props, className });
 
 	return (
@@ -203,7 +204,7 @@ export const Blockquote = ({ name = 'Blockquote', className, tailwind, children,
 };
 
 export const Pre = ({ name = 'Pre', className, tailwind, children, style, ...props }: HtmlType) => {
-	const base = {};
+	const base = styles.preBase;
 	const classes = tailwindClassBuilder({ ...base, ...props, className });
 
 	return (
@@ -214,12 +215,7 @@ export const Pre = ({ name = 'Pre', className, tailwind, children, style, ...pro
 };
 
 export const Code = ({ name = 'Code', className, tailwind, children, style, ...props }: HtmlType) => {
-	const base = {
-		bgColor: 'bg-gray-100 dark:bg-gray-800',
-		borderRadius: 'rounded-md',
-		display: 'inline-block',
-		spacing: 'px-2 py-0.5',
-	};
+	const base = styles.codeBase;
 	const classes = tailwindClassBuilder({ ...base, ...props, className });
 
 	return (

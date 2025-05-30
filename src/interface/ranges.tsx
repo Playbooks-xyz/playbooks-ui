@@ -1,6 +1,7 @@
 import { Range } from 'react-range';
 
 import * as HTML from '@ehubbell/html';
+import * as styles from 'styles';
 import { tailwindClassBuilder } from 'utils';
 
 export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange }) => {
@@ -36,13 +37,7 @@ export const RangeSliders = ({ min = 0, max = 100, step = 1, values, onChange, o
 };
 
 export const RangeSliderTrack = ({ ref, values, min, max, props, children, onNext }) => {
-	const base = {
-		bgColor: 'bg-gray-100 dark:bg-gray-800',
-		borderRadius: 'rounded-full',
-		height: 'h-inherit',
-		display: 'flex',
-		width: 'w-full',
-	};
+	const base = styles.rangeSliderTrackBase;
 	const className = tailwindClassBuilder(base);
 	return (
 		<HTML.Div
@@ -67,14 +62,9 @@ export const RangeSliderTrack = ({ ref, values, min, max, props, children, onNex
 
 export const RangeSliderThumb = ({ ref, isDragged, ...props }) => {
 	const base = {
-		size: 'w-6 h-6',
+		...styles.rangeSliderThumbBase,
 		bgColor: isDragged ? 'bg-blue-500 dark:bg-cyan-500' : 'bg-gray-300 dark:bg-gray-600',
-		border: 'border-2',
 		borderColor: isDragged ? 'border-blue-500 dark:border-cyan-500' : 'border-gray-300 dark:border-gray-600',
-		borderRadius: 'rounded-full',
-		display: 'flex-middle',
-		position: '',
-		shadow: 'shadow-sm',
 	};
 	const className = tailwindClassBuilder(base);
 

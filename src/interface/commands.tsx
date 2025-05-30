@@ -1,19 +1,11 @@
 import { useMemo } from 'react';
 
 import { Span } from 'interface/html';
+import * as styles from 'styles';
 import { iCommand } from 'types/command-types';
-import { borderProps } from 'utils';
 
 export const Command = ({ id, name = 'CMD', keys = [], className, children, ...tailwind }: iCommand) => {
-	const base = {
-		...borderProps,
-		flex: 'shrink-0',
-		fontFamily: 'font-secondary',
-		fontSize: 'text-xs',
-		fontWeight: 'font-medium',
-		textTransform: 'capitalize',
-		whitespace: 'whitespace-nowrap',
-	};
+	const base = styles.commandBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	// Computed

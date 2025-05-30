@@ -1,20 +1,16 @@
 import { Li, Ul } from 'interface/html';
+import * as styles from 'styles';
 import { iListGroup, iListItem } from 'types/list-group-types';
 
 export const ListGroup = ({ id, name = 'ListGroup', className, children, ...tailwind }: iListGroup) => {
-	const base = {
-		display: 'flex-column',
-		divide: 'divide-y-2',
-		divideColor: 'divide-gray-200',
-		divideStyle: 'divide-dashed',
-	};
+	const base = styles.listGroupBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Ul {...props}>{children}</Ul>;
 };
 
 export const ListItem = ({ id, name = 'ListItem', className, children, ...tailwind }: iListItem) => {
-	const base = {};
+	const base = styles.listItemBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Li {...props}>{children}</Li>;

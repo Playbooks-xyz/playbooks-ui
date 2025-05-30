@@ -1,11 +1,11 @@
 import { Div } from 'interface/html';
+import * as styles from 'styles';
 import { iCol, iContainer, iGrid } from 'types/grid-types';
 import { computeCol, computeContainer, computeGrid } from 'utils';
 
 export const Container = ({ id, name = 'Container', size, className, children, ...tailwind }: iContainer) => {
 	const base = {
-		margin: 'mx-auto',
-		spacing: 'px-4',
+		...styles.containerBase,
 		size: computeContainer(size),
 	};
 	const props = { ...base, ...tailwind, className, name };
@@ -15,10 +15,8 @@ export const Container = ({ id, name = 'Container', size, className, children, .
 
 export const Grid = ({ id, name = 'Grid', cols = '12', className, children, ...tailwind }: iGrid) => {
 	const base = {
+		...styles.gridBase,
 		cols: computeGrid(cols),
-		gap: 'gap-4',
-		grid: 'grid',
-		width: 'w-full',
 	};
 	const props = { ...base, ...tailwind, className, name };
 

@@ -1,5 +1,6 @@
 import { Font } from 'interface/fonts';
 import { Div, Img, Span } from 'interface/html';
+import * as styles from 'styles';
 import {
 	iAvatar,
 	iAvatarActions,
@@ -12,24 +13,14 @@ import {
 import { computeAvatarSize } from 'utils';
 
 export const Avatar = ({ id, name = 'Avatar', className, children, ...tailwind }: iAvatar) => {
-	const base = { display: 'flex-start', space: 'space-x-4', width: 'w-full' };
+	const base = styles.avatarBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
 export const AvatarBadge = ({ id, name = 'AvatarBadge', className, children, ...tailwind }: iAvatarBadge) => {
-	const base = {
-		bgColor: 'bg-blue-500 dark:bg-cyan-500',
-		border: 'border-2',
-		borderColor: 'border-white dark:border-gray-900',
-		borderOpacity: 'border-opacity-100',
-		borderRadius: 'rounded-full',
-		color: 'white',
-		fontSize: 'text-sm',
-		spacing: 'w-6 h-6',
-		flex: 'flex-middle',
-	};
+	const base = styles.avatarBadgeBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Span {...props}>{children}</Span>;
@@ -45,10 +36,7 @@ export const AvatarImg = ({
 	...tailwind
 }: iAvatarImg) => {
 	const base = {
-		aspect: 'aspect-[1/1]',
-		borderColor: 'border-gray-100 dark:border-gray-900',
-		borderRadius: 'rounded-full',
-		flex: 'shrink-0',
+		...styles.avatarImgBase,
 		size: computeAvatarSize(size),
 	};
 	const props = { ...base, ...tailwind, className, name };
@@ -57,7 +45,7 @@ export const AvatarImg = ({
 };
 
 export const AvatarBody = ({ id, name = 'AvatarBody', className, children, ...tailwind }: iAvatarBody) => {
-	const base = { space: '' };
+	const base = styles.avatarBodyBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -71,11 +59,7 @@ export const AvatarTitle = ({
 	children,
 	...tailwind
 }: iAvatarTitle) => {
-	const base = {
-		color: 'text-gray-700 dark:text-gray-200',
-		fontWeight: 'font-bold',
-		textDecoration: 'capitalize',
-	};
+	const base = styles.avatarTitleBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -86,7 +70,7 @@ export const AvatarTitle = ({
 };
 
 export const AvatarText = ({ id, name = 'AvatarText', size = 'sm', className, children, ...tailwind }: iAvatarText) => {
-	const base = { fontWeight: 'font-normal' };
+	const base = styles.avatarTextBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -97,7 +81,7 @@ export const AvatarText = ({ id, name = 'AvatarText', size = 'sm', className, ch
 };
 
 export const AvatarActions = ({ id, name = 'AvatarActions', className, children, ...tailwind }: iAvatarActions) => {
-	const base = { display: 'flex-start', flex: 'shrink-0', space: 'space-x-2' };
+	const base = styles.avatarActionsBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;

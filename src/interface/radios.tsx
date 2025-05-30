@@ -1,6 +1,7 @@
 import * as HTML from '@ehubbell/html';
 import { P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
+import * as styles from 'styles';
 import { iRadio, iRadioInput, iRadioLabel, iRadioWrapper } from 'types/radio-types';
 import { checkboxProps, tailwindClassBuilder } from 'utils';
 
@@ -14,16 +15,7 @@ export const RadioWrapper = ({
 	...tailwind
 }: iRadioWrapper) => {
 	const base = {
-		animation: 'transition',
-		border: 'border',
-		borderColor: 'border-gray-400',
-		borderOpacity: 'border-opacity-25',
-		borderRadius: 'rounded-md',
-		cursor: 'cursor-pointer',
-		display: 'inline-block',
-		duration: 'duration-200',
-		position: 'relative',
-		spacing: 'p-4',
+		...styles.radioWrapperBase,
 		...(active && {
 			borderColor: 'border-blue-500 dark:border-cyan-500',
 		}),
@@ -48,7 +40,7 @@ export const Radio = ({
 	children,
 	...tailwind
 }: iRadio) => {
-	const base = { display: 'flex-start-top', space: 'space-x-4' };
+	const base = styles.radioBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -63,7 +55,7 @@ export const Radio = ({
 };
 
 export const RadioInput = ({ id, name = 'RadioInput', value, className, children, ...tailwind }: iRadioInput) => {
-	const base = { ...checkboxProps(value), borderRadius: 'rounded-full', size: 'w-4 h-4' };
+	const base = { ...checkboxProps(value), ...styles.radioInputBase };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, name, className });
 	return (
 		<HTML.Input
@@ -80,14 +72,14 @@ export const RadioInput = ({ id, name = 'RadioInput', value, className, children
 };
 
 export const RadioTitle = ({ id, name = 'RadioLabel', className, children, ...tailwind }: iRadioLabel) => {
-	const base = { color: 'text-gray-700 dark:text-gray-200', lineSpacing: 'leading-tight', fontSize: 'text-sm' };
+	const base = styles.radioTitleBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
 };
 
 export const RadioText = ({ id, name = 'RadioLabel', className, children, ...tailwind }: iRadioLabel) => {
-	const base = { fontSize: 'text-sm', fontWeight: 'font-light', tracking: 'tracking-wide' };
+	const base = styles.radioTextBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Small {...props}>{children}</Small>;

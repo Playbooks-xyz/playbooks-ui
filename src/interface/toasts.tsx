@@ -5,6 +5,7 @@ import { AccentBtn } from 'interface/buttons';
 import { H6, P } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
 import { FadIcon } from 'interface/icons';
+import * as styles from 'styles';
 import {
 	iToast,
 	iToastBody,
@@ -16,31 +17,14 @@ import {
 } from 'types/toast-types';
 
 export const ToastWrapper = ({ id, name = 'ToastWrapper', className, children, ...tailwind }: iToastWrapper) => {
-	const base = {
-		inset: 'bottom-0 right-0 left-0',
-		position: 'fixed',
-		spacing: 'mx-auto',
-		width: 'w-[400px] max-w-[90%]',
-		zIndex: 'z-40',
-	};
+	const base = styles.toastWrapperBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
 export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, children, ...tailwind }: iToast) => {
-	const base = {
-		bgColor: 'bg-white dark:bg-gray-800',
-		borderRadius: 'rounded-md',
-		color: 'text-gray-700 dark:text-white',
-		display: 'block',
-		overflow: 'overflow-hidden',
-		shadow: 'shadow-lg',
-		spacing: 'mb-4',
-		transition: 'transition',
-		tranform: 'transform',
-		width: 'w-full',
-	};
+	const base = styles.toastBase;
 	const [fade, setFade] = useState({ opacity: 'opacity-0', translate: 'translate-y-12' });
 	const props = { ...base, ...tailwind, ...fade, className };
 	const ref = useRef(null);
@@ -64,7 +48,7 @@ export const Toast = ({ id, name = 'Toast', show, setShow, onRemove, className, 
 };
 
 export const ToastHeader = ({ id, name = 'ToastHeader', onRemove, className, children, ...tailwind }: iToastHeader) => {
-	const base = { display: 'flex-between', spacing: 'p-2' };
+	const base = styles.toastHeaderBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -78,7 +62,7 @@ export const ToastHeader = ({ id, name = 'ToastHeader', onRemove, className, chi
 };
 
 export const ToastIcon = ({ id, name = 'ToastIcon', icon = 'question-circle', className, ...tailwind }: iToastIcon) => {
-	const base = { color: 'text-gray-700 dark:text-gray-300', borderRadius: 'rounded-md', spacing: 'px-2 py-1' };
+	const base = styles.toastIconBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -89,26 +73,21 @@ export const ToastIcon = ({ id, name = 'ToastIcon', icon = 'question-circle', cl
 };
 
 export const ToastTitle = ({ id, name = 'ToastTitle', className, children, ...tailwind }: iToastTitle) => {
-	const base = {
-		color: 'text-gray-800 dark:text-gray-200',
-		fontWeight: 'font-semibold',
-		fontSize: 'text-sm',
-		tracking: 'tracking-wide',
-	};
+	const base = styles.toastTitleBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <H6 {...props}>{children}</H6>;
 };
 
 export const ToastBody = ({ id, name = 'ToastBody', className, children, ...tailwind }: iToastBody) => {
-	const base = { spacing: 'px-4 pt-2 pb-4' };
+	const base = styles.toastBodyBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
 export const ToastText = ({ id, name = 'ToastText', className, children, ...tailwind }: iToastText) => {
-	const base = { color: 'text-gray-700 dark:text-gray-300', fontSize: 'text-sm' };
+	const base = styles.toastTextBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;

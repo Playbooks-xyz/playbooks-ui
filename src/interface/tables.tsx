@@ -2,6 +2,7 @@ import * as HTML from '@ehubbell/html';
 import { BtnWrapper } from 'interface/buttons';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
+import * as styles from 'styles';
 import {
 	iTable,
 	iTableBody,
@@ -11,16 +12,11 @@ import {
 	iTableHeaderRow,
 	iTableRow,
 } from 'types/table-types';
-import { borderProps, tailwindClassBuilder } from 'utils';
+import { tailwindClassBuilder } from 'utils';
 import { isObject } from 'utils/helpers';
 
 export const Table = ({ id, name = 'Table', className, children, ...tailwind }: iTable) => {
-	const base = {
-		divide: 'divide-y',
-		divideColor: 'divide-gray-200',
-		divideOpacity: 'divide-opacity-25',
-		width: 'w-full',
-	};
+	const base = styles.tableBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -31,7 +27,7 @@ export const Table = ({ id, name = 'Table', className, children, ...tailwind }: 
 };
 
 export const TableHeader = ({ id, name = 'TableHeader', className, children, ...tailwind }: iTableHeader) => {
-	const base = { border: 'border-b', ...borderProps };
+	const base = styles.tableHeaderBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -42,7 +38,7 @@ export const TableHeader = ({ id, name = 'TableHeader', className, children, ...
 };
 
 export const TableHeaderRow = ({ id, name = 'TableHeaderRow', className, children, ...tailwind }: iTableHeaderRow) => {
-	const base = {};
+	const base = styles.tableHeaderRowBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return <tr className={classes}>{children}</tr>;
@@ -59,17 +55,7 @@ export const TableHead = ({
 	children,
 	...tailwind
 }: iTableHead) => {
-	const base = {
-		animation: 'transition-all ease',
-		align: 'text-left',
-		spacing: 'px-4 py-4',
-		whiteSpace: 'whitespace-nowrap',
-		fontSize: 'text-xs',
-		fontWeight: 'font-medium',
-		fontFamily: 'font-primary',
-		color: 'text-gray-800 dark:text-gray-100',
-		tracking: 'tracking-wider',
-	};
+	const base = styles.tableHeadBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 	const direction = value === params?.sortProp && params?.sortValue === 'asc' ? 'desc' : 'asc';
 
@@ -97,7 +83,7 @@ export const TableHead = ({
 };
 
 export const TableBody = ({ id, name = 'TableBody', className, children, ...tailwind }: iTableBody) => {
-	const base = {};
+	const base = styles.tableBodyBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -108,7 +94,7 @@ export const TableBody = ({ id, name = 'TableBody', className, children, ...tail
 };
 
 export const TableRow = ({ id, name = 'TableRow', className, children, ...tailwind }: iTableRow) => {
-	const base = { bgColor: '', border: 'border-b', ...borderProps };
+	const base = styles.tableRowBase;
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
@@ -128,12 +114,8 @@ export const TableData = ({
 	...tailwind
 }: iTableData) => {
 	const base = {
-		align: 'text-left',
+		...styles.tableDataBase,
 		color: title ? 'text-gray-800 dark:text-gray-100' : 'text-gray-600 dark:text-gray-400',
-		spacing: 'px-4 py-4',
-		fontSize: 'text-sm',
-		fontFamily: 'font-secondary',
-		whitespace: 'whitespace-nowrap',
 	};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 

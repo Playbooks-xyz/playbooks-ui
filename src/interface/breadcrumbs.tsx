@@ -3,11 +3,12 @@ import { Li } from 'interface/html';
 import { FarIcon } from 'interface/icons';
 import { TextLink } from 'interface/links';
 import { Nav, NavList } from 'interface/navs';
+import * as styles from 'styles';
 import { iBreadcrumbBtn, iBreadcrumbItem, iBreadcrumbLink, iBreadcrumbs } from 'types/breadcrumb-types';
-import { borderProps, breadcrumbBtnProps } from 'utils';
+import { breadcrumbBtnProps } from 'utils';
 
 export const Breadcrumbs = ({ id, name = 'Breadcrumbs', className, children, ...tailwind }: iBreadcrumbs) => {
-	const base = { bgColor: 'bg-transparent', ...borderProps, spacing: 'py-4' };
+	const base = styles.breadcrumbsBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -28,7 +29,7 @@ export const BreadcrumbItem = ({
 	children,
 	...tailwind
 }: iBreadcrumbItem) => {
-	const base = { display: 'flex-start', space: 'space-x-2' };
+	const base = styles.breadcrumbItemBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (

@@ -1,19 +1,12 @@
 import { Span } from 'interface/html';
+import * as styles from 'styles';
 import { iBadge } from 'types/badge-types';
-import { borderProps, computeBadgeSize } from 'utils';
+import { computeBadgeSize } from 'utils';
 
 export const Badge = ({ id, name = 'Badge', type = '', size = 'sm', className, children, ...tailwind }: iBadge) => {
 	const base = {
+		...styles.badgeBase,
 		size: computeBadgeSize(size),
-		...borderProps,
-		borderRadius: 'rounded-md',
-		flex: 'shrink-0',
-		fontFamily: 'font-accent',
-		fontSize: 'text-xs',
-		fontWeight: 'font-medium',
-		space: 'space-x-2',
-		textTransform: 'capitalize',
-		whitespace: 'whitespace-nowrap',
 	};
 	const props = { ...base, ...tailwind, className, name };
 
@@ -61,55 +54,49 @@ export const Badge = ({ id, name = 'Badge', type = '', size = 'sm', className, c
 };
 
 export const DraftBadge = ({ id, className, children, ...tailwind }: iBadge) => {
-	const base = { bgColor: 'bg-gray-200 dark:bg-gray-500', color: 'text-gray-500 dark:text-gray-100' };
+	const base = styles.draftBadgeBase;
 	const props = { ...base, ...tailwind, className };
 
 	return <Span {...props}>{children}</Span>;
 };
 
 export const PendingBadge = ({ id, className, children, ...tailwind }: iBadge) => {
-	const base = { bgColor: 'bg-blue-500 dark:bg-cyan-500', color: 'white' };
+	const base = styles.pendingBadgeBase;
 	const props = { ...base, ...tailwind, className };
 
 	return <Span {...props}>{children}</Span>;
 };
 
 export const WarningBadge = ({ id, className, children, ...tailwind }: iBadge) => {
-	const base = { bgColor: 'bg-orange-500', color: 'white' };
+	const base = styles.warningBadgeBase;
 	const props = { ...base, ...tailwind, className };
 
 	return <Span {...props}>{children}</Span>;
 };
 
 export const SuccessBadge = ({ id, className, children, ...tailwind }: iBadge) => {
-	const base = { bgColor: 'bg-green-400 dark:bg-green-400', color: 'white' };
+	const base = styles.successBadgeBase;
 	const props = { ...base, ...tailwind, className };
 
 	return <Span {...props}>{children}</Span>;
 };
 
 export const FinishedBadge = ({ id, className, children, ...tailwind }: iBadge) => {
-	const base = { bgColor: 'bg-gray-700 dark:bg-gray-700', color: 'white' };
+	const base = styles.finishedBadgeBase;
 	const props = { ...base, ...tailwind, className };
 
 	return <Span {...props}>{children}</Span>;
 };
 
 export const ErrorBadge = ({ id, className, children, ...tailwind }: iBadge) => {
-	const base = { bgColor: 'bg-red-500', color: 'white' };
+	const base = styles.errorBadgeBase;
 	const props = { ...base, ...tailwind, className };
 
 	return <Span {...props}>{children}</Span>;
 };
 
 export const OutlineBadge = ({ id, className, children, ...tailwind }: iBadge) => {
-	const base = {
-		border: 'border',
-		color: 'text-gray-600 dark:text-gray-300',
-		display: 'flex-inline',
-		space: 'space-x-2',
-		textTransform: 'capitalize',
-	};
+	const base = styles.outlineBadgeBase;
 	const props = { ...base, ...tailwind, className };
 
 	return <Span {...props}>{children}</Span>;

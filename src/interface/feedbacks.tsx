@@ -1,6 +1,7 @@
 import { Font, P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { Icon } from 'interface/icons';
+import * as styles from 'styles';
 import {
 	iFeedback,
 	iFeedbackActions,
@@ -13,22 +14,14 @@ import {
 import { borderProps, tailwindClassBuilder } from 'utils';
 
 export const Feedback = ({ id, name = 'Feedback', className, children, ...tailwind }: iFeedback) => {
-	const base = {
-		align: 'text-left',
-		bgColor: 'bg-gray-50 dark:bg-gray-800',
-		border: '',
-		...borderProps,
-		borderRadius: 'rounded-md',
-		spacing: 'p-8',
-		// width: 'w-full',
-	};
+	const base = styles.feedbackBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
 };
 
 export const FeedbackHeader = ({ id, name = 'FeedbackHeader', className, children, ...tailwind }: iFeedbackHeader) => {
-	const base = { spacing: 'p-4' };
+	const base = styles.feedbackHeaderBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -43,14 +36,14 @@ export const FeedbackIcon = ({
 	className,
 	...tailwind
 }: iFeedbackIcon) => {
-	const base = { color: 'text-gray-500', fontSize };
+	const base = { ...styles.feedbackIconBase, fontSize };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return <Icon type={type} icon={icon} className={classes} />;
 };
 
 export const FeedbackBody = ({ id, name = 'FeedbackBody', className, children, ...tailwind }: iFeedbackBody) => {
-	const base = { space: 'space-y-2', spacing: 'p-4' };
+	const base = styles.feedbackBodyBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -63,14 +56,7 @@ export const FeedbackPretitle = ({
 	children,
 	...tailwind
 }: iFeedbackTitle) => {
-	const base = {
-		color: 'text-gray-500',
-		fontFamily: 'font-accent',
-		fontSize: 'text-sm',
-		fontWeight: 'font-medium',
-		textTransform: 'uppercase',
-		tracking: 'tracking-wider',
-	};
+	const base = styles.feedbackPretitleBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Small {...props}>{children}</Small>;
@@ -84,12 +70,7 @@ export const FeedbackTitle = ({
 	children,
 	...tailwind
 }: iFeedbackTitle) => {
-	const base = {
-		color: 'text-gray-800 dark:text-white',
-		fontWeight: 'font-semibold',
-		textTransform: 'capitalize',
-		tracking: 'tracking-wide',
-	};
+	const base = styles.feedbackTitleBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return (
@@ -100,7 +81,7 @@ export const FeedbackTitle = ({
 };
 
 export const FeedbackText = ({ id, name = 'FeedbackText', className, children, ...tailwind }: iFeedbackText) => {
-	const base = { fontFamily: 'font-secondary' };
+	const base = styles.feedbackTextBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <P {...props}>{children}</P>;
@@ -113,7 +94,7 @@ export const FeedbackActions = ({
 	children,
 	...tailwind
 }: iFeedbackActions) => {
-	const base = { display: 'flex-start', flex: 'shrink-0', space: 'space-x-4', spacing: 'p-4' };
+	const base = styles.feedbackActionsBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;

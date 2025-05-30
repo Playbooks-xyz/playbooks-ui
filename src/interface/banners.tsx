@@ -1,19 +1,11 @@
 import { H5, H6, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { Icon } from 'interface/icons';
+import * as styles from 'styles';
 import { iBanner, iBannerActions, iBannerBody, iBannerIcon, iBannerText, iBannerTitle } from 'types/banner-types';
-import { borderProps } from 'utils';
 
 export const Banner = ({ id, name = 'Banner', className, children, ...tailwind }: iBanner) => {
-	const base = {
-		border: 'border-b',
-		...borderProps,
-		color: 'white',
-		display: 'flex-between',
-		space: 'space-x-4',
-		spacing: 'py-2 px-4',
-		width: 'w-full',
-	};
+	const base = styles.bannerBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -27,14 +19,14 @@ export const BannerIcon = ({
 	className,
 	...tailwind
 }: iBannerIcon) => {
-	const base = { color: 'text-blue-500 dark:text-cyan-500' };
+	const base = styles.bannerIconBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Icon type={type} icon={icon} {...props} />;
 };
 
 export const BannerBody = ({ id, name = 'BannerBody', className, children, ...tailwind }: iBannerBody) => {
-	const base = { display: 'flex-start', space: 'space-x-3', spacing: 'py-1' };
+	const base = styles.bannerBodyBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
@@ -48,7 +40,7 @@ export const BannerTitle = ({
 	children,
 	...tailwind
 }: iBannerTitle) => {
-	const base = { color: 'text-gray-700 dark:text-white', fontWeight: 'font-semibold' };
+	const base = styles.bannerTitleBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	switch (size) {
@@ -61,14 +53,14 @@ export const BannerTitle = ({
 };
 
 export const BannerText = ({ id, name = 'BannerText', className, children, ...tailwind }: iBannerText) => {
-	const base = { color: 'text-gray-600 dark:text-gray-200' };
+	const base = styles.bannerTextBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Small {...props}>{children}</Small>;
 };
 
 export const BannerActions = ({ id, name = 'BannerActions', className, children, ...tailwind }: iBannerActions) => {
-	const base = { display: 'flex-start', flex: 'shrink-0', spacing: 'space-x-2' };
+	const base = styles.bannerActionsBase;
 	const props = { ...base, ...tailwind, className, name };
 
 	return <Div {...props}>{children}</Div>;
