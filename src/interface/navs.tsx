@@ -7,89 +7,107 @@ import * as styles from 'styles/nav-styles';
 import * as types from 'types/nav-types';
 import { computeSectionSize, tailwindClassBuilder } from 'utils';
 
-export const Nav = ({ id, name = 'Nav', className, children, ...tailwind }: types.NavProps) => {
+export const Nav = ({ id, name = 'Nav', tailwind, className, children, ...props }: types.NavProps) => {
 	const base = styles.nav;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<HTML.Nav id={id} name={name} className={classes}>
+		<HTML.Nav id={id} name={name} className={computed}>
 			{children}
 		</HTML.Nav>
 	);
 };
 
-export const NavHeader = ({ id, name = 'NavHeader', className, children, ...tailwind }: types.NavHeaderProps) => {
+export const NavHeader = ({
+	id,
+	name = 'NavHeader',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.NavHeaderProps) => {
 	const base = styles.navHeader;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const NavTitle = ({
 	id,
 	name = 'NavTitle',
 	size = 'h5',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.NavTitleProps) => {
 	const base = styles.navTitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Font size={size} {...props}>
+		<Font size={size} {...computed}>
 			{children}
 		</Font>
 	);
 };
 
-export const NavBody = ({ id, name = 'NavBody', size = '', className, children, ...tailwind }: types.NavBodyProps) => {
+export const NavBody = ({
+	id,
+	name = 'NavBody',
+	size = '',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.NavBodyProps) => {
 	const base = { ...styles.navBody, size: computeSectionSize(size) };
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
-export const NavList = ({ id, name = 'NavList', className, children, ...tailwind }: types.NavListProps) => {
+export const NavList = ({ id, name = 'NavList', tailwind, className, children, ...props }: types.NavListProps) => {
 	const base = styles.navList;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Ul {...props}>{children}</Ul>;
+	return <Ul {...computed}>{children}</Ul>;
 };
 
-export const NavItem = ({ id, name = 'NavItem', className, children, ...tailwind }: types.NavItemProps) => {
+export const NavItem = ({ id, name = 'NavItem', tailwind, className, children, ...props }: types.NavItemProps) => {
 	const base = styles.navItem;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Li {...props}>{children}</Li>;
+	return <Li {...computed}>{children}</Li>;
 };
 
 export const NavBtn = ({
 	id,
 	name = 'NavBtn',
 	variant = 'accent',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.NavBtnProps) => {
 	const base = styles.navBtn;
-	const props = { ...base, ...tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <Btn variant={variant} {...props} />;
+	return <Btn variant={variant} {...computed} />;
 };
 
 export const NavLink = ({
 	id,
 	name = 'NavLink',
 	variant = 'accent',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.NavLinkProps) => {
 	const base = styles.navLink;
-	const props = { ...base, ...tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <Link variant={variant} {...props} />;
+	return <Link variant={variant} {...computed} />;
 };
 
 // Docs

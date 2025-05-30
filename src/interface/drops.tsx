@@ -91,7 +91,7 @@ export const DropMenu = ({
 	const [dropRef, setDropRef] = useState(null);
 	const base = styles.dropMenu;
 	const [fade, setFade] = useState('hidden');
-	const classes = tailwindClassBuilder({ ...base, ...props, tailwind, fade, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, fade, className });
 	const fadeRef = useRef(null);
 
 	const { styles: popperStyles, attributes } = usePopper(ref, dropRef, {
@@ -120,7 +120,7 @@ export const DropMenu = ({
 				className='w-auto z-10'
 				style={popperStyles.popper}
 				{...attributes.popper}>
-				<Div className={classes} style={style}>
+				<Div className={computed} style={style}>
 					{children}
 				</Div>
 			</div>
@@ -170,56 +170,28 @@ export const DropSubtitle = ({
 	return <P {...computed}>{children}</P>;
 };
 
-export const DropList = ({
-	id,
-	name = 'DropList',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.DropListProps) => {
+export const DropList = ({ id, name = 'DropList', tailwind, className, children, ...props }: types.DropListProps) => {
 	const base = styles.dropList;
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Ul {...computed}>{children}</Ul>;
 };
 
-export const DropItem = ({
-	id,
-	name = 'DropItem',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.DropItemProps) => {
+export const DropItem = ({ id, name = 'DropItem', tailwind, className, children, ...props }: types.DropItemProps) => {
 	const base = styles.dropItem;
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Li {...computed}>{children}</Li>;
 };
 
-export const DropBtn = ({
-	id,
-	name = 'DropBtn',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.DropBtnProps) => {
+export const DropBtn = ({ id, name = 'DropBtn', tailwind, className, children, ...props }: types.DropBtnProps) => {
 	const base = styles.dropBtn;
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
 	return <AccentBtn {...computed} />;
 };
 
-export const DropLink = ({
-	id,
-	name = 'DropLink',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.DropLinkProps) => {
+export const DropLink = ({ id, name = 'DropLink', tailwind, className, children, ...props }: types.DropLinkProps) => {
 	const base = styles.dropLink;
 	const computed = { ...base, ...props, tailwind, children, className, name };
 

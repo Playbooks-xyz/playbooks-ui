@@ -10,9 +10,10 @@ export const RadioWrapper = ({
 	name = 'RadioWrapper',
 	active,
 	onClick,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.RadioWrapperProps) => {
 	const base = {
 		...styles.radioWrapper,
@@ -20,10 +21,10 @@ export const RadioWrapper = ({
 			borderColor: 'border-blue-500 dark:border-cyan-500',
 		}),
 	};
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<HTML.Label onClick={() => onClick()} className={classes}>
+		<HTML.Label onClick={() => onClick()} className={computed}>
 			{children}
 		</HTML.Label>
 	);
@@ -36,15 +37,16 @@ export const Radio = ({
 	text,
 	value,
 	onClick,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.RadioProps) => {
 	const base = styles.radio;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<RadioWrapper active={value} onClick={onClick} {...props}>
+		<RadioWrapper active={value} onClick={onClick} {...computed}>
 			<RadioInput value={value} />
 			<Div space='space-y-1'>
 				{title && <RadioTitle>{title}</RadioTitle>}
@@ -58,18 +60,19 @@ export const RadioInput = ({
 	id,
 	name = 'RadioInput',
 	value,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.RadioInputProps) => {
 	const base = { ...checkboxProps(value), ...styles.radioInput };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, name, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, name, className });
 	return (
 		<HTML.Input
 			id={id}
 			type='radio'
 			checked={value}
-			className={classes}
+			className={computed}
 			aria-labelledby='privacy-setting-0-label'
 			aria-describedby='privacy-setting-0-description'
 			readOnly>
@@ -78,18 +81,18 @@ export const RadioInput = ({
 	);
 };
 
-export const RadioTitle = ({ id, name = 'RadioLabel', className, children, ...tailwind }: types.FontProps) => {
+export const RadioTitle = ({ id, name = 'RadioLabel', tailwind, className, children, ...props }: types.FontProps) => {
 	const base = styles.radioTitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
-export const RadioText = ({ id, name = 'RadioLabel', className, children, ...tailwind }: types.FontProps) => {
+export const RadioText = ({ id, name = 'RadioLabel', tailwind, className, children, ...props }: types.FontProps) => {
 	const base = styles.radioText;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Small {...props}>{children}</Small>;
+	return <Small {...computed}>{children}</Small>;
 };
 
 // Docs:

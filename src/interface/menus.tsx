@@ -11,7 +11,16 @@ import * as styles from 'styles/menu-styles';
 import * as types from 'types/menu-types';
 import { tailwindClassBuilder } from 'utils';
 
-export const Menu = ({ id, name = 'Menu', open, onClose, tailwind, className, children, ...props }: types.MenuProps) => {
+export const Menu = ({
+	id,
+	name = 'Menu',
+	open,
+	onClose,
+	tailwind,
+	className,
+	children,
+	...props
+}: types.MenuProps) => {
 	const base = styles.menu;
 	const computed = { ...base, ...props, tailwind, className, name };
 	const { toggleScroll } = useInterface();
@@ -101,7 +110,15 @@ export const MenuToggle = ({
 	);
 };
 
-export const MenuMenu = ({ id, name = 'MenuMenu', open, tailwind, className, children, ...props }: types.MenuMenuProps) => {
+export const MenuMenu = ({
+	id,
+	name = 'MenuMenu',
+	open,
+	tailwind,
+	className,
+	children,
+	...props
+}: types.MenuMenuProps) => {
 	const base = styles.menuMenu;
 	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
@@ -149,7 +166,14 @@ export const MenuBlock = ({ id, name = 'MenuBlock', tailwind, className, childre
 	return <Div {...computed}>{children}</Div>;
 };
 
-export const MenuTitle = ({ id, name = 'MenuTitle', tailwind, className, children, ...props }: types.MenuTitleProps) => {
+export const MenuTitle = ({
+	id,
+	name = 'MenuTitle',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.MenuTitleProps) => {
 	const base = styles.menuTitle;
 	const computed = { ...base, ...props, tailwind, className, name };
 

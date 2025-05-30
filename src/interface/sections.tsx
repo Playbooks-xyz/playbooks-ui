@@ -5,12 +5,21 @@ import * as styles from 'styles/section-styles';
 import * as types from 'types/section-types';
 import { computeSectionSize, tailwindClassBuilder } from 'utils';
 
-export const Section = ({ id, ref, name = 'Section', className, children, style, ...tailwind }: types.SectionProps) => {
+export const Section = ({
+	id,
+	ref,
+	name = 'Section',
+	tailwind,
+	className,
+	children,
+	style,
+	...props
+}: types.SectionProps) => {
 	const base = styles.section;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<HTML.Section id={id} ref={ref} name={name} className={classes} style={style}>
+		<HTML.Section id={id} ref={ref} name={name} className={computed} style={style}>
 			{children}
 		</HTML.Section>
 	);
@@ -19,110 +28,124 @@ export const Section = ({ id, ref, name = 'Section', className, children, style,
 export const SectionHeader = ({
 	id,
 	name = 'SectionHeader',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.SectionHeaderProps) => {
 	const base = styles.sectionHeader;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const SectionPretitle = ({
 	id,
 	name = 'SectionPretitle',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.SectionPretitleProps) => {
 	const base = styles.sectionPretitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
 export const SectionTitle = ({
 	id,
 	name = 'SectionTitle',
 	size = 'h5',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.SectionTitleProps) => {
 	const base = { ...styles.sectionTitle, size };
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Font {...props}>{children}</Font>;
+	return <Font {...computed}>{children}</Font>;
 };
 
 export const SectionSubtitle = ({
 	id,
 	name = 'SectionSubtitle',
 	size = 'h6',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.SectionSubtitleProps) => {
 	const base = { ...styles.sectionSubtitle, size };
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Font {...props}>{children}</Font>;
+	return <Font {...computed}>{children}</Font>;
 };
 
-export const SectionText = ({ id, name = 'SectionText', className, children, ...tailwind }: types.SectionTextProps) => {
+export const SectionText = ({
+	id,
+	name = 'SectionText',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.SectionTextProps) => {
 	const base = styles.sectionText;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
 export const SectionActions = ({
 	id,
 	name = 'SectionActions',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.SectionActionsProps) => {
 	const base = styles.sectionActions;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const SectionBody = ({
 	id,
 	name = 'SectionBody',
 	size,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.SectionBodyProps) => {
 	const base = {
 		...styles.sectionBody,
 		size: computeSectionSize(size),
 	};
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
-export const SectionHr = ({ id, name = 'SectionHr', className, ...tailwind }: types.SectionHrProps) => {
+export const SectionHr = ({ id, name = 'SectionHr', tailwind, className, ...props }: types.SectionHrProps) => {
 	const base = styles.sectionHr;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Hr {...props} />;
+	return <Hr {...computed} />;
 };
 
 export const SectionFooter = ({
 	id,
 	name = 'SectionFooter',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.SectionFooterProps) => {
 	const base = styles.sectionFooter;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };

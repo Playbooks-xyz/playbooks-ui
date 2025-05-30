@@ -3,21 +3,28 @@ import * as styles from 'styles/tag-styles';
 import * as types from 'types/tag-types';
 import { computeTagImgSize, computeTagSize } from 'utils';
 
-export const TagsWrapper = ({ id, name = 'TagsWrapper', className, children, ...tailwind }: types.TagWrapperProps) => {
+export const TagsWrapper = ({
+	id,
+	name = 'TagsWrapper',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.TagWrapperProps) => {
 	const base = styles.tagsWrapper;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
-export const Tag = ({ id, name = 'Tag', size = 'sm', className, children, ...tailwind }: types.TagProps) => {
+export const Tag = ({ id, name = 'Tag', size = 'sm', tailwind, className, children, ...props }: types.TagProps) => {
 	const base = {
 		...styles.tag,
 		size: computeTagSize(size),
 	};
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const TagImg = ({
@@ -26,34 +33,35 @@ export const TagImg = ({
 	alt = 'thumbnail',
 	size = 'sm',
 	src,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.TagImgProps) => {
 	const base = { ...styles.tagImg, size: computeTagImgSize(size) };
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Img src={src} alt={alt} {...props} />;
+	return <Img src={src} alt={alt} {...computed} />;
 };
 
-export const TagBody = ({ id, name = 'TagBody', className, children, ...tailwind }: types.TagBodyProps) => {
+export const TagBody = ({ id, name = 'TagBody', tailwind, className, children, ...props }: types.TagBodyProps) => {
 	const base = styles.tagBody;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const TagActions = ({
 	id,
 	name = 'TagActions',
-	onClick,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.TagActionsProps) => {
 	const base = styles.tagActions;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 // Docs:

@@ -15,25 +15,26 @@ export const SlideWrapper = ({
 	name = 'SlideWrapper',
 	open,
 	onClose,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.SlideWrapperProps) => {
 	const base = styles.slideWrapper;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Div {...props}>
+		<Div {...computed}>
 			{children}
 			<SlideBackdrop open={open} onClose={onClose} />
 		</Div>
 	);
 };
 
-export const SlideBackdrop = ({ id, name = 'SlideBackdrop', open, onClose, ...tailwind }: types.SlideBackdropProps) => {
+export const SlideBackdrop = ({ id, name = 'SlideBackdrop', open, onClose, tailwind, ...props }: types.SlideBackdropProps) => {
 	const base = styles.slideBackdrop;
 	const [fade, setFade] = useState({ display: 'hidden', bgOpacity: '' });
-	const props = { ...base, ...fade, ...tailwind, name };
+	const computed = { ...base, ...fade, ...props, tailwind, name };
 	const ref = useRef(null);
 
 	return (
@@ -45,7 +46,7 @@ export const SlideBackdrop = ({ id, name = 'SlideBackdrop', open, onClose, ...ta
 			onEntered={() => setFade({ display: '', bgOpacity: 'bg-opacity-[85%] dark:bg-opacity-[85%]' })}
 			onExiting={() => setFade({ display: '', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}
 			onExited={() => setFade({ display: 'hidden', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}>
-			<Div ref={ref} onClick={onClose} {...props} />
+			<Div ref={ref} onClick={onClose} {...computed} />
 		</Fade>
 	);
 };
@@ -56,9 +57,10 @@ export const Slide = ({
 	open,
 	placement = 'left',
 	onClose,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.SlideProps) => {
 	const base = {
 		...styles.slide,
@@ -67,7 +69,7 @@ export const Slide = ({
 		shadow: placement === 'left' ? 'shadow-r-lg' : 'shadow-l-lg',
 	};
 	const [animation, setAnimation] = useState(`opacity-0 ${computeSlideAnimation(placement)}`);
-	const props = { ...base, ...tailwind, animation, className };
+	const computed = { ...base, ...props, tailwind, animation, className };
 	const { ref, createPortal, toggleScroll } = useInterface();
 	const fadeRef = useRef(null);
 
@@ -97,7 +99,7 @@ export const Slide = ({
 					onExit={() => setAnimation('opacity-100 translate-x-0')}
 					onExiting={() => setAnimation(`opacity-0 ${computeSlideAnimation(placement)}`)}>
 					<SlideWrapper open={open} onClose={onClose}>
-						<Div ref={fadeRef} {...props}>
+						<Div ref={fadeRef} {...computed}>
 							{children}
 						</Div>
 					</SlideWrapper>
@@ -111,40 +113,41 @@ export const SlideHeader = ({
 	id,
 	name = 'SlideHeader',
 	onClose,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.SlideHeaderProps) => {
 	const base = styles.slideHeader;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Div {...props}>
+		<Div {...computed}>
 			{children}
 			<AccentBtn alt='close' size='icon' icon='xmark' color='text-gray-500 dark:text-gray-200' onClick={onClose} />
 		</Div>
 	);
 };
 
-export const SlideTitle = ({ id, name = 'SlideTitle', className, children, ...tailwind }: types.SlideTitleProps) => {
+export const SlideTitle = ({ id, name = 'SlideTitle', tailwind, className, children, ...props }: types.SlideTitleProps) => {
 	const base = styles.slideTitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <H4 {...props}>{children}</H4>;
+	return <H4 {...computed}>{children}</H4>;
 };
 
-export const SlideBody = ({ id, name = 'SlideBody', className, children, ...tailwind }: types.SlideBodyProps) => {
+export const SlideBody = ({ id, name = 'SlideBody', tailwind, className, children, ...props }: types.SlideBodyProps) => {
 	const base = styles.slideBody;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
-export const SlideFooter = ({ id, name = 'SlideFooter', className, children, ...tailwind }: types.SlideFooterProps) => {
+export const SlideFooter = ({ id, name = 'SlideFooter', tailwind, className, children, ...props }: types.SlideFooterProps) => {
 	const base = styles.slideFooter;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 // Docs

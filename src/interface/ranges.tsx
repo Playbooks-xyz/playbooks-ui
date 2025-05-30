@@ -4,7 +4,7 @@ import * as HTML from '@ehubbell/html';
 import * as styles from 'styles/range-styles';
 import { tailwindClassBuilder } from 'utils';
 
-export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange }) => {
+export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange, tailwind, ...props }) => {
 	return (
 		<Range
 			step={step}
@@ -12,13 +12,25 @@ export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange }
 			max={max}
 			values={[value]}
 			onChange={onChange}
-			renderTrack={({ props, children }) => <RangeSliderTrack {...props}>{children}</RangeSliderTrack>}
-			renderThumb={({ props }) => <RangeSliderThumb {...props} />}
+			renderTrack={({ props, children }) => (
+				<RangeSliderTrack
+					ref={props.ref}
+					values={[value]}
+					min={min}
+					max={max}
+					trackProps={props}
+					onNext={() => {}}
+					tailwind={tailwind}
+				>
+					{children}
+				</RangeSliderTrack>
+			)}
+			renderThumb={({ props, isDragged }) => <RangeSliderThumb tailwind={tailwind} isDragged={isDragged} {...props} />}
 		/>
 	);
 };
 
-export const RangeSliders = ({ min = 0, max = 100, step = 1, values, onChange, onNext }) => {
+export const RangeSliders = ({ min = 0, max = 100, step = 1, values, onChange, onNext, tailwind, ...props }) => {
 	return (
 		<Range
 			step={step}
@@ -27,26 +39,26 @@ export const RangeSliders = ({ min = 0, max = 100, step = 1, values, onChange, o
 			values={values}
 			onChange={onChange}
 			renderTrack={({ props, children }) => (
-				<RangeSliderTrack ref={props.ref} values={values} min={min} max={max} props={props} onNext={onNext}>
+				<RangeSliderTrack ref={props.ref} values={values} min={min} max={max} trackProps={props} onNext={onNext} tailwind={tailwind}>
 					{children}
 				</RangeSliderTrack>
 			)}
-			renderThumb={({ props, isDragged }) => <RangeSliderThumb ref={props.ref} {...props} />}
+			renderThumb={({ props, isDragged }) => <RangeSliderThumb ref={props.ref} tailwind={tailwind} isDragged={isDragged} {...props} />}
 		/>
 	);
 };
 
-export const RangeSliderTrack = ({ ref, values, min, max, props, children, onNext }) => {
+export const RangeSliderTrack = ({ ref, values, min, max, trackProps, children, onNext, tailwind, ...restProps }) => {
 	const base = styles.rangeSliderTrack;
-	const className = tailwindClassBuilder(base);
+	const computed = tailwindClassBuilder({ ...base, ...restProps, tailwind });
 	return (
 		<HTML.Div
-			onMouseDown={props.onMouseDown}
-			onTouchStart={props.onTouchStart}
+			onMouseDown={trackProps.onMouseDown}
+			onTouchStart={trackProps.onTouchStart}
 			onTouchEnd={onNext}
 			onMouseUp={onNext}
-			className={className}
-			style={props.style}>
+			className={computed}
+			style={trackProps.style}>
 			<HTML.Div
 				ref={ref}
 				style={{
@@ -60,15 +72,15 @@ export const RangeSliderTrack = ({ ref, values, min, max, props, children, onNex
 	);
 };
 
-export const RangeSliderThumb = ({ ref, isDragged, ...props }) => {
+export const RangeSliderThumb = ({ ref, isDragged, tailwind, ...props }) => {
 	const base = {
 		...styles.rangeSliderThumb,
-		bgColor: types.isDragged ? 'bg-blue-500 dark:bg-cyan-500' : 'bg-gray-300 dark:bg-gray-600',
-		borderColor: types.isDragged ? 'border-blue-500 dark:border-cyan-500' : 'border-gray-300 dark:border-gray-600',
+		bgColor: isDragged ? 'bg-blue-500 dark:bg-cyan-500' : 'bg-gray-300 dark:bg-gray-600',
+		borderColor: isDragged ? 'border-blue-500 dark:border-cyan-500' : 'border-gray-300 dark:border-gray-600',
 	};
-	const className = tailwindClassBuilder(base);
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind });
 
-	return <HTML.Div ref={ref} {...props} className={className} style={props.style} />;
+	return <HTML.Div ref={ref} {...props} className={computed} style={props.style} />;
 };
 
 // Docs

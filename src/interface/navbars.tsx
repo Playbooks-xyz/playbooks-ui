@@ -5,12 +5,12 @@ import * as styles from 'styles/navbar-styles';
 import * as types from 'types/navbar-types';
 import { tailwindClassBuilder } from 'utils';
 
-export const Navbar = ({ id, ref, name = 'Navbar', className, children, ...tailwind }: types.NavPropsbar) => {
+export const Navbar = ({ id, ref, name = 'Navbar', tailwind, className, children, ...props }: types.NavPropsbar) => {
 	const base = styles.navbar;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<HTML.Nav ref={ref} name={name} className={classes}>
+		<HTML.Nav ref={ref} name={name} className={computed}>
 			{children}
 		</HTML.Nav>
 	);
@@ -22,25 +22,26 @@ export const NavbarBrand = ({
 	href = '/',
 	src,
 	alt = 'home',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.NavPropsbarBrand) => {
 	const base = styles.navbarBrand;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<LinkWrapper alt={alt} name={name} href={href} className={classes}>
+		<LinkWrapper alt={alt} name={name} href={href} className={computed}>
 			<Img src={src} alt='Brand logo' width='w-full' />
 		</LinkWrapper>
 	);
 };
 
-export const NavbarList = ({ id, name = 'NavbarList', className, children, ...tailwind }: types.NavPropsbarList) => {
+export const NavbarList = ({ id, name = 'NavbarList', tailwind, className, children, ...props }: types.NavPropsbarList) => {
 	const base = styles.navbarList;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Ul {...props}>{children}</Ul>;
+	return <Ul {...computed}>{children}</Ul>;
 };
 
 // Docs

@@ -18,6 +18,7 @@ export const Tooltip = ({
 	className,
 	children,
 	tailwind,
+	...props
 }: types.TooltipProps) => {
 	const base = {
 		...styles.tooltip,
@@ -94,12 +95,13 @@ export const TooltipBody = ({
 	className,
 	styles: popperStyles,
 	tailwind,
+	...props
 }: types.TooltipBodyProps) => {
 	const base = styles.tooltipBody;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Div {...props}>
+		<Div {...computed}>
 			<TooltipArrow
 				setArrowElement={setArrowElement}
 				style={{ ...popperStyles.popper, ...popperStyles.arrow }}
@@ -110,11 +112,11 @@ export const TooltipBody = ({
 	);
 };
 
-export const TooltipInner = ({ id, name = 'TooltipInner', className, children, tailwind }: types.TooltipInnerProps) => {
+export const TooltipInner = ({ id, name = 'TooltipInner', className, children, tailwind, ...props }: types.TooltipInnerProps) => {
 	const base = styles.tooltipInner;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const TooltipArrow = ({
@@ -124,13 +126,14 @@ export const TooltipArrow = ({
 	className,
 	style,
 	tailwind,
+	...props
 }: types.TooltipArrowProps) => {
 	const base = styles.tooltipArrow;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
 		<Div ref={setArrowElement} style={style}>
-			<Div {...props} />
+			<Div {...computed} />
 		</Div>
 	);
 };

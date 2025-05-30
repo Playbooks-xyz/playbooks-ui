@@ -11,14 +11,15 @@ import * as types from 'types/toast-types';
 export const ToastWrapper = ({
 	id,
 	name = 'ToastWrapper',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.ToastWrapperProps) => {
 	const base = styles.toastWrapper;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const Toast = ({
@@ -27,13 +28,14 @@ export const Toast = ({
 	show,
 	setShow,
 	onRemove,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.ToastProps) => {
 	const base = styles.toast;
 	const [fade, setFade] = useState({ opacity: 'opacity-0', translate: 'translate-y-12' });
-	const props = { ...base, ...tailwind, ...fade, className };
+	const computed = { ...base, ...props, tailwind, ...fade, className };
 	const ref = useRef(null);
 
 	// Render
@@ -47,7 +49,7 @@ export const Toast = ({
 			onExit={() => setFade({ opacity: 'opacity-100', translate: 'translate-y-0' })}
 			onExiting={() => setFade({ opacity: 'opacity-0', translate: 'translate-y-12' })}
 			onExited={onRemove}>
-			<Div ref={ref} {...props}>
+			<Div ref={ref} {...computed}>
 				{children}
 			</Div>
 		</Fade>
@@ -58,15 +60,16 @@ export const ToastHeader = ({
 	id,
 	name = 'ToastHeader',
 	onRemove,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.ToastHeaderProps) => {
 	const base = styles.toastHeader;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Div {...props}>
+		<Div {...computed}>
 			<Span display='flex-start' space='space-x-2'>
 				{children}
 			</Span>
@@ -79,38 +82,39 @@ export const ToastIcon = ({
 	id,
 	name = 'ToastIcon',
 	icon = 'question-circle',
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.ToastIconProps) => {
 	const base = styles.toastIcon;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Div {...props}>
+		<Div {...computed}>
 			<FadIcon icon={icon} />
 		</Div>
 	);
 };
 
-export const ToastTitle = ({ id, name = 'ToastTitle', className, children, ...tailwind }: types.ToastTitleProps) => {
+export const ToastTitle = ({ id, name = 'ToastTitle', tailwind, className, children, ...props }: types.ToastTitleProps) => {
 	const base = styles.toastTitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <H6 {...props}>{children}</H6>;
+	return <H6 {...computed}>{children}</H6>;
 };
 
-export const ToastBody = ({ id, name = 'ToastBody', className, children, ...tailwind }: types.ToastBodyProps) => {
+export const ToastBody = ({ id, name = 'ToastBody', tailwind, className, children, ...props }: types.ToastBodyProps) => {
 	const base = styles.toastBody;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
-export const ToastText = ({ id, name = 'ToastText', className, children, ...tailwind }: types.ToastTextProps) => {
+export const ToastText = ({ id, name = 'ToastText', tailwind, className, children, ...props }: types.ToastTextProps) => {
 	const base = styles.toastText;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
 // Docs

@@ -5,14 +5,7 @@ import * as styles from 'styles/feedback-styles';
 import * as types from 'types/feedback-types';
 import { tailwindClassBuilder } from 'utils';
 
-export const Feedback = ({
-	id,
-	name = 'Feedback',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.FeedbackProps) => {
+export const Feedback = ({ id, name = 'Feedback', tailwind, className, children, ...props }: types.FeedbackProps) => {
 	const base = styles.feedback;
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -43,9 +36,9 @@ export const FeedbackIcon = ({
 	...props
 }: types.FeedbackIconProps) => {
 	const base = { ...styles.feedbackIcon };
-	const classes = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
-	return <Icon type={type} icon={icon} className={classes} />;
+	return <Icon type={type} icon={icon} className={computed} />;
 };
 
 export const FeedbackBody = ({

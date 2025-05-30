@@ -7,23 +7,23 @@ import * as types from 'types/table-types';
 import { tailwindClassBuilder } from 'utils';
 import { isObject } from 'utils/helpers';
 
-export const Table = ({ id, name = 'Table', className, children, ...tailwind }: types.TabPropsle) => {
+export const Table = ({ id, name = 'Table', tailwind, className, children, ...props }: types.TabPropsle) => {
 	const base = styles.table;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<HTML.Table name={name} className={classes}>
+		<HTML.Table name={name} className={computed}>
 			{children}
 		</HTML.Table>
 	);
 };
 
-export const TableHeader = ({ id, name = 'TableHeader', className, children, ...tailwind }: types.TabPropsleHeader) => {
+export const TableHeader = ({ id, name = 'TableHeader', tailwind, className, children, ...props }: types.TabPropsleHeader) => {
 	const base = styles.tableHeader;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<HTML.THead name={name} className={classes}>
+		<HTML.THead name={name} className={computed}>
 			{children}
 		</HTML.THead>
 	);
@@ -32,14 +32,15 @@ export const TableHeader = ({ id, name = 'TableHeader', className, children, ...
 export const TableHeaderRow = ({
 	id,
 	name = 'TableHeaderRow',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.TabPropsleHeaderRow) => {
 	const base = styles.tableHeaderRow;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
-	return <tr className={classes}>{children}</tr>;
+	return <tr className={computed}>{children}</tr>;
 };
 
 export const TableHead = ({
@@ -49,16 +50,17 @@ export const TableHead = ({
 	value,
 	params,
 	setParams,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.TabPropsleHead) => {
 	const base = styles.tableHead;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 	const direction = value === params?.sortProp && params?.sortValue === 'asc' ? 'desc' : 'asc';
 
 	return (
-		<HTML.TH name={name} className={classes}>
+		<HTML.TH name={name} className={computed}>
 			{isObject(params) ? (
 				<BtnWrapper
 					alt={alt}
@@ -80,23 +82,23 @@ export const TableHead = ({
 	);
 };
 
-export const TableBody = ({ id, name = 'TableBody', className, children, ...tailwind }: types.TabPropsleBody) => {
+export const TableBody = ({ id, name = 'TableBody', tailwind, className, children, ...props }: types.TabPropsleBody) => {
 	const base = styles.tableBody;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<HTML.TBody name={name} className={classes}>
+		<HTML.TBody name={name} className={computed}>
 			{children}
 		</HTML.TBody>
 	);
 };
 
-export const TableRow = ({ id, name = 'TableRow', className, children, ...tailwind }: types.TabPropsleRow) => {
+export const TableRow = ({ id, name = 'TableRow', tailwind, className, children, ...props }: types.TabPropsleRow) => {
 	const base = styles.tableRow;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<HTML.TR name={name} className={classes}>
+		<HTML.TR name={name} className={computed}>
 			{children}
 		</HTML.TR>
 	);
@@ -107,18 +109,19 @@ export const TableData = ({
 	name = 'TableData',
 	title = false,
 	value,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.TabPropsleData) => {
 	const base = {
 		...styles.tableData,
 		color: title ? 'text-gray-800 dark:text-gray-100' : 'text-gray-600 dark:text-gray-400',
 	};
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<HTML.TD name={name} className={classes}>
+		<HTML.TD name={name} className={computed}>
 			{value ? value : children}
 		</HTML.TD>
 	);

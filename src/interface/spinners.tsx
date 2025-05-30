@@ -3,18 +3,18 @@ import * as styles from 'styles/spinner-styles';
 import * as types from 'types/spinner-types';
 import { tailwindClassBuilder } from 'utils';
 
-export const Oval = ({ id, name = 'Oval', className, ...tailwind }: types.SpinnerProps) => {
+export const Oval = ({ id, name = 'Oval', tailwind, className, ...props }: types.SpinnerProps) => {
 	const base = styles.spinner;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
-	return <Loaders.Oval className={classes} />;
+	return <Loaders.Oval className={computed} />;
 };
 
-export const Puff = ({ id, name = 'Puff', className, ...tailwind }: types.SpinnerProps) => {
+export const Puff = ({ id, name = 'Puff', tailwind, className, ...props }: types.SpinnerProps) => {
 	const base = styles.spinner;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
-	return <Loaders.Puff className={classes} />;
+	return <Loaders.Puff className={computed} />;
 };
 
 // Docs

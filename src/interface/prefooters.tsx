@@ -4,52 +4,55 @@ import { Section } from 'interface/sections';
 import * as styles from 'styles/prefooter-styles';
 import * as types from 'types/prefooter-types';
 
-export const Prefooter = ({ id, name = 'Prefooter', className, children, ...tailwind }: types.PrefooterProps) => {
+export const Prefooter = ({ id, name = 'Prefooter', tailwind, className, children, ...props }: types.PrefooterProps) => {
 	const base = styles.prefooter;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Section {...props}>{children}</Section>;
+	return <Section {...computed}>{children}</Section>;
 };
 
 export const PrefooterBody = ({
 	id,
 	name = 'PrefooterBody',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.PrefooterBodyProps) => {
 	const base = styles.prefooterBody;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const PrefooterPretitle = ({
 	id,
 	name = 'PrefooterPretitle',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.PrefooterPretitleProps) => {
 	const base = styles.prefooterPretitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <H6 {...props}>{children}</H6>;
+	return <H6 {...computed}>{children}</H6>;
 };
 
 export const PrefooterTitle = ({
 	id,
 	name = 'PrefooterTitle',
 	size = 'h2',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.PrefooterTitleProps) => {
 	const base = styles.prefooterTitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Font size={size} {...props}>
+		<Font size={size} {...computed}>
 			{children}
 		</Font>
 	);
@@ -59,15 +62,16 @@ export const PrefooterSubtitle = ({
 	id,
 	name = 'PrefooterSubtitle',
 	size = 'h5',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.PrefooterSubtitleProps) => {
 	const base = styles.prefooterSubtitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Font size={size} {...props}>
+		<Font size={size} {...computed}>
 			{children}
 		</Font>
 	);
@@ -76,27 +80,29 @@ export const PrefooterSubtitle = ({
 export const PrefooterText = ({
 	id,
 	name = 'PrefooterText',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.PrefooterTextProps) => {
 	const base = styles.prefooterText;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
 export const PrefooterActions = ({
 	id,
 	name = 'PrefooterActions',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.PrefooterActionsProps) => {
 	const base = styles.prefooterActions;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 // Docs

@@ -7,14 +7,15 @@ export const InputGroup = ({
 	id,
 	name = 'InputGroup',
 	active,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.InputGroupProps) => {
 	const base = styles.inputGroup;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const InputAppend = ({
@@ -22,14 +23,15 @@ export const InputAppend = ({
 	name = 'InputAppend',
 	icon,
 	taskRunning,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.InputAddonProps) => {
 	const base = styles.inputAppend;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Span {...props}>{icon ? <Icon icon={icon?.icon || icon} {...icon} /> : children}</Span>;
+	return <Span {...computed}>{icon ? <Icon icon={icon?.icon || icon} {...icon} /> : children}</Span>;
 };
 
 export const InputPrepend = ({
@@ -38,14 +40,15 @@ export const InputPrepend = ({
 	icon,
 	taskRunning,
 	onClick,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.InputAddonProps) => {
 	const base = styles.inputPrepend;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Span {...props}>{icon ? <Icon icon={icon?.icon || icon} {...icon} /> : children}</Span>;
+	return <Span {...computed}>{icon ? <Icon icon={icon?.icon || icon} {...icon} /> : children}</Span>;
 };
 
 // Docs
