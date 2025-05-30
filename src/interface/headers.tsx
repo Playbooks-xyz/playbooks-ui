@@ -16,7 +16,7 @@ export const Header = ({ id, name = 'Header', className, children, style, ...tai
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<header data-name={name} className={classes} style={style}>
+		<header name={name} className={classes} style={style}>
 			{children}
 		</header>
 	);

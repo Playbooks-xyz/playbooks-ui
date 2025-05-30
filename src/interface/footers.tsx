@@ -26,7 +26,7 @@ export const Footer = ({ id, name = 'Footer', className, children, style, ...tai
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<footer data-name={name} className={classes} style={style}>
+		<footer name={name} className={classes} style={style}>
 			{children}
 		</footer>
 	);

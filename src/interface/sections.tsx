@@ -28,7 +28,7 @@ export const Section = ({ id, ref, name = 'Section', className, children, style,
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<section id={id} ref={ref} data-name={name} className={classes} style={style}>
+		<section id={id} ref={ref} name={name} className={classes} style={style}>
 			{children}
 		</section>
 	);

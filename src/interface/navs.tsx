@@ -16,7 +16,7 @@ export const Nav = ({ id, name = 'Nav', className, children, ...tailwind }: iNav
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<nav id={id} data-name={name} className={classes}>
+		<nav id={id} name={name} className={classes}>
 			{children}
 		</nav>
 	);

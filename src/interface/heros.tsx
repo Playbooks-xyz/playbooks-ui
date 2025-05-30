@@ -28,7 +28,7 @@ export const Hero = ({ id, ref, name = 'Hero', size, className, children, style,
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<header ref={ref} data-name={name} className={classes} style={style}>
+		<header ref={ref} name={name} className={classes} style={style}>
 			{children}
 		</header>
 	);

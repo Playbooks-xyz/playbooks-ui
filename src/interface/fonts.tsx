@@ -42,7 +42,7 @@ export const H1 = ({ id, name = 'H1', className, children, ...tailwind }: iFont)
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<h1 id={id} data-name={name} className={classes}>
+		<h1 id={id} name={name} className={classes}>
 			{children}
 		</h1>
 	);
@@ -58,7 +58,7 @@ export const H2 = ({ id, name = 'H2', className, children, ...tailwind }: iFont)
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<h2 id={id} data-name={name} className={classes}>
+		<h2 id={id} name={name} className={classes}>
 			{children}
 		</h2>
 	);
@@ -74,7 +74,7 @@ export const H3 = ({ id, name = 'H3', className, children, ...tailwind }: iFont)
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<h3 id={id} data-name={name} className={classes}>
+		<h3 id={id} name={name} className={classes}>
 			{children}
 		</h3>
 	);
@@ -90,7 +90,7 @@ export const H4 = ({ id, name = 'H4', className, children, ...tailwind }: iFont)
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<h4 id={id} data-name={name} className={classes}>
+		<h4 id={id} name={name} className={classes}>
 			{children}
 		</h4>
 	);
@@ -106,7 +106,7 @@ export const H5 = ({ id, name = 'H5', className, children, ...tailwind }: iFont)
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<h5 id={id} data-name={name} className={classes}>
+		<h5 id={id} name={name} className={classes}>
 			{children}
 		</h5>
 	);
@@ -122,7 +122,7 @@ export const H6 = ({ id, name = 'H6', className, children, ...tailwind }: iFont)
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<h6 id={id} data-name={name} className={classes}>
+		<h6 id={id} name={name} className={classes}>
 			{children}
 		</h6>
 	);
@@ -139,7 +139,7 @@ export const P = ({ id, name = 'P', className, children, ...tailwind }: iFont) =
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<p id={id} data-name={name} className={classes}>
+		<p id={id} name={name} className={classes}>
 			{children}
 		</p>
 	);
@@ -154,7 +154,7 @@ export const Small = ({ id, name = 'Small', className, children, ...tailwind }: 
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<small id={id} data-name={name} className={classes}>
+		<small id={id} name={name} className={classes}>
 			{children}
 		</small>
 	);

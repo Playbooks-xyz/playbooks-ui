@@ -23,7 +23,7 @@ export const Table = ({ id, name = 'Table', className, children, ...tailwind }: 
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<table data-name={name} className={classes}>
+		<table name={name} className={classes}>
 			{children}
 		</table>
 	);
@@ -34,7 +34,7 @@ export const TableHeader = ({ id, name = 'TableHeader', className, children, ...
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<thead data-name={name} className={classes}>
+		<thead name={name} className={classes}>
 			{children}
 		</thead>
 	);
@@ -73,7 +73,7 @@ export const TableHead = ({
 	const direction = value === params?.sortProp && params?.sortValue === 'asc' ? 'desc' : 'asc';
 
 	return (
-		<th data-name={name} className={classes}>
+		<th name={name} className={classes}>
 			{isObject(params) ? (
 				<BtnWrapper
 					alt={alt}
@@ -100,7 +100,7 @@ export const TableBody = ({ id, name = 'TableBody', className, children, ...tail
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<tbody data-name={name} className={classes}>
+		<tbody name={name} className={classes}>
 			{children}
 		</tbody>
 	);
@@ -111,7 +111,7 @@ export const TableRow = ({ id, name = 'TableRow', className, children, ...tailwi
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<tr data-name={name} className={classes}>
+		<tr name={name} className={classes}>
 			{children}
 		</tr>
 	);
@@ -137,7 +137,7 @@ export const TableData = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<td data-name={name} className={classes}>
+		<td name={name} className={classes}>
 			{value ? value : children}
 		</td>
 	);

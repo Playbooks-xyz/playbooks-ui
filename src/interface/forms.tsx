@@ -28,7 +28,7 @@ export const Form = ({ id, name = 'Form', onSubmit, className, children, ...tail
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<form onSubmit={onSubmit} data-name={name} className={classes}>
+		<form onSubmit={onSubmit} name={name} className={classes}>
 			{children}
 		</form>
 	);
@@ -67,7 +67,7 @@ export const FormLabel = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<label id={id} data-name={name} htmlFor={htmlFor} onClick={onClick ? onClick : null} className={classes}>
+		<label id={id} name={name} htmlFor={htmlFor} onClick={onClick ? onClick : null} className={classes}>
 			{children}
 		</label>
 	);
@@ -89,7 +89,7 @@ export const FormCheckbox = ({
 		<input
 			id={id}
 			type='checkbox'
-			data-name={name}
+			name={name}
 			checked={checked}
 			onChange={onChange}
 			readOnly={readOnly}
@@ -117,7 +117,7 @@ export const FormRange = ({
 		<input
 			id={id}
 			type='range'
-			data-name={name}
+			name={name}
 			value={value}
 			min={min}
 			max={max}
@@ -153,7 +153,7 @@ export const FormInput = ({
 		<input
 			id={id}
 			ref={ref}
-			data-name={name}
+			name={name}
 			type={type || 'text'}
 			value={value}
 			placeholder={placeholder}

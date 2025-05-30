@@ -15,7 +15,7 @@ export const Navbar = ({ id, ref, name = 'Navbar', className, children, ...tailw
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<nav ref={ref} data-name={name} className={classes}>
+		<nav ref={ref} name={name} className={classes}>
 			{children}
 		</nav>
 	);
