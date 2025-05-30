@@ -17,6 +17,7 @@ export const avatarImg = {
 
 export const avatarBody = {
 	display: 'flex-column',
+	space: 'space-y-1',
 	width: 'w-full',
 };
 
@@ -28,7 +29,7 @@ export const avatarTitle = {
 export const avatarText = {
 	color: 'text-gray-600 dark:text-gray-300',
 	fontFamily: 'font-secondary',
-	spacing: 'mt-1',
+	fontSize: 'text-sm',
 };
 
 export const avatarActions = {

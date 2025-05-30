@@ -6,12 +6,20 @@ import { Div } from 'interface/html';
 import * as styles from 'styles/accordion-styles';
 import * as types from 'types/accordion-types';
 
-export const Accordion = ({ id, name = 'Accordion', open, className, children, ...tailwind }: types.AccordionProps) => {
+export const Accordion = ({
+	id,
+	name = 'Accordion',
+	open,
+	tailwind,
+	className,
+	children,
+	...props
+}: types.AccordionProps) => {
 	const base = styles.accordion;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Div id={id} {...props}>
+		<Div id={id} {...computed}>
 			{children}
 		</Div>
 	);
@@ -20,13 +28,13 @@ export const Accordion = ({ id, name = 'Accordion', open, className, children, .
 export const AccordionToggle = ({
 	id,
 	name = 'AccordionToggle',
-	alt = 'toggle',
 	variant = 'border',
 	open,
 	onClick,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.AccordionToggleProps) => {
 	const base = {
 		...styles.accordionToggle,
@@ -35,24 +43,25 @@ export const AccordionToggle = ({
 			rotate: open ? 'rotate-180' : 'rotate-0',
 		},
 	};
-	const props = { ...base, ...tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <Btn variant={variant} onClick={() => onClick(id)} {...props} />;
+	return <Btn variant={variant} onClick={() => onClick(id)} {...computed} />;
 };
 
 export const AccordionTitle = ({
 	id,
 	name = 'AccordionTitle',
 	size = 'h6',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.AccordionTitleProps) => {
 	const base = styles.accordionTitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Font size={size} {...props}>
+		<Font size={size} {...computed}>
 			{children}
 		</Font>
 	);
@@ -63,13 +72,14 @@ export const AccordionBody = ({
 	name = 'AccordionBody',
 	open,
 	animate,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.AccordionBodyProps) => {
 	const wrapperBase = styles.accordionBodyWrapper;
 	const base = styles.accordionBody;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 	const [height, setHeight] = useState(0);
 	const ref = useRef(null);
 
@@ -92,7 +102,7 @@ export const AccordionBody = ({
 	// Render
 	return (
 		<Div style={style} {...wrapperBase}>
-			<Div ref={ref} {...props}>
+			<Div ref={ref} {...computed}>
 				{children}
 			</Div>
 		</Div>
@@ -102,14 +112,15 @@ export const AccordionBody = ({
 export const AccordionText = ({
 	id,
 	name = 'AccordionText',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.AccordionTextProps) => {
 	const base = styles.accordionText;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
 // Docs

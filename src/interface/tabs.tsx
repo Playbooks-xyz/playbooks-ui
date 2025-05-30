@@ -1,6 +1,6 @@
+import { Div } from 'interface/html';
 import { Btn } from 'interface/buttons';
 import { FormSelect } from 'interface/forms';
-import { Div } from 'interface/html';
 import * as styles from 'styles/tab-styles';
 import * as types from 'types/tab-types';
 

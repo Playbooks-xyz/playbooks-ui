@@ -1,6 +1,6 @@
 import * as HTML from '@ehubbell/html';
-import { BtnWrapper } from 'interface/buttons';
 import { Div } from 'interface/html';
+import { BtnWrapper } from 'interface/buttons';
 import { FarIcon } from 'interface/icons';
 import * as styles from 'styles/table-styles';
 import * as types from 'types/table-types';

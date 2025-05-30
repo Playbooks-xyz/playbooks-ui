@@ -8,42 +8,43 @@ export const Badge = ({
 	name = 'Badge',
 	type = '',
 	size = 'sm',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.BadgeProps) => {
 	const base = { ...styles.badge, size: computeBadgeSize(size) };
-	const props = { ...base, ...tailwind, className, name };
+	const computedProps = { ...base, ...props, tailwind, className, name };
 
 	// Render
 	switch (type) {
 		case 'draft':
 		case 'free':
-			return <DraftBadge {...props}>{children}</DraftBadge>;
+			return <DraftBadge {...computedProps}>{children}</DraftBadge>;
 
 		case 'info':
 		case 'warning':
 		case 'scheduled':
-			return <WarningBadge {...props}>{children}</WarningBadge>;
+			return <WarningBadge {...computedProps}>{children}</WarningBadge>;
 
 		case 'pending':
 		case 'running':
 		case 'seed':
 		case 'testing':
-			return <PendingBadge {...props}>{children}</PendingBadge>;
+			return <PendingBadge {...computedProps}>{children}</PendingBadge>;
 
 		case 'active':
 		case 'complete':
 		case 'succeeded':
 		case 'verified':
-			return <SuccessBadge {...props}>{children}</SuccessBadge>;
+			return <SuccessBadge {...computedProps}>{children}</SuccessBadge>;
 
 		case 'closed':
 		case 'finished':
 		case 'inactive':
 		case 'paid':
 		case 'won':
-			return <FinishedBadge {...props}>{children}</FinishedBadge>;
+			return <FinishedBadge {...computedProps}>{children}</FinishedBadge>;
 
 		case 'canceled':
 		case 'denied':
@@ -51,60 +52,60 @@ export const Badge = ({
 		case 'errored':
 		case 'refunded':
 		case 'stopped':
-			return <ErrorBadge {...props}>{children}</ErrorBadge>;
+			return <ErrorBadge {...computedProps}>{children}</ErrorBadge>;
 
 		default:
-			return <OutlineBadge {...props}>{children}</OutlineBadge>;
+			return <OutlineBadge {...computedProps}>{children}</OutlineBadge>;
 	}
 };
 
-export const DraftBadge = ({ id, className, children, ...tailwind }: types.BadgeProps) => {
+export const DraftBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
 	const base = { ...styles.badge, ...styles.draftBadge };
-	const props = { ...base, ...tailwind, className };
+	const computedProps = { ...base, ...props, tailwind, className };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computedProps}>{children}</Div>;
 };
 
-export const PendingBadge = ({ id, className, children, ...tailwind }: types.BadgeProps) => {
+export const PendingBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
 	const base = { ...styles.badge, ...styles.pendingBadge };
-	const props = { ...base, ...tailwind, className };
+	const computedProps = { ...base, ...props, tailwind, className };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computedProps}>{children}</Div>;
 };
 
-export const WarningBadge = ({ id, className, children, ...tailwind }: types.BadgeProps) => {
+export const WarningBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
 	const base = { ...styles.badge, ...styles.warningBadge };
-	const props = { ...base, ...tailwind, className };
+	const computedProps = { ...base, ...props, tailwind, className };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computedProps}>{children}</Div>;
 };
 
-export const SuccessBadge = ({ id, className, children, ...tailwind }: types.BadgeProps) => {
+export const SuccessBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
 	const base = { ...styles.badge, ...styles.successBadge };
-	const props = { ...base, ...tailwind, className };
+	const computedProps = { ...base, ...props, tailwind, className };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computedProps}>{children}</Div>;
 };
 
-export const FinishedBadge = ({ id, className, children, ...tailwind }: types.BadgeProps) => {
+export const FinishedBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
 	const base = { ...styles.badge, ...styles.finishedBadge };
-	const props = { ...base, ...tailwind, className };
+	const computedProps = { ...base, ...props, tailwind, className };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computedProps}>{children}</Div>;
 };
 
-export const ErrorBadge = ({ id, className, children, ...tailwind }: types.BadgeProps) => {
+export const ErrorBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
 	const base = { ...styles.badge, ...styles.errorBadge };
-	const props = { ...base, ...tailwind, className };
+	const computedProps = { ...base, ...props, tailwind, className };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computedProps}>{children}</Div>;
 };
 
-export const OutlineBadge = ({ id, className, children, ...tailwind }: types.BadgeProps) => {
+export const OutlineBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
 	const base = { ...styles.badge, ...styles.outlineBadge };
-	const props = { ...base, ...tailwind, className };
+	const computedProps = { ...base, ...props, tailwind, className };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computedProps}>{children}</Div>;
 };
 
 // Docs:

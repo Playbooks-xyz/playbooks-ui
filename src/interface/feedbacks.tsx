@@ -1,5 +1,5 @@
-import { Font, P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
+import { Font, P, Small } from 'interface/fonts';
 import { Icon } from 'interface/icons';
 import * as styles from 'styles/feedback-styles';
 import * as types from 'types/feedback-types';

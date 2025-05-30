@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { Div } from 'interface/html';
 import { Fade } from 'components/fade-wrapper';
 import { useInterface } from 'contexts/interface-context';
 import { useKeyPress } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { H4 } from 'interface/fonts';
-import { Div } from 'interface/html';
 import * as styles from 'styles/slide-styles';
 import * as types from 'types/slide-types';
 import { computeSlideAnimation } from 'utils';

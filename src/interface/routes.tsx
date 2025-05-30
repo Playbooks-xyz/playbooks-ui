@@ -7,10 +7,10 @@ import * as styles from 'styles/route-styles';
 import * as types from 'types/route-types';
 import { capitalize } from 'utils/transforms';
 
-export const Route = ({ id, name = 'Route', seo, style, className, children, ...tailwind }: types.RouteProps) => {
+export const Route = ({ id, name = 'Route', seo, tailwind, className, children, ...props }: types.RouteProps) => {
 	const base = styles.route;
-	const props = { ...base, ...tailwind, className, name };
-	const { meta } = useInterface();
+	const computedProps = { ...base, ...props, tailwind, className, name };
+	const interfaceContext = useInterface();
 	const router = useRouter();
 
 	// Computed
@@ -21,14 +21,14 @@ export const Route = ({ id, name = 'Route', seo, style, className, children, ...
 			.map(v => capitalize(v))
 			.join(' '),
 	);
-	const computedTitle = meta?.title + formattedPaths.join(' | ');
-	const computedUrl = meta?.baseUrl + router.asPath.split('?')[0];
-	const computedProps = { ...meta, ...seo };
+	const computedTitle = interfaceContext.meta?.title + formattedPaths.join(' | ');
+	const computedUrl = interfaceContext.meta?.baseUrl + router.asPath.split('?')[0];
+	const headProps = { ...interfaceContext.meta, ...seo };
 
 	// Render
 	return (
-		<Div style={style} {...props}>
-			<Head {...computedProps} title={seo?.title || computedTitle} url={computedUrl} />
+		<Div {...computedProps}>
+			<Head {...headProps} title={seo?.title || computedTitle} url={computedUrl} />
 			{children}
 		</Div>
 	);

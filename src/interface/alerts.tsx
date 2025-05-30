@@ -1,5 +1,5 @@
-import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
+import { Font, P } from 'interface/fonts';
 import { FarIcon } from 'interface/icons';
 import * as styles from 'styles/alert-styles';
 import * as types from 'types/alert-types';
