@@ -96,21 +96,42 @@ export const ToastIcon = ({
 	);
 };
 
-export const ToastTitle = ({ id, name = 'ToastTitle', tailwind, className, children, ...props }: types.ToastTitleProps) => {
+export const ToastTitle = ({
+	id,
+	name = 'ToastTitle',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.ToastTitleProps) => {
 	const base = styles.toastTitle;
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <H6 {...computed}>{children}</H6>;
 };
 
-export const ToastBody = ({ id, name = 'ToastBody', tailwind, className, children, ...props }: types.ToastBodyProps) => {
+export const ToastBody = ({
+	id,
+	name = 'ToastBody',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.ToastBodyProps) => {
 	const base = styles.toastBody;
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
 };
 
-export const ToastText = ({ id, name = 'ToastText', tailwind, className, children, ...props }: types.ToastTextProps) => {
+export const ToastText = ({
+	id,
+	name = 'ToastText',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.ToastTextProps) => {
 	const base = styles.toastText;
 	const computed = { ...base, ...props, tailwind, className, name };
 

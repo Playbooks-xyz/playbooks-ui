@@ -4,7 +4,14 @@ import { Div } from 'interface/html';
 import * as styles from 'styles/tab-styles';
 import * as types from 'types/tab-types';
 
-export const TabWrapper = ({ id, name = 'TabWrapper', tailwind, className, children, ...props }: types.TabWrapperProps) => {
+export const TabWrapper = ({
+	id,
+	name = 'TabWrapper',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.TabWrapperProps) => {
 	const base = styles.tabWrapper;
 	const computed = { ...base, ...props, tailwind, className, name };
 

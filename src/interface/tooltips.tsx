@@ -112,7 +112,14 @@ export const TooltipBody = ({
 	);
 };
 
-export const TooltipInner = ({ id, name = 'TooltipInner', className, children, tailwind, ...props }: types.TooltipInnerProps) => {
+export const TooltipInner = ({
+	id,
+	name = 'TooltipInner',
+	className,
+	children,
+	tailwind,
+	...props
+}: types.TooltipInnerProps) => {
 	const base = styles.tooltipInner;
 	const computed = { ...base, ...props, tailwind, className, name };
 

@@ -5,7 +5,14 @@ import * as styles from 'styles/pagination-styles';
 import * as types from 'types/pagination-types';
 import { paginationProps, tailwindClassBuilder } from 'utils';
 
-export const Pagination = ({ id, name = 'Pagination', tailwind, className, children, ...props }: types.PaginationProps) => {
+export const Pagination = ({
+	id,
+	name = 'Pagination',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.PaginationProps) => {
 	const base = styles.pagination;
 	const computed = { ...base, ...props, tailwind, className, name };
 

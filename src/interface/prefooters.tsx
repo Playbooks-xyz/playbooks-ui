@@ -4,7 +4,14 @@ import { Section } from 'interface/sections';
 import * as styles from 'styles/prefooter-styles';
 import * as types from 'types/prefooter-types';
 
-export const Prefooter = ({ id, name = 'Prefooter', tailwind, className, children, ...props }: types.PrefooterProps) => {
+export const Prefooter = ({
+	id,
+	name = 'Prefooter',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.PrefooterProps) => {
 	const base = styles.prefooter;
 	const computed = { ...base, ...props, tailwind, className, name };
 

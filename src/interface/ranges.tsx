@@ -20,8 +20,7 @@ export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange, 
 					max={max}
 					trackProps={props}
 					onNext={() => {}}
-					tailwind={tailwind}
-				>
+					tailwind={tailwind}>
 					{children}
 				</RangeSliderTrack>
 			)}
@@ -39,11 +38,20 @@ export const RangeSliders = ({ min = 0, max = 100, step = 1, values, onChange, o
 			values={values}
 			onChange={onChange}
 			renderTrack={({ props, children }) => (
-				<RangeSliderTrack ref={props.ref} values={values} min={min} max={max} trackProps={props} onNext={onNext} tailwind={tailwind}>
+				<RangeSliderTrack
+					ref={props.ref}
+					values={values}
+					min={min}
+					max={max}
+					trackProps={props}
+					onNext={onNext}
+					tailwind={tailwind}>
 					{children}
 				</RangeSliderTrack>
 			)}
-			renderThumb={({ props, isDragged }) => <RangeSliderThumb ref={props.ref} tailwind={tailwind} isDragged={isDragged} {...props} />}
+			renderThumb={({ props, isDragged }) => (
+				<RangeSliderThumb ref={props.ref} tailwind={tailwind} isDragged={isDragged} {...props} />
+			)}
 		/>
 	);
 };

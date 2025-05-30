@@ -31,7 +31,14 @@ export const SlideWrapper = ({
 	);
 };
 
-export const SlideBackdrop = ({ id, name = 'SlideBackdrop', open, onClose, tailwind, ...props }: types.SlideBackdropProps) => {
+export const SlideBackdrop = ({
+	id,
+	name = 'SlideBackdrop',
+	open,
+	onClose,
+	tailwind,
+	...props
+}: types.SlideBackdropProps) => {
 	const base = styles.slideBackdrop;
 	const [fade, setFade] = useState({ display: 'hidden', bgOpacity: '' });
 	const computed = { ...base, ...fade, ...props, tailwind, name };
@@ -129,21 +136,42 @@ export const SlideHeader = ({
 	);
 };
 
-export const SlideTitle = ({ id, name = 'SlideTitle', tailwind, className, children, ...props }: types.SlideTitleProps) => {
+export const SlideTitle = ({
+	id,
+	name = 'SlideTitle',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.SlideTitleProps) => {
 	const base = styles.slideTitle;
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <H4 {...computed}>{children}</H4>;
 };
 
-export const SlideBody = ({ id, name = 'SlideBody', tailwind, className, children, ...props }: types.SlideBodyProps) => {
+export const SlideBody = ({
+	id,
+	name = 'SlideBody',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.SlideBodyProps) => {
 	const base = styles.slideBody;
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
 };
 
-export const SlideFooter = ({ id, name = 'SlideFooter', tailwind, className, children, ...props }: types.SlideFooterProps) => {
+export const SlideFooter = ({
+	id,
+	name = 'SlideFooter',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.SlideFooterProps) => {
 	const base = styles.slideFooter;
 	const computed = { ...base, ...props, tailwind, className, name };
 

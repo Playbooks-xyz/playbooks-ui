@@ -18,7 +18,14 @@ export const Table = ({ id, name = 'Table', tailwind, className, children, ...pr
 	);
 };
 
-export const TableHeader = ({ id, name = 'TableHeader', tailwind, className, children, ...props }: types.TabPropsleHeader) => {
+export const TableHeader = ({
+	id,
+	name = 'TableHeader',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.TabPropsleHeader) => {
 	const base = styles.tableHeader;
 	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
@@ -82,7 +89,14 @@ export const TableHead = ({
 	);
 };
 
-export const TableBody = ({ id, name = 'TableBody', tailwind, className, children, ...props }: types.TabPropsleBody) => {
+export const TableBody = ({
+	id,
+	name = 'TableBody',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.TabPropsleBody) => {
 	const base = styles.tableBody;
 	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 

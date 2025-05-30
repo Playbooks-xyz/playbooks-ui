@@ -3,7 +3,14 @@ import { Div } from 'interface/html';
 import * as styles from 'styles/progress-bar-styles';
 import * as types from 'types/progress-bar-types';
 
-export const ProgressBar = ({ id, name = 'ProgressBar', tailwind, className, children, ...props }: types.ProgressBarProps) => {
+export const ProgressBar = ({
+	id,
+	name = 'ProgressBar',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.ProgressBarProps) => {
 	const base = styles.progressBar;
 	const computed = { ...base, ...props, tailwind, className, name };
 

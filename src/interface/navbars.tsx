@@ -37,7 +37,14 @@ export const NavbarBrand = ({
 	);
 };
 
-export const NavbarList = ({ id, name = 'NavbarList', tailwind, className, children, ...props }: types.NavPropsbarList) => {
+export const NavbarList = ({
+	id,
+	name = 'NavbarList',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.NavPropsbarList) => {
 	const base = styles.navbarList;
 	const computed = { ...base, ...props, tailwind, className, name };
 

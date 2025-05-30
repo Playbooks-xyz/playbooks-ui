@@ -6,7 +6,14 @@ import * as styles from 'styles/switch-styles';
 import * as types from 'types';
 import { tailwindClassBuilder } from 'utils';
 
-export const SwitchGroup = ({ id, name = 'SwitchGroup', tailwind, className, children, ...props }: types.SwitchGroupProps) => {
+export const SwitchGroup = ({
+	id,
+	name = 'SwitchGroup',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.SwitchGroupProps) => {
 	const base = styles.switchGroup;
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -17,7 +24,16 @@ export const SwitchGroup = ({ id, name = 'SwitchGroup', tailwind, className, chi
 	);
 };
 
-export const Switch = ({ id, name = 'Switch', icon, checked, onClick, tailwind, className, ...props }: types.SwitchProps) => {
+export const Switch = ({
+	id,
+	name = 'Switch',
+	icon,
+	checked,
+	onClick,
+	tailwind,
+	className,
+	...props
+}: types.SwitchProps) => {
 	const base = styles.switchBase;
 	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
@@ -45,7 +61,14 @@ export const SwitchBackdrop = ({
 	return <Span aria-hidden='true' {...computed} />;
 };
 
-export const SwitchInner = ({ id, name = 'SwitchInner', checked, tailwind, className, ...props }: types.SwitchInnerProps) => {
+export const SwitchInner = ({
+	id,
+	name = 'SwitchInner',
+	checked,
+	tailwind,
+	className,
+	...props
+}: types.SwitchInnerProps) => {
 	const base = {
 		...styles.switchInner,
 		bgColor: checked ? 'bg-gray-100 dark:bg-gray-600' : 'bg-gray-100 dark:bg-gray-800',

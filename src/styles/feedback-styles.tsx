@@ -15,6 +15,7 @@ export const feedbackHeader = {
 
 export const feedbackIcon = {
 	color: 'text-gray-500',
+	fontSize: 'text-2xl',
 };
 
 export const feedbackBody = {
