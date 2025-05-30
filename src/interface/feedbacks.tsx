@@ -5,24 +5,32 @@ import * as styles from 'styles/feedback-styles';
 import * as types from 'types/feedback-types';
 import { tailwindClassBuilder } from 'utils';
 
-export const Feedback = ({ id, name = 'Feedback', className, children, ...tailwind }: types.FeedbackProps) => {
+export const Feedback = ({
+	id,
+	name = 'Feedback',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.FeedbackProps) => {
 	const base = styles.feedback;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const FeedbackHeader = ({
 	id,
 	name = 'FeedbackHeader',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.FeedbackHeaderProps) => {
 	const base = styles.feedbackHeader;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const FeedbackIcon = ({
@@ -30,12 +38,12 @@ export const FeedbackIcon = ({
 	name = 'FeedbackIcon',
 	type = 'fad',
 	icon,
-	fontSize = 'text-3xl',
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.FeedbackIconProps) => {
-	const base = { ...styles.feedbackIcon, fontSize };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const base = { ...styles.feedbackIcon };
+	const classes = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return <Icon type={type} icon={icon} className={classes} />;
 };
@@ -43,42 +51,45 @@ export const FeedbackIcon = ({
 export const FeedbackBody = ({
 	id,
 	name = 'FeedbackBody',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.FeedbackBodyProps) => {
 	const base = styles.feedbackBody;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const FeedbackPretitle = ({
 	id,
 	name = 'SectionPretitle',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.FeedbackTitleProps) => {
 	const base = styles.feedbackPretitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Small {...props}>{children}</Small>;
+	return <Small {...computed}>{children}</Small>;
 };
 
 export const FeedbackTitle = ({
 	id,
 	name = 'FeedbackTitle',
 	size = 'h5',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.FeedbackTitleProps) => {
 	const base = styles.feedbackTitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Font size={size} {...props}>
+		<Font size={size} {...computed}>
 			{children}
 		</Font>
 	);
@@ -87,27 +98,29 @@ export const FeedbackTitle = ({
 export const FeedbackText = ({
 	id,
 	name = 'FeedbackText',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.FeedbackTextProps) => {
 	const base = styles.feedbackText;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
 export const FeedbackActions = ({
 	id,
 	name = 'FeedbackActions',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.FeedbackActionsProps) => {
 	const base = styles.feedbackActions;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 // Docs

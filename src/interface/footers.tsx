@@ -7,12 +7,12 @@ import * as styles from 'styles/footer-styles';
 import * as types from 'types/footer-types';
 import { tailwindClassBuilder } from 'utils';
 
-export const Footer = ({ id, name = 'Footer', className, children, style, ...tailwind }: types.FooterProps) => {
+export const Footer = ({ id, name = 'Footer', tailwind, className, children, style, ...props }: types.FooterProps) => {
 	const base = styles.footer;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<HTML.Footer name={name} className={classes} style={style}>
+		<HTML.Footer name={name} className={computed} style={style}>
 			{children}
 		</HTML.Footer>
 	);
@@ -21,36 +21,45 @@ export const Footer = ({ id, name = 'Footer', className, children, style, ...tai
 export const FooterHeader = ({
 	id,
 	name = 'FooterHeader',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.FooterHeaderProps) => {
 	const base = styles.footerHeader;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
-export const FooterBody = ({ id, name = 'FooterBody', className, children, ...tailwind }: types.FooterBodyProps) => {
+export const FooterBody = ({
+	id,
+	name = 'FooterBody',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.FooterBodyProps) => {
 	const base = styles.footerBody;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const FooterTitle = ({
 	id,
 	name = 'FooterTitle',
 	size = 'h6',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.FooterTitleProps) => {
 	const base = styles.footerTitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Font size={size} {...props}>
+		<Font size={size} {...computed}>
 			{children}
 		</Font>
 	);
@@ -60,76 +69,88 @@ export const FooterText = ({
 	id,
 	name = 'FooterText',
 	size,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.FooterTextProps) => {
 	const base = styles.footerText;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
-export const FooterList = ({ id, name = 'FooterList', className, children, ...tailwind }: types.FooterListProps) => {
+export const FooterList = ({
+	id,
+	name = 'FooterList',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.FooterListProps) => {
 	const base = styles.footerList;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Ul {...props}>{children}</Ul>;
+	return <Ul {...computed}>{children}</Ul>;
 };
 
 export const FooterItem = ({
 	id,
 	name = 'FooterItem',
 	spacing = '',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.FooterItemProps) => {
 	const base = styles.footerItem;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Li {...props}>{children}</Li>;
+	return <Li {...computed}>{children}</Li>;
 };
 
 export const FooterBtn = ({
 	id,
 	name = 'FooterBtn',
 	variant = 'text',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.FooterBtnProps) => {
 	const base = styles.footerBtn;
-	const props = { ...base, ...tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <Btn variant={variant} {...props} />;
+	return <Btn variant={variant} {...computed} />;
 };
 
 export const FooterLink = ({
 	id,
 	name = 'FooterLink',
 	variant = 'text',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.FooterLinkProps) => {
 	const base = styles.footerLink;
-	const props = { ...base, ...tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <Link variant={variant} {...props} />;
+	return <Link variant={variant} {...computed} />;
 };
 
 export const FooterFooter = ({
 	id,
 	name = 'FooterFooter',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.FooterBodyProps) => {
 	const base = styles.footerFooter;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 // Docs

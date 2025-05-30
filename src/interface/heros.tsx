@@ -6,26 +6,36 @@ import * as styles from 'styles/hero-styles';
 import * as types from 'types/hero-types';
 import { computeHeroSize, computeThumbnailSize, tailwindClassBuilder } from 'utils';
 
-export const Hero = ({ id, ref, name = 'Hero', size, className, children, style, ...tailwind }: types.HeroProps) => {
+export const Hero = ({
+	id,
+	ref,
+	name = 'Hero',
+	size,
+	tailwind,
+	className,
+	children,
+	style,
+	...props
+}: types.HeroProps) => {
 	const base = {
 		...styles.hero,
 		size: computeHeroSize(size),
 	};
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<HTML.Header ref={ref} name={name} className={classes} style={style}>
+		<HTML.Header ref={ref} name={name} className={computed} style={style}>
 			{children}
 		</HTML.Header>
 	);
 };
 
-export const HeroBg = ({ id, ref, name = 'HeroBg', className, children, ...tailwind }: types.HeroBgProps) => {
+export const HeroBg = ({ id, ref, name = 'HeroBg', tailwind, className, children, ...props }: types.HeroBgProps) => {
 	const base = styles.heroBg;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Div ref={ref} {...props}>
+		<Div ref={ref} {...computed}>
 			{children}
 		</Div>
 	);
@@ -37,17 +47,18 @@ export const HeroImg = ({
 	alt = 'thumbnail',
 	size = 'lg',
 	src,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.HeroImgProps) => {
 	const base = {
 		...styles.heroImg,
 		size: computeThumbnailSize(size),
 	};
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Div {...props}>
+		<Div {...computed}>
 			<Img src={src} alt={alt} width='w-full' />
 		</Div>
 	);
@@ -58,48 +69,58 @@ export const HeroIcon = ({
 	name = 'HeroIcon',
 	size = 'lg',
 	icon = 'code',
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.HeroIconProps) => {
 	const base = {
 		...styles.heroIcon,
 		size: computeThumbnailSize(size),
 	};
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Div {...props}>
+		<Div {...computed}>
 			<FadIcon icon={icon} fontSize='text-3xl' />
 		</Div>
 	);
 };
 
-export const HeroBody = ({ id, name = 'HeroBody', className, children, ...tailwind }: types.HeroBodyProps) => {
+export const HeroBody = ({ id, name = 'HeroBody', tailwind, className, children, ...props }: types.HeroBodyProps) => {
 	const base = styles.heroBody;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const HeroPretitle = ({
 	id,
 	name = 'HeroPretitle',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.HeroPretitleProps) => {
 	const base = styles.heroPretitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
-export const HeroTitle = ({ id, name = 'HeroTitle', size, className, children, ...tailwind }: types.HeroTitleProps) => {
+export const HeroTitle = ({
+	id,
+	name = 'HeroTitle',
+	size,
+	tailwind,
+	className,
+	children,
+	...props
+}: types.HeroTitleProps) => {
 	const base = styles.heroTitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Font size={size || 'h1'} {...props}>
+		<Font size={size || 'h1'} {...computed}>
 			{children}
 		</Font>
 	);
@@ -109,32 +130,40 @@ export const HeroSubtitle = ({
 	id,
 	name = 'HeroSubtitle',
 	size = 'h5',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.HeroSubtitleProps) => {
 	const base = styles.heroSubtitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Font size={size} {...props}>
+		<Font size={size} {...computed}>
 			{children}
 		</Font>
 	);
 };
 
-export const HeroText = ({ id, name = 'HeroText', className, children, ...tailwind }: types.HeroTextProps) => {
+export const HeroText = ({ id, name = 'HeroText', tailwind, className, children, ...props }: types.HeroTextProps) => {
 	const base = styles.heroText;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
-export const HeroActions = ({ id, name = 'HeroActions', className, children, ...tailwind }: types.HeroActionsProps) => {
+export const HeroActions = ({
+	id,
+	name = 'HeroActions',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.HeroActionsProps) => {
 	const base = styles.heroActions;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 // Docs

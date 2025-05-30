@@ -9,15 +9,16 @@ export const ModalLoader = ({
 	name = 'ModalLoader',
 	title = 'Processing Order',
 	message = 'Give us a second...',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.PageLoaderProps) => {
 	const base = styles.modalLoader;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Div {...props}>
+		<Div {...computed}>
 			<Span>
 				<Oval size='w-14 h-14' className='stroke-gray-600 dark:stroke-gray-300  mb-4' />
 				<Div spacing='space-y-1' className='text-center'>
@@ -35,20 +36,21 @@ export const PageLoader = ({
 	name = 'PageLoader',
 	title = 'Hang Tight',
 	message = 'Loading dashboard...',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.PageLoaderProps) => {
 	const base = styles.pageLoader;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Div {...props}>
+		<Div {...computed}>
 			<Span display='flex-start' space='space-x-8'>
 				<Oval size='w-12 h-12' className='stroke-gray-600 dark:stroke-gray-300' />
 				<Div align='text-left'>
 					{title && (
-						<Font size='h5' fontWeight='font-bold'>
+						<Font size='h5' fontWeight='font-bold' tailwind={{}}>
 							{title}
 						</Font>
 					)}
@@ -65,15 +67,16 @@ export const SectionLoader = ({
 	name = 'SectionLoader',
 	title = 'Loading',
 	message = 'Give us a second...',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.SectionLoaderProps) => {
 	const base = styles.sectionLoader;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Div {...props}>
+		<Div {...computed}>
 			<Oval size='w-12 h-12' className='stroke-gray-600 dark:stroke-gray-300 mb-4' />
 			<Div spacing='space-y-1' className='text-center'>
 				{title && <H5 fontWeight='font-bold'>{title}</H5>}

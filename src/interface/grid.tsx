@@ -3,24 +3,32 @@ import * as styles from 'styles/grid-styles';
 import * as types from 'types/grid-types';
 import { computeCol, computeContainer, computeGrid } from 'utils';
 
-export const Container = ({ id, name = 'Container', size, className, children, ...tailwind }: types.ContainerProps) => {
+export const Container = ({
+	id,
+	name = 'Container',
+	size,
+	tailwind,
+	className,
+	children,
+	...props
+}: types.ContainerProps) => {
 	const base = {
 		...styles.container,
 		size: computeContainer(size),
 	};
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
-export const Grid = ({ id, name = 'Grid', cols = '12', className, children, ...tailwind }: types.GridProps) => {
+export const Grid = ({ id, name = 'Grid', cols = '12', tailwind, className, children, ...props }: types.GridProps) => {
 	const base = {
 		...styles.grid,
 		cols: computeGrid(cols),
 	};
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const Col = ({
@@ -32,9 +40,10 @@ export const Col = ({
 	lg,
 	xl,
 	xxl,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.ColProps) => {
 	const base = {
 		span: computeCol('span', span),
@@ -44,9 +53,9 @@ export const Col = ({
 		xl: computeCol('xl', xl),
 		xxl: computeCol('xxl', xxl),
 	};
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 // Docs

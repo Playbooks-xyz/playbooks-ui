@@ -11,23 +11,30 @@ import * as styles from 'styles/form-styles';
 import * as types from 'types/form-types';
 import { checkboxProps, computeInputSize, inputProps, rangeProps, tailwindClassBuilder } from 'utils';
 
-export const Form = ({ id, name = 'Form', onSubmit, className, children, ...tailwind }: types.FormProps) => {
+export const Form = ({ id, name = 'Form', onSubmit, tailwind, className, children, ...props }: types.FormProps) => {
 	const base = styles.form;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<HTML.Form onSubmit={onSubmit} name={name} className={classes}>
+		<HTML.Form onSubmit={onSubmit} name={name} className={computed}>
 			{children}
 		</HTML.Form>
 	);
 };
 
-export const FormGroup = ({ id, name = 'FormGroup', className, children, ...tailwind }: types.FormGroupProps) => {
+export const FormGroup = ({
+	id,
+	name = 'FormGroup',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.FormGroupProps) => {
 	const base = styles.formGroup;
-	const props = { ...base, ...tailwind, name, className };
+	const computed = { ...base, ...props, tailwind, name, className };
 
 	return (
-		<Div id={id} {...props}>
+		<Div id={id} {...computed}>
 			{children}
 		</Div>
 	);
@@ -38,15 +45,16 @@ export const FormLabel = ({
 	name = 'FormLabel',
 	htmlFor,
 	onClick,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.FormLabelProps) => {
 	const base = styles.formLabel;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<HTML.Label id={id} name={name} htmlFor={htmlFor} onClick={onClick ? onClick : null} className={classes}>
+		<HTML.Label id={id} name={name} htmlFor={htmlFor} onClick={onClick} className={computed}>
 			{children}
 		</HTML.Label>
 	);
@@ -58,11 +66,12 @@ export const FormCheckbox = ({
 	checked = false,
 	onChange,
 	readOnly,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.FormCheckboxProps) => {
 	const base = checkboxProps(checked);
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Input
@@ -72,7 +81,7 @@ export const FormCheckbox = ({
 			checked={checked}
 			onChange={onChange}
 			readOnly={readOnly}
-			className={classes}
+			className={computed}
 		/>
 	);
 };
@@ -86,11 +95,12 @@ export const FormRange = ({
 	step,
 	onChange,
 	readOnly,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.FormRangeProps) => {
 	const base = rangeProps();
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Input
@@ -103,7 +113,7 @@ export const FormRange = ({
 			step={step}
 			onChange={onChange}
 			readOnly={readOnly}
-			className={classes}
+			className={computed}
 		/>
 	);
 };
@@ -122,11 +132,12 @@ export const FormInput = ({
 	onBlur,
 	onClick,
 	readOnly,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.FormInputProps) => {
 	const base = { ...inputProps(variant), ...computeInputSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Input
@@ -142,7 +153,7 @@ export const FormInput = ({
 			onClick={onClick}
 			readOnly={readOnly}
 			autoComplete='off'
-			className={classes}
+			className={computed}
 		/>
 	);
 };
@@ -158,11 +169,12 @@ export const FormMaskInput = ({
 	onChange,
 	onBlur,
 	readOnly,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.FormInputPropsMask) => {
 	const base = { ...inputProps(variant), ...computeInputSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<MaskedInput
@@ -173,7 +185,7 @@ export const FormMaskInput = ({
 			onChange={onChange}
 			onBlur={onBlur}
 			readOnly={readOnly}
-			className={classes}
+			className={computed}
 		/>
 	);
 };
@@ -189,11 +201,12 @@ export const FormCurrencyInput = ({
 	onChange,
 	onBlur,
 	readOnly,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.FormInputPropsCurrency) => {
 	const base = { ...inputProps(variant), ...computeInputSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<CurrencyInputWrapper
@@ -203,7 +216,7 @@ export const FormCurrencyInput = ({
 			placeholder={placeholder}
 			onChange={onChange}
 			readOnly={readOnly}
-			className={classes}
+			className={computed}
 		/>
 	);
 };
@@ -216,19 +229,20 @@ export const FormDivInput = ({
 	variant,
 	placeholder,
 	onClick,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.FormInputProps) => {
 	const base = {
 		...inputProps(variant),
 		...computeInputSize(size),
 		...styles.formDivInput,
 	};
-	const props = { ...base, ...tailwind, name, className };
+	const computed = { ...base, ...props, tailwind, name, className };
 
 	return (
-		<Div id={id} tabIndex='0' onClick={onClick} {...props}>
+		<Div id={id} tabIndex='0' onClick={onClick} {...computed}>
 			{children ? children : <Span color=''>{placeholder}</Span>}
 		</Div>
 	);
@@ -240,13 +254,14 @@ export const FormFileInput = ({
 	value,
 	placeholder,
 	onChange,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.FormFileProps) => {
 	const base = styles.formFileInput;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
-	return <input placeholder={placeholder} value={value} onChange={onChange} className={classes} />;
+	return <input placeholder={placeholder} value={value} onChange={onChange} className={computed} />;
 };
 
 export const FormLocationInput = ({
@@ -262,11 +277,12 @@ export const FormLocationInput = ({
 	onSelect,
 	onBlur,
 	readOnly,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.FormLocationPropsInput) => {
 	const base = { ...inputProps(variant), ...computeInputSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 	const ref = useRef(null);
 
 	// Hooks
@@ -287,7 +303,7 @@ export const FormLocationInput = ({
 				onBlur={onBlur}
 				onChange={onChange}
 				readOnly={readOnly}
-				className={classes}
+				className={computed}
 			/>
 		</GoogleAutocompleteWrapper>
 	);
@@ -303,11 +319,12 @@ export const FormPhoneInput = ({
 	onChange,
 	onBlur,
 	readOnly,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.FormInputProps) => {
 	const base = { ...inputProps(variant), ...computeInputSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<PhoneInputWrapper
@@ -317,7 +334,7 @@ export const FormPhoneInput = ({
 			onBlur={onBlur}
 			onChange={onChange}
 			readOnly={readOnly}
-			className={classes}
+			className={computed}
 		/>
 	);
 };
@@ -332,14 +349,15 @@ export const FormSelect = ({
 	placeholder,
 	disabled,
 	onChange,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.FormSelectProps) => {
 	const base = { ...inputProps(variant), ...computeInputSize(size), cursor: 'cursor-pointer' };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<HTML.Select value={value} disabled={disabled} onChange={onChange} className={classes}>
+		<HTML.Select value={value} disabled={disabled} onChange={onChange} className={computed}>
 			<HTML.Option value='' disabled className='gray-500 dark:gray-400'>
 				{placeholder}
 			</HTML.Option>
@@ -352,11 +370,11 @@ export const FormSelect = ({
 	);
 };
 
-export const FormText = ({ id, name = 'FormText', className, children, ...tailwind }: types.FormTextProps) => {
+export const FormText = ({ id, name = 'FormText', tailwind, className, children, ...props }: types.FormTextProps) => {
 	const base = styles.formText;
-	const props = { ...base, ...tailwind, name, className };
+	const computed = { ...base, ...props, tailwind, name, className };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const FormTextArea = ({
@@ -369,11 +387,12 @@ export const FormTextArea = ({
 	placeholder,
 	onChange,
 	readOnly,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.FormTextPropsArea) => {
 	const base = { ...inputProps(variant), ...computeInputSize(size) };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.TextArea
@@ -383,7 +402,7 @@ export const FormTextArea = ({
 			placeholder={placeholder}
 			onChange={onChange}
 			readOnly={readOnly}
-			className={classes}
+			className={computed}
 		/>
 	);
 };

@@ -4,72 +4,72 @@ import * as styles from 'styles/icon-styles';
 import * as types from 'types/icon-types';
 import { tailwindClassBuilder } from 'utils';
 
-export const Icon = ({ id, name = 'Icon', type, icon, className, ...tailwind }: types.IconProps) => {
-	const props = { type, icon, className, ...tailwind };
+export const Icon = ({ id, name = 'Icon', type, icon, tailwind, className, ...props }: types.IconProps) => {
+	const computed = { type, icon, tailwind, className, ...props };
 
 	switch (type) {
 		case 'fab':
-			return <FabIcon {...props} />;
+			return <FabIcon {...computed} />;
 
 		case 'fad':
-			return <FadIcon {...props} />;
+			return <FadIcon {...computed} />;
 
 		case 'fal':
-			return <FalIcon {...props} />;
+			return <FalIcon {...computed} />;
 
 		case 'far':
-			return <FarIcon {...props} />;
+			return <FarIcon {...computed} />;
 
 		case 'fas':
-			return <FasIcon {...props} />;
+			return <FasIcon {...computed} />;
 
 		case 'wrapped-fab':
-			return <WrappedFabIcon {...props} />;
+			return <WrappedFabIcon {...computed} />;
 
 		case 'wrapped-fad':
-			return <WrappedFadIcon {...props} />;
+			return <WrappedFadIcon {...computed} />;
 
 		case 'wrapped-far':
-			return <WrappedFarIcon {...props} />;
+			return <WrappedFarIcon {...computed} />;
 
 		default:
-			return <FarIcon {...props} />;
+			return <FarIcon {...computed} />;
 	}
 };
 
-export const FabIcon = ({ id, name = 'FabIcon', icon, className, ...tailwind }: types.IconProps) => {
+export const FabIcon = ({ id, name = 'FabIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const base = styles.icon;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
-	return <FaWrapper type='fab' icon={icon} className={classes} />;
+	return <FaWrapper type='fab' icon={icon} className={computed} />;
 };
 
-export const FadIcon = ({ id, name = 'FadIcon', icon, className, ...tailwind }: types.IconProps) => {
+export const FadIcon = ({ id, name = 'FadIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const base = styles.icon;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
-	return <FaWrapper type='fad' icon={icon} className={classes} />;
+	return <FaWrapper type='fad' icon={icon} className={computed} />;
 };
 
-export const FalIcon = ({ id, name = 'FalIcon', icon, className, ...tailwind }: types.IconProps) => {
+export const FalIcon = ({ id, name = 'FalIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const base = styles.icon;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
-	return <FaWrapper type='fal' icon={icon} className={classes} />;
+	return <FaWrapper type='fal' icon={icon} className={computed} />;
 };
 
-export const FarIcon = ({ id, name = 'FarIcon', icon, className, ...tailwind }: types.IconProps) => {
+export const FarIcon = ({ id, name = 'FarIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const base = styles.icon;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
-	return <FaWrapper type='far' icon={icon} className={classes} />;
+	return <FaWrapper type='far' icon={icon} className={computed} />;
 };
 
-export const FasIcon = ({ id, name = 'FasIcon', icon, className, ...tailwind }: types.IconProps) => {
+export const FasIcon = ({ id, name = 'FasIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const base = styles.icon;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
-	return <FaWrapper type='fas' icon={icon} className={classes} />;
+	return <FaWrapper type='fas' icon={icon} className={computed} />;
 };
 
 export const WrappedFabIcon = ({
@@ -77,15 +77,16 @@ export const WrappedFabIcon = ({
 	name = 'WrappedFabIcon',
 	icon,
 	wrapper,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.IconProps) => {
 	const base = { ...styles.wrappedIcon, ...wrapper };
-	const props = { ...base, className };
+	const computed = { ...base, ...props, className };
 
 	return (
-		<Div {...props}>
-			<FabIcon icon={icon} {...tailwind} />
+		<Div {...computed}>
+			<FabIcon icon={icon} tailwind={tailwind} />
 		</Div>
 	);
 };
@@ -95,15 +96,16 @@ export const WrappedFadIcon = ({
 	name = 'WrappedFadIcon',
 	icon,
 	wrapper,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.IconProps) => {
 	const base = { ...styles.wrappedIcon, ...wrapper };
-	const props = { ...base, className };
+	const computed = { ...base, ...props, className };
 
 	return (
-		<Div {...props}>
-			<FadIcon icon={icon} {...tailwind} />
+		<Div {...computed}>
+			<FadIcon icon={icon} tailwind={tailwind} />
 		</Div>
 	);
 };
@@ -113,15 +115,16 @@ export const WrappedFarIcon = ({
 	name = 'WrappedFarIcon',
 	icon,
 	wrapper,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.IconProps) => {
 	const base = { ...styles.wrappedIcon, ...wrapper };
-	const props = { ...base, className };
+	const computed = { ...base, ...props, className };
 
 	return (
-		<Div {...props}>
-			<FarIcon icon={icon} {...tailwind} />
+		<Div {...computed}>
+			<FarIcon icon={icon} tailwind={tailwind} />
 		</Div>
 	);
 };

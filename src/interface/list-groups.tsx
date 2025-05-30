@@ -2,18 +2,25 @@ import { Li, Ul } from 'interface/html';
 import * as styles from 'styles/list-group-styles';
 import * as types from 'types/list-group-types';
 
-export const ListGroup = ({ id, name = 'ListGroup', className, children, ...tailwind }: types.LiPropsstGroup) => {
+export const ListGroup = ({
+	id,
+	name = 'ListGroup',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.LiPropsstGroup) => {
 	const base = styles.listGroup;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Ul {...props}>{children}</Ul>;
+	return <Ul {...computed}>{children}</Ul>;
 };
 
-export const ListItem = ({ id, name = 'ListItem', className, children, ...tailwind }: types.LiPropsstItem) => {
+export const ListItem = ({ id, name = 'ListItem', tailwind, className, children, ...props }: types.LiPropsstItem) => {
 	const base = styles.listItem;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Li {...props}>{children}</Li>;
+	return <Li {...computed}>{children}</Li>;
 };
 
 // Docs

@@ -15,16 +15,17 @@ export const ModalWrapper = ({
 	name = 'ModalWrapper',
 	open,
 	onClose,
+	tailwind,
 	className,
 	children,
-	tailwind,
+	...props
 }: types.ModalWrapperProps) => {
 	const base = styles.modalWrapper;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
 		<Fragment>
-			<Div {...props}>
+			<Div {...computed}>
 				<Div align='text-center' height='h-full' spacing='mx-auto'>
 					{children}
 				</Div>
@@ -34,10 +35,17 @@ export const ModalWrapper = ({
 	);
 };
 
-export const ModalBackdrop = ({ id, name = 'ModalBackdrop', open, onClose, tailwind }: types.ModalBackdropProps) => {
+export const ModalBackdrop = ({
+	id,
+	name = 'ModalBackdrop',
+	open,
+	onClose,
+	tailwind,
+	...props
+}: types.ModalBackdropProps) => {
 	const base = styles.modalBackdrop;
 	const [fade, setFade] = useState({ display: 'hidden', bgOpacity: '' });
-	const props = { ...base, ...fade, ...tailwind, name };
+	const computed = { ...base, ...props, ...fade, tailwind, name };
 	const ref = useRef(null);
 
 	return (
@@ -49,15 +57,24 @@ export const ModalBackdrop = ({ id, name = 'ModalBackdrop', open, onClose, tailw
 			onEntered={() => setFade({ display: '', bgOpacity: 'bg-opacity-[85%] dark:bg-opacity-[85%]' })}
 			onExiting={() => setFade({ display: '', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}
 			onExited={() => setFade({ display: 'hidden', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}>
-			<Div ref={ref} onClick={onClose} {...props} />
+			<Div ref={ref} onClick={onClose} {...computed} />
 		</Fade>
 	);
 };
 
-export const Modal = ({ id, name = 'Modal', open, onClose, className, children, tailwind }: types.ModalProps) => {
+export const Modal = ({
+	id,
+	name = 'Modal',
+	open,
+	onClose,
+	tailwind,
+	className,
+	children,
+	...props
+}: types.ModalProps) => {
 	const base = styles.modal;
 	const [fade, setFade] = useState('hidden');
-	const props = { ...base, ...tailwind, fade, className, name };
+	const computed = { ...base, ...props, tailwind, fade, className, name };
 	const { ref, createPortal, toggleScroll } = useInterface();
 	const fadeRef = useRef(null);
 
@@ -87,7 +104,7 @@ export const Modal = ({ id, name = 'Modal', open, onClose, className, children, 
 					onExiting={() => setFade('opacity-0 scale-90')}
 					onExited={() => setFade('hidden')}>
 					<ModalWrapper open={open} onClose={onClose} tailwind={tailwind?.wrapper}>
-						<Div ref={fadeRef} {...props}>
+						<Div ref={fadeRef} {...computed}>
 							{children}
 						</Div>
 					</ModalWrapper>
@@ -101,15 +118,16 @@ export const ModalHeader = ({
 	id,
 	name = 'ModalHeader',
 	onClose,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.ModalHeaderProps) => {
 	const base = styles.modalHeader;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Div {...props}>
+		<Div {...computed}>
 			<Span>{children}</Span>
 			{onClose && <AccentBtn alt='close' size='icon' icon='xmark' fontSize='text-xl' onClick={onClose} />}
 		</Div>
@@ -120,42 +138,59 @@ export const ModalTitle = ({
 	id,
 	name = 'ModalTitle',
 	size,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.ModalTitleProps) => {
 	const base = { ...styles.modalTitle, size: size || 'h4' };
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Font {...props}>{children}</Font>;
+	return <Font {...computed}>{children}</Font>;
 };
 
 export const ModalSubtitle = ({
 	id,
 	name = 'ModalSubtitle',
 	size = 'p',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.ModalSubtitleProps) => {
 	const base = styles.modalSubtitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Font {...props}>{children}</Font>;
+	return <Font {...computed}>{children}</Font>;
 };
 
-export const ModalBody = ({ id, name = 'ModalBody', size, className, children, ...tailwind }: types.ModalBodyProps) => {
+export const ModalBody = ({
+	id,
+	name = 'ModalBody',
+	size,
+	tailwind,
+	className,
+	children,
+	...props
+}: types.ModalBodyProps) => {
 	const base = { ...styles.modalBody, size: computeSectionSize(size) };
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
-export const ModalFooter = ({ id, name = 'ModalFooter', className, children, ...tailwind }: types.ModalFooterProps) => {
+export const ModalFooter = ({
+	id,
+	name = 'ModalFooter',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.ModalFooterProps) => {
 	const base = styles.modalFooter;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 // Docs

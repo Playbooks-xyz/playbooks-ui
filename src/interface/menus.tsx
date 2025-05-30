@@ -11,9 +11,9 @@ import * as styles from 'styles/menu-styles';
 import * as types from 'types/menu-types';
 import { tailwindClassBuilder } from 'utils';
 
-export const Menu = ({ id, name = 'Menu', open, onClose, className, children, ...tailwind }: types.MenuProps) => {
+export const Menu = ({ id, name = 'Menu', open, onClose, tailwind, className, children, ...props }: types.MenuProps) => {
 	const base = styles.menu;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 	const { toggleScroll } = useInterface();
 	const ref = useRef(null);
 
@@ -41,7 +41,7 @@ export const Menu = ({ id, name = 'Menu', open, onClose, className, children, ..
 	// Render
 	return (
 		<Fragment>
-			<Div id={id} ref={ref} {...props}>
+			<Div id={id} ref={ref} {...computed}>
 				{children}
 			</Div>
 			<MenuBackdrop open={open} onClose={onClose} />
@@ -54,13 +54,14 @@ export const MenuBackdrop = ({
 	name = 'MenuBackdrop',
 	open,
 	onClose,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.MenuBackdropProps) => {
 	const base = styles.menuBackdrop;
 	const [fade, setFade] = useState({ display: 'hidden', bgOpacity: '' });
-	const props = { ...base, ...tailwind, ...fade, className, name };
+	const computed = { ...base, ...props, tailwind, ...fade, className, name };
 	const ref = useRef(null);
 
 	return (
@@ -72,7 +73,7 @@ export const MenuBackdrop = ({
 			onEntered={() => setFade({ display: '', bgOpacity: 'bg-opacity-[85%] dark:bg-opacity-[85%]' })}
 			onExiting={() => setFade({ display: '', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}
 			onExited={() => setFade({ display: 'hidden', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}>
-			<Div ref={ref} onClick={onClose} {...props}>
+			<Div ref={ref} onClick={onClose} {...computed}>
 				{children}
 			</Div>
 		</Fade>
@@ -85,27 +86,28 @@ export const MenuToggle = ({
 	alt = 'toggle',
 	icon = 'chevron-down',
 	onClick,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.MenuToggleProps) => {
 	const base = { display: 'flex-between', space: 'space-x-4' };
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<AccentBtn alt={alt} nextIcon={icon} onClick={onClick} {...props}>
+		<AccentBtn alt={alt} nextIcon={icon} onClick={onClick} {...computed}>
 			{children}
 		</AccentBtn>
 	);
 };
 
-export const MenuMenu = ({ id, name = 'MenuMenu', open, className, children, ...tailwind }: types.MenuMenuProps) => {
+export const MenuMenu = ({ id, name = 'MenuMenu', open, tailwind, className, children, ...props }: types.MenuMenuProps) => {
 	const base = styles.menuMenu;
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<MenuMenuWrapper open={open}>
-			<div role='menu' aria-orientation='vertical' aria-labelledby='menu-button' tabIndex={-1} className={classes}>
+			<div role='menu' aria-orientation='vertical' aria-labelledby='menu-button' tabIndex={-1} className={computed}>
 				{children}
 			</div>
 		</MenuMenuWrapper>
@@ -116,13 +118,14 @@ export const MenuMenuWrapper = ({
 	id,
 	name = 'MenuMenuWrapper',
 	open,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.MenuMenuProps) => {
 	const base = styles.menuMenuWrapper;
 	const [animation, setAnimation] = useState('opacity-0 scale-90 -translate-y-4');
-	const props = { ...base, ...tailwind, animation, className };
+	const computed = { ...base, ...props, tailwind, animation, className };
 	const ref = useRef(null);
 
 	return (
@@ -132,52 +135,53 @@ export const MenuMenuWrapper = ({
 			timeout={{ enter: 0, exit: 200 }}
 			onEntered={() => setAnimation('opacity-100 translate-y-0')}
 			onExiting={() => setAnimation('opacity-0 -translate-y-4')}>
-			<Div ref={ref} {...props}>
+			<Div ref={ref} {...computed}>
 				{children}
 			</Div>
 		</Fade>
 	);
 };
 
-export const MenuBlock = ({ id, name = 'MenuBlock', className, children, ...tailwind }: types.MenuListProps) => {
+export const MenuBlock = ({ id, name = 'MenuBlock', tailwind, className, children, ...props }: types.MenuListProps) => {
 	const base = styles.menuBlock;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
-export const MenuTitle = ({ id, name = 'MenuTitle', className, children, ...tailwind }: types.MenuTitleProps) => {
+export const MenuTitle = ({ id, name = 'MenuTitle', tailwind, className, children, ...props }: types.MenuTitleProps) => {
 	const base = styles.menuTitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <H6 {...props}>{children}</H6>;
+	return <H6 {...computed}>{children}</H6>;
 };
 
 export const MenuSubtitle = ({
 	id,
 	name = 'MenuSubtitle',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.MenuSubtitleProps) => {
 	const base = styles.menuSubtitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
-export const MenuList = ({ id, name = 'MenuList', className, children, ...tailwind }: types.MenuListProps) => {
+export const MenuList = ({ id, name = 'MenuList', tailwind, className, children, ...props }: types.MenuListProps) => {
 	const base = styles.menuList;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Ul {...props}>{children}</Ul>;
+	return <Ul {...computed}>{children}</Ul>;
 };
 
-export const MenuItem = ({ id, name = 'MenuItem', className, children, ...tailwind }: types.MenuItemProps) => {
+export const MenuItem = ({ id, name = 'MenuItem', tailwind, className, children, ...props }: types.MenuItemProps) => {
 	const base = styles.menuItem;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Li {...props}>{children}</Li>;
+	return <Li {...computed}>{children}</Li>;
 };
 
 export const MenuBtn = ({
@@ -186,28 +190,30 @@ export const MenuBtn = ({
 	active,
 	onClick,
 	taskRunning,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.MenuBtnProps) => {
 	const base = styles.menuBtn;
-	const props = { ...base, ...tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <AccentBtn active={active} taskRunning={taskRunning} onClick={onClick} {...props} />;
+	return <AccentBtn active={active} taskRunning={taskRunning} onClick={onClick} {...computed} />;
 };
 
 export const MenuLink = ({
 	id,
 	name = 'MenuLink',
 	href = '',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.MenuLinkProps) => {
 	const base = styles.menuLink;
-	const props = { ...base, ...tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <AccentLink href={href} {...props} />;
+	return <AccentLink href={href} {...computed} />;
 };
 
 // Docs

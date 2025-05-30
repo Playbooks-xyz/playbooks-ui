@@ -17,25 +17,25 @@ import {
 	tailwindClassBuilder,
 } from 'utils';
 
-export const Link = ({ variant = 'primary', ...props }) => {
+export const Link = ({ variant = 'primary', tailwind, ...props }) => {
 	switch (variant) {
 		case 'primary':
-			return <PrimaryLink {...props} />;
+			return <PrimaryLink tailwind={tailwind} {...props} />;
 
 		case 'accent':
-			return <AccentLink {...props} />;
+			return <AccentLink tailwind={tailwind} {...props} />;
 
 		case 'border':
-			return <BorderLink {...props} />;
+			return <BorderLink tailwind={tailwind} {...props} />;
 
 		case 'tab':
-			return <TabLink {...props} />;
+			return <TabLink tailwind={tailwind} {...props} />;
 
 		case 'text':
-			return <TextLink {...props} />;
+			return <TextLink tailwind={tailwind} {...props} />;
 
 		default:
-			return <Link {...props} />;
+			return <Link tailwind={tailwind} {...props} />;
 	}
 };
 
@@ -45,12 +45,13 @@ export const PrimaryLink = ({
 	size = 'sm',
 	alt,
 	active,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.LinkProps) => {
 	const base = { ...btnProps(active), size: computeBtnSize(size) };
 
-	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
+	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
 
 export const AccentLink = ({
@@ -58,12 +59,13 @@ export const AccentLink = ({
 	name = 'AccentLink',
 	size = 'sm',
 	active,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.LinkProps) => {
 	const base = { ...btnAccentProps(active), size: computeBtnSize(size) };
 
-	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
+	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
 
 export const BorderLink = ({
@@ -71,24 +73,41 @@ export const BorderLink = ({
 	name = 'BorderLink',
 	size = 'sm',
 	active,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.LinkProps) => {
 	const base = { ...btnBorderProps(active), size: computeBtnSize(size) };
 
-	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
+	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
 
-export const TabLink = ({ id, name = 'TabLink', size = 'sm', active, className, ...tailwind }: types.LinkProps) => {
+export const TabLink = ({
+	id,
+	name = 'TabLink',
+	size = 'sm',
+	active,
+	tailwind,
+	className,
+	...props
+}: types.LinkProps) => {
 	const base = { ...btnTabProps(active), size: computeBtnSize(size) };
 
-	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
+	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
 
-export const TextLink = ({ id, name = 'TextLink', size = 'sm', active, className, ...tailwind }: types.LinkProps) => {
+export const TextLink = ({
+	id,
+	name = 'TextLink',
+	size = 'sm',
+	active,
+	tailwind,
+	className,
+	...props
+}: types.LinkProps) => {
 	const base = { ...btnTextProps(active), size: computeBtnSize(size) };
 
-	return <LinkShared id={id} name={name} className={className} {...base} {...tailwind} />;
+	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
 
 export const LinkShared = ({
@@ -118,6 +137,7 @@ export const LinkShared = ({
 			href={href}
 			target={target}
 			disabled={disabled}
+			tailwind={tailwind}
 			className={className}
 			{...props}>
 			{taskRunning ? <Span /> : prevIcon && <Icon type='far' icon={prevIcon?.icon || prevIcon} {...prevIcon} />}
@@ -155,24 +175,25 @@ export const LinkWrapper = ({
 	href,
 	target,
 	disabled,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.LinkProps) => {
 	const base = {
 		...styles.linkWrapper,
 		cursor: disabled ? 'cursor-not-allowed' : 'cursor-pointer',
 	};
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<Fragment>
 			{target ? (
-				<HTML.A href={href} aria-label={alt} title={alt} name={name} target={target} className={classes}>
+				<HTML.A href={href} aria-label={alt} title={alt} name={name} target={target} className={computed}>
 					{children}
 				</HTML.A>
 			) : (
-				<NLink aria-label={alt} title={alt} data-name={name} href={href} className={classes}>
+				<NLink aria-label={alt} title={alt} data-name={name} href={href} className={computed}>
 					{children}
 				</NLink>
 			)}
