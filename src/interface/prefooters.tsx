@@ -1,5 +1,5 @@
-import { Div } from 'interface/html';
 import { Font, H6, P } from 'interface/fonts';
+import { Div } from 'interface/html';
 import { Section } from 'interface/sections';
 import * as styles from 'styles/prefooter-styles';
 import * as types from 'types/prefooter-types';

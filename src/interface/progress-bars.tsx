@@ -1,5 +1,5 @@
-import { Div } from 'interface/html';
 import { Animation, useAnimation } from 'components/animation-wrapper';
+import { Div } from 'interface/html';
 import * as styles from 'styles/progress-bar-styles';
 import * as types from 'types/progress-bar-types';
 

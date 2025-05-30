@@ -1,5 +1,5 @@
-import { Div } from 'interface/html';
 import { FaWrapper } from 'components/fa-wrapper';
+import { Div } from 'interface/html';
 import * as styles from 'styles/icon-styles';
 import * as types from 'types/icon-types';
 import { tailwindClassBuilder } from 'utils';

@@ -1,76 +1,93 @@
-import { Div } from 'interface/html';
 import { Font, P } from 'interface/fonts';
+import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
 import * as styles from 'styles/alert-styles';
 import * as types from 'types/alert-types';
 
-export const Alert = ({ id, name = 'Alert', className, children, ...tailwind }: types.AlertProps) => {
+export const Alert = ({ id, name = 'Alert', tailwind, className, children, ...props }: types.AlertProps) => {
 	const base = styles.alert;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const AlertIcon = ({
 	id,
 	name = 'AlertIcon',
 	icon = 'exclamation-circle',
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.AlertIconProps) => {
 	const base = styles.alertIcon;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Div {...props}>
+		<Div {...computed}>
 			<FarIcon icon={icon} />
 		</Div>
 	);
 };
 
-export const AlertBody = ({ id, name = 'AlertBody', className, children, ...tailwind }: types.AlertBodyProps) => {
+export const AlertBody = ({
+	id,
+	name = 'AlertBody',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.AlertBodyProps) => {
 	const base = styles.alertBody;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const AlertTitle = ({
 	id,
 	name = 'AlertTitle',
 	size = 'h6',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.AlertTitleProps) => {
 	const base = styles.alertTitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Font size={size} {...props}>
+		<Font size={size} {...computed}>
 			{children}
 		</Font>
 	);
 };
 
-export const AlertText = ({ id, name = 'AlertText', className, children, ...tailwind }: types.AlertTextProps) => {
+export const AlertText = ({
+	id,
+	name = 'AlertText',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.AlertTextProps) => {
 	const base = styles.alertText;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
 export const AlertActions = ({
 	id,
 	name = 'AlertActions',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.AlertActionsProps) => {
 	const base = styles.alertActions;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 // Docs:

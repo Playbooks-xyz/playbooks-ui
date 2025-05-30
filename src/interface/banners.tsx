@@ -1,5 +1,5 @@
-import { Div } from 'interface/html';
 import { Font, P } from 'interface/fonts';
+import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
 import * as styles from 'styles/banner-styles';
 import * as types from 'types/banner-types';

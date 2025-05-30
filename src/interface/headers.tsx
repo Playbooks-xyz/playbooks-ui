@@ -1,6 +1,6 @@
 import * as HTML from '@ehubbell/html';
-import { Div } from 'interface/html';
 import { Font } from 'interface/fonts';
+import { Div } from 'interface/html';
 import * as styles from 'styles/header-styles';
 import * as types from 'types/header-types';
 import { tailwindClassBuilder } from 'utils';

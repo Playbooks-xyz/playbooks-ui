@@ -4,25 +4,26 @@ import * as styles from 'styles/avatar-styles';
 import * as types from 'types/avatar-types';
 import { computeAvatarSize } from 'utils';
 
-export const Avatar = ({ id, name = 'Avatar', className, children, ...tailwind }: types.AvatarProps) => {
+export const Avatar = ({ id, name = 'Avatar', tailwind, className, children, ...props }: types.AvatarProps) => {
 	const base = styles.avatar;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const AvatarBadge = ({
 	id,
 	name = 'AvatarBadge',
 	size = 'sm',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.AvatarBadgeProps) => {
 	const base = { ...styles.avatarBadge, size: computeAvatarSize(size) };
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const AvatarImg = ({
@@ -31,58 +32,75 @@ export const AvatarImg = ({
 	alt = 'avatar',
 	size = 'md',
 	src,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.AvatarImgProps) => {
 	const base = { ...styles.avatarImg, size: computeAvatarSize(size) };
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Img src={src} alt={alt} {...props} />;
+	return <Img src={src} alt={alt} {...computed} />;
 };
 
-export const AvatarBody = ({ id, name = 'AvatarBody', className, children, ...tailwind }: types.AvatarBodyProps) => {
+export const AvatarBody = ({
+	id,
+	name = 'AvatarBody',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.AvatarBodyProps) => {
 	const base = styles.avatarBody;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const AvatarTitle = ({
 	id,
 	name = 'AvatarTitle',
 	size = 'h6',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.AvatarTitleProps) => {
 	const base = styles.avatarTitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Font size={size} {...props}>
+		<Font size={size} {...computed}>
 			{children}
 		</Font>
 	);
 };
 
-export const AvatarText = ({ id, name = 'AvatarText', className, children, ...tailwind }: types.AvatarTextProps) => {
+export const AvatarText = ({
+	id,
+	name = 'AvatarText',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.AvatarTextProps) => {
 	const base = styles.avatarText;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
 export const AvatarActions = ({
 	id,
 	name = 'AvatarActions',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.AvatarActionsProps) => {
 	const base = styles.avatarActions;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 // Docs:

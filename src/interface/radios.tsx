@@ -1,6 +1,6 @@
 import * as HTML from '@ehubbell/html';
-import { Div } from 'interface/html';
 import { P, Small } from 'interface/fonts';
+import { Div } from 'interface/html';
 import * as styles from 'styles/radio-styles';
 import * as types from 'types';
 import { checkboxProps, tailwindClassBuilder } from 'utils';
