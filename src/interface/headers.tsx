@@ -1,3 +1,4 @@
+import * as HTML from '@ehubbell/html';
 import { Font } from 'interface/fonts';
 import { iHeader, iHeaderActions, iHeaderSubtitle, iHeaderText, iHeaderTitle } from 'interface/headers.types';
 import { Div } from 'interface/html';
@@ -16,9 +17,9 @@ export const Header = ({ id, name = 'Header', className, children, style, ...tai
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<header name={name} className={classes} style={style}>
+		<HTML.Header name={name} className={classes} style={style}>
 			{children}
-		</header>
+		</HTML.Header>
 	);
 };
 

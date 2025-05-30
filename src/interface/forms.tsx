@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 
+import * as HTML from '@ehubbell/html';
 import { CurrencyInputWrapper } from 'components/currency-input-wrapper';
 import { GoogleAutocompleteWrapper } from 'components/google-autocomplete-wrapper';
 import { MaskedInput } from 'components/masked-input-wrapper';
@@ -28,9 +29,9 @@ export const Form = ({ id, name = 'Form', onSubmit, className, children, ...tail
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<form onSubmit={onSubmit} name={name} className={classes}>
+		<HTML.Form onSubmit={onSubmit} name={name} className={classes}>
 			{children}
-		</form>
+		</HTML.Form>
 	);
 };
 
@@ -67,9 +68,9 @@ export const FormLabel = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<label id={id} name={name} htmlFor={htmlFor} onClick={onClick ? onClick : null} className={classes}>
+		<HTML.Label id={id} name={name} htmlFor={htmlFor} onClick={onClick ? onClick : null} className={classes}>
 			{children}
-		</label>
+		</HTML.Label>
 	);
 };
 
@@ -86,7 +87,7 @@ export const FormCheckbox = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<input
+		<HTML.Input
 			id={id}
 			type='checkbox'
 			name={name}
@@ -114,7 +115,7 @@ export const FormRange = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<input
+		<HTML.Range
 			id={id}
 			type='range'
 			name={name}
@@ -150,7 +151,7 @@ export const FormInput = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<input
+		<HTML.Input
 			id={id}
 			ref={ref}
 			name={name}
@@ -302,7 +303,7 @@ export const FormLocationInput = ({
 
 	return (
 		<GoogleAutocompleteWrapper options={options} googleMapsApiKey={googleMapsApiKey} onSelect={onSelect}>
-			<input
+			<HTML.Input
 				id={id}
 				ref={ref}
 				value={value}
@@ -362,16 +363,16 @@ export const FormSelect = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<select value={value} disabled={disabled} onChange={onChange} className={classes}>
-			<option value='' disabled className='gray-500 dark:gray-400'>
+		<HTML.Select value={value} disabled={disabled} onChange={onChange} className={classes}>
+			<HTML.Option value='' disabled className='gray-500 dark:gray-400'>
 				{placeholder}
-			</option>
+			</HTML.Option>
 			{options.map((option, i) => (
-				<option key={i} value={option}>
+				<HTML.Option key={i} value={option}>
 					{option}
-				</option>
+				</HTML.Option>
 			))}
-		</select>
+		</HTML.Select>
 	);
 };
 
@@ -404,7 +405,7 @@ export const FormTextArea = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<textarea
+		<HTML.TextArea
 			id={id}
 			rows={rows || 4}
 			value={value}

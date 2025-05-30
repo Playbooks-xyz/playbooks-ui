@@ -1,3 +1,4 @@
+import * as HTML from '@ehubbell/html';
 import { iFont } from 'interface/fonts.types';
 import { tailwindClassBuilder } from 'utils';
 
@@ -42,9 +43,9 @@ export const H1 = ({ id, name = 'H1', className, children, ...tailwind }: iFont)
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<h1 id={id} name={name} className={classes}>
+		<HTML.H1 id={id} name={name} className={classes}>
 			{children}
-		</h1>
+		</HTML.H1>
 	);
 };
 
@@ -58,9 +59,9 @@ export const H2 = ({ id, name = 'H2', className, children, ...tailwind }: iFont)
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<h2 id={id} name={name} className={classes}>
+		<HTML.H2 id={id} name={name} className={classes}>
 			{children}
-		</h2>
+		</HTML.H2>
 	);
 };
 
@@ -74,9 +75,9 @@ export const H3 = ({ id, name = 'H3', className, children, ...tailwind }: iFont)
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<h3 id={id} name={name} className={classes}>
+		<HTML.H3 id={id} name={name} className={classes}>
 			{children}
-		</h3>
+		</HTML.H3>
 	);
 };
 
@@ -90,9 +91,9 @@ export const H4 = ({ id, name = 'H4', className, children, ...tailwind }: iFont)
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<h4 id={id} name={name} className={classes}>
+		<HTML.H4 id={id} name={name} className={classes}>
 			{children}
-		</h4>
+		</HTML.H4>
 	);
 };
 
@@ -106,9 +107,9 @@ export const H5 = ({ id, name = 'H5', className, children, ...tailwind }: iFont)
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<h5 id={id} name={name} className={classes}>
+		<HTML.H5 id={id} name={name} className={classes}>
 			{children}
-		</h5>
+		</HTML.H5>
 	);
 };
 
@@ -122,9 +123,9 @@ export const H6 = ({ id, name = 'H6', className, children, ...tailwind }: iFont)
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<h6 id={id} name={name} className={classes}>
+		<HTML.H6 id={id} name={name} className={classes}>
 			{children}
-		</h6>
+		</HTML.H6>
 	);
 };
 
@@ -139,9 +140,9 @@ export const P = ({ id, name = 'P', className, children, ...tailwind }: iFont) =
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<p id={id} name={name} className={classes}>
+		<HTML.P id={id} name={name} className={classes}>
 			{children}
-		</p>
+		</HTML.P>
 	);
 };
 
@@ -154,9 +155,9 @@ export const Small = ({ id, name = 'Small', className, children, ...tailwind }: 
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<small id={id} name={name} className={classes}>
+		<HTML.Small id={id} name={name} className={classes}>
 			{children}
-		</small>
+		</HTML.Small>
 	);
 };
 

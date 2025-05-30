@@ -1,3 +1,4 @@
+import * as HTML from '@ehubbell/html';
 import { Font, P } from 'interface/fonts';
 import { Div, Hr } from 'interface/html';
 import {
@@ -28,9 +29,9 @@ export const Section = ({ id, ref, name = 'Section', className, children, style,
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<section id={id} ref={ref} name={name} className={classes} style={style}>
+		<HTML.Section id={id} ref={ref} name={name} className={classes} style={style}>
 			{children}
-		</section>
+		</HTML.Section>
 	);
 };
 

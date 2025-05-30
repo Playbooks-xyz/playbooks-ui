@@ -1,5 +1,6 @@
 import { Range } from 'react-range';
 
+import * as HTML from '@ehubbell/html';
 import { tailwindClassBuilder } from 'utils';
 
 export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange }) => {
@@ -44,14 +45,14 @@ export const RangeSliderTrack = ({ ref, values, min, max, props, children, onNex
 	};
 	const className = tailwindClassBuilder(base);
 	return (
-		<div
+		<HTML.Div
 			onMouseDown={props.onMouseDown}
 			onTouchStart={props.onTouchStart}
 			onTouchEnd={onNext}
 			onMouseUp={onNext}
 			className={className}
 			style={props.style}>
-			<div
+			<HTML.Div
 				ref={ref}
 				style={{
 					height: '5px',
@@ -59,8 +60,8 @@ export const RangeSliderTrack = ({ ref, values, min, max, props, children, onNex
 					alignSelf: 'center',
 				}}>
 				{children}
-			</div>
-		</div>
+			</HTML.Div>
+		</HTML.Div>
 	);
 };
 
@@ -77,7 +78,7 @@ export const RangeSliderThumb = ({ ref, isDragged, ...props }) => {
 	};
 	const className = tailwindClassBuilder(base);
 
-	return <div ref={ref} {...props} className={className} style={props.style} />;
+	return <HTML.Div ref={ref} {...props} className={className} style={props.style} />;
 };
 
 // Docs

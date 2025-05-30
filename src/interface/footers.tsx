@@ -1,3 +1,4 @@
+import * as HTML from '@ehubbell/html';
 import { Btn } from 'interface/buttons';
 import { Font, P } from 'interface/fonts';
 import {
@@ -26,9 +27,9 @@ export const Footer = ({ id, name = 'Footer', className, children, style, ...tai
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<footer name={name} className={classes} style={style}>
+		<HTML.Footer name={name} className={classes} style={style}>
 			{children}
-		</footer>
+		</HTML.Footer>
 	);
 };
 

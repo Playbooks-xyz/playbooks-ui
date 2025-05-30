@@ -1,3 +1,4 @@
+import * as HTML from '@ehubbell/html';
 import { BtnWrapper } from 'interface/buttons';
 import { Div, Span } from 'interface/html';
 import { FadIcon } from 'interface/icons';
@@ -111,9 +112,9 @@ export const SwitchLabel = ({ id, name = 'SwitchLabel', htmlFor, className, chil
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<label id={id} htmlFor={htmlFor} className={classes}>
+		<HTML.Label id={id} htmlFor={htmlFor} className={classes}>
 			{children}
-		</label>
+		</HTML.Label>
 	);
 };
 

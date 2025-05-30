@@ -1,3 +1,4 @@
+import * as HTML from '@ehubbell/html';
 import { Font, P } from 'interface/fonts';
 import {
 	iHero,
@@ -28,9 +29,9 @@ export const Hero = ({ id, ref, name = 'Hero', size, className, children, style,
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<header ref={ref} name={name} className={classes} style={style}>
+		<HTML.Header ref={ref} name={name} className={classes} style={style}>
 			{children}
-		</header>
+		</HTML.Header>
 	);
 };
 

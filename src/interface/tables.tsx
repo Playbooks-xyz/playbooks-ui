@@ -1,3 +1,4 @@
+import * as HTML from '@ehubbell/html';
 import { BtnWrapper } from 'interface/buttons';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
@@ -23,9 +24,9 @@ export const Table = ({ id, name = 'Table', className, children, ...tailwind }: 
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<table name={name} className={classes}>
+		<HTML.Table name={name} className={classes}>
 			{children}
-		</table>
+		</HTML.Table>
 	);
 };
 
@@ -34,9 +35,9 @@ export const TableHeader = ({ id, name = 'TableHeader', className, children, ...
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<thead name={name} className={classes}>
+		<HTML.THead name={name} className={classes}>
 			{children}
-		</thead>
+		</HTML.THead>
 	);
 };
 
@@ -73,7 +74,7 @@ export const TableHead = ({
 	const direction = value === params?.sortProp && params?.sortValue === 'asc' ? 'desc' : 'asc';
 
 	return (
-		<th name={name} className={classes}>
+		<HTML.TH name={name} className={classes}>
 			{isObject(params) ? (
 				<BtnWrapper
 					alt={alt}
@@ -91,7 +92,7 @@ export const TableHead = ({
 			) : (
 				<Div>{children}</Div>
 			)}
-		</th>
+		</HTML.TH>
 	);
 };
 
@@ -100,9 +101,9 @@ export const TableBody = ({ id, name = 'TableBody', className, children, ...tail
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<tbody name={name} className={classes}>
+		<HTML.TBody name={name} className={classes}>
 			{children}
-		</tbody>
+		</HTML.TBody>
 	);
 };
 
@@ -111,9 +112,9 @@ export const TableRow = ({ id, name = 'TableRow', className, children, ...tailwi
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<tr name={name} className={classes}>
+		<HTML.TR name={name} className={classes}>
 			{children}
-		</tr>
+		</HTML.TR>
 	);
 };
 
@@ -137,9 +138,9 @@ export const TableData = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<td name={name} className={classes}>
+		<HTML.TD name={name} className={classes}>
 			{value ? value : children}
-		</td>
+		</HTML.TD>
 	);
 };
 

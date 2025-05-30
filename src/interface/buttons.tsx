@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 
+import * as HTML from '@ehubbell/html';
 import { iBtn } from 'interface/buttons.types';
 import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
@@ -144,7 +145,7 @@ export const BtnWrapper = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<button
+		<HTML.Button
 			type={type}
 			aria-label={alt}
 			title={alt}
@@ -153,7 +154,7 @@ export const BtnWrapper = ({
 			onClick={onClick}
 			className={classes}>
 			{children}
-		</button>
+		</HTML.Button>
 	);
 };
 

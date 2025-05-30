@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import NLink from 'next/link';
 
+import * as HTML from '@ehubbell/html';
 import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { iLink } from 'interface/links.types';
@@ -145,11 +146,11 @@ export const LinkWrapper = ({
 	return (
 		<Fragment>
 			{target ? (
-				<a href={href} aria-label={alt} title={alt} name={name} target={target} className={classes}>
+				<HTML.A href={href} aria-label={alt} title={alt} name={name} target={target} className={classes}>
 					{children}
-				</a>
+				</HTML.A>
 			) : (
-				<NLink aria-label={alt} title={alt} name={name} href={href} className={classes}>
+				<NLink aria-label={alt} title={alt} data-name={name} href={href} className={classes}>
 					{children}
 				</NLink>
 			)}

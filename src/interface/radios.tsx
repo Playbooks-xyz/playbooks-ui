@@ -1,3 +1,4 @@
+import * as HTML from '@ehubbell/html';
 import { P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { iRadio, iRadioInput, iRadioLabel, iRadioWrapper } from 'interface/radios.types';
@@ -30,9 +31,9 @@ export const RadioWrapper = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<label onClick={() => onClick()} className={classes}>
+		<HTML.Label onClick={() => onClick()} className={classes}>
 			{children}
-		</label>
+		</HTML.Label>
 	);
 };
 
@@ -65,7 +66,7 @@ export const RadioInput = ({ id, name = 'RadioInput', value, className, children
 	const base = { ...checkboxProps(value), borderRadius: 'rounded-full', size: 'w-4 h-4' };
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, name, className });
 	return (
-		<input
+		<HTML.Input
 			id={id}
 			type='radio'
 			checked={value}
@@ -74,7 +75,7 @@ export const RadioInput = ({ id, name = 'RadioInput', value, className, children
 			aria-describedby='privacy-setting-0-description'
 			readOnly>
 			{children}
-		</input>
+		</HTML.Input>
 	);
 };
 
