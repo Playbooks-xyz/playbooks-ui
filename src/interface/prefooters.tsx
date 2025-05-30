@@ -1,5 +1,6 @@
 import { Font, H6, P } from 'interface/fonts';
 import { Div } from 'interface/html';
+import { Section } from 'interface/sections';
 import {
 	iPrefooter,
 	iPrefooterActions,
@@ -8,8 +9,7 @@ import {
 	iPrefooterSubtitle,
 	iPrefooterText,
 	iPrefooterTitle,
-} from 'interface/prefooters.types';
-import { Section } from 'interface/sections';
+} from 'types/prefooter-types';
 
 export const Prefooter = ({ id, name = 'Prefooter', className, children, ...tailwind }: iPrefooter) => {
 	const base = { bgColor: 'bg-gray-100 dark:bg-gray-800', spacing: 'px-16 py-20' };

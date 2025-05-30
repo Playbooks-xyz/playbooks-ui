@@ -4,6 +4,9 @@ import { usePopper } from 'react-popper';
 import { Fade } from 'components/fade-wrapper';
 import { useKeyPress, useMouseUp } from 'hooks';
 import { AccentBtn, Btn } from 'interface/buttons';
+import { H6, P } from 'interface/fonts';
+import { Div, Li, Ul } from 'interface/html';
+import { AccentLink } from 'interface/links';
 import {
 	iDrop,
 	iDropBtn,
@@ -15,10 +18,7 @@ import {
 	iDropSubtitle,
 	iDropTitle,
 	iDropToggle,
-} from 'interface/drops.types';
-import { H6, P } from 'interface/fonts';
-import { Div, Li, Ul } from 'interface/html';
-import { AccentLink } from 'interface/links';
+} from 'types/drop-types';
 import { borderProps, tailwindClassBuilder } from 'utils';
 
 export const Drop = ({ id, ref, name = 'Drop', open, onClose, className, children, ...tailwind }: iDrop) => {

@@ -1,7 +1,7 @@
-import { iBanner, iBannerActions, iBannerBody, iBannerIcon, iBannerText, iBannerTitle } from 'interface/banners.types';
 import { H5, H6, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { Icon } from 'interface/icons';
+import { iBanner, iBannerActions, iBannerBody, iBannerIcon, iBannerText, iBannerTitle } from 'types/banner-types';
 import { borderProps } from 'utils';
 
 export const Banner = ({ id, name = 'Banner', className, children, ...tailwind }: iBanner) => {

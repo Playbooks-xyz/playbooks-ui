@@ -1,7 +1,7 @@
 import * as HTML from '@ehubbell/html';
 import { Img, Ul } from 'interface/html';
 import { LinkWrapper } from 'interface/links';
-import { iNavbar, iNavbarBrand, iNavbarList } from 'interface/navbars.types';
+import { iNavbar, iNavbarBrand, iNavbarList } from 'types/navbar-types';
 import { borderProps, tailwindClassBuilder } from 'utils';
 
 export const Navbar = ({ id, ref, name = 'Navbar', className, children, ...tailwind }: iNavbar) => {

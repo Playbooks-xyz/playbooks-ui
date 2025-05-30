@@ -1,5 +1,5 @@
 import * as Loaders from 'assets/loaders';
-import { iSpinner } from 'interface/spinners.types';
+import { iSpinner } from 'types/spinner-types';
 import { tailwindClassBuilder } from 'utils';
 
 export const Oval = ({ id, name = 'Oval', className, ...tailwind }: iSpinner) => {

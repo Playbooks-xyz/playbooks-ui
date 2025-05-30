@@ -1,5 +1,5 @@
-import { iCol, iContainer, iGrid } from 'interface/grid.types';
 import { Div } from 'interface/html';
+import { iCol, iContainer, iGrid } from 'types/grid-types';
 import { computeCol, computeContainer, computeGrid } from 'utils';
 
 export const Container = ({ id, name = 'Container', size, className, children, ...tailwind }: iContainer) => {

@@ -1,7 +1,7 @@
 import * as HTML from '@ehubbell/html';
 import { Font } from 'interface/fonts';
-import { iHeader, iHeaderActions, iHeaderSubtitle, iHeaderText, iHeaderTitle } from 'interface/headers.types';
 import { Div } from 'interface/html';
+import { iHeader, iHeaderActions, iHeaderSubtitle, iHeaderText, iHeaderTitle } from 'types/header-types';
 import { borderProps, tailwindClassBuilder } from 'utils';
 
 export const Header = ({ id, name = 'Header', className, children, style, ...tailwind }: iHeader) => {

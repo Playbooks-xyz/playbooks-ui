@@ -1,6 +1,6 @@
 import { Div, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
-import { iInputAddon, iInputGroup } from 'interface/input-groups.types';
+import { iInputAddon, iInputGroup } from 'types/input-group-types';
 import { borderProps } from 'utils';
 
 export const InputGroup = ({ id, name = 'InputGroup', active, className, children, ...tailwind }: iInputGroup) => {

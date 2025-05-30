@@ -1,6 +1,6 @@
-import { iBtn } from 'interface/buttons.types';
-import { iLink } from 'interface/links.types';
 import { HtmlType } from 'types';
+import { iBtn } from 'types/button-types';
+import { iLink } from 'types/link-types';
 
 export type iFooter = HtmlType;
 

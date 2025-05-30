@@ -13,7 +13,7 @@ import {
 	iToastText,
 	iToastTitle,
 	iToastWrapper,
-} from 'interface/toasts.types';
+} from 'types/toast-types';
 
 export const ToastWrapper = ({ id, name = 'ToastWrapper', className, children, ...tailwind }: iToastWrapper) => {
 	const base = {

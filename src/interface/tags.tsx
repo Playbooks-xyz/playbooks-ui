@@ -1,5 +1,5 @@
 import { Div, Img } from 'interface/html';
-import { iTag, iTagActions, iTagBody, iTagImg, iTagWrapper } from 'interface/tags.types';
+import { iTag, iTagActions, iTagBody, iTagImg, iTagWrapper } from 'types/tag-types';
 import { computeTagImgSize, computeTagSize } from 'utils';
 
 export const TagsWrapper = ({ id, name = 'TagsWrapper', className, children, ...tailwind }: iTagWrapper) => {

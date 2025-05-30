@@ -14,7 +14,7 @@ import {
 	iSlideHeader,
 	iSlideTitle,
 	iSlideWrapper,
-} from 'interface/slides.types';
+} from 'types/slide-types';
 import { borderProps, computeSlideAnimation } from 'utils';
 
 export const SlideWrapper = ({

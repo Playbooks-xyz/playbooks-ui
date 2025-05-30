@@ -1,3 +1,6 @@
+import { Font, P } from 'interface/fonts';
+import { Div, Img } from 'interface/html';
+import { Icon } from 'interface/icons';
 import {
 	iCard,
 	iCardActions,
@@ -10,10 +13,7 @@ import {
 	iCardSubtitle,
 	iCardText,
 	iCardTitle,
-} from 'interface/cards.types';
-import { Font, P } from 'interface/fonts';
-import { Div, Img } from 'interface/html';
-import { Icon } from 'interface/icons';
+} from 'types/card-types';
 import { borderProps } from 'utils';
 
 export const Card = ({ id, name = 'Card', className, children, ...tailwind }: iCard) => {

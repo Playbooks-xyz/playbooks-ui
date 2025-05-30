@@ -15,7 +15,7 @@ import {
 	iModalSubtitle,
 	iModalTitle,
 	iModalWrapper,
-} from 'interface/modals.types';
+} from 'types/modal-types';
 import { borderProps, computeSectionSize } from 'utils';
 
 export const ModalWrapper = ({

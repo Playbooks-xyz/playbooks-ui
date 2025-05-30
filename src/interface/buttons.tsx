@@ -1,10 +1,10 @@
 import { Fragment } from 'react';
 
 import * as HTML from '@ehubbell/html';
-import { iBtn } from 'interface/buttons.types';
 import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
+import { iBtn } from 'types/button-types';
 import {
 	btnAccentProps,
 	btnBorderProps,

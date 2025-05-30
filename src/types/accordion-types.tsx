@@ -1,5 +1,5 @@
-import { iBtn } from 'interface/buttons.types';
 import { HtmlType } from 'types';
+import { iBtn } from 'types/button-types';
 
 export type iAccordion = HtmlType & {
 	open?: boolean;

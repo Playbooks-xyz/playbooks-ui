@@ -1,5 +1,7 @@
 import * as HTML from '@ehubbell/html';
 import { Font, P } from 'interface/fonts';
+import { Div, Img } from 'interface/html';
+import { FadIcon } from 'interface/icons';
 import {
 	iHero,
 	iHeroActions,
@@ -11,9 +13,7 @@ import {
 	iHeroSubtitle,
 	iHeroText,
 	iHeroTitle,
-} from 'interface/heros.types';
-import { Div, Img } from 'interface/html';
-import { FadIcon } from 'interface/icons';
+} from 'types/hero-types';
 import { borderProps, computeHeroSize, computeThumbnailSize, tailwindClassBuilder } from 'utils';
 
 export const Hero = ({ id, ref, name = 'Hero', size, className, children, style, ...tailwind }: iHero) => {

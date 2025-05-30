@@ -1,3 +1,5 @@
+import { Font } from 'interface/fonts';
+import { Div, Img, Span } from 'interface/html';
 import {
 	iAvatar,
 	iAvatarActions,
@@ -6,9 +8,7 @@ import {
 	iAvatarImg,
 	iAvatarText,
 	iAvatarTitle,
-} from 'interface/avatars.types';
-import { Font } from 'interface/fonts';
-import { Div, Img, Span } from 'interface/html';
+} from 'types/avatar-types';
 import { computeAvatarSize } from 'utils';
 
 export const Avatar = ({ id, name = 'Avatar', className, children, ...tailwind }: iAvatar) => {

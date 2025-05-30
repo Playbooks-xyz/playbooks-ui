@@ -6,6 +6,7 @@ import { GoogleAutocompleteWrapper } from 'components/google-autocomplete-wrappe
 import { MaskedInput } from 'components/masked-input-wrapper';
 import { PhoneInputWrapper } from 'components/phone-input-wrapper';
 import { useElementKeyPress } from 'hooks';
+import { Div, Span } from 'interface/html';
 import {
 	iForm,
 	iFormCheckbox,
@@ -20,8 +21,7 @@ import {
 	iFormSelect,
 	iFormText,
 	iFormTextArea,
-} from 'interface/forms.types';
-import { Div, Span } from 'interface/html';
+} from 'types/form-types';
 import { checkboxProps, computeInputSize, inputProps, rangeProps, tailwindClassBuilder } from 'utils';
 
 export const Form = ({ id, name = 'Form', onSubmit, className, children, ...tailwind }: iForm) => {
@@ -115,7 +115,7 @@ export const FormRange = ({
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<HTML.Range
+		<HTML.Input
 			id={id}
 			type='range'
 			name={name}

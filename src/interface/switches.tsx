@@ -9,7 +9,7 @@ import {
 	iSwitchInner,
 	iSwitchLabel,
 	iSwitchToggle,
-} from 'interface/switches.types';
+} from 'types/switch-types';
 import { tailwindClassBuilder } from 'utils';
 
 export const SwitchGroup = ({ id, name = 'SwitchGroup', className, children, ...tailwind }: iSwitchGroup) => {

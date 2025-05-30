@@ -1,5 +1,5 @@
 import * as HTML from '@ehubbell/html';
-import { iFont } from 'interface/fonts.types';
+import { iFont } from 'types/font-types';
 import { tailwindClassBuilder } from 'utils';
 
 export const Font = props => {

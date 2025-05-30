@@ -12,7 +12,7 @@ import {
 	iSectionSubtitle,
 	iSectionText,
 	iSectionTitle,
-} from 'interface/sections.types';
+} from 'types/section-types';
 import { borderProps, computeSectionSize, tailwindClassBuilder } from 'utils';
 
 export const Section = ({ id, ref, name = 'Section', className, children, style, ...tailwind }: iSection) => {

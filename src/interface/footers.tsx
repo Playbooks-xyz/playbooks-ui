@@ -1,6 +1,8 @@
 import * as HTML from '@ehubbell/html';
 import { Btn } from 'interface/buttons';
 import { Font, P } from 'interface/fonts';
+import { Div, Li, Ul } from 'interface/html';
+import { Link } from 'interface/links';
 import {
 	iFooter,
 	iFooterBody,
@@ -11,9 +13,7 @@ import {
 	iFooterList,
 	iFooterText,
 	iFooterTitle,
-} from 'interface/footers.types';
-import { Div, Li, Ul } from 'interface/html';
-import { Link } from 'interface/links';
+} from 'types/footer-types';
 import { borderProps, tailwindClassBuilder } from 'utils';
 
 export const Footer = ({ id, name = 'Footer', className, children, style, ...tailwind }: iFooter) => {

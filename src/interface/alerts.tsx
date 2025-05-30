@@ -1,7 +1,7 @@
-import { iAlert, iAlertActions, iAlertBody, iAlertIcon, iAlertText, iAlertTitle } from 'interface/alerts.types';
 import { H5, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { FadIcon } from 'interface/icons';
+import { iAlert, iAlertActions, iAlertBody, iAlertIcon, iAlertText, iAlertTitle } from 'types/alert-types';
 
 export const Alert = ({ id, name = 'Alert', show = true, className, children, ...tailwind }: iAlert) => {
 	const base = {

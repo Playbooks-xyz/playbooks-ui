@@ -1,6 +1,6 @@
 import * as HTML from '@ehubbell/html';
-import { iFrame, iImg } from 'interface/html.types';
 import { HtmlType } from 'types';
+import { iFrame, iImg } from 'types/html-types';
 import { borderProps, tailwindClassBuilder } from 'utils';
 
 export const Html = ({ name = 'Html', className, tailwind, children, style, ...props }: HtmlType) => {
@@ -131,7 +131,7 @@ export const Li = ({ name = 'Li', className, tailwind, children, ...props }: Htm
 	);
 };
 
-export const IFrame = ({ ref, name = 'iFrame', title, src, onLoad, className, style, ...props }: iFrame) => {
+export const IFrame = ({ ref, name = 'iFrame', title, src, onLoad, tailwind, className, style, ...props }: iFrame) => {
 	const base = {};
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, ...props, className });
 

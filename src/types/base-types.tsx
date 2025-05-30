@@ -1,4 +1,4 @@
-import { TailwindType } from 'types/tailwind.types';
+import { TailwindType } from 'types/tailwind-types';
 
 export type Modify<T, R> = Omit<T, keyof R> & R;
 
@@ -65,15 +65,4 @@ export type LinkType = HtmlType & {
 	disabled?: boolean;
 	target?: '_self' | '_blank';
 	taskRunning?: boolean;
-};
-
-export type SelectType = HtmlType & {
-	active?: boolean;
-	value?: string;
-	onSelect: (v: string) => any;
-};
-
-export type ToggleType = HtmlType & {
-	active?: boolean;
-	onToggle: () => any;
 };

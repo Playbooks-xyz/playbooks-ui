@@ -1,8 +1,9 @@
+import * as HTML from '@ehubbell/html';
 import { Btn } from 'interface/buttons';
 import { Font } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { Link } from 'interface/links';
-import { iNav, iNavBody, iNavBtn, iNavHeader, iNavItem, iNavLink, iNavList, iNavTitle } from 'interface/navs.types';
+import { iNav, iNavBody, iNavBtn, iNavHeader, iNavItem, iNavLink, iNavList, iNavTitle } from 'types/nav-types';
 import { borderProps, computeSectionSize, tailwindClassBuilder } from 'utils';
 
 export const Nav = ({ id, name = 'Nav', className, children, ...tailwind }: iNav) => {
@@ -16,9 +17,9 @@ export const Nav = ({ id, name = 'Nav', className, children, ...tailwind }: iNav
 	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
 
 	return (
-		<nav id={id} name={name} className={classes}>
+		<HTML.Nav id={id} name={name} className={classes}>
 			{children}
-		</nav>
+		</HTML.Nav>
 	);
 };
 

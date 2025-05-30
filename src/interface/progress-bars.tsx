@@ -1,6 +1,6 @@
 import { Animation, useAnimation } from 'components/animation-wrapper';
 import { Div } from 'interface/html';
-import { iProgress, iProgressBar } from 'interface/progress-bars.types';
+import { iProgress, iProgressBar } from 'types/progress-bar-types';
 import { gradientBgColor } from 'utils';
 
 export const ProgressBar = ({ id, name = 'ProgressBar', className, children, ...tailwind }: iProgressBar) => {

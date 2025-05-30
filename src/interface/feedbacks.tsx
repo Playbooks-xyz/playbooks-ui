@@ -1,3 +1,6 @@
+import { Font, P, Small } from 'interface/fonts';
+import { Div } from 'interface/html';
+import { Icon } from 'interface/icons';
 import {
 	iFeedback,
 	iFeedbackActions,
@@ -6,10 +9,7 @@ import {
 	iFeedbackIcon,
 	iFeedbackText,
 	iFeedbackTitle,
-} from 'interface/feedbacks.types';
-import { Font, P, Small } from 'interface/fonts';
-import { Div } from 'interface/html';
-import { Icon } from 'interface/icons';
+} from 'types/feedback-types';
 import { borderProps, tailwindClassBuilder } from 'utils';
 
 export const Feedback = ({ id, name = 'Feedback', className, children, ...tailwind }: iFeedback) => {

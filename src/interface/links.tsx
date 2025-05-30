@@ -4,8 +4,8 @@ import NLink from 'next/link';
 import * as HTML from '@ehubbell/html';
 import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
-import { iLink } from 'interface/links.types';
 import { Oval } from 'interface/spinners';
+import { iLink } from 'types/link-types';
 import {
 	btnAccentProps,
 	btnBorderProps,

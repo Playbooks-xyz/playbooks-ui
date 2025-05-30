@@ -1,15 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import {
-	iAccordion,
-	iAccordionBody,
-	iAccordionText,
-	iAccordionTitle,
-	iAccordionToggle,
-} from 'interface/accordions.types';
 import { Btn } from 'interface/buttons';
 import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
+import { iAccordion, iAccordionBody, iAccordionText, iAccordionTitle, iAccordionToggle } from 'types/accordion-types';
 import { borderProps } from 'utils';
 
 export const Accordion = ({ id, name = 'Accordion', open, className, children, ...tailwind }: iAccordion) => {

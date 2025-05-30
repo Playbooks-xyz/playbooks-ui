@@ -1,4 +1,4 @@
-import { HtmlType, SelectType } from 'types';
+import { BtnType, HtmlType } from 'types';
 
 export type iTabWrapper = HtmlType;
 
@@ -14,9 +14,12 @@ export type iTabs = HtmlType & {
 	onSelect: (v: string) => any;
 };
 
-export type iTab = SelectType & {
+export type iTab = BtnType & {
+	value?: string;
+	active?: boolean;
 	alt: string;
 	variant?: string;
+	onSelect: (v: string) => any;
 	children: any;
 };
 

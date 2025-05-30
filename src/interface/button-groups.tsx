@@ -1,5 +1,5 @@
-import { iButtonGroup } from 'interface/button-groups.types';
 import { Div } from 'interface/html';
+import { iButtonGroup } from 'types/button-group-types';
 import { borderProps } from 'utils';
 
 export const BtnGroup = ({ id, name = 'BtnGroup', className, children, ...tailwind }: iButtonGroup) => {

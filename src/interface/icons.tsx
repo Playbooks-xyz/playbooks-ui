@@ -1,6 +1,6 @@
 import { FaWrapper } from 'components/fa-wrapper';
 import { Div } from 'interface/html';
-import { iIcon } from 'interface/icons.types';
+import { iIcon } from 'types/icon-types';
 import { tailwindClassBuilder } from 'utils';
 
 export const Icon = ({ id, name = 'Icon', type, icon, className, ...tailwind }: iIcon) => {

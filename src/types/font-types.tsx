@@ -1,5 +1,5 @@
 import { HtmlType } from 'types';
-import { TailwindFontSizeOpts } from 'types/tailwind.types';
+import { TailwindFontSizeOpts } from 'types/tailwind-types';
 
 export type iFont = HtmlType & {
 	id?: string;
