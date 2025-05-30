@@ -4,18 +4,25 @@ import { Icon } from 'interface/icons';
 import * as styles from 'styles/card-styles';
 import * as types from 'types/card-types';
 
-export const Card = ({ id, name = 'Card', className, children, ...tailwind }: types.CardProps) => {
+export const Card = ({ id, name = 'Card', tailwind, className, children, ...props }: types.CardProps) => {
 	const base = styles.card;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
-export const CardHeader = ({ id, name = 'CardHeader', className, children, ...tailwind }: types.CardHeaderProps) => {
+export const CardHeader = ({
+	id,
+	name = 'CardHeader',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.CardHeaderProps) => {
 	const base = styles.cardHeader;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const CardIcon = ({
@@ -24,12 +31,13 @@ export const CardIcon = ({
 	type = 'fad',
 	icon = 'code',
 	wrapper,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.CardIconProps) => {
-	const props = { ...styles.cardIcon, ...tailwind, className, name };
+	const computed = { ...styles.cardIcon, ...props, tailwind, className, name };
 
-	return <Icon type={type} icon={icon} {...props} />;
+	return <Icon type={type} icon={icon} {...computed} />;
 };
 
 export const CardImg = ({
@@ -37,49 +45,52 @@ export const CardImg = ({
 	name = 'CardImg',
 	alt = 'thumbnail',
 	src,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.CardImgProps) => {
 	const base = styles.cardImg;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Img src={src} alt={alt} {...props} />;
+	return <Img src={src} alt={alt} {...computed} />;
 };
 
-export const CardBody = ({ id, name = 'CardBody', className, children, ...tailwind }: types.CardBodyProps) => {
+export const CardBody = ({ id, name = 'CardBody', tailwind, className, children, ...props }: types.CardBodyProps) => {
 	const base = styles.cardBody;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const CardPretitle = ({
 	id,
 	name = 'CardPretitle',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.CardPretitleProps) => {
 	const base = styles.cardPretitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
 export const CardTitle = ({
 	id,
 	name = 'CardTitle',
 	size = 'h6',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.CardTitleProps) => {
 	const base = styles.cardTitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Font size={size} {...props}>
+		<Font size={size} {...computed}>
 			{children}
 		</Font>
 	);
@@ -88,35 +99,50 @@ export const CardTitle = ({
 export const CardSubtitle = ({
 	id,
 	name = 'CardSubtitle',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.CardSubtitleProps) => {
 	const base = styles.cardSubtitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
-export const CardText = ({ id, name = 'CardText', className, children, ...tailwind }: types.CardTextProps) => {
+export const CardText = ({ id, name = 'CardText', tailwind, className, children, ...props }: types.CardTextProps) => {
 	const base = styles.cardText;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
-export const CardFooter = ({ id, name = 'CardFooter', className, children, ...tailwind }: types.CardFooterProps) => {
+export const CardFooter = ({
+	id,
+	name = 'CardFooter',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.CardFooterProps) => {
 	const base = styles.cardFooter;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
-export const CardActions = ({ id, name = 'CardActions', className, children, ...tailwind }: types.CardActionsProps) => {
+export const CardActions = ({
+	id,
+	name = 'CardActions',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.CardActionsProps) => {
 	const base = styles.cardActions;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 // Docs:

@@ -7,12 +7,19 @@ import * as styles from 'styles/breadcrumb-styles';
 import * as types from 'types/breadcrumb-types';
 import { breadcrumbBtnProps } from 'utils';
 
-export const Breadcrumbs = ({ id, name = 'Breadcrumbs', className, children, ...tailwind }: types.BreadcrumbsProps) => {
+export const Breadcrumbs = ({
+	id,
+	name = 'Breadcrumbs',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.BreadcrumbsProps) => {
 	const base = styles.breadcrumbs;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Nav {...props}>
+		<Nav {...computed}>
 			<NavList display='flex flex-row' space='space-x-2'>
 				{children}
 			</NavList>
@@ -25,15 +32,16 @@ export const BreadcrumbItem = ({
 	name = 'BreadcrumbItem',
 	icon = 'chevron-right',
 	arrow = true,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.BreadcrumbItemProps) => {
 	const base = styles.breadcrumbItem;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Li {...props}>
+		<Li {...computed}>
 			{children}
 			{arrow && <FarIcon icon={icon} color='text-gray-400' fontSize='text-xs' />}
 		</Li>
@@ -46,14 +54,15 @@ export const BreadcrumbBtn = ({
 	size = 'xxs',
 	active,
 	onClick,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.BreadcrumbBtnProps) => {
 	const base = { ...breadcrumbBtnProps(active) };
-	const props = { ...base, ...tailwind, size, className, name, active, children };
+	const computed = { ...base, ...props, tailwind, size, className, name, active, children };
 
-	return <TextBtn onClick={onClick} {...props} />;
+	return <TextBtn onClick={onClick} {...computed} />;
 };
 
 export const BreadcrumbLink = ({
@@ -62,14 +71,15 @@ export const BreadcrumbLink = ({
 	size = 'xxs',
 	active,
 	href,
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.BreadcrumbLinkProps) => {
 	const base = { ...breadcrumbBtnProps(active) };
-	const props = { ...base, ...tailwind, size, className, name, active, children };
+	const computed = { ...base, ...props, tailwind, size, className, name, active, children };
 
-	return <TextLink href={href} {...props} />;
+	return <TextLink href={href} {...computed} />;
 };
 
 // Docs

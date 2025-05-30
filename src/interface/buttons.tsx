@@ -43,36 +43,61 @@ export const PrimaryBtn = ({
 	name = 'PrimaryBtn',
 	size = 'sm',
 	active,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.BtnProps) => {
 	const base = { ...btnProps(active), size: computeBtnSize(size) };
 
-	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
+	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
-export const AccentBtn = ({ id, name = 'AccentBtn', size = 'sm', active, className, ...tailwind }: types.BtnProps) => {
+export const AccentBtn = ({
+	id,
+	name = 'AccentBtn',
+	size = 'sm',
+	active,
+	tailwind,
+	className,
+	...props
+}: types.BtnProps) => {
 	const base = { ...btnAccentProps(active), size: computeBtnSize(size) };
 
-	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
+	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
-export const BorderBtn = ({ id, name = 'BorderBtn', size = 'sm', active, className, ...tailwind }: types.BtnProps) => {
+export const BorderBtn = ({
+	id,
+	name = 'BorderBtn',
+	size = 'sm',
+	active,
+	tailwind,
+	className,
+	...props
+}: types.BtnProps) => {
 	const base = { ...btnBorderProps(active), size: computeBtnSize(size) };
 
-	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
+	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
-export const TabBtn = ({ id, name = 'TabBtn', size = 'sm', active, className, ...tailwind }: types.BtnProps) => {
+export const TabBtn = ({ id, name = 'TabBtn', size = 'sm', active, tailwind, className, ...props }: types.BtnProps) => {
 	const base = { ...btnTabProps(active), size: computeBtnSize(size) };
 
-	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
+	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
-export const TextBtn = ({ id, name = 'TextBtn', size = 'sm', active, className, ...tailwind }: types.BtnProps) => {
+export const TextBtn = ({
+	id,
+	name = 'TextBtn',
+	size = 'sm',
+	active,
+	tailwind,
+	className,
+	...props
+}: types.BtnProps) => {
 	const base = { ...btnTextProps(active), size: computeBtnSize(size) };
 
-	return <BtnShared id={id} name={name} className={className} {...base} {...tailwind} />;
+	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
 const BtnShared = ({
@@ -103,6 +128,7 @@ const BtnShared = ({
 			disabled={disabled}
 			taskRunning={taskRunning}
 			onClick={onClick}
+			tailwind={tailwind}
 			className={className}
 			{...props}>
 			{taskRunning ? <Span /> : prevIcon && <Icon type='far' icon={prevIcon?.icon || prevIcon} {...prevIcon} />}
@@ -142,14 +168,15 @@ export const BtnWrapper = ({
 	disabled = false,
 	taskRunning = false,
 	children,
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.BtnProps) => {
 	const base = {
 		...styles.btnWrapper,
 		cursor: disabled ? 'cursor-not-allowed' : 'cursor-pointer',
 	};
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Button
@@ -159,7 +186,7 @@ export const BtnWrapper = ({
 			name={name}
 			disabled={disabled || taskRunning}
 			onClick={onClick}
-			className={classes}>
+			className={computed}>
 			{children}
 		</HTML.Button>
 	);

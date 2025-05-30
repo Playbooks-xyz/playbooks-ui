@@ -2,11 +2,18 @@ import { Div } from 'interface/html';
 import * as styles from 'styles/button-group-styles';
 import * as types from 'types/button-group-types';
 
-export const BtnGroup = ({ id, name = 'BtnGroup', className, children, ...tailwind }: types.ButtonGroupProps) => {
+export const BtnGroup = ({
+	id,
+	name = 'BtnGroup',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.ButtonGroupProps) => {
 	const base = styles.btnGroup;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 // Docs

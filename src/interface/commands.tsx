@@ -4,9 +4,17 @@ import { Span } from 'interface/html';
 import * as styles from 'styles/command-styles';
 import * as types from 'types/command-types';
 
-export const Command = ({ id, name = 'CMD', keys = [], className, children, ...tailwind }: types.CommandProps) => {
+export const Command = ({
+	id,
+	name = 'CMD',
+	keys = [],
+	tailwind,
+	className,
+	children,
+	...props
+}: types.CommandProps) => {
 	const base = styles.command;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	// Computed
 	const computedKeys = useMemo(() => {
@@ -35,7 +43,7 @@ export const Command = ({ id, name = 'CMD', keys = [], className, children, ...t
 
 	// Render
 	return (
-		<Span {...props}>
+		<Span {...computed}>
 			{computedKeys.join('')}
 			{children}
 		</Span>

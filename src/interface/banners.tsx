@@ -4,73 +4,90 @@ import { FarIcon } from 'interface/icons';
 import * as styles from 'styles/banner-styles';
 import * as types from 'types/banner-types';
 
-export const Banner = ({ id, name = 'Banner', className, children, ...tailwind }: types.BannerProps) => {
+export const Banner = ({ id, name = 'Banner', tailwind, className, children, ...props }: types.BannerProps) => {
 	const base = styles.banner;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const BannerIcon = ({
 	id,
 	name = 'BannerIcon',
 	icon = 'exclamation-circle',
+	tailwind,
 	className,
-	...tailwind
+	...props
 }: types.BannerIconProps) => {
 	const base = styles.bannerIcon;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Div {...props}>
+		<Div {...computed}>
 			<FarIcon icon={icon} />
 		</Div>
 	);
 };
 
-export const BannerBody = ({ id, name = 'BannerBody', className, children, ...tailwind }: types.BannerBodyProps) => {
+export const BannerBody = ({
+	id,
+	name = 'BannerBody',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.BannerBodyProps) => {
 	const base = styles.bannerBody;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const BannerTitle = ({
 	id,
 	name = 'BannerTitle',
 	size = 'h6',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.BannerTitleProps) => {
 	const base = styles.bannerTitle;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Font size={size} {...props}>
+		<Font size={size} {...computed}>
 			{children}
 		</Font>
 	);
 };
 
-export const BannerText = ({ id, name = 'BannerText', className, children, ...tailwind }: types.BannerTextProps) => {
+export const BannerText = ({
+	id,
+	name = 'BannerText',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.BannerTextProps) => {
 	const base = styles.bannerText;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...props}>{children}</P>;
+	return <P {...computed}>{children}</P>;
 };
 
 export const BannerActions = ({
 	id,
 	name = 'BannerActions',
+	tailwind,
 	className,
 	children,
-	...tailwind
+	...props
 }: types.BannerActionsProps) => {
 	const base = styles.bannerActions;
-	const props = { ...base, ...tailwind, className, name };
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Div {...props}>{children}</Div>;
+	return <Div {...computed}>{children}</Div>;
 };
 
 // Docs:
