@@ -4,7 +4,7 @@ import { Div, Span } from 'interface/html';
 import { FadIcon } from 'interface/icons';
 import * as styles from 'styles/switch-styles';
 import * as types from 'types';
-import { tailwindClassBuilder } from 'utils';
+import { classBuilder } from 'utils';
 
 export const SwitchGroup = ({
 	id,
@@ -35,7 +35,7 @@ export const Switch = ({
 	...props
 }: types.SwitchProps) => {
 	const base = styles.switchBase;
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<BtnWrapper alt='switch' onClick={() => onClick(!checked)} className={computed}>
@@ -115,7 +115,7 @@ export const SwitchLabel = ({
 	...props
 }: types.SwitchLabelProps) => {
 	const base = styles.switchLabel;
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Label id={id} htmlFor={htmlFor} className={computed}>

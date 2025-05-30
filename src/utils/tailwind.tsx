@@ -1,8 +1,4 @@
-import { isEmpty, isObject } from 'utils';
-
-export const computeProps = value => {
-	return isObject(value) ? value : {};
-};
+import { isEmpty, isObject } from 'utils/helpers';
 
 export const formatProps = (props, name?) => {
 	const formattedProps = props;
@@ -11,7 +7,7 @@ export const formatProps = (props, name?) => {
 	return formattedProps;
 };
 
-export const tailwindClassBuilder = (props, name?) => {
+export const classBuilder = (props, name?) => {
 	let classes = '';
 	const formattedProps = formatProps(props, name);
 	Object.keys(formattedProps)

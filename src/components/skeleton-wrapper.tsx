@@ -1,10 +1,10 @@
 import SkeletonWrapper, { SkeletonTheme } from 'react-loading-skeleton';
 
-import { tailwindClassBuilder } from 'utils';
+import { classBuilder } from 'utils';
 
 const Skeleton = ({ color, highlight, height = '100%', width = '100%', className = '', ...tailwind }) => {
 	const base = { width: 'w-full' };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const classes = classBuilder({ ...base, ...tailwind, className });
 
 	return (
 		<SkeletonTheme baseColor={color} highlightColor={highlight}>

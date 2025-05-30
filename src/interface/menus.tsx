@@ -9,7 +9,7 @@ import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
 import * as styles from 'styles/menu-styles';
 import * as types from 'types/menu-types';
-import { tailwindClassBuilder } from 'utils';
+import { classBuilder } from 'utils';
 
 export const Menu = ({
 	id,
@@ -120,7 +120,7 @@ export const MenuMenu = ({
 	...props
 }: types.MenuMenuProps) => {
 	const base = styles.menuMenu;
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<MenuMenuWrapper open={open}>

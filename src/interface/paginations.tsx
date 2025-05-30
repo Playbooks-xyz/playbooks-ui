@@ -3,7 +3,7 @@ import { FarIcon } from 'interface/icons';
 import { Nav } from 'interface/navs';
 import * as styles from 'styles/pagination-styles';
 import * as types from 'types/pagination-types';
-import { paginationProps, tailwindClassBuilder } from 'utils';
+import { paginationProps, classBuilder } from 'utils';
 
 export const Pagination = ({
 	id,
@@ -31,7 +31,7 @@ export const PaginationFirst = ({
 	...props
 }: types.PaginationBtnProps) => {
 	const base = paginationProps();
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<BtnWrapper name={name} alt={alt} onClick={() => onClick(page)} disabled={disabled} className={computed}>
@@ -52,7 +52,7 @@ export const PaginationPrev = ({
 	...props
 }: types.PaginationBtnProps) => {
 	const base = paginationProps();
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<BtnWrapper name={name} alt={alt} onClick={() => onClick(page)} disabled={disabled} className={computed}>
@@ -73,7 +73,7 @@ export const PaginationBtn = ({
 	...props
 }: types.PaginationBtnProps) => {
 	const base = { ...paginationProps(active) };
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<BtnWrapper name={name} alt={alt} active={active} onClick={onClick} className={computed}>
@@ -94,7 +94,7 @@ export const PaginationNext = ({
 	...props
 }: types.PaginationBtnProps) => {
 	const base = paginationProps();
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<BtnWrapper name={name} alt={alt} onClick={() => onClick(page)} disabled={disabled} className={computed}>
@@ -115,7 +115,7 @@ export const PaginationLast = ({
 	...props
 }: types.PaginationBtnProps) => {
 	const base = paginationProps();
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<BtnWrapper name={name} alt={alt} onClick={() => onClick(page)} disabled={disabled} className={computed}>

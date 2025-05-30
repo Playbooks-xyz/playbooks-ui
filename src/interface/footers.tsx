@@ -5,11 +5,11 @@ import { Div, Li, Ul } from 'interface/html';
 import { Link } from 'interface/links';
 import * as styles from 'styles/footer-styles';
 import * as types from 'types/footer-types';
-import { tailwindClassBuilder } from 'utils';
+import { classBuilder } from 'utils';
 
 export const Footer = ({ id, name = 'Footer', tailwind, className, children, style, ...props }: types.FooterProps) => {
 	const base = styles.footer;
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Footer name={name} className={computed} style={style}>

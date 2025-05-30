@@ -5,11 +5,11 @@ import { Div, Li, Ul } from 'interface/html';
 import { Link } from 'interface/links';
 import * as styles from 'styles/nav-styles';
 import * as types from 'types/nav-types';
-import { computeSectionSize, tailwindClassBuilder } from 'utils';
+import { classBuilder, computeSectionSize } from 'utils';
 
 export const Nav = ({ id, name = 'Nav', tailwind, className, children, ...props }: types.NavProps) => {
 	const base = styles.nav;
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Nav id={id} name={name} className={computed}>

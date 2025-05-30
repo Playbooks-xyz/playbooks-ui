@@ -3,11 +3,11 @@ import { Font } from 'interface/fonts';
 import { Div } from 'interface/html';
 import * as styles from 'styles/header-styles';
 import * as types from 'types/header-types';
-import { tailwindClassBuilder } from 'utils';
+import { classBuilder } from 'utils';
 
 export const Header = ({ id, name = 'Header', tailwind, className, children, style, ...props }: types.HeaderProps) => {
 	const base = styles.header;
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Header name={name} className={computed} style={style}>

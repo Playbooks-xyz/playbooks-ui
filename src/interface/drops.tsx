@@ -9,7 +9,7 @@ import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
 import * as styles from 'styles/drop-styles';
 import * as types from 'types/drop-types';
-import { tailwindClassBuilder } from 'utils';
+import { classBuilder } from 'utils';
 
 export const Drop = ({
 	id,
@@ -91,7 +91,7 @@ export const DropMenu = ({
 	const [dropRef, setDropRef] = useState(null);
 	const base = styles.dropMenu;
 	const [fade, setFade] = useState('hidden');
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, fade, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, fade, className });
 	const fadeRef = useRef(null);
 
 	const { styles: popperStyles, attributes } = usePopper(ref, dropRef, {

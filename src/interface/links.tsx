@@ -14,7 +14,7 @@ import {
 	btnTabProps,
 	btnTextProps,
 	computeBtnSize,
-	tailwindClassBuilder,
+	classBuilder,
 } from 'utils';
 
 export const Link = ({ variant = 'primary', tailwind, ...props }) => {
@@ -184,7 +184,7 @@ export const LinkWrapper = ({
 		...styles.linkWrapper,
 		cursor: disabled ? 'cursor-not-allowed' : 'cursor-pointer',
 	};
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<Fragment>

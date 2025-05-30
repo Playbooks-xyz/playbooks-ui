@@ -1,6 +1,6 @@
 import { animated, useSpring } from '@react-spring/web';
 
-import { tailwindClassBuilder } from 'utils';
+import { classBuilder } from 'utils';
 
 export const useAnimation = useSpring;
 
@@ -12,7 +12,7 @@ export type AnimationType = {
 
 const Animation = ({ className, style, children, ...tailwind }: AnimationType) => {
 	const base = { position: 'relative' };
-	const classes = tailwindClassBuilder({ ...base, ...tailwind, className });
+	const classes = classBuilder({ ...base, ...tailwind, className });
 
 	// Render
 	return (

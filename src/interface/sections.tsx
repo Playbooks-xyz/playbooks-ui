@@ -3,7 +3,7 @@ import { Font, P } from 'interface/fonts';
 import { Div, Hr } from 'interface/html';
 import * as styles from 'styles/section-styles';
 import * as types from 'types/section-types';
-import { computeSectionSize, tailwindClassBuilder } from 'utils';
+import { computeSectionSize, classBuilder } from 'utils';
 
 export const Section = ({
 	id,
@@ -16,7 +16,7 @@ export const Section = ({
 	...props
 }: types.SectionProps) => {
 	const base = styles.section;
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Section id={id} ref={ref} name={name} className={computed} style={style}>

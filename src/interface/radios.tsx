@@ -3,7 +3,7 @@ import { P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
 import * as styles from 'styles/radio-styles';
 import * as types from 'types';
-import { checkboxProps, tailwindClassBuilder } from 'utils';
+import { checkboxProps, classBuilder } from 'utils';
 
 export const RadioWrapper = ({
 	id,
@@ -21,7 +21,7 @@ export const RadioWrapper = ({
 			borderColor: 'border-blue-500 dark:border-cyan-500',
 		}),
 	};
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Label onClick={() => onClick()} className={computed}>
@@ -66,7 +66,7 @@ export const RadioInput = ({
 	...props
 }: types.RadioInputProps) => {
 	const base = { ...checkboxProps(value), ...styles.radioInput };
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, name, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, name, className });
 	return (
 		<HTML.Input
 			id={id}

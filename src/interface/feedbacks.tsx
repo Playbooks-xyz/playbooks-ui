@@ -3,7 +3,7 @@ import { Div } from 'interface/html';
 import { Icon } from 'interface/icons';
 import * as styles from 'styles/feedback-styles';
 import * as types from 'types/feedback-types';
-import { tailwindClassBuilder } from 'utils';
+import { classBuilder } from 'utils';
 
 export const Feedback = ({ id, name = 'Feedback', tailwind, className, children, ...props }: types.FeedbackProps) => {
 	const base = styles.feedback;
@@ -36,7 +36,7 @@ export const FeedbackIcon = ({
 	...props
 }: types.FeedbackIconProps) => {
 	const base = { ...styles.feedbackIcon };
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return <Icon type={type} icon={icon} className={computed} />;
 };

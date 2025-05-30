@@ -3,11 +3,11 @@ import { Img, Ul } from 'interface/html';
 import { LinkWrapper } from 'interface/links';
 import * as styles from 'styles/navbar-styles';
 import * as types from 'types/navbar-types';
-import { tailwindClassBuilder } from 'utils';
+import { classBuilder } from 'utils';
 
 export const Navbar = ({ id, ref, name = 'Navbar', tailwind, className, children, ...props }: types.NavPropsbar) => {
 	const base = styles.navbar;
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Nav ref={ref} name={name} className={computed}>
@@ -28,7 +28,7 @@ export const NavbarBrand = ({
 	...props
 }: types.NavPropsbarBrand) => {
 	const base = styles.navbarBrand;
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<LinkWrapper alt={alt} name={name} href={href} className={computed}>

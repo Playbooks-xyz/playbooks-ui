@@ -12,8 +12,8 @@ import {
 	btnProps,
 	btnTabProps,
 	btnTextProps,
+	classBuilder,
 	computeBtnSize,
-	tailwindClassBuilder,
 } from 'utils';
 
 export const Btn = ({ variant = 'primary', ...props }) => {
@@ -176,7 +176,7 @@ export const BtnWrapper = ({
 		...styles.btnWrapper,
 		cursor: disabled ? 'cursor-not-allowed' : 'cursor-pointer',
 	};
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Button

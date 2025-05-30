@@ -4,7 +4,7 @@ import { Div, Img } from 'interface/html';
 import { FadIcon } from 'interface/icons';
 import * as styles from 'styles/hero-styles';
 import * as types from 'types/hero-types';
-import { computeHeroSize, computeThumbnailSize, tailwindClassBuilder } from 'utils';
+import { computeHeroSize, computeThumbnailSize, classBuilder } from 'utils';
 
 export const Hero = ({
 	id,
@@ -21,7 +21,7 @@ export const Hero = ({
 		...styles.hero,
 		size: computeHeroSize(size),
 	};
-	const computed = tailwindClassBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Header ref={ref} name={name} className={computed} style={style}>

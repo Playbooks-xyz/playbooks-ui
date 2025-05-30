@@ -26,6 +26,8 @@
     "commit": "scripts/commit.sh",
     "deploy": "scripts/deploy.sh",
     "git": "git push --tags",
+        "packages": "npx yalc remove @ehubbell/html && npm install @ehubbell/html@latest --legacy-peer-deps",
+    "yalc": "npm uninstall @ehubbell/html --legacy-peer-deps && npx yalc add @ehubbell/html",
     "test": "jest",
     "prepare": "husky"
   },
