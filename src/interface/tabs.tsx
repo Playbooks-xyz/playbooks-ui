@@ -71,13 +71,7 @@ export const Tab = ({
 	children,
 	...props
 }: types.TabProps) => {
-	const base = {
-		...theme.tab(),
-		...(active && {
-			borderColor: 'border-blue-500 dark:border-cyan-500',
-			color: 'text-blue-500 dark:text-cyan-500',
-		}),
-	};
+	const base = theme.tab({ active });
 	const computed = { ...base, ...props, tailwind, alt, children, className, name };
 
 	return <Btn variant={variant} onClick={() => onSelect(value)} {...computed} />;
@@ -100,7 +94,7 @@ export const TabPane = ({
 	children,
 	...props
 }: types.TabPaneProps) => {
-	const base = { ...theme.tabPane(), display: active ? 'block' : 'hidden' };
+	const base = theme.tabPane({ active });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;

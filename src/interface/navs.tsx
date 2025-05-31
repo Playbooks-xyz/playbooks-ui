@@ -1,9 +1,9 @@
 import * as HTML from '@ehubbell/html';
 import * as theme from '@playbooks/theme';
-import { Btn } from 'interface/buttons';
+import { AccentBtn } from 'interface/buttons';
 import { Font } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
-import { Link } from 'interface/links';
+import { AccentLink } from 'interface/links';
 import * as types from 'types/nav-types';
 import { classBuilder } from 'utils';
 
@@ -84,14 +84,14 @@ export const NavBtn = ({ id, name = 'NavBtn', tailwind, className, children, ...
 	const base = theme.navBtn();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <Btn {...computed} />;
+	return <AccentBtn {...computed} />;
 };
 
 export const NavLink = ({ id, name = 'NavLink', tailwind, className, children, ...props }: types.NavLinkProps) => {
 	const base = theme.navLink();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <Link {...computed} />;
+	return <AccentLink {...computed} />;
 };
 
 // Docs

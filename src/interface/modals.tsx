@@ -164,7 +164,11 @@ export const ModalSubtitle = ({
 	const base = theme.modalSubtitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Font {...computed}>{children}</Font>;
+	return (
+		<Font size={size} {...computed}>
+			{children}
+		</Font>
+	);
 };
 
 export const ModalBody = ({

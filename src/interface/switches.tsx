@@ -69,10 +69,7 @@ export const SwitchInner = ({
 	className,
 	...props
 }: types.SwitchInnerProps) => {
-	const base = {
-		...theme.switchInner(),
-		bgColor: checked ? 'bg-gray-100 dark:bg-gray-600' : 'bg-gray-100 dark:bg-gray-800',
-	};
+	const base = theme.switchInner({ checked });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Span aria-hidden='true' {...computed} />;
@@ -87,11 +84,7 @@ export const SwitchToggle = ({
 	className,
 	...props
 }: types.SwitchToggleProps) => {
-	const base = {
-		...theme.switchToggle(),
-		bgColor: checked ? 'bg-blue-500 dark:bg-cyan-500' : 'bg-gray-300 dark:bg-gray-600',
-		transform: checked ? 'translate-x-6' : 'translate-x-0',
-	};
+	const base = theme.switchToggle({ checked });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (

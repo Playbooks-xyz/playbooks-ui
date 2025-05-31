@@ -33,7 +33,7 @@ export const Toast = ({
 	children,
 	...props
 }: types.ToastProps) => {
-	const base = theme.toast();
+	const base = theme.toast({ show });
 	const [fade, setFade] = useState({ opacity: 'opacity-0', translate: 'translate-y-12' });
 	const computed = { ...base, ...props, tailwind, ...fade, className };
 	const ref = useRef(null);

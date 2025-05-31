@@ -17,7 +17,7 @@ export const TagsWrapper = ({
 };
 
 export const Tag = ({ id, name = 'Tag', size = 'md', tailwind, className, children, ...props }: types.TagProps) => {
-	const base = theme.tag();
+	const base = theme.tag({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (

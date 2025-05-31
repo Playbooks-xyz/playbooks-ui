@@ -81,11 +81,7 @@ export const RangeSliderTrack = ({ ref, values, min, max, trackProps, children, 
 };
 
 export const RangeSliderThumb = ({ ref, isDragged, tailwind, ...props }) => {
-	const base = {
-		...theme.rangeSliderThumb(),
-		bgColor: isDragged ? 'bg-blue-500 dark:bg-cyan-500' : 'bg-gray-300 dark:bg-gray-600',
-		borderColor: isDragged ? 'border-blue-500 dark:border-cyan-500' : 'border-gray-300 dark:border-gray-600',
-	};
+	const base = theme.rangeSliderThumb({ isDragged });
 	const computed = classBuilder({ ...base, ...props, tailwind });
 
 	return <HTML.Div ref={ref} {...props} className={computed} style={props.style} />;
