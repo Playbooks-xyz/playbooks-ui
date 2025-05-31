@@ -1,24 +1,25 @@
-import { useState } from 'react';
-
+import * as HTML from '@ehubbell/html';
 import * as theme from '@playbooks/theme';
 import { Font, P, Small } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import { FadIcon } from 'interface/icons';
 import * as types from 'types/hero-types';
+import { classBuilder } from 'utils';
 
-export const Hero = ({ tailwind, children, ...props }) => {
-	const base = { display: 'flex flex-col', position: 'relative', overflow: 'overflow-hidden' };
-	const computed = { ...base, ...props, tailwind, bg: 'bg-gray-800' };
+export const Hero = ({ name = 'Hero', size = '', tailwind, className, children, ...props }) => {
+	const base = theme.hero({ size });
+	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
-	return <Div {...computed}>{children}</Div>;
+	return (
+		<HTML.Header name={name} className={computed}>
+			{children}
+		</HTML.Header>
+	);
 };
 
 export const HeroBg = ({ id, name = 'HeroBg', ref, tailwind, className, children, ...props }: types.HeroBgProps) => {
 	const base = theme.heroBg();
 	const computed = { ...base, ...props, tailwind, className, name };
-
-	// State
-	const [active, setActive] = useState(false);
 
 	return <Div {...computed}>{children}</Div>;
 };
@@ -33,7 +34,7 @@ export const HeroImg = ({
 	className,
 	...props
 }: types.HeroImgProps) => {
-	const base = theme.heroImg();
+	const base = theme.heroImg({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
