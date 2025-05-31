@@ -53,7 +53,7 @@ export const HeroIcon = ({
 	className,
 	...props
 }: types.HeroIconProps) => {
-	const base = theme.heroIcon();
+	const base = theme.heroIcon({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -106,6 +106,7 @@ export const HeroTitle = ({
 export const HeroSubtitle = ({
 	id,
 	name = 'HeroSubtitle',
+	size = 'h5',
 	tailwind,
 	className,
 	children,
@@ -114,7 +115,11 @@ export const HeroSubtitle = ({
 	const base = theme.heroSubtitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...computed}>{children}</P>;
+	return (
+		<Font size={size} {...computed}>
+			{children}
+		</Font>
+	);
 };
 
 export const HeroText = ({ id, name = 'HeroText', tailwind, className, children, ...props }: types.HeroTextProps) => {

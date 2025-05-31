@@ -17,6 +17,20 @@ export const Footer = ({ id, name = 'Footer', tailwind, className, children, sty
 	);
 };
 
+export const FooterHeader = ({
+	id,
+	name = 'FooterHeader',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.FooterHeaderProps) => {
+	const base = theme.footerHeader();
+	const computed = { ...base, ...props, tailwind, className, name };
+
+	return <Div {...computed}>{children}</Div>;
+};
+
 export const FooterBody = ({
 	id,
 	name = 'FooterBody',
