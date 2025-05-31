@@ -1,7 +1,7 @@
+import * as theme from '@playbooks/theme';
 import { Btn } from 'interface/buttons';
 import { FormSelect } from 'interface/forms';
 import { Div } from 'interface/html';
-import * as styles from 'styles/tab-styles';
 import * as types from 'types/tab-types';
 
 export const TabWrapper = ({
@@ -12,7 +12,7 @@ export const TabWrapper = ({
 	children,
 	...props
 }: types.TabWrapperProps) => {
-	const base = styles.tabWrapper;
+	const base = theme.tabWrapper();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -29,7 +29,7 @@ export const TabSelect = ({
 	children,
 	...props
 }: types.TabSelectProps) => {
-	const base = styles.tabSelect;
+	const base = theme.tabSelect();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <FormSelect value={activeTab} options={tabs} onChange={onSelect} {...computed} />;
@@ -46,7 +46,7 @@ export const Tabs = ({
 	children,
 	...props
 }: types.TabPropss) => {
-	const base = styles.tabs;
+	const base = theme.tabs();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -72,7 +72,7 @@ export const Tab = ({
 	...props
 }: types.TabProps) => {
 	const base = {
-		...styles.tab,
+		...theme.tab(),
 		...(active && {
 			borderColor: 'border-blue-500 dark:border-cyan-500',
 			color: 'text-blue-500 dark:text-cyan-500',
@@ -84,7 +84,7 @@ export const Tab = ({
 };
 
 export const TabPanes = ({ id, name = 'TabPanes', tailwind, className, children, ...props }: types.TabPanesProps) => {
-	const base = styles.tabPanes;
+	const base = theme.tabPanes();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -100,7 +100,7 @@ export const TabPane = ({
 	children,
 	...props
 }: types.TabPaneProps) => {
-	const base = { ...styles.tabPane, display: active ? 'block' : 'hidden' };
+	const base = { ...theme.tabPane(), display: active ? 'block' : 'hidden' };
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;

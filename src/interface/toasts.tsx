@@ -1,11 +1,11 @@
 import { useRef, useState } from 'react';
 
+import * as theme from '@playbooks/theme';
 import { Fade } from 'components/fade-wrapper';
 import { AccentBtn } from 'interface/buttons';
 import { H6, P } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
 import { FadIcon } from 'interface/icons';
-import * as styles from 'styles/toast-styles';
 import * as types from 'types/toast-types';
 
 export const ToastWrapper = ({
@@ -16,7 +16,7 @@ export const ToastWrapper = ({
 	children,
 	...props
 }: types.ToastWrapperProps) => {
-	const base = styles.toastWrapper;
+	const base = theme.toastWrapper();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -33,7 +33,7 @@ export const Toast = ({
 	children,
 	...props
 }: types.ToastProps) => {
-	const base = styles.toast;
+	const base = theme.toast();
 	const [fade, setFade] = useState({ opacity: 'opacity-0', translate: 'translate-y-12' });
 	const computed = { ...base, ...props, tailwind, ...fade, className };
 	const ref = useRef(null);
@@ -65,7 +65,7 @@ export const ToastHeader = ({
 	children,
 	...props
 }: types.ToastHeaderProps) => {
-	const base = styles.toastHeader;
+	const base = theme.toastHeader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -86,7 +86,7 @@ export const ToastIcon = ({
 	className,
 	...props
 }: types.ToastIconProps) => {
-	const base = styles.toastIcon;
+	const base = theme.toastIcon();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -104,7 +104,7 @@ export const ToastTitle = ({
 	children,
 	...props
 }: types.ToastTitleProps) => {
-	const base = styles.toastTitle;
+	const base = theme.toastTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <H6 {...computed}>{children}</H6>;
@@ -118,7 +118,7 @@ export const ToastBody = ({
 	children,
 	...props
 }: types.ToastBodyProps) => {
-	const base = styles.toastBody;
+	const base = theme.toastBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -132,7 +132,7 @@ export const ToastText = ({
 	children,
 	...props
 }: types.ToastTextProps) => {
-	const base = styles.toastText;
+	const base = theme.toastText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <P {...computed}>{children}</P>;

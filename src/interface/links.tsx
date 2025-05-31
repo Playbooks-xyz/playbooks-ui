@@ -2,11 +2,10 @@ import { Fragment } from 'react';
 import NLink from 'next/link';
 
 import * as HTML from '@ehubbell/html';
+import * as theme from '@playbooks/theme';
 import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
-import * as styles from 'styles/link-styles';
-import { computeBtnSize } from 'theme';
 import * as types from 'types/link-types';
 import { classBuilder } from 'utils';
 
@@ -42,8 +41,7 @@ export const PrimaryLink = ({
 	className,
 	...props
 }: types.LinkProps) => {
-	const base = { ...styles.primaryLink(active), size: computeBtnSize(size) };
-
+	const base = theme.primaryLink({ active, size });
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
 
@@ -56,8 +54,7 @@ export const AccentLink = ({
 	className,
 	...props
 }: types.LinkProps) => {
-	const base = { ...styles.accentLink(active), size: computeBtnSize(size) };
-
+	const base = theme.accentLink({ active, size });
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
 
@@ -70,8 +67,7 @@ export const BorderLink = ({
 	className,
 	...props
 }: types.LinkProps) => {
-	const base = { ...styles.borderLink(active), size: computeBtnSize(size) };
-
+	const base = theme.borderLink({ active, size });
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
 
@@ -84,8 +80,7 @@ export const TabLink = ({
 	className,
 	...props
 }: types.LinkProps) => {
-	const base = { ...styles.tabLink(active), size: computeBtnSize(size) };
-
+	const base = theme.tabLink({ active, size });
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
 
@@ -98,8 +93,7 @@ export const TextLink = ({
 	className,
 	...props
 }: types.LinkProps) => {
-	const base = { ...styles.textLink(active), size: computeBtnSize(size) };
-
+	const base = theme.textLink({ active, size });
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
 
@@ -173,10 +167,7 @@ export const LinkWrapper = ({
 	children,
 	...props
 }: types.LinkProps) => {
-	const base = {
-		...styles.linkWrapper,
-		cursor: disabled ? 'cursor-not-allowed' : 'cursor-pointer',
-	};
+	const base = theme.linkWrapper({ disabled });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (

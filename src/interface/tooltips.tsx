@@ -1,10 +1,9 @@
 import { useRef, useState } from 'react';
 import { usePopper } from 'react-popper';
 
+import * as theme from '@playbooks/theme';
 import { Fade } from 'components/fade-wrapper';
 import { Div, Span } from 'interface/html';
-import * as styles from 'styles/tooltip-styles';
-import { computeTooltipAnimation } from 'theme';
 import * as types from 'types/tooltip-types';
 
 export const Tooltip = ({
@@ -21,7 +20,7 @@ export const Tooltip = ({
 	...props
 }: types.TooltipProps) => {
 	const base = {
-		...styles.tooltip,
+		...theme.tooltip(),
 		className,
 		...tailwind?.span,
 	};
@@ -68,9 +67,9 @@ export const Tooltip = ({
 				ref={fadeRef}
 				show={open}
 				timeout={100}
-				onEntering={() => setFade(`opacity-0 ${computeTooltipAnimation(placement)} scale-90`)}
+				onEntering={() => setFade(`opacity-0 scale-90`)}
 				onEntered={() => setFade('opacity-100 scale-100')}
-				onExiting={() => setFade(`opacity-0 ${computeTooltipAnimation(placement)} scale-90`)}
+				onExiting={() => setFade(`opacity-0 scale-90`)}
 				onExited={() => setFade('hidden')}>
 				<Div ref={setPopElement} zIndex='z-10' style={popperStyles.popper} {...attributes.popper}>
 					<TooltipBody
@@ -97,7 +96,7 @@ export const TooltipBody = ({
 	tailwind,
 	...props
 }: types.TooltipBodyProps) => {
-	const base = styles.tooltipBody;
+	const base = theme.tooltipBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -120,7 +119,7 @@ export const TooltipInner = ({
 	tailwind,
 	...props
 }: types.TooltipInnerProps) => {
-	const base = styles.tooltipInner;
+	const base = theme.tooltipInner();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -135,7 +134,7 @@ export const TooltipArrow = ({
 	tailwind,
 	...props
 }: types.TooltipArrowProps) => {
-	const base = styles.tooltipArrow;
+	const base = theme.tooltipArrow();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (

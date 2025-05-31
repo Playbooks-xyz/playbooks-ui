@@ -1,8 +1,8 @@
 import * as HTML from '@ehubbell/html';
+import * as theme from '@playbooks/theme';
 import { BtnWrapper } from 'interface/buttons';
 import { Div, Span } from 'interface/html';
 import { FadIcon } from 'interface/icons';
-import * as styles from 'styles/switch-styles';
 import * as types from 'types';
 import { classBuilder } from 'utils';
 
@@ -14,7 +14,7 @@ export const SwitchGroup = ({
 	children,
 	...props
 }: types.SwitchGroupProps) => {
-	const base = styles.switchGroup;
+	const base = theme.switchGroup();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -34,7 +34,7 @@ export const Switch = ({
 	className,
 	...props
 }: types.SwitchProps) => {
-	const base = styles.switchBase;
+	const base = theme.switchBase();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -55,7 +55,7 @@ export const SwitchBackdrop = ({
 	className,
 	...props
 }: types.SwitchBackdropProps) => {
-	const base = styles.switchBackdrop;
+	const base = theme.switchBackdrop();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Span aria-hidden='true' {...computed} />;
@@ -70,7 +70,7 @@ export const SwitchInner = ({
 	...props
 }: types.SwitchInnerProps) => {
 	const base = {
-		...styles.switchInner,
+		...theme.switchInner(),
 		bgColor: checked ? 'bg-gray-100 dark:bg-gray-600' : 'bg-gray-100 dark:bg-gray-800',
 	};
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -88,7 +88,7 @@ export const SwitchToggle = ({
 	...props
 }: types.SwitchToggleProps) => {
 	const base = {
-		...styles.switchToggle,
+		...theme.switchToggle(),
 		bgColor: checked ? 'bg-blue-500 dark:bg-cyan-500' : 'bg-gray-300 dark:bg-gray-600',
 		transform: checked ? 'translate-x-6' : 'translate-x-0',
 	};
@@ -114,7 +114,7 @@ export const SwitchLabel = ({
 	children,
 	...props
 }: types.SwitchLabelProps) => {
-	const base = styles.switchLabel;
+	const base = theme.switchLabel();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (

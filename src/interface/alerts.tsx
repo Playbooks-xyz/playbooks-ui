@@ -1,11 +1,11 @@
+import * as theme from '@playbooks/theme';
 import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
-import * as styles from 'styles/alert-styles';
 import * as types from 'types/alert-types';
 
 export const Alert = ({ id, name = 'Alert', tailwind, className, children, ...props }: types.AlertProps) => {
-	const base = styles.alert;
+	const base = theme.alert();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -19,14 +19,10 @@ export const AlertIcon = ({
 	className,
 	...props
 }: types.AlertIconProps) => {
-	const base = styles.alertIcon;
+	const base = theme.alertIcon();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return (
-		<Div {...computed}>
-			<FarIcon icon={icon} />
-		</Div>
-	);
+	return <FarIcon icon={icon} {...computed} />;
 };
 
 export const AlertBody = ({
@@ -37,7 +33,7 @@ export const AlertBody = ({
 	children,
 	...props
 }: types.AlertBodyProps) => {
-	const base = styles.alertBody;
+	const base = theme.alertBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -52,7 +48,7 @@ export const AlertTitle = ({
 	children,
 	...props
 }: types.AlertTitleProps) => {
-	const base = styles.alertTitle;
+	const base = theme.alertTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -70,7 +66,7 @@ export const AlertText = ({
 	children,
 	...props
 }: types.AlertTextProps) => {
-	const base = styles.alertText;
+	const base = theme.alertText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <P {...computed}>{children}</P>;
@@ -84,7 +80,7 @@ export const AlertActions = ({
 	children,
 	...props
 }: types.AlertActionsProps) => {
-	const base = styles.alertActions;
+	const base = theme.alertActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;

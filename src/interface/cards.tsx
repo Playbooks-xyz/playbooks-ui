@@ -1,11 +1,11 @@
+import * as theme from '@playbooks/theme';
 import { Font, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import { Icon } from 'interface/icons';
-import * as styles from 'styles/card-styles';
 import * as types from 'types/card-types';
 
 export const Card = ({ id, name = 'Card', tailwind, className, children, ...props }: types.CardProps) => {
-	const base = styles.card;
+	const base = theme.card();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -19,7 +19,7 @@ export const CardHeader = ({
 	children,
 	...props
 }: types.CardHeaderProps) => {
-	const base = styles.cardHeader;
+	const base = theme.cardHeader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -35,7 +35,7 @@ export const CardIcon = ({
 	className,
 	...props
 }: types.CardIconProps) => {
-	const computed = { ...styles.cardIcon, ...props, tailwind, className, name };
+	const computed = { ...theme.cardIcon(), ...props, tailwind, className, name };
 
 	return <Icon type={type} icon={icon} {...computed} />;
 };
@@ -50,14 +50,14 @@ export const CardImg = ({
 	children,
 	...props
 }: types.CardImgProps) => {
-	const base = styles.cardImg;
+	const base = theme.cardImg();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Img src={src} alt={alt} {...computed} />;
 };
 
 export const CardBody = ({ id, name = 'CardBody', tailwind, className, children, ...props }: types.CardBodyProps) => {
-	const base = styles.cardBody;
+	const base = theme.cardBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -71,7 +71,7 @@ export const CardPretitle = ({
 	children,
 	...props
 }: types.CardPretitleProps) => {
-	const base = styles.cardPretitle;
+	const base = theme.cardPretitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <P {...computed}>{children}</P>;
@@ -86,7 +86,7 @@ export const CardTitle = ({
 	children,
 	...props
 }: types.CardTitleProps) => {
-	const base = styles.cardTitle;
+	const base = theme.cardTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -104,14 +104,14 @@ export const CardSubtitle = ({
 	children,
 	...props
 }: types.CardSubtitleProps) => {
-	const base = styles.cardSubtitle;
+	const base = theme.cardSubtitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <P {...computed}>{children}</P>;
 };
 
 export const CardText = ({ id, name = 'CardText', tailwind, className, children, ...props }: types.CardTextProps) => {
-	const base = styles.cardText;
+	const base = theme.cardText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <P {...computed}>{children}</P>;
@@ -125,7 +125,7 @@ export const CardFooter = ({
 	children,
 	...props
 }: types.CardFooterProps) => {
-	const base = styles.cardFooter;
+	const base = theme.cardFooter();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -139,7 +139,7 @@ export const CardActions = ({
 	children,
 	...props
 }: types.CardActionsProps) => {
-	const base = styles.cardActions;
+	const base = theme.cardActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;

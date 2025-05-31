@@ -1,11 +1,11 @@
+import * as theme from '@playbooks/theme';
 import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
-import * as styles from 'styles/banner-styles';
 import * as types from 'types/banner-types';
 
 export const Banner = ({ id, name = 'Banner', tailwind, className, children, ...props }: types.BannerProps) => {
-	const base = styles.banner;
+	const base = theme.banner();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -19,7 +19,7 @@ export const BannerIcon = ({
 	className,
 	...props
 }: types.BannerIconProps) => {
-	const base = styles.bannerIcon;
+	const base = theme.bannerIcon();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -37,7 +37,7 @@ export const BannerBody = ({
 	children,
 	...props
 }: types.BannerBodyProps) => {
-	const base = styles.bannerBody;
+	const base = theme.bannerBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -52,7 +52,7 @@ export const BannerTitle = ({
 	children,
 	...props
 }: types.BannerTitleProps) => {
-	const base = styles.bannerTitle;
+	const base = theme.bannerTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -70,7 +70,7 @@ export const BannerText = ({
 	children,
 	...props
 }: types.BannerTextProps) => {
-	const base = styles.bannerText;
+	const base = theme.bannerText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <P {...computed}>{children}</P>;
@@ -84,7 +84,7 @@ export const BannerActions = ({
 	children,
 	...props
 }: types.BannerActionsProps) => {
-	const base = styles.bannerActions;
+	const base = theme.bannerActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;

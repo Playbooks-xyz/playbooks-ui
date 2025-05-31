@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
+import * as theme from '@playbooks/theme';
 import { Span } from 'interface/html';
-import * as styles from 'styles/command-styles';
 import * as types from 'types/command-types';
 
 export const Command = ({
@@ -13,7 +13,7 @@ export const Command = ({
 	children,
 	...props
 }: types.CommandProps) => {
-	const base = styles.command;
+	const base = theme.command();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	// Computed

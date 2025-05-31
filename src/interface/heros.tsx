@@ -1,45 +1,26 @@
-import * as HTML from '@ehubbell/html';
-import { Font, P } from 'interface/fonts';
+import { useState } from 'react';
+
+import * as theme from '@playbooks/theme';
+import { Font, P, Small } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import { FadIcon } from 'interface/icons';
-import * as styles from 'styles/hero-styles';
-import { computeHeroImgSize, computeHeroSize } from 'theme';
 import * as types from 'types/hero-types';
-import { classBuilder } from 'utils';
 
-export const Hero = ({
-	id,
-	ref,
-	name = 'Hero',
-	size,
-	tailwind,
-	className,
-	children,
-	style,
-	...props
-}: types.HeroProps) => {
-	const base = {
-		...styles.hero,
-		size: computeHeroSize(size),
-	};
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+export const Hero = ({ tailwind, children, ...props }) => {
+	const base = { display: 'flex flex-col', position: 'relative', overflow: 'overflow-hidden' };
+	const computed = { ...base, ...props, tailwind, bg: 'bg-gray-800' };
 
-	return (
-		<HTML.Header ref={ref} name={name} className={computed} style={style}>
-			{children}
-		</HTML.Header>
-	);
+	return <Div {...computed}>{children}</Div>;
 };
 
-export const HeroBg = ({ id, ref, name = 'HeroBg', tailwind, className, children, ...props }: types.HeroBgProps) => {
-	const base = styles.heroBg;
+export const HeroBg = ({ id, name = 'HeroBg', ref, tailwind, className, children, ...props }: types.HeroBgProps) => {
+	const base = theme.heroBg();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return (
-		<Div ref={ref} {...computed}>
-			{children}
-		</Div>
-	);
+	// State
+	const [active, setActive] = useState(false);
+
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const HeroImg = ({
@@ -52,10 +33,7 @@ export const HeroImg = ({
 	className,
 	...props
 }: types.HeroImgProps) => {
-	const base = {
-		...styles.heroImg,
-		size: computeHeroImgSize(size),
-	};
+	const base = theme.heroImg();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -74,10 +52,7 @@ export const HeroIcon = ({
 	className,
 	...props
 }: types.HeroIconProps) => {
-	const base = {
-		...styles.heroIcon,
-		size: computeThumbnailSize(size),
-	};
+	const base = theme.heroIcon();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -88,7 +63,7 @@ export const HeroIcon = ({
 };
 
 export const HeroBody = ({ id, name = 'HeroBody', tailwind, className, children, ...props }: types.HeroBodyProps) => {
-	const base = styles.heroBody;
+	const base = theme.heroBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -102,41 +77,22 @@ export const HeroPretitle = ({
 	children,
 	...props
 }: types.HeroPretitleProps) => {
-	const base = styles.heroPretitle;
+	const base = theme.heroPretitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...computed}>{children}</P>;
+	return <Small {...computed}>{children}</Small>;
 };
 
 export const HeroTitle = ({
 	id,
 	name = 'HeroTitle',
-	size,
+	size = 'h1',
 	tailwind,
 	className,
 	children,
 	...props
 }: types.HeroTitleProps) => {
-	const base = styles.heroTitle;
-	const computed = { ...base, ...props, tailwind, className, name };
-
-	return (
-		<Font size={size || 'h1'} {...computed}>
-			{children}
-		</Font>
-	);
-};
-
-export const HeroSubtitle = ({
-	id,
-	name = 'HeroSubtitle',
-	size = 'h5',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.HeroSubtitleProps) => {
-	const base = styles.heroSubtitle;
+	const base = theme.heroTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -146,8 +102,22 @@ export const HeroSubtitle = ({
 	);
 };
 
+export const HeroSubtitle = ({
+	id,
+	name = 'HeroSubtitle',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.HeroSubtitleProps) => {
+	const base = theme.heroSubtitle();
+	const computed = { ...base, ...props, tailwind, className, name };
+
+	return <P {...computed}>{children}</P>;
+};
+
 export const HeroText = ({ id, name = 'HeroText', tailwind, className, children, ...props }: types.HeroTextProps) => {
-	const base = styles.heroText;
+	const base = theme.heroText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <P {...computed}>{children}</P>;
@@ -161,11 +131,34 @@ export const HeroActions = ({
 	children,
 	...props
 }: types.HeroActionsProps) => {
-	const base = styles.heroActions;
+	const base = theme.heroActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
 };
 
+export const HeroContainer = ({ tailwind, children, ...props }) => {
+	const base = {
+		display: 'flex flex-col',
+		position: 'relative',
+		width: 'w-full',
+		maxWidth: 'max-w-screen-xl',
+		margin: 'mx-auto',
+		padding: 'px-4 py-24',
+		space: 'space-y-12',
+		md: {
+			padding: 'md:px-6 md:py-32',
+		},
+		lg: {
+			display: 'lg:flex-row',
+			space: 'lg:space-y-0 lg:space-x-12',
+			padding: 'lg:py-40',
+		},
+	};
+	const computed = { ...base, ...props, tailwind };
+
+	return <Div {...computed}>{children}</Div>;
+};
+
 // Docs
-// https://tailwindui.com/interface/marketing/sections/header
+// https://tailwindui.com/interface/marketing/sections/heroes

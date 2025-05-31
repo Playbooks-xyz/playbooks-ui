@@ -1,7 +1,7 @@
 import { Range } from 'react-range';
 
 import * as HTML from '@ehubbell/html';
-import * as styles from 'styles/range-styles';
+import * as theme from '@playbooks/theme';
 import { classBuilder } from 'utils';
 
 export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange, tailwind, ...props }) => {
@@ -57,7 +57,7 @@ export const RangeSliders = ({ min = 0, max = 100, step = 1, values, onChange, o
 };
 
 export const RangeSliderTrack = ({ ref, values, min, max, trackProps, children, onNext, tailwind, ...restProps }) => {
-	const base = styles.rangeSliderTrack;
+	const base = theme.rangeSliderTrack();
 	const computed = classBuilder({ ...base, ...restProps, tailwind });
 	return (
 		<HTML.Div
@@ -82,7 +82,7 @@ export const RangeSliderTrack = ({ ref, values, min, max, trackProps, children, 
 
 export const RangeSliderThumb = ({ ref, isDragged, tailwind, ...props }) => {
 	const base = {
-		...styles.rangeSliderThumb,
+		...theme.rangeSliderThumb(),
 		bgColor: isDragged ? 'bg-blue-500 dark:bg-cyan-500' : 'bg-gray-300 dark:bg-gray-600',
 		borderColor: isDragged ? 'border-blue-500 dark:border-cyan-500' : 'border-gray-300 dark:border-gray-600',
 	};

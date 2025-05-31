@@ -1,14 +1,21 @@
 import * as HTML from '@ehubbell/html';
+import * as theme from '@playbooks/theme';
 import { BtnWrapper } from 'interface/buttons';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
-import * as styles from 'styles/table-styles';
 import * as types from 'types/table-types';
 import { classBuilder } from 'utils';
 import { isObject } from 'utils/helpers';
 
-export const Table = ({ id, name = 'Table', tailwind, className, children, ...props }: types.TabPropsle) => {
-	const base = styles.table;
+export const TableWrapper = ({
+	id,
+	name = 'TableWrapper',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.TableProps) => {
+	const base = theme.table();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -25,8 +32,8 @@ export const TableHeader = ({
 	className,
 	children,
 	...props
-}: types.TabPropsleHeader) => {
-	const base = styles.tableHeader;
+}: types.TableHeaderProps) => {
+	const base = theme.tableHeader();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -43,11 +50,11 @@ export const TableHeaderRow = ({
 	className,
 	children,
 	...props
-}: types.TabPropsleHeaderRow) => {
-	const base = styles.tableHeaderRow;
+}: types.TableHeaderRowProps) => {
+	const base = theme.tableHeaderRow();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
-	return <tr className={computed}>{children}</tr>;
+	return <HTML.TR className={computed}>{children}</HTML.TR>;
 };
 
 export const TableHead = ({
@@ -61,8 +68,8 @@ export const TableHead = ({
 	className,
 	children,
 	...props
-}: types.TabPropsleHead) => {
-	const base = styles.tableHead;
+}: types.TableHeadProps) => {
+	const base = theme.tableHead();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 	const direction = value === params?.sortProp && params?.sortValue === 'asc' ? 'desc' : 'asc';
 
@@ -96,8 +103,8 @@ export const TableBody = ({
 	className,
 	children,
 	...props
-}: types.TabPropsleBody) => {
-	const base = styles.tableBody;
+}: types.TableBodyProps) => {
+	const base = theme.tableBody();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -107,8 +114,8 @@ export const TableBody = ({
 	);
 };
 
-export const TableRow = ({ id, name = 'TableRow', tailwind, className, children, ...props }: types.TabPropsleRow) => {
-	const base = styles.tableRow;
+export const TableRow = ({ id, name = 'TableRow', tailwind, className, children, ...props }: types.TableRowProps) => {
+	const base = theme.tableRow();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -127,11 +134,8 @@ export const TableData = ({
 	className,
 	children,
 	...props
-}: types.TabPropsleData) => {
-	const base = {
-		...styles.tableData,
-		color: title ? 'text-gray-800 dark:text-gray-100' : 'text-gray-600 dark:text-gray-400',
-	};
+}: types.TableDataProps) => {
+	const base = theme.tableData({ title });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (

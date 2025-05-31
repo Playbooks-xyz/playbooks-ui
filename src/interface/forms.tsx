@@ -1,19 +1,18 @@
 import { useRef } from 'react';
 
 import * as HTML from '@ehubbell/html';
+import * as theme from '@playbooks/theme';
 import { CurrencyInputWrapper } from 'components/currency-input-wrapper';
 import { GoogleAutocompleteWrapper } from 'components/google-autocomplete-wrapper';
 import { MaskedInput } from 'components/masked-input-wrapper';
 import { PhoneInputWrapper } from 'components/phone-input-wrapper';
 import { useElementKeyPress } from 'hooks';
 import { Div, Span } from 'interface/html';
-import * as styles from 'styles/form-styles';
-import { computeInputSize } from 'theme';
 import * as types from 'types/form-types';
 import { classBuilder } from 'utils';
 
 export const Form = ({ id, name = 'Form', onSubmit, tailwind, className, children, ...props }: types.FormProps) => {
-	const base = styles.form;
+	const base = theme.form;
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -31,7 +30,7 @@ export const FormGroup = ({
 	children,
 	...props
 }: types.FormGroupProps) => {
-	const base = styles.formGroup;
+	const base = theme.formGroup;
 	const computed = { ...base, ...props, tailwind, name, className };
 
 	return (
@@ -51,7 +50,7 @@ export const FormLabel = ({
 	children,
 	...props
 }: types.FormLabelProps) => {
-	const base = styles.formLabel;
+	const base = theme.formLabel;
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -71,7 +70,7 @@ export const FormCheckbox = ({
 	className,
 	...props
 }: types.FormCheckboxProps) => {
-	const base = styles.formCheckbox;
+	const base = theme.formCheckbox;
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -100,7 +99,7 @@ export const FormRange = ({
 	className,
 	...props
 }: types.FormRangeProps) => {
-	const base = styles.formRange;
+	const base = theme.formRange;
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -137,7 +136,7 @@ export const FormInput = ({
 	className,
 	...props
 }: types.FormInputProps) => {
-	const base = { ...styles.formInput(variant), ...computeInputSize(size) };
+	const base = theme.formInput({ size, variant });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -174,7 +173,7 @@ export const FormMaskInput = ({
 	className,
 	...props
 }: types.FormInputPropsMask) => {
-	const base = { ...styles.formInput(variant), ...computeInputSize(size) };
+	const base = theme.formInput({ size, variant });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -206,7 +205,7 @@ export const FormCurrencyInput = ({
 	className,
 	...props
 }: types.FormInputPropsCurrency) => {
-	const base = { ...styles.formInput(variant), ...computeInputSize(size) };
+	const base = theme.formInput({ size, variant });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -235,7 +234,7 @@ export const FormDivInput = ({
 	children,
 	...props
 }: types.FormInputProps) => {
-	const base = { ...styles.formInput(variant), ...computeInputSize(size), ...styles.formDivInput };
+	const base = theme.formDivInput({ size, variant });
 	const computed = { ...base, ...props, tailwind, name, className };
 
 	return (
@@ -255,7 +254,7 @@ export const FormFileInput = ({
 	className,
 	...props
 }: types.FormFileProps) => {
-	const base = styles.formFileInput;
+	const base = theme.formFileInput();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return <input placeholder={placeholder} value={value} onChange={onChange} className={computed} />;
@@ -278,7 +277,7 @@ export const FormLocationInput = ({
 	className,
 	...props
 }: types.FormLocationPropsInput) => {
-	const base = { ...styles.formInput(variant), ...computeInputSize(size) };
+	const base = theme.formInput({ size, variant });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 	const ref = useRef(null);
 
@@ -320,7 +319,7 @@ export const FormPhoneInput = ({
 	className,
 	...props
 }: types.FormInputProps) => {
-	const base = { ...styles.formInput(variant), ...computeInputSize(size) };
+	const base = theme.formInput({ size, variant });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -350,7 +349,7 @@ export const FormSelect = ({
 	className,
 	...props
 }: types.FormSelectProps) => {
-	const base = { ...styles.formInput(variant), ...computeInputSize(size), cursor: 'cursor-pointer' };
+	const base = theme.formSelect({ size, variant });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -368,7 +367,7 @@ export const FormSelect = ({
 };
 
 export const FormText = ({ id, name = 'FormText', tailwind, className, children, ...props }: types.FormTextProps) => {
-	const base = styles.formText;
+	const base = theme.formText();
 	const computed = { ...base, ...props, tailwind, name, className };
 
 	return <Div {...computed}>{children}</Div>;
@@ -388,7 +387,7 @@ export const FormTextArea = ({
 	className,
 	...props
 }: types.FormTextPropsArea) => {
-	const base = { ...styles.formInput(variant), ...computeInputSize(size) };
+	const base = theme.formInput({ size, variant });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (

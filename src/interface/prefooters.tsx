@@ -1,7 +1,7 @@
+import * as theme from '@playbooks/theme';
 import { Font, H6, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { Section } from 'interface/sections';
-import * as styles from 'styles/prefooter-styles';
 import * as types from 'types/prefooter-types';
 
 export const Prefooter = ({
@@ -12,7 +12,7 @@ export const Prefooter = ({
 	children,
 	...props
 }: types.PrefooterProps) => {
-	const base = styles.prefooter;
+	const base = theme.prefooter();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Section {...computed}>{children}</Section>;
@@ -26,7 +26,7 @@ export const PrefooterBody = ({
 	children,
 	...props
 }: types.PrefooterBodyProps) => {
-	const base = styles.prefooterBody;
+	const base = theme.prefooterBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -40,7 +40,7 @@ export const PrefooterPretitle = ({
 	children,
 	...props
 }: types.PrefooterPretitleProps) => {
-	const base = styles.prefooterPretitle;
+	const base = theme.prefooterPretitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <H6 {...computed}>{children}</H6>;
@@ -55,7 +55,7 @@ export const PrefooterTitle = ({
 	children,
 	...props
 }: types.PrefooterTitleProps) => {
-	const base = styles.prefooterTitle;
+	const base = theme.prefooterTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -74,7 +74,7 @@ export const PrefooterSubtitle = ({
 	children,
 	...props
 }: types.PrefooterSubtitleProps) => {
-	const base = styles.prefooterSubtitle;
+	const base = theme.prefooterSubtitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -92,7 +92,7 @@ export const PrefooterText = ({
 	children,
 	...props
 }: types.PrefooterTextProps) => {
-	const base = styles.prefooterText;
+	const base = theme.prefooterText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <P {...computed}>{children}</P>;
@@ -106,7 +106,7 @@ export const PrefooterActions = ({
 	children,
 	...props
 }: types.PrefooterActionsProps) => {
-	const base = styles.prefooterActions;
+	const base = theme.prefooterActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;

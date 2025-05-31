@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
 
+import * as theme from '@playbooks/theme';
 import { Fade } from 'components/fade-wrapper';
 import { useInterface } from 'contexts';
 import { useKeyPress, useMouseUp } from 'hooks';
@@ -7,7 +8,6 @@ import { AccentBtn } from 'interface/buttons';
 import { H6, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
-import * as styles from 'styles/menu-styles';
 import * as types from 'types/menu-types';
 import { classBuilder } from 'utils';
 
@@ -21,7 +21,7 @@ export const Menu = ({
 	children,
 	...props
 }: types.MenuProps) => {
-	const base = styles.menu;
+	const base = theme.menu();
 	const computed = { ...base, ...props, tailwind, className, name };
 	const { toggleScroll } = useInterface();
 	const ref = useRef(null);
@@ -68,7 +68,7 @@ export const MenuBackdrop = ({
 	children,
 	...props
 }: types.MenuBackdropProps) => {
-	const base = styles.menuBackdrop;
+	const base = theme.menuBackdrop();
 	const [fade, setFade] = useState({ display: 'hidden', bgOpacity: '' });
 	const computed = { ...base, ...props, tailwind, ...fade, className, name };
 	const ref = useRef(null);
@@ -100,7 +100,7 @@ export const MenuToggle = ({
 	children,
 	...props
 }: types.MenuToggleProps) => {
-	const base = { display: 'flex-between', space: 'space-x-4' };
+	const base = theme.menuToggle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -119,7 +119,7 @@ export const MenuMenu = ({
 	children,
 	...props
 }: types.MenuMenuProps) => {
-	const base = styles.menuMenu;
+	const base = theme.menuMenu();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -140,7 +140,7 @@ export const MenuMenuWrapper = ({
 	children,
 	...props
 }: types.MenuMenuProps) => {
-	const base = styles.menuMenuWrapper;
+	const base = theme.menuMenuWrapper();
 	const [animation, setAnimation] = useState('opacity-0 scale-90 -translate-y-4');
 	const computed = { ...base, ...props, tailwind, animation, className };
 	const ref = useRef(null);
@@ -160,7 +160,7 @@ export const MenuMenuWrapper = ({
 };
 
 export const MenuBlock = ({ id, name = 'MenuBlock', tailwind, className, children, ...props }: types.MenuListProps) => {
-	const base = styles.menuBlock;
+	const base = theme.menuBlock();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -174,7 +174,7 @@ export const MenuTitle = ({
 	children,
 	...props
 }: types.MenuTitleProps) => {
-	const base = styles.menuTitle;
+	const base = theme.menuTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <H6 {...computed}>{children}</H6>;
@@ -188,21 +188,21 @@ export const MenuSubtitle = ({
 	children,
 	...props
 }: types.MenuSubtitleProps) => {
-	const base = styles.menuSubtitle;
+	const base = theme.menuSubtitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <P {...computed}>{children}</P>;
 };
 
 export const MenuList = ({ id, name = 'MenuList', tailwind, className, children, ...props }: types.MenuListProps) => {
-	const base = styles.menuList;
+	const base = theme.menuList();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Ul {...computed}>{children}</Ul>;
 };
 
 export const MenuItem = ({ id, name = 'MenuItem', tailwind, className, children, ...props }: types.MenuItemProps) => {
-	const base = styles.menuItem;
+	const base = theme.menuItem();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Li {...computed}>{children}</Li>;
@@ -219,7 +219,7 @@ export const MenuBtn = ({
 	children,
 	...props
 }: types.MenuBtnProps) => {
-	const base = styles.menuBtn;
+	const base = theme.menuBtn();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
 	return <AccentBtn active={active} taskRunning={taskRunning} onClick={onClick} {...computed} />;
@@ -234,7 +234,7 @@ export const MenuLink = ({
 	children,
 	...props
 }: types.MenuLinkProps) => {
-	const base = styles.menuLink;
+	const base = theme.menuLink();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
 	return <AccentLink href={href} {...computed} />;

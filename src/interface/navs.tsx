@@ -1,19 +1,18 @@
 import * as HTML from '@ehubbell/html';
+import * as theme from '@playbooks/theme';
 import { Btn } from 'interface/buttons';
 import { Font } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { Link } from 'interface/links';
-import * as styles from 'styles/nav-styles';
-import { computeBodySize } from 'theme';
 import * as types from 'types/nav-types';
 import { classBuilder } from 'utils';
 
-export const Nav = ({ id, name = 'Nav', tailwind, className, children, ...props }: types.NavProps) => {
-	const base = styles.nav;
+export const Nav = ({ id, name = 'NavWrapper', tailwind, className, children, ...props }: types.NavProps) => {
+	const base = theme.nav();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
-		<HTML.Nav id={id} name={name} className={computed}>
+		<HTML.Nav name={name} className={computed}>
 			{children}
 		</HTML.Nav>
 	);
@@ -27,7 +26,7 @@ export const NavHeader = ({
 	children,
 	...props
 }: types.NavHeaderProps) => {
-	const base = styles.navHeader;
+	const base = theme.navHeader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -36,13 +35,13 @@ export const NavHeader = ({
 export const NavTitle = ({
 	id,
 	name = 'NavTitle',
-	size = 'h5',
+	size = 'h6',
 	tailwind,
 	className,
 	children,
 	...props
 }: types.NavTitleProps) => {
-	const base = styles.navTitle;
+	const base = theme.navTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -55,61 +54,45 @@ export const NavTitle = ({
 export const NavBody = ({
 	id,
 	name = 'NavBody',
-	size = '',
+	size,
 	tailwind,
 	className,
 	children,
 	...props
 }: types.NavBodyProps) => {
-	const base = { ...styles.navBody, size: computeBodySize(size) };
+	const base = theme.navBody({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
 };
 
-export const NavList = ({ id, name = 'NavList', tailwind, className, children, ...props }: types.NavListProps) => {
-	const base = styles.navList;
-	const computed = { ...base, ...props, tailwind, className, name };
+export const NavList = ({ tailwind, children, ...props }) => {
+	const base = theme.navList();
+	const computed = { ...base, ...props, tailwind };
 
 	return <Ul {...computed}>{children}</Ul>;
 };
 
-export const NavItem = ({ id, name = 'NavItem', tailwind, className, children, ...props }: types.NavItemProps) => {
-	const base = styles.navItem;
-	const computed = { ...base, ...props, tailwind, className, name };
+export const NavItem = ({ tailwind, children, ...props }) => {
+	const base = theme.navItem();
+	const computed = { ...base, ...props, tailwind };
 
 	return <Li {...computed}>{children}</Li>;
 };
 
-export const NavBtn = ({
-	id,
-	name = 'NavBtn',
-	variant = 'accent',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.NavBtnProps) => {
-	const base = styles.navBtn;
+export const NavBtn = ({ id, name = 'NavBtn', tailwind, className, children, ...props }: types.NavBtnProps) => {
+	const base = theme.navBtn();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <Btn variant={variant} {...computed} />;
+	return <Btn {...computed} />;
 };
 
-export const NavLink = ({
-	id,
-	name = 'NavLink',
-	variant = 'accent',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.NavLinkProps) => {
-	const base = styles.navLink;
+export const NavLink = ({ id, name = 'NavLink', tailwind, className, children, ...props }: types.NavLinkProps) => {
+	const base = theme.navLink();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <Link variant={variant} {...computed} />;
+	return <Link {...computed} />;
 };
 
 // Docs
-// https://tailwindui.com/interface/application-ui/navigation/vertical-navigation
+// https://tailwindui.com/interface/application-ui/navigation/sidebar-navigation

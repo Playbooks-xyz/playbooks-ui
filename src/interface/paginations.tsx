@@ -1,7 +1,7 @@
+import * as theme from '@playbooks/theme';
 import { BtnWrapper } from 'interface/buttons';
 import { FarIcon } from 'interface/icons';
 import { Nav } from 'interface/navs';
-import * as styles from 'styles/pagination-styles';
 import * as types from 'types/pagination-types';
 import { classBuilder } from 'utils';
 
@@ -13,7 +13,7 @@ export const Pagination = ({
 	children,
 	...props
 }: types.PaginationProps) => {
-	const base = styles.pagination;
+	const base = theme.pagination();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Nav {...computed}>{children}</Nav>;
@@ -30,7 +30,7 @@ export const PaginationFirst = ({
 	onClick,
 	...props
 }: types.PaginationBtnProps) => {
-	const base = styles.paginationBtn();
+	const base = theme.paginationBtn();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -51,7 +51,7 @@ export const PaginationPrev = ({
 	onClick,
 	...props
 }: types.PaginationBtnProps) => {
-	const base = styles.paginationBtn();
+	const base = theme.paginationBtn();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -72,7 +72,7 @@ export const PaginationBtn = ({
 	onClick,
 	...props
 }: types.PaginationBtnProps) => {
-	const base = styles.paginationBtn(active);
+	const base = theme.paginationBtn(active);
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -93,7 +93,7 @@ export const PaginationNext = ({
 	onClick,
 	...props
 }: types.PaginationBtnProps) => {
-	const base = styles.paginationBtn();
+	const base = theme.paginationBtn();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -114,7 +114,7 @@ export const PaginationLast = ({
 	onClick,
 	...props
 }: types.PaginationBtnProps) => {
-	const base = styles.paginationBtn();
+	const base = theme.paginationBtn();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (

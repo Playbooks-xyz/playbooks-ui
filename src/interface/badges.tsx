@@ -1,6 +1,5 @@
+import * as theme from '@playbooks/theme';
 import { Div } from 'interface/html';
-import * as styles from 'styles/badge-styles';
-import { computeBadgeSize } from 'theme';
 import * as types from 'types/badge-types';
 
 export const Badge = ({
@@ -13,7 +12,7 @@ export const Badge = ({
 	children,
 	...props
 }: types.BadgeProps) => {
-	const base = { ...styles.badge, size: computeBadgeSize(size) };
+	const base = theme.badge({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	// Render
@@ -60,49 +59,49 @@ export const Badge = ({
 };
 
 export const DraftBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
-	const base = { ...styles.badge, ...styles.draftBadge };
+	const base = theme.draftBadge();
 	const computed = { ...base, ...props, tailwind, className };
 
 	return <Div {...computed}>{children}</Div>;
 };
 
 export const PendingBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
-	const base = { ...styles.badge, ...styles.pendingBadge };
+	const base = theme.pendingBadge();
 	const computed = { ...base, ...props, tailwind, className };
 
 	return <Div {...computed}>{children}</Div>;
 };
 
 export const WarningBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
-	const base = { ...styles.badge, ...styles.warningBadge };
+	const base = theme.warningBadge();
 	const computed = { ...base, ...props, tailwind, className };
 
 	return <Div {...computed}>{children}</Div>;
 };
 
 export const SuccessBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
-	const base = { ...styles.badge, ...styles.successBadge };
+	const base = theme.successBadge();
 	const computed = { ...base, ...props, tailwind, className };
 
 	return <Div {...computed}>{children}</Div>;
 };
 
 export const FinishedBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
-	const base = { ...styles.badge, ...styles.finishedBadge };
+	const base = theme.finishedBadge();
 	const computed = { ...base, ...props, tailwind, className };
 
 	return <Div {...computed}>{children}</Div>;
 };
 
 export const ErrorBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
-	const base = { ...styles.badge, ...styles.errorBadge };
+	const base = theme.errorBadge();
 	const computed = { ...base, ...props, tailwind, className };
 
 	return <Div {...computed}>{children}</Div>;
 };
 
 export const OutlineBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
-	const base = { ...styles.badge, ...styles.outlineBadge };
+	const base = theme.outlineBadge();
 	const computed = { ...base, ...props, tailwind, className };
 
 	return <Div {...computed}>{children}</Div>;

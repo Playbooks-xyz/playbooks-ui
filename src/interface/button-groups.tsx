@@ -1,5 +1,5 @@
+import * as theme from '@playbooks/theme';
 import { Div } from 'interface/html';
-import * as styles from 'styles/button-group-styles';
 import * as types from 'types/button-group-types';
 
 export const BtnGroup = ({
@@ -10,7 +10,7 @@ export const BtnGroup = ({
 	children,
 	...props
 }: types.ButtonGroupProps) => {
-	const base = styles.btnGroup;
+	const base = theme.btnGroup();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;

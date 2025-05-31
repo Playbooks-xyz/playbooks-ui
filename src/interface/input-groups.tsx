@@ -1,6 +1,6 @@
-import { Div, Span } from 'interface/html';
+import * as theme from '@playbooks/theme';
+import { Div } from 'interface/html';
 import { Icon } from 'interface/icons';
-import * as styles from 'styles/input-group-styles';
 import * as types from 'types/input-group-types';
 
 export const InputGroup = ({
@@ -12,7 +12,7 @@ export const InputGroup = ({
 	children,
 	...props
 }: types.InputGroupProps) => {
-	const base = styles.inputGroup;
+	const base = theme.inputGroup();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -28,10 +28,10 @@ export const InputAppend = ({
 	children,
 	...props
 }: types.InputAddonProps) => {
-	const base = styles.inputAppend;
+	const base = theme.inputAppend();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Span {...computed}>{icon ? <Icon icon={icon?.icon || icon} {...icon} /> : children}</Span>;
+	return <Div {...computed}>{icon ? <Icon icon={icon?.icon || icon} {...icon} /> : children}</Div>;
 };
 
 export const InputPrepend = ({
@@ -45,11 +45,11 @@ export const InputPrepend = ({
 	children,
 	...props
 }: types.InputAddonProps) => {
-	const base = styles.inputPrepend;
+	const base = theme.inputPrepend();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Span {...computed}>{icon ? <Icon icon={icon?.icon || icon} {...icon} /> : children}</Span>;
+	return <Div {...computed}>{icon ? <Icon icon={icon?.icon || icon} {...icon} /> : children}</Div>;
 };
 
 // Docs
-// // https://github.com/tailwindlabs/tailwindcss-forms
+// https://tailwindui.com/interface/application-ui/forms/input-groups

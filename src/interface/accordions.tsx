@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+import * as theme from '@playbooks/theme';
 import { Btn } from 'interface/buttons';
 import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
-import * as styles from 'styles/accordion-styles';
 import * as types from 'types/accordion-types';
 
 export const Accordion = ({
@@ -15,7 +15,7 @@ export const Accordion = ({
 	children,
 	...props
 }: types.AccordionProps) => {
-	const base = styles.accordion;
+	const base = theme.accordion();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -36,13 +36,7 @@ export const AccordionToggle = ({
 	children,
 	...props
 }: types.AccordionToggleProps) => {
-	const base = {
-		...styles.accordionToggle,
-		nextIcon: {
-			...styles.accordionToggle.nextIcon,
-			rotate: open ? 'rotate-180' : 'rotate-0',
-		},
-	};
+	const base = theme.accordionToggle({ open });
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
 	return <Btn variant={variant} onClick={() => onClick(id)} {...computed} />;
@@ -57,7 +51,7 @@ export const AccordionTitle = ({
 	children,
 	...props
 }: types.AccordionTitleProps) => {
-	const base = styles.accordionTitle;
+	const base = theme.accordionTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -77,8 +71,8 @@ export const AccordionBody = ({
 	children,
 	...props
 }: types.AccordionBodyProps) => {
-	const wrapperBase = styles.accordionBodyWrapper;
-	const base = styles.accordionBody;
+	const wrapperBase = theme.accordionBodyWrapper();
+	const base = theme.accordionBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 	const [height, setHeight] = useState(0);
 	const ref = useRef(null);
@@ -117,7 +111,7 @@ export const AccordionText = ({
 	children,
 	...props
 }: types.AccordionTextProps) => {
-	const base = styles.accordionText;
+	const base = theme.accordionText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <P {...computed}>{children}</P>;

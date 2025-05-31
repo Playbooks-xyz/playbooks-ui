@@ -1,7 +1,7 @@
 import * as HTML from '@ehubbell/html';
+import * as theme from '@playbooks/theme';
 import { P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
-import * as styles from 'styles/radio-styles';
 import * as types from 'types';
 import { classBuilder } from 'utils';
 
@@ -16,7 +16,7 @@ export const RadioWrapper = ({
 	...props
 }: types.RadioWrapperProps) => {
 	const base = {
-		...styles.radioWrapper,
+		...theme.radioWrapper(),
 		...(active && {
 			borderColor: 'border-blue-500 dark:border-cyan-500',
 		}),
@@ -42,7 +42,7 @@ export const Radio = ({
 	children,
 	...props
 }: types.RadioProps) => {
-	const base = styles.radio;
+	const base = theme.radio();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -65,7 +65,7 @@ export const RadioInput = ({
 	children,
 	...props
 }: types.RadioInputProps) => {
-	const base = styles.radioInput;
+	const base = theme.radioInput();
 	const computed = classBuilder({ ...base, ...props, tailwind, name, className });
 	return (
 		<HTML.Input
@@ -82,14 +82,14 @@ export const RadioInput = ({
 };
 
 export const RadioTitle = ({ id, name = 'RadioLabel', tailwind, className, children, ...props }: types.FontProps) => {
-	const base = styles.radioTitle;
+	const base = theme.radioTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <P {...computed}>{children}</P>;
 };
 
 export const RadioText = ({ id, name = 'RadioLabel', tailwind, className, children, ...props }: types.FontProps) => {
-	const base = styles.radioText;
+	const base = theme.radioText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Small {...computed}>{children}</Small>;

@@ -1,35 +1,29 @@
-import * as HTML from '@ehubbell/html';
-import { Font } from 'interface/fonts';
+import * as theme from '@playbooks/theme';
+import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
-import * as styles from 'styles/header-styles';
 import * as types from 'types/header-types';
-import { classBuilder } from 'utils';
 
-export const Header = ({ id, name = 'Header', tailwind, className, children, style, ...props }: types.HeaderProps) => {
-	const base = styles.header;
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+export const Header = ({ id, name = 'Header', tailwind, className, children, ...props }: types.HeaderProps) => {
+	const base = theme.header();
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return (
-		<HTML.Header name={name} className={computed} style={style}>
-			{children}
-		</HTML.Header>
-	);
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const HeaderTitle = ({
 	id,
 	name = 'HeaderTitle',
-	size,
+	size = 'h4',
 	tailwind,
 	className,
 	children,
 	...props
 }: types.HeaderTitleProps) => {
-	const base = styles.headerTitle;
+	const base = theme.headerTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Font size={size || 'h4'} {...computed}>
+		<Font size={size} {...computed}>
 			{children}
 		</Font>
 	);
@@ -38,16 +32,17 @@ export const HeaderTitle = ({
 export const HeaderSubtitle = ({
 	id,
 	name = 'HeaderSubtitle',
+	size = 'h6',
 	tailwind,
 	className,
 	children,
 	...props
 }: types.HeaderSubtitleProps) => {
-	const base = styles.headerSubtitle;
+	const base = theme.headerSubtitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Font size={'h5'} {...computed}>
+		<Font size={size} {...computed}>
 			{children}
 		</Font>
 	);
@@ -61,14 +56,10 @@ export const HeaderText = ({
 	children,
 	...props
 }: types.HeaderTextProps) => {
-	const base = styles.headerText;
+	const base = theme.headerText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return (
-		<Font size={'h6'} {...computed}>
-			{children}
-		</Font>
-	);
+	return <P {...computed}>{children}</P>;
 };
 
 export const HeaderActions = ({
@@ -79,11 +70,11 @@ export const HeaderActions = ({
 	children,
 	...props
 }: types.HeaderActionsProps) => {
-	const base = styles.headerActions;
+	const base = theme.headerActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
 };
 
 // Docs
-// https://tailwindui.com/interface/marketing/sections/header
+// https://tailwindui.com/interface/application-ui/headings/page-headings

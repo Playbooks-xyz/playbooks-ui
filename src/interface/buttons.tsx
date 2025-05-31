@@ -1,11 +1,10 @@
 import { Fragment } from 'react';
 
 import * as HTML from '@ehubbell/html';
+import * as theme from '@playbooks/theme';
 import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
-import * as styles from 'styles/button-styles';
-import { computeBtnSize } from 'theme';
 import * as types from 'types/button-types';
 import { classBuilder } from 'utils';
 
@@ -40,8 +39,7 @@ export const PrimaryBtn = ({
 	className,
 	...props
 }: types.BtnProps) => {
-	const base = { ...styles.primaryBtn(active), size: computeBtnSize(size) };
-
+	const base = theme.primaryBtn({ active, size });
 	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
@@ -54,8 +52,7 @@ export const AccentBtn = ({
 	className,
 	...props
 }: types.BtnProps) => {
-	const base = { ...styles.accentBtn(active), size: computeBtnSize(size) };
-
+	const base = theme.accentBtn({ active, size });
 	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
@@ -68,13 +65,12 @@ export const BorderBtn = ({
 	className,
 	...props
 }: types.BtnProps) => {
-	const base = { ...styles.borderBtn(active), size: computeBtnSize(size) };
-
+	const base = theme.borderBtn({ active, size });
 	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
 export const TabBtn = ({ id, name = 'TabBtn', size = 'sm', active, tailwind, className, ...props }: types.BtnProps) => {
-	const base = { ...styles.tabBtn(active), size: computeBtnSize(size) };
+	const base = theme.tabBtn({ active, size });
 
 	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
@@ -88,8 +84,7 @@ export const TextBtn = ({
 	className,
 	...props
 }: types.BtnProps) => {
-	const base = { ...styles.textBtn(active), size: computeBtnSize(size) };
-
+	const base = theme.textBtn({ active, size });
 	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
@@ -165,10 +160,7 @@ export const BtnWrapper = ({
 	className,
 	...props
 }: types.BtnProps) => {
-	const base = {
-		...styles.btnWrapper,
-		cursor: disabled ? 'cursor-not-allowed' : 'cursor-pointer',
-	};
+	const base = theme.btnWrapper({ disabled });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (

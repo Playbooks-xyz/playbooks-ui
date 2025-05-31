@@ -1,8 +1,7 @@
 import * as HTML from '@ehubbell/html';
-import { Font, P } from 'interface/fonts';
+import * as theme from '@playbooks/theme';
+import { Font, P, Small } from 'interface/fonts';
 import { Div, Hr } from 'interface/html';
-import * as styles from 'styles/section-styles';
-import { computeBodySize } from 'theme';
 import * as types from 'types/section-types';
 import { classBuilder } from 'utils';
 
@@ -16,7 +15,7 @@ export const Section = ({
 	style,
 	...props
 }: types.SectionProps) => {
-	const base = styles.section;
+	const base = theme.section();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -34,7 +33,7 @@ export const SectionHeader = ({
 	children,
 	...props
 }: types.SectionHeaderProps) => {
-	const base = styles.sectionHeader;
+	const base = theme.sectionHeader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -48,25 +47,29 @@ export const SectionPretitle = ({
 	children,
 	...props
 }: types.SectionPretitleProps) => {
-	const base = styles.sectionPretitle;
+	const base = theme.sectionPretitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <P {...computed}>{children}</P>;
+	return <Small {...computed}>{children}</Small>;
 };
 
 export const SectionTitle = ({
 	id,
 	name = 'SectionTitle',
-	size = 'h5',
+	size = 'h4',
 	tailwind,
 	className,
 	children,
 	...props
 }: types.SectionTitleProps) => {
-	const base = { ...styles.sectionTitle, size };
+	const base = theme.sectionTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Font {...computed}>{children}</Font>;
+	return (
+		<Font size={size} {...computed}>
+			{children}
+		</Font>
+	);
 };
 
 export const SectionSubtitle = ({
@@ -78,10 +81,14 @@ export const SectionSubtitle = ({
 	children,
 	...props
 }: types.SectionSubtitleProps) => {
-	const base = { ...styles.sectionSubtitle, size };
+	const base = theme.sectionSubtitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Font {...computed}>{children}</Font>;
+	return (
+		<Font size={size} {...computed}>
+			{children}
+		</Font>
+	);
 };
 
 export const SectionText = ({
@@ -92,7 +99,7 @@ export const SectionText = ({
 	children,
 	...props
 }: types.SectionTextProps) => {
-	const base = styles.sectionText;
+	const base = theme.sectionText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <P {...computed}>{children}</P>;
@@ -106,7 +113,7 @@ export const SectionActions = ({
 	children,
 	...props
 }: types.SectionActionsProps) => {
-	const base = styles.sectionActions;
+	const base = theme.sectionActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -121,17 +128,14 @@ export const SectionBody = ({
 	children,
 	...props
 }: types.SectionBodyProps) => {
-	const base = {
-		...styles.sectionBody,
-		size: computeBodySize(size),
-	};
+	const base = theme.sectionBody({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
 };
 
 export const SectionHr = ({ id, name = 'SectionHr', tailwind, className, ...props }: types.SectionHrProps) => {
-	const base = styles.sectionHr;
+	const base = theme.sectionHr();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Hr {...computed} />;
@@ -145,7 +149,7 @@ export const SectionFooter = ({
 	children,
 	...props
 }: types.SectionFooterProps) => {
-	const base = styles.sectionFooter;
+	const base = theme.sectionFooter();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;

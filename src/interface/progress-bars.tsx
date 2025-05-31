@@ -1,6 +1,5 @@
-import { Animation, useAnimation } from 'components/animation-wrapper';
+import * as theme from '@playbooks/theme';
 import { Div } from 'interface/html';
-import * as styles from 'styles/progress-bar-styles';
 import * as types from 'types/progress-bar-types';
 
 export const ProgressBar = ({
@@ -11,27 +10,18 @@ export const ProgressBar = ({
 	children,
 	...props
 }: types.ProgressBarProps) => {
-	const base = styles.progressBar;
+	const base = theme.progressBar();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
 };
 
-export const Progress = ({
-	id,
-	name = 'Progress',
-	value = 0,
-	tailwind,
-	className,
-	children,
-	...props
-}: types.ProgressProps) => {
-	const base = styles.progress;
-	const style = useAnimation({ width: value ? value + '%' : '0%' });
-	const computed = { ...base, ...props, tailwind, className, style, name };
+export const Progress = ({ id, name = 'Progress', value = 0, tailwind, className, ...props }: types.ProgressProps) => {
+	const base = theme.progress();
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Animation {...computed}>{children}</Animation>;
+	return <Div {...computed} style={{ width: `${value}%` }} />;
 };
 
 // Docs
-// https://tailwindui.com/interface/application-ui/navigation/steps
+// https://tailwindui.com/interface/application-ui/feedback/progress-bars

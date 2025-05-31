@@ -1,13 +1,12 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
 
+import * as theme from '@playbooks/theme';
 import { Fade } from 'components/fade-wrapper';
 import { useInterface } from 'contexts';
 import { useKeyPress } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { Font } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
-import * as styles from 'styles/modal-styles';
-import { computeBodySize } from 'theme';
 import * as types from 'types/modal-types';
 
 export const ModalWrapper = ({
@@ -20,7 +19,7 @@ export const ModalWrapper = ({
 	children,
 	...props
 }: types.ModalWrapperProps) => {
-	const base = styles.modalWrapper;
+	const base = theme.modalWrapper();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -43,7 +42,7 @@ export const ModalBackdrop = ({
 	tailwind,
 	...props
 }: types.ModalBackdropProps) => {
-	const base = styles.modalBackdrop;
+	const base = theme.modalBackdrop();
 	const [fade, setFade] = useState({ display: 'hidden', bgOpacity: '' });
 	const computed = { ...base, ...props, ...fade, tailwind, name };
 	const ref = useRef(null);
@@ -72,7 +71,7 @@ export const Modal = ({
 	children,
 	...props
 }: types.ModalProps) => {
-	const base = styles.modal;
+	const base = theme.modal();
 	const [fade, setFade] = useState('hidden');
 	const computed = { ...base, ...props, tailwind, fade, className, name };
 	const { ref, createPortal, toggleScroll } = useInterface();
@@ -123,7 +122,7 @@ export const ModalHeader = ({
 	children,
 	...props
 }: types.ModalHeaderProps) => {
-	const base = styles.modalHeader;
+	const base = theme.modalHeader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -143,7 +142,7 @@ export const ModalTitle = ({
 	children,
 	...props
 }: types.ModalTitleProps) => {
-	const base = { ...styles.modalTitle, size: size || 'h4' };
+	const base = { ...theme.modalTitle(), size: size || 'h4' };
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Font {...computed}>{children}</Font>;
@@ -158,7 +157,7 @@ export const ModalSubtitle = ({
 	children,
 	...props
 }: types.ModalSubtitleProps) => {
-	const base = styles.modalSubtitle;
+	const base = theme.modalSubtitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Font {...computed}>{children}</Font>;
@@ -173,7 +172,7 @@ export const ModalBody = ({
 	children,
 	...props
 }: types.ModalBodyProps) => {
-	const base = { ...styles.modalBody, size: computeBodySize(size) };
+	const base = theme.modalBody({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -187,7 +186,7 @@ export const ModalFooter = ({
 	children,
 	...props
 }: types.ModalFooterProps) => {
-	const base = styles.modalFooter;
+	const base = theme.modalFooter();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;

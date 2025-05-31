@@ -1,11 +1,10 @@
+import * as theme from '@playbooks/theme';
 import { Font, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
-import * as styles from 'styles/avatar-styles';
-import { computeAvatarSize } from 'theme';
 import * as types from 'types/avatar-types';
 
 export const Avatar = ({ id, name = 'Avatar', tailwind, className, children, ...props }: types.AvatarProps) => {
-	const base = styles.avatar;
+	const base = theme.avatar();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -20,7 +19,7 @@ export const AvatarBadge = ({
 	children,
 	...props
 }: types.AvatarBadgeProps) => {
-	const base = { ...styles.avatarBadge, size: computeAvatarSize(size) };
+	const base = theme.avatarBadge({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -36,7 +35,7 @@ export const AvatarImg = ({
 	className,
 	...props
 }: types.AvatarImgProps) => {
-	const base = { ...styles.avatarImg, size: computeAvatarSize(size) };
+	const base = theme.avatarImg({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Img src={src} alt={alt} {...computed} />;
@@ -50,7 +49,7 @@ export const AvatarBody = ({
 	children,
 	...props
 }: types.AvatarBodyProps) => {
-	const base = styles.avatarBody;
+	const base = theme.avatarBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -65,7 +64,7 @@ export const AvatarTitle = ({
 	children,
 	...props
 }: types.AvatarTitleProps) => {
-	const base = styles.avatarTitle;
+	const base = theme.avatarTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -83,7 +82,7 @@ export const AvatarText = ({
 	children,
 	...props
 }: types.AvatarTextProps) => {
-	const base = styles.avatarText;
+	const base = theme.avatarText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <P {...computed}>{children}</P>;
@@ -97,7 +96,7 @@ export const AvatarActions = ({
 	children,
 	...props
 }: types.AvatarActionsProps) => {
-	const base = styles.avatarActions;
+	const base = theme.avatarActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;

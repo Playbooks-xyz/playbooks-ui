@@ -1,7 +1,7 @@
+import * as theme from '@playbooks/theme';
 import { Font, H5, P, Small } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
 import { Oval } from 'interface/spinners';
-import * as styles from 'styles/loader-styles';
 import * as types from 'types/loader-types';
 
 export const ModalLoader = ({
@@ -14,7 +14,7 @@ export const ModalLoader = ({
 	children,
 	...props
 }: types.PageLoaderProps) => {
-	const base = styles.modalLoader;
+	const base = theme.modalLoader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -41,7 +41,7 @@ export const PageLoader = ({
 	children,
 	...props
 }: types.PageLoaderProps) => {
-	const base = styles.pageLoader;
+	const base = theme.pageLoader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -72,7 +72,7 @@ export const SectionLoader = ({
 	children,
 	...props
 }: types.SectionLoaderProps) => {
-	const base = styles.sectionLoader;
+	const base = theme.sectionLoader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -88,4 +88,4 @@ export const SectionLoader = ({
 };
 
 // Docs
-//
+// https://tailwindui.com/interface/application-ui/feedback/loading-states

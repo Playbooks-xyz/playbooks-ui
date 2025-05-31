@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
+import * as theme from '@playbooks/theme';
 import { Fade } from 'components/fade-wrapper';
 import { useInterface } from 'contexts/interface-context';
 import { useKeyPress } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { H4 } from 'interface/fonts';
 import { Div } from 'interface/html';
-import * as styles from 'styles/slide-styles';
-import { computeSlideAnimation } from 'theme';
 import * as types from 'types/slide-types';
 
 export const SlideWrapper = ({
@@ -20,7 +19,7 @@ export const SlideWrapper = ({
 	children,
 	...props
 }: types.SlideWrapperProps) => {
-	const base = styles.slideWrapper;
+	const base = theme.slideWrapper();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -39,7 +38,7 @@ export const SlideBackdrop = ({
 	tailwind,
 	...props
 }: types.SlideBackdropProps) => {
-	const base = styles.slideBackdrop;
+	const base = theme.slideBackdrop();
 	const [fade, setFade] = useState({ display: 'hidden', bgOpacity: '' });
 	const computed = { ...base, ...fade, ...props, tailwind, name };
 	const ref = useRef(null);
@@ -69,14 +68,8 @@ export const Slide = ({
 	children,
 	...props
 }: types.SlideProps) => {
-	const base = {
-		...styles.slide,
-		delay: open ? 'delay-200' : '',
-		inset: placement === 'left' ? 'left-0' : 'right-0',
-		shadow: placement === 'left' ? 'shadow-r-lg' : 'shadow-l-lg',
-	};
-	const [animation, setAnimation] = useState(`opacity-0 ${computeSlideAnimation(placement)}`);
-	const computed = { ...base, ...props, tailwind, animation, className };
+	const base = theme.slide({ open, placement });
+	const computed = { ...base, ...props, tailwind, className };
 	const { ref, createPortal, toggleScroll } = useInterface();
 	const fadeRef = useRef(null);
 
@@ -97,14 +90,7 @@ export const Slide = ({
 	// Render
 	return ref?.current
 		? createPortal(
-				<Fade
-					ref={fadeRef}
-					show={open}
-					timeout={{ enter: 0, exit: 200 }}
-					onEnter={() => setAnimation(`opacity-0 ${computeSlideAnimation(placement)}`)}
-					onEntered={() => setAnimation('opacity-100 translate-x-0')}
-					onExit={() => setAnimation('opacity-100 translate-x-0')}
-					onExiting={() => setAnimation(`opacity-0 ${computeSlideAnimation(placement)}`)}>
+				<Fade ref={fadeRef} show={open} timeout={200}>
 					<SlideWrapper open={open} onClose={onClose}>
 						<Div ref={fadeRef} {...computed}>
 							{children}
@@ -125,7 +111,7 @@ export const SlideHeader = ({
 	children,
 	...props
 }: types.SlideHeaderProps) => {
-	const base = styles.slideHeader;
+	const base = theme.slideHeader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
@@ -144,7 +130,7 @@ export const SlideTitle = ({
 	children,
 	...props
 }: types.SlideTitleProps) => {
-	const base = styles.slideTitle;
+	const base = theme.slideTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <H4 {...computed}>{children}</H4>;
@@ -158,7 +144,7 @@ export const SlideBody = ({
 	children,
 	...props
 }: types.SlideBodyProps) => {
-	const base = styles.slideBody;
+	const base = theme.slideBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -172,7 +158,7 @@ export const SlideFooter = ({
 	children,
 	...props
 }: types.SlideFooterProps) => {
-	const base = styles.slideFooter;
+	const base = theme.slideFooter();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;

@@ -1,13 +1,13 @@
 import { useRef, useState } from 'react';
 import { usePopper } from 'react-popper';
 
+import * as theme from '@playbooks/theme';
 import { Fade } from 'components/fade-wrapper';
 import { useKeyPress, useMouseUp } from 'hooks';
 import { AccentBtn, Btn } from 'interface/buttons';
 import { H6, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
-import * as styles from 'styles/drop-styles';
 import * as types from 'types/drop-types';
 import { classBuilder } from 'utils';
 
@@ -22,7 +22,7 @@ export const Drop = ({
 	children,
 	...props
 }: types.DropProps) => {
-	const base = styles.drop;
+	const base = theme.drop();
 	const computed = { ...base, ...props, tailwind, className, name };
 	const internalRef = useRef(null);
 
@@ -69,7 +69,7 @@ export const DropToggle = ({
 	children,
 	...props
 }: types.DropToggleProps) => {
-	const base = styles.dropToggle;
+	const base = theme.dropToggle();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
 	return <Btn id={id} alt={alt} variant={variant} nextIcon={nextIcon} onClick={() => onClick(id)} {...computed} />;
@@ -89,7 +89,7 @@ export const DropMenu = ({
 	...props
 }: types.DropMenuProps) => {
 	const [dropRef, setDropRef] = useState(null);
-	const base = styles.dropMenu;
+	const base = theme.dropMenu();
 	const [fade, setFade] = useState('hidden');
 	const computed = classBuilder({ ...base, ...props, tailwind, fade, className });
 	const fadeRef = useRef(null);
@@ -136,7 +136,7 @@ export const DropHeader = ({
 	children,
 	...props
 }: types.DropHeaderProps) => {
-	const base = styles.dropHeader;
+	const base = theme.dropHeader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -150,7 +150,7 @@ export const DropTitle = ({
 	children,
 	...props
 }: types.DropTitleProps) => {
-	const base = styles.dropTitle;
+	const base = theme.dropTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <H6 {...computed}>{children}</H6>;
@@ -164,35 +164,35 @@ export const DropSubtitle = ({
 	children,
 	...props
 }: types.DropSubtitleProps) => {
-	const base = styles.dropSubtitle;
+	const base = theme.dropSubtitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <P {...computed}>{children}</P>;
 };
 
 export const DropList = ({ id, name = 'DropList', tailwind, className, children, ...props }: types.DropListProps) => {
-	const base = styles.dropList;
+	const base = theme.dropList();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Ul {...computed}>{children}</Ul>;
 };
 
 export const DropItem = ({ id, name = 'DropItem', tailwind, className, children, ...props }: types.DropItemProps) => {
-	const base = styles.dropItem;
+	const base = theme.dropItem();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Li {...computed}>{children}</Li>;
 };
 
 export const DropBtn = ({ id, name = 'DropBtn', tailwind, className, children, ...props }: types.DropBtnProps) => {
-	const base = styles.dropBtn;
+	const base = theme.dropBtn();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
 	return <AccentBtn {...computed} />;
 };
 
 export const DropLink = ({ id, name = 'DropLink', tailwind, className, children, ...props }: types.DropLinkProps) => {
-	const base = styles.dropLink;
+	const base = theme.dropLink();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
 	return <AccentLink {...computed} />;
