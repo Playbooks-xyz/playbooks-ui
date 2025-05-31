@@ -1,4 +1,4 @@
-import { borderProps } from 'utils';
+import { borderProps } from 'theme';
 
 export const inputGroup = {
 	bgColor: 'bg-gray-white dark:bg-gray-900',

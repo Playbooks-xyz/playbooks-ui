@@ -1,7 +1,7 @@
 import { Div, Img } from 'interface/html';
 import * as styles from 'styles/tag-styles';
+import { computeTagImgSize, computeTagSize } from 'theme';
 import * as types from 'types/tag-types';
-import { computeTagImgSize, computeTagSize } from 'utils';
 
 export const TagsWrapper = ({
 	id,

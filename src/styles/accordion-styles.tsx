@@ -1,7 +1,6 @@
-import { borderProps } from 'utils';
+import { borderProps } from 'theme';
 
 export const accordion = {
-	border: 'border',
 	...borderProps,
 	width: 'w-full',
 };

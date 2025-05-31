@@ -1,4 +1,4 @@
-import { borderProps } from 'utils';
+import { borderProps } from 'theme';
 
 export const btnGroup = {
 	display: 'inline-flex',

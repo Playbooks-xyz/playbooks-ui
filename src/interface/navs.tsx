@@ -4,8 +4,9 @@ import { Font } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { Link } from 'interface/links';
 import * as styles from 'styles/nav-styles';
+import { computeBodySize } from 'theme';
 import * as types from 'types/nav-types';
-import { classBuilder, computeSectionSize } from 'utils';
+import { classBuilder } from 'utils';
 
 export const Nav = ({ id, name = 'Nav', tailwind, className, children, ...props }: types.NavProps) => {
 	const base = styles.nav;
@@ -60,7 +61,7 @@ export const NavBody = ({
 	children,
 	...props
 }: types.NavBodyProps) => {
-	const base = { ...styles.navBody, size: computeSectionSize(size) };
+	const base = { ...styles.navBody, size: computeBodySize(size) };
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;

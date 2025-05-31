@@ -42,6 +42,31 @@ export const computeBadgeSize = size => {
 	}
 };
 
+export const computeBodySize = size => {
+	switch (size) {
+		case 'xs':
+			return 'min-h-[150px]';
+
+		case 'sm':
+			return 'min-h-[250px]';
+
+		case 'md':
+			return 'min-h-[400px]';
+
+		case 'lg':
+			return 'min-h-[600px]';
+
+		case 'xl':
+			return 'min-h-[800px]';
+
+		case 'full':
+			return 'min-h-[100vh]';
+
+		default:
+			return size;
+	}
+};
+
 export const computeBtnSize = size => {
 	switch (size) {
 		case 'icon':
@@ -64,28 +89,6 @@ export const computeBtnSize = size => {
 
 		case 'xl':
 			return 'px-8 py-5 min-w-[200px]';
-
-		default:
-			return size;
-	}
-};
-
-export const computeInputSize = size => {
-	switch (size) {
-		case 'xs':
-			return { fontSize: 'text-sm', spacing: 'p-2.5' };
-
-		case 'sm':
-			return { fontSize: 'text-sm', spacing: 'p-3' };
-
-		case 'md':
-			return { fontSize: 'text-sm', spacing: 'p-3.5' };
-
-		case 'lg':
-			return { fontSize: 'text-base', spacing: 'p-4' };
-
-		case 'xl':
-			return { fontSize: 'text-base', spacing: 'p-4.5' };
 
 		default:
 			return size;
@@ -117,25 +120,44 @@ export const computeHeroSize = size => {
 	}
 };
 
-export const computeSectionSize = size => {
+export const computeHeroImgSize = size => {
 	switch (size) {
 		case 'xs':
-			return 'min-h-[150px]';
+			return 'w-10';
 
 		case 'sm':
-			return 'min-h-[250px]';
+			return 'w-16';
 
 		case 'md':
-			return 'min-h-[400px]';
+			return 'w-20';
 
 		case 'lg':
-			return 'min-h-[600px]';
+			return 'w-20 md:w-24';
 
 		case 'xl':
-			return 'min-h-[800px]';
+			return 'w-24 md:w-32';
 
-		case 'full':
-			return 'min-h-[100vh]';
+		default:
+			return size;
+	}
+};
+
+export const computeInputSize = size => {
+	switch (size) {
+		case 'xs':
+			return { fontSize: 'text-sm', spacing: 'p-2.5' };
+
+		case 'sm':
+			return { fontSize: 'text-sm', spacing: 'p-3' };
+
+		case 'md':
+			return { fontSize: 'text-sm', spacing: 'p-3.5' };
+
+		case 'lg':
+			return { fontSize: 'text-base', spacing: 'p-4' };
+
+		case 'xl':
+			return { fontSize: 'text-base', spacing: 'p-4.5' };
 
 		default:
 			return size;
@@ -199,28 +221,6 @@ export const computeTagImgSize = size => {
 
 		case 'xl':
 			return 'w-12 h-12';
-
-		default:
-			return size;
-	}
-};
-
-export const computeThumbnailSize = size => {
-	switch (size) {
-		case 'xs':
-			return 'w-10';
-
-		case 'sm':
-			return 'w-16';
-
-		case 'md':
-			return 'w-20';
-
-		case 'lg':
-			return 'w-20 md:w-24';
-
-		case 'xl':
-			return 'w-24 md:w-32';
 
 		default:
 			return size;

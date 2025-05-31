@@ -1,7 +1,6 @@
+import * as theme from '@playbooks/theme';
 import { Div } from 'interface/html';
-import * as styles from 'styles/grid-styles';
 import * as types from 'types/grid-types';
-import { computeCol, computeContainer, computeGrid } from 'utils';
 
 export const Container = ({
 	id,
@@ -12,20 +11,14 @@ export const Container = ({
 	children,
 	...props
 }: types.ContainerProps) => {
-	const base = {
-		...styles.container,
-		size: computeContainer(size),
-	};
+	const base = theme.container({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
 };
 
 export const Grid = ({ id, name = 'Grid', cols = '12', tailwind, className, children, ...props }: types.GridProps) => {
-	const base = {
-		...styles.grid,
-		cols: computeGrid(cols),
-	};
+	const base = theme.grid({ cols });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -45,14 +38,7 @@ export const Col = ({
 	children,
 	...props
 }: types.ColProps) => {
-	const base = {
-		span: computeCol('span', span),
-		sm: computeCol('sm', sm),
-		md: computeCol('md', md),
-		lg: computeCol('lg', lg),
-		xl: computeCol('xl', xl),
-		xxl: computeCol('xxl', xxl),
-	};
+	const base = theme.col({ span, sm, md, lg, xl, xxl });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;

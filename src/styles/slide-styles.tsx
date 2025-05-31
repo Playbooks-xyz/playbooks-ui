@@ -1,4 +1,4 @@
-import { borderProps } from 'utils';
+import { borderProps } from 'theme';
 
 export const slideWrapper = {
 	position: 'fixed',

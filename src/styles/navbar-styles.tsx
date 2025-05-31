@@ -1,4 +1,4 @@
-import { borderProps } from 'utils';
+import { borderProps } from 'theme';
 
 export const navbar = {
 	bgColor: 'bg-white dark:bg-gray-900',

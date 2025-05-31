@@ -1,8 +1,8 @@
 import { Font, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import * as styles from 'styles/avatar-styles';
+import { computeAvatarSize } from 'theme';
 import * as types from 'types/avatar-types';
-import { computeAvatarSize } from 'utils';
 
 export const Avatar = ({ id, name = 'Avatar', tailwind, className, children, ...props }: types.AvatarProps) => {
 	const base = styles.avatar;

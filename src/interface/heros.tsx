@@ -3,8 +3,9 @@ import { Font, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import { FadIcon } from 'interface/icons';
 import * as styles from 'styles/hero-styles';
+import { computeHeroImgSize, computeHeroSize } from 'theme';
 import * as types from 'types/hero-types';
-import { classBuilder, computeHeroSize, computeThumbnailSize } from 'utils';
+import { classBuilder } from 'utils';
 
 export const Hero = ({
 	id,
@@ -53,7 +54,7 @@ export const HeroImg = ({
 }: types.HeroImgProps) => {
 	const base = {
 		...styles.heroImg,
-		size: computeThumbnailSize(size),
+		size: computeHeroImgSize(size),
 	};
 	const computed = { ...base, ...props, tailwind, className, name };
 

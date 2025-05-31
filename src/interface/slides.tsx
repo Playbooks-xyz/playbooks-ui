@@ -7,8 +7,8 @@ import { AccentBtn } from 'interface/buttons';
 import { H4 } from 'interface/fonts';
 import { Div } from 'interface/html';
 import * as styles from 'styles/slide-styles';
+import { computeSlideAnimation } from 'theme';
 import * as types from 'types/slide-types';
-import { computeSlideAnimation } from 'utils';
 
 export const SlideWrapper = ({
 	id,

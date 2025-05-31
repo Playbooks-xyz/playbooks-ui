@@ -8,8 +8,9 @@ import { PhoneInputWrapper } from 'components/phone-input-wrapper';
 import { useElementKeyPress } from 'hooks';
 import { Div, Span } from 'interface/html';
 import * as styles from 'styles/form-styles';
+import { computeInputSize } from 'theme';
 import * as types from 'types/form-types';
-import { classBuilder, computeInputSize } from 'utils';
+import { classBuilder } from 'utils';
 
 export const Form = ({ id, name = 'Form', onSubmit, tailwind, className, children, ...props }: types.FormProps) => {
 	const base = styles.form;

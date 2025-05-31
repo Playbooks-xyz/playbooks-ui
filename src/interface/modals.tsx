@@ -7,8 +7,8 @@ import { AccentBtn } from 'interface/buttons';
 import { Font } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
 import * as styles from 'styles/modal-styles';
+import { computeBodySize } from 'theme';
 import * as types from 'types/modal-types';
-import { computeSectionSize } from 'utils';
 
 export const ModalWrapper = ({
 	id,
@@ -173,7 +173,7 @@ export const ModalBody = ({
 	children,
 	...props
 }: types.ModalBodyProps) => {
-	const base = { ...styles.modalBody, size: computeSectionSize(size) };
+	const base = { ...styles.modalBody, size: computeBodySize(size) };
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;

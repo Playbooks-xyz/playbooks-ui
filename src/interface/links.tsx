@@ -6,8 +6,9 @@ import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
 import * as styles from 'styles/link-styles';
+import { computeBtnSize } from 'theme';
 import * as types from 'types/link-types';
-import { classBuilder, computeBtnSize } from 'utils';
+import { classBuilder } from 'utils';
 
 export const Link = ({ variant = 'primary', tailwind, ...props }) => {
 	switch (variant) {

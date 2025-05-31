@@ -2,8 +2,9 @@ import * as HTML from '@ehubbell/html';
 import { Font, P } from 'interface/fonts';
 import { Div, Hr } from 'interface/html';
 import * as styles from 'styles/section-styles';
+import { computeBodySize } from 'theme';
 import * as types from 'types/section-types';
-import { classBuilder, computeSectionSize } from 'utils';
+import { classBuilder } from 'utils';
 
 export const Section = ({
 	id,
@@ -122,7 +123,7 @@ export const SectionBody = ({
 }: types.SectionBodyProps) => {
 	const base = {
 		...styles.sectionBody,
-		size: computeSectionSize(size),
+		size: computeBodySize(size),
 	};
 	const computed = { ...base, ...props, tailwind, className, name };
 

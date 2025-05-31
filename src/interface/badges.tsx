@@ -1,7 +1,7 @@
 import { Div } from 'interface/html';
 import * as styles from 'styles/badge-styles';
+import { computeBadgeSize } from 'theme';
 import * as types from 'types/badge-types';
-import { computeBadgeSize } from 'utils';
 
 export const Badge = ({
 	id,
