@@ -136,16 +136,20 @@ export const ModalHeader = ({
 export const ModalTitle = ({
 	id,
 	name = 'ModalTitle',
-	size,
+	size = 'h4',
 	tailwind,
 	className,
 	children,
 	...props
 }: types.ModalTitleProps) => {
-	const base = { ...theme.modalTitle(), size: size || 'h4' };
+	const base = theme.modalTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Font {...computed}>{children}</Font>;
+	return (
+		<Font size={size} {...computed}>
+			{children}
+		</Font>
+	);
 };
 
 export const ModalSubtitle = ({

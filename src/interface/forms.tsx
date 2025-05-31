@@ -12,7 +12,7 @@ import * as types from 'types/form-types';
 import { classBuilder } from 'utils';
 
 export const Form = ({ id, name = 'Form', onSubmit, tailwind, className, children, ...props }: types.FormProps) => {
-	const base = theme.form;
+	const base = theme.form();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -30,7 +30,7 @@ export const FormGroup = ({
 	children,
 	...props
 }: types.FormGroupProps) => {
-	const base = theme.formGroup;
+	const base = theme.formGroup();
 	const computed = { ...base, ...props, tailwind, name, className };
 
 	return (
@@ -50,7 +50,7 @@ export const FormLabel = ({
 	children,
 	...props
 }: types.FormLabelProps) => {
-	const base = theme.formLabel;
+	const base = theme.formLabel();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -70,7 +70,7 @@ export const FormCheckbox = ({
 	className,
 	...props
 }: types.FormCheckboxProps) => {
-	const base = theme.formCheckbox;
+	const base = theme.formCheckbox();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -99,7 +99,7 @@ export const FormRange = ({
 	className,
 	...props
 }: types.FormRangeProps) => {
-	const base = theme.formRange;
+	const base = theme.formRange();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
