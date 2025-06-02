@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 
 import { Fade } from 'components/fade-wrapper';
 import { useInterface } from 'contexts';
-import { useInterface } from 'contexts/interface-context';
 import { useKeyPress } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { H4 } from 'interface/fonts';

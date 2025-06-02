@@ -70,7 +70,7 @@ export const NavBody = ({
 	return <Div {...computed}>{children}</Div>;
 };
 
-export const NavList = ({ tailwind, children, ...props }) => {
+export const NavList = ({ tailwind, children, ...props }: types.NavListProps) => {
 	const { theme } = useInterface();
 	const base = theme.navList();
 	const computed = { ...base, ...props, tailwind };
@@ -78,7 +78,7 @@ export const NavList = ({ tailwind, children, ...props }) => {
 	return <Ul {...computed}>{children}</Ul>;
 };
 
-export const NavItem = ({ tailwind, children, ...props }) => {
+export const NavItem = ({ tailwind, children, ...props }: types.NavItemProps) => {
 	const { theme } = useInterface();
 	const base = theme.navItem();
 	const computed = { ...base, ...props, tailwind };
