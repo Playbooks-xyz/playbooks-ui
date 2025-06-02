@@ -1,6 +1,6 @@
-import * as theme from '@playbooks/theme';
 import { FaWrapper } from 'components/fa-wrapper';
 import { Div } from 'interface/html';
+import * as theme from 'theme';
 import * as types from 'types/icon-types';
 import { classBuilder } from 'utils';
 

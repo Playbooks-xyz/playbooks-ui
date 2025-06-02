@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
 import { usePopper } from 'react-popper';
 
-import * as theme from '@playbooks/theme';
 import { Fade } from 'components/fade-wrapper';
 import { Div, Span } from 'interface/html';
+import * as theme from 'theme';
 import * as types from 'types/tooltip-types';
 
 export const Tooltip = ({
@@ -19,16 +19,13 @@ export const Tooltip = ({
 	tailwind,
 	...props
 }: types.TooltipProps) => {
-	const base = {
-		...theme.tooltip(),
-		className,
-		...tailwind?.span,
-	};
-	const [fade, setFade] = useState('hidden');
+	const [show, setShow] = useState(false);
+	const base = theme.tooltip({ open: show, placement });
+	const computed = { ...base, ...props, tailwind, className, name };
 	const [refElement, setRefElement] = useState(null);
 	const [popElement, setPopElement] = useState(null);
 	const [arrowElement, setArrowElement] = useState(null);
-	const fadeRef = useRef(null);
+	const nodeRef = useRef(null);
 	const { styles: popperStyles, attributes } = usePopper(refElement, popElement, {
 		placement,
 		strategy: 'fixed',
@@ -39,6 +36,9 @@ export const Tooltip = ({
 	});
 
 	// Methods
+	const onEnter = () => setShow(true);
+	const onExit = () => setShow(false);
+
 	const onShow = e => {
 		if (!onClick) e.preventDefault();
 		return onClick ? onClick() : null;
@@ -60,54 +60,21 @@ export const Tooltip = ({
 			name={name}
 			onClick={onShow}
 			onMouseEnter={onMouseEnter}
-			onMouseLeave={onMouseLeave}
-			{...base}>
+			onMouseLeave={onMouseLeave}>
 			{children}
-			<Fade
-				ref={fadeRef}
-				show={open}
-				timeout={100}
-				onEntering={() => setFade(`opacity-0 scale-90`)}
-				onEntered={() => setFade('opacity-100 scale-100')}
-				onExiting={() => setFade(`opacity-0 scale-90`)}
-				onExited={() => setFade('hidden')}>
+			<Fade ref={nodeRef} show={open} timeout={200} onEnter={onEnter} onExit={onExit}>
 				<Div ref={setPopElement} zIndex='z-10' style={popperStyles.popper} {...attributes.popper}>
-					<TooltipBody
-						setArrowElement={setArrowElement}
-						fade={fade}
-						html={html}
-						className={className}
-						styles={popperStyles}
-						tailwind={tailwind?.tooltip}
-					/>
+					<Div ref={nodeRef} {...computed}>
+						<TooltipArrow
+							setArrowElement={setArrowElement}
+							style={{ ...popperStyles.popper, ...popperStyles.arrow }}
+							tailwind={tailwind?.arrow}
+						/>
+						<TooltipInner tailwind={tailwind?.inner}>{html}</TooltipInner>
+					</Div>
 				</Div>
 			</Fade>
 		</Span>
-	);
-};
-
-export const TooltipBody = ({
-	id,
-	name = 'TooltipBody',
-	setArrowElement,
-	html,
-	className,
-	styles: popperStyles,
-	tailwind,
-	...props
-}: types.TooltipBodyProps) => {
-	const base = theme.tooltipBody();
-	const computed = { ...base, ...props, tailwind, className, name };
-
-	return (
-		<Div {...computed}>
-			<TooltipArrow
-				setArrowElement={setArrowElement}
-				style={{ ...popperStyles.popper, ...popperStyles.arrow }}
-				tailwind={tailwind?.arrow}
-			/>
-			<TooltipInner tailwind={tailwind?.inner}>{html}</TooltipInner>
-		</Div>
 	);
 };
 
@@ -129,9 +96,9 @@ export const TooltipArrow = ({
 	id,
 	name = 'TooltipArrow',
 	setArrowElement,
+	tailwind,
 	className,
 	style,
-	tailwind,
 	...props
 }: types.TooltipArrowProps) => {
 	const base = theme.tooltipArrow();

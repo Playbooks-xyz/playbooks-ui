@@ -1,15 +1,15 @@
 import { Fragment } from 'react';
 
 import * as HTML from '@ehubbell/html';
-import * as theme from '@playbooks/theme';
 import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
+import * as theme from 'theme';
 import * as types from 'types/button-types';
 import { classBuilder } from 'utils';
 
-export const Btn = ({ variant = 'primary', ...props }) => {
-	switch (variant) {
+export const Btn = props => {
+	switch (props?.variant) {
 		case 'primary':
 			return <PrimaryBtn {...props} />;
 
@@ -24,9 +24,6 @@ export const Btn = ({ variant = 'primary', ...props }) => {
 
 		case 'text':
 			return <TextBtn {...props} />;
-
-		default:
-			return <Btn {...props} />;
 	}
 };
 

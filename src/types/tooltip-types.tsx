@@ -9,13 +9,6 @@ export type TooltipProps = HtmlProps & {
 	tailwind?: any;
 };
 
-export type TooltipBodyProps = HtmlProps & {
-	setArrowElement: any;
-	html?: any;
-	styles: any;
-	tailwind?: any;
-};
-
 export type TooltipInnerProps = HtmlProps & {
 	tailwind?: any;
 };

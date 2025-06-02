@@ -1,8 +1,9 @@
 import { HtmlProps } from 'types';
 
 export type ToastProps = HtmlProps & {
-	show?: boolean;
-	setShow?: (v: boolean) => any;
+	open?: boolean;
+	direction?: string;
+	setOpen?: (v: boolean) => any;
 	onRemove?: () => any;
 };
 

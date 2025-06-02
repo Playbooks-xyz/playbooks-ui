@@ -1,7 +1,7 @@
-import * as theme from '@playbooks/theme';
 import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
+import * as theme from 'theme';
 import * as types from 'types/alert-types';
 
 export const Alert = ({ id, name = 'Alert', tailwind, className, children, ...props }: types.AlertProps) => {

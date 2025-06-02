@@ -1,8 +1,8 @@
-import * as theme from '@playbooks/theme';
 import { Btn } from 'interface/buttons';
 import { Font, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { Link } from 'interface/links';
+import * as theme from 'theme';
 import * as types from 'types/footer-types';
 import { classBuilder } from 'utils';
 

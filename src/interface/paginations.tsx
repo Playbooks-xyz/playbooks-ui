@@ -1,7 +1,7 @@
-import * as theme from '@playbooks/theme';
 import { BtnWrapper } from 'interface/buttons';
 import { FarIcon } from 'interface/icons';
 import { Nav } from 'interface/navs';
+import * as theme from 'theme';
 import * as types from 'types/pagination-types';
 import { classBuilder } from 'utils';
 

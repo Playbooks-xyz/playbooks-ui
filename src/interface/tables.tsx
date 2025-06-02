@@ -1,8 +1,8 @@
 import * as HTML from '@ehubbell/html';
-import * as theme from '@playbooks/theme';
 import { BtnWrapper } from 'interface/buttons';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
+import * as theme from 'theme';
 import * as types from 'types/table-types';
 import { classBuilder } from 'utils';
 import { isObject } from 'utils/helpers';

@@ -1,5 +1,5 @@
-import * as theme from '@playbooks/theme';
 import { Div, Img } from 'interface/html';
+import * as theme from 'theme';
 import * as types from 'types/tag-types';
 
 export const TagsWrapper = ({

@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
-import * as theme from '@playbooks/theme';
 import { Fade } from 'components/fade-wrapper';
 import { useInterface } from 'contexts/interface-context';
 import { useKeyPress } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { H4 } from 'interface/fonts';
 import { Div } from 'interface/html';
+import * as theme from 'theme';
 import * as types from 'types/slide-types';
 
 export const SlideWrapper = ({
@@ -38,23 +38,10 @@ export const SlideBackdrop = ({
 	tailwind,
 	...props
 }: types.SlideBackdropProps) => {
-	const base = theme.slideBackdrop();
-	const [fade, setFade] = useState({ display: 'hidden', bgOpacity: '' });
-	const computed = { ...base, ...fade, ...props, tailwind, name };
-	const ref = useRef(null);
+	const base = theme.slideBackdrop({ open });
+	const computed = { ...base, ...props, tailwind, name };
 
-	return (
-		<Fade
-			ref={ref}
-			show={open}
-			timeout={{ enter: 0, exit: 200 }}
-			onEnter={() => setFade({ display: '', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}
-			onEntered={() => setFade({ display: '', bgOpacity: 'bg-opacity-[85%] dark:bg-opacity-[85%]' })}
-			onExiting={() => setFade({ display: '', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}
-			onExited={() => setFade({ display: 'hidden', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}>
-			<Div ref={ref} onClick={onClose} {...computed} />
-		</Fade>
-	);
+	return <Div onClick={onClose} {...computed} />;
 };
 
 export const Slide = ({
@@ -68,10 +55,11 @@ export const Slide = ({
 	children,
 	...props
 }: types.SlideProps) => {
-	const base = theme.slide({ open, placement });
-	const computed = { ...base, ...props, tailwind, className };
+	const [show, setShow] = useState(false);
+	const base = theme.slide({ open: show, placement });
+	const computed = { ...base, ...props, tailwind, className, name };
 	const { ref, createPortal, toggleScroll } = useInterface();
-	const fadeRef = useRef(null);
+	const nodeRef = useRef(null);
 
 	// Hooks
 	useEffect(() => {
@@ -87,12 +75,16 @@ export const Slide = ({
 		if (e.keyCode === 27 && typeof onClose === 'function') onClose();
 	}
 
+	// Methods
+	const onEnter = () => setShow(true);
+	const onExit = () => setShow(false);
+
 	// Render
 	return ref?.current
 		? createPortal(
-				<Fade ref={fadeRef} show={open} timeout={200}>
-					<SlideWrapper open={open} onClose={onClose}>
-						<Div ref={fadeRef} {...computed}>
+				<Fade ref={nodeRef} show={open} timeout={200} onEnter={onEnter} onExit={onExit}>
+					<SlideWrapper open={show} onClose={onClose}>
+						<Div ref={nodeRef} {...computed}>
 							{children}
 						</Div>
 					</SlideWrapper>

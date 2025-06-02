@@ -1,7 +1,7 @@
-import * as theme from '@playbooks/theme';
 import { Font, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import { Icon } from 'interface/icons';
+import * as theme from 'theme';
 import * as types from 'types/card-types';
 
 export const Card = ({ id, name = 'Card', tailwind, className, children, ...props }: types.CardProps) => {

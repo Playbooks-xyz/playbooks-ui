@@ -1,12 +1,12 @@
 import * as HTML from '@ehubbell/html';
-import * as theme from '@playbooks/theme';
+import * as theme from 'theme';
 import { HtmlProps } from 'types';
 import * as types from 'types/html-types';
 import { classBuilder } from 'utils';
 
 export const Html = ({ name = 'Html', className, tailwind, children, style, ...props }: HtmlProps) => {
 	const base = theme.html();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Html name={name} className={computed} style={style}>
@@ -17,7 +17,7 @@ export const Html = ({ name = 'Html', className, tailwind, children, style, ...p
 
 export const Body = ({ name = 'Body', className, tailwind, children, style, ...props }: HtmlProps) => {
 	const base = theme.body();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Body name={name} className={computed} style={style}>
@@ -28,7 +28,7 @@ export const Body = ({ name = 'Body', className, tailwind, children, style, ...p
 
 export const Main = ({ ref, name = 'Main', className, tailwind, children, style, ...props }: HtmlProps) => {
 	const base = theme.main();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Main ref={ref} name={name} className={computed} style={style}>
@@ -39,7 +39,7 @@ export const Main = ({ ref, name = 'Main', className, tailwind, children, style,
 
 export const Aside = ({ ref, name = 'Aside', className, tailwind, children, style, ...props }: HtmlProps) => {
 	const base = theme.aside();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Aside name={name} className={computed} style={style}>
@@ -63,7 +63,7 @@ export const Div = ({
 	...props
 }: HtmlProps) => {
 	const base = theme.div();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Div
@@ -94,7 +94,7 @@ export const Span = ({
 	...props
 }: HtmlProps) => {
 	const base = theme.span();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Span
@@ -112,7 +112,7 @@ export const Span = ({
 
 export const Ul = ({ name = 'Ul', className, tailwind, children, ...props }: HtmlProps) => {
 	const base = theme.ul();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Ul name={name} className={computed}>
@@ -123,7 +123,7 @@ export const Ul = ({ name = 'Ul', className, tailwind, children, ...props }: Htm
 
 export const Li = ({ name = 'Li', className, tailwind, children, ...props }: HtmlProps) => {
 	const base = theme.li();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Li name={name} className={computed}>
@@ -144,7 +144,7 @@ export const IFrame = ({
 	...props
 }: types.FrameProps) => {
 	const base = theme.iFrame();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Iframe ref={ref} name={name} title={title} src={src} onLoad={onLoad} className={computed} style={style} />
@@ -153,14 +153,14 @@ export const IFrame = ({
 
 export const Img = ({ name = 'Img', src, alt, tailwind, className, style, ...props }: types.ImgProps) => {
 	const base = theme.img();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return <HTML.Img name={name} src={src} alt={alt} className={computed} style={style} />;
 };
 
 export const Hr = ({ name = 'Hr', className, tailwind, children, style, ...props }: HtmlProps) => {
 	const base = theme.hr();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Hr name={name} className={computed} style={style}>
@@ -171,7 +171,7 @@ export const Hr = ({ name = 'Hr', className, tailwind, children, style, ...props
 
 export const Article = ({ name = 'Article', className, tailwind, children, style, ...props }: HtmlProps) => {
 	const base = theme.article();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Article name={name} className={computed} style={style}>
@@ -182,7 +182,7 @@ export const Article = ({ name = 'Article', className, tailwind, children, style
 
 export const Figure = ({ name = 'Figure', className, tailwind, children, style, ...props }: HtmlProps) => {
 	const base = theme.figure();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Figure name={name} className={computed} style={style}>
@@ -193,7 +193,7 @@ export const Figure = ({ name = 'Figure', className, tailwind, children, style, 
 
 export const Caption = ({ name = 'Caption', className, tailwind, children, style, ...props }: HtmlProps) => {
 	const base = theme.caption();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Caption name={name} className={computed} style={style}>
@@ -204,7 +204,7 @@ export const Caption = ({ name = 'Caption', className, tailwind, children, style
 
 export const Blockquote = ({ name = 'Blockquote', className, tailwind, children, style, ...props }: HtmlProps) => {
 	const base = theme.blockquote();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Blockquote name={name} className={computed} style={style}>
@@ -215,7 +215,7 @@ export const Blockquote = ({ name = 'Blockquote', className, tailwind, children,
 
 export const Pre = ({ name = 'Pre', className, tailwind, children, style, ...props }: HtmlProps) => {
 	const base = theme.pre();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Pre name={name} className={computed} style={style}>
@@ -226,7 +226,7 @@ export const Pre = ({ name = 'Pre', className, tailwind, children, style, ...pro
 
 export const Code = ({ name = 'Code', className, tailwind, children, style, ...props }: HtmlProps) => {
 	const base = theme.code();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Code name={name} className={computed} style={style}>

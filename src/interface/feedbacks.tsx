@@ -1,7 +1,7 @@
-import * as theme from '@playbooks/theme';
 import { Font, P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { Icon } from 'interface/icons';
+import * as theme from 'theme';
 import * as types from 'types/feedback-types';
 import { classBuilder } from 'utils';
 

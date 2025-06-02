@@ -1,12 +1,12 @@
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import * as theme from '@playbooks/theme';
 import { Fade } from 'components/fade-wrapper';
 import { useInterface } from 'contexts';
 import { useKeyPress } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { Font } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
+import * as theme from 'theme';
 import * as types from 'types/modal-types';
 
 export const ModalWrapper = ({
@@ -23,14 +23,10 @@ export const ModalWrapper = ({
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<Fragment>
-			<Div {...computed}>
-				<Div align='text-center' height='h-full' spacing='mx-auto'>
-					{children}
-				</Div>
-				<ModalBackdrop open={open} onClose={onClose} tailwind={tailwind?.backdrop} />
-			</Div>
-		</Fragment>
+		<Div {...computed}>
+			{children}
+			<ModalBackdrop open={open} onClose={onClose} tailwind={tailwind?.backdrop} />
+		</Div>
 	);
 };
 
@@ -42,23 +38,10 @@ export const ModalBackdrop = ({
 	tailwind,
 	...props
 }: types.ModalBackdropProps) => {
-	const base = theme.modalBackdrop();
-	const [fade, setFade] = useState({ display: 'hidden', bgOpacity: '' });
-	const computed = { ...base, ...props, ...fade, tailwind, name };
-	const ref = useRef(null);
+	const base = theme.modalBackdrop({ open });
+	const computed = { ...base, ...props, tailwind, name };
 
-	return (
-		<Fade
-			ref={ref}
-			show={open}
-			timeout={{ enter: 0, exit: 200 }}
-			onEnter={() => setFade({ display: '', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}
-			onEntered={() => setFade({ display: '', bgOpacity: 'bg-opacity-[85%] dark:bg-opacity-[85%]' })}
-			onExiting={() => setFade({ display: '', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}
-			onExited={() => setFade({ display: 'hidden', bgOpacity: 'bg-opacity-0 dark:bg-opacity-0' })}>
-			<Div ref={ref} onClick={onClose} {...computed} />
-		</Fade>
-	);
+	return <Div onClick={onClose} {...computed} />;
 };
 
 export const Modal = ({
@@ -71,11 +54,11 @@ export const Modal = ({
 	children,
 	...props
 }: types.ModalProps) => {
-	const base = theme.modal();
-	const [fade, setFade] = useState('hidden');
-	const computed = { ...base, ...props, tailwind, fade, className, name };
+	const [show, setShow] = useState(false);
+	const base = theme.modal({ open: show });
+	const computed = { ...base, ...props, tailwind, className, name };
 	const { ref, createPortal, toggleScroll } = useInterface();
-	const fadeRef = useRef(null);
+	const nodeRef = useRef(null);
 
 	// Hooks
 	useEffect(() => {
@@ -91,19 +74,16 @@ export const Modal = ({
 		if (e.keyCode === 27 && typeof onClose === 'function') onClose();
 	}
 
+	// Methods
+	const onEnter = () => setShow(true);
+	const onExit = () => setShow(false);
+
 	// Render
 	return ref?.current
 		? createPortal(
-				<Fade
-					ref={fadeRef}
-					show={open}
-					timeout={{ enter: 0, exit: 200 }}
-					onEnter={() => setFade('opacity-0 scale-90')}
-					onEntered={() => setFade('opacity-100 scale-100')}
-					onExiting={() => setFade('opacity-0 scale-90')}
-					onExited={() => setFade('hidden')}>
-					<ModalWrapper open={open} onClose={onClose} tailwind={tailwind?.wrapper}>
-						<Div ref={fadeRef} {...computed}>
+				<Fade ref={nodeRef} show={open} timeout={200} onEnter={onEnter} onExit={onExit}>
+					<ModalWrapper open={show} onClose={onClose} tailwind={tailwind?.wrapper}>
+						<Div ref={nodeRef} {...computed}>
 							{children}
 						</Div>
 					</ModalWrapper>

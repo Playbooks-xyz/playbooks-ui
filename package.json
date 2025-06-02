@@ -39,9 +39,8 @@
     "react-dom": "^18 || ^19"
   },
   "dependencies": {
-    "@ehubbell/html": "^0.0.6",
+    "@ehubbell/html": "file:.yalc/@ehubbell/html",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@playbooks/theme": "file:.yalc/@playbooks/theme",
     "@react-google-maps/api": "^2.20.5",
     "@react-spring/web": "^10.0.1",
     "react-currency-input-field": "^3.10.0",

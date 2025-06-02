@@ -1,7 +1,7 @@
 import * as HTML from '@ehubbell/html';
-import * as theme from '@playbooks/theme';
 import { Img, Ul } from 'interface/html';
 import { LinkWrapper } from 'interface/links';
+import * as theme from 'theme';
 import * as types from 'types/navbar-types';
 import { classBuilder } from 'utils';
 

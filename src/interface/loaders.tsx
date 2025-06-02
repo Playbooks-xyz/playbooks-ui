@@ -1,7 +1,7 @@
-import * as theme from '@playbooks/theme';
 import { Font, H5, P, Small } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
 import { Oval } from 'interface/spinners';
+import * as theme from 'theme';
 import * as types from 'types/loader-types';
 
 export const ModalLoader = ({

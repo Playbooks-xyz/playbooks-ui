@@ -1,6 +1,6 @@
-import * as theme from '@playbooks/theme';
 import { Div } from 'interface/html';
 import { Icon } from 'interface/icons';
+import * as theme from 'theme';
 import * as types from 'types/input-group-types';
 
 export const InputGroup = ({

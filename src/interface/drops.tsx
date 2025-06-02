@@ -1,15 +1,14 @@
 import { useRef, useState } from 'react';
 import { usePopper } from 'react-popper';
 
-import * as theme from '@playbooks/theme';
 import { Fade } from 'components/fade-wrapper';
 import { useKeyPress, useMouseUp } from 'hooks';
 import { AccentBtn, Btn } from 'interface/buttons';
 import { H6, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
+import * as theme from 'theme';
 import * as types from 'types/drop-types';
-import { classBuilder } from 'utils';
 
 export const Drop = ({
 	id,
@@ -88,28 +87,24 @@ export const DropMenu = ({
 	children,
 	...props
 }: types.DropMenuProps) => {
+	const [show, setShow] = useState(false);
+	const base = theme.dropMenu({ open: show });
+	const computed = { ...base, ...props, tailwind, className, name };
 	const [dropRef, setDropRef] = useState(null);
-	const base = theme.dropMenu();
-	const [fade, setFade] = useState('hidden');
-	const computed = classBuilder({ ...base, ...props, tailwind, fade, className });
-	const fadeRef = useRef(null);
-
+	const nodeRef = useRef(null);
 	const { styles: popperStyles, attributes } = usePopper(ref, dropRef, {
 		placement: placement,
 		strategy: 'fixed',
 		...options,
 	});
 
+	// Methods
+	const onEnter = () => setShow(true);
+	const onExit = () => setShow(false);
+
 	// Render
 	return (
-		<Fade
-			ref={fadeRef}
-			show={open}
-			timeout={100}
-			onEnter={() => setFade(`opacity-0 scale-90 translate-y-4`)}
-			onEntered={() => setFade('opacity-100 scale-100 translate-y-0')}
-			onExiting={() => setFade('opacity-0 scale-90 translate-y-4')}
-			onExited={() => setFade('hidden')}>
+		<Fade ref={nodeRef} show={open} timeout={200} onEnter={onEnter} onExit={onExit}>
 			<div
 				id={id}
 				ref={setDropRef}
@@ -120,7 +115,7 @@ export const DropMenu = ({
 				className='w-auto z-10'
 				style={popperStyles.popper}
 				{...attributes.popper}>
-				<Div className={computed} style={style}>
+				<Div ref={nodeRef} {...computed} style={style}>
 					{children}
 				</Div>
 			</div>

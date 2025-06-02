@@ -1,6 +1,6 @@
-import * as theme from '@playbooks/theme';
 import { Font, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
+import * as theme from 'theme';
 import * as types from 'types/avatar-types';
 
 export const Avatar = ({ id, name = 'Avatar', tailwind, className, children, ...props }: types.AvatarProps) => {

@@ -1,7 +1,7 @@
-import * as theme from '@playbooks/theme';
 import { Font, H6, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { Section } from 'interface/sections';
+import * as theme from 'theme';
 import * as types from 'types/prefooter-types';
 
 export const Prefooter = ({

@@ -5,15 +5,19 @@ export type MenuProps = HtmlProps & {
 	onClose: () => any;
 };
 
+export type MenuWrapperProps = HtmlProps & {
+	open: boolean;
+	onClose: () => any;
+};
+
 export type MenuBackdropProps = HtmlProps & {
 	open: boolean;
 	onClose: () => any;
 };
 
-export type MenuToggleProps = BtnProps;
-
 export type MenuMenuProps = HtmlProps & {
 	open: boolean;
+	onClose: () => any;
 };
 
 export type MenuHeaderProps = HtmlProps;

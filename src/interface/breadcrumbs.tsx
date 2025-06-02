@@ -1,9 +1,9 @@
-import * as theme from '@playbooks/theme';
 import { TextBtn } from 'interface/buttons';
 import { Li } from 'interface/html';
 import { FarIcon } from 'interface/icons';
 import { TextLink } from 'interface/links';
 import { Nav, NavList } from 'interface/navs';
+import * as theme from 'theme';
 import * as types from 'types/breadcrumb-types';
 
 export const Breadcrumbs = ({

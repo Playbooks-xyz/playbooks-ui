@@ -1,5 +1,5 @@
 import * as HTML from '@ehubbell/html';
-import * as theme from '@playbooks/theme';
+import * as theme from 'theme';
 import * as types from 'types/font-types';
 import { classBuilder } from 'utils';
 

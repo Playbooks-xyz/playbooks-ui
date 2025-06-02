@@ -1,8 +1,8 @@
 import * as HTML from '@ehubbell/html';
-import * as theme from '@playbooks/theme';
 import { Font, P, Small } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import { FadIcon } from 'interface/icons';
+import * as theme from 'theme';
 import * as types from 'types/hero-types';
 import { classBuilder } from 'utils';
 

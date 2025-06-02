@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
-import * as theme from '@playbooks/theme';
 import { Span } from 'interface/html';
+import * as theme from 'theme';
 import * as types from 'types/command-types';
 
 export const Command = ({

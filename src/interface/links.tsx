@@ -2,32 +2,29 @@ import { Fragment } from 'react';
 import NLink from 'next/link';
 
 import * as HTML from '@ehubbell/html';
-import * as theme from '@playbooks/theme';
 import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
+import * as theme from 'theme';
 import * as types from 'types/link-types';
 import { classBuilder } from 'utils';
 
-export const Link = ({ variant = 'primary', tailwind, ...props }) => {
-	switch (variant) {
+export const Link = props => {
+	switch (props?.variant) {
 		case 'primary':
-			return <PrimaryLink tailwind={tailwind} {...props} />;
+			return <PrimaryLink {...props} />;
 
 		case 'accent':
-			return <AccentLink tailwind={tailwind} {...props} />;
+			return <AccentLink {...props} />;
 
 		case 'border':
-			return <BorderLink tailwind={tailwind} {...props} />;
+			return <BorderLink {...props} />;
 
 		case 'tab':
-			return <TabLink tailwind={tailwind} {...props} />;
+			return <TabLink {...props} />;
 
 		case 'text':
-			return <TextLink tailwind={tailwind} {...props} />;
-
-		default:
-			return <Link tailwind={tailwind} {...props} />;
+			return <TextLink {...props} />;
 	}
 };
 

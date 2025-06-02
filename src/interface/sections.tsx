@@ -1,7 +1,7 @@
 import * as HTML from '@ehubbell/html';
-import * as theme from '@playbooks/theme';
 import { Font, P, Small } from 'interface/fonts';
 import { Div, Hr } from 'interface/html';
+import * as theme from 'theme';
 import * as types from 'types/section-types';
 import { classBuilder } from 'utils';
 

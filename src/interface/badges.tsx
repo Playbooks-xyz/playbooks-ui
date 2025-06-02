@@ -1,5 +1,5 @@
-import * as theme from '@playbooks/theme';
 import { Div } from 'interface/html';
+import * as theme from 'theme';
 import * as types from 'types/badge-types';
 
 export const Badge = ({

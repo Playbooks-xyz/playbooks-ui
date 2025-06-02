@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 
-import * as theme from '@playbooks/theme';
 import { useInterface } from 'contexts';
 import { Head } from 'interface/head';
 import { Div } from 'interface/html';
+import * as theme from 'theme';
 import * as types from 'types/route-types';
 import { capitalize } from 'utils/transforms';
 

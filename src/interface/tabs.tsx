@@ -1,7 +1,7 @@
-import * as theme from '@playbooks/theme';
 import { Btn } from 'interface/buttons';
 import { FormSelect } from 'interface/forms';
 import { Div } from 'interface/html';
+import * as theme from 'theme';
 import * as types from 'types/tab-types';
 
 export const TabWrapper = ({

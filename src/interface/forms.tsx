@@ -1,13 +1,13 @@
 import { useRef } from 'react';
 
 import * as HTML from '@ehubbell/html';
-import * as theme from '@playbooks/theme';
 import { CurrencyInputWrapper } from 'components/currency-input-wrapper';
 import { GoogleAutocompleteWrapper } from 'components/google-autocomplete-wrapper';
 import { MaskedInput } from 'components/masked-input-wrapper';
 import { PhoneInputWrapper } from 'components/phone-input-wrapper';
 import { useElementKeyPress } from 'hooks';
 import { Div, Span } from 'interface/html';
+import * as theme from 'theme';
 import * as types from 'types/form-types';
 import { classBuilder } from 'utils';
 
@@ -123,7 +123,7 @@ export const FormInput = ({
 	ref,
 	name = 'FormInput',
 	type,
-	size = 'md',
+	size = 'sm',
 	value,
 	variant,
 	placeholder,
@@ -161,7 +161,7 @@ export const FormInput = ({
 export const FormMaskInput = ({
 	id,
 	name = 'FormMaskInput',
-	size = 'md',
+	size = 'sm',
 	mask,
 	value,
 	variant,
@@ -193,7 +193,7 @@ export const FormMaskInput = ({
 export const FormCurrencyInput = ({
 	id,
 	name = 'FormCurrencyInput',
-	size = 'md',
+	size = 'sm',
 	value,
 	variant,
 	prefix,
@@ -224,7 +224,7 @@ export const FormCurrencyInput = ({
 export const FormDivInput = ({
 	id,
 	name = 'FormDivInput',
-	size = 'md',
+	size = 'sm',
 	value,
 	variant,
 	placeholder,
@@ -263,7 +263,7 @@ export const FormFileInput = ({
 export const FormLocationInput = ({
 	id,
 	name = 'FormLocationInput',
-	size = 'md',
+	size = 'sm',
 	value,
 	variant,
 	options,
@@ -308,7 +308,7 @@ export const FormLocationInput = ({
 export const FormPhoneInput = ({
 	id,
 	name = 'FormPhoneInput',
-	size = 'md',
+	size = 'sm',
 	value,
 	variant,
 	placeholder,
@@ -338,7 +338,7 @@ export const FormPhoneInput = ({
 export const FormSelect = ({
 	id,
 	name = 'FormSelect',
-	size = 'md',
+	size = 'sm',
 	value,
 	variant,
 	options = [],
@@ -376,7 +376,7 @@ export const FormText = ({ id, name = 'FormText', tailwind, className, children,
 export const FormTextArea = ({
 	id,
 	name = 'FormTextArea',
-	size = 'md',
+	size = 'sm',
 	value,
 	variant,
 	rows,

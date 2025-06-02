@@ -1,9 +1,9 @@
 import * as HTML from '@ehubbell/html';
-import * as theme from '@playbooks/theme';
 import { AccentBtn } from 'interface/buttons';
 import { Font } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
+import * as theme from 'theme';
 import * as types from 'types/nav-types';
 import { classBuilder } from 'utils';
 

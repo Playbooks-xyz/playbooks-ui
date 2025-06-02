@@ -1,11 +1,11 @@
 import { useRef, useState } from 'react';
 
-import * as theme from '@playbooks/theme';
 import { Fade } from 'components/fade-wrapper';
 import { AccentBtn } from 'interface/buttons';
 import { H6, P } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
 import { FadIcon } from 'interface/icons';
+import * as theme from 'theme';
 import * as types from 'types/toast-types';
 
 export const ToastWrapper = ({
@@ -25,30 +25,27 @@ export const ToastWrapper = ({
 export const Toast = ({
 	id,
 	name = 'Toast',
-	show,
-	setShow,
+	open,
+	setOpen,
+	direction = 'bottom',
 	onRemove,
 	tailwind,
 	className,
 	children,
 	...props
 }: types.ToastProps) => {
-	const base = theme.toast({ show });
-	const [fade, setFade] = useState({ opacity: 'opacity-0', translate: 'translate-y-12' });
-	const computed = { ...base, ...props, tailwind, ...fade, className };
+	const [show, setShow] = useState(false);
+	const base = theme.toast({ open: show, direction });
+	const computed = { ...base, ...props, tailwind, className };
 	const ref = useRef(null);
+
+	// Methods
+	const onEnter = () => setShow(true);
+	const onExit = () => setShow(false);
 
 	// Render
 	return (
-		<Fade
-			ref={ref}
-			show={show}
-			timeout={{ enter: 0, exit: 200 }}
-			onEntering={() => setFade({ opacity: 'opacity-0', translate: 'translate-y-12' })}
-			onEntered={() => setFade({ opacity: 'opacity-100', translate: 'translate-y-0' })}
-			onExit={() => setFade({ opacity: 'opacity-100', translate: 'translate-y-0' })}
-			onExiting={() => setFade({ opacity: 'opacity-0', translate: 'translate-y-12' })}
-			onExited={onRemove}>
+		<Fade ref={ref} show={open} timeout={200} onEnter={onEnter} onExit={onExit} onExited={onRemove}>
 			<Div ref={ref} {...computed}>
 				{children}
 			</Div>
@@ -73,7 +70,7 @@ export const ToastHeader = ({
 			<Span display='flex-start' space='space-x-2'>
 				{children}
 			</Span>
-			<AccentBtn alt='close' icon='xmark' color='text-gray-600 dark:text-gray-100' size='xs' onClick={onRemove} />
+			<AccentBtn size='xs' icon='xmark' alt='close' color='text-gray-600 dark:text-gray-100' onClick={onRemove} />
 		</Div>
 	);
 };

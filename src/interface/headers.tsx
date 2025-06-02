@@ -1,6 +1,6 @@
-import * as theme from '@playbooks/theme';
 import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
+import * as theme from 'theme';
 import * as types from 'types/header-types';
 
 export const Header = ({ id, name = 'Header', tailwind, className, children, ...props }: types.HeaderProps) => {
