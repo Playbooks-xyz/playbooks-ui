@@ -1,7 +1,7 @@
+import { useInterface } from 'contexts';
 import { Font, H6, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { Section } from 'interface/sections';
-import * as theme from 'theme';
 import * as types from 'types/prefooter-types';
 
 export const Prefooter = ({
@@ -12,6 +12,7 @@ export const Prefooter = ({
 	children,
 	...props
 }: types.PrefooterProps) => {
+	const { theme } = useInterface();
 	const base = theme.prefooter();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -26,6 +27,7 @@ export const PrefooterBody = ({
 	children,
 	...props
 }: types.PrefooterBodyProps) => {
+	const { theme } = useInterface();
 	const base = theme.prefooterBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -40,6 +42,7 @@ export const PrefooterPretitle = ({
 	children,
 	...props
 }: types.PrefooterPretitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.prefooterPretitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -55,6 +58,7 @@ export const PrefooterTitle = ({
 	children,
 	...props
 }: types.PrefooterTitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.prefooterTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -74,6 +78,7 @@ export const PrefooterSubtitle = ({
 	children,
 	...props
 }: types.PrefooterSubtitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.prefooterSubtitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -92,6 +97,7 @@ export const PrefooterText = ({
 	children,
 	...props
 }: types.PrefooterTextProps) => {
+	const { theme } = useInterface();
 	const base = theme.prefooterText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -106,6 +112,7 @@ export const PrefooterActions = ({
 	children,
 	...props
 }: types.PrefooterActionsProps) => {
+	const { theme } = useInterface();
 	const base = theme.prefooterActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 

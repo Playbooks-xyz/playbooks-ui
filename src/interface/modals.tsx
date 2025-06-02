@@ -6,7 +6,6 @@ import { useKeyPress } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { Font } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types/modal-types';
 
 export const ModalWrapper = ({
@@ -19,6 +18,7 @@ export const ModalWrapper = ({
 	children,
 	...props
 }: types.ModalWrapperProps) => {
+	const { theme } = useInterface();
 	const base = theme.modalWrapper();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -38,6 +38,7 @@ export const ModalBackdrop = ({
 	tailwind,
 	...props
 }: types.ModalBackdropProps) => {
+	const { theme } = useInterface();
 	const base = theme.modalBackdrop({ open });
 	const computed = { ...base, ...props, tailwind, name };
 
@@ -55,6 +56,7 @@ export const Modal = ({
 	...props
 }: types.ModalProps) => {
 	const [show, setShow] = useState(false);
+	const { theme } = useInterface();
 	const base = theme.modal({ open: show });
 	const computed = { ...base, ...props, tailwind, className, name };
 	const { ref, createPortal, toggleScroll } = useInterface();
@@ -102,6 +104,7 @@ export const ModalHeader = ({
 	children,
 	...props
 }: types.ModalHeaderProps) => {
+	const { theme } = useInterface();
 	const base = theme.modalHeader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -122,6 +125,7 @@ export const ModalTitle = ({
 	children,
 	...props
 }: types.ModalTitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.modalTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -141,6 +145,7 @@ export const ModalSubtitle = ({
 	children,
 	...props
 }: types.ModalSubtitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.modalSubtitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -160,6 +165,7 @@ export const ModalBody = ({
 	children,
 	...props
 }: types.ModalBodyProps) => {
+	const { theme } = useInterface();
 	const base = theme.modalBody({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -174,6 +180,7 @@ export const ModalFooter = ({
 	children,
 	...props
 }: types.ModalFooterProps) => {
+	const { theme } = useInterface();
 	const base = theme.modalFooter();
 	const computed = { ...base, ...props, tailwind, className, name };
 

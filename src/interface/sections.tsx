@@ -1,7 +1,7 @@
 import * as HTML from '@ehubbell/html';
+import { useInterface } from 'contexts';
 import { Font, P, Small } from 'interface/fonts';
 import { Div, Hr } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types/section-types';
 import { classBuilder } from 'utils';
 
@@ -15,6 +15,7 @@ export const Section = ({
 	style,
 	...props
 }: types.SectionProps) => {
+	const { theme } = useInterface();
 	const base = theme.section();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -33,6 +34,7 @@ export const SectionHeader = ({
 	children,
 	...props
 }: types.SectionHeaderProps) => {
+	const { theme } = useInterface();
 	const base = theme.sectionHeader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -47,6 +49,7 @@ export const SectionPretitle = ({
 	children,
 	...props
 }: types.SectionPretitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.sectionPretitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -62,6 +65,7 @@ export const SectionTitle = ({
 	children,
 	...props
 }: types.SectionTitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.sectionTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -81,6 +85,7 @@ export const SectionSubtitle = ({
 	children,
 	...props
 }: types.SectionSubtitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.sectionSubtitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -99,6 +104,7 @@ export const SectionText = ({
 	children,
 	...props
 }: types.SectionTextProps) => {
+	const { theme } = useInterface();
 	const base = theme.sectionText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -113,6 +119,7 @@ export const SectionActions = ({
 	children,
 	...props
 }: types.SectionActionsProps) => {
+	const { theme } = useInterface();
 	const base = theme.sectionActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -128,6 +135,7 @@ export const SectionBody = ({
 	children,
 	...props
 }: types.SectionBodyProps) => {
+	const { theme } = useInterface();
 	const base = theme.sectionBody({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -135,6 +143,7 @@ export const SectionBody = ({
 };
 
 export const SectionHr = ({ id, name = 'SectionHr', tailwind, className, ...props }: types.SectionHrProps) => {
+	const { theme } = useInterface();
 	const base = theme.sectionHr();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -149,6 +158,7 @@ export const SectionFooter = ({
 	children,
 	...props
 }: types.SectionFooterProps) => {
+	const { theme } = useInterface();
 	const base = theme.sectionFooter();
 	const computed = { ...base, ...props, tailwind, className, name };
 

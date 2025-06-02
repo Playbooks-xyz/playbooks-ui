@@ -1,10 +1,11 @@
 import * as HTML from '@ehubbell/html';
-import * as theme from 'theme';
+import { useInterface } from 'contexts';
 import { HtmlProps } from 'types';
 import * as types from 'types/html-types';
 import { classBuilder } from 'utils';
 
 export const Html = ({ name = 'Html', className, tailwind, children, style, ...props }: HtmlProps) => {
+	const { theme } = useInterface();
 	const base = theme.html();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -16,6 +17,7 @@ export const Html = ({ name = 'Html', className, tailwind, children, style, ...p
 };
 
 export const Body = ({ name = 'Body', className, tailwind, children, style, ...props }: HtmlProps) => {
+	const { theme } = useInterface();
 	const base = theme.body();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -27,6 +29,7 @@ export const Body = ({ name = 'Body', className, tailwind, children, style, ...p
 };
 
 export const Main = ({ ref, name = 'Main', className, tailwind, children, style, ...props }: HtmlProps) => {
+	const { theme } = useInterface();
 	const base = theme.main();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -38,6 +41,7 @@ export const Main = ({ ref, name = 'Main', className, tailwind, children, style,
 };
 
 export const Aside = ({ ref, name = 'Aside', className, tailwind, children, style, ...props }: HtmlProps) => {
+	const { theme } = useInterface();
 	const base = theme.aside();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -62,6 +66,7 @@ export const Div = ({
 	style,
 	...props
 }: HtmlProps) => {
+	const { theme } = useInterface();
 	const base = theme.div();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -93,6 +98,7 @@ export const Span = ({
 	style,
 	...props
 }: HtmlProps) => {
+	const { theme } = useInterface();
 	const base = theme.span();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -111,6 +117,7 @@ export const Span = ({
 };
 
 export const Ul = ({ name = 'Ul', className, tailwind, children, ...props }: HtmlProps) => {
+	const { theme } = useInterface();
 	const base = theme.ul();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -122,6 +129,7 @@ export const Ul = ({ name = 'Ul', className, tailwind, children, ...props }: Htm
 };
 
 export const Li = ({ name = 'Li', className, tailwind, children, ...props }: HtmlProps) => {
+	const { theme } = useInterface();
 	const base = theme.li();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -143,6 +151,7 @@ export const IFrame = ({
 	style,
 	...props
 }: types.FrameProps) => {
+	const { theme } = useInterface();
 	const base = theme.iFrame();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -152,6 +161,7 @@ export const IFrame = ({
 };
 
 export const Img = ({ name = 'Img', src, alt, tailwind, className, style, ...props }: types.ImgProps) => {
+	const { theme } = useInterface();
 	const base = theme.img();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -159,6 +169,7 @@ export const Img = ({ name = 'Img', src, alt, tailwind, className, style, ...pro
 };
 
 export const Hr = ({ name = 'Hr', className, tailwind, children, style, ...props }: HtmlProps) => {
+	const { theme } = useInterface();
 	const base = theme.hr();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -170,6 +181,7 @@ export const Hr = ({ name = 'Hr', className, tailwind, children, style, ...props
 };
 
 export const Article = ({ name = 'Article', className, tailwind, children, style, ...props }: HtmlProps) => {
+	const { theme } = useInterface();
 	const base = theme.article();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -181,6 +193,7 @@ export const Article = ({ name = 'Article', className, tailwind, children, style
 };
 
 export const Figure = ({ name = 'Figure', className, tailwind, children, style, ...props }: HtmlProps) => {
+	const { theme } = useInterface();
 	const base = theme.figure();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -192,6 +205,7 @@ export const Figure = ({ name = 'Figure', className, tailwind, children, style, 
 };
 
 export const Caption = ({ name = 'Caption', className, tailwind, children, style, ...props }: HtmlProps) => {
+	const { theme } = useInterface();
 	const base = theme.caption();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -203,6 +217,7 @@ export const Caption = ({ name = 'Caption', className, tailwind, children, style
 };
 
 export const Blockquote = ({ name = 'Blockquote', className, tailwind, children, style, ...props }: HtmlProps) => {
+	const { theme } = useInterface();
 	const base = theme.blockquote();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -214,6 +229,7 @@ export const Blockquote = ({ name = 'Blockquote', className, tailwind, children,
 };
 
 export const Pre = ({ name = 'Pre', className, tailwind, children, style, ...props }: HtmlProps) => {
+	const { theme } = useInterface();
 	const base = theme.pre();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 
@@ -225,6 +241,7 @@ export const Pre = ({ name = 'Pre', className, tailwind, children, style, ...pro
 };
 
 export const Code = ({ name = 'Code', className, tailwind, children, style, ...props }: HtmlProps) => {
+	const { theme } = useInterface();
 	const base = theme.code();
 	const computed = classBuilder({ ...base, ...props, ...tailwind, className });
 

@@ -1,10 +1,11 @@
+import { useInterface } from 'contexts';
 import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
-import * as theme from 'theme';
 import * as types from 'types/banner-types';
 
 export const Banner = ({ id, name = 'Banner', tailwind, className, children, ...props }: types.BannerProps) => {
+	const { theme } = useInterface();
 	const base = theme.banner();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -19,6 +20,7 @@ export const BannerIcon = ({
 	className,
 	...props
 }: types.BannerIconProps) => {
+	const { theme } = useInterface();
 	const base = theme.bannerIcon();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -37,6 +39,7 @@ export const BannerBody = ({
 	children,
 	...props
 }: types.BannerBodyProps) => {
+	const { theme } = useInterface();
 	const base = theme.bannerBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -52,6 +55,7 @@ export const BannerTitle = ({
 	children,
 	...props
 }: types.BannerTitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.bannerTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -70,6 +74,7 @@ export const BannerText = ({
 	children,
 	...props
 }: types.BannerTextProps) => {
+	const { theme } = useInterface();
 	const base = theme.bannerText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -84,6 +89,7 @@ export const BannerActions = ({
 	children,
 	...props
 }: types.BannerActionsProps) => {
+	const { theme } = useInterface();
 	const base = theme.bannerActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 

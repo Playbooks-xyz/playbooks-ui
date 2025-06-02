@@ -1,5 +1,5 @@
 import * as HTML from '@ehubbell/html';
-import * as theme from 'theme';
+import { useInterface } from 'contexts';
 import * as types from 'types/font-types';
 import { classBuilder } from 'utils';
 
@@ -35,6 +35,7 @@ export const Font = props => {
 };
 
 export const H1 = ({ id, name = 'H1', tailwind, className, children, ...props }: types.FontProps) => {
+	const { theme } = useInterface();
 	const base = theme.h1();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -46,6 +47,7 @@ export const H1 = ({ id, name = 'H1', tailwind, className, children, ...props }:
 };
 
 export const H2 = ({ id, name = 'H2', tailwind, className, children, ...props }: types.FontProps) => {
+	const { theme } = useInterface();
 	const base = theme.h2();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -57,6 +59,7 @@ export const H2 = ({ id, name = 'H2', tailwind, className, children, ...props }:
 };
 
 export const H3 = ({ id, name = 'H3', tailwind, className, children, ...props }: types.FontProps) => {
+	const { theme } = useInterface();
 	const base = theme.h3();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -68,6 +71,7 @@ export const H3 = ({ id, name = 'H3', tailwind, className, children, ...props }:
 };
 
 export const H4 = ({ id, name = 'H4', tailwind, className, children, ...props }: types.FontProps) => {
+	const { theme } = useInterface();
 	const base = theme.h4();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -79,6 +83,7 @@ export const H4 = ({ id, name = 'H4', tailwind, className, children, ...props }:
 };
 
 export const H5 = ({ id, name = 'H5', tailwind, className, children, ...props }: types.FontProps) => {
+	const { theme } = useInterface();
 	const base = theme.h5();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -90,6 +95,7 @@ export const H5 = ({ id, name = 'H5', tailwind, className, children, ...props }:
 };
 
 export const H6 = ({ id, name = 'H6', tailwind, className, children, ...props }: types.FontProps) => {
+	const { theme } = useInterface();
 	const base = theme.h6();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -101,6 +107,7 @@ export const H6 = ({ id, name = 'H6', tailwind, className, children, ...props }:
 };
 
 export const P = ({ id, name = 'P', tailwind, className, children, ...props }: types.FontProps) => {
+	const { theme } = useInterface();
 	const base = theme.p();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -112,6 +119,7 @@ export const P = ({ id, name = 'P', tailwind, className, children, ...props }: t
 };
 
 export const Small = ({ id, name = 'Small', tailwind, className, children, ...props }: types.FontProps) => {
+	const { theme } = useInterface();
 	const base = theme.small();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 

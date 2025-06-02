@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { Fade } from 'components/fade-wrapper';
+import { useInterface } from 'contexts';
 import { useInterface } from 'contexts/interface-context';
 import { useKeyPress } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { H4 } from 'interface/fonts';
 import { Div } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types/slide-types';
 
 export const SlideWrapper = ({
@@ -19,6 +19,7 @@ export const SlideWrapper = ({
 	children,
 	...props
 }: types.SlideWrapperProps) => {
+	const { theme } = useInterface();
 	const base = theme.slideWrapper();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -38,6 +39,7 @@ export const SlideBackdrop = ({
 	tailwind,
 	...props
 }: types.SlideBackdropProps) => {
+	const { theme } = useInterface();
 	const base = theme.slideBackdrop({ open });
 	const computed = { ...base, ...props, tailwind, name };
 
@@ -56,6 +58,7 @@ export const Slide = ({
 	...props
 }: types.SlideProps) => {
 	const [show, setShow] = useState(false);
+	const { theme } = useInterface();
 	const base = theme.slide({ open: show, placement });
 	const computed = { ...base, ...props, tailwind, className, name };
 	const { ref, createPortal, toggleScroll } = useInterface();
@@ -103,6 +106,7 @@ export const SlideHeader = ({
 	children,
 	...props
 }: types.SlideHeaderProps) => {
+	const { theme } = useInterface();
 	const base = theme.slideHeader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -122,6 +126,7 @@ export const SlideTitle = ({
 	children,
 	...props
 }: types.SlideTitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.slideTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -136,6 +141,7 @@ export const SlideBody = ({
 	children,
 	...props
 }: types.SlideBodyProps) => {
+	const { theme } = useInterface();
 	const base = theme.slideBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -150,6 +156,7 @@ export const SlideFooter = ({
 	children,
 	...props
 }: types.SlideFooterProps) => {
+	const { theme } = useInterface();
 	const base = theme.slideFooter();
 	const computed = { ...base, ...props, tailwind, className, name };
 

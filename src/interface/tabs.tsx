@@ -1,7 +1,7 @@
+import { useInterface } from 'contexts';
 import { Btn } from 'interface/buttons';
 import { FormSelect } from 'interface/forms';
 import { Div } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types/tab-types';
 
 export const TabWrapper = ({
@@ -12,6 +12,7 @@ export const TabWrapper = ({
 	children,
 	...props
 }: types.TabWrapperProps) => {
+	const { theme } = useInterface();
 	const base = theme.tabWrapper();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -29,6 +30,7 @@ export const TabSelect = ({
 	children,
 	...props
 }: types.TabSelectProps) => {
+	const { theme } = useInterface();
 	const base = theme.tabSelect();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -46,6 +48,7 @@ export const Tabs = ({
 	children,
 	...props
 }: types.TabPropss) => {
+	const { theme } = useInterface();
 	const base = theme.tabs();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -71,6 +74,7 @@ export const Tab = ({
 	children,
 	...props
 }: types.TabProps) => {
+	const { theme } = useInterface();
 	const base = theme.tab({ active });
 	const computed = { ...base, ...props, tailwind, alt, children, className, name };
 
@@ -78,6 +82,7 @@ export const Tab = ({
 };
 
 export const TabPanes = ({ id, name = 'TabPanes', tailwind, className, children, ...props }: types.TabPanesProps) => {
+	const { theme } = useInterface();
 	const base = theme.tabPanes();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -94,6 +99,7 @@ export const TabPane = ({
 	children,
 	...props
 }: types.TabPaneProps) => {
+	const { theme } = useInterface();
 	const base = theme.tabPane({ active });
 	const computed = { ...base, ...props, tailwind, className, name };
 

@@ -1,13 +1,14 @@
 import * as HTML from '@ehubbell/html';
+import { useInterface } from 'contexts';
 import { BtnWrapper } from 'interface/buttons';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
-import * as theme from 'theme';
 import * as types from 'types/table-types';
 import { classBuilder } from 'utils';
 import { isObject } from 'utils/helpers';
 
 export const Table = ({ id, name = 'Table', tailwind, className, children, ...props }: types.TableProps) => {
+	const { theme } = useInterface();
 	const base = theme.table();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -26,6 +27,7 @@ export const TableHeader = ({
 	children,
 	...props
 }: types.TableHeaderProps) => {
+	const { theme } = useInterface();
 	const base = theme.tableHeader();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -44,6 +46,7 @@ export const TableHeaderRow = ({
 	children,
 	...props
 }: types.TableHeaderRowProps) => {
+	const { theme } = useInterface();
 	const base = theme.tableHeaderRow();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -62,6 +65,7 @@ export const TableHead = ({
 	children,
 	...props
 }: types.TableHeadProps) => {
+	const { theme } = useInterface();
 	const base = theme.tableHead();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 	const direction = value === params?.sortProp && params?.sortValue === 'asc' ? 'desc' : 'asc';
@@ -97,6 +101,7 @@ export const TableBody = ({
 	children,
 	...props
 }: types.TableBodyProps) => {
+	const { theme } = useInterface();
 	const base = theme.tableBody();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -108,6 +113,7 @@ export const TableBody = ({
 };
 
 export const TableRow = ({ id, name = 'TableRow', tailwind, className, children, ...props }: types.TableRowProps) => {
+	const { theme } = useInterface();
 	const base = theme.tableRow();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -128,6 +134,7 @@ export const TableData = ({
 	children,
 	...props
 }: types.TableDataProps) => {
+	const { theme } = useInterface();
 	const base = theme.tableData({ title });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 

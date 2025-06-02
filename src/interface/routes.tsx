@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 import { useInterface } from 'contexts';
 import { Head } from 'interface/head';
 import { Div } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types/route-types';
 import { capitalize } from 'utils/transforms';
 
 export const Route = ({ id, name = 'Route', seo, tailwind, className, children, ...props }: types.RouteProps) => {
+	const { theme } = useInterface();
 	const base = theme.route();
 	const computed = { ...base, ...props, tailwind, className, name };
 	const interfaceContext = useInterface();

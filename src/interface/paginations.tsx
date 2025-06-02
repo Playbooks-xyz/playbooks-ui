@@ -1,7 +1,7 @@
+import { useInterface } from 'contexts';
 import { BtnWrapper } from 'interface/buttons';
 import { FarIcon } from 'interface/icons';
 import { Nav } from 'interface/navs';
-import * as theme from 'theme';
 import * as types from 'types/pagination-types';
 import { classBuilder } from 'utils';
 
@@ -13,6 +13,7 @@ export const Pagination = ({
 	children,
 	...props
 }: types.PaginationProps) => {
+	const { theme } = useInterface();
 	const base = theme.pagination();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -30,6 +31,7 @@ export const PaginationFirst = ({
 	onClick,
 	...props
 }: types.PaginationBtnProps) => {
+	const { theme } = useInterface();
 	const base = theme.paginationBtn();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -51,6 +53,7 @@ export const PaginationPrev = ({
 	onClick,
 	...props
 }: types.PaginationBtnProps) => {
+	const { theme } = useInterface();
 	const base = theme.paginationBtn();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -72,6 +75,7 @@ export const PaginationBtn = ({
 	onClick,
 	...props
 }: types.PaginationBtnProps) => {
+	const { theme } = useInterface();
 	const base = theme.paginationBtn(active);
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -93,6 +97,7 @@ export const PaginationNext = ({
 	onClick,
 	...props
 }: types.PaginationBtnProps) => {
+	const { theme } = useInterface();
 	const base = theme.paginationBtn();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -114,6 +119,7 @@ export const PaginationLast = ({
 	onClick,
 	...props
 }: types.PaginationBtnProps) => {
+	const { theme } = useInterface();
 	const base = theme.paginationBtn();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 

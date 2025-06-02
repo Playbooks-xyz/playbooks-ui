@@ -27,9 +27,7 @@
     "deploy": "scripts/deploy.sh",
     "git": "git push --tags",
     "packages": "npx yalc remove @ehubbell/html && npm install @ehubbell/html@latest --legacy-peer-deps",
-    "yalc": "npm run yalc:html && npm run yalc:theme",
-    "yalc:html": "npm uninstall @ehubbell/html --legacy-peer-deps && npx yalc add @ehubbell/html",
-    "yalc:theme": "npm uninstall @playbooks/theme --legacy-peer-deps && npx yalc add @playbooks/theme",
+    "yalc": "npm uninstall @ehubbell/html --legacy-peer-deps && npx yalc add @ehubbell/html",
     "test": "jest",
     "prepare": "husky"
   },
@@ -41,7 +39,7 @@
   "dependencies": {
     "@ehubbell/html": "file:.yalc/@ehubbell/html",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@playbooks/theme": "file:.yalc/@playbooks/theme",
+    "@playbooks/theme": "^0.0.5",
     "@react-google-maps/api": "^2.20.5",
     "@react-spring/web": "^10.0.1",
     "react-currency-input-field": "^3.10.0",

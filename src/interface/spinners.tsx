@@ -1,10 +1,11 @@
 import * as Loaders from 'assets/loaders';
+import { useInterface } from 'contexts';
 import { Div } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types/spinner-types';
 import { classBuilder } from 'utils';
 
 export const Oval = ({ id, name = 'Oval', tailwind, className, ...props }: types.SpinnerProps) => {
+	const { theme } = useInterface();
 	const base = theme.spinner();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -12,6 +13,7 @@ export const Oval = ({ id, name = 'Oval', tailwind, className, ...props }: types
 };
 
 export const Puff = ({ id, name = 'Puff', tailwind, className, ...props }: types.SpinnerProps) => {
+	const { theme } = useInterface();
 	const base = theme.spinner();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -19,6 +21,7 @@ export const Puff = ({ id, name = 'Puff', tailwind, className, ...props }: types
 };
 
 export const Spinner = ({ tailwind, ...props }) => {
+	const { theme } = useInterface();
 	const base = theme.spinner();
 	const computed = { ...base, ...props, tailwind };
 
@@ -26,6 +29,7 @@ export const Spinner = ({ tailwind, ...props }) => {
 };
 
 export const SpinnerWrapper = ({ tailwind, children, ...props }) => {
+	const { theme } = useInterface();
 	const base = theme.spinner();
 	const computed = { ...base, ...props, tailwind };
 

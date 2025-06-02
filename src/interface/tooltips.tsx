@@ -2,8 +2,8 @@ import { useRef, useState } from 'react';
 import { usePopper } from 'react-popper';
 
 import { Fade } from 'components/fade-wrapper';
+import { useInterface } from 'contexts';
 import { Div, Span } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types/tooltip-types';
 
 export const Tooltip = ({
@@ -20,6 +20,7 @@ export const Tooltip = ({
 	...props
 }: types.TooltipProps) => {
 	const [show, setShow] = useState(false);
+	const { theme } = useInterface();
 	const base = theme.tooltip({ open: show, placement });
 	const computed = { ...base, ...props, tailwind, className, name };
 	const [refElement, setRefElement] = useState(null);
@@ -86,6 +87,7 @@ export const TooltipInner = ({
 	tailwind,
 	...props
 }: types.TooltipInnerProps) => {
+	const { theme } = useInterface();
 	const base = theme.tooltipInner();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -101,6 +103,7 @@ export const TooltipArrow = ({
 	style,
 	...props
 }: types.TooltipArrowProps) => {
+	const { theme } = useInterface();
 	const base = theme.tooltipArrow();
 	const computed = { ...base, ...props, tailwind, className, name };
 

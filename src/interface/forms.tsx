@@ -5,13 +5,14 @@ import { CurrencyInputWrapper } from 'components/currency-input-wrapper';
 import { GoogleAutocompleteWrapper } from 'components/google-autocomplete-wrapper';
 import { MaskedInput } from 'components/masked-input-wrapper';
 import { PhoneInputWrapper } from 'components/phone-input-wrapper';
+import { useInterface } from 'contexts';
 import { useElementKeyPress } from 'hooks';
 import { Div, Span } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types/form-types';
 import { classBuilder } from 'utils';
 
 export const Form = ({ id, name = 'Form', onSubmit, tailwind, className, children, ...props }: types.FormProps) => {
+	const { theme } = useInterface();
 	const base = theme.form();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -30,6 +31,7 @@ export const FormGroup = ({
 	children,
 	...props
 }: types.FormGroupProps) => {
+	const { theme } = useInterface();
 	const base = theme.formGroup();
 	const computed = { ...base, ...props, tailwind, name, className };
 
@@ -50,6 +52,7 @@ export const FormLabel = ({
 	children,
 	...props
 }: types.FormLabelProps) => {
+	const { theme } = useInterface();
 	const base = theme.formLabel();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -70,6 +73,7 @@ export const FormCheckbox = ({
 	className,
 	...props
 }: types.FormCheckboxProps) => {
+	const { theme } = useInterface();
 	const base = theme.formCheckbox();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -99,6 +103,7 @@ export const FormRange = ({
 	className,
 	...props
 }: types.FormRangeProps) => {
+	const { theme } = useInterface();
 	const base = theme.formRange();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -136,6 +141,7 @@ export const FormInput = ({
 	className,
 	...props
 }: types.FormInputProps) => {
+	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -173,6 +179,7 @@ export const FormMaskInput = ({
 	className,
 	...props
 }: types.FormInputPropsMask) => {
+	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -205,6 +212,7 @@ export const FormCurrencyInput = ({
 	className,
 	...props
 }: types.FormInputPropsCurrency) => {
+	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -234,6 +242,7 @@ export const FormDivInput = ({
 	children,
 	...props
 }: types.FormInputProps) => {
+	const { theme } = useInterface();
 	const base = theme.formDivInput({ size, variant });
 	const computed = { ...base, ...props, tailwind, name, className };
 
@@ -254,6 +263,7 @@ export const FormFileInput = ({
 	className,
 	...props
 }: types.FormFileProps) => {
+	const { theme } = useInterface();
 	const base = theme.formFileInput();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -277,6 +287,7 @@ export const FormLocationInput = ({
 	className,
 	...props
 }: types.FormLocationPropsInput) => {
+	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 	const ref = useRef(null);
@@ -319,6 +330,7 @@ export const FormPhoneInput = ({
 	className,
 	...props
 }: types.FormInputProps) => {
+	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -349,6 +361,7 @@ export const FormSelect = ({
 	className,
 	...props
 }: types.FormSelectProps) => {
+	const { theme } = useInterface();
 	const base = theme.formSelect({ size, variant });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -367,6 +380,7 @@ export const FormSelect = ({
 };
 
 export const FormText = ({ id, name = 'FormText', tailwind, className, children, ...props }: types.FormTextProps) => {
+	const { theme } = useInterface();
 	const base = theme.formText();
 	const computed = { ...base, ...props, tailwind, name, className };
 
@@ -387,6 +401,7 @@ export const FormTextArea = ({
 	className,
 	...props
 }: types.FormTextPropsArea) => {
+	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 

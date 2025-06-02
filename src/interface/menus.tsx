@@ -1,12 +1,12 @@
 import { useRef, useState } from 'react';
 
 import { Fade } from 'components/fade-wrapper';
+import { useInterface } from 'contexts';
 import { useKeyPress, useMouseUp } from 'hooks';
 import { AccentBtn } from 'interface/buttons';
 import { H6, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
-import * as theme from 'theme';
 import * as types from 'types/menu-types';
 
 export const Menu = ({
@@ -20,6 +20,7 @@ export const Menu = ({
 	children,
 	...props
 }: types.MenuProps) => {
+	const { theme } = useInterface();
 	const base = theme.menu();
 	const computed = { ...base, ...props, tailwind, className, name };
 	const internalRef = useRef(null);
@@ -65,6 +66,7 @@ export const MenuWrapper = ({
 	children,
 	...props
 }: types.MenuWrapperProps) => {
+	const { theme } = useInterface();
 	const base = theme.menuWrapper();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -85,6 +87,7 @@ export const MenuBackdrop = ({
 	className,
 	...props
 }: types.MenuBackdropProps) => {
+	const { theme } = useInterface();
 	const base = theme.menuBackdrop({ open });
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -102,6 +105,7 @@ export const MenuMenu = ({
 	...props
 }: types.MenuMenuProps) => {
 	const [show, setShow] = useState(false);
+	const { theme } = useInterface();
 	const base = theme.menuMenu({ open: show });
 	const computed = { ...base, ...props, tailwind, className, name };
 	const ref = useRef(null);
@@ -123,6 +127,7 @@ export const MenuMenu = ({
 };
 
 export const MenuBlock = ({ id, name = 'MenuBlock', tailwind, className, children, ...props }: types.MenuListProps) => {
+	const { theme } = useInterface();
 	const base = theme.menuBlock();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -137,6 +142,7 @@ export const MenuTitle = ({
 	children,
 	...props
 }: types.MenuTitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.menuTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -151,6 +157,7 @@ export const MenuSubtitle = ({
 	children,
 	...props
 }: types.MenuSubtitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.menuSubtitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -158,6 +165,7 @@ export const MenuSubtitle = ({
 };
 
 export const MenuList = ({ id, name = 'MenuList', tailwind, className, children, ...props }: types.MenuListProps) => {
+	const { theme } = useInterface();
 	const base = theme.menuList();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -165,6 +173,7 @@ export const MenuList = ({ id, name = 'MenuList', tailwind, className, children,
 };
 
 export const MenuItem = ({ id, name = 'MenuItem', tailwind, className, children, ...props }: types.MenuItemProps) => {
+	const { theme } = useInterface();
 	const base = theme.menuItem();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -182,6 +191,7 @@ export const MenuBtn = ({
 	children,
 	...props
 }: types.MenuBtnProps) => {
+	const { theme } = useInterface();
 	const base = theme.menuBtn();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
@@ -197,6 +207,7 @@ export const MenuLink = ({
 	children,
 	...props
 }: types.MenuLinkProps) => {
+	const { theme } = useInterface();
 	const base = theme.menuLink();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 

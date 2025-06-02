@@ -2,10 +2,10 @@ import { Fragment } from 'react';
 import NLink from 'next/link';
 
 import * as HTML from '@ehubbell/html';
+import { useInterface } from 'contexts';
 import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
-import * as theme from 'theme';
 import * as types from 'types/link-types';
 import { classBuilder } from 'utils';
 
@@ -41,6 +41,7 @@ export const PrimaryLink = ({
 	className,
 	...props
 }: types.LinkProps) => {
+	const { theme } = useInterface();
 	const base = theme.primaryLink({ active, size });
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
@@ -54,6 +55,7 @@ export const AccentLink = ({
 	className,
 	...props
 }: types.LinkProps) => {
+	const { theme } = useInterface();
 	const base = theme.accentLink({ active, size });
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
@@ -67,6 +69,7 @@ export const BorderLink = ({
 	className,
 	...props
 }: types.LinkProps) => {
+	const { theme } = useInterface();
 	const base = theme.borderLink({ active, size });
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
@@ -80,6 +83,7 @@ export const TabLink = ({
 	className,
 	...props
 }: types.LinkProps) => {
+	const { theme } = useInterface();
 	const base = theme.tabLink({ active, size });
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
@@ -93,6 +97,7 @@ export const TextLink = ({
 	className,
 	...props
 }: types.LinkProps) => {
+	const { theme } = useInterface();
 	const base = theme.textLink({ active, size });
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
@@ -167,6 +172,7 @@ export const LinkWrapper = ({
 	children,
 	...props
 }: types.LinkProps) => {
+	const { theme } = useInterface();
 	const base = theme.linkWrapper({ disabled });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 

@@ -1,9 +1,10 @@
+import { useInterface } from 'contexts';
 import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types/header-types';
 
 export const Header = ({ id, name = 'Header', tailwind, className, children, ...props }: types.HeaderProps) => {
+	const { theme } = useInterface();
 	const base = theme.header();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -19,6 +20,7 @@ export const HeaderTitle = ({
 	children,
 	...props
 }: types.HeaderTitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.headerTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -38,6 +40,7 @@ export const HeaderSubtitle = ({
 	children,
 	...props
 }: types.HeaderSubtitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.headerSubtitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -56,6 +59,7 @@ export const HeaderText = ({
 	children,
 	...props
 }: types.HeaderTextProps) => {
+	const { theme } = useInterface();
 	const base = theme.headerText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -70,6 +74,7 @@ export const HeaderActions = ({
 	children,
 	...props
 }: types.HeaderActionsProps) => {
+	const { theme } = useInterface();
 	const base = theme.headerActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 

@@ -1,7 +1,7 @@
 import * as HTML from '@ehubbell/html';
+import { useInterface } from 'contexts';
 import { P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types';
 import { classBuilder } from 'utils';
 
@@ -15,12 +15,8 @@ export const RadioWrapper = ({
 	children,
 	...props
 }: types.RadioWrapperProps) => {
-	const base = {
-		...theme.radioWrapper(),
-		...(active && {
-			borderColor: 'border-blue-500 dark:border-cyan-500',
-		}),
-	};
+	const { theme } = useInterface();
+	const base = theme.radioWrapper({ active });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
 	return (
@@ -42,6 +38,7 @@ export const Radio = ({
 	children,
 	...props
 }: types.RadioProps) => {
+	const { theme } = useInterface();
 	const base = theme.radio();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -65,6 +62,7 @@ export const RadioInput = ({
 	children,
 	...props
 }: types.RadioInputProps) => {
+	const { theme } = useInterface();
 	const base = theme.radioInput();
 	const computed = classBuilder({ ...base, ...props, tailwind, name, className });
 	return (
@@ -82,6 +80,7 @@ export const RadioInput = ({
 };
 
 export const RadioTitle = ({ id, name = 'RadioLabel', tailwind, className, children, ...props }: types.FontProps) => {
+	const { theme } = useInterface();
 	const base = theme.radioTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -89,6 +88,7 @@ export const RadioTitle = ({ id, name = 'RadioLabel', tailwind, className, child
 };
 
 export const RadioText = ({ id, name = 'RadioLabel', tailwind, className, children, ...props }: types.FontProps) => {
+	const { theme } = useInterface();
 	const base = theme.radioText();
 	const computed = { ...base, ...props, tailwind, className, name };
 

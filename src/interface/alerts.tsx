@@ -1,10 +1,11 @@
+import { useInterface } from 'contexts';
 import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
-import * as theme from 'theme';
 import * as types from 'types/alert-types';
 
 export const Alert = ({ id, name = 'Alert', tailwind, className, children, ...props }: types.AlertProps) => {
+	const { theme } = useInterface();
 	const base = theme.alert();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -19,6 +20,7 @@ export const AlertIcon = ({
 	className,
 	...props
 }: types.AlertIconProps) => {
+	const { theme } = useInterface();
 	const base = theme.alertIcon();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -33,6 +35,7 @@ export const AlertBody = ({
 	children,
 	...props
 }: types.AlertBodyProps) => {
+	const { theme } = useInterface();
 	const base = theme.alertBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -48,6 +51,7 @@ export const AlertTitle = ({
 	children,
 	...props
 }: types.AlertTitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.alertTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -66,6 +70,7 @@ export const AlertText = ({
 	children,
 	...props
 }: types.AlertTextProps) => {
+	const { theme } = useInterface();
 	const base = theme.alertText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -80,6 +85,7 @@ export const AlertActions = ({
 	children,
 	...props
 }: types.AlertActionsProps) => {
+	const { theme } = useInterface();
 	const base = theme.alertActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 

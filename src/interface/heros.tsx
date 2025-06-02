@@ -1,12 +1,13 @@
 import * as HTML from '@ehubbell/html';
+import { useInterface } from 'contexts';
 import { Font, P, Small } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import { FadIcon } from 'interface/icons';
-import * as theme from 'theme';
 import * as types from 'types/hero-types';
 import { classBuilder } from 'utils';
 
 export const Hero = ({ name = 'Hero', size = '', tailwind, className, children, ...props }) => {
+	const { theme } = useInterface();
 	const base = theme.hero({ size });
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -18,6 +19,7 @@ export const Hero = ({ name = 'Hero', size = '', tailwind, className, children, 
 };
 
 export const HeroBg = ({ id, name = 'HeroBg', ref, tailwind, className, children, ...props }: types.HeroBgProps) => {
+	const { theme } = useInterface();
 	const base = theme.heroBg();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -34,6 +36,7 @@ export const HeroImg = ({
 	className,
 	...props
 }: types.HeroImgProps) => {
+	const { theme } = useInterface();
 	const base = theme.heroImg({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -53,6 +56,7 @@ export const HeroIcon = ({
 	className,
 	...props
 }: types.HeroIconProps) => {
+	const { theme } = useInterface();
 	const base = theme.heroIcon({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -64,6 +68,7 @@ export const HeroIcon = ({
 };
 
 export const HeroBody = ({ id, name = 'HeroBody', tailwind, className, children, ...props }: types.HeroBodyProps) => {
+	const { theme } = useInterface();
 	const base = theme.heroBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -78,6 +83,7 @@ export const HeroPretitle = ({
 	children,
 	...props
 }: types.HeroPretitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.heroPretitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -93,6 +99,7 @@ export const HeroTitle = ({
 	children,
 	...props
 }: types.HeroTitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.heroTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -112,6 +119,7 @@ export const HeroSubtitle = ({
 	children,
 	...props
 }: types.HeroSubtitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.heroSubtitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -123,6 +131,7 @@ export const HeroSubtitle = ({
 };
 
 export const HeroText = ({ id, name = 'HeroText', tailwind, className, children, ...props }: types.HeroTextProps) => {
+	const { theme } = useInterface();
 	const base = theme.heroText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -137,6 +146,7 @@ export const HeroActions = ({
 	children,
 	...props
 }: types.HeroActionsProps) => {
+	const { theme } = useInterface();
 	const base = theme.heroActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 

@@ -1,5 +1,5 @@
+import { useInterface } from 'contexts';
 import { Div } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types/progress-bar-types';
 
 export const ProgressBar = ({
@@ -10,6 +10,7 @@ export const ProgressBar = ({
 	children,
 	...props
 }: types.ProgressBarProps) => {
+	const { theme } = useInterface();
 	const base = theme.progressBar();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -17,6 +18,7 @@ export const ProgressBar = ({
 };
 
 export const Progress = ({ id, name = 'Progress', value = 0, tailwind, className, ...props }: types.ProgressProps) => {
+	const { theme } = useInterface();
 	const base = theme.progress();
 	const computed = { ...base, ...props, tailwind, className, name };
 

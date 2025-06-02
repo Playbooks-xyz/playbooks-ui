@@ -1,9 +1,10 @@
+import { useInterface } from 'contexts';
 import { Font, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types/avatar-types';
 
 export const Avatar = ({ id, name = 'Avatar', tailwind, className, children, ...props }: types.AvatarProps) => {
+	const { theme } = useInterface();
 	const base = theme.avatar();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -19,6 +20,7 @@ export const AvatarBadge = ({
 	children,
 	...props
 }: types.AvatarBadgeProps) => {
+	const { theme } = useInterface();
 	const base = theme.avatarBadge({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -35,6 +37,7 @@ export const AvatarImg = ({
 	className,
 	...props
 }: types.AvatarImgProps) => {
+	const { theme } = useInterface();
 	const base = theme.avatarImg({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -49,6 +52,7 @@ export const AvatarBody = ({
 	children,
 	...props
 }: types.AvatarBodyProps) => {
+	const { theme } = useInterface();
 	const base = theme.avatarBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -64,6 +68,7 @@ export const AvatarTitle = ({
 	children,
 	...props
 }: types.AvatarTitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.avatarTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -82,6 +87,7 @@ export const AvatarText = ({
 	children,
 	...props
 }: types.AvatarTextProps) => {
+	const { theme } = useInterface();
 	const base = theme.avatarText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -96,6 +102,7 @@ export const AvatarActions = ({
 	children,
 	...props
 }: types.AvatarActionsProps) => {
+	const { theme } = useInterface();
 	const base = theme.avatarActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 

@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
+import { useInterface } from 'contexts';
 import { Span } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types/command-types';
 
 export const Command = ({
@@ -13,6 +13,7 @@ export const Command = ({
 	children,
 	...props
 }: types.CommandProps) => {
+	const { theme } = useInterface();
 	const base = theme.command();
 	const computed = { ...base, ...props, tailwind, className, name };
 

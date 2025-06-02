@@ -1,13 +1,14 @@
 import * as HTML from '@ehubbell/html';
+import { useInterface } from 'contexts';
 import { AccentBtn } from 'interface/buttons';
 import { Font } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
-import * as theme from 'theme';
 import * as types from 'types/nav-types';
 import { classBuilder } from 'utils';
 
 export const Nav = ({ id, name = 'NavWrapper', tailwind, className, children, ...props }: types.NavProps) => {
+	const { theme } = useInterface();
 	const base = theme.nav();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -26,6 +27,7 @@ export const NavHeader = ({
 	children,
 	...props
 }: types.NavHeaderProps) => {
+	const { theme } = useInterface();
 	const base = theme.navHeader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -41,6 +43,7 @@ export const NavTitle = ({
 	children,
 	...props
 }: types.NavTitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.navTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -60,6 +63,7 @@ export const NavBody = ({
 	children,
 	...props
 }: types.NavBodyProps) => {
+	const { theme } = useInterface();
 	const base = theme.navBody({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -67,6 +71,7 @@ export const NavBody = ({
 };
 
 export const NavList = ({ tailwind, children, ...props }) => {
+	const { theme } = useInterface();
 	const base = theme.navList();
 	const computed = { ...base, ...props, tailwind };
 
@@ -74,6 +79,7 @@ export const NavList = ({ tailwind, children, ...props }) => {
 };
 
 export const NavItem = ({ tailwind, children, ...props }) => {
+	const { theme } = useInterface();
 	const base = theme.navItem();
 	const computed = { ...base, ...props, tailwind };
 
@@ -81,6 +87,7 @@ export const NavItem = ({ tailwind, children, ...props }) => {
 };
 
 export const NavBtn = ({ id, name = 'NavBtn', tailwind, className, children, ...props }: types.NavBtnProps) => {
+	const { theme } = useInterface();
 	const base = theme.navBtn();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
@@ -88,6 +95,7 @@ export const NavBtn = ({ id, name = 'NavBtn', tailwind, className, children, ...
 };
 
 export const NavLink = ({ id, name = 'NavLink', tailwind, className, children, ...props }: types.NavLinkProps) => {
+	const { theme } = useInterface();
 	const base = theme.navLink();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 

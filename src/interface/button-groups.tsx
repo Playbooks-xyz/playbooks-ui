@@ -1,5 +1,5 @@
+import { useInterface } from 'contexts';
 import { Div } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types/button-group-types';
 
 export const BtnGroup = ({
@@ -10,6 +10,7 @@ export const BtnGroup = ({
 	children,
 	...props
 }: types.ButtonGroupProps) => {
+	const { theme } = useInterface();
 	const base = theme.btnGroup();
 	const computed = { ...base, ...props, tailwind, className, name };
 

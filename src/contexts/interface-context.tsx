@@ -1,18 +1,21 @@
 import React, { createRef } from 'react';
 import { createPortal } from 'react-dom';
 
+import * as defaultTheme from '@playbooks/theme';
 import { Div } from 'interface/html';
 
-export type iInterface = {
+export type InterfaceProps = {
 	ref?: any;
 	meta: any;
+	theme?: any;
 	createPortal: any;
 	toggleScroll: any;
 };
 
-export const InterfaceContext = React.createContext<iInterface>(null);
+export const InterfaceContext = React.createContext<InterfaceProps>(null);
 
-export const InterfaceProvider = ({ meta, children }: { meta: any; children: any }) => {
+export const InterfaceProvider = ({ meta, theme, children }: { meta: any; theme?: any; children: any }) => {
+	const computedTheme = theme ? theme : defaultTheme || null;
 	const ref = createRef();
 
 	// Methods
@@ -29,7 +32,7 @@ export const InterfaceProvider = ({ meta, children }: { meta: any; children: any
 
 	// Render
 	return (
-		<InterfaceContext.Provider value={{ ref, meta, createPortal, toggleScroll }}>
+		<InterfaceContext.Provider value={{ ref, meta, theme: computedTheme, createPortal, toggleScroll }}>
 			{children}
 			<Div id='interface_portal' ref={ref} />
 		</InterfaceContext.Provider>

@@ -1,6 +1,6 @@
 import { FaWrapper } from 'components/fa-wrapper';
+import { useInterface } from 'contexts';
 import { Div } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types/icon-types';
 import { classBuilder } from 'utils';
 
@@ -36,6 +36,7 @@ export const Icon = props => {
 };
 
 export const FabIcon = ({ id, name = 'FabIcon', icon, tailwind, className, ...props }: types.IconProps) => {
+	const { theme } = useInterface();
 	const base = theme.icon();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -43,6 +44,7 @@ export const FabIcon = ({ id, name = 'FabIcon', icon, tailwind, className, ...pr
 };
 
 export const FadIcon = ({ id, name = 'FadIcon', icon, tailwind, className, ...props }: types.IconProps) => {
+	const { theme } = useInterface();
 	const base = theme.icon();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -50,6 +52,7 @@ export const FadIcon = ({ id, name = 'FadIcon', icon, tailwind, className, ...pr
 };
 
 export const FalIcon = ({ id, name = 'FalIcon', icon, tailwind, className, ...props }: types.IconProps) => {
+	const { theme } = useInterface();
 	const base = theme.icon();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -57,6 +60,7 @@ export const FalIcon = ({ id, name = 'FalIcon', icon, tailwind, className, ...pr
 };
 
 export const FarIcon = ({ id, name = 'FarIcon', icon, tailwind, className, ...props }: types.IconProps) => {
+	const { theme } = useInterface();
 	const base = theme.icon();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -64,6 +68,7 @@ export const FarIcon = ({ id, name = 'FarIcon', icon, tailwind, className, ...pr
 };
 
 export const FasIcon = ({ id, name = 'FasIcon', icon, tailwind, className, ...props }: types.IconProps) => {
+	const { theme } = useInterface();
 	const base = theme.icon();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -78,6 +83,7 @@ export const WrappedFabIcon = ({
 	className,
 	...props
 }: types.IconProps) => {
+	const { theme } = useInterface();
 	const base = theme.wrappedIcon();
 	const computed = { ...base, ...props, tailwind, className };
 
@@ -96,6 +102,7 @@ export const WrappedFadIcon = ({
 	className,
 	...props
 }: types.IconProps) => {
+	const { theme } = useInterface();
 	const base = theme.wrappedIcon();
 	const computed = { ...base, ...props, tailwind, className };
 
@@ -114,6 +121,7 @@ export const WrappedFarIcon = ({
 	className,
 	...props
 }: types.IconProps) => {
+	const { theme } = useInterface();
 	const base = theme.wrappedIcon();
 	const computed = { ...base, ...props, tailwind, className };
 

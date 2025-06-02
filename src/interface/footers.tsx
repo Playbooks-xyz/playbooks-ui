@@ -1,12 +1,13 @@
+import { useInterface } from 'contexts';
 import { Btn } from 'interface/buttons';
 import { Font, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { Link } from 'interface/links';
-import * as theme from 'theme';
 import * as types from 'types/footer-types';
 import { classBuilder } from 'utils';
 
 export const Footer = ({ id, name = 'Footer', tailwind, className, children, style, ...props }: types.FooterProps) => {
+	const { theme } = useInterface();
 	const base = theme.footer();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
@@ -25,6 +26,7 @@ export const FooterHeader = ({
 	children,
 	...props
 }: types.FooterHeaderProps) => {
+	const { theme } = useInterface();
 	const base = theme.footerHeader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -39,6 +41,7 @@ export const FooterBody = ({
 	children,
 	...props
 }: types.FooterBodyProps) => {
+	const { theme } = useInterface();
 	const base = theme.footerBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -54,6 +57,7 @@ export const FooterTitle = ({
 	children,
 	...props
 }: types.FooterTitleProps) => {
+	const { theme } = useInterface();
 	const base = theme.footerTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -72,6 +76,7 @@ export const FooterText = ({
 	children,
 	...props
 }: types.FooterTextProps) => {
+	const { theme } = useInterface();
 	const base = theme.footerText();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -86,6 +91,7 @@ export const FooterList = ({
 	children,
 	...props
 }: types.FooterListProps) => {
+	const { theme } = useInterface();
 	const base = theme.footerList();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -100,6 +106,7 @@ export const FooterItem = ({
 	children,
 	...props
 }: types.FooterItemProps) => {
+	const { theme } = useInterface();
 	const base = theme.footerItem();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -114,6 +121,7 @@ export const FooterBtn = ({
 	children,
 	...props
 }: types.FooterBtnProps) => {
+	const { theme } = useInterface();
 	const base = theme.footerBtn();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
@@ -128,6 +136,7 @@ export const FooterLink = ({
 	children,
 	...props
 }: types.FooterLinkProps) => {
+	const { theme } = useInterface();
 	const base = theme.footerLink();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
@@ -142,6 +151,7 @@ export const FooterFooter = ({
 	children,
 	...props
 }: types.FooterBodyProps) => {
+	const { theme } = useInterface();
 	const base = theme.footerFooter();
 	const computed = { ...base, ...props, tailwind, className, name };
 

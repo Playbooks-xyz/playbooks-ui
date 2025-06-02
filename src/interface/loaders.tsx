@@ -1,7 +1,7 @@
+import { useInterface } from 'contexts';
 import { Font, H5, P, Small } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
 import { Oval } from 'interface/spinners';
-import * as theme from 'theme';
 import * as types from 'types/loader-types';
 
 export const ModalLoader = ({
@@ -14,6 +14,7 @@ export const ModalLoader = ({
 	children,
 	...props
 }: types.PageLoaderProps) => {
+	const { theme } = useInterface();
 	const base = theme.modalLoader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -41,6 +42,7 @@ export const PageLoader = ({
 	children,
 	...props
 }: types.PageLoaderProps) => {
+	const { theme } = useInterface();
 	const base = theme.pageLoader();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -72,6 +74,7 @@ export const SectionLoader = ({
 	children,
 	...props
 }: types.SectionLoaderProps) => {
+	const { theme } = useInterface();
 	const base = theme.sectionLoader();
 	const computed = { ...base, ...props, tailwind, className, name };
 

@@ -1,5 +1,5 @@
+import { useInterface } from 'contexts';
 import { Div, Img } from 'interface/html';
-import * as theme from 'theme';
 import * as types from 'types/tag-types';
 
 export const TagsWrapper = ({
@@ -10,6 +10,7 @@ export const TagsWrapper = ({
 	children,
 	...props
 }: types.TagWrapperProps) => {
+	const { theme } = useInterface();
 	const base = theme.tagsWrapper();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -17,6 +18,7 @@ export const TagsWrapper = ({
 };
 
 export const Tag = ({ id, name = 'Tag', size = 'md', tailwind, className, children, ...props }: types.TagProps) => {
+	const { theme } = useInterface();
 	const base = theme.tag({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -38,6 +40,7 @@ export const TagImg = ({
 	className,
 	...props
 }: types.TagImgProps) => {
+	const { theme } = useInterface();
 	const base = theme.tagImg({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -45,6 +48,7 @@ export const TagImg = ({
 };
 
 export const TagBody = ({ id, name = 'TagBody', tailwind, className, children, ...props }: types.TagBodyProps) => {
+	const { theme } = useInterface();
 	const base = theme.tagBody();
 	const computed = { ...base, ...props, tailwind, className, name };
 
@@ -59,6 +63,7 @@ export const TagActions = ({
 	children,
 	...props
 }: types.TagActionsProps) => {
+	const { theme } = useInterface();
 	const base = theme.tagActions();
 	const computed = { ...base, ...props, tailwind, className, name };
 

@@ -1,7 +1,7 @@
 import { Range } from 'react-range';
 
 import * as HTML from '@ehubbell/html';
-import * as theme from 'theme';
+import { useInterface } from 'contexts';
 import { classBuilder } from 'utils';
 
 export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange, tailwind, ...props }) => {
@@ -57,6 +57,7 @@ export const RangeSliders = ({ min = 0, max = 100, step = 1, values, onChange, o
 };
 
 export const RangeSliderTrack = ({ ref, values, min, max, trackProps, children, onNext, tailwind, ...restProps }) => {
+	const { theme } = useInterface();
 	const base = theme.rangeSliderTrack();
 	const computed = classBuilder({ ...base, ...restProps, tailwind });
 	return (
@@ -81,6 +82,7 @@ export const RangeSliderTrack = ({ ref, values, min, max, trackProps, children, 
 };
 
 export const RangeSliderThumb = ({ ref, isDragged, tailwind, ...props }) => {
+	const { theme } = useInterface();
 	const base = theme.rangeSliderThumb({ isDragged });
 	const computed = classBuilder({ ...base, ...props, tailwind });
 
