@@ -1,5 +1,5 @@
 import { useInterface } from 'contexts';
-import { Div } from 'interface/html';
+import { Span } from 'interface/html';
 import * as types from 'types/badge-types';
 
 export const Badge = ({
@@ -64,7 +64,7 @@ export const DraftBadge = ({ id, tailwind, className, children, ...props }: type
 	const base = theme.draftBadge();
 	const computed = { ...base, ...props, tailwind, className };
 
-	return <Div {...computed}>{children}</Div>;
+	return <Span {...computed}>{children}</Span>;
 };
 
 export const PendingBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
@@ -72,7 +72,7 @@ export const PendingBadge = ({ id, tailwind, className, children, ...props }: ty
 	const base = theme.pendingBadge();
 	const computed = { ...base, ...props, tailwind, className };
 
-	return <Div {...computed}>{children}</Div>;
+	return <Span {...computed}>{children}</Span>;
 };
 
 export const WarningBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
@@ -80,7 +80,7 @@ export const WarningBadge = ({ id, tailwind, className, children, ...props }: ty
 	const base = theme.warningBadge();
 	const computed = { ...base, ...props, tailwind, className };
 
-	return <Div {...computed}>{children}</Div>;
+	return <Span {...computed}>{children}</Span>;
 };
 
 export const SuccessBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
@@ -88,7 +88,7 @@ export const SuccessBadge = ({ id, tailwind, className, children, ...props }: ty
 	const base = theme.successBadge();
 	const computed = { ...base, ...props, tailwind, className };
 
-	return <Div {...computed}>{children}</Div>;
+	return <Span {...computed}>{children}</Span>;
 };
 
 export const FinishedBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
@@ -96,7 +96,7 @@ export const FinishedBadge = ({ id, tailwind, className, children, ...props }: t
 	const base = theme.finishedBadge();
 	const computed = { ...base, ...props, tailwind, className };
 
-	return <Div {...computed}>{children}</Div>;
+	return <Span {...computed}>{children}</Span>;
 };
 
 export const ErrorBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
@@ -104,7 +104,7 @@ export const ErrorBadge = ({ id, tailwind, className, children, ...props }: type
 	const base = theme.errorBadge();
 	const computed = { ...base, ...props, tailwind, className };
 
-	return <Div {...computed}>{children}</Div>;
+	return <Span {...computed}>{children}</Span>;
 };
 
 export const DefaultBadge = ({ id, tailwind, className, children, ...props }: types.BadgeProps) => {
@@ -112,7 +112,7 @@ export const DefaultBadge = ({ id, tailwind, className, children, ...props }: ty
 	const base = theme.outlineBadge();
 	const computed = { ...base, ...props, tailwind, className };
 
-	return <Div {...computed}>{children}</Div>;
+	return <Span {...computed}>{children}</Span>;
 };
 
 // Docs:
