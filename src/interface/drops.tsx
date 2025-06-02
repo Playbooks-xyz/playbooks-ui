@@ -24,13 +24,6 @@ export const Drop = ({
 	const { theme } = useInterface();
 	const base = theme.drop();
 	const computed = { ...base, ...props, tailwind, className, name };
-	const internalRef = useRef(null);
-
-	// Computed
-	const combinedRef = element => {
-		internalRef.current = element;
-		if (ref) typeof ref === 'function' ? ref(element) : (ref.current = element);
-	};
 
 	// Hooks
 	useKeyPress(onKeyDown, [open]);
@@ -45,13 +38,13 @@ export const Drop = ({
 
 	function onMouseUp(e) {
 		if (!open) return;
-		if (internalRef?.current?.contains(e.target)) return;
+		if (ref?.current?.contains(e.target)) return;
 		onClose();
 	}
 
 	// Render
 	return (
-		<Div id={id} ref={combinedRef} {...computed}>
+		<Div id={id} ref={ref} {...computed}>
 			{children}
 		</Div>
 	);
@@ -95,7 +88,7 @@ export const DropMenu = ({
 	const computed = { ...base, ...props, tailwind, className, name };
 	const [dropRef, setDropRef] = useState(null);
 	const nodeRef = useRef(null);
-	const { styles: popperStyles, attributes } = usePopper(ref, dropRef, {
+	const { styles: popperStyles, attributes } = usePopper(ref?.current, dropRef, {
 		placement: placement,
 		strategy: 'fixed',
 		...options,
