@@ -2,14 +2,11 @@ import { borderProps } from 'theme/utils';
 
 export const accordion = () => ({
 	...borderProps,
-	border: 'border',
+	overflow: 'overflow-hidden',
 	width: 'w-full',
 });
 
 export const accordionToggle = ({ open }) => ({
-	bgColor: 'bg-transparent',
-	border: 'border-transparent',
-	borderRadius: 'rounded-none',
 	display: 'flex-between',
 	nextIcon: {
 		animation: 'transition-all ease',

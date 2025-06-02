@@ -117,7 +117,7 @@ export const FooterBtn = ({
 	const base = theme.footerBtn();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <Btn {...computed} />;
+	return <Btn variant='text' {...computed} />;
 };
 
 export const FooterLink = ({
@@ -131,7 +131,7 @@ export const FooterLink = ({
 	const base = theme.footerLink();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <Link {...computed} />;
+	return <Link variant='text' {...computed} />;
 };
 
 export const FooterFooter = ({

@@ -28,7 +28,7 @@ export const Accordion = ({
 export const AccordionToggle = ({
 	id,
 	name = 'AccordionToggle',
-	variant = 'border',
+	variant = 'accent',
 	open,
 	onClick,
 	tailwind,
