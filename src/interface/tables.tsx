@@ -7,14 +7,7 @@ import * as types from 'types/table-types';
 import { classBuilder } from 'utils';
 import { isObject } from 'utils/helpers';
 
-export const TableWrapper = ({
-	id,
-	name = 'TableWrapper',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.TableProps) => {
+export const Table = ({ id, name = 'Table', tailwind, className, children, ...props }: types.TableProps) => {
 	const base = theme.table();
 	const computed = classBuilder({ ...base, ...props, tailwind, className });
 
