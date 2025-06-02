@@ -25,6 +25,9 @@ export const Link = props => {
 
 		case 'text':
 			return <TextLink {...props} />;
+
+		default:
+			return <PrimaryLink {...props} />;
 	}
 };
 

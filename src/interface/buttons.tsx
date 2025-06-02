@@ -24,6 +24,9 @@ export const Btn = props => {
 
 		case 'text':
 			return <TextBtn {...props} />;
+
+		default:
+			return <PrimaryBtn {...props} />;
 	}
 };
 
