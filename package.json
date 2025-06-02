@@ -26,8 +26,10 @@
     "commit": "scripts/commit.sh",
     "deploy": "scripts/deploy.sh",
     "git": "git push --tags",
-    "packages": "npx yalc remove @ehubbell/html && npm install @ehubbell/html@latest --legacy-peer-deps",
-    "yalc": "npm uninstall @ehubbell/html --legacy-peer-deps && npx yalc add @ehubbell/html",
+    "packages": "npm run packages:html",
+    "packages:html": "npm install @ehubbell/html@latest --legacy-peer-deps",
+    "yalc": "npm run yalc:html",
+    "yalc:html": "npx yalc add @ehubbell/html",
     "test": "jest",
     "prepare": "husky"
   },
@@ -37,7 +39,7 @@
     "react-dom": "^18 || ^19"
   },
   "dependencies": {
-    "@ehubbell/html": "file:.yalc/@ehubbell/html",
+    "@ehubbell/html": "^0.0.6",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@playbooks/theme": "^0.0.5",
     "@react-google-maps/api": "^2.20.5",
