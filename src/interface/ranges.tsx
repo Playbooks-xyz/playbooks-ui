@@ -2,9 +2,24 @@ import { Range } from 'react-range';
 
 import * as HTML from '@ehubbell/html';
 import { useInterface } from 'contexts';
+import * as types from 'types';
 import { computeTailwind } from 'utils';
 
-export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange, tailwind, ...props }) => {
+export const RangeSlider = ({
+	ref,
+	min = 0,
+	max = 100,
+	step = null,
+	value,
+	onChange,
+	tailwind,
+	className,
+	...props
+}: types.RangeSliderProps) => {
+	const { theme } = useInterface();
+	const base = theme.rangeSlider();
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
+
 	return (
 		<Range
 			step={step}
@@ -14,7 +29,7 @@ export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange, 
 			onChange={onChange}
 			renderTrack={({ props, children }) => (
 				<RangeSliderTrack
-					ref={props.ref}
+					ref={ref}
 					values={[value]}
 					min={min}
 					max={max}
@@ -29,7 +44,21 @@ export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange, 
 	);
 };
 
-export const RangeSliders = ({ min = 0, max = 100, step = 1, values, onChange, onNext, tailwind, ...props }) => {
+export const RangeSliders = ({
+	min = 0,
+	max = 100,
+	step = 1,
+	values,
+	onChange,
+	onNext,
+	tailwind,
+	className,
+	...props
+}: RangeSlidersProps) => {
+	const { theme } = useInterface();
+	const base = theme.rangeSlider();
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
+
 	return (
 		<Range
 			step={step}

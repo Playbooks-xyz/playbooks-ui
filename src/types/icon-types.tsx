@@ -4,5 +4,4 @@ export type IconProps = HtmlProps & {
 	type?: string;
 	icon?: any;
 	wrapper?: any;
-	tailwind?: any;
 };

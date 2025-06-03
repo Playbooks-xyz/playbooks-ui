@@ -8,7 +8,6 @@ export type MenuProps = HtmlProps & {
 export type MenuWrapperProps = HtmlProps & {
 	open: boolean;
 	onClose: () => any;
-	tailwind?: any;
 };
 
 export type MenuBackdropProps = HtmlProps & {
@@ -19,7 +18,6 @@ export type MenuBackdropProps = HtmlProps & {
 export type MenuMenuProps = HtmlProps & {
 	open: boolean;
 	onClose: () => any;
-	tailwind?: any;
 };
 
 export type MenuHeaderProps = HtmlProps;

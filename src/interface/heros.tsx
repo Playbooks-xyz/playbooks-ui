@@ -6,7 +6,7 @@ import { FadIcon } from 'interface/icons';
 import * as types from 'types/hero-types';
 import { computeProps } from 'utils';
 
-export const Hero = ({ name = 'Hero', size = '', tailwind, className, children, ...props }) => {
+export const Hero = ({ name = 'Hero', size = '', tailwind, className, children, ...props }: types.HeroProps) => {
 	const { theme } = useInterface();
 	const base = theme.hero({ size });
 	const formatted = { ...base, ...props, ...tailwind };

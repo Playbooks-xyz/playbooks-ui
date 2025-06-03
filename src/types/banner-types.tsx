@@ -5,7 +5,6 @@ export type BannerProps = HtmlProps;
 export type BannerIconProps = HtmlProps & {
 	type?: string;
 	icon: string;
-	tailwind?: any;
 };
 
 export type BannerBodyProps = HtmlProps;

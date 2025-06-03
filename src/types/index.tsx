@@ -34,6 +34,7 @@ export * from 'types/pagination-types';
 export * from 'types/prefooter-types';
 export * from 'types/progress-bar-types';
 export * from 'types/radio-types';
+export * from 'types/range-types';
 export * from 'types/route-types';
 export * from 'types/section-types';
 export * from 'types/slide-types';

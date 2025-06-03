@@ -10,7 +10,7 @@ export type HtmlProps = TailwindProps & {
 	onClick?: (v?: any) => any;
 	onMouseEnter?: (v?: any) => any;
 	onMouseLeave?: (v?: any) => any;
-	tailwind?: TailwindProps;
+	tailwind?: TailwindProps & any;
 	className?: string;
 	style?: any;
 	children?: any;

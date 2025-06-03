@@ -42,7 +42,7 @@ export const BreadcrumbItem = ({
 	return (
 		<Li {...computed}>
 			{children}
-			{arrow && <FarIcon icon={icon} tailwind={{ color: 'text-gray-400', fontSize: 'text-xs' }} />}
+			{arrow && <FarIcon icon={icon} tailwind={{ color: 'text-gray-400', fontSize: 'text-xs', ...tailwind?.icon }} />}
 		</Li>
 	);
 };
