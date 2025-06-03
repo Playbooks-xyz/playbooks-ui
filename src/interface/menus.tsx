@@ -9,27 +9,11 @@ import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
 import * as types from 'types/menu-types';
 
-export const Menu = ({
-	id,
-	ref,
-	name = 'Menu',
-	open,
-	onClose,
-	tailwind,
-	className,
-	children,
-	...props
-}: types.MenuProps) => {
+export const Menu = ({ name = 'Menu', open, onClose, tailwind, className, children, ...props }: types.MenuProps) => {
 	const { theme } = useInterface();
 	const base = theme.menu();
 	const computed = { ...base, ...props, tailwind, className, name };
-	const internalRef = useRef(null);
-
-	// Computed
-	const combinedRef = element => {
-		internalRef.current = element;
-		if (ref) typeof ref === 'function' ? ref(element) : (ref.current = element);
-	};
+	const ref = useRef(null);
 
 	// Hooks
 	useKeyPress(onKeyDown, [open]);
@@ -44,13 +28,13 @@ export const Menu = ({
 
 	function onMouseUp(e) {
 		if (!open) return;
-		if (internalRef?.current?.contains(e.target)) return;
+		if (ref?.current?.contains(e.target)) return;
 		onClose();
 	}
 
 	// Render
 	return (
-		<Div id={id} ref={combinedRef} {...computed}>
+		<Div ref={ref} {...computed}>
 			{children}
 		</Div>
 	);
@@ -193,7 +177,7 @@ export const MenuBtn = ({
 }: types.MenuBtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.menuBtn();
-	const computed = { ...base, ...props, tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, className, children, name };
 
 	return <AccentBtn active={active} taskRunning={taskRunning} onClick={onClick} {...computed} />;
 };
@@ -209,7 +193,7 @@ export const MenuLink = ({
 }: types.MenuLinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.menuLink();
-	const computed = { ...base, ...props, tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, className, children, name };
 
 	return <AccentLink href={href} {...computed} />;
 };

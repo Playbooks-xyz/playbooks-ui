@@ -40,7 +40,7 @@ export const AccordionToggle = ({
 }: types.AccordionToggleProps) => {
 	const { theme } = useInterface();
 	const base = theme.accordionToggle({ open });
-	const computed = { ...base, ...props, tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, className, children, name };
 
 	return <Btn variant={variant} nextIcon={nextIcon} onClick={() => onClick(id)} {...computed} />;
 };

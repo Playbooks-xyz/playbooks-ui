@@ -15,8 +15,8 @@
   ],
   "scripts": {
     "dev": "vite build --mode development --watch --minify false",
-    "start": "vite build --mode development --minify false && yalc publish",
-    "start:ts": "vite build --mode development --minify false && dts-bundle-generator --config dts.config.ts && yalc publish",
+    "start": "vite build --mode development --minify false && npm run start:ts",
+    "start:ts": "dts-bundle-generator --config dts.config.ts && yalc publish",
     "build": "vite build --mode production --minify true && npm run build:ts",
     "build:ts": "dts-bundle-generator --config dts.config.ts",
     "lint": "eslint src",
@@ -42,7 +42,7 @@
     "react-dom": "^18 || ^19"
   },
   "dependencies": {
-    "@ehubbell/html": "^0.0.14",
+    "@ehubbell/html": "file:.yalc/@ehubbell/html",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@playbooks/theme": "^0.0.8",
     "@react-google-maps/api": "^2.20.5",

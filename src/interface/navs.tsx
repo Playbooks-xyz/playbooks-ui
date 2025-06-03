@@ -90,7 +90,7 @@ export const NavItem = ({ tailwind, children, ...props }: types.NavItemProps) =>
 export const NavBtn = ({ id, name = 'NavBtn', tailwind, className, children, ...props }: types.NavBtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.navBtn();
-	const computed = { ...base, ...props, tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, className, children, name };
 
 	return <AccentBtn {...computed} />;
 };
@@ -98,7 +98,7 @@ export const NavBtn = ({ id, name = 'NavBtn', tailwind, className, children, ...
 export const NavLink = ({ id, name = 'NavLink', tailwind, className, children, ...props }: types.NavLinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.navLink();
-	const computed = { ...base, ...props, tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, className, children, name };
 
 	return <AccentLink {...computed} />;
 };

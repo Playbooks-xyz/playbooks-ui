@@ -5,20 +5,21 @@ import { computeTailwind } from 'utils';
 
 export const useAnimation = useSpring;
 
-export type AnimationType = {
+export type AnimationProps = {
+	name?: string;
 	tailwind?: TailwindProps;
 	className?: string;
 	style: any;
 	children: any;
 };
 
-const Animation = ({ tailwind, className, style, children, ...props }: AnimationType) => {
+const Animation = ({ name, tailwind, className, style, children, ...props }: AnimationProps) => {
 	const base = { position: 'relative' };
 	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	// Render
 	return (
-		<animated.div className={classes} style={style}>
+		<animated.div data-name={name} className={classes} style={style}>
 			{children}
 		</animated.div>
 	);

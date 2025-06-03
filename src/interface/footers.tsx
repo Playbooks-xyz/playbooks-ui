@@ -122,7 +122,7 @@ export const FooterBtn = ({
 }: types.FooterBtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.footerBtn();
-	const computed = { ...base, ...props, tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, className, children, name };
 
 	return <Btn variant='text' {...computed} />;
 };
@@ -137,7 +137,7 @@ export const FooterLink = ({
 }: types.FooterLinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.footerLink();
-	const computed = { ...base, ...props, tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, className, children, name };
 
 	return <Link variant='text' {...computed} />;
 };

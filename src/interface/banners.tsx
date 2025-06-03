@@ -1,7 +1,7 @@
 import { useInterface } from 'contexts';
 import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
-import { FarIcon } from 'interface/icons';
+import { Icon } from 'interface/icons';
 import * as types from 'types/banner-types';
 
 export const Banner = ({ id, name = 'Banner', tailwind, className, children, ...props }: types.BannerProps) => {
@@ -26,7 +26,7 @@ export const BannerIcon = ({
 
 	return (
 		<Div {...computed}>
-			<FarIcon icon={icon} />
+			<Icon icon={icon} {...tailwind?.icon} />
 		</Div>
 	);
 };

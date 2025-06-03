@@ -11,7 +11,6 @@ import { AccentLink } from 'interface/links';
 import * as types from 'types/drop-types';
 
 export const Drop = ({
-	id,
 	ref,
 	name = 'Drop',
 	open,
@@ -44,7 +43,7 @@ export const Drop = ({
 
 	// Render
 	return (
-		<Div id={id} ref={ref} {...computed}>
+		<Div ref={ref} {...computed}>
 			{children}
 		</Div>
 	);
@@ -64,7 +63,7 @@ export const DropToggle = ({
 }: types.DropToggleProps) => {
 	const { theme } = useInterface();
 	const base = theme.dropToggle();
-	const computed = { ...base, ...props, tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, className, children, name };
 
 	return <Btn id={id} alt={alt} variant={variant} nextIcon={nextIcon} onClick={onClick} {...computed} />;
 };
@@ -182,7 +181,7 @@ export const DropItem = ({ id, name = 'DropItem', tailwind, className, children,
 export const DropBtn = ({ id, name = 'DropBtn', tailwind, className, children, ...props }: types.DropBtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.dropBtn();
-	const computed = { ...base, ...props, tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, className, children, name };
 
 	return <AccentBtn {...computed} />;
 };
@@ -190,7 +189,7 @@ export const DropBtn = ({ id, name = 'DropBtn', tailwind, className, children, .
 export const DropLink = ({ id, name = 'DropLink', tailwind, className, children, ...props }: types.DropLinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.dropLink();
-	const computed = { ...base, ...props, tailwind, children, className, name };
+	const computed = { ...base, ...props, tailwind, className, children, name };
 
 	return <AccentLink {...computed} />;
 };
