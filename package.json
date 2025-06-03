@@ -27,8 +27,9 @@
     "commit": "scripts/commit.sh",
     "deploy": "scripts/deploy.sh",
     "git": "git push --tags",
-    "packages": "npm run packages:html && npm run packages:yalc",
+    "packages": "npm run packages:html && npm run packages:theme && npm run packages:yalc",
     "packages:html": "npm install @ehubbell/html@latest --legacy-peer-deps",
+    "packages:theme": "npm install @playbooks/theme@latest --legacy-peer-deps",
     "packages:yalc": "npx yalc --remove-all",
     "yalc": "npm run yalc:html",
     "yalc:html": "npx yalc add @ehubbell/html",
@@ -41,9 +42,9 @@
     "react-dom": "^18 || ^19"
   },
   "dependencies": {
-    "@ehubbell/html": "file:.yalc/@ehubbell/html",
+    "@ehubbell/html": "^0.0.14",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@playbooks/theme": "^0.0.5",
+    "@playbooks/theme": "^0.0.8",
     "@react-google-maps/api": "^2.20.5",
     "@react-spring/web": "^10.0.1",
     "react-currency-input-field": "^3.10.0",
