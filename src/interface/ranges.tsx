@@ -59,14 +59,15 @@ export const RangeSliders = ({ min = 0, max = 100, step = 1, values, onChange, o
 export const RangeSliderTrack = ({ ref, values, min, max, trackProps, children, onNext, tailwind, ...restProps }) => {
 	const { theme } = useInterface();
 	const base = theme.rangeSliderTrack();
-	const computed = computeTailwind({ ...base, ...restProps, tailwind });
+	const classes = computeTailwind({ ...base, ...restProps, tailwind });
+
 	return (
 		<HTML.Div
 			onMouseDown={trackProps.onMouseDown}
 			onTouchStart={trackProps.onTouchStart}
 			onTouchEnd={onNext}
 			onMouseUp={onNext}
-			className={computed}
+			className={classes}
 			style={trackProps.style}>
 			<HTML.Div
 				ref={ref}
@@ -84,9 +85,9 @@ export const RangeSliderTrack = ({ ref, values, min, max, trackProps, children, 
 export const RangeSliderThumb = ({ ref, isDragged, tailwind, ...props }) => {
 	const { theme } = useInterface();
 	const base = theme.rangeSliderThumb({ isDragged });
-	const computed = computeTailwind({ ...base, ...props, tailwind });
+	const classes = computeTailwind({ ...base, ...props, tailwind });
 
-	return <HTML.Div ref={ref} {...props} className={computed} style={props.style} />;
+	return <HTML.Div ref={ref} {...props} className={classes} style={props.style} />;
 };
 
 // Docs

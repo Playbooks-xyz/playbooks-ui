@@ -14,10 +14,10 @@ import { computeTailwind } from 'utils';
 export const Form = ({ id, name = 'Form', onSubmit, tailwind, className, children, ...props }: types.FormProps) => {
 	const { theme } = useInterface();
 	const base = theme.form();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
-		<HTML.Form onSubmit={onSubmit} name={name} className={computed}>
+		<HTML.Form onSubmit={onSubmit} name={name} className={classes}>
 			{children}
 		</HTML.Form>
 	);
@@ -54,10 +54,10 @@ export const FormLabel = ({
 }: types.FormLabelProps) => {
 	const { theme } = useInterface();
 	const base = theme.formLabel();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
-		<HTML.Label id={id} name={name} htmlFor={htmlFor} onClick={onClick} className={computed}>
+		<HTML.Label id={id} name={name} htmlFor={htmlFor} onClick={onClick} className={classes}>
 			{children}
 		</HTML.Label>
 	);
@@ -75,7 +75,7 @@ export const FormCheckbox = ({
 }: types.FormCheckboxProps) => {
 	const { theme } = useInterface();
 	const base = theme.formCheckbox();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Input
@@ -85,7 +85,7 @@ export const FormCheckbox = ({
 			checked={checked}
 			onChange={onChange}
 			readOnly={readOnly}
-			className={computed}
+			className={classes}
 		/>
 	);
 };
@@ -110,7 +110,7 @@ export const FormInput = ({
 }: types.FormInputProps) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.Input
@@ -126,7 +126,7 @@ export const FormInput = ({
 			onClick={onClick}
 			readOnly={readOnly}
 			autoComplete='off'
-			className={computed}
+			className={classes}
 		/>
 	);
 };
@@ -148,7 +148,7 @@ export const FormMaskInput = ({
 }: types.FormInputMaskProps) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<MaskedInput
@@ -159,7 +159,7 @@ export const FormMaskInput = ({
 			onChange={onChange}
 			onBlur={onBlur}
 			readOnly={readOnly}
-			className={computed}
+			className={classes}
 		/>
 	);
 };
@@ -181,7 +181,7 @@ export const FormCurrencyInput = ({
 }: types.FormInputCurrencyProps) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<CurrencyInputWrapper
@@ -191,7 +191,7 @@ export const FormCurrencyInput = ({
 			placeholder={placeholder}
 			onChange={onChange}
 			readOnly={readOnly}
-			className={computed}
+			className={classes}
 		/>
 	);
 };
@@ -232,9 +232,9 @@ export const FormFileInput = ({
 }: types.FormFileProps) => {
 	const { theme } = useInterface();
 	const base = theme.formFileInput();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
-	return <HTML.Input placeholder={placeholder} value={value} onChange={onChange} className={computed} />;
+	return <HTML.Input placeholder={placeholder} value={value} onChange={onChange} className={classes} />;
 };
 
 export const FormLocationInput = ({
@@ -256,7 +256,7 @@ export const FormLocationInput = ({
 }: types.FormInputLocationProps) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 	const ref = useRef(null);
 
 	// Hooks
@@ -277,7 +277,7 @@ export const FormLocationInput = ({
 				onBlur={onBlur}
 				onChange={onChange}
 				readOnly={readOnly}
-				className={computed}
+				className={classes}
 			/>
 		</GoogleAutocompleteWrapper>
 	);
@@ -299,7 +299,7 @@ export const FormPhoneInput = ({
 }: types.FormInputPhoneProps) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<PhoneInputWrapper
@@ -309,7 +309,7 @@ export const FormPhoneInput = ({
 			onBlur={onBlur}
 			onChange={onChange}
 			readOnly={readOnly}
-			className={computed}
+			className={classes}
 		/>
 	);
 };
@@ -330,10 +330,10 @@ export const FormSelect = ({
 }: types.FormSelectProps) => {
 	const { theme } = useInterface();
 	const base = theme.formSelect({ size, variant });
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
-		<HTML.Select value={value} disabled={disabled} onChange={onChange} className={computed}>
+		<HTML.Select value={value} disabled={disabled} onChange={onChange} className={classes}>
 			<HTML.Option value='' disabled className='gray-500 dark:gray-400'>
 				{placeholder}
 			</HTML.Option>
@@ -370,7 +370,7 @@ export const FormTextArea = ({
 }: types.FormTextAreaProps) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
 		<HTML.TextArea
@@ -380,7 +380,7 @@ export const FormTextArea = ({
 			placeholder={placeholder}
 			onChange={onChange}
 			readOnly={readOnly}
-			className={computed}
+			className={classes}
 		/>
 	);
 };

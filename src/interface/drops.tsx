@@ -78,7 +78,6 @@ export const DropMenu = ({
 	options,
 	tailwind,
 	className,
-	style,
 	children,
 	...props
 }: types.DropMenuProps) => {
@@ -111,7 +110,7 @@ export const DropMenu = ({
 				className='w-auto z-10'
 				style={popperStyles.popper}
 				{...attributes.popper}>
-				<Div ref={nodeRef} {...computed} style={style}>
+				<Div ref={nodeRef} {...computed}>
 					{children}
 				</Div>
 			</div>

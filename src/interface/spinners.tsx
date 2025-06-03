@@ -1,39 +1,22 @@
 import * as Loaders from 'assets/loaders';
 import { useInterface } from 'contexts';
-import { Div } from 'interface/html';
 import * as types from 'types/spinner-types';
 import { computeTailwind } from 'utils';
 
 export const Oval = ({ id, name = 'Oval', tailwind, className, ...props }: types.SpinnerProps) => {
 	const { theme } = useInterface();
 	const base = theme.spinner();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
-	return <Loaders.Oval className={computed} />;
+	return <Loaders.Oval className={classes} />;
 };
 
 export const Puff = ({ id, name = 'Puff', tailwind, className, ...props }: types.SpinnerProps) => {
 	const { theme } = useInterface();
 	const base = theme.spinner();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
-	return <Loaders.Puff className={computed} />;
-};
-
-export const Spinner = ({ tailwind, ...props }) => {
-	const { theme } = useInterface();
-	const base = theme.spinner();
-	const computed = { ...base, ...props, tailwind };
-
-	return <Div {...computed} />;
-};
-
-export const SpinnerWrapper = ({ tailwind, children, ...props }) => {
-	const { theme } = useInterface();
-	const base = theme.spinner();
-	const computed = { ...base, ...props, tailwind };
-
-	return <Div {...computed}>{children}</Div>;
+	return <Loaders.Puff className={classes} />;
 };
 
 // Docs

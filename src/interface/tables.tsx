@@ -10,10 +10,10 @@ import { isObject } from 'utils/helpers';
 export const Table = ({ id, name = 'Table', tailwind, className, children, ...props }: types.TableProps) => {
 	const { theme } = useInterface();
 	const base = theme.table();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
-		<HTML.Table name={name} className={computed}>
+		<HTML.Table name={name} className={classes}>
 			{children}
 		</HTML.Table>
 	);
@@ -29,10 +29,10 @@ export const TableHeader = ({
 }: types.TableHeaderProps) => {
 	const { theme } = useInterface();
 	const base = theme.tableHeader();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
-		<HTML.THead name={name} className={computed}>
+		<HTML.THead name={name} className={classes}>
 			{children}
 		</HTML.THead>
 	);
@@ -48,9 +48,9 @@ export const TableHeaderRow = ({
 }: types.TableHeaderRowProps) => {
 	const { theme } = useInterface();
 	const base = theme.tableHeaderRow();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
-	return <HTML.TR className={computed}>{children}</HTML.TR>;
+	return <HTML.TR className={classes}>{children}</HTML.TR>;
 };
 
 export const TableHead = ({
@@ -67,11 +67,11 @@ export const TableHead = ({
 }: types.TableHeadProps) => {
 	const { theme } = useInterface();
 	const base = theme.tableHead();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 	const direction = value === params?.sortProp && params?.sortValue === 'asc' ? 'desc' : 'asc';
 
 	return (
-		<HTML.TH name={name} className={computed}>
+		<HTML.TH name={name} className={classes}>
 			{isObject(params) ? (
 				<BtnWrapper
 					alt={alt}
@@ -103,10 +103,10 @@ export const TableBody = ({
 }: types.TableBodyProps) => {
 	const { theme } = useInterface();
 	const base = theme.tableBody();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
-		<HTML.TBody name={name} className={computed}>
+		<HTML.TBody name={name} className={classes}>
 			{children}
 		</HTML.TBody>
 	);
@@ -115,10 +115,10 @@ export const TableBody = ({
 export const TableRow = ({ id, name = 'TableRow', tailwind, className, children, ...props }: types.TableRowProps) => {
 	const { theme } = useInterface();
 	const base = theme.tableRow();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
-		<HTML.TR name={name} className={computed}>
+		<HTML.TR name={name} className={classes}>
 			{children}
 		</HTML.TR>
 	);
@@ -136,10 +136,10 @@ export const TableData = ({
 }: types.TableDataProps) => {
 	const { theme } = useInterface();
 	const base = theme.tableData({ title });
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
-		<HTML.TD name={name} className={computed}>
+		<HTML.TD name={name} className={classes}>
 			{value ? value : children}
 		</HTML.TD>
 	);

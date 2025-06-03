@@ -42,7 +42,7 @@ export const AccordionToggle = ({
 	const base = theme.accordionToggle({ open });
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <Btn variant={variant} nextIcon={nextIcon} onClick={onClick} {...computed} />;
+	return <Btn variant={variant} nextIcon={nextIcon} onClick={() => onClick(id)} {...computed} />;
 };
 
 export const AccordionTitle = ({

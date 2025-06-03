@@ -1,8 +1,6 @@
 import { Transition } from 'react-transition-group';
 
-import { HtmlProps } from 'types';
-
-export type FadeProps = HtmlProps & {
+export type FadeProps = {
 	ref?: any;
 	show: boolean;
 	timeout?: any;
@@ -14,6 +12,7 @@ export type FadeProps = HtmlProps & {
 	onExited?: any;
 	mountOnEnter?: boolean;
 	unmountOnExit?: boolean;
+	children?: any;
 };
 
 const Fade = ({

@@ -5,15 +5,16 @@ import { Font } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { AccentLink } from 'interface/links';
 import * as types from 'types/nav-types';
-import { computeTailwind } from 'utils';
+import { computeProps } from 'utils';
 
-export const Nav = ({ id, name = 'NavWrapper', tailwind, className, children, ...props }: types.NavProps) => {
+export const Nav = ({ name = 'NavWrapper', tailwind, className, children, ...props }: types.NavProps) => {
 	const { theme } = useInterface();
 	const base = theme.nav();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const formatted = { ...base, ...props, ...tailwind };
+	const filtered = computeProps(props);
 
 	return (
-		<HTML.Nav name={name} className={computed}>
+		<HTML.Nav name={name} tailwind={formatted} className={className} {...filtered}>
 			{children}
 		</HTML.Nav>
 	);

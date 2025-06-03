@@ -6,7 +6,7 @@ import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
 import * as types from 'types/button-types';
-import { computeProps } from 'utils';
+import { computeProps, computeTailwind } from 'utils';
 
 export const Btn = props => {
 	switch (props?.variant) {
@@ -151,7 +151,7 @@ export const BtnWrapper = ({
 }: types.BtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.btnWrapper({ disabled });
-	const formatted = { ...base, ...props, ...tailwind };
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 	const filtered = computeProps(props);
 
 	return (
@@ -161,7 +161,7 @@ export const BtnWrapper = ({
 			title={alt}
 			name={name}
 			disabled={disabled || taskRunning}
-			tailwind={formatted}
+			className={classes}
 			{...filtered}>
 			{children}
 		</HTML.Button>

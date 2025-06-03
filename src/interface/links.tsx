@@ -123,17 +123,17 @@ export const LinkWrapper = ({
 }: types.LinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.linkWrapper({ disabled });
-	const computed = computeTailwind({ ...base, ...props, ...tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 	const filtered = computeProps(props);
 
 	return (
 		<Fragment>
 			{target ? (
-				<HTML.A aria-label={alt} title={alt} name={name} href={href} target={target} className={computed} {...filtered}>
+				<HTML.A aria-label={alt} title={alt} name={name} href={href} target={target} className={classes} {...filtered}>
 					{children}
 				</HTML.A>
 			) : (
-				<NLink aria-label={alt} title={alt} data-name={name} href={href} className={computed} {...filtered}>
+				<NLink aria-label={alt} title={alt} data-name={name} href={href} className={classes} {...filtered}>
 					{children}
 				</NLink>
 			)}

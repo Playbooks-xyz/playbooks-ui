@@ -37,10 +37,10 @@ export const Switch = ({
 }: types.SwitchProps) => {
 	const { theme } = useInterface();
 	const base = theme.switchBase();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
-		<BtnWrapper alt='switch' onClick={() => onClick(!checked)} className={computed}>
+		<BtnWrapper name={name} alt='switch' onClick={() => onClick(!checked)} className={classes}>
 			<Span className='sr-only'>Use setting</Span>
 			<SwitchBackdrop checked={checked} />
 			<SwitchInner checked={checked} />
@@ -114,10 +114,10 @@ export const SwitchLabel = ({
 }: types.SwitchLabelProps) => {
 	const { theme } = useInterface();
 	const base = theme.switchLabel();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
-		<HTML.Label id={id} htmlFor={htmlFor} className={computed}>
+		<HTML.Label id={id} htmlFor={htmlFor} className={classes}>
 			{children}
 		</HTML.Label>
 	);

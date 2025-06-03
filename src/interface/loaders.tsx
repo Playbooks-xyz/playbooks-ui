@@ -1,5 +1,5 @@
 import { useInterface } from 'contexts';
-import { Font, H5, P, Small } from 'interface/fonts';
+import { H5, P, Small } from 'interface/fonts';
 import { Div, Span } from 'interface/html';
 import { Oval } from 'interface/spinners';
 import * as types from 'types/loader-types';
@@ -23,7 +23,7 @@ export const ModalLoader = ({
 			<Span>
 				<Oval size='w-14 h-14' className='stroke-gray-600 dark:stroke-gray-300 mb-4' />
 				<Div spacing='space-y-1' className='text-center'>
-					{title && <H5>{title}</H5>}
+					{title && <H5 tailwind={{ fontWeight: 'font-bold' }}>{title}</H5>}
 					{message && <Small>{message}</Small>}
 					{children}
 				</Div>
@@ -51,7 +51,7 @@ export const PageLoader = ({
 			<Span display='flex-start' space='space-x-8'>
 				<Oval size='w-12 h-12' className='stroke-gray-600 dark:stroke-gray-300' />
 				<Div align='text-left'>
-					{title && <Font size='h5'>{title}</Font>}
+					{title && <H5 tailwind={{ fontWeight: 'font-bold' }}>{title}</H5>}
 					{message && <P>{message}</P>}
 					{children}
 				</Div>
@@ -78,7 +78,7 @@ export const SectionLoader = ({
 		<Div {...computed}>
 			<Oval size='w-12 h-12' className='stroke-gray-600 dark:stroke-gray-300 mb-4' />
 			<Div spacing='space-y-1' className='text-center'>
-				{title && <H5>{title}</H5>}
+				{title && <H5 tailwind={{ fontWeight: 'font-bold' }}>{title}</H5>}
 				{message && <Small>{message}</Small>}
 				{children}
 			</Div>

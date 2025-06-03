@@ -3,24 +3,16 @@ import { useInterface } from 'contexts';
 import { Font, P, Small } from 'interface/fonts';
 import { Div, Hr } from 'interface/html';
 import * as types from 'types/section-types';
-import { computeTailwind } from 'utils';
+import { computeProps } from 'utils';
 
-export const Section = ({
-	id,
-	ref,
-	name = 'Section',
-	tailwind,
-	className,
-	children,
-	style,
-	...props
-}: types.SectionProps) => {
+export const Section = ({ name = 'Section', tailwind, className, children, ...props }: types.SectionProps) => {
 	const { theme } = useInterface();
 	const base = theme.section();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const formatted = { ...base, ...props, ...tailwind };
+	const filtered = computeProps(props);
 
 	return (
-		<HTML.Section id={id} ref={ref} name={name} className={computed} style={style}>
+		<HTML.Section name={name} tailwind={formatted} className={className} {...filtered}>
 			{children}
 		</HTML.Section>
 	);

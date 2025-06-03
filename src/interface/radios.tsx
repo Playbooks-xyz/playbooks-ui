@@ -17,10 +17,10 @@ export const RadioWrapper = ({
 }: types.RadioWrapperProps) => {
 	const { theme } = useInterface();
 	const base = theme.radioWrapper({ active });
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
-		<HTML.Label onClick={() => onClick()} className={computed}>
+		<HTML.Label onClick={onClick} className={classes}>
 			{children}
 		</HTML.Label>
 	);
@@ -64,15 +64,16 @@ export const RadioInput = ({
 }: types.RadioInputProps) => {
 	const { theme } = useInterface();
 	const base = theme.radioInput();
-	const computed = computeTailwind({ ...base, ...props, tailwind, name, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, name, className });
+
 	return (
 		<HTML.Input
 			id={id}
 			type='radio'
 			checked={value}
-			className={computed}
 			aria-labelledby='privacy-setting-0-label'
 			aria-describedby='privacy-setting-0-description'
+			className={classes}
 			readOnly>
 			{children}
 		</HTML.Input>

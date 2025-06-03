@@ -4,15 +4,16 @@ import { Font, P, Small } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import { FadIcon } from 'interface/icons';
 import * as types from 'types/hero-types';
-import { computeTailwind } from 'utils';
+import { computeProps } from 'utils';
 
 export const Hero = ({ name = 'Hero', size = '', tailwind, className, children, ...props }) => {
 	const { theme } = useInterface();
 	const base = theme.hero({ size });
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const formatted = { ...base, ...props, ...tailwind };
+	const filtered = computeProps(props);
 
 	return (
-		<HTML.Header name={name} className={computed}>
+		<HTML.Header name={name} tailwind={formatted} className={className} {...filtered}>
 			{children}
 		</HTML.Header>
 	);

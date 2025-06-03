@@ -3,15 +3,16 @@ import { useInterface } from 'contexts';
 import { Img, Ul } from 'interface/html';
 import { LinkWrapper } from 'interface/links';
 import * as types from 'types/navbar-types';
-import { computeTailwind } from 'utils';
+import { computeProps } from 'utils';
 
-export const Navbar = ({ id, ref, name = 'Navbar', tailwind, className, children, ...props }: types.NavPropsbar) => {
+export const Navbar = ({ name = 'Navbar', tailwind, className, children, ...props }: types.NavPropsbar) => {
 	const { theme } = useInterface();
 	const base = theme.navbar();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const formatted = { ...base, ...props, ...tailwind };
+	const filtered = computeProps(props);
 
 	return (
-		<HTML.Nav ref={ref} name={name} className={computed}>
+		<HTML.Nav name={name} tailwind={formatted} className={className} {...filtered}>
 			{children}
 		</HTML.Nav>
 	);

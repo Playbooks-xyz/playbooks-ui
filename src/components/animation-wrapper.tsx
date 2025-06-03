@@ -1,18 +1,20 @@
 import { animated, useSpring } from '@react-spring/web';
 
+import { TailwindProps } from '@ehubbell/html';
 import { computeTailwind } from 'utils';
 
 export const useAnimation = useSpring;
 
 export type AnimationType = {
+	tailwind?: TailwindProps;
 	className?: string;
 	style: any;
 	children: any;
 };
 
-const Animation = ({ className, style, children, ...tailwind }: AnimationType) => {
+const Animation = ({ tailwind, className, style, children, ...props }: AnimationType) => {
 	const base = { position: 'relative' };
-	const classes = computeTailwind({ ...base, ...tailwind, className });
+	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	// Render
 	return (
