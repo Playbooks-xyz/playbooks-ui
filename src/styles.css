@@ -1,8 +1,98 @@
-@import 'react-loading-skeleton/dist/skeleton.css';
+@import 'react-loading-skeleton/dist/skeleton.css' layer(base);
 
-@tailwind base;
-@tailwind utilities;
-@tailwind components;
+@import 'tailwindcss';
+
+@config '../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility flex-start {
+  /* Flex */
+  @apply flex;
+  @apply justify-start;
+  @apply items-center;
+}
+
+@utility flex-start-top {
+  @apply flex;
+  @apply justify-start;
+  @apply items-start;
+}
+
+@utility flex-start-bottom {
+  @apply flex;
+  @apply justify-start;
+  @apply items-end;
+}
+
+@utility flex-between {
+  @apply flex;
+  @apply justify-between;
+  @apply items-center;
+}
+
+@utility flex-between-inline {
+  @apply inline-flex;
+  @apply justify-between;
+  @apply items-center;
+}
+
+@utility flex-between-top {
+  @apply flex;
+  @apply justify-between;
+  @apply items-start;
+}
+
+@utility flex-between-bottom {
+  @apply flex;
+  @apply justify-between;
+  @apply items-end;
+}
+
+@utility flex-center {
+  @apply flex;
+  @apply items-center;
+}
+
+@utility flex-middle {
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+}
+
+@utility flex-middle-inline {
+  @apply inline-flex;
+  @apply justify-center;
+  @apply items-center;
+}
+
+@utility flex-end {
+  @apply flex;
+  @apply justify-end;
+  @apply items-center;
+}
+
+@utility flex-column {
+  /* Flex Column */
+  @apply flex;
+  @apply flex-col;
+}
 
 @layer base {
 	html {
@@ -75,82 +165,3 @@
 		-webkit-appearance: none;
 	}
 }
-
-@layer utilities {
-	/* Flex */
-	.flex-start {
-		@apply flex;
-		@apply justify-start;
-		@apply items-center;
-	}
-
-	.flex-start-top {
-		@apply flex;
-		@apply justify-start;
-		@apply items-start;
-	}
-
-	.flex-start-bottom {
-		@apply flex;
-		@apply justify-start;
-		@apply items-end;
-	}
-
-	.flex-between {
-		@apply flex;
-		@apply justify-between;
-		@apply items-center;
-	}
-
-	.flex-between-inline {
-		@apply inline-flex;
-		@apply justify-between;
-		@apply items-center;
-	}
-
-	.flex-between-top {
-		@apply flex;
-		@apply justify-between;
-		@apply items-start;
-	}
-
-	.flex-between-bottom {
-		@apply flex;
-		@apply justify-between;
-		@apply items-end;
-	}
-
-	.flex-center {
-		@apply flex;
-		@apply items-center;
-	}
-
-	.flex-middle {
-		@apply flex;
-		@apply justify-center;
-		@apply items-center;
-	}
-
-	.flex-middle-inline {
-		@apply inline-flex;
-		@apply justify-center;
-		@apply items-center;
-	}
-
-	.flex-end {
-		@apply flex;
-		@apply justify-end;
-		@apply items-center;
-	}
-
-	/* Flex Column */
-	.flex-column {
-		@apply flex;
-		@apply flex-col;
-	}
-}
-
-/*
-Docs
-https://tailwindcss.com/docs/preflight
-*/

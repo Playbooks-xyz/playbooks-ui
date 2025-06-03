@@ -1,10 +1,7 @@
-const ColorPlugin = require('./tailwind/color-plugin');
-const VariantPlugin = require('./tailwind/variant-plugin');
 const colors = require('tailwindcss/colors');
 const TailwindFormPlugin = require('@tailwindcss/forms');
 
 module.exports = {
-
 	darkMode: 'class',
 	content: [
 		'./src/**/*.{js,ts,jsx,tsx}'
@@ -23,16 +20,8 @@ module.exports = {
 			indigo: colors.indigo, // [#e0e7ff, #c7d2fe, #a5b4fc, #818cf8, #6366f1, #4f46e5] #6366f1
 			purple: colors.violet, // [#ede9fe, #ddd6fe, #c4b5fd, #a78bfa, #8b5cf6, #7c3aed] #8B5CF6
 			white: colors.white,
-			// https://tailwindcss.com/docs/customizing-colors#default-color-palette
 		},
 		extend: {
-			backgroundSize: {
-				'size-200': '200% 200%',
-			},
-			backgroundPosition: {
-				'pos-0': '50% 50%',
-				'pos-100': '100% 100%',
-			},
 			fontFamily: {
 				primary: ['Plus Jakarta Sans', 'sans-serif'], // ['thin, light, regular, medium, bold']
 				secondary: ['Inter', 'sans-serif'], // ['thin, light, regular, medium, bold']
@@ -64,22 +53,6 @@ module.exports = {
 			},
 		},
 	},
-	variants: {
-		// container: [],
-		extend: {
-			backgroundColor: ['a', 'd', 'h', 'f', 'gh'],
-			backgroundOpacity: ['a', 'd', 'h', 'f', 'gh'],
-			borderColor: ['a', 'd', 'h', 'f', 'gh', 'focus-within'],
-			boxShadow: ['a', 'd', 'h', 'f', 'gh'],
-			color: ['a', 'd', 'h', 'f', 'gh'],
-			cursor: ['a', 'd', 'h', 'f', 'gh'],
-			ring: ['a', 'd', 'h', 'f', 'gh', 'focus-within'],
-			ringColor: ['a', 'd', 'h', 'f', 'gh', 'focus-within'],
-			ringOffsetColor: ['a', 'd', 'h', 'f', 'gh', 'focus-within'],
-			textColor: ['a', 'd', 'h', 'f', 'gh'],
-			underline: ['a', 'd', 'h', 'f', 'gh'],
-		},
-	},
 	corePlugins: {
 		brightness: false,
 		contrast: false,
@@ -99,8 +72,9 @@ module.exports = {
 		backdropSepia: false,
 		// preflight: false,
 	},
-	plugins: [ColorPlugin, VariantPlugin, TailwindFormPlugin],
+	plugins: [TailwindFormPlugin],
 };
 
 // Docs
 // https://tailwindcss.com/docs
+// https://tailwindcss.com/docs/customizing-colors#default-color-palette
