@@ -116,7 +116,7 @@ const BtnShared = ({
 			) : (
 				prevImg && <Img src={prevImg?.src || prevImg} borderRadius='rounded-sm' spacing='w-5 h-5' {...prevImg} />
 			)}
-			<Span display='inline-flex' space='space-x-4' {...props?.span}>
+			<Span display='inline-flex' space='space-x-4' {...tailwind?.span}>
 				{taskRunning ? (
 					<Oval />
 				) : icon ? (
@@ -126,7 +126,6 @@ const BtnShared = ({
 				) : (
 					children
 				)}
-				<Span className='sr-only'>{alt}</Span>
 			</Span>
 			{taskRunning ? (
 				<Fragment />

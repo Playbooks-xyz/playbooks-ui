@@ -4,10 +4,11 @@ const colors = require('tailwindcss/colors');
 const TailwindFormPlugin = require('@tailwindcss/forms');
 
 module.exports = {
-	// mode: 'jit',
+
 	darkMode: 'class',
-	// prefix: 'pb-',
-	content: ['./src/**/*.{js,ts,jsx,tsx}'],
+	content: [
+		'./src/**/*.{js,ts,jsx,tsx}'
+	],
 	theme: {
 		colors: {
 			transparent: 'transparent',
