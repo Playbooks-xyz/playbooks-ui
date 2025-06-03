@@ -1,5 +1,4 @@
 export * from 'types/base-types';
-export * from 'types/tailwind-types';
 
 // Component type exports
 export * from 'types/accordion-types';

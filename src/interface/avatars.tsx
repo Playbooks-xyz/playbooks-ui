@@ -30,9 +30,8 @@ export const AvatarBadge = ({
 export const AvatarImg = ({
 	id,
 	name = 'AvatarImg',
-	alt = 'avatar',
+	alt = 'thumbnail',
 	size = 'md',
-	src,
 	tailwind,
 	className,
 	...props
@@ -41,7 +40,7 @@ export const AvatarImg = ({
 	const base = theme.avatarImg({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Img src={src} alt={alt} {...computed} />;
+	return <Img alt={alt} {...computed} />;
 };
 
 export const AvatarBody = ({

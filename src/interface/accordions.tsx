@@ -30,6 +30,7 @@ export const AccordionToggle = ({
 	id,
 	name = 'AccordionToggle',
 	variant = 'accent',
+	nextIcon = 'chevron-down',
 	open,
 	onClick,
 	tailwind,
@@ -41,7 +42,7 @@ export const AccordionToggle = ({
 	const base = theme.accordionToggle({ open });
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <Btn variant={variant} onClick={() => onClick(id)} {...computed} />;
+	return <Btn variant={variant} nextIcon={nextIcon} onClick={onClick} {...computed} />;
 };
 
 export const AccordionTitle = ({
@@ -76,7 +77,7 @@ export const AccordionBody = ({
 }: types.AccordionBodyProps) => {
 	const { theme } = useInterface();
 	const wrapperBase = theme.accordionBodyWrapper();
-	const base = theme.accordionBody();
+	const base = theme.accordionBody({ open });
 	const computed = { ...base, ...props, tailwind, className, name };
 	const [height, setHeight] = useState(0);
 	const ref = useRef(null);

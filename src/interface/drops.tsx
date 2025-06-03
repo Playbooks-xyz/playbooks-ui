@@ -66,7 +66,7 @@ export const DropToggle = ({
 	const base = theme.dropToggle();
 	const computed = { ...base, ...props, tailwind, children, className, name };
 
-	return <Btn id={id} alt={alt} variant={variant} nextIcon={nextIcon} onClick={() => onClick(id)} {...computed} />;
+	return <Btn id={id} alt={alt} variant={variant} nextIcon={nextIcon} onClick={onClick} {...computed} />;
 };
 
 export const DropMenu = ({

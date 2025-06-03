@@ -6,14 +6,10 @@ export type TooltipProps = HtmlProps & {
 	onBlur?: () => any;
 	onHover?: () => any;
 	placement?: any;
-	tailwind?: any;
 };
 
-export type TooltipInnerProps = HtmlProps & {
-	tailwind?: any;
-};
+export type TooltipInnerProps = HtmlProps;
 
 export type TooltipArrowProps = HtmlProps & {
 	setArrowElement: any;
-	tailwind?: any;
 };

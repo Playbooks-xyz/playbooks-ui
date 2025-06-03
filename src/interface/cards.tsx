@@ -32,7 +32,6 @@ export const CardIcon = ({
 	name = 'CardIcon',
 	type = 'fad',
 	icon = 'code',
-	wrapper,
 	tailwind,
 	className,
 	...props
@@ -48,7 +47,6 @@ export const CardImg = ({
 	id,
 	name = 'CardImg',
 	alt = 'thumbnail',
-	src,
 	tailwind,
 	className,
 	children,
@@ -58,7 +56,7 @@ export const CardImg = ({
 	const base = theme.cardImg();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Img src={src} alt={alt} {...computed} />;
+	return <Img alt={alt} {...computed} />;
 };
 
 export const CardBody = ({ id, name = 'CardBody', tailwind, className, children, ...props }: types.CardBodyProps) => {

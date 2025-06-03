@@ -15,9 +15,9 @@ export type TabPropss = HtmlProps & {
 };
 
 export type TabProps = BtnProps & {
-	value?: string;
+	alt?: string;
 	active?: boolean;
-	alt: string;
+	value?: string;
 	variant?: string;
 	onSelect: (v: string) => any;
 	children: any;

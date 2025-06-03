@@ -1,4 +1,4 @@
-import { TailwindProps } from 'types/tailwind-types';
+import { TailwindProps } from '@ehubbell/html';
 
 export type HtmlProps = TailwindProps & {
 	id?: string;
@@ -9,7 +9,7 @@ export type HtmlProps = TailwindProps & {
 	onClick?: (v?: any) => any;
 	onMouseEnter?: (v?: any) => any;
 	onMouseLeave?: (v?: any) => any;
-	tailwind?: any;
+	tailwind?: TailwindProps;
 	className?: string;
 	style?: any;
 	children?: any;

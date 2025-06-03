@@ -34,7 +34,7 @@ export const InterfaceProvider = ({ meta, theme, children }: { meta: any; theme?
 	return (
 		<InterfaceContext.Provider value={{ ref, meta, theme: computedTheme, createPortal, toggleScroll }}>
 			{children}
-			<Div id='interface_portal' ref={ref} />
+			<Div id='interface_portal' name='InterfacePortal' ref={ref} />
 		</InterfaceContext.Provider>
 	);
 };

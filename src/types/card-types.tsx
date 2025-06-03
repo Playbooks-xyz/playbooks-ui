@@ -7,11 +7,10 @@ export type CardHeaderProps = HtmlProps;
 export type CardIconProps = HtmlProps & {
 	type?: string;
 	icon: string;
-	wrapper?: any;
 };
 
 export type CardImgProps = HtmlProps & {
-	alt: string;
+	alt?: string;
 	src: string;
 };
 

@@ -4,7 +4,7 @@ export type AsideProps = HtmlProps;
 
 export type BodyProps = HtmlProps;
 
-export type FrameProps = HtmlProps & {
+export type IFrameProps = HtmlProps & {
 	title: string;
 	src: string;
 	onLoad?: () => void;

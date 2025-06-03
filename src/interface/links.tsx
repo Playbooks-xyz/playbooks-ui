@@ -138,7 +138,7 @@ export const LinkShared = ({
 			) : (
 				prevImg && <Img src={prevImg?.src || prevImg} borderRadius='rounded-sm' spacing='w-5 h-5' {...prevImg} />
 			)}
-			<Span space='space-x-4' {...props?.span}>
+			<Span display='inline-flex' space='space-x-4' {...props?.span}>
 				{taskRunning ? (
 					<Oval />
 				) : icon ? (
