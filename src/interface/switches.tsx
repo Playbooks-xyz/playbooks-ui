@@ -4,7 +4,7 @@ import { BtnWrapper } from 'interface/buttons';
 import { Div, Span } from 'interface/html';
 import { FadIcon } from 'interface/icons';
 import * as types from 'types';
-import { classBuilder } from 'utils';
+import { computeTailwind } from 'utils';
 
 export const SwitchGroup = ({
 	id,
@@ -37,7 +37,7 @@ export const Switch = ({
 }: types.SwitchProps) => {
 	const { theme } = useInterface();
 	const base = theme.switchBase();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<BtnWrapper alt='switch' onClick={() => onClick(!checked)} className={computed}>
@@ -114,7 +114,7 @@ export const SwitchLabel = ({
 }: types.SwitchLabelProps) => {
 	const { theme } = useInterface();
 	const base = theme.switchLabel();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Label id={id} htmlFor={htmlFor} className={computed}>

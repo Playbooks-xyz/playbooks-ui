@@ -3,12 +3,12 @@ import { useInterface } from 'contexts';
 import { Img, Ul } from 'interface/html';
 import { LinkWrapper } from 'interface/links';
 import * as types from 'types/navbar-types';
-import { classBuilder } from 'utils';
+import { computeTailwind } from 'utils';
 
 export const Navbar = ({ id, ref, name = 'Navbar', tailwind, className, children, ...props }: types.NavPropsbar) => {
 	const { theme } = useInterface();
 	const base = theme.navbar();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Nav ref={ref} name={name} className={computed}>
@@ -30,7 +30,7 @@ export const NavbarBrand = ({
 }: types.NavPropsbarBrand) => {
 	const { theme } = useInterface();
 	const base = theme.navbarBrand();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<LinkWrapper alt={alt} name={name} href={href} className={computed}>

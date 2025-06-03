@@ -4,15 +4,14 @@ import { Font, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { Link } from 'interface/links';
 import * as types from 'types/footer-types';
-import { classBuilder } from 'utils';
 
-export const Footer = ({ id, name = 'Footer', tailwind, className, children, style, ...props }: types.FooterProps) => {
+export const Footer = ({ id, name = 'Footer', tailwind, className, children, ...props }: types.FooterProps) => {
 	const { theme } = useInterface();
 	const base = theme.footer();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = { ...base, ...props, tailwind, className };
 
 	return (
-		<Div id={id} name={name} className={computed} style={style}>
+		<Div id={id} name={name} {...computed}>
 			{children}
 		</Div>
 	);

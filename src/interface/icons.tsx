@@ -2,7 +2,7 @@ import { FaWrapper } from 'components/fa-wrapper';
 import { useInterface } from 'contexts';
 import { Div } from 'interface/html';
 import * as types from 'types/icon-types';
-import { classBuilder } from 'utils';
+import { computeTailwind } from 'utils';
 
 export const Icon = props => {
 	switch (props?.type) {
@@ -38,7 +38,7 @@ export const Icon = props => {
 export const FabIcon = ({ id, name = 'FabIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const { theme } = useInterface();
 	const base = theme.icon();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return <FaWrapper type='fab' icon={icon} className={computed} />;
 };
@@ -46,7 +46,7 @@ export const FabIcon = ({ id, name = 'FabIcon', icon, tailwind, className, ...pr
 export const FadIcon = ({ id, name = 'FadIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const { theme } = useInterface();
 	const base = theme.icon();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return <FaWrapper type='fad' icon={icon} className={computed} />;
 };
@@ -54,7 +54,7 @@ export const FadIcon = ({ id, name = 'FadIcon', icon, tailwind, className, ...pr
 export const FalIcon = ({ id, name = 'FalIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const { theme } = useInterface();
 	const base = theme.icon();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return <FaWrapper type='fal' icon={icon} className={computed} />;
 };
@@ -62,7 +62,7 @@ export const FalIcon = ({ id, name = 'FalIcon', icon, tailwind, className, ...pr
 export const FarIcon = ({ id, name = 'FarIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const { theme } = useInterface();
 	const base = theme.icon();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return <FaWrapper type='far' icon={icon} className={computed} />;
 };
@@ -70,7 +70,7 @@ export const FarIcon = ({ id, name = 'FarIcon', icon, tailwind, className, ...pr
 export const FasIcon = ({ id, name = 'FasIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const { theme } = useInterface();
 	const base = theme.icon();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return <FaWrapper type='fas' icon={icon} className={computed} />;
 };

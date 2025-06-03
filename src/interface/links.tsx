@@ -7,7 +7,7 @@ import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
 import * as types from 'types/link-types';
-import { classBuilder } from 'utils';
+import { computeProps, computeTailwind } from 'utils';
 
 export const Link = props => {
 	switch (props?.variant) {
@@ -43,6 +43,7 @@ export const PrimaryLink = ({
 }: types.LinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.primaryLink({ active, size });
+
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
 
@@ -57,6 +58,7 @@ export const AccentLink = ({
 }: types.LinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.accentLink({ active, size });
+
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
 
@@ -71,6 +73,7 @@ export const BorderLink = ({
 }: types.LinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.borderLink({ active, size });
+
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
 
@@ -85,6 +88,7 @@ export const TabLink = ({
 }: types.LinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.tabLink({ active, size });
+
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
 
@@ -99,16 +103,12 @@ export const TextLink = ({
 }: types.LinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.textLink({ active, size });
+
 	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
 };
 
 export const LinkShared = ({
-	id,
-	name,
 	alt,
-	href,
-	target,
-	disabled,
 	prevIcon,
 	prevImg,
 	icon,
@@ -117,21 +117,11 @@ export const LinkShared = ({
 	nextImg,
 	taskRunning,
 	tailwind,
-	className,
 	children,
 	...props
 }: types.LinkProps) => {
 	return (
-		<LinkWrapper
-			id={id}
-			name={name}
-			alt={alt}
-			href={href}
-			target={target}
-			disabled={disabled}
-			tailwind={tailwind}
-			className={className}
-			{...props}>
+		<LinkWrapper alt={alt} tailwind={tailwind} {...props}>
 			{taskRunning ? <Span /> : prevIcon && <Icon type='far' icon={prevIcon?.icon || prevIcon} {...prevIcon} />}
 			{taskRunning ? (
 				<Fragment />
@@ -174,16 +164,17 @@ export const LinkWrapper = ({
 }: types.LinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.linkWrapper({ disabled });
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const filtered = computeProps(props);
 
 	return (
 		<Fragment>
 			{target ? (
-				<HTML.A href={href} aria-label={alt} title={alt} name={name} target={target} className={computed}>
+				<HTML.A aria-label={alt} title={alt} name={name} href={href} target={target} className={computed} {...filtered}>
 					{children}
 				</HTML.A>
 			) : (
-				<NLink aria-label={alt} title={alt} data-name={name} href={href} className={computed}>
+				<NLink aria-label={alt} title={alt} data-name={name} href={href} className={computed} {...filtered}>
 					{children}
 				</NLink>
 			)}

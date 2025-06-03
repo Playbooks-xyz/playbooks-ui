@@ -9,12 +9,12 @@ import { useInterface } from 'contexts';
 import { useElementKeyPress } from 'hooks';
 import { Div, Span } from 'interface/html';
 import * as types from 'types/form-types';
-import { classBuilder } from 'utils';
+import { computeTailwind } from 'utils';
 
 export const Form = ({ id, name = 'Form', onSubmit, tailwind, className, children, ...props }: types.FormProps) => {
 	const { theme } = useInterface();
 	const base = theme.form();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Form onSubmit={onSubmit} name={name} className={computed}>
@@ -54,7 +54,7 @@ export const FormLabel = ({
 }: types.FormLabelProps) => {
 	const { theme } = useInterface();
 	const base = theme.formLabel();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Label id={id} name={name} htmlFor={htmlFor} onClick={onClick} className={computed}>
@@ -75,7 +75,7 @@ export const FormCheckbox = ({
 }: types.FormCheckboxProps) => {
 	const { theme } = useInterface();
 	const base = theme.formCheckbox();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Input
@@ -105,7 +105,7 @@ export const FormRange = ({
 }: types.FormRangeProps) => {
 	const { theme } = useInterface();
 	const base = theme.formRange();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Input
@@ -143,7 +143,7 @@ export const FormInput = ({
 }: types.FormInputProps) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Input
@@ -181,7 +181,7 @@ export const FormMaskInput = ({
 }: types.FormInputPropsMask) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<MaskedInput
@@ -214,7 +214,7 @@ export const FormCurrencyInput = ({
 }: types.FormInputPropsCurrency) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<CurrencyInputWrapper
@@ -265,7 +265,7 @@ export const FormFileInput = ({
 }: types.FormFileProps) => {
 	const { theme } = useInterface();
 	const base = theme.formFileInput();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return <input placeholder={placeholder} value={value} onChange={onChange} className={computed} />;
 };
@@ -289,7 +289,7 @@ export const FormLocationInput = ({
 }: types.FormLocationPropsInput) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 	const ref = useRef(null);
 
 	// Hooks
@@ -332,7 +332,7 @@ export const FormPhoneInput = ({
 }: types.FormInputProps) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<PhoneInputWrapper
@@ -363,7 +363,7 @@ export const FormSelect = ({
 }: types.FormSelectProps) => {
 	const { theme } = useInterface();
 	const base = theme.formSelect({ size, variant });
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Select value={value} disabled={disabled} onChange={onChange} className={computed}>
@@ -403,7 +403,7 @@ export const FormTextArea = ({
 }: types.FormTextPropsArea) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.TextArea

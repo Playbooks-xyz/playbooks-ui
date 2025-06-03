@@ -3,7 +3,7 @@ import { useInterface } from 'contexts';
 import { Font, P, Small } from 'interface/fonts';
 import { Div, Hr } from 'interface/html';
 import * as types from 'types/section-types';
-import { classBuilder } from 'utils';
+import { computeTailwind } from 'utils';
 
 export const Section = ({
 	id,
@@ -17,7 +17,7 @@ export const Section = ({
 }: types.SectionProps) => {
 	const { theme } = useInterface();
 	const base = theme.section();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Section id={id} ref={ref} name={name} className={computed} style={style}>

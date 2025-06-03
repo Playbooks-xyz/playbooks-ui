@@ -6,7 +6,7 @@ import { Img, Span } from 'interface/html';
 import { Icon } from 'interface/icons';
 import { Oval } from 'interface/spinners';
 import * as types from 'types/button-types';
-import { classBuilder } from 'utils';
+import { computeProps } from 'utils';
 
 export const Btn = props => {
 	switch (props?.variant) {
@@ -41,11 +41,11 @@ export const PrimaryBtn = ({
 }: types.BtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.primaryBtn({ active, size });
-	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
+
+	return <BtnShared name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
 export const AccentBtn = ({
-	id,
 	name = 'AccentBtn',
 	size = 'sm',
 	active,
@@ -55,11 +55,11 @@ export const AccentBtn = ({
 }: types.BtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.accentBtn({ active, size });
-	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
+
+	return <BtnShared name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
 export const BorderBtn = ({
-	id,
 	name = 'BorderBtn',
 	size = 'sm',
 	active,
@@ -69,13 +69,15 @@ export const BorderBtn = ({
 }: types.BtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.borderBtn({ active, size });
-	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
+
+	return <BtnShared name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
 export const TabBtn = ({ id, name = 'TabBtn', size = 'sm', active, tailwind, className, ...props }: types.BtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.tabBtn({ active, size });
-	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
+
+	return <BtnShared name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
 export const TextBtn = ({
@@ -89,15 +91,12 @@ export const TextBtn = ({
 }: types.BtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.textBtn({ active, size });
+
 	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
 const BtnShared = ({
-	id,
-	type,
-	name,
 	alt,
-	disabled,
 	prevIcon,
 	prevImg,
 	icon,
@@ -105,24 +104,12 @@ const BtnShared = ({
 	nextIcon,
 	nextImg,
 	taskRunning,
-	onClick,
 	tailwind,
-	className,
 	children,
 	...props
 }: types.BtnProps) => {
 	return (
-		<BtnWrapper
-			id={id}
-			type={type}
-			name={name}
-			alt={alt}
-			disabled={disabled}
-			taskRunning={taskRunning}
-			onClick={onClick}
-			tailwind={tailwind}
-			className={className}
-			{...props}>
+		<BtnWrapper alt={alt} taskRunning={taskRunning} tailwind={tailwind} {...props}>
 			{taskRunning ? <Span /> : prevIcon && <Icon type='far' icon={prevIcon?.icon || prevIcon} {...prevIcon} />}
 			{taskRunning ? (
 				<Fragment />
@@ -152,13 +139,11 @@ const BtnShared = ({
 };
 
 export const BtnWrapper = ({
-	id = '',
 	type = 'button',
 	name = 'BtnWrapper',
-	alt = '',
-	onClick,
-	disabled = false,
-	taskRunning = false,
+	alt,
+	disabled,
+	taskRunning,
 	children,
 	tailwind,
 	className,
@@ -166,7 +151,8 @@ export const BtnWrapper = ({
 }: types.BtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.btnWrapper({ disabled });
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const formatted = { ...base, ...props, ...tailwind };
+	const filtered = computeProps(props);
 
 	return (
 		<HTML.Button
@@ -175,8 +161,8 @@ export const BtnWrapper = ({
 			title={alt}
 			name={name}
 			disabled={disabled || taskRunning}
-			onClick={onClick}
-			className={computed}>
+			tailwind={formatted}
+			{...filtered}>
 			{children}
 		</HTML.Button>
 	);

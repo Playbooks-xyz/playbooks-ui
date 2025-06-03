@@ -1,1 +1,1 @@
-export { classBuilder, propsFilter } from '@ehubbell/html';
+export { computeTailwind, computeProps } from '@ehubbell/html';

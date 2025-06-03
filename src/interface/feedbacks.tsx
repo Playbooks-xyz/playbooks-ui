@@ -3,7 +3,6 @@ import { Font, P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
 import { Icon } from 'interface/icons';
 import * as types from 'types/feedback-types';
-import { classBuilder } from 'utils';
 
 export const Feedback = ({ id, name = 'Feedback', tailwind, className, children, ...props }: types.FeedbackProps) => {
 	const { theme } = useInterface();
@@ -39,9 +38,9 @@ export const FeedbackIcon = ({
 }: types.FeedbackIconProps) => {
 	const { theme } = useInterface();
 	const base = theme.feedbackIcon();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <Icon type={type} icon={icon} className={computed} />;
+	return <Icon type={type} icon={icon} {...computed} />;
 };
 
 export const FeedbackBody = ({

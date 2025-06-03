@@ -3,7 +3,7 @@ import { useInterface } from 'contexts';
 import { P, Small } from 'interface/fonts';
 import { Div } from 'interface/html';
 import * as types from 'types';
-import { classBuilder } from 'utils';
+import { computeTailwind } from 'utils';
 
 export const RadioWrapper = ({
 	id,
@@ -17,7 +17,7 @@ export const RadioWrapper = ({
 }: types.RadioWrapperProps) => {
 	const { theme } = useInterface();
 	const base = theme.radioWrapper({ active });
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
 	return (
 		<HTML.Label onClick={() => onClick()} className={computed}>
@@ -64,7 +64,7 @@ export const RadioInput = ({
 }: types.RadioInputProps) => {
 	const { theme } = useInterface();
 	const base = theme.radioInput();
-	const computed = classBuilder({ ...base, ...props, tailwind, name, className });
+	const computed = computeTailwind({ ...base, ...props, tailwind, name, className });
 	return (
 		<HTML.Input
 			id={id}

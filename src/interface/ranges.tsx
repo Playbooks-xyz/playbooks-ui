@@ -2,7 +2,7 @@ import { Range } from 'react-range';
 
 import * as HTML from '@ehubbell/html';
 import { useInterface } from 'contexts';
-import { classBuilder } from 'utils';
+import { computeTailwind } from 'utils';
 
 export const RangeSlider = ({ min = 0, max = 100, step = null, value, onChange, tailwind, ...props }) => {
 	return (
@@ -59,7 +59,7 @@ export const RangeSliders = ({ min = 0, max = 100, step = 1, values, onChange, o
 export const RangeSliderTrack = ({ ref, values, min, max, trackProps, children, onNext, tailwind, ...restProps }) => {
 	const { theme } = useInterface();
 	const base = theme.rangeSliderTrack();
-	const computed = classBuilder({ ...base, ...restProps, tailwind });
+	const computed = computeTailwind({ ...base, ...restProps, tailwind });
 	return (
 		<HTML.Div
 			onMouseDown={trackProps.onMouseDown}
@@ -84,7 +84,7 @@ export const RangeSliderTrack = ({ ref, values, min, max, trackProps, children, 
 export const RangeSliderThumb = ({ ref, isDragged, tailwind, ...props }) => {
 	const { theme } = useInterface();
 	const base = theme.rangeSliderThumb({ isDragged });
-	const computed = classBuilder({ ...base, ...props, tailwind });
+	const computed = computeTailwind({ ...base, ...props, tailwind });
 
 	return <HTML.Div ref={ref} {...props} className={computed} style={props.style} />;
 };

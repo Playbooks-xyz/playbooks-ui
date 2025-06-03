@@ -1,7 +1,7 @@
 import * as HTML from '@ehubbell/html';
 import { useInterface } from 'contexts';
 import * as types from 'types/font-types';
-import { classBuilder } from 'utils';
+import { computeProps } from 'utils';
 
 export const Font = props => {
 	switch (props?.size) {
@@ -37,10 +37,11 @@ export const Font = props => {
 export const H1 = ({ id, name = 'H1', tailwind, className, children, ...props }: types.FontProps) => {
 	const { theme } = useInterface();
 	const base = theme.h1();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const formatted = { ...base, ...props, ...tailwind, className };
+	const filtered = computeProps(props);
 
 	return (
-		<HTML.H1 id={id} name={name} className={computed}>
+		<HTML.H1 id={id} name={name} tailwind={formatted} {...filtered}>
 			{children}
 		</HTML.H1>
 	);
@@ -49,10 +50,11 @@ export const H1 = ({ id, name = 'H1', tailwind, className, children, ...props }:
 export const H2 = ({ id, name = 'H2', tailwind, className, children, ...props }: types.FontProps) => {
 	const { theme } = useInterface();
 	const base = theme.h2();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const formatted = { ...base, ...props, ...tailwind, className };
+	const filtered = computeProps(props);
 
 	return (
-		<HTML.H2 id={id} name={name} className={computed}>
+		<HTML.H2 id={id} name={name} tailwind={formatted} {...filtered}>
 			{children}
 		</HTML.H2>
 	);
@@ -61,10 +63,11 @@ export const H2 = ({ id, name = 'H2', tailwind, className, children, ...props }:
 export const H3 = ({ id, name = 'H3', tailwind, className, children, ...props }: types.FontProps) => {
 	const { theme } = useInterface();
 	const base = theme.h3();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const formatted = { ...base, ...props, ...tailwind, className };
+	const filtered = computeProps(props);
 
 	return (
-		<HTML.H3 id={id} name={name} className={computed}>
+		<HTML.H3 id={id} name={name} tailwind={formatted} {...filtered}>
 			{children}
 		</HTML.H3>
 	);
@@ -73,10 +76,11 @@ export const H3 = ({ id, name = 'H3', tailwind, className, children, ...props }:
 export const H4 = ({ id, name = 'H4', tailwind, className, children, ...props }: types.FontProps) => {
 	const { theme } = useInterface();
 	const base = theme.h4();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const formatted = { ...base, ...props, ...tailwind, className };
+	const filtered = computeProps(props);
 
 	return (
-		<HTML.H4 id={id} name={name} className={computed}>
+		<HTML.H4 id={id} name={name} tailwind={formatted} {...filtered}>
 			{children}
 		</HTML.H4>
 	);
@@ -85,10 +89,11 @@ export const H4 = ({ id, name = 'H4', tailwind, className, children, ...props }:
 export const H5 = ({ id, name = 'H5', tailwind, className, children, ...props }: types.FontProps) => {
 	const { theme } = useInterface();
 	const base = theme.h5();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const formatted = { ...base, ...props, ...tailwind, className };
+	const filtered = computeProps(props);
 
 	return (
-		<HTML.H5 id={id} name={name} className={computed}>
+		<HTML.H5 id={id} name={name} tailwind={formatted} {...filtered}>
 			{children}
 		</HTML.H5>
 	);
@@ -97,10 +102,11 @@ export const H5 = ({ id, name = 'H5', tailwind, className, children, ...props }:
 export const H6 = ({ id, name = 'H6', tailwind, className, children, ...props }: types.FontProps) => {
 	const { theme } = useInterface();
 	const base = theme.h6();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const formatted = { ...base, ...props, ...tailwind, className };
+	const filtered = computeProps(props);
 
 	return (
-		<HTML.H6 id={id} name={name} className={computed}>
+		<HTML.H6 id={id} name={name} tailwind={formatted} {...filtered}>
 			{children}
 		</HTML.H6>
 	);
@@ -109,10 +115,11 @@ export const H6 = ({ id, name = 'H6', tailwind, className, children, ...props }:
 export const P = ({ id, name = 'P', tailwind, className, children, ...props }: types.FontProps) => {
 	const { theme } = useInterface();
 	const base = theme.p();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const formatted = { ...base, ...props, ...tailwind, className };
+	const filtered = computeProps(props);
 
 	return (
-		<HTML.P id={id} name={name} className={computed}>
+		<HTML.P id={id} name={name} tailwind={formatted} {...filtered}>
 			{children}
 		</HTML.P>
 	);
@@ -121,10 +128,11 @@ export const P = ({ id, name = 'P', tailwind, className, children, ...props }: t
 export const Small = ({ id, name = 'Small', tailwind, className, children, ...props }: types.FontProps) => {
 	const { theme } = useInterface();
 	const base = theme.small();
-	const computed = classBuilder({ ...base, ...props, tailwind, className });
+	const formatted = { ...base, ...props, ...tailwind, className };
+	const filtered = computeProps(props);
 
 	return (
-		<HTML.Small id={id} name={name} className={computed}>
+		<HTML.Small id={id} name={name} tailwind={formatted} {...filtered}>
 			{children}
 		</HTML.Small>
 	);
