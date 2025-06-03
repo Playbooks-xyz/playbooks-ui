@@ -30,10 +30,10 @@ export const NavbarBrand = ({
 }: types.NavPropsbarBrand) => {
 	const { theme } = useInterface();
 	const base = theme.navbarBrand();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const computed = { ...base, ...props, tailwind, className };
 
 	return (
-		<LinkWrapper alt={alt} name={name} href={href} className={computed}>
+		<LinkWrapper alt={alt} name={name} href={href} {...computed}>
 			<Img src={src} alt='Brand logo' width='w-full' />
 		</LinkWrapper>
 	);

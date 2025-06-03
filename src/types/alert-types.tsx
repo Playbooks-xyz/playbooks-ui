@@ -1,4 +1,4 @@
-import { HtmlProps } from 'types';
+import { FontProps, HtmlProps } from 'types';
 
 export type AlertProps = HtmlProps & {
 	show?: boolean;
@@ -10,7 +10,7 @@ export type AlertIconProps = HtmlProps & {
 
 export type AlertBodyProps = HtmlProps;
 
-export type AlertTitleProps = HtmlProps;
+export type AlertTitleProps = FontProps;
 
 export type AlertTextProps = HtmlProps;
 

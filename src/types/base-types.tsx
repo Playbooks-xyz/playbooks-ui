@@ -4,6 +4,7 @@ export type HtmlProps = TailwindProps & {
 	id?: string;
 	ref?: any;
 	name?: string;
+	size?: string;
 	html?: any;
 	tabIndex?: any;
 	onClick?: (v?: any) => any;

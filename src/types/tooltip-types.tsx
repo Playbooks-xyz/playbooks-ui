@@ -6,6 +6,7 @@ export type TooltipProps = HtmlProps & {
 	onBlur?: () => any;
 	onHover?: () => any;
 	placement?: any;
+	tailwind?: any;
 };
 
 export type TooltipInnerProps = HtmlProps;

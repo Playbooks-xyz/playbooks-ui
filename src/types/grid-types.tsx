@@ -1,5 +1,5 @@
+import { TailwindColProps, TailwindContainerProps } from '@ehubbell/html';
 import { HtmlProps } from 'types';
-import { TailwindColProps, TailwindContainerProps } from 'types/tailwind-types';
 
 export type ContainerProps = HtmlProps & TailwindContainerProps;
 

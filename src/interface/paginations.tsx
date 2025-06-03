@@ -3,7 +3,6 @@ import { BtnWrapper } from 'interface/buttons';
 import { FarIcon } from 'interface/icons';
 import { Nav } from 'interface/navs';
 import * as types from 'types/pagination-types';
-import { computeTailwind } from 'utils';
 
 export const Pagination = ({
 	id,
@@ -24,7 +23,6 @@ export const PaginationFirst = ({
 	id,
 	name = 'PaginationFirst',
 	alt = 'first page',
-	page,
 	disabled,
 	tailwind,
 	className,
@@ -33,10 +31,10 @@ export const PaginationFirst = ({
 }: types.PaginationBtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.paginationBtn();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<BtnWrapper name={name} alt={alt} onClick={() => onClick(page)} disabled={disabled} className={computed}>
+		<BtnWrapper name={name} alt={alt} onClick={onClick} disabled={disabled} {...computed}>
 			<FarIcon icon='chevrons-left' />
 		</BtnWrapper>
 	);
@@ -46,7 +44,6 @@ export const PaginationPrev = ({
 	id,
 	name = 'PaginationPrev',
 	alt = 'prev page',
-	page,
 	disabled,
 	tailwind,
 	className,
@@ -55,10 +52,10 @@ export const PaginationPrev = ({
 }: types.PaginationBtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.paginationBtn();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<BtnWrapper name={name} alt={alt} onClick={() => onClick(page)} disabled={disabled} className={computed}>
+		<BtnWrapper name={name} alt={alt} onClick={onClick} disabled={disabled} {...computed}>
 			<FarIcon icon='chevron-left' />
 		</BtnWrapper>
 	);
@@ -68,20 +65,20 @@ export const PaginationBtn = ({
 	id,
 	name = 'PaginationBtn',
 	alt = 'specific page',
-	page,
 	active,
 	tailwind,
 	className = '',
 	onClick,
+	children,
 	...props
 }: types.PaginationBtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.paginationBtn(active);
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<BtnWrapper name={name} alt={alt} active={active} onClick={onClick} className={computed}>
-			{page}
+		<BtnWrapper name={name} alt={alt} active={active} onClick={onClick} {...computed}>
+			{children}
 		</BtnWrapper>
 	);
 };
@@ -90,7 +87,6 @@ export const PaginationNext = ({
 	id,
 	name = 'PaginationNext',
 	alt = 'next page',
-	page,
 	disabled,
 	tailwind,
 	className,
@@ -99,10 +95,10 @@ export const PaginationNext = ({
 }: types.PaginationBtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.paginationBtn();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<BtnWrapper name={name} alt={alt} onClick={() => onClick(page)} disabled={disabled} className={computed}>
+		<BtnWrapper name={name} alt={alt} onClick={onClick} disabled={disabled} {...computed}>
 			<FarIcon icon='chevron-right' />
 		</BtnWrapper>
 	);
@@ -112,7 +108,6 @@ export const PaginationLast = ({
 	id,
 	name = 'PaginationLast',
 	alt = 'last page',
-	page,
 	disabled,
 	tailwind,
 	className,
@@ -121,10 +116,10 @@ export const PaginationLast = ({
 }: types.PaginationBtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.paginationBtn();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (
-		<BtnWrapper name={name} alt={alt} onClick={() => onClick(page)} disabled={disabled} className={computed}>
+		<BtnWrapper name={name} alt={alt} onClick={onClick} disabled={disabled} {...computed}>
 			<FarIcon icon='chevrons-right' />
 		</BtnWrapper>
 	);

@@ -1,7 +1,6 @@
 import { HtmlProps } from 'types';
-import { TailwindFontSizeOpts } from 'types/tailwind-types';
 
 export type FontProps = HtmlProps & {
 	id?: string;
-	size?: TailwindFontSizeOpts;
+	size?: string | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'sm';
 };

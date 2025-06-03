@@ -3,11 +3,13 @@ import { HtmlProps } from 'types';
 export type ModalWrapperProps = HtmlProps & {
 	open?: boolean;
 	onClose?: () => any;
+	tailwind?: any;
 };
 
 export type ModalProps = HtmlProps & {
 	open?: boolean;
 	onClose?: () => any;
+	tailwind?: any;
 };
 
 export type ModalBackdropProps = HtmlProps & {

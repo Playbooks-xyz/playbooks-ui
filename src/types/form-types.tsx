@@ -10,75 +10,47 @@ export type FormLabelProps = HtmlProps & {
 	htmlFor?: string;
 };
 
-export type FormCheckboxProps = HtmlProps & {
-	id?: string;
-	type?: string;
+export type FormCheckboxProps = FormInputProps & {
 	checked?: boolean;
-	onChange: (e: any) => any;
-	readOnly?: boolean;
 };
 
-export type FormRangeProps = HtmlProps & {
-	id?: string;
-	value?: number;
-	min?: number;
-	max?: number;
-	step?: number;
-	onChange: (e: any) => any;
-	readOnly?: boolean;
-};
-
-export type FormFileProps = HtmlProps & {
-	id?: string;
-	type?: string;
-	value?: any;
-	defaultValue?: any;
-	placeholder?: string;
-	onChange: (e: any) => any;
-	readOnly?: boolean;
-};
+export type FormFileProps = FormInputProps;
 
 export type FormInputProps = InputProps & {
 	id?: string;
 	type?: string;
 	size?: string;
 	variant?: string;
+	disabled?: boolean;
 };
 
-export type FormInputPropsCurrency = FormInputProps & {
+export type FormInputCurrencyProps = FormInputProps & {
 	prefix?: string;
 };
 
-export type FormLocationPropsInput = FormInputProps & {
+export type FormInputLocationProps = FormInputProps & {
 	options?: any;
 	googleMapsApiKey: string;
 	onSelect: (e: any) => any;
 };
 
-export type FormInputPropsMask = FormInputProps & {
+export type FormInputMaskProps = FormInputProps & {
 	mask: string;
 };
 
-export type FormSelectProps = HtmlProps & {
+export type FormInputPhoneProps = FormInputProps & {
 	id?: string;
-	value?: any;
+	type?: string;
+	size?: string;
 	variant?: string;
-	defaultValue?: string;
-	disabled?: boolean;
-	placeholder?: string;
+};
+
+export type FormSelectProps = FormInputProps & {
 	options?: string[];
-	onChange: (e: any) => any;
 };
 
 export type FormTextProps = HtmlProps;
 
-export type FormTextPropsArea = HtmlProps & {
-	id?: string;
-	rows?: number;
-	value?: any;
-	variant?: string;
-	defaultValue?: any;
-	placeholder?: string;
-	onChange: (e: any) => any;
-	readOnly?: boolean;
+export type FormTextAreaProps = FormInputProps & {
+	rows: any;
 };

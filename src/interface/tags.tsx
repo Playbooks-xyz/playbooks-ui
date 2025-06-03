@@ -22,12 +22,7 @@ export const Tag = ({ id, name = 'Tag', size = 'md', tailwind, className, childr
 	const base = theme.tag({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return (
-		<Div {...computed}>
-			<TagBody tailwind={tailwind?.body}>{children}</TagBody>
-			<TagActions tailwind={tailwind?.actions} />
-		</Div>
-	);
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const TagImg = ({

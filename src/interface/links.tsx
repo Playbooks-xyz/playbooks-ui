@@ -31,80 +31,39 @@ export const Link = props => {
 	}
 };
 
-export const PrimaryLink = ({
-	id,
-	name = 'Link',
-	size = 'sm',
-	alt,
-	active,
-	tailwind,
-	className,
-	...props
-}: types.LinkProps) => {
+export const PrimaryLink = ({ id, name = 'Link', size = 'sm', alt, active, className, ...props }: types.LinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.primaryLink({ active, size });
 
-	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
+	return <LinkShared id={id} name={name} className={className} {...base} {...props} />;
 };
 
-export const AccentLink = ({
-	id,
-	name = 'AccentLink',
-	size = 'sm',
-	active,
-	tailwind,
-	className,
-	...props
-}: types.LinkProps) => {
+export const AccentLink = ({ id, name = 'AccentLink', size = 'sm', active, className, ...props }: types.LinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.accentLink({ active, size });
 
-	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
+	return <LinkShared id={id} name={name} className={className} {...base} {...props} />;
 };
 
-export const BorderLink = ({
-	id,
-	name = 'BorderLink',
-	size = 'sm',
-	active,
-	tailwind,
-	className,
-	...props
-}: types.LinkProps) => {
+export const BorderLink = ({ id, name = 'BorderLink', size = 'sm', active, className, ...props }: types.LinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.borderLink({ active, size });
 
-	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
+	return <LinkShared id={id} name={name} className={className} {...base} {...props} />;
 };
 
-export const TabLink = ({
-	id,
-	name = 'TabLink',
-	size = 'sm',
-	active,
-	tailwind,
-	className,
-	...props
-}: types.LinkProps) => {
+export const TabLink = ({ id, name = 'TabLink', size = 'sm', active, className, ...props }: types.LinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.tabLink({ active, size });
 
-	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
+	return <LinkShared id={id} name={name} className={className} {...base} {...props} />;
 };
 
-export const TextLink = ({
-	id,
-	name = 'TextLink',
-	size = 'sm',
-	active,
-	tailwind,
-	className,
-	...props
-}: types.LinkProps) => {
+export const TextLink = ({ id, name = 'TextLink', size = 'sm', active, className, ...props }: types.LinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.textLink({ active, size });
 
-	return <LinkShared id={id} name={name} tailwind={tailwind} className={className} {...base} {...props} />;
+	return <LinkShared id={id} name={name} className={className} {...base} {...props} />;
 };
 
 export const LinkShared = ({
@@ -164,7 +123,7 @@ export const LinkWrapper = ({
 }: types.LinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.linkWrapper({ disabled });
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
+	const computed = computeTailwind({ ...base, ...props, ...tailwind, className });
 	const filtered = computeProps(props);
 
 	return (

@@ -90,39 +90,6 @@ export const FormCheckbox = ({
 	);
 };
 
-export const FormRange = ({
-	id,
-	name = 'FormRange',
-	value,
-	min,
-	max,
-	step,
-	onChange,
-	readOnly,
-	tailwind,
-	className,
-	...props
-}: types.FormRangeProps) => {
-	const { theme } = useInterface();
-	const base = theme.formRange();
-	const computed = computeTailwind({ ...base, ...props, tailwind, className });
-
-	return (
-		<HTML.Input
-			id={id}
-			type='range'
-			name={name}
-			value={value}
-			min={min}
-			max={max}
-			step={step}
-			onChange={onChange}
-			readOnly={readOnly}
-			className={computed}
-		/>
-	);
-};
-
 export const FormInput = ({
 	id,
 	ref,
@@ -178,7 +145,7 @@ export const FormMaskInput = ({
 	tailwind,
 	className,
 	...props
-}: types.FormInputPropsMask) => {
+}: types.FormInputMaskProps) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
 	const computed = computeTailwind({ ...base, ...props, tailwind, className });
@@ -211,7 +178,7 @@ export const FormCurrencyInput = ({
 	tailwind,
 	className,
 	...props
-}: types.FormInputPropsCurrency) => {
+}: types.FormInputCurrencyProps) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
 	const computed = computeTailwind({ ...base, ...props, tailwind, className });
@@ -248,7 +215,7 @@ export const FormDivInput = ({
 
 	return (
 		<Div id={id} tabIndex='0' onClick={onClick} {...computed}>
-			{children ? children : <Span color=''>{placeholder}</Span>}
+			{children ? children : <Span>{placeholder}</Span>}
 		</Div>
 	);
 };
@@ -267,7 +234,7 @@ export const FormFileInput = ({
 	const base = theme.formFileInput();
 	const computed = computeTailwind({ ...base, ...props, tailwind, className });
 
-	return <input placeholder={placeholder} value={value} onChange={onChange} className={computed} />;
+	return <HTML.Input placeholder={placeholder} value={value} onChange={onChange} className={computed} />;
 };
 
 export const FormLocationInput = ({
@@ -286,7 +253,7 @@ export const FormLocationInput = ({
 	tailwind,
 	className,
 	...props
-}: types.FormLocationPropsInput) => {
+}: types.FormInputLocationProps) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
 	const computed = computeTailwind({ ...base, ...props, tailwind, className });
@@ -329,7 +296,7 @@ export const FormPhoneInput = ({
 	tailwind,
 	className,
 	...props
-}: types.FormInputProps) => {
+}: types.FormInputPhoneProps) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
 	const computed = computeTailwind({ ...base, ...props, tailwind, className });
@@ -393,14 +360,14 @@ export const FormTextArea = ({
 	size = 'sm',
 	value,
 	variant,
-	rows,
+	rows = 4,
 	placeholder,
 	onChange,
 	readOnly,
 	tailwind,
 	className,
 	...props
-}: types.FormTextPropsArea) => {
+}: types.FormTextAreaProps) => {
 	const { theme } = useInterface();
 	const base = theme.formInput({ size, variant });
 	const computed = computeTailwind({ ...base, ...props, tailwind, className });
@@ -408,7 +375,7 @@ export const FormTextArea = ({
 	return (
 		<HTML.TextArea
 			id={id}
-			rows={rows || 4}
+			rows={rows}
 			value={value}
 			placeholder={placeholder}
 			onChange={onChange}

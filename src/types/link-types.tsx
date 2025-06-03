@@ -3,6 +3,7 @@ import { HtmlProps } from 'types';
 export type LinkProps = HtmlProps & {
 	alt?: string;
 	active?: boolean;
+	size?: string;
 	prevIcon?: any;
 	prevImg?: any;
 	icon?: any;

@@ -84,9 +84,9 @@ export const DropMenu = ({
 }: types.DropMenuProps) => {
 	const { theme } = useInterface();
 	const [show, setShow] = useState(false);
+	const [dropRef, setDropRef] = useState(null);
 	const base = theme.dropMenu({ open: show });
 	const computed = { ...base, ...props, tailwind, className, name };
-	const [dropRef, setDropRef] = useState(null);
 	const nodeRef = useRef(null);
 	const { styles: popperStyles, attributes } = usePopper(ref?.current, dropRef, {
 		placement: placement,

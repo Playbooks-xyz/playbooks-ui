@@ -2,9 +2,9 @@ import { HtmlProps, ImgProps } from 'types';
 
 export type TagWrapperProps = HtmlProps;
 
-export type TagProps = HtmlProps;
-
-export type TagAvatarProps = HtmlProps;
+export type TagProps = HtmlProps & {
+	tailwind?: any;
+};
 
 export type TagImgProps = ImgProps;
 

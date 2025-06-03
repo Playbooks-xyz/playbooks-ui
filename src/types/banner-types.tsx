@@ -1,4 +1,4 @@
-import { HtmlProps } from 'types';
+import { FontProps, HtmlProps } from 'types';
 
 export type BannerProps = HtmlProps;
 
@@ -9,7 +9,7 @@ export type BannerIconProps = HtmlProps & {
 
 export type BannerBodyProps = HtmlProps;
 
-export type BannerTitleProps = HtmlProps;
+export type BannerTitleProps = FontProps;
 
 export type BannerTextProps = HtmlProps;
 

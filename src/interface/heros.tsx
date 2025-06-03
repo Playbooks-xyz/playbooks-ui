@@ -42,7 +42,7 @@ export const HeroImg = ({
 
 	return (
 		<Div {...computed}>
-			<Img src={src} alt={alt} width='w-full' />
+			<Img src={src} alt={alt} tailwind={{ width: 'w-full' }} />
 		</Div>
 	);
 };
@@ -62,7 +62,7 @@ export const HeroIcon = ({
 
 	return (
 		<Div {...computed}>
-			<FadIcon icon={icon} fontSize='text-3xl' />
+			<FadIcon icon={icon} tailwind={{ fontSize: 'text-3xl' }} />
 		</Div>
 	);
 };
@@ -149,29 +149,6 @@ export const HeroActions = ({
 	const { theme } = useInterface();
 	const base = theme.heroActions();
 	const computed = { ...base, ...props, tailwind, className, name };
-
-	return <Div {...computed}>{children}</Div>;
-};
-
-export const HeroContainer = ({ tailwind, children, ...props }) => {
-	const base = {
-		display: 'flex flex-col',
-		position: 'relative',
-		width: 'w-full',
-		maxWidth: 'max-w-screen-xl',
-		margin: 'mx-auto',
-		padding: 'px-4 py-24',
-		space: 'space-y-12',
-		md: {
-			padding: 'md:px-6 md:py-32',
-		},
-		lg: {
-			display: 'lg:flex-row',
-			space: 'lg:space-y-0 lg:space-x-12',
-			padding: 'lg:py-40',
-		},
-	};
-	const computed = { ...base, ...props, tailwind };
 
 	return <Div {...computed}>{children}</Div>;
 };

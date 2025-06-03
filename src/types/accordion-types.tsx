@@ -1,4 +1,4 @@
-import { BtnProps, HtmlProps } from 'types';
+import { BtnProps, FontProps, HtmlProps } from 'types';
 
 export type AccordionProps = HtmlProps & {
 	open?: boolean;
@@ -10,9 +10,8 @@ export type AccordionToggleProps = BtnProps & {
 	onClick: (v?: any) => any;
 };
 
-export type AccordionTitleProps = HtmlProps & {
+export type AccordionTitleProps = FontProps & {
 	icon?: string;
-	title?: string;
 };
 
 export type AccordionBodyProps = HtmlProps & {

@@ -20,9 +20,7 @@ export const Breadcrumbs = ({
 
 	return (
 		<Nav {...computed}>
-			<NavList display='flex flex-row' space='space-x-2'>
-				{children}
-			</NavList>
+			<NavList tailwind={{ display: 'flex flex-row', space: 'space-x-2' }}>{children}</NavList>
 		</Nav>
 	);
 };
@@ -44,7 +42,7 @@ export const BreadcrumbItem = ({
 	return (
 		<Li {...computed}>
 			{children}
-			{arrow && <FarIcon icon={icon} color='text-gray-400' fontSize='text-xs' />}
+			{arrow && <FarIcon icon={icon} tailwind={{ color: 'text-gray-400', fontSize: 'text-xs' }} />}
 		</Li>
 	);
 };

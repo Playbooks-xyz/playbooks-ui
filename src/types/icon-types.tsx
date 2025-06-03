@@ -2,6 +2,7 @@ import { HtmlProps } from 'types';
 
 export type IconProps = HtmlProps & {
 	type?: string;
-	icon?: string;
+	icon?: any;
 	wrapper?: any;
+	tailwind?: any;
 };
