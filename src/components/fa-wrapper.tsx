@@ -11,14 +11,7 @@ const FaWrapper = ({ type = 'fas', name, icon, transform, tailwind, className, .
 	const base = {};
 	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
-	return (
-		<FontAwesome
-			data-name={name}
-			icon={[type, icon]}
-			transform={transform}
-			className={classes}
-		/>
-	);
+	return <FontAwesome data-name={name} icon={[type, icon]} transform={transform} className={classes} />;
 };
 
 export { FaWrapper };

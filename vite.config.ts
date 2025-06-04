@@ -85,7 +85,6 @@ export default defineConfig({
 				'next/head',
 				'next/link',
 				'next/router',
-				'@popperjs/core',
 				'@fortawesome/fontawesome-svg-core'
 			],
 			output: {

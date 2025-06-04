@@ -2,9 +2,9 @@
  An interface library for Playbooks
 
 ## Prerequisites
+- Font Awesome
 - React
 - Next
-- Font Awesome
 - Tailwind
 
 ## Quick start
