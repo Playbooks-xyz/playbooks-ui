@@ -91,7 +91,7 @@ This project is designed for development using the [yalc](https://npmjs.com/pack
 - eric@erichubbell.com
 
 ## Notes
-To see this library in action, checkout the following libraries and projects:
+To see this library in action, checkout the following projects:
 - [playbooks](https://www.playbooks.xyz)
-- [@playbooks/ui][https://github.com/playbooks-xyz/playbooks-ui]
-- [@playbooks/theme][https://github.com/playbooks-xyz/playbooks-theme]
+- [@playbooks/ui](https://github.com/playbooks-xyz/playbooks-ui)
+- [@playbooks/theme](https://github.com/playbooks-xyz/playbooks-theme)

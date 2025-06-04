@@ -2,9 +2,9 @@
   "version": "v1",
   "packages": {
     "@ehubbell/html": {
-      "signature": "3cf614a2264876613085c0b3561ac598",
+      "signature": "634f40666bbfb99ba189f62850219fc1",
       "file": true,
-      "replaced": "^0.0.15"
+      "replaced": "^0.1.5"
     }
   }
 }
