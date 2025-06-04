@@ -1,9 +1,9 @@
 import react from '@vitejs/plugin-react';
 
+import tailwindcss from '@tailwindcss/vite'
 import { exec } from 'node:child_process';
 import path from 'path';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import tailwindcss from 'tailwindcss';
 import { defineConfig } from 'vite';
 
 function pushBuild() {
@@ -67,7 +67,7 @@ export default defineConfig({
 				path.resolve(__dirname, 'src/interface/toasts.tsx'),
 				path.resolve(__dirname, 'src/interface/tooltips.tsx'),
 				path.resolve(__dirname, 'src/utils/utils.tsx'),
-				path.resolve(__dirname, 'src/styles.css'),
+				// path.resolve(__dirname, 'src/styles.css'),
 			],
 			formats: ['cjs'],
 			name: 'playbooks-interface',
@@ -86,7 +86,8 @@ export default defineConfig({
 				'next/head',
 				'next/link',
 				'next/router',
-				'tailwindcss',
+				'@popperjs/core',
+				'@fortawesome/fontawesome-svg-core'
 			],
 			output: {
 				globals: {
@@ -108,11 +109,6 @@ export default defineConfig({
 			closeBundle: pushBuild,
 		},
 	],
-	css: {
-		postcss: {
-			plugins: [tailwindcss],
-		},
-	},
 	resolve: {
 		alias: {
 			src: path.resolve(__dirname, '/src'),

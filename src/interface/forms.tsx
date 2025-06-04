@@ -334,7 +334,7 @@ export const FormSelect = ({
 
 	return (
 		<HTML.Select value={value} disabled={disabled} onChange={onChange} className={classes}>
-			<HTML.Option value='' disabled className='gray-500 dark:gray-400'>
+			<HTML.Option value='' disabled className='text-gray-500 dark:text-gray-400'>
 				{placeholder}
 			</HTML.Option>
 			{options.map((option, i) => (
