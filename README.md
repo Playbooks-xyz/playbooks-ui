@@ -78,9 +78,9 @@ This project is designed for development using the [yalc](https://npmjs.com/pack
 - After that, this library will hot reload into the consuming application
 
 ## Scripts
-- We've included a couple of helpful scripts for faster development.
-- deploy: `npm run deploy -- 'commit message'`
-- publish: `npm run publish -- 'commit message' [major|minor|patch]`
+We've included a couple of helpful scripts for faster development.
+- `npm run deploy -- 'commit message'`
+- `npm run publish -- 'commit message' [major|minor|patch]`
 
 ## Husky
 - Husky configuration is setup to lint and format the repo on every commit

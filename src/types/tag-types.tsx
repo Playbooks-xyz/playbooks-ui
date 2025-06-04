@@ -1,6 +1,6 @@
 import { HtmlProps, ImgProps } from 'types';
 
-export type TagWrapperProps = HtmlProps;
+export type TagsProps = HtmlProps;
 
 export type TagProps = HtmlProps;
 

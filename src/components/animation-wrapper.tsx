@@ -9,11 +9,11 @@ export type AnimationProps = {
 	name?: string;
 	tailwind?: TailwindProps;
 	className?: string;
-	style: any;
+	style?: any;
 	children: any;
 };
 
-const Animation = ({ name, tailwind, className, style, children, ...props }: AnimationProps) => {
+const Animation = ({ name = 'Animation', tailwind, className, style, children, ...props }: AnimationProps) => {
 	const base = { position: 'relative' };
 	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 

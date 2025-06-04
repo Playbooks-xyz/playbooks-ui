@@ -15,7 +15,7 @@ export const Breadcrumbs = ({
 	...props
 }: types.BreadcrumbsProps) => {
 	const { theme } = useInterface();
-	const base = theme.breadcrumb();
+	const base = theme.breadcrumbs();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return (

@@ -25,8 +25,11 @@ export const Btn = props => {
 		case 'text':
 			return <TextBtn {...props} />;
 
-		default:
+		case 'wrapper':
 			return <BtnWrapper {...props} />;
+
+		default:
+			return <PrimaryBtn {...props} />;
 	}
 };
 

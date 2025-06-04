@@ -2,16 +2,9 @@ import { useInterface } from 'contexts';
 import { Div, Img } from 'interface/html';
 import * as types from 'types/tag-types';
 
-export const TagsWrapper = ({
-	id,
-	name = 'TagsWrapper',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.TagWrapperProps) => {
+export const Tags = ({ id, name = 'Tags', tailwind, className, children, ...props }: types.TagsProps) => {
 	const { theme } = useInterface();
-	const base = theme.tagsWrapper();
+	const base = theme.tags();
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
