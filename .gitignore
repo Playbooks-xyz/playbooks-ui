@@ -1,13 +1,15 @@
 # dependencies
 node_modules
-.yalc
-yalc.lock
 
 # production
 build
 dist
 dist-ssr
 *.local
+
+# yalc
+.yalc
+.yalc-lock
 
 # logs
 logs

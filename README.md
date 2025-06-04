@@ -7,10 +7,12 @@
 - Next
 - Tailwind
 
-## Quick start
-- npm install @playbooks/ui
-
 ## Installation
+```
+npm install @playbooks/ui
+```
+
+## Usage
 Wrap your application with the <InterfaceProvider /> and make sure to pass in the `@playbooks/theme` or a separate theme of your choosing.
 
 ```tsx
@@ -34,8 +36,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 export default App;
 ```
 
-## Usage
-Import the components you want to use and compose from there.
+Then, import the components you want to use and compose from there.
 
 ```tsx
 import { Accordion, AccordionBody, AccordionText, AccordionTitle, AccordionToggle } from '@playbooks/ui/accordions';
@@ -68,25 +69,29 @@ const FaqAccordion = ({ title, text }) => {
 export { FaqAccordion }
 ```
 
-
-## Optionals
-- Google Maps
-
 ## Development
-- git clone
-- npm install
-- npm install -g yalc
-- npm start
+This project is designed for development using the [yalc](https://npmjs.com/package/yalc) library.
+- npm run dev
 - switch to project
-- yalc add @playbooks/ui (simulates NPM)
-- yalc remove @playbooks/ui (when finished)
+- npx yalc add @playbooks/theme
+- You may need to restart your application server
+- After that, this library will hot reload into the consuming application
 
-## Deployment
-- npm version [major|minor|patch]
-- npm run build
-- npm publish
-- npm run git
+## Scripts
+- We've included a couple of helpful scripts for faster development.
+- deploy: `npm run deploy -- 'commit message'`
+- publish: `npm run publish -- 'commit message' [major|minor|patch]`
 
-## Setup Husky
-- npx husky init
-- add `npm run clean` to `.husky/pre-commit.sh`
+## Husky
+- Husky configuration is setup to lint and format the repo on every commit
+- Edit the `.husky/pre-commit` file to change your settings
+
+## Author
+- [Eric Hubbell](http://www.erichubbell.com)
+- eric@erichubbell.com
+
+## Notes
+To see this library in action, checkout the following libraries and projects:
+- [playbooks](https://www.playbooks.xyz)
+- [@playbooks/ui][https://github.com/playbooks-xyz/playbooks-ui]
+- [@playbooks/theme][https://github.com/playbooks-xyz/playbooks-theme]

@@ -16,7 +16,7 @@
   "scripts": {
     "dev": "vite build --mode development --watch --minify false",
     "start": "vite build --mode development --minify false && npm run start:ts",
-    "start:ts": "dts-bundle-generator --config dts.config.ts && yalc publish",
+    "start:ts": "dts-bundle-generator --config dts.config.ts",
     "build": "vite build --mode production --minify true && npm run build:ts",
     "build:ts": "dts-bundle-generator --config dts.config.ts",
     "lint": "eslint src",
@@ -43,9 +43,9 @@
     "tailwindcss": "^4"
   },
   "dependencies": {
-    "@ehubbell/html": "^0.0.15",
+    "@ehubbell/html": "^0.1.5",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@playbooks/theme": "^0.1.1",
+    "@playbooks/theme": "^0.1.2",
     "@popperjs/core": "^2.11.8",
     "@react-google-maps/api": "^2.20.5",
     "@react-spring/web": "^10.0.1",
@@ -59,7 +59,6 @@
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
-    "@tailwindcss/vite": "^4.1.8",
     "@types/jest": "^29.5.1",
     "@types/react": "^19.1.1",
     "@types/react-dom": "^19.1.2",

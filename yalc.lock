@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "packages": {
+    "@ehubbell/html": {
+      "signature": "3cf614a2264876613085c0b3561ac598",
+      "file": true,
+      "replaced": "^0.0.15"
+    }
+  }
+}
