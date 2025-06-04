@@ -1,6 +1,5 @@
 import react from '@vitejs/plugin-react';
 
-import tailwindcss from '@tailwindcss/vite'
 import { exec } from 'node:child_process';
 import path from 'path';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
@@ -67,7 +66,7 @@ export default defineConfig({
 				path.resolve(__dirname, 'src/interface/toasts.tsx'),
 				path.resolve(__dirname, 'src/interface/tooltips.tsx'),
 				path.resolve(__dirname, 'src/utils/utils.tsx'),
-				// path.resolve(__dirname, 'src/styles.css'),
+				path.resolve(__dirname, 'src/styles.css'),
 			],
 			formats: ['cjs'],
 			name: 'playbooks-interface',

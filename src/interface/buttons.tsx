@@ -26,7 +26,7 @@ export const Btn = props => {
 			return <TextBtn {...props} />;
 
 		default:
-			return <PrimaryBtn {...props} />;
+			return <BtnWrapper {...props} />;
 	}
 };
 

@@ -27,7 +27,7 @@ export const Link = props => {
 			return <TextLink {...props} />;
 
 		default:
-			return <PrimaryLink {...props} />;
+			return <LinkWrapper {...props} />;
 	}
 };
 

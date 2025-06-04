@@ -12,6 +12,11 @@ fi
 
 echo -e "\n deploying updates...\n"
 
+echo -e "\n npm run packages \n"
+npm run packages & package_id=$!
+wait $package_id
+if [ $? -eq 1 ]; then exit; fi
+
 echo -e "\n git checkout main \n"
 git checkout main & checkout_id=$!
 wait $checkout_id

@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic';
 
-import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
 import { IconProps } from 'types';
 import { computeTailwind } from 'utils';
 
@@ -15,7 +14,7 @@ const FaWrapper = ({ type = 'fas', name, icon, transform, tailwind, className, .
 	return (
 		<FontAwesome
 			data-name={name}
-			icon={[type as IconPrefix, icon as IconName]}
+			icon={[type, icon]}
 			transform={transform}
 			className={classes}
 		/>
