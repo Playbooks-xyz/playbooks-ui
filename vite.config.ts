@@ -3,11 +3,16 @@ import path from 'path';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { defineConfig } from 'vite';
 
-function pushBuild() {
-	exec('dts-bundle-generator --config dts.config.ts', (response, error) => {
-		if (error) console.error(error);
-		exec('npx yalc push', (response, error) => (error ? console.error(error) : null));
-	});
+export function pushBuild() {
+	return {
+		name: 'yalc-push',
+		closeBundle: async () => {
+			exec('dts-bundle-generator --config dts.config.ts', (response, error) => {
+				if (error) console.error(error);
+				exec('npx yalc push', (response, error) => (error ? console.error(error) : null));
+			});
+		}
+	}
 }
 
 export default defineConfig({
@@ -98,12 +103,7 @@ export default defineConfig({
 			plugins: [peerDepsExternal()],
 		},
 	},
-	plugins: [
-		{
-			name: 'yalc-push',
-			closeBundle: pushBuild,
-		},
-	],
+	plugins: [pushBuild()],
 	resolve: {
 		alias: {
 			src: path.resolve(__dirname, '/src'),
