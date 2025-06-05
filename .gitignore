@@ -7,6 +7,9 @@ dist
 dist-ssr
 *.local
 
+# env
+.env
+
 # yalc
 .yalc
 .yalc-lock

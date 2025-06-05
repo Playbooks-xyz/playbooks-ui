@@ -51,7 +51,7 @@ export const SectionPretitle = ({
 export const SectionTitle = ({
 	id,
 	name = 'SectionTitle',
-	size = 'h4',
+	size = 'h5',
 	tailwind,
 	className,
 	children,
