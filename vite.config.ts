@@ -11,8 +11,8 @@ export function pushBuild() {
 				if (error) console.error(error);
 				exec('npx yalc push', (response, error) => (error ? console.error(error) : null));
 			});
-		}
-	}
+		},
+	};
 }
 
 export default defineConfig({
@@ -88,7 +88,7 @@ export default defineConfig({
 				'next/head',
 				'next/link',
 				'next/router',
-				'@fortawesome/fontawesome-svg-core'
+				'@fortawesome/fontawesome-svg-core',
 			],
 			output: {
 				globals: {

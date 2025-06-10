@@ -1,12 +1,20 @@
 import { useInterface } from 'contexts';
 import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
-import { FarIcon } from 'interface/icons';
+import { Icon } from 'interface/icons';
 import * as types from 'types/alert-types';
 
-export const Alert = ({ id, name = 'Alert', tailwind, className, children, ...props }: types.AlertProps) => {
+export const Alert = ({
+	id,
+	type = 'info',
+	name = 'Alert',
+	tailwind,
+	className,
+	children,
+	...props
+}: types.AlertProps) => {
 	const { theme } = useInterface();
-	const base = theme.alert();
+	const base = theme.alert({ type });
 	const computed = { ...base, ...props, tailwind, className, name };
 
 	return <Div {...computed}>{children}</Div>;
@@ -14,6 +22,7 @@ export const Alert = ({ id, name = 'Alert', tailwind, className, children, ...pr
 
 export const AlertIcon = ({
 	id,
+	type = 'fad',
 	name = 'AlertIcon',
 	icon = 'exclamation-circle',
 	tailwind,
@@ -24,7 +33,7 @@ export const AlertIcon = ({
 	const base = theme.alertIcon();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return <FarIcon icon={icon} {...computed} />;
+	return <Icon type={type} icon={icon} {...computed} />;
 };
 
 export const AlertBody = ({
