@@ -4,15 +4,7 @@ import { Div } from 'interface/html';
 import { Icon } from 'interface/icons';
 import * as types from 'types/alert-types';
 
-export const Alert = ({
-	id,
-	type = 'info',
-	name = 'Alert',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.AlertProps) => {
+export const Alert = ({ type = 'info', name = 'Alert', tailwind, className, children, ...props }: types.AlertProps) => {
 	const { theme } = useInterface();
 	const base = theme.alert({ type });
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -21,7 +13,6 @@ export const Alert = ({
 };
 
 export const AlertIcon = ({
-	id,
 	type = 'fad',
 	name = 'AlertIcon',
 	icon = 'exclamation-circle',
@@ -36,14 +27,7 @@ export const AlertIcon = ({
 	return <Icon type={type} icon={icon} {...computed} />;
 };
 
-export const AlertBody = ({
-	id,
-	name = 'AlertBody',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.AlertBodyProps) => {
+export const AlertBody = ({ name = 'AlertBody', tailwind, className, children, ...props }: types.AlertBodyProps) => {
 	const { theme } = useInterface();
 	const base = theme.alertBody();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -52,7 +36,6 @@ export const AlertBody = ({
 };
 
 export const AlertTitle = ({
-	id,
 	name = 'AlertTitle',
 	size = 'h6',
 	tailwind,
@@ -71,14 +54,7 @@ export const AlertTitle = ({
 	);
 };
 
-export const AlertText = ({
-	id,
-	name = 'AlertText',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.AlertTextProps) => {
+export const AlertText = ({ name = 'AlertText', tailwind, className, children, ...props }: types.AlertTextProps) => {
 	const { theme } = useInterface();
 	const base = theme.alertText();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -87,7 +63,6 @@ export const AlertText = ({
 };
 
 export const AlertActions = ({
-	id,
 	name = 'AlertActions',
 	tailwind,
 	className,

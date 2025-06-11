@@ -3,7 +3,7 @@ import { Font, P } from 'interface/fonts';
 import { Div, Img } from 'interface/html';
 import * as types from 'types/avatar-types';
 
-export const Avatar = ({ id, name = 'Avatar', tailwind, className, children, ...props }: types.AvatarProps) => {
+export const Avatar = ({ name = 'Avatar', tailwind, className, children, ...props }: types.AvatarProps) => {
 	const { theme } = useInterface();
 	const base = theme.avatar();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -12,7 +12,6 @@ export const Avatar = ({ id, name = 'Avatar', tailwind, className, children, ...
 };
 
 export const AvatarBadge = ({
-	id,
 	name = 'AvatarBadge',
 	size = 'sm',
 	tailwind,
@@ -28,7 +27,6 @@ export const AvatarBadge = ({
 };
 
 export const AvatarImg = ({
-	id,
 	name = 'AvatarImg',
 	alt = 'thumbnail',
 	size = 'md',
@@ -43,14 +41,7 @@ export const AvatarImg = ({
 	return <Img alt={alt} {...computed} />;
 };
 
-export const AvatarBody = ({
-	id,
-	name = 'AvatarBody',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.AvatarBodyProps) => {
+export const AvatarBody = ({ name = 'AvatarBody', tailwind, className, children, ...props }: types.AvatarBodyProps) => {
 	const { theme } = useInterface();
 	const base = theme.avatarBody();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -59,7 +50,6 @@ export const AvatarBody = ({
 };
 
 export const AvatarTitle = ({
-	id,
 	name = 'AvatarTitle',
 	size = 'h6',
 	tailwind,
@@ -78,14 +68,7 @@ export const AvatarTitle = ({
 	);
 };
 
-export const AvatarText = ({
-	id,
-	name = 'AvatarText',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.AvatarTextProps) => {
+export const AvatarText = ({ name = 'AvatarText', tailwind, className, children, ...props }: types.AvatarTextProps) => {
 	const { theme } = useInterface();
 	const base = theme.avatarText();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -94,7 +77,6 @@ export const AvatarText = ({
 };
 
 export const AvatarActions = ({
-	id,
 	name = 'AvatarActions',
 	tailwind,
 	className,

@@ -4,14 +4,7 @@ import { FarIcon } from 'interface/icons';
 import { Nav } from 'interface/navs';
 import * as types from 'types/pagination-types';
 
-export const Pagination = ({
-	id,
-	name = 'Pagination',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.PaginationProps) => {
+export const Pagination = ({ name = 'Pagination', tailwind, className, children, ...props }: types.PaginationProps) => {
 	const { theme } = useInterface();
 	const base = theme.pagination();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -20,7 +13,6 @@ export const Pagination = ({
 };
 
 export const PaginationFirst = ({
-	id,
 	name = 'PaginationFirst',
 	alt = 'first page',
 	disabled,
@@ -41,7 +33,6 @@ export const PaginationFirst = ({
 };
 
 export const PaginationPrev = ({
-	id,
 	name = 'PaginationPrev',
 	alt = 'prev page',
 	disabled,
@@ -62,7 +53,6 @@ export const PaginationPrev = ({
 };
 
 export const PaginationBtn = ({
-	id,
 	name = 'PaginationBtn',
 	alt = 'specific page',
 	active,
@@ -84,7 +74,6 @@ export const PaginationBtn = ({
 };
 
 export const PaginationNext = ({
-	id,
 	name = 'PaginationNext',
 	alt = 'next page',
 	disabled,
@@ -105,7 +94,6 @@ export const PaginationNext = ({
 };
 
 export const PaginationLast = ({
-	id,
 	name = 'PaginationLast',
 	alt = 'last page',
 	disabled,

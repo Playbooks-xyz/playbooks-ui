@@ -4,14 +4,7 @@ import { FormSelect } from 'interface/forms';
 import { Div } from 'interface/html';
 import * as types from 'types/tab-types';
 
-export const TabWrapper = ({
-	id,
-	name = 'TabWrapper',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.TabWrapperProps) => {
+export const TabWrapper = ({ name = 'TabWrapper', tailwind, className, children, ...props }: types.TabWrapperProps) => {
 	const { theme } = useInterface();
 	const base = theme.tabWrapper();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -20,7 +13,6 @@ export const TabWrapper = ({
 };
 
 export const TabSelect = ({
-	id,
 	name = 'TabSelect',
 	activeTab,
 	onSelect,
@@ -38,7 +30,6 @@ export const TabSelect = ({
 };
 
 export const Tabs = ({
-	id,
 	name = 'Tabs',
 	activeTab,
 	tabs,
@@ -61,7 +52,6 @@ export const Tabs = ({
 };
 
 export const Tab = ({
-	id,
 	name = 'Tab',
 	alt = 'select tab',
 	variant = 'accent',
@@ -81,7 +71,7 @@ export const Tab = ({
 	return <Btn variant={variant} onClick={() => onSelect(value)} {...computed} />;
 };
 
-export const TabPanes = ({ id, name = 'TabPanes', tailwind, className, children, ...props }: types.TabPanesProps) => {
+export const TabPanes = ({ name = 'TabPanes', tailwind, className, children, ...props }: types.TabPanesProps) => {
 	const { theme } = useInterface();
 	const base = theme.tabPanes();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -90,7 +80,6 @@ export const TabPanes = ({ id, name = 'TabPanes', tailwind, className, children,
 };
 
 export const TabPane = ({
-	id,
 	name = 'TabPane',
 	active,
 	value,

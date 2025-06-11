@@ -4,14 +4,7 @@ import { Div } from 'interface/html';
 import { Section } from 'interface/sections';
 import * as types from 'types/prefooter-types';
 
-export const Prefooter = ({
-	id,
-	name = 'Prefooter',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.PrefooterProps) => {
+export const Prefooter = ({ name = 'Prefooter', tailwind, className, children, ...props }: types.PrefooterProps) => {
 	const { theme } = useInterface();
 	const base = theme.prefooter();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -20,7 +13,6 @@ export const Prefooter = ({
 };
 
 export const PrefooterBody = ({
-	id,
 	name = 'PrefooterBody',
 	tailwind,
 	className,
@@ -35,7 +27,6 @@ export const PrefooterBody = ({
 };
 
 export const PrefooterPretitle = ({
-	id,
 	name = 'PrefooterPretitle',
 	tailwind,
 	className,
@@ -50,7 +41,6 @@ export const PrefooterPretitle = ({
 };
 
 export const PrefooterTitle = ({
-	id,
 	name = 'PrefooterTitle',
 	size = 'h2',
 	tailwind,
@@ -70,7 +60,6 @@ export const PrefooterTitle = ({
 };
 
 export const PrefooterSubtitle = ({
-	id,
 	name = 'PrefooterSubtitle',
 	size = 'h5',
 	tailwind,
@@ -90,7 +79,6 @@ export const PrefooterSubtitle = ({
 };
 
 export const PrefooterText = ({
-	id,
 	name = 'PrefooterText',
 	tailwind,
 	className,
@@ -105,7 +93,6 @@ export const PrefooterText = ({
 };
 
 export const PrefooterActions = ({
-	id,
 	name = 'PrefooterActions',
 	tailwind,
 	className,

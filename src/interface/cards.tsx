@@ -4,7 +4,7 @@ import { Div, Img } from 'interface/html';
 import { Icon } from 'interface/icons';
 import * as types from 'types/card-types';
 
-export const Card = ({ id, name = 'Card', tailwind, className, children, ...props }: types.CardProps) => {
+export const Card = ({ name = 'Card', tailwind, className, children, ...props }: types.CardProps) => {
 	const { theme } = useInterface();
 	const base = theme.card();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -12,14 +12,7 @@ export const Card = ({ id, name = 'Card', tailwind, className, children, ...prop
 	return <Div {...computed}>{children}</Div>;
 };
 
-export const CardHeader = ({
-	id,
-	name = 'CardHeader',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.CardHeaderProps) => {
+export const CardHeader = ({ name = 'CardHeader', tailwind, className, children, ...props }: types.CardHeaderProps) => {
 	const { theme } = useInterface();
 	const base = theme.cardHeader();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -28,7 +21,6 @@ export const CardHeader = ({
 };
 
 export const CardIcon = ({
-	id,
 	name = 'CardIcon',
 	type = 'fad',
 	icon = 'code',
@@ -44,7 +36,6 @@ export const CardIcon = ({
 };
 
 export const CardImg = ({
-	id,
 	name = 'CardImg',
 	alt = 'thumbnail',
 	tailwind,
@@ -59,7 +50,7 @@ export const CardImg = ({
 	return <Img alt={alt} {...computed} />;
 };
 
-export const CardBody = ({ id, name = 'CardBody', tailwind, className, children, ...props }: types.CardBodyProps) => {
+export const CardBody = ({ name = 'CardBody', tailwind, className, children, ...props }: types.CardBodyProps) => {
 	const { theme } = useInterface();
 	const base = theme.cardBody();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -68,7 +59,6 @@ export const CardBody = ({ id, name = 'CardBody', tailwind, className, children,
 };
 
 export const CardPretitle = ({
-	id,
 	name = 'CardPretitle',
 	tailwind,
 	className,
@@ -83,7 +73,6 @@ export const CardPretitle = ({
 };
 
 export const CardTitle = ({
-	id,
 	name = 'CardTitle',
 	size = 'h6',
 	tailwind,
@@ -103,7 +92,6 @@ export const CardTitle = ({
 };
 
 export const CardSubtitle = ({
-	id,
 	name = 'CardSubtitle',
 	tailwind,
 	className,
@@ -117,7 +105,7 @@ export const CardSubtitle = ({
 	return <P {...computed}>{children}</P>;
 };
 
-export const CardText = ({ id, name = 'CardText', tailwind, className, children, ...props }: types.CardTextProps) => {
+export const CardText = ({ name = 'CardText', tailwind, className, children, ...props }: types.CardTextProps) => {
 	const { theme } = useInterface();
 	const base = theme.cardText();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -125,14 +113,7 @@ export const CardText = ({ id, name = 'CardText', tailwind, className, children,
 	return <P {...computed}>{children}</P>;
 };
 
-export const CardFooter = ({
-	id,
-	name = 'CardFooter',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.CardFooterProps) => {
+export const CardFooter = ({ name = 'CardFooter', tailwind, className, children, ...props }: types.CardFooterProps) => {
 	const { theme } = useInterface();
 	const base = theme.cardFooter();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -141,7 +122,6 @@ export const CardFooter = ({
 };
 
 export const CardActions = ({
-	id,
 	name = 'CardActions',
 	tailwind,
 	className,

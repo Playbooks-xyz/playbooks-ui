@@ -1,24 +1,26 @@
+import * as HTML from '@ehubbell/html';
 import { useInterface } from 'contexts';
 import { Btn } from 'interface/buttons';
 import { Font, P } from 'interface/fonts';
 import { Div, Li, Ul } from 'interface/html';
 import { Link } from 'interface/links';
 import * as types from 'types/footer-types';
+import { computeProps } from 'utils';
 
-export const Footer = ({ id, name = 'Footer', tailwind, className, children, ...props }: types.FooterProps) => {
+export const Footer = ({ name = 'Footer', tailwind, className, children, ...props }: types.FooterProps) => {
 	const { theme } = useInterface();
 	const base = theme.footer();
-	const computed = { ...base, ...props, tailwind, className };
+	const formatted = { ...base, ...props, ...tailwind };
+	const filtered = computeProps(props);
 
 	return (
-		<Div id={id} name={name} {...computed}>
+		<HTML.Footer name={name} tailwind={formatted} className={className} {...filtered}>
 			{children}
-		</Div>
+		</HTML.Footer>
 	);
 };
 
 export const FooterHeader = ({
-	id,
 	name = 'FooterHeader',
 	tailwind,
 	className,
@@ -32,14 +34,7 @@ export const FooterHeader = ({
 	return <Div {...computed}>{children}</Div>;
 };
 
-export const FooterBody = ({
-	id,
-	name = 'FooterBody',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.FooterBodyProps) => {
+export const FooterBody = ({ name = 'FooterBody', tailwind, className, children, ...props }: types.FooterBodyProps) => {
 	const { theme } = useInterface();
 	const base = theme.footerBody();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -48,7 +43,6 @@ export const FooterBody = ({
 };
 
 export const FooterTitle = ({
-	id,
 	name = 'FooterTitle',
 	size = 'h6',
 	tailwind,
@@ -67,14 +61,7 @@ export const FooterTitle = ({
 	);
 };
 
-export const FooterText = ({
-	id,
-	name = 'FooterText',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.FooterTextProps) => {
+export const FooterText = ({ name = 'FooterText', tailwind, className, children, ...props }: types.FooterTextProps) => {
 	const { theme } = useInterface();
 	const base = theme.footerText();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -82,14 +69,7 @@ export const FooterText = ({
 	return <P {...computed}>{children}</P>;
 };
 
-export const FooterList = ({
-	id,
-	name = 'FooterList',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.FooterListProps) => {
+export const FooterList = ({ name = 'FooterList', tailwind, className, children, ...props }: types.FooterListProps) => {
 	const { theme } = useInterface();
 	const base = theme.footerList();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -97,14 +77,7 @@ export const FooterList = ({
 	return <Ul {...computed}>{children}</Ul>;
 };
 
-export const FooterItem = ({
-	id,
-	name = 'FooterItem',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.FooterItemProps) => {
+export const FooterItem = ({ name = 'FooterItem', tailwind, className, children, ...props }: types.FooterItemProps) => {
 	const { theme } = useInterface();
 	const base = theme.footerItem();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -112,14 +85,7 @@ export const FooterItem = ({
 	return <Li {...computed}>{children}</Li>;
 };
 
-export const FooterBtn = ({
-	id,
-	name = 'FooterBtn',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.FooterBtnProps) => {
+export const FooterBtn = ({ name = 'FooterBtn', tailwind, className, children, ...props }: types.FooterBtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.footerBtn();
 	const computed = { ...base, ...props, tailwind, className, children, name };
@@ -127,14 +93,7 @@ export const FooterBtn = ({
 	return <Btn variant='text' {...computed} />;
 };
 
-export const FooterLink = ({
-	id,
-	name = 'FooterLink',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.FooterLinkProps) => {
+export const FooterLink = ({ name = 'FooterLink', tailwind, className, children, ...props }: types.FooterLinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.footerLink();
 	const computed = { ...base, ...props, tailwind, className, children, name };
@@ -143,7 +102,6 @@ export const FooterLink = ({
 };
 
 export const FooterFooter = ({
-	id,
 	name = 'FooterFooter',
 	tailwind,
 	className,

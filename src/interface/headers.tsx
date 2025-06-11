@@ -3,7 +3,7 @@ import { Font, P } from 'interface/fonts';
 import { Div } from 'interface/html';
 import * as types from 'types/header-types';
 
-export const Header = ({ id, name = 'Header', tailwind, className, children, ...props }: types.HeaderProps) => {
+export const Header = ({ name = 'Header', tailwind, className, children, ...props }: types.HeaderProps) => {
 	const { theme } = useInterface();
 	const base = theme.header();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -12,7 +12,6 @@ export const Header = ({ id, name = 'Header', tailwind, className, children, ...
 };
 
 export const HeaderTitle = ({
-	id,
 	name = 'HeaderTitle',
 	size = 'h4',
 	tailwind,
@@ -32,7 +31,6 @@ export const HeaderTitle = ({
 };
 
 export const HeaderSubtitle = ({
-	id,
 	name = 'HeaderSubtitle',
 	size = 'h6',
 	tailwind,
@@ -51,14 +49,7 @@ export const HeaderSubtitle = ({
 	);
 };
 
-export const HeaderText = ({
-	id,
-	name = 'HeaderText',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.HeaderTextProps) => {
+export const HeaderText = ({ name = 'HeaderText', tailwind, className, children, ...props }: types.HeaderTextProps) => {
 	const { theme } = useInterface();
 	const base = theme.headerText();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -67,7 +58,6 @@ export const HeaderText = ({
 };
 
 export const HeaderActions = ({
-	id,
 	name = 'HeaderActions',
 	tailwind,
 	className,

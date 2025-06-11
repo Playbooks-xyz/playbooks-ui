@@ -80,7 +80,6 @@ export const Tooltip = ({
 };
 
 export const TooltipInner = ({
-	id,
 	name = 'TooltipInner',
 	className,
 	children,
@@ -95,7 +94,6 @@ export const TooltipInner = ({
 };
 
 export const TooltipArrow = ({
-	id,
 	name = 'TooltipArrow',
 	setArrowElement,
 	tailwind,

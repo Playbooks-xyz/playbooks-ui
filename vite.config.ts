@@ -72,11 +72,8 @@ export default defineConfig({
 				path.resolve(__dirname, 'src/styles.css'),
 			],
 			formats: ['cjs'],
-			name: 'playbooks-interface',
-			fileName: (format, entryName) => {
-				// console.log('entryName: ', entryName)
-				return `${entryName}.cjs`;
-			},
+			name: 'playbooks-ui',
+			fileName: (format, entryName) => `${entryName}.cjs`,
 		},
 		rollupOptions: {
 			external: [

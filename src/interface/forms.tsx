@@ -17,29 +17,18 @@ export const Form = ({ id, name = 'Form', onSubmit, tailwind, className, childre
 	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
-		<HTML.Form onSubmit={onSubmit} name={name} className={classes}>
+		<HTML.Form id={id} onSubmit={onSubmit} name={name} className={classes}>
 			{children}
 		</HTML.Form>
 	);
 };
 
-export const FormGroup = ({
-	id,
-	name = 'FormGroup',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.FormGroupProps) => {
+export const FormGroup = ({ name = 'FormGroup', tailwind, className, children, ...props }: types.FormGroupProps) => {
 	const { theme } = useInterface();
 	const base = theme.formGroup();
 	const computed = { ...base, ...props, tailwind, name, className };
 
-	return (
-		<Div id={id} {...computed}>
-			{children}
-		</Div>
-	);
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const FormLabel = ({
@@ -346,7 +335,7 @@ export const FormSelect = ({
 	);
 };
 
-export const FormText = ({ id, name = 'FormText', tailwind, className, children, ...props }: types.FormTextProps) => {
+export const FormText = ({ name = 'FormText', tailwind, className, children, ...props }: types.FormTextProps) => {
 	const { theme } = useInterface();
 	const base = theme.formText();
 	const computed = { ...base, ...props, tailwind, name, className };

@@ -2,14 +2,7 @@ import { useInterface } from 'contexts';
 import { Li, Ul } from 'interface/html';
 import * as types from 'types/list-group-types';
 
-export const ListGroup = ({
-	id,
-	name = 'ListGroup',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.LiPropsstGroup) => {
+export const ListGroup = ({ name = 'ListGroup', tailwind, className, children, ...props }: types.LiPropsstGroup) => {
 	const { theme } = useInterface();
 	const base = theme.listGroup();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -17,7 +10,7 @@ export const ListGroup = ({
 	return <Ul {...computed}>{children}</Ul>;
 };
 
-export const ListItem = ({ id, name = 'ListItem', tailwind, className, children, ...props }: types.LiPropsstItem) => {
+export const ListItem = ({ name = 'ListItem', tailwind, className, children, ...props }: types.LiPropsstItem) => {
 	const { theme } = useInterface();
 	const base = theme.listItem();
 	const computed = { ...base, ...props, tailwind, className, name };

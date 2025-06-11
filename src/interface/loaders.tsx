@@ -5,7 +5,6 @@ import { Oval } from 'interface/spinners';
 import * as types from 'types/loader-types';
 
 export const ModalLoader = ({
-	id,
 	name = 'ModalLoader',
 	title = 'Processing Order',
 	message = 'Give us a second...',
@@ -33,7 +32,6 @@ export const ModalLoader = ({
 };
 
 export const PageLoader = ({
-	id,
 	name = 'PageLoader',
 	title = 'Hang Tight',
 	message = 'Loading dashboard...',
@@ -61,7 +59,6 @@ export const PageLoader = ({
 };
 
 export const SectionLoader = ({
-	id,
 	name = 'SectionLoader',
 	title = 'Loading',
 	message = 'Give us a second...',

@@ -9,7 +9,6 @@ import { Div } from 'interface/html';
 import * as types from 'types/slide-types';
 
 export const SlideWrapper = ({
-	id,
 	name = 'SlideWrapper',
 	open,
 	onClose,
@@ -31,7 +30,6 @@ export const SlideWrapper = ({
 };
 
 export const SlideBackdrop = ({
-	id,
 	name = 'SlideBackdrop',
 	open,
 	onClose,
@@ -46,7 +44,6 @@ export const SlideBackdrop = ({
 };
 
 export const Slide = ({
-	id,
 	name = 'Slide',
 	open,
 	placement = 'left',
@@ -97,7 +94,6 @@ export const Slide = ({
 };
 
 export const SlideHeader = ({
-	id,
 	name = 'SlideHeader',
 	onClose,
 	tailwind,
@@ -117,14 +113,7 @@ export const SlideHeader = ({
 	);
 };
 
-export const SlideTitle = ({
-	id,
-	name = 'SlideTitle',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.SlideTitleProps) => {
+export const SlideTitle = ({ name = 'SlideTitle', tailwind, className, children, ...props }: types.SlideTitleProps) => {
 	const { theme } = useInterface();
 	const base = theme.slideTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -132,14 +121,7 @@ export const SlideTitle = ({
 	return <H4 {...computed}>{children}</H4>;
 };
 
-export const SlideBody = ({
-	id,
-	name = 'SlideBody',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.SlideBodyProps) => {
+export const SlideBody = ({ name = 'SlideBody', tailwind, className, children, ...props }: types.SlideBodyProps) => {
 	const { theme } = useInterface();
 	const base = theme.slideBody();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -148,7 +130,6 @@ export const SlideBody = ({
 };
 
 export const SlideFooter = ({
-	id,
 	name = 'SlideFooter',
 	tailwind,
 	className,

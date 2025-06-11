@@ -4,7 +4,7 @@ import { Div } from 'interface/html';
 import { Icon } from 'interface/icons';
 import * as types from 'types/feedback-types';
 
-export const Feedback = ({ id, name = 'Feedback', tailwind, className, children, ...props }: types.FeedbackProps) => {
+export const Feedback = ({ name = 'Feedback', tailwind, className, children, ...props }: types.FeedbackProps) => {
 	const { theme } = useInterface();
 	const base = theme.feedback();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -13,7 +13,6 @@ export const Feedback = ({ id, name = 'Feedback', tailwind, className, children,
 };
 
 export const FeedbackHeader = ({
-	id,
 	name = 'FeedbackHeader',
 	tailwind,
 	className,
@@ -28,7 +27,6 @@ export const FeedbackHeader = ({
 };
 
 export const FeedbackIcon = ({
-	id,
 	name = 'FeedbackIcon',
 	type = 'fad',
 	icon,
@@ -44,7 +42,6 @@ export const FeedbackIcon = ({
 };
 
 export const FeedbackBody = ({
-	id,
 	name = 'FeedbackBody',
 	tailwind,
 	className,
@@ -59,7 +56,6 @@ export const FeedbackBody = ({
 };
 
 export const FeedbackPretitle = ({
-	id,
 	name = 'SectionPretitle',
 	tailwind,
 	className,
@@ -74,7 +70,6 @@ export const FeedbackPretitle = ({
 };
 
 export const FeedbackTitle = ({
-	id,
 	name = 'FeedbackTitle',
 	size = 'h5',
 	tailwind,
@@ -94,7 +89,6 @@ export const FeedbackTitle = ({
 };
 
 export const FeedbackText = ({
-	id,
 	name = 'FeedbackText',
 	tailwind,
 	className,
@@ -109,7 +103,6 @@ export const FeedbackText = ({
 };
 
 export const FeedbackActions = ({
-	id,
 	name = 'FeedbackActions',
 	tailwind,
 	className,

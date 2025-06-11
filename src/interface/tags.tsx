@@ -2,7 +2,7 @@ import { useInterface } from 'contexts';
 import { Div, Img } from 'interface/html';
 import * as types from 'types/tag-types';
 
-export const Tags = ({ id, name = 'Tags', tailwind, className, children, ...props }: types.TagsProps) => {
+export const Tags = ({ name = 'Tags', tailwind, className, children, ...props }: types.TagsProps) => {
 	const { theme } = useInterface();
 	const base = theme.tags();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -10,7 +10,7 @@ export const Tags = ({ id, name = 'Tags', tailwind, className, children, ...prop
 	return <Div {...computed}>{children}</Div>;
 };
 
-export const Tag = ({ id, name = 'Tag', size = 'md', tailwind, className, children, ...props }: types.TagProps) => {
+export const Tag = ({ name = 'Tag', size = 'md', tailwind, className, children, ...props }: types.TagProps) => {
 	const { theme } = useInterface();
 	const base = theme.tag({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -19,7 +19,6 @@ export const Tag = ({ id, name = 'Tag', size = 'md', tailwind, className, childr
 };
 
 export const TagImg = ({
-	id,
 	name = 'TagImg',
 	size = 'md',
 	src,
@@ -35,7 +34,7 @@ export const TagImg = ({
 	return <Img src={src} alt={alt} {...computed} />;
 };
 
-export const TagBody = ({ id, name = 'TagBody', tailwind, className, children, ...props }: types.TagBodyProps) => {
+export const TagBody = ({ name = 'TagBody', tailwind, className, children, ...props }: types.TagBodyProps) => {
 	const { theme } = useInterface();
 	const base = theme.tagBody();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -43,14 +42,7 @@ export const TagBody = ({ id, name = 'TagBody', tailwind, className, children, .
 	return <Div {...computed}>{children}</Div>;
 };
 
-export const TagActions = ({
-	id,
-	name = 'TagActions',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.TagActionsProps) => {
+export const TagActions = ({ name = 'TagActions', tailwind, className, children, ...props }: types.TagActionsProps) => {
 	const { theme } = useInterface();
 	const base = theme.tagActions();
 	const computed = { ...base, ...props, tailwind, className, name };

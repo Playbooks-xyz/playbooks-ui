@@ -20,14 +20,13 @@ export const RadioWrapper = ({
 	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
-		<HTML.Label onClick={onClick} className={classes}>
+		<HTML.Label id={id} onClick={onClick} className={classes}>
 			{children}
 		</HTML.Label>
 	);
 };
 
 export const Radio = ({
-	id,
 	name = 'Radio',
 	title,
 	text,
@@ -54,7 +53,6 @@ export const Radio = ({
 };
 
 export const RadioInput = ({
-	id,
 	name = 'RadioInput',
 	value,
 	tailwind,
@@ -80,7 +78,7 @@ export const RadioInput = ({
 	);
 };
 
-export const RadioTitle = ({ id, name = 'RadioLabel', tailwind, className, children, ...props }: types.FontProps) => {
+export const RadioTitle = ({ name = 'RadioLabel', tailwind, className, children, ...props }: types.FontProps) => {
 	const { theme } = useInterface();
 	const base = theme.radioTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -88,7 +86,7 @@ export const RadioTitle = ({ id, name = 'RadioLabel', tailwind, className, child
 	return <P {...computed}>{children}</P>;
 };
 
-export const RadioText = ({ id, name = 'RadioLabel', tailwind, className, children, ...props }: types.FontProps) => {
+export const RadioText = ({ name = 'RadioLabel', tailwind, className, children, ...props }: types.FontProps) => {
 	const { theme } = useInterface();
 	const base = theme.radioText();
 	const computed = { ...base, ...props, tailwind, className, name };

@@ -3,7 +3,6 @@ import { Div } from 'interface/html';
 import * as types from 'types/grid-types';
 
 export const Container = ({
-	id,
 	name = 'Container',
 	size,
 	tailwind,
@@ -18,7 +17,7 @@ export const Container = ({
 	return <Div {...computed}>{children}</Div>;
 };
 
-export const Grid = ({ id, name = 'Grid', cols = '12', tailwind, className, children, ...props }: types.GridProps) => {
+export const Grid = ({ name = 'Grid', cols = '12', tailwind, className, children, ...props }: types.GridProps) => {
 	const { theme } = useInterface();
 	const base = theme.grid({ cols });
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -27,7 +26,6 @@ export const Grid = ({ id, name = 'Grid', cols = '12', tailwind, className, chil
 };
 
 export const Col = ({
-	id,
 	name = 'Col',
 	span = '12',
 	sm,

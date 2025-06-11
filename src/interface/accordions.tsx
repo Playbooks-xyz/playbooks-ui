@@ -7,7 +7,6 @@ import { Div } from 'interface/html';
 import * as types from 'types/accordion-types';
 
 export const Accordion = ({
-	id,
 	name = 'Accordion',
 	open,
 	tailwind,
@@ -19,11 +18,7 @@ export const Accordion = ({
 	const base = theme.accordion();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return (
-		<Div id={id} {...computed}>
-			{children}
-		</Div>
-	);
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const AccordionToggle = ({
@@ -42,11 +37,10 @@ export const AccordionToggle = ({
 	const base = theme.accordionToggle({ open });
 	const computed = { ...base, ...props, tailwind, className, children, name };
 
-	return <Btn variant={variant} nextIcon={nextIcon} onClick={() => onClick(id)} {...computed} />;
+	return <Btn id={id} variant={variant} nextIcon={nextIcon} onClick={() => onClick(id)} {...computed} />;
 };
 
 export const AccordionTitle = ({
-	id,
 	name = 'AccordionTitle',
 	size = 'h6',
 	tailwind,
@@ -66,7 +60,6 @@ export const AccordionTitle = ({
 };
 
 export const AccordionBody = ({
-	id,
 	name = 'AccordionBody',
 	open,
 	animate,
@@ -109,7 +102,6 @@ export const AccordionBody = ({
 };
 
 export const AccordionText = ({
-	id,
 	name = 'AccordionText',
 	tailwind,
 	className,

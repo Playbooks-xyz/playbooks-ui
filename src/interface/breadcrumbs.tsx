@@ -7,7 +7,6 @@ import { Nav, NavList } from 'interface/navs';
 import * as types from 'types/breadcrumb-types';
 
 export const Breadcrumbs = ({
-	id,
 	name = 'Breadcrumbs',
 	tailwind,
 	className,
@@ -26,7 +25,6 @@ export const Breadcrumbs = ({
 };
 
 export const BreadcrumbItem = ({
-	id,
 	name = 'BreadcrumbItem',
 	icon = 'chevron-right',
 	arrow = true,
@@ -48,7 +46,6 @@ export const BreadcrumbItem = ({
 };
 
 export const BreadcrumbBtn = ({
-	id,
 	name = 'BreadcrumbBtn',
 	size = 'xxs',
 	active,
@@ -66,7 +63,6 @@ export const BreadcrumbBtn = ({
 };
 
 export const BreadcrumbLink = ({
-	id,
 	name = 'BreadcrumbLink',
 	size = 'xxs',
 	active,

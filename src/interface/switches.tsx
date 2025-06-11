@@ -7,7 +7,6 @@ import * as types from 'types';
 import { computeTailwind } from 'utils';
 
 export const SwitchGroup = ({
-	id,
 	name = 'SwitchGroup',
 	tailwind,
 	className,
@@ -18,15 +17,10 @@ export const SwitchGroup = ({
 	const base = theme.switchGroup();
 	const computed = { ...base, ...props, tailwind, className, name };
 
-	return (
-		<Div id={id} {...computed}>
-			{children}
-		</Div>
-	);
+	return <Div {...computed}>{children}</Div>;
 };
 
 export const Switch = ({
-	id,
 	name = 'Switch',
 	icon,
 	checked,
@@ -50,7 +44,6 @@ export const Switch = ({
 };
 
 export const SwitchBackdrop = ({
-	id,
 	name = 'SwitchBackdrop',
 	checked,
 	tailwind,
@@ -65,7 +58,6 @@ export const SwitchBackdrop = ({
 };
 
 export const SwitchInner = ({
-	id,
 	name = 'SwitchInner',
 	checked,
 	tailwind,
@@ -80,7 +72,6 @@ export const SwitchInner = ({
 };
 
 export const SwitchToggle = ({
-	id,
 	name = 'SwitchToggle',
 	icon,
 	checked,
@@ -104,7 +95,6 @@ export const SwitchToggle = ({
 };
 
 export const SwitchLabel = ({
-	id,
 	name = 'SwitchLabel',
 	htmlFor,
 	tailwind,

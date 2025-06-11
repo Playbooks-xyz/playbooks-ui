@@ -7,7 +7,7 @@ import { AccentLink } from 'interface/links';
 import * as types from 'types/nav-types';
 import { computeProps } from 'utils';
 
-export const Nav = ({ name = 'NavWrapper', tailwind, className, children, ...props }: types.NavProps) => {
+export const Nav = ({ name = 'Nav', tailwind, className, children, ...props }: types.NavProps) => {
 	const { theme } = useInterface();
 	const base = theme.nav();
 	const formatted = { ...base, ...props, ...tailwind };
@@ -20,14 +20,7 @@ export const Nav = ({ name = 'NavWrapper', tailwind, className, children, ...pro
 	);
 };
 
-export const NavHeader = ({
-	id,
-	name = 'NavHeader',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.NavHeaderProps) => {
+export const NavHeader = ({ name = 'NavHeader', tailwind, className, children, ...props }: types.NavHeaderProps) => {
 	const { theme } = useInterface();
 	const base = theme.navHeader();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -36,7 +29,6 @@ export const NavHeader = ({
 };
 
 export const NavTitle = ({
-	id,
 	name = 'NavTitle',
 	size = 'h6',
 	tailwind,
@@ -55,15 +47,7 @@ export const NavTitle = ({
 	);
 };
 
-export const NavBody = ({
-	id,
-	name = 'NavBody',
-	size,
-	tailwind,
-	className,
-	children,
-	...props
-}: types.NavBodyProps) => {
+export const NavBody = ({ name = 'NavBody', size, tailwind, className, children, ...props }: types.NavBodyProps) => {
 	const { theme } = useInterface();
 	const base = theme.navBody({ size });
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -87,7 +71,7 @@ export const NavItem = ({ tailwind, children, ...props }: types.NavItemProps) =>
 	return <Li {...computed}>{children}</Li>;
 };
 
-export const NavBtn = ({ id, name = 'NavBtn', tailwind, className, children, ...props }: types.NavBtnProps) => {
+export const NavBtn = ({ name = 'NavBtn', tailwind, className, children, ...props }: types.NavBtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.navBtn();
 	const computed = { ...base, ...props, tailwind, className, children, name };
@@ -95,7 +79,7 @@ export const NavBtn = ({ id, name = 'NavBtn', tailwind, className, children, ...
 	return <AccentBtn {...computed} />;
 };
 
-export const NavLink = ({ id, name = 'NavLink', tailwind, className, children, ...props }: types.NavLinkProps) => {
+export const NavLink = ({ name = 'NavLink', tailwind, className, children, ...props }: types.NavLinkProps) => {
 	const { theme } = useInterface();
 	const base = theme.navLink();
 	const computed = { ...base, ...props, tailwind, className, children, name };

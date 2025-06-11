@@ -40,7 +40,7 @@ export const Icon = props => {
 	}
 };
 
-export const FabIcon = ({ id, name = 'FabIcon', icon, tailwind, className, ...props }: types.IconProps) => {
+export const FabIcon = ({ name = 'FabIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const { theme } = useInterface();
 	const base = theme.icon();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -48,7 +48,7 @@ export const FabIcon = ({ id, name = 'FabIcon', icon, tailwind, className, ...pr
 	return <FaWrapper type='fab' icon={icon} {...computed} />;
 };
 
-export const FadIcon = ({ id, name = 'FadIcon', icon, tailwind, className, ...props }: types.IconProps) => {
+export const FadIcon = ({ name = 'FadIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const { theme } = useInterface();
 	const base = theme.icon();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -56,7 +56,7 @@ export const FadIcon = ({ id, name = 'FadIcon', icon, tailwind, className, ...pr
 	return <FaWrapper type='fad' icon={icon} {...computed} />;
 };
 
-export const FalIcon = ({ id, name = 'FalIcon', icon, tailwind, className, ...props }: types.IconProps) => {
+export const FalIcon = ({ name = 'FalIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const { theme } = useInterface();
 	const base = theme.icon();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -64,7 +64,7 @@ export const FalIcon = ({ id, name = 'FalIcon', icon, tailwind, className, ...pr
 	return <FaWrapper type='fal' icon={icon} {...computed} />;
 };
 
-export const FarIcon = ({ id, name = 'FarIcon', icon, tailwind, className, ...props }: types.IconProps) => {
+export const FarIcon = ({ name = 'FarIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const { theme } = useInterface();
 	const base = theme.icon();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -72,7 +72,7 @@ export const FarIcon = ({ id, name = 'FarIcon', icon, tailwind, className, ...pr
 	return <FaWrapper type='far' icon={icon} {...computed} />;
 };
 
-export const FasIcon = ({ id, name = 'FasIcon', icon, tailwind, className, ...props }: types.IconProps) => {
+export const FasIcon = ({ name = 'FasIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const { theme } = useInterface();
 	const base = theme.icon();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -80,14 +80,7 @@ export const FasIcon = ({ id, name = 'FasIcon', icon, tailwind, className, ...pr
 	return <FaWrapper type='fas' icon={icon} {...computed} />;
 };
 
-export const WrappedFabIcon = ({
-	id,
-	name = 'WrappedFabIcon',
-	icon,
-	tailwind,
-	className,
-	...props
-}: types.IconProps) => {
+export const WrappedFabIcon = ({ name = 'WrappedFabIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const { theme } = useInterface();
 	const base = theme.wrappedIcon();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -98,14 +91,7 @@ export const WrappedFabIcon = ({
 	);
 };
 
-export const WrappedFadIcon = ({
-	id,
-	name = 'WrappedFadIcon',
-	icon,
-	tailwind,
-	className,
-	...props
-}: types.IconProps) => {
+export const WrappedFadIcon = ({ name = 'WrappedFadIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const { theme } = useInterface();
 	const base = theme.wrappedIcon();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -116,14 +102,7 @@ export const WrappedFadIcon = ({
 	);
 };
 
-export const WrappedFalIcon = ({
-	id,
-	name = 'WrappedFalIcon',
-	icon,
-	tailwind,
-	className,
-	...props
-}: types.IconProps) => {
+export const WrappedFalIcon = ({ name = 'WrappedFalIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const { theme } = useInterface();
 	const base = theme.wrappedIcon();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -135,14 +114,7 @@ export const WrappedFalIcon = ({
 	);
 };
 
-export const WrappedFarIcon = ({
-	id,
-	name = 'WrappedFarIcon',
-	icon,
-	tailwind,
-	className,
-	...props
-}: types.IconProps) => {
+export const WrappedFarIcon = ({ name = 'WrappedFarIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const { theme } = useInterface();
 	const base = theme.wrappedIcon();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -154,14 +126,7 @@ export const WrappedFarIcon = ({
 	);
 };
 
-export const WrappedFasIcon = ({
-	id,
-	name = 'WrappedFasIcon',
-	icon,
-	tailwind,
-	className,
-	...props
-}: types.IconProps) => {
+export const WrappedFasIcon = ({ name = 'WrappedFasIcon', icon, tailwind, className, ...props }: types.IconProps) => {
 	const { theme } = useInterface();
 	const base = theme.wrappedIcon();
 	const computed = { ...base, ...props, tailwind, className, name };

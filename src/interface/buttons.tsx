@@ -34,7 +34,6 @@ export const Btn = props => {
 };
 
 export const PrimaryBtn = ({
-	id,
 	name = 'PrimaryBtn',
 	size = 'sm',
 	active,
@@ -76,26 +75,18 @@ export const BorderBtn = ({
 	return <BtnShared name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
-export const TabBtn = ({ id, name = 'TabBtn', size = 'sm', active, tailwind, className, ...props }: types.BtnProps) => {
+export const TabBtn = ({ name = 'TabBtn', size = 'sm', active, tailwind, className, ...props }: types.BtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.tabBtn({ active, size });
 
 	return <BtnShared name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
-export const TextBtn = ({
-	id,
-	name = 'TextBtn',
-	size = 'sm',
-	active,
-	tailwind,
-	className,
-	...props
-}: types.BtnProps) => {
+export const TextBtn = ({ name = 'TextBtn', size = 'sm', active, tailwind, className, ...props }: types.BtnProps) => {
 	const { theme } = useInterface();
 	const base = theme.textBtn({ active, size });
 
-	return <BtnShared id={id} name={name} className={className} {...base} tailwind={tailwind} {...props} />;
+	return <BtnShared name={name} className={className} {...base} tailwind={tailwind} {...props} />;
 };
 
 const BtnShared = ({

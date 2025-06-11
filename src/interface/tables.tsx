@@ -7,7 +7,7 @@ import * as types from 'types/table-types';
 import { computeTailwind } from 'utils';
 import { isObject } from 'utils/helpers';
 
-export const Table = ({ id, name = 'Table', tailwind, className, children, ...props }: types.TableProps) => {
+export const Table = ({ name = 'Table', tailwind, className, children, ...props }: types.TableProps) => {
 	const { theme } = useInterface();
 	const base = theme.table();
 	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
@@ -20,7 +20,6 @@ export const Table = ({ id, name = 'Table', tailwind, className, children, ...pr
 };
 
 export const TableHeader = ({
-	id,
 	name = 'TableHeader',
 	tailwind,
 	className,
@@ -39,7 +38,6 @@ export const TableHeader = ({
 };
 
 export const TableHeaderRow = ({
-	id,
 	name = 'TableHeaderRow',
 	tailwind,
 	className,
@@ -54,7 +52,6 @@ export const TableHeaderRow = ({
 };
 
 export const TableHead = ({
-	id,
 	name = 'TableHead',
 	alt = 'sort table',
 	value,
@@ -93,14 +90,7 @@ export const TableHead = ({
 	);
 };
 
-export const TableBody = ({
-	id,
-	name = 'TableBody',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.TableBodyProps) => {
+export const TableBody = ({ name = 'TableBody', tailwind, className, children, ...props }: types.TableBodyProps) => {
 	const { theme } = useInterface();
 	const base = theme.tableBody();
 	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
@@ -112,7 +102,7 @@ export const TableBody = ({
 	);
 };
 
-export const TableRow = ({ id, name = 'TableRow', tailwind, className, children, ...props }: types.TableRowProps) => {
+export const TableRow = ({ name = 'TableRow', tailwind, className, children, ...props }: types.TableRowProps) => {
 	const { theme } = useInterface();
 	const base = theme.tableRow();
 	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
@@ -125,7 +115,6 @@ export const TableRow = ({ id, name = 'TableRow', tailwind, className, children,
 };
 
 export const TableData = ({
-	id,
 	name = 'TableData',
 	title = false,
 	value,

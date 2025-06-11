@@ -9,7 +9,6 @@ import { Div, Span } from 'interface/html';
 import * as types from 'types/modal-types';
 
 export const ModalWrapper = ({
-	id,
 	name = 'ModalWrapper',
 	open,
 	onClose,
@@ -31,7 +30,6 @@ export const ModalWrapper = ({
 };
 
 export const ModalBackdrop = ({
-	id,
 	name = 'ModalBackdrop',
 	open,
 	onClose,
@@ -45,16 +43,7 @@ export const ModalBackdrop = ({
 	return <Div onClick={onClose} {...computed} />;
 };
 
-export const Modal = ({
-	id,
-	name = 'Modal',
-	open,
-	onClose,
-	tailwind,
-	className,
-	children,
-	...props
-}: types.ModalProps) => {
+export const Modal = ({ name = 'Modal', open, onClose, tailwind, className, children, ...props }: types.ModalProps) => {
 	const [show, setShow] = useState(false);
 	const { theme } = useInterface();
 	const base = theme.modal({ open: show });
@@ -96,7 +85,6 @@ export const Modal = ({
 };
 
 export const ModalHeader = ({
-	id,
 	name = 'ModalHeader',
 	onClose,
 	tailwind,
@@ -117,7 +105,6 @@ export const ModalHeader = ({
 };
 
 export const ModalTitle = ({
-	id,
 	name = 'ModalTitle',
 	size = 'h4',
 	tailwind,
@@ -137,7 +124,6 @@ export const ModalTitle = ({
 };
 
 export const ModalSubtitle = ({
-	id,
 	name = 'ModalSubtitle',
 	size = 'p',
 	tailwind,
@@ -157,7 +143,6 @@ export const ModalSubtitle = ({
 };
 
 export const ModalBody = ({
-	id,
 	name = 'ModalBody',
 	size,
 	tailwind,
@@ -173,7 +158,6 @@ export const ModalBody = ({
 };
 
 export const ModalFooter = ({
-	id,
 	name = 'ModalFooter',
 	tailwind,
 	className,

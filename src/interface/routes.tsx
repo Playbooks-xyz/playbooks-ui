@@ -6,7 +6,7 @@ import { Div } from 'interface/html';
 import * as types from 'types/route-types';
 import { capitalize } from 'utils/transforms';
 
-export const Route = ({ id, name = 'Route', seo, tailwind, className, children, ...props }: types.RouteProps) => {
+export const Route = ({ name = 'Route', seo, tailwind, className, children, ...props }: types.RouteProps) => {
 	const { theme } = useInterface();
 	const base = theme.route();
 	const computed = { ...base, ...props, tailwind, className, name };

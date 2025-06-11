@@ -9,7 +9,6 @@ import { FadIcon } from 'interface/icons';
 import * as types from 'types/toast-types';
 
 export const ToastWrapper = ({
-	id,
 	name = 'ToastWrapper',
 	tailwind,
 	className,
@@ -24,7 +23,6 @@ export const ToastWrapper = ({
 };
 
 export const Toast = ({
-	id,
 	name = 'Toast',
 	open,
 	setOpen,
@@ -56,7 +54,6 @@ export const Toast = ({
 };
 
 export const ToastHeader = ({
-	id,
 	name = 'ToastHeader',
 	onRemove,
 	tailwind,
@@ -79,7 +76,6 @@ export const ToastHeader = ({
 };
 
 export const ToastIcon = ({
-	id,
 	name = 'ToastIcon',
 	icon = 'question-circle',
 	tailwind,
@@ -97,14 +93,7 @@ export const ToastIcon = ({
 	);
 };
 
-export const ToastTitle = ({
-	id,
-	name = 'ToastTitle',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.ToastTitleProps) => {
+export const ToastTitle = ({ name = 'ToastTitle', tailwind, className, children, ...props }: types.ToastTitleProps) => {
 	const { theme } = useInterface();
 	const base = theme.toastTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -112,14 +101,7 @@ export const ToastTitle = ({
 	return <H6 {...computed}>{children}</H6>;
 };
 
-export const ToastBody = ({
-	id,
-	name = 'ToastBody',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.ToastBodyProps) => {
+export const ToastBody = ({ name = 'ToastBody', tailwind, className, children, ...props }: types.ToastBodyProps) => {
 	const { theme } = useInterface();
 	const base = theme.toastBody();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -127,14 +109,7 @@ export const ToastBody = ({
 	return <Div {...computed}>{children}</Div>;
 };
 
-export const ToastText = ({
-	id,
-	name = 'ToastText',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.ToastTextProps) => {
+export const ToastText = ({ name = 'ToastText', tailwind, className, children, ...props }: types.ToastTextProps) => {
 	const { theme } = useInterface();
 	const base = theme.toastText();
 	const computed = { ...base, ...props, tailwind, className, name };

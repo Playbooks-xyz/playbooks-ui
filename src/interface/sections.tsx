@@ -19,7 +19,6 @@ export const Section = ({ name = 'Section', tailwind, className, children, ...pr
 };
 
 export const SectionHeader = ({
-	id,
 	name = 'SectionHeader',
 	tailwind,
 	className,
@@ -34,7 +33,6 @@ export const SectionHeader = ({
 };
 
 export const SectionPretitle = ({
-	id,
 	name = 'SectionPretitle',
 	tailwind,
 	className,
@@ -49,7 +47,6 @@ export const SectionPretitle = ({
 };
 
 export const SectionTitle = ({
-	id,
 	name = 'SectionTitle',
 	size = 'h5',
 	tailwind,
@@ -69,7 +66,6 @@ export const SectionTitle = ({
 };
 
 export const SectionSubtitle = ({
-	id,
 	name = 'SectionSubtitle',
 	size = 'h6',
 	tailwind,
@@ -89,7 +85,6 @@ export const SectionSubtitle = ({
 };
 
 export const SectionText = ({
-	id,
 	name = 'SectionText',
 	tailwind,
 	className,
@@ -104,7 +99,6 @@ export const SectionText = ({
 };
 
 export const SectionActions = ({
-	id,
 	name = 'SectionActions',
 	tailwind,
 	className,
@@ -119,7 +113,6 @@ export const SectionActions = ({
 };
 
 export const SectionBody = ({
-	id,
 	name = 'SectionBody',
 	size,
 	tailwind,
@@ -134,7 +127,7 @@ export const SectionBody = ({
 	return <Div {...computed}>{children}</Div>;
 };
 
-export const SectionHr = ({ id, name = 'SectionHr', tailwind, className, ...props }: types.SectionHrProps) => {
+export const SectionHr = ({ name = 'SectionHr', tailwind, className, ...props }: types.SectionHrProps) => {
 	const { theme } = useInterface();
 	const base = theme.sectionHr();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -143,7 +136,6 @@ export const SectionHr = ({ id, name = 'SectionHr', tailwind, className, ...prop
 };
 
 export const SectionFooter = ({
-	id,
 	name = 'SectionFooter',
 	tailwind,
 	className,

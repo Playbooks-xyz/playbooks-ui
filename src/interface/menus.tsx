@@ -41,7 +41,6 @@ export const Menu = ({ name = 'Menu', open, onClose, tailwind, className, childr
 };
 
 export const MenuWrapper = ({
-	id,
 	name = 'MenuWrapper',
 	open,
 	onClose,
@@ -63,7 +62,6 @@ export const MenuWrapper = ({
 };
 
 export const MenuBackdrop = ({
-	id,
 	name = 'MenuBackdrop',
 	open,
 	onClose,
@@ -79,7 +77,6 @@ export const MenuBackdrop = ({
 };
 
 export const MenuMenu = ({
-	id,
 	name = 'MenuMenu',
 	open,
 	onClose,
@@ -110,7 +107,7 @@ export const MenuMenu = ({
 	);
 };
 
-export const MenuBlock = ({ id, name = 'MenuBlock', tailwind, className, children, ...props }: types.MenuListProps) => {
+export const MenuBlock = ({ name = 'MenuBlock', tailwind, className, children, ...props }: types.MenuListProps) => {
 	const { theme } = useInterface();
 	const base = theme.menuBlock();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -118,14 +115,7 @@ export const MenuBlock = ({ id, name = 'MenuBlock', tailwind, className, childre
 	return <Div {...computed}>{children}</Div>;
 };
 
-export const MenuTitle = ({
-	id,
-	name = 'MenuTitle',
-	tailwind,
-	className,
-	children,
-	...props
-}: types.MenuTitleProps) => {
+export const MenuTitle = ({ name = 'MenuTitle', tailwind, className, children, ...props }: types.MenuTitleProps) => {
 	const { theme } = useInterface();
 	const base = theme.menuTitle();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -134,7 +124,6 @@ export const MenuTitle = ({
 };
 
 export const MenuSubtitle = ({
-	id,
 	name = 'MenuSubtitle',
 	tailwind,
 	className,
@@ -148,7 +137,7 @@ export const MenuSubtitle = ({
 	return <P {...computed}>{children}</P>;
 };
 
-export const MenuList = ({ id, name = 'MenuList', tailwind, className, children, ...props }: types.MenuListProps) => {
+export const MenuList = ({ name = 'MenuList', tailwind, className, children, ...props }: types.MenuListProps) => {
 	const { theme } = useInterface();
 	const base = theme.menuList();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -156,7 +145,7 @@ export const MenuList = ({ id, name = 'MenuList', tailwind, className, children,
 	return <Ul {...computed}>{children}</Ul>;
 };
 
-export const MenuItem = ({ id, name = 'MenuItem', tailwind, className, children, ...props }: types.MenuItemProps) => {
+export const MenuItem = ({ name = 'MenuItem', tailwind, className, children, ...props }: types.MenuItemProps) => {
 	const { theme } = useInterface();
 	const base = theme.menuItem();
 	const computed = { ...base, ...props, tailwind, className, name };
@@ -165,7 +154,6 @@ export const MenuItem = ({ id, name = 'MenuItem', tailwind, className, children,
 };
 
 export const MenuBtn = ({
-	id,
 	name = 'MenuBtn',
 	active,
 	onClick,
@@ -183,7 +171,6 @@ export const MenuBtn = ({
 };
 
 export const MenuLink = ({
-	id,
 	name = 'MenuLink',
 	href = '',
 	tailwind,

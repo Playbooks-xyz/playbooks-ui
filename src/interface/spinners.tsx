@@ -3,7 +3,7 @@ import { useInterface } from 'contexts';
 import * as types from 'types/spinner-types';
 import { computeTailwind } from 'utils';
 
-export const Oval = ({ id, name = 'Oval', tailwind, className, ...props }: types.SpinnerProps) => {
+export const Oval = ({ name = 'Oval', tailwind, className, ...props }: types.SpinnerProps) => {
 	const { theme } = useInterface();
 	const base = theme.spinner();
 	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
@@ -11,7 +11,7 @@ export const Oval = ({ id, name = 'Oval', tailwind, className, ...props }: types
 	return <Loaders.Oval className={classes} />;
 };
 
-export const Puff = ({ id, name = 'Puff', tailwind, className, ...props }: types.SpinnerProps) => {
+export const Puff = ({ name = 'Puff', tailwind, className, ...props }: types.SpinnerProps) => {
 	const { theme } = useInterface();
 	const base = theme.spinner();
 	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });

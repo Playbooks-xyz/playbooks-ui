@@ -4,7 +4,6 @@ import { Icon } from 'interface/icons';
 import * as types from 'types/input-group-types';
 
 export const InputGroup = ({
-	id,
 	name = 'InputGroup',
 	active,
 	tailwind,
@@ -20,7 +19,6 @@ export const InputGroup = ({
 };
 
 export const InputAppend = ({
-	id,
 	name = 'InputAppend',
 	icon,
 	taskRunning,
@@ -37,7 +35,6 @@ export const InputAppend = ({
 };
 
 export const InputPrepend = ({
-	id,
 	name = 'InputPrepend',
 	icon,
 	taskRunning,
