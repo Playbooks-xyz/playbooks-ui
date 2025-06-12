@@ -2,6 +2,8 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@plugin "@tailwindcss/forms";
+
 @theme {
 	--font-primary: Plus Jakarta Sans, sans-serif;
 	--font-secondary: Inter, sans-serif;
@@ -22,8 +24,7 @@
 	--width-xxl: 1440px;
 }
 
-@theme inline {
-}
+@theme inline {}
 
 @layer base {
   *,

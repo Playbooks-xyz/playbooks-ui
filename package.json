@@ -55,6 +55,7 @@
     "@popperjs/core": "^2.11.8",
     "@react-google-maps/api": "^2.20.5",
     "@react-spring/web": "^10.0.1",
+    "@tailwindcss/forms": "^0.5.10",
     "react-currency-input-field": "^3.10.0",
     "react-input-mask": "^2.0.4",
     "react-loading-skeleton": "^3.5.0",
@@ -65,7 +66,6 @@
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@tailwindcss/forms": "^0.5.7",
     "@types/jest": "^29.5.1",
     "@types/react": "^19.1.1",
     "@types/react-dom": "^19.1.2",
