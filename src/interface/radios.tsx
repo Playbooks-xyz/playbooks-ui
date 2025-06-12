@@ -66,7 +66,6 @@ export const RadioInput = ({
 
 	return (
 		<HTML.Input
-			id={id}
 			type='radio'
 			checked={value}
 			aria-labelledby='privacy-setting-0-label'

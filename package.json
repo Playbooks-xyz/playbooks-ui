@@ -7,14 +7,22 @@
   "type": "module",
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
-  "engines": {
-    "node": ">=16"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/playbooks-xyz/ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/playbooks-xyz/ui/issues"
   },
   "files": [
     "dist"
   ],
+  "keywords": [
+    "playbooks",
+    "ui kit"
+  ],
   "scripts": {
-    "dev": "vite build --mode development --watch --minify false",
+    "dev": "vite build --mode development --watch --minify false --sourcemap",
     "start": "vite build --mode development --minify false",
     "build": "vite build --mode production --minify true",
     "build:ts": "dts-bundle-generator --config dts.config.ts",
@@ -42,9 +50,9 @@
     "tailwindcss": "^4"
   },
   "dependencies": {
-    "@ehubbell/html": "^0.1.6",
+    "@ehubbell/html": "^0.1.7",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@playbooks/theme": "^0.1.13",
+    "@playbooks/theme": "^0.1.14",
     "@popperjs/core": "^2.11.8",
     "@react-google-maps/api": "^2.20.5",
     "@react-spring/web": "^10.0.1",

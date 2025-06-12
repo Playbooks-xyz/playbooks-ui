@@ -107,7 +107,7 @@ export const SwitchLabel = ({
 	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
-		<HTML.Label id={id} htmlFor={htmlFor} className={classes}>
+		<HTML.Label htmlFor={htmlFor} className={classes}>
 			{children}
 		</HTML.Label>
 	);

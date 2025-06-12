@@ -9,6 +9,7 @@ export function pushBuild() {
 		closeBundle: async () => {
 			exec('dts-bundle-generator --config dts.config.ts', (response, error) => {
 				if (error) console.error(error);
+				if (response) console.log(response);
 				exec('npx yalc push', (response, error) => (error ? console.error(error) : null));
 			});
 		},
@@ -18,7 +19,6 @@ export function pushBuild() {
 export default defineConfig({
 	base: './',
 	build: {
-		// sourcemap: true,
 		lib: {
 			entry: [
 				path.resolve(__dirname, 'src/index.tsx'),

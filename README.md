@@ -91,7 +91,7 @@ We've included a couple of helpful scripts for faster development.
 - eric@erichubbell.com
 
 ## Notes
-To see this library in action, checkout the following projects:
+To see this library in action, checkout these related projects:
 - [playbooks](https://www.playbooks.xyz)
-- [@playbooks/ui](https://github.com/playbooks-xyz/playbooks-ui)
-- [@playbooks/theme](https://github.com/playbooks-xyz/playbooks-theme)
+- [playbooks/ui](https://github.com/playbooks-xyz/playbooks-ui)
+- [playbooks/theme](https://github.com/playbooks-xyz/playbooks-theme)
