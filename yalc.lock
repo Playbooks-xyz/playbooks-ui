@@ -2,9 +2,14 @@
   "version": "v1",
   "packages": {
     "@ehubbell/html": {
-      "signature": "3829f15508461b008bacd350782d7292",
+      "signature": "8fad8c0450c68b5a861b26fed10b1b75",
       "file": true,
       "replaced": "^0.1.6"
+    },
+    "@playbooks/theme": {
+      "signature": "5e8fd1b457a5263f6a9c1f1c0f3c0aa4",
+      "file": true,
+      "replaced": "^0.1.14"
     }
   }
 }

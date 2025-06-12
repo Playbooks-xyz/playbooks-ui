@@ -21,6 +21,9 @@
     "playbooks",
     "ui kit"
   ],
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
     "dev": "vite build --mode development --watch --minify false --sourcemap",
     "start": "vite build --mode development --minify false",
@@ -33,13 +36,9 @@
     "clean": "npm run lint:fix",
     "commit": "scripts/commit.sh",
     "deploy": "scripts/deploy.sh",
+    "packages": "scripts/packages.sh",
+    "yalc": "scripts/yalc.sh",
     "git": "git push --tags",
-    "packages": "npm run packages:html && npm run packages:theme && npm run packages:yalc",
-    "packages:html": "npm install @ehubbell/html@latest --legacy-peer-deps",
-    "packages:theme": "npm install @playbooks/theme@latest --legacy-peer-deps",
-    "packages:yalc": "npx yalc --remove-all",
-    "yalc": "npm run yalc:html",
-    "yalc:html": "npx yalc add @ehubbell/html",
     "test": "jest",
     "prepare": "husky"
   },
@@ -50,7 +49,7 @@
     "tailwindcss": "^4"
   },
   "dependencies": {
-    "@ehubbell/html": "^0.1.7",
+    "@ehubbell/html": "^0.1.8",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@playbooks/theme": "^0.1.14",
     "@popperjs/core": "^2.11.8",
