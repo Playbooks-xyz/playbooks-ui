@@ -99,7 +99,7 @@
     },
     "./components": {
       "import": "./dist/components.cjs",
-      "types": "./dist/components.d.ts"
+      "types": "./dist/index.d.ts"
     },
     "./context": {
       "import": "./dist/context.cjs",
