@@ -8,18 +8,6 @@ export const useKeyPress = (onKeyPress, listeners) => {
 	}, [...listeners]);
 };
 
-export const useKeyDownUp = (onKeyDown, onKeyUp, listeners) => {
-	// Hooks
-	useEffect(() => {
-		window.addEventListener('keydown', onKeyDown);
-		window.addEventListener('keyup', onKeyUp);
-		return () => {
-			window.removeEventListener('keydown', onKeyDown);
-			window.removeEventListener('keyup', onKeyUp);
-		};
-	}, [...listeners]);
-};
-
 export const useElementKeyPress = (element, onKeyPress, listeners) => {
 	useEffect(() => {
 		if (element) element.addEventListener('keydown', onKeyPress);

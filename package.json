@@ -5,8 +5,6 @@
   "private": false,
   "license": "ISC",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/playbooks-xyz/ui.git"
@@ -27,7 +25,7 @@
   "scripts": {
     "dev": "vite build --mode development --watch --minify false --sourcemap",
     "start": "vite build --mode development --minify false",
-    "build": "vite build --mode production --minify true",
+    "build": "vite build --mode production --minify true && npm run build:ts",
     "build:ts": "dts-bundle-generator --config dts.config.ts",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
@@ -71,7 +69,6 @@
     "@types/react-dom": "^19.1.2",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",
-    "@vitejs/plugin-react": "^3.0.0",
     "autoprefixer": "^10.4.19",
     "dts-bundle-generator": "^9.5.1",
     "eslint": "^8.29.0",
