@@ -6,13 +6,7 @@ import { computeTailwind } from 'utils';
 
 export const useAnimation = useSpring;
 
-export type AnimationProps = HtmlProps & {
-	name?: string;
-	tailwind?: TailwindProps;
-	className?: string;
-	style?: any;
-	children: any;
-};
+export type AnimationProps = HtmlProps;
 
 const Animation = ({ name = 'Animation', tailwind, className, style, children, ...props }: AnimationProps) => {
 	const base = { position: 'relative' };

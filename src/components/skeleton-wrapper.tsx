@@ -4,10 +4,7 @@ import { TailwindProps } from '@ehubbell/html';
 import { HtmlProps } from 'types';
 import { computeTailwind } from 'utils';
 
-export type SkeletonProps = HtmlProps & {
-	tailwind?: TailwindProps;
-	className?: string;
-};
+export type SkeletonProps = HtmlProps;
 
 const Skeleton = ({ tailwind, className = '', ...props }: SkeletonProps) => {
 	const base = { height: 'h-full', width: 'w-full' };
