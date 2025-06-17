@@ -1,6 +1,6 @@
 import { exec } from 'node:child_process';
 import path from 'path';
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { defineConfig } from 'vite';
 
@@ -76,9 +76,9 @@ export default defineConfig(({ mode }) => {
 					path.resolve(__dirname, 'src/utils/utils.tsx'),
 					path.resolve(__dirname, 'src/styles.css'),
 				],
-				formats: ['cjs'],
+				formats: ['es', 'cjs'],
 				name: 'playbooks-ui',
-				fileName: (format, entryName) => `${entryName}.cjs`,
+				fileName: (format, entryName) => format == 'es' ? `${entryName}.mjs` : `${entryName}.cjs`,
 			},
 			rollupOptions: {
 				external: [
