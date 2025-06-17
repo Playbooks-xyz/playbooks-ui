@@ -1,13 +1,21 @@
 import SkeletonWrapper, { SkeletonTheme } from 'react-loading-skeleton';
 
+import { TailwindProps } from '@ehubbell/html';
 import { computeTailwind } from 'utils';
 
-const Skeleton = ({ color, highlight, height = '100%', width = '100%', tailwind, className = '', ...props }) => {
+export type SkeletonProps = {
+	height?: string;
+	width?: string;
+	tailwind?: TailwindProps;
+	className?: string;
+};
+
+const Skeleton = ({ height = '100%', width = '100%', tailwind, className = '', ...props }: SkeletonProps) => {
 	const base = { width: 'w-full' };
 	const classes = computeTailwind({ ...base, ...tailwind, ...props, className });
 
 	return (
-		<SkeletonTheme baseColor={color} highlightColor={highlight}>
+		<SkeletonTheme>
 			<SkeletonWrapper height={height} width={width} className={classes} />
 		</SkeletonTheme>
 	);
