@@ -77,12 +77,6 @@
 		@apply text-gray-600 dark:text-gray-300;
 		@apply text-sm;
 	}
-	.text-inherit {
-		color: inherit;
-	}
-	.s-inherit {
-		stroke: inherit;
-	}
 	.ltr {
 		direction: ltr;
 	}
@@ -97,8 +91,8 @@
 	}
 }
 
+/* Skeletons */
 .react-loading-skeleton {
-	@apply leading-none;
 	--base-color: var(--color-gray-200);
 	--highlight-color: var(--color-gray-300);
 }
