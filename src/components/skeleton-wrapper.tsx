@@ -1,6 +1,5 @@
 import SkeletonWrapper, { SkeletonTheme } from 'react-loading-skeleton';
 
-import { TailwindProps } from '@ehubbell/html';
 import { HtmlProps } from 'types';
 import { computeTailwind } from 'utils';
 
