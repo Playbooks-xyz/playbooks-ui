@@ -23,7 +23,7 @@
     "node": ">=16"
   },
   "scripts": {
-    "dev": "vite build --mode development --watch --minify false --sourcemap",
+    "dev": "vite build --mode development --watch --minify false",
     "start": "vite build --mode development --minify false",
     "build": "vite build --mode production --minify true && npm run build:ts",
     "build:ts": "dts-bundle-generator --config dts.config.ts",

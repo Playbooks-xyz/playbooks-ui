@@ -2,9 +2,9 @@ import SkeletonWrapper, { SkeletonTheme } from 'react-loading-skeleton';
 
 import { computeTailwind } from 'utils';
 
-const Skeleton = ({ color, highlight, height = '100%', width = '100%', className = '', ...tailwind }) => {
+const Skeleton = ({ color, highlight, height = '100%', width = '100%', tailwind, className = '', ...props }) => {
 	const base = { width: 'w-full' };
-	const classes = computeTailwind({ ...base, ...tailwind, className });
+	const classes = computeTailwind({ ...base, ...tailwind, ...props, className });
 
 	return (
 		<SkeletonTheme baseColor={color} highlightColor={highlight}>
