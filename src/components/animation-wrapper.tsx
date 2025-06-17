@@ -1,11 +1,12 @@
 import { animated, useSpring } from '@react-spring/web';
 
 import { TailwindProps } from '@ehubbell/html';
+import { HtmlProps } from 'types';
 import { computeTailwind } from 'utils';
 
 export const useAnimation = useSpring;
 
-export type AnimationProps = {
+export type AnimationProps = HtmlProps & {
 	name?: string;
 	tailwind?: TailwindProps;
 	className?: string;
