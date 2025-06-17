@@ -93,6 +93,7 @@
 
 /* Skeletons */
 .react-loading-skeleton {
+	@apply leading-[inherit];
 	--base-color: var(--color-gray-200);
 	--highlight-color: var(--color-gray-300);
 }
