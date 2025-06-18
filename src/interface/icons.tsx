@@ -1,7 +1,7 @@
-import { FaWrapper } from 'components/fa-wrapper';
 import { useInterface } from 'contexts';
 import { Div } from 'interface/html';
 import * as types from 'types/icon-types';
+import { FaWrapper } from 'wrappers/';
 
 export const Icon = props => {
 	switch (props?.type) {

@@ -1,34 +1,37 @@
+import react from '@vitejs/plugin-react';
+
 import { exec } from 'node:child_process';
 import path from 'path';
-import react from '@vitejs/plugin-react';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
 
 export function pushBuild() {
 	return {
 		name: 'yalc-push',
 		closeBundle: async () => {
-			exec('dts-bundle-generator --config dts.config.ts', (response, error) => {
-				if (error) console.error(error);
-				if (response) console.log(response);
-				exec('npx yalc push', (response, error) => (error ? console.error(error) : null));
-			});
+			exec('npx yalc push', (response, error) => (error ? console.error(error) : null));
 		},
 	};
 }
 
 export default defineConfig(({ mode }) => {
-	const plugins = mode !== 'production' ? [pushBuild(), react()] : [react()]
+	const plugins =
+		mode !== 'production'
+			? [dts({ tsconfigPath: './tsconfig.app.json' }), react(), pushBuild()]
+			: [dts({ tsconfigPath: './tsconfig.app.json' }), react()];
 
 	return {
 		base: './',
 		build: {
+			cssCodeSplit: true,
 			sourcemap: mode !== 'production',
 			lib: {
 				entry: [
-					path.resolve(__dirname, 'src/index.tsx'),
 					path.resolve(__dirname, 'src/components/components.tsx'),
-					path.resolve(__dirname, 'src/contexts/context.tsx'),
+					path.resolve(__dirname, 'src/contexts/contexts.tsx'),
+					path.resolve(__dirname, 'src/hooks/hooks.tsx'),
+					path.resolve(__dirname, 'src/interface/interface.tsx'),
 					path.resolve(__dirname, 'src/interface/accordions.tsx'),
 					path.resolve(__dirname, 'src/interface/alerts.tsx'),
 					path.resolve(__dirname, 'src/interface/avatars.tsx'),
@@ -73,12 +76,12 @@ export default defineConfig(({ mode }) => {
 					path.resolve(__dirname, 'src/interface/tags.tsx'),
 					path.resolve(__dirname, 'src/interface/toasts.tsx'),
 					path.resolve(__dirname, 'src/interface/tooltips.tsx'),
-					path.resolve(__dirname, 'src/utils/utils.tsx'),
+					path.resolve(__dirname, 'src/molecules/molecules.tsx'),
 					path.resolve(__dirname, 'src/styles.css'),
 				],
 				formats: ['cjs'],
 				name: 'playbooks-ui',
-				fileName: (format, entryName) => `${entryName}.cjs`,
+				// fileName: (format, entryName) => `${entryName}.cjs`,a
 			},
 			rollupOptions: {
 				external: [
@@ -114,8 +117,10 @@ export default defineConfig(({ mode }) => {
 				contexts: path.resolve(__dirname, '/src/contexts'),
 				hooks: path.resolve(__dirname, '/src/hooks'),
 				interface: path.resolve(__dirname, '/src/interface'),
+				molecules: path.resolve(__dirname, '/src/molecules'),
 				types: path.resolve(__dirname, '/src/types'),
 				utils: path.resolve(__dirname, '/src/utils'),
+				wrappers: path.resolve(__dirname, '/src/wrappers'),
 			},
 		},
 	};

@@ -1,15 +1,12 @@
 import { useRef } from 'react';
 
 import * as HTML from '@ehubbell/html';
-import { CurrencyInputWrapper } from 'components/currency-input-wrapper';
-import { GoogleAutocompleteWrapper } from 'components/google-autocomplete-wrapper';
-import { MaskedInput } from 'components/masked-input-wrapper';
-import { PhoneInputWrapper } from 'components/phone-input-wrapper';
 import { useInterface } from 'contexts';
 import { useElementKeyPress } from 'hooks';
 import { Div, Span } from 'interface/html';
 import * as types from 'types/form-types';
 import { computeTailwind } from 'utils';
+import { CurrencyInputWrapper, GoogleAutocompleteWrapper, MaskedInputWrapper, PhoneInputWrapper } from 'wrappers';
 
 export const Form = ({ id, name = 'Form', onSubmit, tailwind, className, children, ...props }: types.FormProps) => {
 	const { theme } = useInterface();
@@ -140,7 +137,7 @@ export const FormMaskInput = ({
 	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
 
 	return (
-		<MaskedInput
+		<MaskedInputWrapper
 			id={id}
 			mask={mask}
 			value={value}

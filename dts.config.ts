@@ -1,5 +1,9 @@
 const fileNames = [
 	'index',
+	'components',
+	'contexts',
+	'hooks',
+	'interface',
 	'accordions',
 	'alerts',
 	'avatars',
@@ -44,12 +48,47 @@ const fileNames = [
 	'tags',
 	'toasts',
 	'tooltips',
-]
+];
 
 const config = {
 	compilationOptions: { preferredConfigPath: './tsconfig.json' },
 	entries: fileNames.map(fileName => {
-		if (fileName !== 'index') {
+		if (fileName === 'index') {
+			return {
+				filePath: `./src/${fileName}.tsx`,
+				outFile: `./dist/${fileName}.d.ts`,
+				noCheck: true,
+			};
+		}
+		if (fileName === 'components') {
+			return {
+				filePath: `./src/components/${fileName}.tsx`,
+				outFile: `./dist/${fileName}.d.ts`,
+				noCheck: true,
+			};
+		}
+		if (fileName === 'contexts') {
+			return {
+				filePath: `./src/contexts/${fileName}.tsx`,
+				outFile: `./dist/${fileName}.d.ts`,
+				noCheck: true,
+			};
+		}
+		if (fileName === 'hooks') {
+			return {
+				filePath: `./src/hooks/${fileName}.tsx`,
+				outFile: `./dist/${fileName}.d.ts`,
+				noCheck: true,
+			};
+		}
+		if (fileName === 'molecules') {
+			return {
+				filePath: `./src/molecules/${fileName}.tsx`,
+				outFile: `./dist/${fileName}.d.ts`,
+				noCheck: true,
+			};
+		}
+		if (fileName === 'interface') {
 			return {
 				filePath: `./src/interface/${fileName}.tsx`,
 				outFile: `./dist/${fileName}.d.ts`,
@@ -57,7 +96,7 @@ const config = {
 			};
 		}
 		return {
-			filePath: `./src/${fileName}.tsx`,
+			filePath: `./src/interface/${fileName}.tsx`,
 			outFile: `./dist/${fileName}.d.ts`,
 			noCheck: true,
 		};

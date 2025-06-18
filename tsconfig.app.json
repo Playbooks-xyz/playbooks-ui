@@ -1,0 +1,30 @@
+{
+  "extends": "@ehubbell/configs/ts-config-package",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "src*": ["./src*"],
+      "assets": ["./src/assets"],
+      "assets*": ["./src/assets*"],
+      "contexts": ["./src/contexts"],
+      "contexts*": ["./src/contexts*"],
+      "components": ["./src/components"],
+      "components*": ["./src/components*"],
+      "hooks": ["./src/hooks"],
+      "hooks*": ["./src/hooks*"],
+      "interface": ["./src/interface"],
+      "interface*": ["./src/interface*"],
+      "molecules": ["./src/molecules"],
+      "molecules*": ["./src/molecules*"],
+      "types": ["./src/types"],
+      "types*": ["./src/types*"],
+      "utils": ["./src/utils"],
+      "utils*": ["./src/utils*"],
+      "wrappers": ["./src/wrappers"],
+      "wrappers*": ["./src/wrappers*"],
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"],
+}

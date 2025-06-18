@@ -5,7 +5,7 @@ import { computeTailwind } from 'utils';
 
 export type SkeletonProps = HtmlProps;
 
-const Skeleton = ({ tailwind, className = '', ...props }: SkeletonProps) => {
+const Skeleton = ({ tailwind, className, ...props }: SkeletonProps) => {
 	const base = { height: 'h-full', width: 'w-full' };
 	const classes = computeTailwind({ ...base, ...tailwind, ...props, className });
 

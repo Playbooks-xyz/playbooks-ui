@@ -1,6 +1,15 @@
 import ReactMaskedInput from 'react-input-mask';
 
-export const MaskedInput = ({ id, mask = '99/9999', value, placeholder, readOnly, onBlur, onChange, className }) => (
+export const MaskedInputWrapper = ({
+	id,
+	mask = '99/9999',
+	value,
+	placeholder,
+	readOnly,
+	onBlur,
+	onChange,
+	className,
+}) => (
 	<ReactMaskedInput
 		id={id}
 		mask={mask}

@@ -4,7 +4,7 @@ import { useInterface } from 'contexts';
 import { Head } from 'interface/head';
 import { Div } from 'interface/html';
 import * as types from 'types/route-types';
-import { capitalize } from 'utils/transforms';
+import { capitalize } from 'utils';
 
 export const Route = ({ name = 'Route', seo, tailwind, className, children, ...props }: types.RouteProps) => {
 	const { theme } = useInterface();
