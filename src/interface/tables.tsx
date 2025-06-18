@@ -4,7 +4,7 @@ import { BtnWrapper } from 'interface/buttons';
 import { Div } from 'interface/html';
 import { FarIcon } from 'interface/icons';
 import * as types from 'types/table-types';
-import { isObject, computeTailwind } from 'utils';
+import { computeTailwind, isObject } from 'utils';
 
 export const Table = ({ name = 'Table', tailwind, className, children, ...props }: types.TableProps) => {
 	const { theme } = useInterface();

@@ -1,5 +1,5 @@
-import { Card, CardBody, CardFooter, CardHeader, CardPretitle, CardSubtitle, CardTitle } from 'interface/cards';
 import { Skeleton } from 'components';
+import { Card, CardBody, CardFooter, CardHeader, CardPretitle, CardSubtitle, CardTitle } from 'interface/cards';
 import { Span } from 'interface/html';
 
 const GridSkeleton = ({ tailwind }) => {

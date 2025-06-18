@@ -1,5 +1,5 @@
-import { Card, CardBody, CardHeader, CardTitle } from 'interface/cards';
 import { Skeleton } from 'components';
+import { Card, CardBody, CardHeader, CardTitle } from 'interface/cards';
 import { Span } from 'interface/html';
 
 const SearchSkeleton = ({ tailwind }) => (
