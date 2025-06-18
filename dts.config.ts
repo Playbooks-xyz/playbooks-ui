@@ -1,9 +1,5 @@
 const fileNames = [
 	'index',
-	'components',
-	'contexts',
-	'hooks',
-	'interface',
 	'accordions',
 	'alerts',
 	'avatars',

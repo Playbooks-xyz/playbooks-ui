@@ -4,34 +4,34 @@ import { exec } from 'node:child_process';
 import path from 'path';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
 
 export function pushBuild() {
 	return {
 		name: 'yalc-push',
 		closeBundle: async () => {
-			exec('npx yalc push', (response, error) => (error ? console.error(error) : null));
+			exec('dts-bundle-generator --config dts.config.ts', (response, error) => {
+				if (error) console.error(error);
+				if (response) console.log(response);
+				exec('npx yalc push', (response, error) => (error ? console.error(error) : null));
+			});
 		},
 	};
 }
 
 export default defineConfig(({ mode }) => {
-	const plugins =
-		mode !== 'production'
-			? [dts({ tsconfigPath: './tsconfig.app.json' }), react(), pushBuild()]
-			: [dts({ tsconfigPath: './tsconfig.app.json' }), react()];
+	const plugins = mode !== 'production' ? [react(), pushBuild()] : [react()];
 
 	return {
 		base: './',
 		build: {
 			cssCodeSplit: true,
-			sourcemap: mode !== 'production',
+			sourcemap: false,
 			lib: {
 				entry: [
 					path.resolve(__dirname, 'src/components/components.tsx'),
 					path.resolve(__dirname, 'src/contexts/contexts.tsx'),
 					path.resolve(__dirname, 'src/hooks/hooks.tsx'),
-					path.resolve(__dirname, 'src/interface/interface.tsx'),
+					path.resolve(__dirname, 'src/index.tsx'),
 					path.resolve(__dirname, 'src/interface/accordions.tsx'),
 					path.resolve(__dirname, 'src/interface/alerts.tsx'),
 					path.resolve(__dirname, 'src/interface/avatars.tsx'),
@@ -81,7 +81,7 @@ export default defineConfig(({ mode }) => {
 				],
 				formats: ['cjs'],
 				name: 'playbooks-ui',
-				// fileName: (format, entryName) => `${entryName}.cjs`,a
+				fileName: (format, entryName) => `${entryName}.cjs`,
 			},
 			rollupOptions: {
 				external: [
