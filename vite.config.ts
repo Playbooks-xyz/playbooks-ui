@@ -76,9 +76,9 @@ export default defineConfig(({ mode }) => {
 					path.resolve(__dirname, 'src/utils/utils.tsx'),
 					path.resolve(__dirname, 'src/styles.css'),
 				],
-				formats: ['es', 'cjs'],
+				formats: ['cjs'],
 				name: 'playbooks-ui',
-				fileName: (format, entryName) => format == 'es' ? `${entryName}.mjs` : `${entryName}.cjs`,
+				fileName: (format, entryName) => `${entryName}.cjs`,
 			},
 			rollupOptions: {
 				external: [
