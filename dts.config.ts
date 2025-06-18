@@ -1,10 +1,67 @@
+const fileNames = [
+	'index',
+	'accordions',
+	'alerts',
+	'avatars',
+	'badges',
+	'banners',
+	'breadcrumbs',
+	'button-groups',
+	'buttons',
+	'cards',
+	'commands',
+	'drops',
+	'feedbacks',
+	'fonts',
+	'footers',
+	'forms',
+	'grid',
+	'head',
+	'headers',
+	'heros',
+	'html',
+	'icons',
+	'input-groups',
+	'links',
+	'list-groups',
+	'loaders',
+	'menus',
+	'modals',
+	'navbars',
+	'navs',
+	'paginations',
+	'prefooters',
+	'progress-bars',
+	'radios',
+	'ranges',
+	'routes',
+	'sections',
+	'slides',
+	'spinners',
+	'switches',
+	'tables',
+	'tabs',
+	'tags',
+	'toasts',
+	'tooltips',
+]
+
 const config = {
-	entries: [
-		{
-			filePath: './src/index.tsx',
-			outFile: './dist/index.d.ts',
-		},
-	],
+	compilationOptions: { preferredConfigPath: './tsconfig.json' },
+	entries: fileNames.map(fileName => {
+		if (fileName !== 'index') {
+			return {
+				filePath: `./src/interface/${fileName}.tsx`,
+				outFile: `./dist/${fileName}.d.ts`,
+				noCheck: true,
+			};
+		}
+		return {
+			filePath: `./src/${fileName}.tsx`,
+			outFile: `./dist/${fileName}.d.ts`,
+			noCheck: true,
+		};
+	}),
 };
 
 module.exports = config;

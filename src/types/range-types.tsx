@@ -11,8 +11,10 @@ export type RangeSliderProps = HtmlProps & {
 export type RangeSlidersProps = HtmlProps & {
 	min?: number;
 	max?: number;
+	values?: number[];
 	step?: number;
 	value?: number;
+	onNext: () => any;
 	onChange: () => any;
 };
 

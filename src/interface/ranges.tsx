@@ -54,7 +54,7 @@ export const RangeSliders = ({
 	tailwind,
 	className,
 	...props
-}: RangeSlidersProps) => {
+}: types.RangeSlidersProps) => {
 	const { theme } = useInterface();
 	const base = theme.rangeSlider();
 	const classes = computeTailwind({ ...base, ...props, ...tailwind, className });
